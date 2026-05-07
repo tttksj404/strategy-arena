@@ -32,7 +32,25 @@ from engine import (
 
 app = Flask(__name__, template_folder="templates")
 
-BINANCE_API = "https://api.binance.com"
+BINANCE_ENDPOINTS = [
+    "https://api1.binance.com",
+    "https://api2.binance.com",
+    "https://api3.binance.com",
+    "https://api4.binance.com",
+    "https://api.binance.com",
+]
+
+def _binance_get(path: str, params: dict, timeout: int = 15) -> dict:
+    headers = {"User-Agent": "StrategyArena/1.0"}
+    for base in BINANCE_ENDPOINTS:
+        try:
+            resp = requests.get(f"{base}{path}", params=params,
+                                headers=headers, timeout=timeout)
+            resp.raise_for_status()
+            return resp.json()
+        except Exception:
+            continue
+    raise RuntimeError("All Binance endpoints failed")
 
 SYMBOLS = [
     "BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT",
@@ -70,11 +88,8 @@ def _validate_interval(iv: str) -> str:
 
 
 def fetch_klines(symbol: str, interval: str, limit: int = 500) -> dict:
-    url = f"{BINANCE_API}/api/v3/klines"
     params = {"symbol": symbol, "interval": interval, "limit": limit}
-    resp = requests.get(url, params=params, timeout=15)
-    resp.raise_for_status()
-    raw = resp.json()
+    raw = _binance_get("/api/v3/klines", params)
 
     timestamps = []
     opens, highs, lows, closes, volumes = [], [], [], [], []
@@ -97,10 +112,7 @@ def fetch_klines(symbol: str, interval: str, limit: int = 500) -> dict:
 
 
 def fetch_ticker(symbol: str) -> dict:
-    url = f"{BINANCE_API}/api/v3/ticker/24hr"
-    resp = requests.get(url, params={"symbol": symbol}, timeout=10)
-    resp.raise_for_status()
-    data = resp.json()
+    data = _binance_get("/api/v3/ticker/24hr", {"symbol": symbol}, timeout=10)
     return {
         "symbol": data["symbol"],
         "price": float(data["lastPrice"]),
@@ -289,10 +301,8 @@ def get_depth():
     symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
     limit = _safe_int(request.args.get("limit", 20), 20, 5, 100)
     try:
-        url = f"{BINANCE_API}/api/v3/depth"
-        resp = requests.get(url, params={"symbol": symbol, "limit": limit}, timeout=10)
-        resp.raise_for_status()
-        return jsonify(resp.json())
+        data = _binance_get("/api/v3/depth", {"symbol": symbol, "limit": limit}, timeout=10)
+        return jsonify(data)
     except Exception:
         return jsonify({"error": "호가 조회 실패"}), 500
 
@@ -302,10 +312,8 @@ def get_recent_trades():
     symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
     limit = _safe_int(request.args.get("limit", 50), 50, 5, 100)
     try:
-        url = f"{BINANCE_API}/api/v3/trades"
-        resp = requests.get(url, params={"symbol": symbol, "limit": limit}, timeout=10)
-        resp.raise_for_status()
-        return jsonify(resp.json())
+        data = _binance_get("/api/v3/trades", {"symbol": symbol, "limit": limit}, timeout=10)
+        return jsonify(data)
     except Exception:
         return jsonify({"error": "체결 조회 실패"}), 500
 
