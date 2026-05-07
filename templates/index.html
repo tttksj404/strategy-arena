@@ -755,6 +755,16 @@ function spawnConfetti(cx,cy,count=60){const colors=['#ffd700','#ff6090','#00e67
 function animateParticles(){pCtx.clearRect(0,0,pCanvas.width,pCanvas.height);particles=particles.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15;p.life-=p.decay;if(p.life<=0)return false;pCtx.globalAlpha=p.life;pCtx.fillStyle=p.color;if(p.confetti){pCtx.save();pCtx.translate(p.x,p.y);p.rot+=p.rotSpeed;pCtx.rotate(p.rot*Math.PI/180);pCtx.fillRect(-p.size/2,-p.size/4,p.size,p.size/2);pCtx.restore()}else{pCtx.beginPath();pCtx.arc(p.x,p.y,p.size*p.life,0,Math.PI*2);pCtx.fill()}pCtx.globalAlpha=1;return true});requestAnimationFrame(animateParticles)}
 animateParticles();
 
+/* ═══════════════════════ Binance Direct API ═══════════════════════ */
+const BINANCE_API='https://api.binance.com';
+async function fetchBinanceKlines(symbol,interval,limit=500){
+  const r=await fetch(`${BINANCE_API}/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`);
+  const raw=await r.json();
+  const timestamps=[],opens=[],highs=[],lows=[],closes=[],volumes=[];
+  raw.forEach(k=>{timestamps.push(k[0]);opens.push(+k[1]);highs.push(+k[2]);lows.push(+k[3]);closes.push(+k[4]);volumes.push(+k[5])});
+  return {timestamps,open:opens,high:highs,low:lows,close:closes,volume:volumes};
+}
+
 /* ═══════════════════════ Init ═══════════════════════ */
 document.addEventListener('DOMContentLoaded',async()=>{
   await loadSymbols();await loadComponents();initChart();loadChart();fetchIndicators();updateXPDisplay();
@@ -986,7 +996,7 @@ function initChart(){
 async function loadChart(){
   currentSymbol=document.getElementById('symbol-select').value;currentInterval=document.getElementById('interval-select').value;
   const limit=parseInt(document.getElementById('set-limit').value)||500;showLoading();
-  try{const r=await fetch(`/api/klines?symbol=${currentSymbol}&interval=${currentInterval}&limit=${limit}`),data=await r.json();if(data.error)throw new Error(data.error);
+  try{const data=await fetchBinanceKlines(currentSymbol,currentInterval,limit);
     overlayLines.forEach(l=>mainChart.removeSeries(l));overlayLines=[];
     candleSeries.setData(data.timestamps.map((t,i)=>({time:Math.floor(t/1000),open:data.open[i],high:data.high[i],low:data.low[i],close:data.close[i]})));
     candleSeries.setMarkers([]);
@@ -999,7 +1009,9 @@ async function loadChart(){
 function gatherComponents(){return getPipelineComponents()}
 async function runBacktest(){
   const comps=gatherComponents();if(!comps.length){alert('컴포넌트를 추가해주세요!');return}showLoading();
-  try{const body={symbol:currentSymbol,interval:currentInterval,limit:parseInt(document.getElementById('set-limit').value)||500,components:comps,initial_equity:parseFloat(document.getElementById('set-equity').value)||10000,fee_pct:parseFloat(document.getElementById('set-fee').value)||0.075};
+  try{const limit=parseInt(document.getElementById('set-limit').value)||500;
+    const klines=await fetchBinanceKlines(currentSymbol,currentInterval,limit);
+    const body={symbol:currentSymbol,interval:currentInterval,limit,components:comps,initial_equity:parseFloat(document.getElementById('set-equity').value)||10000,fee_pct:parseFloat(document.getElementById('set-fee').value)||0.075,klines};
     const r=await fetch('/api/backtest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),data=await r.json();if(data.error)throw new Error(data.error);
     lastBacktestData=data;displayResults(data.result);displayChartOverlays(data);addXP(20);checkAchievements(data.result);saveToLeaderboard(data.result,comps);
     if(isMobile()){mobileSwitch('results')}else{switchTab('results')}
@@ -1039,7 +1051,9 @@ function displayChartOverlays(data){
 /* ═══════════════════════ Replay ═══════════════════════ */
 async function runReplay(){
   const comps=gatherComponents();if(!comps.length){alert('컴포넌트를 추가해주세요!');return}showLoading();
-  try{const body={symbol:currentSymbol,interval:currentInterval,limit:parseInt(document.getElementById('set-limit').value)||500,components:comps,initial_equity:parseFloat(document.getElementById('set-equity').value)||10000,fee_pct:parseFloat(document.getElementById('set-fee').value)||0.075};
+  try{const limit=parseInt(document.getElementById('set-limit').value)||500;
+    const klines=await fetchBinanceKlines(currentSymbol,currentInterval,limit);
+    const body={symbol:currentSymbol,interval:currentInterval,limit,components:comps,initial_equity:parseFloat(document.getElementById('set-equity').value)||10000,fee_pct:parseFloat(document.getElementById('set-fee').value)||0.075,klines};
     const r=await fetch('/api/backtest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),data=await r.json();if(data.error)throw new Error(data.error);
     lastBacktestData=data;startReplay(data);addXP(30);
   }catch(e){alert('오류: '+e.message)}hideLoading();
@@ -1085,8 +1099,10 @@ function openBattle(){if(!lastBacktestData){alert('먼저 백테스트를 실행
 function closeBattle(){document.getElementById('battle-overlay').classList.remove('show')}
 async function runBattle(){
   showLoading();
-  try{const rr=await fetch(`/api/recommend?symbol=${currentSymbol}&interval=${currentInterval}`),rd=await rr.json();if(!rd.recommendations?.length)throw new Error('추천 없음');const rec=rd.recommendations[0];
-    const body={symbol:currentSymbol,interval:currentInterval,limit:parseInt(document.getElementById('set-limit').value)||500,components:rec.components,initial_equity:parseFloat(document.getElementById('set-equity').value)||10000,fee_pct:parseFloat(document.getElementById('set-fee').value)||0.075};
+  try{const limit=parseInt(document.getElementById('set-limit').value)||500;
+    const klines=await fetchBinanceKlines(currentSymbol,currentInterval,limit);
+    const rr=await fetch('/api/recommend',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({klines})}),rd=await rr.json();if(!rd.recommendations?.length)throw new Error('추천 없음');const rec=rd.recommendations[0];
+    const body={symbol:currentSymbol,interval:currentInterval,limit,components:rec.components,initial_equity:parseFloat(document.getElementById('set-equity').value)||10000,fee_pct:parseFloat(document.getElementById('set-fee').value)||0.075,klines};
     const r=await fetch('/api/backtest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),data=await r.json();if(data.error)throw new Error(data.error);
     battleSlotB={result:data.result,name:rec.name};renderBattleResult();addXP(40);beep(440,.1);setTimeout(()=>beep(880,.15),200);
   }catch(e){alert('오류: '+e.message)}hideLoading();
@@ -1102,7 +1118,8 @@ function renderBattleResult(){
 /* ═══════════════════════ Recommendations ═══════════════════════ */
 async function loadRecommendations(){
   showLoading();
-  try{const r=await fetch(`/api/recommend?symbol=${currentSymbol}&interval=${currentInterval}`),data=await r.json();if(data.error)throw new Error(data.error);
+  try{const klines=await fetchBinanceKlines(currentSymbol,currentInterval,200);
+    const r=await fetch('/api/recommend',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({klines})}),data=await r.json();if(data.error)throw new Error(data.error);
     const recs=data.recommendations;if(!recs?.length){alert('추천 없음');hideLoading();return}
     let chosen=recs[0];if(recs.length>1){const msg=recs.map((r,i)=>`${i+1}. ${r.name}\n   ${r.reason}`).join('\n\n');const pick=prompt(`AI 추천 조합 (${recs.length}개)\n\n${msg}\n\n번호:`,  '1');if(!pick){hideLoading();return}const idx=parseInt(pick)-1;if(idx>=0&&idx<recs.length)chosen=recs[idx]}
     clearPipeline();(chosen.components||[]).forEach(comp=>{const cd=findCompDef(comp.id,comp.category);if(cd){addToPipeline({...comp,name:cd.name,params:cd.params});const last=pipeline[comp.category];if(last.length>0&&comp.params)Object.assign(last[last.length-1].params,comp.params)}});
@@ -1112,7 +1129,8 @@ async function loadRecommendations(){
 
 /* ═══════════════════════ Indicators ═══════════════════════ */
 async function fetchIndicators(){
-  try{const r=await fetch(`/api/indicators?symbol=${currentSymbol}&interval=${currentInterval}`),d=await r.json();if(d.error)return;
+  try{const klines=await fetchBinanceKlines(currentSymbol,currentInterval,200);
+    const r=await fetch('/api/indicators',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({klines})}),d=await r.json();if(d.error)return;
     const set=(id,val)=>{const el=document.getElementById(id),old=el.textContent;el.textContent=val??'-';if(old!==el.textContent)el.closest('.ind-card')?.classList.add('pulse');setTimeout(()=>el.closest('.ind-card')?.classList.remove('pulse'),500)};
     set('ind-rsi',d.rsi);set('ind-adx',d.adx);set('ind-vratio',d.volume_ratio?d.volume_ratio+'x':'-');set('ind-atr',d.atr_pct?d.atr_pct+'%':'-');
     set('ind-ema9',d.ema9?d.ema9.toLocaleString():'-');set('ind-ema21',d.ema21?d.ema21.toLocaleString():'-');set('ind-ema50',d.ema50?d.ema50.toLocaleString():'-');set('ind-boll',d.boll_pctb);
@@ -1305,8 +1323,9 @@ async function fetchLiveSignal(){
   const comps=getPipelineComponents();
   if(!comps.some(c=>c.category==='signals'))return;
   try{
+    const klines=await fetchBinanceKlines(currentSymbol,currentInterval,200);
     const r=await fetch('/api/live-signal',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({symbol:currentSymbol,interval:currentInterval,components:comps})});
+      body:JSON.stringify({symbol:currentSymbol,interval:currentInterval,components:comps,klines})});
     const d=await r.json();
     if(d.error){console.error(d.error);return}
     renderSignalResult(d);
@@ -1372,11 +1391,18 @@ async function runScanner(top10Only){
   resDiv.innerHTML='<div style="text-align:center;padding:16px;color:var(--text2);font-size:11px">스캔 중... ('+symbols.length+'개 코인)</div>';
 
   try{
-    const r=await fetch('/api/scan',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({interval:currentInterval,components:comps,symbols})});
-    const d=await r.json();
-    if(d.error){const errDiv=document.createElement('div');errDiv.style.cssText='text-align:center;color:var(--red)';errDiv.textContent=d.error;resDiv.innerHTML='';resDiv.appendChild(errDiv);return}
-    renderScanResults(d.results);
+    const results=[];
+    for(const sym of symbols){
+      try{
+        const klines=await fetchBinanceKlines(sym,currentInterval,200);
+        const r=await fetch('/api/live-signal',{method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({components:comps,klines})});
+        const sig=await r.json();sig.symbol=sym;results.push(sig);
+        resDiv.innerHTML=`<div style="text-align:center;padding:16px;color:var(--text2);font-size:11px">스캔 중... ${results.length}/${symbols.length}</div>`;
+      }catch{results.push({symbol:sym,signal:'error',signal_text:'데이터 오류',checks:[]})}
+    }
+    results.sort((a,b)=>(a.signal==='buy'||a.signal==='sell'?0:1)-(b.signal==='buy'||b.signal==='sell'?0:1));
+    renderScanResults(results);
   }catch(e){resDiv.innerHTML='<div style="text-align:center;color:var(--red)">스캔 실패</div>'}
 }
 

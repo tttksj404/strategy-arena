@@ -1,10 +1,11 @@
 """Strategy Builder — Flask backend.
 
 Serves the drag-and-drop strategy builder UI.
-Fetches Binance kline data, runs backtests, streams real-time prices.
+Compute-only backend: browser fetches Binance data directly,
+sends it here for backtest/indicator/signal computation.
 
 Usage:
-    pip install flask numpy requests
+    pip install flask numpy
     python scripts/strategy_builder/app.py
 
 Then open http://localhost:5555 in your browser.
@@ -15,12 +16,9 @@ from __future__ import annotations
 import json
 import os
 import sys
-import time
-import threading
 from pathlib import Path
 
 import numpy as np
-import requests
 from flask import Flask, render_template, request, jsonify, Response
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -31,26 +29,6 @@ from engine import (
 )
 
 app = Flask(__name__, template_folder="templates")
-
-BINANCE_ENDPOINTS = [
-    "https://api1.binance.com",
-    "https://api2.binance.com",
-    "https://api3.binance.com",
-    "https://api4.binance.com",
-    "https://api.binance.com",
-]
-
-def _binance_get(path: str, params: dict, timeout: int = 15) -> dict:
-    headers = {"User-Agent": "StrategyArena/1.0"}
-    for base in BINANCE_ENDPOINTS:
-        try:
-            resp = requests.get(f"{base}{path}", params=params,
-                                headers=headers, timeout=timeout)
-            resp.raise_for_status()
-            return resp.json()
-        except Exception:
-            continue
-    raise RuntimeError("All Binance endpoints failed")
 
 SYMBOLS = [
     "BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT",
@@ -78,48 +56,24 @@ def _safe_int(val, default: int, lo: int = 1, hi: int = 1000) -> int:
         return default
 
 
-def _validate_symbol(sym: str) -> str:
-    sym = str(sym).upper().strip()
-    return sym if sym in SYMBOLS else "BTCUSDT"
-
-
 def _validate_interval(iv: str) -> str:
     return iv if iv in VALID_INTERVALS else "1h"
 
 
-def fetch_klines(symbol: str, interval: str, limit: int = 500) -> dict:
-    params = {"symbol": symbol, "interval": interval, "limit": limit}
-    raw = _binance_get("/api/v3/klines", params)
-
-    timestamps = []
-    opens, highs, lows, closes, volumes = [], [], [], [], []
-    for k in raw:
-        timestamps.append(k[0])
-        opens.append(float(k[1]))
-        highs.append(float(k[2]))
-        lows.append(float(k[3]))
-        closes.append(float(k[4]))
-        volumes.append(float(k[5]))
-
+def _extract_klines(body: dict) -> dict:
+    klines = body.get("klines")
+    if not klines or not isinstance(klines, dict):
+        return None
+    required = ["timestamps", "open", "high", "low", "close", "volume"]
+    if not all(k in klines and isinstance(klines[k], list) and len(klines[k]) > 0 for k in required):
+        return None
     return {
-        "timestamps": timestamps,
-        "open": opens,
-        "high": highs,
-        "low": lows,
-        "close": closes,
-        "volume": volumes,
-    }
-
-
-def fetch_ticker(symbol: str) -> dict:
-    data = _binance_get("/api/v3/ticker/24hr", {"symbol": symbol}, timeout=10)
-    return {
-        "symbol": data["symbol"],
-        "price": float(data["lastPrice"]),
-        "change_pct": float(data["priceChangePercent"]),
-        "volume": float(data["quoteVolume"]),
-        "high": float(data["highPrice"]),
-        "low": float(data["lowPrice"]),
+        "timestamps": klines["timestamps"],
+        "open": [float(v) for v in klines["open"]],
+        "high": [float(v) for v in klines["high"]],
+        "low": [float(v) for v in klines["low"]],
+        "close": [float(v) for v in klines["close"]],
+        "volume": [float(v) for v in klines["volume"]],
     }
 
 
@@ -190,34 +144,13 @@ def get_symbols():
     return jsonify({"symbols": SYMBOLS, "intervals": INTERVALS})
 
 
-@app.route("/api/klines")
-def get_klines():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-    interval = _validate_interval(request.args.get("interval", "1h"))
-    limit = _safe_int(request.args.get("limit", 500), 500, 10, 1000)
-    try:
-        data = fetch_klines(symbol, interval, limit)
-        return jsonify(data)
-    except Exception:
-        return jsonify({"error": "데이터 조회 실패"}), 500
-
-
-@app.route("/api/ticker")
-def get_ticker():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-    try:
-        data = fetch_ticker(symbol)
-        return jsonify(data)
-    except Exception:
-        return jsonify({"error": "시세 조회 실패"}), 500
-
-
-@app.route("/api/indicators")
+@app.route("/api/indicators", methods=["POST"])
 def get_indicators():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-    interval = _validate_interval(request.args.get("interval", "1h"))
+    body = request.get_json(force=True, silent=True) or {}
+    data = _extract_klines(body)
+    if not data:
+        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
     try:
-        data = fetch_klines(symbol, interval, 200)
         close = np.array(data["close"])
         high = np.array(data["high"])
         low = np.array(data["low"])
@@ -225,15 +158,13 @@ def get_indicators():
         indicators = compute_realtime_indicators(close, high, low, volume)
         return jsonify(indicators)
     except Exception:
-        return jsonify({"error": "지표 조회 실패"}), 500
+        return jsonify({"error": "지표 계산 실패"}), 500
 
 
 @app.route("/api/backtest", methods=["POST"])
 def run_backtest_api():
     body = request.get_json(force=True, silent=True) or {}
-    symbol = _validate_symbol(body.get("symbol", "BTCUSDT"))
     interval = _validate_interval(body.get("interval", "1h"))
-    limit = _safe_int(body.get("limit", 500), 500, 50, 1000)
     components = body.get("components", [])
     initial_equity = max(100, min(float(body.get("initial_equity", 10000)), 1e8))
     fee_pct = max(0, min(float(body.get("fee_pct", 0.075)), 1.0))
@@ -241,8 +172,11 @@ def run_backtest_api():
     if not components:
         return jsonify({"error": "컴포넌트를 추가해주세요"}), 400
 
+    data = _extract_klines(body)
+    if not data:
+        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
+
     try:
-        data = fetch_klines(symbol, interval, limit)
         close = np.array(data["close"])
         high = np.array(data["high"])
         low = np.array(data["low"])
@@ -262,12 +196,13 @@ def run_backtest_api():
         return jsonify({"error": "백테스트 실행 실패"}), 500
 
 
-@app.route("/api/recommend")
+@app.route("/api/recommend", methods=["POST"])
 def get_recommendations():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-    interval = _validate_interval(request.args.get("interval", "1h"))
+    body = request.get_json(force=True, silent=True) or {}
+    data = _extract_klines(body)
+    if not data:
+        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
     try:
-        data = fetch_klines(symbol, interval, 200)
         close = np.array(data["close"])
         high = np.array(data["high"])
         low = np.array(data["low"])
@@ -279,57 +214,19 @@ def get_recommendations():
         return jsonify({"error": "추천 조회 실패"}), 500
 
 
-@app.route("/api/realtime-stream")
-def realtime_stream():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-
-    def generate():
-        for _ in range(600):
-            try:
-                ticker = fetch_ticker(symbol)
-                yield f"data: {json.dumps(ticker)}\n\n"
-            except Exception:
-                yield f"data: {json.dumps({'error': 'fetch failed'})}\n\n"
-            time.sleep(3)
-
-    return Response(generate(), mimetype="text/event-stream",
-                    headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
-
-
-@app.route("/api/depth")
-def get_depth():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-    limit = _safe_int(request.args.get("limit", 20), 20, 5, 100)
-    try:
-        data = _binance_get("/api/v3/depth", {"symbol": symbol, "limit": limit}, timeout=10)
-        return jsonify(data)
-    except Exception:
-        return jsonify({"error": "호가 조회 실패"}), 500
-
-
-@app.route("/api/trades")
-def get_recent_trades():
-    symbol = _validate_symbol(request.args.get("symbol", "BTCUSDT"))
-    limit = _safe_int(request.args.get("limit", 50), 50, 5, 100)
-    try:
-        data = _binance_get("/api/v3/trades", {"symbol": symbol, "limit": limit}, timeout=10)
-        return jsonify(data)
-    except Exception:
-        return jsonify({"error": "체결 조회 실패"}), 500
-
-
 @app.route("/api/live-signal", methods=["POST"])
 def live_signal():
     body = request.get_json(force=True, silent=True) or {}
-    symbol = _validate_symbol(body.get("symbol", "BTCUSDT"))
-    interval = _validate_interval(body.get("interval", "1h"))
     components = body.get("components", [])
 
     if not components:
         return jsonify({"error": "컴포넌트를 추가해주세요"}), 400
 
+    data = _extract_klines(body)
+    if not data:
+        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
+
     try:
-        data = fetch_klines(symbol, interval, 200)
         close = np.array(data["close"])
         high = np.array(data["high"])
         low = np.array(data["low"])
@@ -340,37 +237,6 @@ def live_signal():
         return jsonify(result)
     except Exception:
         return jsonify({"error": "신호 분석 실패"}), 500
-
-
-@app.route("/api/scan", methods=["POST"])
-def scan_symbols():
-    body = request.get_json(force=True, silent=True) or {}
-    interval = _validate_interval(body.get("interval", "1h"))
-    components = body.get("components", [])
-    raw_symbols = body.get("symbols", SYMBOLS[:10])
-    symbols = [s for s in raw_symbols if s in SYMBOLS][:20]
-
-    if not components:
-        return jsonify({"error": "컴포넌트를 추가해주세요"}), 400
-
-    results = []
-    for sym in symbols:
-        try:
-            data = fetch_klines(sym, interval, 200)
-            close = np.array(data["close"])
-            high = np.array(data["high"])
-            low = np.array(data["low"])
-            volume = np.array(data["volume"])
-            timestamps = np.array(data["timestamps"])
-
-            sig = evaluate_live_signal(close, high, low, volume, timestamps, components)
-            sig["symbol"] = sym
-            results.append(sig)
-        except Exception:
-            results.append({"symbol": sym, "signal": "error", "signal_text": "데이터 오류", "checks": []})
-
-    results.sort(key=lambda x: (0 if x["signal"] in ("buy", "sell") else 1))
-    return jsonify({"results": results})
 
 
 @app.route("/sw.js")
