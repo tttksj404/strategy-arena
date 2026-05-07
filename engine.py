@@ -78,7 +78,7 @@ def bollinger(close: np.ndarray, period: int = 20, std_mult: float = 2.0):
     mid = sma(close, period)
     std = np.full_like(close, np.nan)
     for i in range(period - 1, len(close)):
-        std[i] = np.std(close[i - period + 1:i + 1])
+        std[i] = np.std(close[i - period + 1:i + 1], ddof=1)
     upper = mid + std_mult * std
     lower = mid - std_mult * std
     pct_b = np.where(upper != lower, (close - lower) / (upper - lower), 0.5)
@@ -715,6 +715,8 @@ class BacktestResult:
     avg_hold_bars: float = 0.0
     initial_equity: float = 0.0
     final_equity: float = 0.0
+    slippage_pct: float = 0.0
+    warnings: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -728,6 +730,8 @@ class BacktestResult:
             "avg_hold_bars": round(self.avg_hold_bars, 1),
             "initial_equity": self.initial_equity,
             "final_equity": round(self.final_equity, 2),
+            "slippage_pct": self.slippage_pct,
+            "warnings": self.warnings,
             "equity_curve": [round(e, 2) for e in self.equity_curve[::max(1, len(self.equity_curve) // 500)]],
             "trades": [
                 {
@@ -753,9 +757,11 @@ INTERVAL_ANNUAL = {
 
 def run_backtest(close: np.ndarray, high: np.ndarray, low: np.ndarray,
                  volume: np.ndarray, timestamps: np.ndarray,
+                 open_prices: np.ndarray,
                  components: list[dict],
                  initial_equity: float = 10000.0,
                  fee_pct: float = 0.075,
+                 slippage_pct: float = 0.05,
                  interval: str = "1h") -> BacktestResult:
     n = len(close)
     signals = generate_signals(close, high, low, volume, timestamps, components)
@@ -819,108 +825,138 @@ def run_backtest(close: np.ndarray, high: np.ndarray, low: np.ndarray,
     equity_curve = [equity]
     trades: list[Trade] = []
     position: Trade | None = None
+    pending_signal = 0
+
+    def _close_position(pos, raw_exit_price, reason_str, bar_idx):
+        nonlocal equity
+        ex_price = raw_exit_price * (1 - pos.side * slippage_pct / 100)
+        gross_pnl = pos.side * (ex_price - pos.entry_price) / pos.entry_price * pos.size_usd
+        entry_fee = pos.size_usd * fee_pct / 100
+        exit_notional = pos.size_usd * abs(ex_price / pos.entry_price)
+        exit_fee = exit_notional * fee_pct / 100
+        pnl_usd = gross_pnl - entry_fee - exit_fee
+        pos.exit_idx = bar_idx
+        pos.exit_price = round(ex_price, 8)
+        pos.pnl_pct = pnl_usd / pos.size_usd * 100 * leverage if pos.size_usd > 0 else 0
+        pos.pnl_usd = pnl_usd
+        pos.exit_reason = reason_str
+        pos.exit_time = int(timestamps[bar_idx]) if bar_idx < len(timestamps) else 0
+        trades.append(pos)
+        equity += pnl_usd
 
     for i in range(1, n):
+        # === PHASE 1: Execute pending signal at this bar's open ===
+        if pending_signal != 0:
+            if position is not None and pending_signal != position.side:
+                _close_position(position, open_prices[i], "반대 시그널", i)
+                position = None
+
+            if equity > peak_equity:
+                peak_equity = equity
+            current_dd = (peak_equity - equity) / peak_equity * 100 if peak_equity > 0 else 0
+
+            if position is None and equity > 0 and current_dd < dd_breaker_pct:
+                side = pending_signal
+                entry_price = open_prices[i] * (1 + side * slippage_pct / 100)
+
+                if use_atr_stop and atr_vals is not None and not np.isnan(atr_vals[i]):
+                    stop_dist = atr_vals[i] * atr_stop_mult
+                else:
+                    stop_dist = entry_price * fixed_stop_pct / 100
+
+                stop_price = max(0.0001, entry_price - side * stop_dist)
+                tp_dist = stop_dist * rr_ratio
+                tp_price = max(0.0001, entry_price + side * tp_dist)
+
+                risk_usd = equity * risk_pct / 100
+                stop_pct_val = abs(stop_dist / entry_price)
+                if stop_pct_val > 0:
+                    size_usd = min(risk_usd / stop_pct_val, equity * max_pos_pct / 100) * leverage
+                else:
+                    size_usd = equity * risk_pct / 100 * leverage
+
+                position = Trade(
+                    entry_idx=i, entry_price=entry_price, side=side,
+                    size_usd=size_usd, stop_price=stop_price, tp_price=tp_price,
+                    entry_time=int(timestamps[i]) if i < len(timestamps) else 0,
+                )
+
+            pending_signal = 0
+
+        # === PHASE 2: Intra-bar exit checks ===
         if position is not None:
             pnl_mult = position.side * (close[i] - position.entry_price) / position.entry_price
-            current_pnl_pct = pnl_mult * 100 * leverage
 
-            hit_stop = (position.side == 1 and low[i] <= position.stop_price) or \
-                       (position.side == -1 and high[i] >= position.stop_price)
-            hit_tp = (position.side == 1 and high[i] >= position.tp_price) or \
-                     (position.side == -1 and low[i] <= position.tp_price)
-            hit_max_hold = (i - position.entry_idx) >= max_hold
-            opposite_signal = signals[i] != 0 and signals[i] != position.side
-
-            if use_breakeven and not hit_stop:
+            if use_breakeven:
                 if pnl_mult * 100 >= breakeven_trigger:
                     if position.side == 1 and position.stop_price < position.entry_price:
                         position.stop_price = position.entry_price
                     elif position.side == -1 and position.stop_price > position.entry_price:
                         position.stop_price = position.entry_price
 
-            if use_trailing and not hit_stop:
+            if use_trailing:
                 if position.side == 1:
                     new_stop = high[i] * (1 - trail_pct / 100)
                     if pnl_mult * 100 >= trail_activation and new_stop > position.stop_price:
                         position.stop_price = new_stop
-                        hit_stop = low[i] <= position.stop_price
                 else:
                     new_stop = low[i] * (1 + trail_pct / 100)
                     if pnl_mult * 100 >= trail_activation and new_stop < position.stop_price:
                         position.stop_price = new_stop
-                        hit_stop = high[i] >= position.stop_price
 
-            if hit_stop or hit_tp or hit_max_hold or opposite_signal:
-                if hit_stop:
+            gap_stop = (position.side == 1 and open_prices[i] <= position.stop_price) or \
+                       (position.side == -1 and open_prices[i] >= position.stop_price)
+            gap_tp = (position.side == 1 and open_prices[i] >= position.tp_price) or \
+                     (position.side == -1 and open_prices[i] <= position.tp_price)
+            hit_stop = (position.side == 1 and low[i] <= position.stop_price) or \
+                       (position.side == -1 and high[i] >= position.stop_price)
+            hit_tp = (position.side == 1 and high[i] >= position.tp_price) or \
+                     (position.side == -1 and low[i] <= position.tp_price)
+            hit_max_hold = (i - position.entry_idx) >= max_hold
+
+            exit_price = None
+            reason = ""
+
+            if gap_stop or gap_tp:
+                exit_price = open_prices[i]
+                reason = "갭 손절" if gap_stop else "갭 익절"
+            elif hit_stop and hit_tp:
+                stop_dist_from_open = abs(open_prices[i] - position.stop_price)
+                tp_dist_from_open = abs(open_prices[i] - position.tp_price)
+                if stop_dist_from_open <= tp_dist_from_open:
                     exit_price = position.stop_price
                     reason = "손절"
-                elif hit_tp:
+                else:
                     exit_price = position.tp_price
                     reason = "익절"
-                elif hit_max_hold:
-                    exit_price = close[i]
-                    reason = "시간초과"
-                else:
-                    exit_price = close[i]
-                    reason = "반대 시그널"
+            elif hit_stop:
+                exit_price = position.stop_price
+                reason = "손절"
+            elif hit_tp:
+                exit_price = position.tp_price
+                reason = "익절"
+            elif hit_max_hold:
+                exit_price = close[i]
+                reason = "시간초과"
 
-                raw_pnl = position.side * (exit_price - position.entry_price) / position.entry_price
-                net_pnl_pct = raw_pnl * 100 - fee_pct * 2
-                pnl_usd = position.size_usd * net_pnl_pct / 100
-
-                position.exit_idx = i
-                position.exit_price = exit_price
-                position.pnl_pct = net_pnl_pct * leverage
-                position.pnl_usd = pnl_usd
-                position.exit_reason = reason
-                position.exit_time = int(timestamps[i]) if i < len(timestamps) else 0
-                trades.append(position)
-                equity += pnl_usd
+            if exit_price is not None:
+                _close_position(position, exit_price, reason, i)
                 position = None
 
+        # === PHASE 3: Equity tracking ===
         if equity > peak_equity:
             peak_equity = equity
         current_dd = (peak_equity - equity) / peak_equity * 100 if peak_equity > 0 else 0
 
-        if position is None and signals[i] != 0 and equity > 0 and current_dd < dd_breaker_pct:
-            side = int(signals[i])
-            if use_atr_stop and atr_vals is not None and not np.isnan(atr_vals[i]):
-                stop_dist = atr_vals[i] * atr_stop_mult
-            else:
-                stop_dist = close[i] * fixed_stop_pct / 100
-
-            stop_price = max(0.0001, close[i] - side * stop_dist)
-            tp_dist = stop_dist * rr_ratio
-            tp_price = max(0.0001, close[i] + side * tp_dist)
-
-            risk_usd = equity * risk_pct / 100
-            stop_pct = abs(stop_dist / close[i])
-            if stop_pct > 0:
-                size_usd = min(risk_usd / stop_pct, equity * max_pos_pct / 100) * leverage
-            else:
-                size_usd = equity * risk_pct / 100 * leverage
-
-            position = Trade(
-                entry_idx=i, entry_price=close[i], side=side,
-                size_usd=size_usd, stop_price=stop_price, tp_price=tp_price,
-                entry_time=int(timestamps[i]) if i < len(timestamps) else 0,
-            )
+        # === PHASE 4: Queue signal for next bar ===
+        if signals[i] != 0 and equity > 0 and current_dd < dd_breaker_pct:
+            if position is None or signals[i] != position.side:
+                pending_signal = int(signals[i])
 
         equity_curve.append(equity)
 
     if position is not None:
-        raw_pnl = position.side * (close[-1] - position.entry_price) / position.entry_price
-        net_pnl_pct = raw_pnl * 100 - fee_pct * 2
-        pnl_usd = position.size_usd * net_pnl_pct / 100
-        position.exit_idx = n - 1
-        position.exit_price = close[-1]
-        position.pnl_pct = net_pnl_pct * leverage
-        position.pnl_usd = pnl_usd
-        position.exit_reason = "종료"
-        position.exit_time = int(timestamps[-1]) if len(timestamps) > 0 else 0
-        trades.append(position)
-        equity += pnl_usd
+        _close_position(position, close[-1], "종료", n - 1)
         equity_curve.append(equity)
 
     result = BacktestResult(
@@ -928,7 +964,13 @@ def run_backtest(close: np.ndarray, high: np.ndarray, low: np.ndarray,
         equity_curve=equity_curve,
         initial_equity=initial_equity,
         final_equity=equity,
+        slippage_pct=slippage_pct,
     )
+
+    if len(trades) < 30:
+        result.warnings.append(f"거래 {len(trades)}건 — 최소 30건 이상이어야 통계적으로 유의미합니다")
+    if len(trades) < 10:
+        result.warnings.append("거래 10건 미만 — 결과를 신뢰할 수 없습니다. 더 긴 기간으로 테스트하세요")
 
     if trades:
         result.total_trades = len(trades)

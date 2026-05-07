@@ -168,6 +168,7 @@ def run_backtest_api():
     components = body.get("components", [])
     initial_equity = max(100, min(float(body.get("initial_equity", 10000)), 1e8))
     fee_pct = max(0, min(float(body.get("fee_pct", 0.075)), 1.0))
+    slippage_pct = max(0, min(float(body.get("slippage_pct", 0.05)), 1.0))
 
     if not components:
         return jsonify({"error": "컴포넌트를 추가해주세요"}), 400
@@ -182,10 +183,11 @@ def run_backtest_api():
         low = np.array(data["low"])
         volume = np.array(data["volume"])
         timestamps = np.array(data["timestamps"])
+        open_prices = np.array(data["open"])
 
         chart_indicators = compute_indicators(close, high, low, volume, components)
-        result = run_backtest(close, high, low, volume, timestamps,
-                              components, initial_equity, fee_pct, interval)
+        result = run_backtest(close, high, low, volume, timestamps, open_prices,
+                              components, initial_equity, fee_pct, slippage_pct, interval)
 
         return jsonify({
             "result": result.to_dict(),
