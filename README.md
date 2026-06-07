@@ -22,6 +22,8 @@ Strategy Arena maps well to requirements seen in financial IT, digital banking, 
 | `templates/` | Browser-facing UI templates |
 | `START_HERE.txt` | Local usage guide |
 
+For a project-specific interaction map that follows a strategy idea from UI input through the simulation engine, metrics, and risk-aware interpretation, see [docs/LEARNING_GUIDE.md](docs/LEARNING_GUIDE.md).
+
 ## Why This Matters for Hiring
 
 Companies hiring for digital finance and data roles usually look for more than model usage. They expect candidates to understand data quality, reproducible evaluation, system boundaries, and business risk. This project is meant to demonstrate that habit:
@@ -45,4 +47,3 @@ Then open the local URL printed by the app.
 - Backtest output is for experiment and education only.
 - It does not execute live orders.
 - Real deployment would require market-data quality controls, transaction-cost modeling, compliance review, monitoring, and strict capital-risk guardrails.
-
