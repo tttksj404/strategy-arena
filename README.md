@@ -1,49 +1,27 @@
-# Strategy Arena
+# 경륜·경마 7권종 예측 (Race Predictor)
 
-Quant strategy builder and backtester for financial data experiments.
+data.go.kr 실시간 출주표 + 보정(isotonic) GBM 모델로 **경륜(광명)·경마(서울/제주/부경)** 의 7권종(단승·연승·복승·쌍승·삼복·쌍복·삼쌍) **최고확률 픽**을 예측하는 Flask 웹앱.
 
-This repository is organized as a portfolio project for finance-domain data analysis, backtesting, and risk-aware validation. It is not positioned as a live trading system. The main goal is to show how a strategy idea can be represented, tested, compared, and explained before any real capital decision.
+## ⚠️ 정직 고지
+**적중률(예측) 도구이지 수익 도구가 아니다.** 전 권종 OOS 백테스트(경륜 N=9,558·경마 6,115경주)에서 마감배당 시장은 효율적 — 공제(20~27%) 때문에 **평균 −EV**가 확정됐다. 모델은 확률을 잘 추정하지만 *수익*은 보장하지 않는다. 도박중독 주의·책임베팅·만 19세 이상.
 
-## Portfolio Positioning
+## 검증된 예측력 (적중률)
+- 경륜: 단승 top-1 ~60%, 연대(top2) ~77% (무작위 14%/45% 대비)
+- 경마: 입상 예측 강함 (연승 demo 5/5), 단승은 시장인기마 동급
 
-Strategy Arena maps well to requirements seen in financial IT, digital banking, data analysis, and AI/quant-adjacent roles:
-
-- **Python data workflow**: strategy rules, simulation logic, and result calculations.
-- **Financial domain understanding**: signals, positions, returns, and backtest interpretation.
-- **Risk-aware validation**: separates experiment results from real trading claims.
-- **User-facing product design**: exposes strategy composition and results through a simple web interface.
-
-## Core Components
-
-| File | Role |
-| --- | --- |
-| `app.py` | Web app entrypoint and route layer |
-| `engine.py` | Strategy construction, simulation, and backtest logic |
-| `templates/` | Browser-facing UI templates |
-| `START_HERE.txt` | Local usage guide |
-
-For a project-specific interaction map that follows a strategy idea from UI input through the simulation engine, metrics, and risk-aware interpretation, see [docs/LEARNING_GUIDE.md](docs/LEARNING_GUIDE.md).
-
-## Why This Matters for Hiring
-
-Companies hiring for digital finance and data roles usually look for more than model usage. They expect candidates to understand data quality, reproducible evaluation, system boundaries, and business risk. This project is meant to demonstrate that habit:
-
-1. Define a strategy idea as data and rules.
-2. Run a reproducible simulation.
-3. Compare outcomes with clear assumptions.
-4. Treat results as evidence for review, not as investment advice.
-
-## Run
-
+## 실행
 ```bash
-python -m pip install -r requirements.txt
-python app.py
+pip install -r requirements.txt
+export DATAGOKR_SERVICE_KEY="<data.go.kr 인증키>"   # 미설정 시 데모 폴백
+gunicorn app:app --bind 0.0.0.0:$PORT
 ```
+종목·날짜·경주장·경주번호 선택 → 출주표 실시간 fetch → 7권종 예측 픽 + 마번별 win·연대 확률.
 
-Then open the local URL printed by the app.
+## 배포 (Render)
+`render.yaml`(gunicorn app:app) 자동배포. **Render → Environment 에 `DATAGOKR_SERVICE_KEY` 설정 필수**(실시간 데이터용; 미설정 시 데모만).
 
-## Limitations
+## 제약
+- 경륜 = 광명만 (출주표 API가 광명만 제공). 경마 = 서울·제주·부경.
+- 모델 학습 범위: 경마 2024–2026. 모델 파일 `static/models/`.
 
-- Backtest output is for experiment and education only.
-- It does not execute live orders.
-- Real deployment would require market-data quality controls, transaction-cost modeling, compliance review, monitoring, and strict capital-risk guardrails.
+상세: `DEPLOY_NOTES.md`. 연구 전말: github.com/tttksj404/keirin-ev, kra-ev.

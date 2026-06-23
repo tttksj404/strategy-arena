@@ -1,257 +1,241 @@
-"""Strategy Builder — Flask backend.
-
-Serves the drag-and-drop strategy builder UI.
-Compute-only backend: browser fetches Binance data directly,
-sends it here for backtest/indicator/signal computation.
-
-Usage:
-    pip install flask numpy
-    python scripts/strategy_builder/app.py
-
-Then open http://localhost:5555 in your browser.
+# -*- coding: utf-8 -*-
 """
+strategy-arena — 경륜/경마 7권종 적중률 예측 Flask 앱 (Render 배포용)
+====================================================================
+gunicorn app:app 구조. 전역 `app`.
 
-from __future__ import annotations
+라우트
+  /         폼(종목·날짜·경주장·경주번호)
+  /predict  POST/GET — 출주표 실시간 fetch → 모델 채점 → 7권종 픽
 
-import json
+정직 고지(상시 노출)
+  예측(적중률) 보조 도구. 평균 -EV(검증완료) · 수익 보장 아님.
+  도박중독 주의 · 책임베팅 · 만 19세 이상.
+
+키 처리
+  DATAGOKR_SERVICE_KEY 는 os.environ 으로만 읽는다. 코드/커밋에 키 없음.
+  키 없으면 데모(과거 1경주 캐시)로 폴백.
+"""
 import os
-import sys
-from pathlib import Path
+import datetime as dt
 
-import numpy as np
-from flask import Flask, render_template, request, jsonify, Response
+from flask import Flask, request, render_template
 
-sys.path.insert(0, str(Path(__file__).parent))
-from engine import (
-    COMPONENTS, run_backtest, compute_indicators, recommend_components,
-    evaluate_live_signal,
-    ema, rsi, adx, volume_ratio, bollinger, atr,
-)
+import engine
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(__name__)
 
-SYMBOLS = [
-    "BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT",
-    "DOGEUSDT", "ADAUSDT", "AVAXUSDT", "DOTUSDT", "LINKUSDT",
-    "LTCUSDT", "MATICUSDT", "NEARUSDT", "UNIUSDT", "OPUSDT",
-    "ARBUSDT", "APTUSDT", "PEPEUSDT", "SUIUSDT", "WIFUSDT",
-]
+DISCLAIMER = ("예측(적중률) 도구입니다. 평균 −EV(검증 완료) · 수익을 보장하지 않습니다. "
+              "도박 중독 주의 · 책임 베팅 · 만 19세 이상.")
 
-VALID_INTERVALS = {"1m", "5m", "15m", "1h", "4h", "1d"}
-
-INTERVALS = [
-    {"value": "1m", "label": "1분"},
-    {"value": "5m", "label": "5분"},
-    {"value": "15m", "label": "15분"},
-    {"value": "1h", "label": "1시간"},
-    {"value": "4h", "label": "4시간"},
-    {"value": "1d", "label": "1일"},
-]
+KEIRIN_MEETS = engine.KEIRIN_MEETS  # ['광명']
+KRA_MEETS = engine.KRA_MEETS        # ['서울','제주','부경']
 
 
-def _safe_int(val, default: int, lo: int = 1, hi: int = 1000) -> int:
-    try:
-        return max(lo, min(int(val), hi))
-    except (ValueError, TypeError):
-        return default
+def _has_key():
+    return bool(os.environ.get("DATAGOKR_SERVICE_KEY"))
 
-
-def _validate_interval(iv: str) -> str:
-    return iv if iv in VALID_INTERVALS else "1h"
-
-
-def _extract_klines(body: dict) -> dict:
-    klines = body.get("klines")
-    if not klines or not isinstance(klines, dict):
-        return None
-    required = ["timestamps", "open", "high", "low", "close", "volume"]
-    if not all(k in klines and isinstance(klines[k], list) and len(klines[k]) > 0 for k in required):
-        return None
-    return {
-        "timestamps": klines["timestamps"],
-        "open": [float(v) for v in klines["open"]],
-        "high": [float(v) for v in klines["high"]],
-        "low": [float(v) for v in klines["low"]],
-        "close": [float(v) for v in klines["close"]],
-        "volume": [float(v) for v in klines["volume"]],
-    }
-
-
-def compute_realtime_indicators(close, high, low, volume):
-    rsi_vals = rsi(close, 14)
-    adx_vals = adx(high, low, close, 14)
-    vratio = volume_ratio(volume, 20)
-    atr_vals = atr(high, low, close, 14)
-    ema9 = ema(close, 9)
-    ema21 = ema(close, 21)
-    ema50 = ema(close, 50)
-    _, _, _, pct_b = bollinger(close, 20, 2.0)
-
-    def last(arr):
-        v = arr[-1] if len(arr) > 0 else None
-        return None if (v is not None and np.isnan(v)) else (round(float(v), 2) if v is not None else None)
-
-    trend = "상승" if (ema9[-1] > ema21[-1] > ema50[-1] and not any(np.isnan([ema9[-1], ema21[-1], ema50[-1]]))) else \
-            "하락" if (ema9[-1] < ema21[-1] < ema50[-1] and not any(np.isnan([ema9[-1], ema21[-1], ema50[-1]]))) else "횡보"
-
-    return {
-        "rsi": last(rsi_vals),
-        "adx": last(adx_vals),
-        "volume_ratio": last(vratio),
-        "atr": last(atr_vals),
-        "atr_pct": round(float(atr_vals[-1] / close[-1] * 100), 3) if not np.isnan(atr_vals[-1]) and close[-1] > 0 else None,
-        "ema9": last(ema9),
-        "ema21": last(ema21),
-        "ema50": last(ema50),
-        "boll_pctb": last(pct_b),
-        "trend": trend,
-        "price": round(float(close[-1]), 4),
-    }
-
-
-# ─── Routes ───
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    today = dt.date.today().isoformat()
+    return render_template(
+        "index.html",
+        disclaimer=DISCLAIMER,
+        keirin_meets=KEIRIN_MEETS,
+        kra_meets=KRA_MEETS,
+        today=today,
+        has_key=_has_key(),
+        result=None,
+    )
 
 
-@app.route("/manifest.json")
-def manifest():
-    m = {
-        "name": "Strategy Arena",
-        "short_name": "StratArena",
-        "description": "퀀트 전략 빌더 & 백테스터",
-        "start_url": "/",
-        "display": "standalone",
-        "background_color": "#0a0c14",
-        "theme_color": "#0a0c14",
-        "orientation": "portrait",
-        "icons": [
-            {"src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔</text></svg>", "sizes": "any", "type": "image/svg+xml"}
-        ],
-    }
-    return jsonify(m)
+@app.route("/predict", methods=["GET", "POST"])
+def predict():
+    f = request.values  # GET·POST 모두 수용
+    sport = (f.get("sport") or "keirin").strip()
+    ymd = (f.get("date") or "").strip()
+    meet = (f.get("meet") or "광명").strip()
+    race_no = (f.get("race_no") or "1").strip()
+    today = dt.date.today().isoformat()
 
+    base = dict(
+        disclaimer=DISCLAIMER,
+        keirin_meets=KEIRIN_MEETS,
+        kra_meets=KRA_MEETS,
+        today=today,
+        has_key=_has_key(),
+        sport=sport, date=ymd, meet=meet, race_no=race_no,
+    )
 
-@app.route("/api/components")
-def get_components():
-    return jsonify(COMPONENTS)
+    # ── 경마(KRA) ──
+    if sport == "horse":
+        return _predict_horse(ymd, meet, race_no, base)
 
+    # ── 경륜 ──
+    starters = None
+    info = {}
+    src = "live"
+    key = os.environ.get("DATAGOKR_SERVICE_KEY")
 
-@app.route("/api/symbols")
-def get_symbols():
-    return jsonify({"symbols": SYMBOLS, "intervals": INTERVALS})
+    if not key:
+        # 키 없음 → 데모 캐시 폴백
+        demo = engine.load_demo_race()
+        if not demo:
+            return render_template(
+                "index.html",
+                result={"kind": "error",
+                        "title": "DATAGOKR_SERVICE_KEY 미설정",
+                        "message": ("실시간 출주표를 받으려면 Render 환경변수 "
+                                    "DATAGOKR_SERVICE_KEY 를 설정해야 합니다. "
+                                    "데모 캐시도 사용할 수 없습니다.")},
+                **base)
+        starters = demo["items"]
+        src = "demo"
+        info = {"stnd_yr": demo.get("stnd_yr"), "ymd": demo.get("race_ymd"),
+                "meet": demo.get("meet_nm"), "race_no": demo.get("race_no"),
+                "actual": demo.get("actual")}
+    else:
+        if not ymd:
+            return render_template(
+                "index.html",
+                result={"kind": "error", "title": "입력 오류",
+                        "message": "날짜를 입력하세요."},
+                **base)
+        stnd_yr = engine.norm_ymd(ymd)[:4]
+        starters, err = engine.fetch_race_card(stnd_yr, ymd, meet, race_no, key)
+        if err:
+            # 실시간 실패 → 데모 폴백(앱 안 죽음)
+            demo = engine.load_demo_race()
+            if demo:
+                starters = demo["items"]
+                src = "demo"
+                info = {"stnd_yr": demo.get("stnd_yr"), "ymd": demo.get("race_ymd"),
+                        "meet": demo.get("meet_nm"), "race_no": demo.get("race_no"),
+                        "actual": demo.get("actual"), "fetch_err": err}
+            else:
+                return render_template(
+                    "index.html",
+                    result={"kind": "error", "title": "출주표 조회 실패",
+                            "message": err},
+                    **base)
+        else:
+            info = {"stnd_yr": stnd_yr, "ymd": engine.norm_ymd(ymd),
+                    "meet": meet, "race_no": race_no}
 
-
-@app.route("/api/indicators", methods=["POST"])
-def get_indicators():
-    body = request.get_json(force=True, silent=True) or {}
-    data = _extract_klines(body)
-    if not data:
-        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
+    # ── 채점 + 7권종 픽 ──
     try:
-        close = np.array(data["close"])
-        high = np.array(data["high"])
-        low = np.array(data["low"])
-        volume = np.array(data["volume"])
-        indicators = compute_realtime_indicators(close, high, low, volume)
-        return jsonify(indicators)
-    except Exception:
-        return jsonify({"error": "지표 계산 실패"}), 500
+        out = engine.predict(starters, meta=info)
+    except Exception as e:  # noqa: BLE001  (앱이 죽지 않도록 graceful)
+        return render_template(
+            "index.html",
+            result={"kind": "error", "title": "예측 중 오류",
+                    "message": f"{type(e).__name__}: {e}"},
+            **base)
+
+    if "error" in out:
+        return render_template(
+            "index.html",
+            result={"kind": "error", "title": "채점 실패",
+                    "message": out["error"]},
+            **base)
+
+    out["kind"] = "ok"
+    out["src"] = src
+    out["info"] = info
+    return render_template("index.html", result=out, **base)
 
 
-@app.route("/api/backtest", methods=["POST"])
-def run_backtest_api():
-    body = request.get_json(force=True, silent=True) or {}
-    interval = _validate_interval(body.get("interval", "1h"))
-    components = body.get("components", [])
-    initial_equity = max(100, min(float(body.get("initial_equity", 10000)), 1e8))
-    fee_pct = max(0, min(float(body.get("fee_pct", 0.075)), 1.0))
-    slippage_pct = max(0, min(float(body.get("slippage_pct", 0.05)), 1.0))
+def _predict_horse(ymd, meet, race_no, base):
+    """경마(KRA) 경로: 실시간 출주표 fetch → KRA 모델 채점 → 7권종 픽.
+    키 없거나 실패 시 데모(과거 1경주) 폴백. 경륜 경로와 동일 표시.
+    """
+    # 경마 기본 경주장 보정 (경륜 meet '광명'이 넘어온 경우 서울로)
+    if meet not in KRA_MEETS:
+        meet = KRA_MEETS[0]
+        base["meet"] = meet
 
-    if not components:
-        return jsonify({"error": "컴포넌트를 추가해주세요"}), 400
+    starters = None
+    info = {}
+    src = "live"
+    key = os.environ.get("DATAGOKR_SERVICE_KEY")
 
-    data = _extract_klines(body)
-    if not data:
-        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
+    if not key:
+        demo = engine.load_kra_demo()
+        if not demo:
+            return render_template(
+                "index.html",
+                result={"kind": "error",
+                        "title": "DATAGOKR_SERVICE_KEY 미설정",
+                        "message": ("실시간 경마 출주표를 받으려면 환경변수 "
+                                    "DATAGOKR_SERVICE_KEY 설정이 필요합니다. "
+                                    "데모 캐시도 사용할 수 없습니다.")},
+                **base)
+        starters = demo["items"]
+        src = "demo"
+        info = {"stnd_yr": str(demo.get("race_ymd", ""))[:4],
+                "ymd": demo.get("race_ymd"), "meet": demo.get("meet_nm"),
+                "race_no": demo.get("race_no"), "actual": demo.get("actual")}
+    else:
+        if not ymd:
+            return render_template(
+                "index.html",
+                result={"kind": "error", "title": "입력 오류",
+                        "message": "날짜를 입력하세요."},
+                **base)
+        starters, err = engine.fetch_kra_card(ymd, meet, race_no, key)
+        if err:
+            demo = engine.load_kra_demo()
+            if demo:
+                starters = demo["items"]
+                src = "demo"
+                info = {"stnd_yr": str(demo.get("race_ymd", ""))[:4],
+                        "ymd": demo.get("race_ymd"), "meet": demo.get("meet_nm"),
+                        "race_no": demo.get("race_no"),
+                        "actual": demo.get("actual"), "fetch_err": err}
+            else:
+                return render_template(
+                    "index.html",
+                    result={"kind": "error", "title": "출주표 조회 실패",
+                            "message": err},
+                    **base)
+        else:
+            info = {"stnd_yr": str(engine.norm_ymd(ymd))[:4],
+                    "ymd": engine.norm_ymd(ymd), "meet": meet, "race_no": race_no}
 
     try:
-        close = np.array(data["close"])
-        high = np.array(data["high"])
-        low = np.array(data["low"])
-        volume = np.array(data["volume"])
-        timestamps = np.array(data["timestamps"])
-        open_prices = np.array(data["open"])
+        out = engine.predict_kra(starters, meta=info)
+    except Exception as e:  # noqa: BLE001
+        return render_template(
+            "index.html",
+            result={"kind": "error", "title": "예측 중 오류",
+                    "message": f"{type(e).__name__}: {e}"},
+            **base)
 
-        chart_indicators = compute_indicators(close, high, low, volume, components)
-        result = run_backtest(close, high, low, volume, timestamps, open_prices,
-                              components, initial_equity, fee_pct, slippage_pct, interval)
+    if "error" in out:
+        return render_template(
+            "index.html",
+            result={"kind": "error", "title": "채점 실패",
+                    "message": out["error"]},
+            **base)
 
-        return jsonify({
-            "result": result.to_dict(),
-            "klines": data,
-            "indicators": chart_indicators,
-        })
-    except Exception:
-        return jsonify({"error": "백테스트 실행 실패"}), 500
-
-
-@app.route("/api/recommend", methods=["POST"])
-def get_recommendations():
-    body = request.get_json(force=True, silent=True) or {}
-    data = _extract_klines(body)
-    if not data:
-        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
-    try:
-        close = np.array(data["close"])
-        high = np.array(data["high"])
-        low = np.array(data["low"])
-        volume = np.array(data["volume"])
-        timestamps = np.array(data["timestamps"])
-        recs = recommend_components(close, high, low, volume, timestamps)
-        return jsonify({"recommendations": recs})
-    except Exception:
-        return jsonify({"error": "추천 조회 실패"}), 500
+    out["kind"] = "ok"
+    out["src"] = src
+    out["info"] = info
+    out["sport_label"] = "경마(KRA)"
+    return render_template("index.html", result=out, **base)
 
 
-@app.route("/api/live-signal", methods=["POST"])
-def live_signal():
-    body = request.get_json(force=True, silent=True) or {}
-    components = body.get("components", [])
-
-    if not components:
-        return jsonify({"error": "컴포넌트를 추가해주세요"}), 400
-
-    data = _extract_klines(body)
-    if not data:
-        return jsonify({"error": "klines 데이터가 필요합니다"}), 400
-
-    try:
-        close = np.array(data["close"])
-        high = np.array(data["high"])
-        low = np.array(data["low"])
-        volume = np.array(data["volume"])
-        timestamps = np.array(data["timestamps"])
-
-        result = evaluate_live_signal(close, high, low, volume, timestamps, components)
-        return jsonify(result)
-    except Exception:
-        return jsonify({"error": "신호 분석 실패"}), 500
-
-
-@app.route("/sw.js")
-def service_worker():
-    sw_js = """self.addEventListener('install',e=>self.skipWaiting());
-self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));"""
-    return Response(sw_js, mimetype="application/javascript",
-                    headers={"Service-Worker-Allowed": "/"})
+@app.route("/healthz")
+def healthz():
+    model, err = engine.load_model()
+    kra, kra_err = engine.load_kra_model()
+    return {"ok": err is None and kra_err is None,
+            "keirin_model": ("loaded" if model else "fail"), "keirin_err": err,
+            "kra_model": ("loaded" if kra else "fail"), "kra_err": kra_err,
+            "has_key": _has_key()}, (200 if err is None and kra_err is None else 500)
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5555))
-    print(f"\n  Strategy Arena")
-    print(f"  http://localhost:{port}")
-    print(f"  Ctrl+C to stop\n")
-    app.run(host="0.0.0.0", port=port, debug=False, threaded=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)

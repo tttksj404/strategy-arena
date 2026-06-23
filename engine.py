@@ -1,1381 +1,561 @@
-"""Backtesting engine with indicator calculations.
-
-All indicators use numpy for performance.
-Components are composable: signals, filters, risk management, sizing.
+# -*- coding: utf-8 -*-
 """
+strategy-arena 예측 엔진
+========================
+경륜(광명) model_final 출주표 스코어링 + 7권종(단/연/복/쌍/삼복/쌍복/삼쌍) 픽 산출.
 
-from __future__ import annotations
+핵심 정직 고지
+  - 이 엔진은 +EV(시장초과 수익) 도구가 아니다. OOS 정산에서 공제(약 28%) 후
+    단·연승 모두 시장을 못 이겼다(keirin/pnl_full_results.md, pnl_exotic.py).
+  - "적중률 예측" 보조 도구일 뿐, 평균 -EV. 수익 보장 없음.
 
+데이터 소스
+  - 경륜 카드: data.go.kr OD API (KEIRIN_CARD_URL). 광명 경주장만 데이터 존재.
+  - API는 stnd_yr 필터만 서버측 지원(날짜 오름차순). meet/race_no/날짜는 클라이언트 필터.
+  - 키는 os.environ['DATAGOKR_SERVICE_KEY'] 로만 읽는다. 하드코딩/커밋 금지.
+
+경마(KRA)
+  - kra_model.joblib (keirin 과 동일 dict 구조: win/plc/cols/med/num/rel/feats)
+    를 static/models 에 포함. KRA 출주표를 within-race 상대피처로 채점해
+    경륜과 동일한 7권종 픽을 산출한다.
+  - KRA 카드 API: data.go.kr B551015 RaceDetailResult_1 (race_result 와 동일
+    엔드포인트). meet(서울/제주/부경 한글명)·rc_date(YYYYMMDD)·rc_no 파라미터.
+  - 정직 제약: 학습 2024-01 ~ 2026-06, 서울/제주/부경 3개 경주장. 검증 결과
+    공제(~20%) 후 시장초과 +EV 없음(kra/runs/model_backtest_results.md).
+"""
+import os
+import re
+import json
 import math
-from dataclasses import dataclass, field
-from typing import Any
+import urllib.parse
+import urllib.request
 
-import numpy as np
+HERE = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_model_final.joblib")
+DEMO_PATH = os.path.join(HERE, "data", "demo_race.json")
+
+# ── 경마(KRA) ──
+KRA_MODEL_PATH = os.path.join(HERE, "static", "models", "kra_model.joblib")
+KRA_DEMO_PATH = os.path.join(HERE, "data", "demo_kra_race.json")
+# KRA 카드 API (race_result 와 동일 엔드포인트). 키만 비밀.
+DEFAULT_KRA_URL = ("https://apis.data.go.kr/B551015/API214_1/RaceDetailResult_1")
+KRA_CARD_URL = os.environ.get("KRA_CARD_URL", DEFAULT_KRA_URL)
+# 학습 데이터에 존재하는 경주장 (실측)
+KRA_MEETS = ["서울", "제주", "부경"]
+
+# data.go.kr 경륜 카드 OD API (공개 엔드포인트; 키만 비밀)
+DEFAULT_CARD_URL = ("https://apis.data.go.kr/B551014/"
+                    "SRVC_OD_API_CRA_RACE_ORGAN/TODZ_API_CRA_RACE_ORGAN_I")
+CARD_URL = os.environ.get("KEIRIN_CARD_URL", DEFAULT_CARD_URL)
+
+CIRCLE = {chr(0x2460 + i): i + 1 for i in range(9)}
+
+# 경륜 데이터가 존재하는 경주장(실측: race_card 는 '광명'만)
+KEIRIN_MEETS = ["광명"]
+
+# ───────────────────────── 유틸 ─────────────────────────
 
 
-# ─── Indicator Functions ───
-
-def sma(data: np.ndarray, period: int) -> np.ndarray:
-    out = np.full_like(data, np.nan)
-    if len(data) < period:
-        return out
-    cs = np.cumsum(data)
-    cs[period:] = cs[period:] - cs[:-period]
-    out[period - 1:] = cs[period - 1:] / period
-    return out
-
-
-def ema(data: np.ndarray, period: int) -> np.ndarray:
-    out = np.full_like(data, np.nan)
-    if len(data) < period:
-        return out
-    k = 2.0 / (period + 1)
-    out[period - 1] = np.mean(data[:period])
-    for i in range(period, len(data)):
-        out[i] = data[i] * k + out[i - 1] * (1 - k)
-    return out
+def mach(s):
+    """①~⑨ 또는 (3)/3 형태에서 마번(back_no) 정수 추출."""
+    if not s:
+        return None
+    for ch in str(s):
+        if ch in CIRCLE:
+            return CIRCLE[ch]
+    m = re.match(r"\s*\(?(\d+)", str(s))
+    return int(m.group(1)) if m else None
 
 
-def rsi(close: np.ndarray, period: int = 14) -> np.ndarray:
-    out = np.full_like(close, np.nan)
-    if len(close) < period + 1:
-        return out
-    delta = np.diff(close)
-    gain = np.where(delta > 0, delta, 0.0)
-    loss = np.where(delta < 0, -delta, 0.0)
-    avg_gain = np.mean(gain[:period])
-    avg_loss = np.mean(loss[:period])
-    if avg_loss == 0:
-        out[period] = 100.0
-    else:
-        out[period] = 100.0 - 100.0 / (1.0 + avg_gain / max(avg_loss, 1e-10))
-    for i in range(period, len(delta)):
-        avg_gain = (avg_gain * (period - 1) + gain[i]) / period
-        avg_loss = (avg_loss * (period - 1) + loss[i]) / period
-        if avg_loss == 0:
-            out[i + 1] = 100.0
+def norm_ymd(s):
+    """'2026-06-20' / '20260620' / '2026.06.20' -> '2026.06.20'."""
+    d = re.sub(r"\D", "", str(s or ""))
+    if len(d) >= 8:
+        return f"{d[0:4]}.{d[4:6]}.{d[6:8]}"
+    return str(s or "").strip()
+
+
+# ───────────────────────── 모델 로드 (지연 로딩) ─────────────────────────
+_MODEL = None
+_MODEL_ERR = None
+
+
+def load_model():
+    """model_final.joblib 지연 로드. 실패 시 (None, 에러문자열)."""
+    global _MODEL, _MODEL_ERR
+    if _MODEL is not None or _MODEL_ERR is not None:
+        return _MODEL, _MODEL_ERR
+    try:
+        import joblib
+        _MODEL = joblib.load(MODEL_PATH)
+    except Exception as e:  # noqa: BLE001
+        _MODEL_ERR = f"모델 로드 실패: {type(e).__name__}: {e}"
+    return _MODEL, _MODEL_ERR
+
+
+_KRA_MODEL = None
+_KRA_MODEL_ERR = None
+
+
+def load_kra_model():
+    """kra_model.joblib 지연 로드. 실패 시 (None, 에러문자열)."""
+    global _KRA_MODEL, _KRA_MODEL_ERR
+    if _KRA_MODEL is not None or _KRA_MODEL_ERR is not None:
+        return _KRA_MODEL, _KRA_MODEL_ERR
+    try:
+        import joblib
+        _KRA_MODEL = joblib.load(KRA_MODEL_PATH)
+    except Exception as e:  # noqa: BLE001
+        _KRA_MODEL_ERR = f"KRA 모델 로드 실패: {type(e).__name__}: {e}"
+    return _KRA_MODEL, _KRA_MODEL_ERR
+
+
+# ───────────────────────── API fetch (경륜 카드) ─────────────────────────
+
+
+def _api_page(stnd_yr, page, rows, key, timeout=15):
+    qs = urllib.parse.urlencode({
+        "serviceKey": key, "resultType": "json",
+        "numOfRows": rows, "pageNo": page, "stnd_yr": str(stnd_yr),
+    })
+    full = CARD_URL + "?" + qs
+    req = urllib.request.Request(full, headers={"User-Agent": "strategy-arena"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        data = json.loads(r.read().decode("utf-8"))
+    resp = data.get("response", {})
+    hdr = resp.get("header", {})
+    if str(hdr.get("resultCode")) not in ("00", "0"):
+        raise RuntimeError(f"API resultCode={hdr.get('resultCode')} {hdr.get('resultMsg')}")
+    body = resp.get("body", {})
+    tc = int(body.get("totalCount") or 0)
+    items = (body.get("items") or {}).get("item") or []
+    if isinstance(items, dict):
+        items = [items]
+    return tc, items
+
+
+def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=25):
+    """data.go.kr 카드 API에서 단일 경주 출주표를 실시간 fetch.
+
+    API가 stnd_yr 필터만 지원하고 날짜 오름차순이라, 페이지를 넘기며
+    클라이언트에서 (날짜·경주장·경주번호)로 필터한다. 목표 날짜를 지나치면 중단.
+    반환: (starters_list, None) 또는 (None, 에러문자열).
+    """
+    if not key:
+        return None, "NO_KEY"
+    ymd = norm_ymd(ymd)
+    target = re.sub(r"\D", "", ymd)  # YYYYMMDD
+    rno = str(race_no).strip().lstrip("0") or "0"
+    try:
+        tc, _ = _api_page(stnd_yr, 1, 1, key)
+    except Exception as e:  # noqa: BLE001
+        return None, f"API 호출 실패: {type(e).__name__}: {e}"
+    if tc == 0:
+        return None, f"{stnd_yr}년 출주표 데이터 없음"
+    pages = min(max_pages, math.ceil(tc / rows))
+    for p in range(1, pages + 1):
+        try:
+            _, items = _api_page(stnd_yr, p, rows, key)
+        except Exception as e:  # noqa: BLE001
+            return None, f"API 페이지 {p} 실패: {type(e).__name__}: {e}"
+        if not items:
+            break
+        page_ymds = sorted({re.sub(r"\D", "", str(i.get("race_ymd", ""))) for i in items})
+        match = [i for i in items
+                 if re.sub(r"\D", "", str(i.get("race_ymd", ""))) == target
+                 and str(i.get("meet_nm", "")).strip().startswith(meet)
+                 and str(i.get("race_no", "")).strip().lstrip("0") == rno]
+        if match:
+            return match, None
+        # 날짜 오름차순 → 페이지 최소 날짜가 목표를 지나쳤으면 더 볼 필요 없음
+        if page_ymds and page_ymds[0] > target:
+            break
+    return None, "해당 경주를 찾지 못했습니다 (날짜/경주장/경주번호를 확인하세요)."
+
+
+def load_demo_race():
+    """키 없을 때 데모용 캐시 경주(실제 과거 1경주) 반환. 실패 시 None."""
+    try:
+        with open(DEMO_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+# ───────────────────────── 스코어링 (qprep2.py 파이프라인 재현) ─────────────────────────
+
+
+def score_keirin(starters):
+    """출주표 item 리스트 -> [{bno, name, grade, pwin, pplc}] (연대확률 내림차순).
+
+    keirin/qprep2.py·recommend.py 의 피처 파이프라인을 그대로 재현한다.
+    반환: (rows, None) 또는 (None, 에러문자열).
+    """
+    model, err = load_model()
+    if err:
+        return None, err
+    try:
+        import numpy as np  # noqa: F401
+        import pandas as pd
+    except Exception as e:  # noqa: BLE001
+        return None, f"의존성 로드 실패: {e}"
+
+    NUM, REL, cols, med = model["num"], model["rel"], model["cols"], model["med"]
+    c = pd.DataFrame(starters)
+    if c.empty:
+        return None, "출주 선수 없음"
+    c["bno"] = c.get("back_no").map(mach)
+    c = c[c["bno"].notna()].copy()
+    if c.empty:
+        return None, "유효 마번 없음"
+    c["bno"] = c["bno"].astype(int)
+    names = {int(b): (str(n).strip() if n else "") for b, n in
+             zip(c["bno"], c.get("racer_nm", [""] * len(c)))}
+    grades = {int(b): (str(g).strip() if g else "") for b, g in
+              zip(c["bno"], c.get("racer_grd_cd", [""] * len(c)))}
+
+    for col in NUM:
+        c[col] = pd.to_numeric(c.get(col), errors="coerce")
+    bf = ["bf1_day1_rank", "bf1_day2_rank", "bf1_day3_rank",
+          "bf2_day1_rank", "bf2_day2_rank", "bf2_day3_rank"]
+    for b in bf:
+        if b not in c.columns:
+            c[b] = pd.NA
+        c[b] = pd.to_numeric(c[b], errors="coerce")
+    c["recent_mean_rank"] = c[bf].mean(axis=1)
+    c["recent_win_cnt"] = (c[bf] == 1).sum(axis=1)
+    # 단일 경주 내 상대값 (predict.py 방식: 해당 경주 평균 대비)
+    for col in REL:
+        if col in c.columns:
+            c[col + "_rel"] = c[col] - c[col].mean()
         else:
-            rs = avg_gain / avg_loss
-            out[i + 1] = 100.0 - 100.0 / (1.0 + rs)
-    return out
-
-
-def macd(close: np.ndarray, fast: int = 12, slow: int = 26, signal_period: int = 9):
-    ema_fast = ema(close, fast)
-    ema_slow = ema(close, slow)
-    macd_line = ema_fast - ema_slow
-    signal_line = ema(macd_line[~np.isnan(macd_line)], signal_period)
-    full_signal = np.full_like(close, np.nan)
-    valid_start = np.argmin(np.isnan(macd_line))
-    if len(signal_line) > 0:
-        offset = valid_start
-        full_signal[offset:offset + len(signal_line)] = signal_line
-    histogram = macd_line - full_signal
-    return macd_line, full_signal, histogram
-
-
-def bollinger(close: np.ndarray, period: int = 20, std_mult: float = 2.0):
-    mid = sma(close, period)
-    std = np.full_like(close, np.nan)
-    for i in range(period - 1, len(close)):
-        std[i] = np.std(close[i - period + 1:i + 1], ddof=1)
-    upper = mid + std_mult * std
-    lower = mid - std_mult * std
-    pct_b = np.where(upper != lower, (close - lower) / (upper - lower), 0.5)
-    return upper, mid, lower, pct_b
-
-
-def atr(high: np.ndarray, low: np.ndarray, close: np.ndarray, period: int = 14) -> np.ndarray:
-    tr = np.maximum(high[1:] - low[1:],
-                    np.maximum(np.abs(high[1:] - close[:-1]),
-                               np.abs(low[1:] - close[:-1])))
-    tr = np.insert(tr, 0, high[0] - low[0])
-    out = np.full_like(close, np.nan)
-    if len(tr) < period:
-        return out
-    out[period - 1] = np.mean(tr[:period])
-    for i in range(period, len(tr)):
-        out[i] = (out[i - 1] * (period - 1) + tr[i]) / period
-    return out
-
-
-def adx(high: np.ndarray, low: np.ndarray, close: np.ndarray, period: int = 14) -> np.ndarray:
-    n = len(close)
-    out = np.full(n, np.nan)
-    if n < period * 2:
-        return out
-    up_move = high[1:] - high[:-1]
-    down_move = low[:-1] - low[1:]
-    plus_dm = np.where((up_move > down_move) & (up_move > 0), up_move, 0.0)
-    minus_dm = np.where((down_move > up_move) & (down_move > 0), down_move, 0.0)
-    atr_vals = atr(high, low, close, period)
-    plus_di = np.full(n, np.nan)
-    minus_di = np.full(n, np.nan)
-    smooth_plus = np.mean(plus_dm[:period])
-    smooth_minus = np.mean(minus_dm[:period])
-    for i in range(period, n - 1):
-        smooth_plus = (smooth_plus * (period - 1) + plus_dm[i]) / period
-        smooth_minus = (smooth_minus * (period - 1) + minus_dm[i]) / period
-        if not np.isnan(atr_vals[i + 1]) and atr_vals[i + 1] > 0:
-            plus_di[i + 1] = 100 * smooth_plus / atr_vals[i + 1]
-            minus_di[i + 1] = 100 * smooth_minus / atr_vals[i + 1]
-    dx = np.where((plus_di + minus_di) > 0,
-                  100 * np.abs(plus_di - minus_di) / (plus_di + minus_di), 0)
-    valid_dx = dx[~np.isnan(dx)]
-    if len(valid_dx) < period:
-        return out
-    adx_val = np.mean(valid_dx[:period])
-    start_idx = np.argmin(np.isnan(dx)) + period
-    if start_idx < n:
-        out[start_idx] = adx_val
-        for i in range(start_idx + 1, n):
-            if not np.isnan(dx[i]):
-                adx_val = (adx_val * (period - 1) + dx[i]) / period
-                out[i] = adx_val
-    return out
-
-
-def vwap(high: np.ndarray, low: np.ndarray, close: np.ndarray,
-         volume: np.ndarray, period: int = 20) -> np.ndarray:
-    tp = (high + low + close) / 3.0
-    out = np.full_like(close, np.nan)
-    for i in range(period - 1, len(close)):
-        s = slice(i - period + 1, i + 1)
-        vol_sum = np.sum(volume[s])
-        if vol_sum > 0:
-            out[i] = np.sum(tp[s] * volume[s]) / vol_sum
-        else:
-            out[i] = tp[i]
-    return out
-
-
-def vwap_zscore(close: np.ndarray, vwap_vals: np.ndarray, period: int = 20) -> np.ndarray:
-    diff = close - vwap_vals
-    out = np.full_like(close, np.nan)
-    for i in range(period - 1, len(close)):
-        s = slice(i - period + 1, i + 1)
-        std = np.std(diff[s])
-        if std > 0:
-            out[i] = diff[i] / std
-    return out
-
-
-def volume_ratio(volume: np.ndarray, period: int = 20) -> np.ndarray:
-    vol_ma = sma(volume, period)
-    return np.where(vol_ma > 0, volume / vol_ma, 1.0)
-
-
-def obv(close: np.ndarray, volume: np.ndarray) -> np.ndarray:
-    direction = np.sign(np.diff(close))
-    direction = np.insert(direction, 0, 0)
-    return np.cumsum(direction * volume)
-
-
-def stoch_rsi(close: np.ndarray, rsi_period: int = 14, stoch_period: int = 14,
-              k_period: int = 3, d_period: int = 3):
-    rsi_vals = rsi(close, rsi_period)
-    k = np.full_like(close, np.nan)
-    for i in range(stoch_period - 1, len(rsi_vals)):
-        if np.isnan(rsi_vals[i]):
-            continue
-        window = rsi_vals[max(0, i - stoch_period + 1):i + 1]
-        window = window[~np.isnan(window)]
-        if len(window) == 0:
-            continue
-        lo, hi = np.min(window), np.max(window)
-        k[i] = ((rsi_vals[i] - lo) / (hi - lo) * 100) if hi > lo else 50.0
-    d = sma(k[~np.isnan(k)], d_period) if np.sum(~np.isnan(k)) >= d_period else k
-    return k, d
-
-
-# ─── Component Definitions ───
-
-COMPONENTS = {
-    "signals": [
-        {
-            "id": "ema_cross", "name": "EMA 크로스",
-            "desc": "두 개의 평균선을 비교합니다. 짧은 기간 평균이 긴 기간 평균 위로 올라가면 '상승 시작'으로 보고 매수하고, 아래로 내려가면 '하락 시작'으로 보고 매도합니다. 가장 기본적인 전략이에요.",
-            "params": [
-                {"key": "fast", "label": "빠른 EMA", "type": "int", "default": 9, "min": 2, "max": 200},
-                {"key": "slow", "label": "느린 EMA", "type": "int", "default": 21, "min": 5, "max": 500},
-            ],
-        },
-        {
-            "id": "rsi_threshold", "name": "RSI 과매수/과매도",
-            "desc": "RSI는 0~100 사이 값으로 '지금 너무 많이 올랐나/떨어졌나'를 알려줍니다. 30 이하면 '너무 떨어져서 반등할 수 있다' → 매수, 70 이상이면 '너무 올라서 떨어질 수 있다' → 매도합니다.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 14, "min": 2, "max": 100},
-                {"key": "oversold", "label": "과매도", "type": "int", "default": 30, "min": 5, "max": 50},
-                {"key": "overbought", "label": "과매수", "type": "int", "default": 70, "min": 50, "max": 95},
-            ],
-        },
-        {
-            "id": "macd_cross", "name": "MACD 크로스",
-            "desc": "두 평균선의 차이(MACD)와 그 평균(시그널)을 비교합니다. MACD가 시그널 위로 올라가면 '상승 전환' 매수 신호. EMA 크로스보다 느리지만 더 신뢰도가 높습니다.",
-            "params": [
-                {"key": "fast", "label": "빠른", "type": "int", "default": 12, "min": 2, "max": 50},
-                {"key": "slow", "label": "느린", "type": "int", "default": 26, "min": 10, "max": 100},
-                {"key": "signal", "label": "시그널", "type": "int", "default": 9, "min": 2, "max": 50},
-            ],
-        },
-        {
-            "id": "boll_bounce", "name": "볼린저 밴드 반등",
-            "desc": "가격 위아래로 '정상 범위' 밴드를 그립니다. 가격이 아래 밴드까지 떨어지면 '싸다=반등 기대' 매수, 위 밴드까지 올라가면 '비싸다' 매도. 가격이 오르내리는 횡보장에서 효과적이에요.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 20, "min": 5, "max": 100},
-                {"key": "std", "label": "표준편차", "type": "float", "default": 2.0, "min": 0.5, "max": 4.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "boll_breakout", "name": "볼린저 밴드 돌파",
-            "desc": "위 밴드(정상 범위)를 뚫고 올라가면 '강한 상승이 시작됐다'고 보고 매수합니다. 위의 '반등'과 반대 개념으로, 한 방향으로 쭉 가는 추세장에서 효과적이에요.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 20, "min": 5, "max": 100},
-                {"key": "std", "label": "표준편차", "type": "float", "default": 2.0, "min": 0.5, "max": 4.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "vwap_mean_reversion", "name": "VWAP 평균회귀",
-            "desc": "거래량을 고려한 '진짜 평균가격(VWAP)'에서 가격이 너무 멀어지면 다시 평균으로 돌아올 거라 보고 진입합니다. 시장이 조용하고 방향 없이 오르내릴 때 쓰세요.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 20, "min": 5, "max": 100},
-                {"key": "z_threshold", "label": "Z-Score 임계", "type": "float", "default": 2.0, "min": 0.5, "max": 4.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "price_breakout", "name": "가격 돌파",
-            "desc": "최근 N개 봉 중 가장 높은 가격을 뚫고 올라가면 매수, 가장 낮은 가격을 뚫고 내려가면 매도합니다. '신고가 갱신 = 더 오른다'라는 단순하지만 강력한 논리예요.",
-            "params": [
-                {"key": "lookback", "label": "돌파 기간", "type": "int", "default": 20, "min": 5, "max": 200},
-            ],
-        },
-        {
-            "id": "stoch_rsi_cross", "name": "Stochastic RSI",
-            "desc": "RSI를 한번 더 가공해서 더 민감하게 만든 지표입니다. 매수/매도 타이밍을 RSI보다 빨리 잡아줍니다. 대신 잘못된 신호도 더 자주 나올 수 있어서 필터와 함께 쓰는 게 좋아요.",
-            "params": [
-                {"key": "rsi_period", "label": "RSI 기간", "type": "int", "default": 14, "min": 5, "max": 50},
-                {"key": "stoch_period", "label": "Stoch 기간", "type": "int", "default": 14, "min": 5, "max": 50},
-                {"key": "oversold", "label": "과매도", "type": "int", "default": 20, "min": 5, "max": 50},
-                {"key": "overbought", "label": "과매수", "type": "int", "default": 80, "min": 50, "max": 95},
-            ],
-        },
-        {
-            "id": "volume_breakout", "name": "거래량 폭증 + 방향",
-            "desc": "갑자기 거래량이 평소의 N배 이상 터지면 '큰손이 움직인다'는 뜻입니다. 이때 가격이 올랐으면 매수, 떨어졌으면 매도합니다. 뉴스나 큰 이벤트 때 효과적이에요.",
-            "params": [
-                {"key": "vol_mult", "label": "거래량 배수", "type": "float", "default": 2.0, "min": 1.2, "max": 5.0, "step": 0.1},
-                {"key": "ma_period", "label": "평균 기간", "type": "int", "default": 20, "min": 5, "max": 100},
-            ],
-        },
-        {
-            "id": "williams_r", "name": "Williams %R",
-            "desc": "0~-100 사이 값으로 과매수/과매도를 판단합니다. RSI보다 더 민감하고 빠른 신호를 줍니다. -80 이하면 '바닥 근처' 매수, -20 이상이면 '천장 근처' 매도. 단타에 특히 좋아요.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 14, "min": 5, "max": 100},
-                {"key": "oversold", "label": "과매도", "type": "int", "default": -80, "min": -95, "max": -50},
-                {"key": "overbought", "label": "과매수", "type": "int", "default": -20, "min": -50, "max": -5},
-            ],
-        },
-        {
-            "id": "obv_divergence", "name": "OBV 다이버전스",
-            "desc": "가격은 오르는데 거래량 흐름(OBV)이 안 따라가면 '가짜 상승'입니다. 반대로 가격은 떨어지는데 OBV가 올라가면 '곧 반등' 신호. 추세 반전을 미리 잡을 수 있어요.",
-            "params": [
-                {"key": "lookback", "label": "비교 기간", "type": "int", "default": 14, "min": 5, "max": 50},
-            ],
-        },
-        {
-            "id": "cci_signal", "name": "CCI (상품채널지수)",
-            "desc": "가격이 평균에서 얼마나 벗어났는지 측정합니다. +100 위로 올라가면 매수, -100 아래로 내려가면 매도. 주기적으로 오르내리는 코인에서 잘 맞는 지표예요.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 20, "min": 5, "max": 100},
-                {"key": "threshold", "label": "기준선", "type": "int", "default": 100, "min": 50, "max": 200},
-            ],
-        },
-    ],
-    "filters": [
-        {
-            "id": "trend_filter", "name": "추세 필터",
-            "desc": "큰 흐름(장기 평균선)이 올라가고 있을 때만 매수를 허용합니다. '큰 물결을 거스르지 말자'라는 원칙이에요. 가장 기본적이면서 효과 좋은 필터입니다.",
-            "params": [
-                {"key": "period", "label": "EMA 기간", "type": "int", "default": 50, "min": 10, "max": 500},
-            ],
-        },
-        {
-            "id": "adx_filter", "name": "ADX 추세 강도",
-            "desc": "지금 시장에 '방향성이 있는지' 측정합니다. ADX 25 이상이면 추세가 있는 상태. 방향 없이 왔다갔다하는 구간에서 헛거래하는 걸 막아줍니다.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 14, "min": 5, "max": 50},
-                {"key": "threshold", "label": "최소 ADX", "type": "int", "default": 25, "min": 10, "max": 60},
-            ],
-        },
-        {
-            "id": "volume_filter", "name": "거래량 필터",
-            "desc": "거래량이 평소보다 너무 적으면 진입을 막습니다. 사람이 적은 시장에서는 가격이 헛방으로 움직이기 쉽기 때문이에요. 거의 모든 전략에 도움이 됩니다.",
-            "params": [
-                {"key": "min_ratio", "label": "최소 배수", "type": "float", "default": 0.8, "min": 0.1, "max": 3.0, "step": 0.1},
-                {"key": "period", "label": "평균 기간", "type": "int", "default": 20, "min": 5, "max": 100},
-            ],
-        },
-        {
-            "id": "volatility_filter", "name": "변동성 필터",
-            "desc": "가격 변동폭이 너무 크거나 너무 작은 구간을 피합니다. 너무 조용하면 수익이 안 나고, 너무 난리면 손절이 자주 걸립니다. 적당한 변동성일 때만 진입해요.",
-            "params": [
-                {"key": "period", "label": "ATR 기간", "type": "int", "default": 14, "min": 5, "max": 50},
-                {"key": "min_pct", "label": "최소 %", "type": "float", "default": 0.5, "min": 0.1, "max": 5.0, "step": 0.1},
-                {"key": "max_pct", "label": "최대 %", "type": "float", "default": 5.0, "min": 1.0, "max": 20.0, "step": 0.5},
-            ],
-        },
-        {
-            "id": "rsi_range_filter", "name": "RSI 범위 필터",
-            "desc": "RSI가 극단적인 값(너무 높거나 낮음)일 때 진입을 차단합니다. 이미 많이 오른 상태에서 추격 매수하거나, 폭락 중에 잡는 것을 막아줍니다.",
-            "params": [
-                {"key": "period", "label": "기간", "type": "int", "default": 14, "min": 5, "max": 50},
-                {"key": "min_rsi", "label": "최소", "type": "int", "default": 25, "min": 0, "max": 50},
-                {"key": "max_rsi", "label": "최대", "type": "int", "default": 75, "min": 50, "max": 100},
-            ],
-        },
-        {
-            "id": "time_filter", "name": "시간대 필터",
-            "desc": "하루 중 특정 시간에만 거래를 허용합니다. 예: 아시아 장 시간(0~8 UTC)에만 거래. 1분~15분 같은 단타에서만 의미 있고, 1일봉에서는 효과 없어요.",
-            "params": [
-                {"key": "start_hour", "label": "시작 (UTC)", "type": "int", "default": 0, "min": 0, "max": 23},
-                {"key": "end_hour", "label": "종료 (UTC)", "type": "int", "default": 24, "min": 1, "max": 24},
-            ],
-        },
-        {
-            "id": "consecutive_candle", "name": "연속봉 필터",
-            "desc": "최근 N개 봉 중 같은 방향 봉이 M개 이상일 때만 진입합니다. 예: 3개 중 2개가 양봉이면 매수 허용. 갈팡질팡하는 구간에서 헛거래를 크게 줄여줘요.",
-            "params": [
-                {"key": "lookback", "label": "확인 봉수", "type": "int", "default": 3, "min": 2, "max": 10},
-                {"key": "min_count", "label": "최소 같은방향", "type": "int", "default": 2, "min": 1, "max": 10},
-            ],
-        },
-        {
-            "id": "drawdown_breaker", "name": "낙폭 차단기",
-            "desc": "자산이 고점에서 일정% 이상 떨어지면 모든 신규 진입을 차단합니다. 전략이 맞지 않는 장에서 연속 손실을 막아주는 안전장치예요. 5~10% 권장.",
-            "params": [
-                {"key": "max_dd", "label": "최대 낙폭 %", "type": "float", "default": 5.0, "min": 1.0, "max": 20.0, "step": 0.5},
-            ],
-        },
-    ],
-    "risk": [
-        {
-            "id": "atr_stop", "name": "ATR 손절 (추천)",
-            "desc": "현재 시장의 변동폭(ATR)에 맞춰 손절 위치를 자동 조절합니다. 변동이 크면 넓게, 작으면 좁게. 시장 상황에 따라 알아서 적응하므로 가장 추천하는 손절 방식이에요.",
-            "params": [
-                {"key": "period", "label": "ATR 기간", "type": "int", "default": 14, "min": 5, "max": 50},
-                {"key": "multiplier", "label": "ATR 배수", "type": "float", "default": 2.0, "min": 0.5, "max": 5.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "fixed_stop", "name": "고정 손절",
-            "desc": "산 가격에서 정해진 %만큼 떨어지면 무조건 손절합니다. 예: 2%로 설정하면 100원에 사서 98원이 되면 자동으로 팝니다. 단순하고 이해하기 쉬워요.",
-            "params": [
-                {"key": "stop_pct", "label": "손절 %", "type": "float", "default": 2.0, "min": 0.1, "max": 20.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "take_profit", "name": "익절 (수익 확보)",
-            "desc": "목표 수익에 도달하면 자동으로 팔아서 이익을 확정합니다. R:R 2.0이면 손절폭의 2배 올랐을 때 익절. 예: 손절 2%면 4% 오르면 수익 확보. 2.0 이상을 권장해요.",
-            "params": [
-                {"key": "rr_ratio", "label": "R:R 비율", "type": "float", "default": 2.0, "min": 0.5, "max": 10.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "trailing_stop", "name": "트레일링 스탑",
-            "desc": "가격이 올라가면 손절선도 같이 따라 올라갑니다. 상승하는 동안은 계속 보유하다가, 일정 %만큼 되돌리면 그때 팝니다. 큰 추세에서 수익을 극대화할 수 있어요.",
-            "params": [
-                {"key": "activation_pct", "label": "활성화 %", "type": "float", "default": 1.0, "min": 0.1, "max": 10.0, "step": 0.1},
-                {"key": "trail_pct", "label": "추적 간격 %", "type": "float", "default": 0.5, "min": 0.1, "max": 5.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "max_hold", "name": "최대 보유 시간",
-            "desc": "정해진 봉 수가 지나면 수익이든 손실이든 강제로 청산합니다. 예: 24로 설정하면 1시간봉 기준 24시간 후 자동 종료. 하나의 거래에 너무 오래 묶이는 것을 방지해요.",
-            "params": [
-                {"key": "bars", "label": "최대 봉수", "type": "int", "default": 24, "min": 1, "max": 500},
-            ],
-        },
-        {
-            "id": "breakeven_stop", "name": "손익분기 스탑",
-            "desc": "수익이 일정% 이상 나면 손절선을 진입가로 올립니다. 이후 최소한 본전은 보장됩니다. 수동 트레이더들이 가장 많이 쓰는 기법이에요.",
-            "params": [
-                {"key": "trigger_pct", "label": "활성화 수익%", "type": "float", "default": 1.0, "min": 0.1, "max": 10.0, "step": 0.1},
-            ],
-        },
-    ],
-    "sizing": [
-        {
-            "id": "fixed_risk", "name": "리스크 한도",
-            "desc": "한 번 거래에서 최대 얼마를 잃을 수 있는지 정합니다. 1%면 자본 1만원 중 100원까지만 손해볼 수 있도록 투자 금액을 자동 계산합니다. 1~2%가 안전하고, 5% 이상은 매우 공격적이에요.",
-            "params": [
-                {"key": "risk_pct", "label": "리스크 %", "type": "float", "default": 1.0, "min": 0.1, "max": 10.0, "step": 0.1},
-            ],
-        },
-        {
-            "id": "leverage", "name": "레버리지 (배율)",
-            "desc": "투자금을 N배로 뻥튀기합니다. 3배면 수익도 3배, 하지만 손실도 3배! 10배 레버리지에 10% 하락하면 전액 청산됩니다. 초보자는 1~2배를 권장해요. 양날의 검이에요.",
-            "params": [
-                {"key": "leverage", "label": "배수", "type": "float", "default": 1.0, "min": 1.0, "max": 10.0, "step": 0.5},
-            ],
-        },
-        {
-            "id": "max_position", "name": "최대 투자 비율",
-            "desc": "전체 자본 중 한 번에 최대 몇 %까지 투자할 수 있는지 제한합니다. 20%면 1만원 중 최대 2천원까지만 한 거래에 투입. 나머지는 안전하게 남겨둡니다. 올인 방지용이에요.",
-            "params": [
-                {"key": "max_pct", "label": "최대 %", "type": "float", "default": 20.0, "min": 5.0, "max": 100.0, "step": 5.0},
-            ],
-        },
-        {
-            "id": "direction", "name": "포지션 방향",
-            "desc": "롱(매수)만 할지, 숏(매도)만 할지, 양방향 다 할지 선택합니다. 롱은 가격이 오를 때 수익, 숏은 내릴 때 수익입니다. 초보자는 '롱만'부터 시작하는 걸 추천해요.",
-            "params": [
-                {"key": "direction", "label": "방향", "type": "select", "default": "both",
-                 "options": [
-                     {"value": "both", "label": "양방향 (롱+숏)"},
-                     {"value": "long", "label": "롱만 (매수만)"},
-                     {"value": "short", "label": "숏만 (매도만)"},
-                 ]},
-            ],
-        },
-    ],
-}
-
-
-# ─── Signal Generation ───
-
-def generate_signals(close: np.ndarray, high: np.ndarray, low: np.ndarray,
-                     volume: np.ndarray, timestamps: np.ndarray,
-                     components: list[dict]) -> np.ndarray:
-    """Generate combined signal array: +1=long, -1=short, 0=none."""
-    n = len(close)
-    signals = np.zeros(n)
-    filter_mask = np.ones(n, dtype=bool)
-
-    signal_components = [c for c in components if c["category"] == "signals"]
-    filter_components = [c for c in components if c["category"] == "filters"]
-
-    for comp in filter_components:
-        mask = _eval_filter(comp, close, high, low, volume, timestamps)
-        filter_mask &= mask
-
-    if not signal_components:
-        return signals
-
-    for comp in signal_components:
-        sig = _eval_signal(comp, close, high, low, volume)
-        signals = np.where(signals == 0, sig, signals)
-
-    signals *= filter_mask
-
-    sizing_components = [c for c in components if c["category"] == "sizing"]
-    for comp in sizing_components:
-        if comp["id"] == "direction":
-            d = comp.get("params", {}).get("direction", "both")
-            if d == "long":
-                signals = np.where(signals == -1, 0, signals)
-            elif d == "short":
-                signals = np.where(signals == 1, 0, signals)
-
-    return signals
-
-
-def _eval_signal(comp: dict, close, high, low, volume) -> np.ndarray:
-    n = len(close)
-    sig = np.zeros(n)
-    p = comp.get("params", {})
-    cid = comp["id"]
-
-    if cid == "ema_cross":
-        fast_ema = ema(close, p.get("fast", 9))
-        slow_ema = ema(close, p.get("slow", 21))
-        for i in range(1, n):
-            if np.isnan(fast_ema[i]) or np.isnan(slow_ema[i]):
-                continue
-            if fast_ema[i] > slow_ema[i] and fast_ema[i - 1] <= slow_ema[i - 1]:
-                sig[i] = 1
-            elif fast_ema[i] < slow_ema[i] and fast_ema[i - 1] >= slow_ema[i - 1]:
-                sig[i] = -1
-
-    elif cid == "rsi_threshold":
-        rsi_vals = rsi(close, p.get("period", 14))
-        oversold = p.get("oversold", 30)
-        overbought = p.get("overbought", 70)
-        for i in range(1, n):
-            if np.isnan(rsi_vals[i]) or np.isnan(rsi_vals[i - 1]):
-                continue
-            if rsi_vals[i] > oversold and rsi_vals[i - 1] <= oversold:
-                sig[i] = 1
-            elif rsi_vals[i] < overbought and rsi_vals[i - 1] >= overbought:
-                sig[i] = -1
-
-    elif cid == "macd_cross":
-        ml, sl, _ = macd(close, p.get("fast", 12), p.get("slow", 26), p.get("signal", 9))
-        for i in range(1, n):
-            if np.isnan(ml[i]) or np.isnan(sl[i]):
-                continue
-            if ml[i] > sl[i] and ml[i - 1] <= sl[i - 1]:
-                sig[i] = 1
-            elif ml[i] < sl[i] and ml[i - 1] >= sl[i - 1]:
-                sig[i] = -1
-
-    elif cid == "boll_bounce":
-        upper, mid, lower, pct_b = bollinger(close, p.get("period", 20), p.get("std", 2.0))
-        for i in range(1, n):
-            if np.isnan(lower[i]):
-                continue
-            if close[i - 1] <= lower[i - 1] and close[i] > lower[i]:
-                sig[i] = 1
-            elif close[i - 1] >= upper[i - 1] and close[i] < upper[i]:
-                sig[i] = -1
-
-    elif cid == "boll_breakout":
-        upper, mid, lower, pct_b = bollinger(close, p.get("period", 20), p.get("std", 2.0))
-        for i in range(1, n):
-            if np.isnan(upper[i]):
-                continue
-            if close[i] > upper[i] and close[i - 1] <= upper[i - 1]:
-                sig[i] = 1
-            elif close[i] < lower[i] and close[i - 1] >= lower[i - 1]:
-                sig[i] = -1
-
-    elif cid == "vwap_mean_reversion":
-        vwap_vals = vwap(high, low, close, volume, p.get("period", 20))
-        z = vwap_zscore(close, vwap_vals, p.get("period", 20))
-        z_thr = p.get("z_threshold", 2.0)
-        for i in range(n):
-            if np.isnan(z[i]):
-                continue
-            if z[i] < -z_thr:
-                sig[i] = 1
-            elif z[i] > z_thr:
-                sig[i] = -1
-
-    elif cid == "price_breakout":
-        lb = p.get("lookback", 20)
-        for i in range(lb, n):
-            hi = np.max(high[i - lb:i])
-            lo = np.min(low[i - lb:i])
-            if close[i] > hi:
-                sig[i] = 1
-            elif close[i] < lo:
-                sig[i] = -1
-
-    elif cid == "stoch_rsi_cross":
-        k, d = stoch_rsi(close, p.get("rsi_period", 14), p.get("stoch_period", 14))
-        oversold = p.get("oversold", 20)
-        overbought = p.get("overbought", 80)
-        for i in range(1, n):
-            if np.isnan(k[i]):
-                continue
-            if k[i] > oversold and k[i - 1] <= oversold:
-                sig[i] = 1
-            elif k[i] < overbought and k[i - 1] >= overbought:
-                sig[i] = -1
-
-    elif cid == "volume_breakout":
-        vratio = volume_ratio(volume, p.get("ma_period", 20))
-        mult = p.get("vol_mult", 2.0)
-        for i in range(1, n):
-            if vratio[i] >= mult:
-                sig[i] = 1 if close[i] > close[i - 1] else -1
-
-    elif cid == "williams_r":
-        period = p.get("period", 14)
-        oversold = p.get("oversold", -80)
-        overbought = p.get("overbought", -20)
-        for i in range(period, n):
-            hh = np.max(high[i - period + 1:i + 1])
-            ll = np.min(low[i - period + 1:i + 1])
-            if hh == ll:
-                continue
-            wr = (hh - close[i]) / (hh - ll) * -100
-            if i > period:
-                prev_hh = np.max(high[i - period:i])
-                prev_ll = np.min(low[i - period:i])
-                prev_wr = (prev_hh - close[i - 1]) / max(prev_hh - prev_ll, 1e-10) * -100
-                if wr > oversold and prev_wr <= oversold:
-                    sig[i] = 1
-                elif wr < overbought and prev_wr >= overbought:
-                    sig[i] = -1
-
-    elif cid == "obv_divergence":
-        lb = p.get("lookback", 14)
-        obv_vals = obv(close, volume)
-        for i in range(lb, n):
-            price_trend = close[i] - close[i - lb]
-            obv_trend = obv_vals[i] - obv_vals[i - lb]
-            if price_trend > 0 and obv_trend < 0:
-                sig[i] = -1
-            elif price_trend < 0 and obv_trend > 0:
-                sig[i] = 1
-
-    elif cid == "cci_signal":
-        period = p.get("period", 20)
-        threshold = p.get("threshold", 100)
-        tp_arr = (high + low + close) / 3
-        for i in range(period, n):
-            window = tp_arr[i - period + 1:i + 1]
-            mean_tp = np.mean(window)
-            mean_dev = np.mean(np.abs(window - mean_tp))
-            cci = (tp_arr[i] - mean_tp) / max(0.015 * mean_dev, 1e-10) if mean_dev > 0 else 0
-            if i > period:
-                prev_w = tp_arr[i - period:i]
-                prev_m = np.mean(prev_w)
-                prev_md = np.mean(np.abs(prev_w - prev_m))
-                prev_cci = (tp_arr[i - 1] - prev_m) / max(0.015 * prev_md, 1e-10) if prev_md > 0 else 0
-                if cci > threshold and prev_cci <= threshold:
-                    sig[i] = 1
-                elif cci < -threshold and prev_cci >= -threshold:
-                    sig[i] = -1
-
-    return sig
-
-
-def _eval_filter(comp: dict, close, high, low, volume, timestamps) -> np.ndarray:
-    n = len(close)
-    mask = np.ones(n, dtype=bool)
-    p = comp.get("params", {})
-    cid = comp["id"]
-
-    if cid == "trend_filter":
-        e = ema(close, p.get("period", 50))
-        mask = ~np.isnan(e) & (close > e)
-
-    elif cid == "adx_filter":
-        adx_vals = adx(high, low, close, p.get("period", 14))
-        mask = ~np.isnan(adx_vals) & (adx_vals >= p.get("threshold", 25))
-
-    elif cid == "volume_filter":
-        vratio = volume_ratio(volume, p.get("period", 20))
-        mask = vratio >= p.get("min_ratio", 0.8)
-
-    elif cid == "volatility_filter":
-        atr_vals = atr(high, low, close, p.get("period", 14))
-        atr_pct = np.where(close > 0, atr_vals / close * 100, 0)
-        mask = (atr_pct >= p.get("min_pct", 0.5)) & (atr_pct <= p.get("max_pct", 5.0))
-
-    elif cid == "rsi_range_filter":
-        rsi_vals = rsi(close, p.get("period", 14))
-        mask = ~np.isnan(rsi_vals) & (rsi_vals >= p.get("min_rsi", 25)) & (rsi_vals <= p.get("max_rsi", 75))
-
-    elif cid == "time_filter":
-        start_h = p.get("start_hour", 0)
-        end_h = p.get("end_hour", 24)
-        hours = np.array([(t // 3600000) % 24 for t in timestamps])
-        if start_h < end_h:
-            mask = (hours >= start_h) & (hours < end_h)
-        else:
-            mask = (hours >= start_h) | (hours < end_h)
-
-    elif cid == "consecutive_candle":
-        lb = p.get("lookback", 3)
-        min_count = p.get("min_count", 2)
-        for i in range(lb, n):
-            green = sum(1 for j in range(max(1, i - lb), i) if close[j] > close[j - 1])
-            red = lb - green
-            mask[i] = green >= min_count or red >= min_count
-
-    elif cid == "drawdown_breaker":
-        pass
-
-    return mask
-
-
-# ─── Backtest Engine ───
-
-@dataclass
-class Trade:
-    entry_idx: int
-    entry_price: float
-    side: int  # +1=long, -1=short
-    size_usd: float
-    stop_price: float
-    tp_price: float
-    exit_idx: int = 0
-    exit_price: float = 0.0
-    pnl_pct: float = 0.0
-    pnl_usd: float = 0.0
-    exit_reason: str = ""
-    entry_time: int = 0
-    exit_time: int = 0
-
-
-@dataclass
-class BacktestResult:
-    trades: list[Trade] = field(default_factory=list)
-    equity_curve: list[float] = field(default_factory=list)
-    total_return_pct: float = 0.0
-    win_rate: float = 0.0
-    total_trades: int = 0
-    avg_pnl_pct: float = 0.0
-    max_drawdown_pct: float = 0.0
-    sharpe_ratio: float = 0.0
-    profit_factor: float = 0.0
-    avg_hold_bars: float = 0.0
-    initial_equity: float = 0.0
-    final_equity: float = 0.0
-    slippage_pct: float = 0.0
-    warnings: list[str] = field(default_factory=list)
-
-    def to_dict(self) -> dict:
-        return {
-            "total_return_pct": round(self.total_return_pct, 2),
-            "win_rate": round(self.win_rate, 2),
-            "total_trades": self.total_trades,
-            "avg_pnl_pct": round(self.avg_pnl_pct, 3),
-            "max_drawdown_pct": round(self.max_drawdown_pct, 2),
-            "sharpe_ratio": round(self.sharpe_ratio, 3),
-            "profit_factor": round(self.profit_factor, 2),
-            "avg_hold_bars": round(self.avg_hold_bars, 1),
-            "initial_equity": self.initial_equity,
-            "final_equity": round(self.final_equity, 2),
-            "slippage_pct": self.slippage_pct,
-            "warnings": self.warnings,
-            "equity_curve": [round(e, 2) for e in self.equity_curve[::max(1, len(self.equity_curve) // 500)]],
-            "trades": [
-                {
-                    "entry_idx": t.entry_idx, "exit_idx": t.exit_idx,
-                    "side": "Long" if t.side == 1 else "Short",
-                    "entry_price": round(t.entry_price, 4),
-                    "exit_price": round(t.exit_price, 4),
-                    "pnl_pct": round(t.pnl_pct, 3),
-                    "pnl_usd": round(t.pnl_usd, 2),
-                    "exit_reason": t.exit_reason,
-                    "entry_time": t.entry_time,
-                    "exit_time": t.exit_time,
-                }
-                for t in self.trades[-200:]
-            ],
-        }
-
-
-INTERVAL_ANNUAL = {
-    "1m": 365 * 24 * 60, "5m": 365 * 24 * 12, "15m": 365 * 24 * 4,
-    "1h": 365 * 24, "4h": 365 * 6, "1d": 365,
-}
-
-def run_backtest(close: np.ndarray, high: np.ndarray, low: np.ndarray,
-                 volume: np.ndarray, timestamps: np.ndarray,
-                 open_prices: np.ndarray,
-                 components: list[dict],
-                 initial_equity: float = 10000.0,
-                 fee_pct: float = 0.075,
-                 slippage_pct: float = 0.05,
-                 interval: str = "1h") -> BacktestResult:
-    n = len(close)
-    signals = generate_signals(close, high, low, volume, timestamps, components)
-
-    risk_comps = [c for c in components if c["category"] == "risk"]
-    sizing_comps = [c for c in components if c["category"] == "sizing"]
-
-    risk_pct = 1.0
-    leverage = 1.0
-    max_pos_pct = 100.0
-    rr_ratio = 2.0
-    max_hold = 9999
-    use_trailing = False
-    trail_activation = 1.0
-    trail_pct = 0.5
-    use_atr_stop = False
-    atr_stop_mult = 2.0
-    atr_stop_period = 14
-    fixed_stop_pct = 2.0
-    use_breakeven = False
-    breakeven_trigger = 1.0
-
-    for c in sizing_comps:
-        p = c.get("params", {})
-        if c["id"] == "fixed_risk":
-            risk_pct = p.get("risk_pct", 1.0)
-        elif c["id"] == "leverage":
-            leverage = p.get("leverage", 1.0)
-        elif c["id"] == "max_position":
-            max_pos_pct = p.get("max_pct", 100.0)
-
-    for c in risk_comps:
-        p = c.get("params", {})
-        if c["id"] == "take_profit":
-            rr_ratio = p.get("rr_ratio", 2.0)
-        elif c["id"] == "max_hold":
-            max_hold = p.get("bars", 9999)
-        elif c["id"] == "trailing_stop":
-            use_trailing = True
-            trail_activation = p.get("activation_pct", 1.0)
-            trail_pct = p.get("trail_pct", 0.5)
-        elif c["id"] == "atr_stop":
-            use_atr_stop = True
-            atr_stop_mult = p.get("multiplier", 2.0)
-            atr_stop_period = p.get("period", 14)
-        elif c["id"] == "fixed_stop":
-            fixed_stop_pct = p.get("stop_pct", 2.0)
-        elif c["id"] == "breakeven_stop":
-            use_breakeven = True
-            breakeven_trigger = p.get("trigger_pct", 1.0)
-
-    dd_breaker_pct = 999.0
-    for c in [cc for cc in components if cc.get("category") == "filters"]:
-        if c["id"] == "drawdown_breaker":
-            dd_breaker_pct = c.get("params", {}).get("max_dd", 5.0)
-
-    atr_vals = atr(high, low, close, atr_stop_period) if use_atr_stop else None
-
-    equity = initial_equity
-    peak_equity = initial_equity
-    equity_curve = [equity]
-    trades: list[Trade] = []
-    position: Trade | None = None
-    pending_signal = 0
-
-    def _close_position(pos, raw_exit_price, reason_str, bar_idx):
-        nonlocal equity
-        ex_price = raw_exit_price * (1 - pos.side * slippage_pct / 100)
-        gross_pnl = pos.side * (ex_price - pos.entry_price) / pos.entry_price * pos.size_usd
-        entry_fee = pos.size_usd * fee_pct / 100
-        exit_notional = pos.size_usd * abs(ex_price / pos.entry_price)
-        exit_fee = exit_notional * fee_pct / 100
-        pnl_usd = gross_pnl - entry_fee - exit_fee
-        pos.exit_idx = bar_idx
-        pos.exit_price = round(ex_price, 8)
-        pos.pnl_pct = pnl_usd / pos.size_usd * 100 * leverage if pos.size_usd > 0 else 0
-        pos.pnl_usd = pnl_usd
-        pos.exit_reason = reason_str
-        pos.exit_time = int(timestamps[bar_idx]) if bar_idx < len(timestamps) else 0
-        trades.append(pos)
-        equity += pnl_usd
-
-    for i in range(1, n):
-        # === PHASE 1: Execute pending signal at this bar's open ===
-        if pending_signal != 0:
-            if position is not None and pending_signal != position.side:
-                _close_position(position, open_prices[i], "반대 시그널", i)
-                position = None
-
-            if equity > peak_equity:
-                peak_equity = equity
-            current_dd = (peak_equity - equity) / peak_equity * 100 if peak_equity > 0 else 0
-
-            if position is None and equity > 0 and current_dd < dd_breaker_pct:
-                side = pending_signal
-                entry_price = open_prices[i] * (1 + side * slippage_pct / 100)
-
-                if use_atr_stop and atr_vals is not None and not np.isnan(atr_vals[i]):
-                    stop_dist = atr_vals[i] * atr_stop_mult
-                else:
-                    stop_dist = entry_price * fixed_stop_pct / 100
-
-                stop_price = max(0.0001, entry_price - side * stop_dist)
-                tp_dist = stop_dist * rr_ratio
-                tp_price = max(0.0001, entry_price + side * tp_dist)
-
-                risk_usd = equity * risk_pct / 100
-                stop_pct_val = abs(stop_dist / entry_price)
-                if stop_pct_val > 0:
-                    size_usd = min(risk_usd / stop_pct_val, equity * max_pos_pct / 100) * leverage
-                else:
-                    size_usd = equity * risk_pct / 100 * leverage
-
-                position = Trade(
-                    entry_idx=i, entry_price=entry_price, side=side,
-                    size_usd=size_usd, stop_price=stop_price, tp_price=tp_price,
-                    entry_time=int(timestamps[i]) if i < len(timestamps) else 0,
-                )
-
-            pending_signal = 0
-
-        # === PHASE 2: Intra-bar exit checks ===
-        if position is not None:
-            pnl_mult = position.side * (close[i] - position.entry_price) / position.entry_price
-
-            if use_breakeven:
-                if pnl_mult * 100 >= breakeven_trigger:
-                    if position.side == 1 and position.stop_price < position.entry_price:
-                        position.stop_price = position.entry_price
-                    elif position.side == -1 and position.stop_price > position.entry_price:
-                        position.stop_price = position.entry_price
-
-            if use_trailing:
-                if position.side == 1:
-                    new_stop = high[i] * (1 - trail_pct / 100)
-                    if pnl_mult * 100 >= trail_activation and new_stop > position.stop_price:
-                        position.stop_price = new_stop
-                else:
-                    new_stop = low[i] * (1 + trail_pct / 100)
-                    if pnl_mult * 100 >= trail_activation and new_stop < position.stop_price:
-                        position.stop_price = new_stop
-
-            gap_stop = (position.side == 1 and open_prices[i] <= position.stop_price) or \
-                       (position.side == -1 and open_prices[i] >= position.stop_price)
-            gap_tp = (position.side == 1 and open_prices[i] >= position.tp_price) or \
-                     (position.side == -1 and open_prices[i] <= position.tp_price)
-            hit_stop = (position.side == 1 and low[i] <= position.stop_price) or \
-                       (position.side == -1 and high[i] >= position.stop_price)
-            hit_tp = (position.side == 1 and high[i] >= position.tp_price) or \
-                     (position.side == -1 and low[i] <= position.tp_price)
-            hit_max_hold = (i - position.entry_idx) >= max_hold
-
-            exit_price = None
-            reason = ""
-
-            if gap_stop or gap_tp:
-                exit_price = open_prices[i]
-                reason = "갭 손절" if gap_stop else "갭 익절"
-            elif hit_stop and hit_tp:
-                stop_dist_from_open = abs(open_prices[i] - position.stop_price)
-                tp_dist_from_open = abs(open_prices[i] - position.tp_price)
-                if stop_dist_from_open <= tp_dist_from_open:
-                    exit_price = position.stop_price
-                    reason = "손절"
-                else:
-                    exit_price = position.tp_price
-                    reason = "익절"
-            elif hit_stop:
-                exit_price = position.stop_price
-                reason = "손절"
-            elif hit_tp:
-                exit_price = position.tp_price
-                reason = "익절"
-            elif hit_max_hold:
-                exit_price = close[i]
-                reason = "시간초과"
-
-            if exit_price is not None:
-                _close_position(position, exit_price, reason, i)
-                position = None
-
-        # === PHASE 3: Equity tracking ===
-        if equity > peak_equity:
-            peak_equity = equity
-        current_dd = (peak_equity - equity) / peak_equity * 100 if peak_equity > 0 else 0
-
-        # === PHASE 4: Queue signal for next bar ===
-        if signals[i] != 0 and equity > 0 and current_dd < dd_breaker_pct:
-            if position is None or signals[i] != position.side:
-                pending_signal = int(signals[i])
-
-        equity_curve.append(equity)
-
-    if position is not None:
-        _close_position(position, close[-1], "종료", n - 1)
-        equity_curve.append(equity)
-
-    result = BacktestResult(
-        trades=trades,
-        equity_curve=equity_curve,
-        initial_equity=initial_equity,
-        final_equity=equity,
-        slippage_pct=slippage_pct,
-    )
-
-    if len(trades) < 30:
-        result.warnings.append(f"거래 {len(trades)}건 — 최소 30건 이상이어야 통계적으로 유의미합니다")
-    if len(trades) < 10:
-        result.warnings.append("거래 10건 미만 — 결과를 신뢰할 수 없습니다. 더 긴 기간으로 테스트하세요")
-
-    if trades:
-        result.total_trades = len(trades)
-        wins = [t for t in trades if t.pnl_pct > 0]
-        losses = [t for t in trades if t.pnl_pct <= 0]
-        result.win_rate = len(wins) / len(trades) * 100
-        result.total_return_pct = (equity - initial_equity) / initial_equity * 100
-        result.avg_pnl_pct = np.mean([t.pnl_pct for t in trades])
-        result.avg_hold_bars = np.mean([t.exit_idx - t.entry_idx for t in trades])
-
-        gross_profit = sum(t.pnl_usd for t in wins) if wins else 0
-        gross_loss = abs(sum(t.pnl_usd for t in losses)) if losses else 1
-        result.profit_factor = gross_profit / max(gross_loss, 0.01)
-
-        peak = initial_equity
-        max_dd = 0
-        for e in equity_curve:
-            if e > peak:
-                peak = e
-            dd = (peak - e) / peak * 100
-            if dd > max_dd:
-                max_dd = dd
-        result.max_drawdown_pct = max_dd
-
-        returns = np.diff(equity_curve) / np.maximum(np.array(equity_curve[:-1]), 1e-10)
-        returns = returns[np.isfinite(returns)]
-        if len(returns) > 1 and np.std(returns) > 0:
-            ann_factor = math.sqrt(INTERVAL_ANNUAL.get(interval, 365 * 24))
-            result.sharpe_ratio = np.mean(returns) / np.std(returns) * ann_factor
-        else:
-            result.sharpe_ratio = 0
-
-    return result
-
-
-# ─── Indicator data for charts ───
-
-def compute_indicators(close, high, low, volume, components):
-    """Compute indicator values for chart overlays."""
-    indicators = {}
-
-    for comp in components:
-        p = comp.get("params", {})
-        cid = comp["id"]
-
-        if cid == "ema_cross":
-            indicators[f"EMA({p.get('fast', 9)})"] = ema(close, p.get("fast", 9)).tolist()
-            indicators[f"EMA({p.get('slow', 21)})"] = ema(close, p.get("slow", 21)).tolist()
-        elif cid == "rsi_threshold":
-            indicators["RSI"] = rsi(close, p.get("period", 14)).tolist()
-        elif cid == "macd_cross":
-            ml, sl, hist = macd(close, p.get("fast", 12), p.get("slow", 26), p.get("signal", 9))
-            indicators["MACD"] = ml.tolist()
-            indicators["MACD Signal"] = sl.tolist()
-        elif cid in ("boll_bounce", "boll_breakout"):
-            upper, mid, lower, _ = bollinger(close, p.get("period", 20), p.get("std", 2.0))
-            indicators["BB Upper"] = upper.tolist()
-            indicators["BB Mid"] = mid.tolist()
-            indicators["BB Lower"] = lower.tolist()
-        elif cid == "vwap_mean_reversion":
-            v = vwap(high, low, close, volume, p.get("period", 20))
-            indicators["VWAP"] = v.tolist()
-        elif cid == "trend_filter":
-            indicators[f"EMA({p.get('period', 50)})"] = ema(close, p.get("period", 50)).tolist()
-        elif cid == "adx_filter":
-            indicators["ADX"] = adx(high, low, close, p.get("period", 14)).tolist()
-        elif cid == "atr_stop":
-            indicators["ATR"] = atr(high, low, close, p.get("period", 14)).tolist()
-
-    return {k: [None if (isinstance(v, float) and math.isnan(v)) else v for v in vals]
-            for k, vals in indicators.items()}
-
-
-# ─── Recommendations ───
-
-def recommend_components(close, high, low, volume, timestamps):
-    """Suggest components based on current market state."""
-    recs = []
-
-    rsi_now = rsi(close, 14)
-    adx_now = adx(high, low, close, 14)
-    vratio = volume_ratio(volume, 20)
-    _, _, _, pct_b = bollinger(close, 20, 2.0)
-
-    last_rsi = rsi_now[-1] if not np.isnan(rsi_now[-1]) else 50
-    last_adx = adx_now[-1] if not np.isnan(adx_now[-1]) else 20
-    last_vratio = vratio[-1] if not np.isnan(vratio[-1]) else 1.0
-    last_pctb = pct_b[-1] if not np.isnan(pct_b[-1]) else 0.5
-
-    trending = last_adx > 25
-    ranging = last_adx < 20
-    high_volume = last_vratio > 1.5
-    oversold = last_rsi < 35
-    overbought = last_rsi > 65
-
-    if trending and high_volume:
-        recs.append({
-            "name": "추세 추종 조합",
-            "reason": f"ADX={last_adx:.0f}(강한 추세) + 거래량 {last_vratio:.1f}배(활발)",
-            "components": [
-                {"id": "ema_cross", "category": "signals", "params": {"fast": 9, "slow": 21}},
-                {"id": "adx_filter", "category": "filters", "params": {"period": 14, "threshold": 22}},
-                {"id": "volume_filter", "category": "filters", "params": {"min_ratio": 1.0, "period": 20}},
-                {"id": "atr_stop", "category": "risk", "params": {"period": 14, "multiplier": 2.0}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 2.5}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 1.0}},
-            ],
+            c[col + "_rel"] = 0.0
+    if "racer_grd_cd" not in c.columns:
+        c["racer_grd_cd"] = "NA"
+    F = pd.concat([
+        c[NUM + ["recent_mean_rank", "recent_win_cnt"] + [x + "_rel" for x in REL]],
+        pd.get_dummies(c["bno"], prefix="bn"),
+        pd.get_dummies(c["racer_grd_cd"].fillna("NA").astype(str).str.strip(), prefix="g"),
+    ], axis=1)
+    F = F.reindex(columns=cols, fill_value=0)
+    for col in cols:
+        if col in med:
+            F[col] = F[col].fillna(med[col])
+    Fv = F.fillna(0).values
+    try:
+        pwin = model["win"].predict_proba(Fv)[:, 1]
+        pplc = model["plc"].predict_proba(Fv)[:, 1]
+    except Exception as e:  # noqa: BLE001
+        return None, f"모델 예측 실패: {e}"
+
+    rows = []
+    for b, w, p in zip(c["bno"], pwin, pplc):
+        b = int(b)
+        rows.append({"bno": b, "name": names.get(b, ""), "grade": grades.get(b, ""),
+                     "pwin": float(w), "pplc": float(p)})
+    rows.sort(key=lambda r: -r["pplc"])
+    return rows, None
+
+
+# ───────────────────────── Harville 7권종 픽 ─────────────────────────
+
+
+def _harville_order(rows):
+    """win확률 내림차순 마번 리스트 (Harville 순서픽 근사)."""
+    return [r["bno"] for r in sorted(rows, key=lambda r: -r["pwin"])]
+
+
+def _grade_plc(p):
+    if p >= 0.85:
+        return "강"
+    if p >= 0.70:
+        return "중"
+    return "약"
+
+
+def _grade_win(p):
+    if p >= 0.50:
+        return "강"
+    if p >= 0.30:
+        return "중"
+    return "약"
+
+
+def build_picks(rows):
+    """스코어링 rows -> 7권종 픽 리스트.
+
+    매핑(keirin/pnl_exotic.py 실착순 대조 검증 n=14153):
+      단승  = win top1
+      연승  = plc top1·top2
+      복승  = Harville 무순 top2
+      쌍승  = Harville 순서 top2
+      삼복  = Harville 무순 top3
+      쌍복  = 1위 고정 + (2·3위 무순)
+      삼쌍  = Harville 순서 top3
+    각 픽 + 모델확률 + 신뢰등급.
+    """
+    by_win = sorted(rows, key=lambda r: -r["pwin"])
+    by_plc = sorted(rows, key=lambda r: -r["pplc"])
+    order = _harville_order(rows)  # win 내림차순 마번
+    pw = {r["bno"]: r["pwin"] for r in rows}
+    pp = {r["bno"]: r["pplc"] for r in rows}
+    nm = {r["bno"]: r["name"] for r in rows}
+
+    def lab(b):
+        n = nm.get(b, "")
+        return f"{b}번 {n}".strip()
+
+    picks = []
+
+    # 단승: win top1
+    t = by_win[0]
+    picks.append({
+        "code": "단승", "desc": "1착 적중", "type": "단일",
+        "pick": [lab(t["bno"])],
+        "prob": f"win {100*t['pwin']:.1f}%",
+        "grade": _grade_win(t["pwin"]),
+    })
+
+    # 연승: plc top1·2 (둘 중 1마라도 2착 이내면 적중)
+    y = by_plc[:2]
+    picks.append({
+        "code": "연승", "desc": "2착 이내 적중", "type": "복수",
+        "pick": [lab(r["bno"]) for r in y],
+        "prob": " / ".join(f"연대 {100*r['pplc']:.0f}%" for r in y),
+        "grade": _grade_plc(max(r["pplc"] for r in y)),
+    })
+
+    if len(order) >= 2:
+        a, b = order[0], order[1]
+        # 복승: 무순 top2
+        picks.append({
+            "code": "복승", "desc": "1·2착 마번 무순", "type": "조합(무순2)",
+            "pick": [f"{lab(a)} ↔ {lab(b)}"],
+            "prob": f"Harville top2 (win {100*pw[a]:.0f}% · {100*pw[b]:.0f}%)",
+            "grade": _grade_plc((pp[a] + pp[b]) / 2),
         })
-    elif trending:
-        recs.append({
-            "name": "MACD 추세 조합",
-            "reason": f"ADX={last_adx:.0f}(추세 확인) — 크로스 시그널로 진입",
-            "components": [
-                {"id": "macd_cross", "category": "signals", "params": {"fast": 12, "slow": 26, "signal": 9}},
-                {"id": "trend_filter", "category": "filters", "params": {"period": 50}},
-                {"id": "atr_stop", "category": "risk", "params": {"period": 14, "multiplier": 1.5}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 2.0}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 1.0}},
-            ],
+        # 쌍승: 순서 top2
+        picks.append({
+            "code": "쌍승", "desc": "1착→2착 순서", "type": "조합(순서2)",
+            "pick": [f"{lab(a)} → {lab(b)}"],
+            "prob": f"순서 top2 (win {100*pw[a]:.0f}% → {100*pw[b]:.0f}%)",
+            "grade": _grade_win(pw[a]),
         })
 
-    if ranging:
-        recs.append({
-            "name": "횡보장 역추세 조합",
-            "reason": f"ADX={last_adx:.0f}(횡보) — 볼린저 밴드 반등 전략",
-            "components": [
-                {"id": "boll_bounce", "category": "signals", "params": {"period": 20, "std": 2.0}},
-                {"id": "rsi_range_filter", "category": "filters", "params": {"period": 14, "min_rsi": 20, "max_rsi": 80}},
-                {"id": "fixed_stop", "category": "risk", "params": {"stop_pct": 1.5}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 1.5}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 0.5}},
-            ],
+    if len(order) >= 3:
+        a, b, c = order[0], order[1], order[2]
+        # 삼복: 무순 top3
+        picks.append({
+            "code": "삼복", "desc": "1·2·3착 마번 무순", "type": "조합(무순3)",
+            "pick": [f"{lab(a)} ↔ {lab(b)} ↔ {lab(c)}"],
+            "prob": "Harville 무순 top3",
+            "grade": _grade_plc((pp[a] + pp[b] + pp[c]) / 3),
+        })
+        # 쌍복: 1위 고정 + 2·3위 무순
+        picks.append({
+            "code": "쌍복", "desc": "1착 고정 + 2·3착 무순", "type": "조합",
+            "pick": [f"1착 {lab(a)} 고정 + ({lab(b)} ↔ {lab(c)})"],
+            "prob": f"1착 고정 win {100*pw[a]:.0f}%",
+            "grade": _grade_win(pw[a]),
+        })
+        # 삼쌍: 순서 top3
+        picks.append({
+            "code": "삼쌍", "desc": "1→2→3착 순서", "type": "조합(순서3)",
+            "pick": [f"{lab(a)} → {lab(b)} → {lab(c)}"],
+            "prob": f"순서 top3 (win {100*pw[a]:.0f}%)",
+            "grade": _grade_win(pw[a]),
         })
 
-    if ranging and last_vratio < 1.0:
-        recs.append({
-            "name": "VWAP 평균회귀 조합",
-            "reason": f"ADX={last_adx:.0f}(횡보) + 거래량 {last_vratio:.1f}배(조용) — VWAP 이탈 복귀",
-            "components": [
-                {"id": "vwap_mean_reversion", "category": "signals", "params": {"period": 20, "z_threshold": 2.0}},
-                {"id": "volume_filter", "category": "filters", "params": {"min_ratio": 0.5, "period": 20}},
-                {"id": "fixed_stop", "category": "risk", "params": {"stop_pct": 1.0}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 1.5}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 0.5}},
-            ],
-        })
-
-    if oversold:
-        recs.append({
-            "name": "과매도 반등 조합",
-            "reason": f"RSI={last_rsi:.0f}(과매도 구간) — 반등 시 진입",
-            "components": [
-                {"id": "rsi_threshold", "category": "signals", "params": {"period": 14, "oversold": 30, "overbought": 70}},
-                {"id": "volume_filter", "category": "filters", "params": {"min_ratio": 0.8, "period": 20}},
-                {"id": "atr_stop", "category": "risk", "params": {"period": 14, "multiplier": 2.0}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 2.0}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 1.0}},
-            ],
-        })
-
-    if high_volume:
-        recs.append({
-            "name": "거래량 돌파 조합",
-            "reason": f"거래량 {last_vratio:.1f}배(폭증) — 방향성 있는 돌파",
-            "components": [
-                {"id": "volume_breakout", "category": "signals", "params": {"vol_mult": 2.0, "ma_period": 20}},
-                {"id": "trend_filter", "category": "filters", "params": {"period": 50}},
-                {"id": "atr_stop", "category": "risk", "params": {"period": 14, "multiplier": 1.5}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 3.0}},
-                {"id": "trailing_stop", "category": "risk", "params": {"activation_pct": 1.5, "trail_pct": 0.8}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 1.0}},
-            ],
-        })
-
-    if not recs:
-        recs.append({
-            "name": "기본 EMA 크로스 조합",
-            "reason": "현재 시장 상태에 맞는 특별한 추천이 없어 기본 전략을 추천합니다",
-            "components": [
-                {"id": "ema_cross", "category": "signals", "params": {"fast": 9, "slow": 21}},
-                {"id": "atr_stop", "category": "risk", "params": {"period": 14, "multiplier": 2.0}},
-                {"id": "take_profit", "category": "risk", "params": {"rr_ratio": 2.0}},
-                {"id": "fixed_risk", "category": "sizing", "params": {"risk_pct": 1.0}},
-            ],
-        })
-
-    return recs
+    return picks
 
 
-# ─── Live Signal Evaluation ───
-
-def evaluate_live_signal(close: np.ndarray, high: np.ndarray, low: np.ndarray,
-                         volume: np.ndarray, timestamps: np.ndarray,
-                         components: list[dict]) -> dict:
-    """Evaluate strategy components against current data and return signal status."""
-    n = len(close)
-    if n < 2:
-        return {"signal": "neutral", "signal_text": "데이터 부족", "checks": []}
-
-    signal_components = [c for c in components if c["category"] == "signals"]
-    filter_components = [c for c in components if c["category"] == "filters"]
-    sizing_components = [c for c in components if c["category"] == "sizing"]
-
-    checks = []
-    final_signal = 0
-
-    for comp in signal_components:
-        sig = _eval_signal(comp, close, high, low, volume)
-        last_sig = int(sig[-1]) if not np.isnan(sig[-1]) else 0
-        recent_sig = 0
-        for j in range(min(3, n), 0, -1):
-            if sig[-j] != 0:
-                recent_sig = int(sig[-j])
-                break
-
-        comp_name = _get_component_name(comp["id"])
-        detail = _get_signal_detail(comp, close, high, low, volume)
-
-        if last_sig == 1:
-            checks.append({"name": comp_name, "type": "signal", "status": "buy", "icon": "BUY", "detail": detail})
-            if final_signal == 0:
-                final_signal = 1
-        elif last_sig == -1:
-            checks.append({"name": comp_name, "type": "signal", "status": "sell", "icon": "SELL", "detail": detail})
-            if final_signal == 0:
-                final_signal = -1
-        elif recent_sig != 0:
-            label = "매수 대기" if recent_sig == 1 else "매도 대기"
-            checks.append({"name": comp_name, "type": "signal", "status": "recent", "icon": label, "detail": detail})
-        else:
-            checks.append({"name": comp_name, "type": "signal", "status": "neutral", "icon": "대기", "detail": detail})
-
-    for comp in filter_components:
-        if comp["id"] == "drawdown_breaker":
-            checks.append({"name": "낙폭 차단기", "type": "filter", "status": "pass", "icon": "PASS",
-                           "detail": "실시간에서는 낙폭 차단 미적용"})
-            continue
-
-        mask = _eval_filter(comp, close, high, low, volume, timestamps)
-        passed = bool(mask[-1])
-        comp_name = _get_component_name(comp["id"])
-        detail = _get_filter_detail(comp, close, high, low, volume, timestamps)
-
-        checks.append({
-            "name": comp_name, "type": "filter",
-            "status": "pass" if passed else "fail",
-            "icon": "PASS" if passed else "FAIL",
-            "detail": detail,
-        })
-        if not passed:
-            final_signal = 0
-
-    direction = "both"
-    for comp in sizing_components:
-        if comp["id"] == "direction":
-            direction = comp.get("params", {}).get("direction", "both")
-
-    if direction == "long" and final_signal == -1:
-        final_signal = 0
-    elif direction == "short" and final_signal == 1:
-        final_signal = 0
-
-    if final_signal == 1:
-        signal_text = "매수 신호"
-        signal_status = "buy"
-    elif final_signal == -1:
-        signal_text = "매도 신호"
-        signal_status = "sell"
-    else:
-        all_signals_neutral = all(c["status"] in ("neutral", "recent") for c in checks if c["type"] == "signal")
-        any_filter_fail = any(c["status"] == "fail" for c in checks if c["type"] == "filter")
-        if any_filter_fail:
-            signal_text = "필터 미충족"
-            signal_status = "filtered"
-        elif all_signals_neutral:
-            signal_text = "신호 대기중"
-            signal_status = "neutral"
-        else:
-            signal_text = "조건 불충분"
-            signal_status = "neutral"
-
+def predict(starters, meta=None):
+    """출주표 -> {rows, picks, top, meta, n_starters} 또는 {error}."""
+    rows, err = score_keirin(starters)
+    if err:
+        return {"error": err}
+    picks = build_picks(rows)
     return {
-        "signal": signal_status,
-        "signal_text": signal_text,
-        "direction": final_signal,
-        "checks": checks,
-        "price": round(float(close[-1]), 4),
-        "timestamp": int(timestamps[-1]) if len(timestamps) > 0 else 0,
+        "rows": rows,
+        "picks": picks,
+        "top": rows[0],
+        "meta": meta or {},
+        "n_starters": len(rows),
     }
 
 
-def _get_component_name(cid: str) -> str:
-    name_map = {
-        "ema_cross": "EMA 크로스", "rsi_threshold": "RSI 과매수/과매도",
-        "macd_cross": "MACD 크로스", "boll_bounce": "볼린저 반등",
-        "boll_breakout": "볼린저 돌파", "vwap_mean_reversion": "VWAP 평균회귀",
-        "price_breakout": "가격 돌파", "stoch_rsi_cross": "Stoch RSI",
-        "volume_breakout": "거래량 돌파", "williams_r": "Williams %R",
-        "obv_divergence": "OBV 다이버전스", "cci_signal": "CCI",
-        "trend_filter": "추세 필터", "adx_filter": "ADX 필터",
-        "volume_filter": "거래량 필터", "volatility_filter": "변동성 필터",
-        "rsi_range_filter": "RSI 범위", "time_filter": "시간대 필터",
-        "consecutive_candle": "연속봉", "drawdown_breaker": "낙폭 차단기",
+# ═══════════════════════ 경마(KRA) ═══════════════════════
+
+
+def _kra_api_page(meet, rc_date, rc_no, page, rows, key, timeout=15):
+    qs = urllib.parse.urlencode({
+        "serviceKey": key, "_type": "json",
+        "numOfRows": rows, "pageNo": page,
+        "meet": str(meet), "rc_date": str(rc_date), "rc_no": str(rc_no),
+    })
+    full = KRA_CARD_URL + "?" + qs
+    req = urllib.request.Request(full, headers={"User-Agent": "strategy-arena"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        body = r.read().decode("utf-8", "replace")
+    data = json.loads(body)
+    resp = data.get("response", {}) or {}
+    hdr = resp.get("header", {}) or {}
+    if str(hdr.get("resultCode")) not in ("00", "0"):
+        raise RuntimeError(f"API resultCode={hdr.get('resultCode')} {hdr.get('resultMsg')}")
+    bd = resp.get("body", {}) or {}
+    tc = int(bd.get("totalCount") or 0)
+    items_c = bd.get("items", {})
+    items = items_c.get("item", []) if isinstance(items_c, dict) else []
+    if isinstance(items, dict):
+        items = [items]
+    return tc, items
+
+
+# KRA 경주장 코드 (API 는 한글명 수용; 숫자코드 호환 위해 매핑 유지)
+_KRA_MEET_CODE = {"서울": "1", "제주": "2", "부경": "3"}
+
+
+def fetch_kra_card(ymd, meet, race_no, key, timeout=15):
+    """KRA RaceDetailResult_1 에서 단일 경주 출주표 실시간 fetch.
+    반환: (starters_list, None) 또는 (None, 에러문자열).
+    """
+    if not key:
+        return None, "NO_KEY"
+    rc_date = re.sub(r"\D", "", str(ymd or ""))  # YYYYMMDD
+    if len(rc_date) != 8:
+        return None, "날짜 형식 오류 (YYYY-MM-DD)"
+    rno = str(race_no).strip().lstrip("0") or "0"
+    # 먼저 한글명, 실패 시 숫자코드로 재시도
+    candidates = [meet, _KRA_MEET_CODE.get(meet, meet)]
+    last_err = None
+    for mv in candidates:
+        try:
+            tc, items = _kra_api_page(mv, rc_date, rno, 1, 50, key, timeout)
+        except Exception as e:  # noqa: BLE001
+            last_err = f"API 호출 실패: {type(e).__name__}: {e}"
+            continue
+        if items:
+            # rc_no 클라이언트 재확인 (서버가 전체 반환할 때 대비)
+            match = [i for i in items
+                     if str(i.get("rcNo", rno)).strip().lstrip("0") == rno]
+            return (match or items), None
+        last_err = f"{meet} {rc_date} {rno}R 출주표 없음 (totalCount={tc})"
+    return None, last_err or "해당 경주를 찾지 못했습니다."
+
+
+def load_kra_demo():
+    """키 없을 때 데모용 KRA 과거 1경주 반환. 실패 시 None."""
+    try:
+        with open(KRA_DEMO_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _kra_base_w(s):
+    """wgHr 'NNN(+M)' / 'NNN()' -> NNN."""
+    if s is None:
+        return None
+    m = re.match(r"\s*(\d+)", str(s))
+    return float(m.group(1)) if m else None
+
+
+def score_kra(starters):
+    """KRA 출주표 item 리스트 -> [{bno,name,grade,pwin,pplc}] (연대확률 내림차순).
+
+    kra/train_save_model.py 의 within-race 상대피처 파이프라인을 그대로 재현한다
+    (단일 경주 평균 대비 _rel, sex/budam 더미, jk/tr prior 글로벌 맵 fallback).
+    반환: (rows, None) 또는 (None, 에러문자열).
+    """
+    model, err = load_kra_model()
+    if err:
+        return None, err
+    try:
+        import numpy as np  # noqa: F401
+        import pandas as pd
+    except Exception as e:  # noqa: BLE001
+        return None, f"의존성 로드 실패: {e}"
+
+    NUM, REL = model["num"], model["rel"]
+    cols, med = model["cols"], model["med"]
+    jk_prior = model.get("jk_prior", {})
+    tr_prior = model.get("tr_prior", {})
+    gp = model.get("global_win_rate", 0.1)
+
+    c = pd.DataFrame(starters)
+    if c.empty:
+        return None, "출주 두수 없음"
+    # 마번 = chulNo (출주번호). 이름/등급(말 이름, rating 등급 없음 → grade=공란)
+    c["bno"] = pd.to_numeric(c.get("chulNo"), errors="coerce")
+    c = c[c["bno"].notna()].copy()
+    if c.empty:
+        return None, "유효 출주번호(chulNo) 없음"
+    c["bno"] = c["bno"].astype(int)
+    names = {int(b): (str(n).strip() if n else "") for b, n in
+             zip(c["bno"], c.get("hrName", [""] * len(c)))}
+
+    # 숫자 피처
+    for col in ["winOdds", "plcOdds", "wgBudam", "age", "rating", "rcDist"]:
+        c[col] = pd.to_numeric(c.get(col), errors="coerce")
+    c["chulNo"] = c["bno"].astype(float)
+    c["wgHr_base"] = c.get("wgHr").map(_kra_base_w) if "wgHr" in c.columns else None
+    c["field_size"] = float(len(c))
+    # jockey/trainer 사전 승률 (글로벌 맵 → 없으면 global base rate)
+    c["jk_wr_prior"] = (c.get("jkNo").astype(str).map(jk_prior)
+                        if "jkNo" in c.columns else gp)
+    c["tr_wr_prior"] = (c.get("trNo").astype(str).map(tr_prior)
+                        if "trNo" in c.columns else gp)
+    c["jk_wr_prior"] = pd.to_numeric(c["jk_wr_prior"], errors="coerce").fillna(gp)
+    c["tr_wr_prior"] = pd.to_numeric(c["tr_wr_prior"], errors="coerce").fillna(gp)
+
+    # within-race 상대값 (해당 경주 평균 대비)
+    for col in REL:
+        if col in c.columns:
+            c[col + "_rel"] = c[col] - c[col].mean()
+        else:
+            c[col + "_rel"] = 0.0
+
+    # sex / budam 더미
+    for cat, pref in [("sex", "sex"), ("budam", "bd")]:
+        src = c[cat].fillna("NA").astype(str) if cat in c.columns \
+            else pd.Series(["NA"] * len(c), index=c.index)
+        d = pd.get_dummies(src, prefix=pref)
+        c = pd.concat([c, d], axis=1)
+
+    F = c.reindex(columns=cols, fill_value=0)
+    for col in cols:
+        if col in med and med[col] is not None:
+            F[col] = F[col].fillna(med[col])
+    Fv = F.apply(pd.to_numeric, errors="coerce").fillna(0).values
+    try:
+        pwin = model["win"].predict_proba(Fv)[:, 1]
+        pplc = model["plc"].predict_proba(Fv)[:, 1]
+    except Exception as e:  # noqa: BLE001
+        return None, f"모델 예측 실패: {e}"
+
+    # win 확률 경주 내 정규화 (해석 용이; pplc 는 그대로 연대확률)
+    s = float(pwin.sum()) or 1.0
+    pwin_n = pwin / s
+
+    rows = []
+    for b, w, p in zip(c["bno"], pwin_n, pplc):
+        b = int(b)
+        rows.append({"bno": b, "name": names.get(b, ""), "grade": "",
+                     "pwin": float(w), "pplc": float(p)})
+    rows.sort(key=lambda r: -r["pplc"])
+    return rows, None
+
+
+def predict_kra(starters, meta=None):
+    """KRA 출주표 -> {rows, picks, top, meta, n_starters} 또는 {error}."""
+    rows, err = score_kra(starters)
+    if err:
+        return {"error": err}
+    picks = build_picks(rows)
+    return {
+        "rows": rows,
+        "picks": picks,
+        "top": rows[0],
+        "meta": meta or {},
+        "n_starters": len(rows),
     }
-    return name_map.get(cid, cid)
-
-
-def _get_signal_detail(comp: dict, close, high, low, volume) -> str:
-    p = comp.get("params", {})
-    cid = comp["id"]
-
-    if cid == "ema_cross":
-        fast_ema = ema(close, p.get("fast", 9))
-        slow_ema = ema(close, p.get("slow", 21))
-        if not np.isnan(fast_ema[-1]) and not np.isnan(slow_ema[-1]):
-            diff = (fast_ema[-1] - slow_ema[-1]) / close[-1] * 100
-            return f"EMA{p.get('fast',9)}={fast_ema[-1]:.1f} vs EMA{p.get('slow',21)}={slow_ema[-1]:.1f} (차이: {diff:+.3f}%)"
-    elif cid == "rsi_threshold":
-        rsi_vals = rsi(close, p.get("period", 14))
-        if not np.isnan(rsi_vals[-1]):
-            return f"RSI={rsi_vals[-1]:.1f} (과매도:{p.get('oversold',30)} / 과매수:{p.get('overbought',70)})"
-    elif cid == "macd_cross":
-        ml, sl, hist = macd(close, p.get("fast", 12), p.get("slow", 26), p.get("signal", 9))
-        if not np.isnan(ml[-1]) and not np.isnan(sl[-1]):
-            return f"MACD={ml[-1]:.2f} Signal={sl[-1]:.2f} Hist={ml[-1]-sl[-1]:.2f}"
-    elif cid == "boll_bounce" or cid == "boll_breakout":
-        upper, mid, lower, pct_b = bollinger(close, p.get("period", 20), p.get("std", 2.0))
-        if not np.isnan(pct_b[-1]):
-            return f"%B={pct_b[-1]:.3f} (하단:0 중앙:0.5 상단:1.0)"
-    elif cid == "volume_breakout":
-        vratio = volume_ratio(volume, p.get("ma_period", 20))
-        return f"거래량비={vratio[-1]:.2f}x (기준:{p.get('vol_mult',2.0)}x)"
-    elif cid == "williams_r":
-        period = p.get("period", 14)
-        if len(close) > period:
-            hh = np.max(high[-period:])
-            ll = np.min(low[-period:])
-            wr = (hh - close[-1]) / max(hh - ll, 1e-10) * -100
-            return f"W%R={wr:.1f} (과매도:{p.get('oversold',-80)} / 과매수:{p.get('overbought',-20)})"
-    elif cid == "stoch_rsi_cross":
-        k, d = stoch_rsi(close, p.get("rsi_period", 14), p.get("stoch_period", 14))
-        if not np.isnan(k[-1]):
-            return f"StochRSI K={k[-1]:.1f} (과매도:{p.get('oversold',20)} / 과매수:{p.get('overbought',80)})"
-    elif cid == "cci_signal":
-        tp_arr = (high + low + close) / 3
-        period = p.get("period", 20)
-        if len(tp_arr) >= period:
-            window = tp_arr[-period:]
-            mean_tp = np.mean(window)
-            mean_dev = np.mean(np.abs(window - mean_tp))
-            cci = (tp_arr[-1] - mean_tp) / max(0.015 * mean_dev, 1e-10) if mean_dev > 0 else 0
-            return f"CCI={cci:.1f} (기준:±{p.get('threshold',100)})"
-    elif cid == "obv_divergence":
-        lb = p.get("lookback", 14)
-        obv_vals = obv(close, volume)
-        price_trend = close[-1] - close[-min(lb, len(close))]
-        obv_trend = obv_vals[-1] - obv_vals[-min(lb, len(obv_vals))]
-        return f"가격추세={'↑' if price_trend > 0 else '↓'} OBV추세={'↑' if obv_trend > 0 else '↓'}"
-    elif cid == "vwap_mean_reversion":
-        vwap_vals = vwap(high, low, close, volume, p.get("period", 20))
-        z = vwap_zscore(close, vwap_vals, p.get("period", 20))
-        if not np.isnan(z[-1]):
-            return f"Z-Score={z[-1]:.2f} (기준:±{p.get('z_threshold',2.0)})"
-    elif cid == "price_breakout":
-        lb = p.get("lookback", 20)
-        if len(close) > lb:
-            hi = np.max(high[-lb-1:-1])
-            lo = np.min(low[-lb-1:-1])
-            return f"현재={close[-1]:.1f} 고점={hi:.1f} 저점={lo:.1f}"
-
-    return ""
-
-
-def _get_filter_detail(comp: dict, close, high, low, volume, timestamps) -> str:
-    p = comp.get("params", {})
-    cid = comp["id"]
-
-    if cid == "trend_filter":
-        e = ema(close, p.get("period", 50))
-        if not np.isnan(e[-1]):
-            above = close[-1] > e[-1]
-            return f"가격={close[-1]:.1f} {'>' if above else '<'} EMA{p.get('period',50)}={e[-1]:.1f}"
-    elif cid == "adx_filter":
-        adx_vals = adx(high, low, close, p.get("period", 14))
-        if not np.isnan(adx_vals[-1]):
-            return f"ADX={adx_vals[-1]:.1f} (기준:{p.get('threshold',25)})"
-    elif cid == "volume_filter":
-        vratio = volume_ratio(volume, p.get("period", 20))
-        return f"거래량비={vratio[-1]:.2f}x (최소:{p.get('min_ratio',0.8)}x)"
-    elif cid == "volatility_filter":
-        atr_vals = atr(high, low, close, p.get("period", 14))
-        if not np.isnan(atr_vals[-1]) and close[-1] > 0:
-            atr_pct = atr_vals[-1] / close[-1] * 100
-            return f"ATR%={atr_pct:.3f} (범위:{p.get('min_pct',0.5)}~{p.get('max_pct',5.0)}%)"
-    elif cid == "rsi_range_filter":
-        rsi_vals = rsi(close, p.get("period", 14))
-        if not np.isnan(rsi_vals[-1]):
-            return f"RSI={rsi_vals[-1]:.1f} (범위:{p.get('min_rsi',25)}~{p.get('max_rsi',75)})"
-    elif cid == "time_filter":
-        hour = (timestamps[-1] // 3600000) % 24 if len(timestamps) > 0 else 0
-        return f"현재 UTC {hour}시 (허용:{p.get('start_hour',0)}~{p.get('end_hour',24)}시)"
-    elif cid == "consecutive_candle":
-        lb = p.get("lookback", 3)
-        if len(close) > lb:
-            green = sum(1 for j in range(-lb, 0) if close[j] > close[j - 1])
-            return f"양봉 {green}/{lb}개 (최소:{p.get('min_count',2)}개)"
-
-    return ""
