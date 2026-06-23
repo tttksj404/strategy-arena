@@ -32,8 +32,17 @@ KEIRIN_MEETS = engine.KEIRIN_MEETS  # ['광명']
 KRA_MEETS = engine.KRA_MEETS        # ['서울','제주','부경']
 
 
+def _get_key():
+    # env 이름 유연하게: 표준명 우선, 사용자가 다른 이름으로 넣은 경우도 수용
+    for name in ("DATAGOKR_SERVICE_KEY", "datagokr", "DATAGOKR", "DATA_GO_KR_KEY", "SERVICE_KEY"):
+        v = os.environ.get(name)
+        if v and v.strip():
+            return v.strip()
+    return None
+
+
 def _has_key():
-    return bool(os.environ.get("DATAGOKR_SERVICE_KEY"))
+    return bool(_get_key())
 
 
 @app.route("/")
@@ -76,7 +85,7 @@ def predict():
     starters = None
     info = {}
     src = "live"
-    key = os.environ.get("DATAGOKR_SERVICE_KEY")
+    key = _get_key()
 
     if not key:
         # 키 없음 → 데모 캐시 폴백
@@ -158,7 +167,7 @@ def _predict_horse(ymd, meet, race_no, base):
     starters = None
     info = {}
     src = "live"
-    key = os.environ.get("DATAGOKR_SERVICE_KEY")
+    key = _get_key()
 
     if not key:
         demo = engine.load_kra_demo()
