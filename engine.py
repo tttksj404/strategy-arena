@@ -134,11 +134,14 @@ def _api_page(stnd_yr, page, rows, key, timeout=15):
     return tc, items
 
 
-def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=25):
-    """data.go.kr 카드 API에서 단일 경주 출주표를 실시간 fetch.
+def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=12):
+    """data.go.kr 카드 API에서 단일 경주 출주표를 실시간 fetch (역순 페이지네이션).
 
-    API가 stnd_yr 필터만 지원하고 날짜 오름차순이라, 페이지를 넘기며
-    클라이언트에서 (날짜·경주장·경주번호)로 필터한다. 목표 날짜를 지나치면 중단.
+    API가 stnd_yr 필터만 지원하고 날짜 오름차순이라, 최근 날짜(6월 등)는
+    마지막 페이지 쪽에 몰린다. 정방향 순회는 ~9콜이 걸려 무료티어에서 느리다.
+    -> last_page 부터 1까지 역순으로 fetch 하며 (날짜·경주장·경주번호) 매칭.
+    최근 날짜는 1~3콜로 끝난다. 페이지 최대 날짜가 목표보다 작아지면 조기 중단,
+    못 찾으면 정방향 전체 폴백으로 옛날 날짜도 보장한다.
     반환: (starters_list, None) 또는 (None, 에러문자열).
     """
     if not key:
@@ -152,22 +155,49 @@ def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=25):
         return None, f"API 호출 실패: {type(e).__name__}: {e}"
     if tc == 0:
         return None, f"{stnd_yr}년 출주표 데이터 없음"
-    pages = min(max_pages, math.ceil(tc / rows))
-    for p in range(1, pages + 1):
+
+    last_page = math.ceil(tc / rows)
+    pages = min(max_pages, last_page)
+
+    def _match(items):
+        return [i for i in items
+                if re.sub(r"\D", "", str(i.get("race_ymd", ""))) == target
+                and str(i.get("meet_nm", "")).strip().startswith(meet)
+                and str(i.get("race_no", "")).strip().lstrip("0") == rno]
+
+    scanned = set()
+    # 1) 역순: 최근 날짜가 뒤쪽 → last_page 부터 거슬러 올라간다.
+    for p in range(last_page, max(0, last_page - pages), -1):
+        scanned.add(p)
+        try:
+            _, items = _api_page(stnd_yr, p, rows, key)
+        except Exception as e:  # noqa: BLE001
+            return None, f"API 페이지 {p} 실패: {type(e).__name__}: {e}"
+        if not items:
+            continue
+        m = _match(items)
+        if m:
+            return m, None
+        page_ymds = sorted({re.sub(r"\D", "", str(i.get("race_ymd", ""))) for i in items})
+        # 오름차순 정렬이므로 이 페이지 최대 날짜가 목표보다 작으면
+        # 더 앞쪽(과거) 페이지에도 목표가 없다 → 역순 탐색 중단, 폴백으로.
+        if page_ymds and page_ymds[-1] < target:
+            break
+
+    # 2) 정방향 폴백: 옛날 날짜(앞쪽 페이지)는 역순에서 일찍 끊겼을 수 있다.
+    for p in range(1, min(max_pages, last_page) + 1):
+        if p in scanned:
+            continue
         try:
             _, items = _api_page(stnd_yr, p, rows, key)
         except Exception as e:  # noqa: BLE001
             return None, f"API 페이지 {p} 실패: {type(e).__name__}: {e}"
         if not items:
             break
+        m = _match(items)
+        if m:
+            return m, None
         page_ymds = sorted({re.sub(r"\D", "", str(i.get("race_ymd", ""))) for i in items})
-        match = [i for i in items
-                 if re.sub(r"\D", "", str(i.get("race_ymd", ""))) == target
-                 and str(i.get("meet_nm", "")).strip().startswith(meet)
-                 and str(i.get("race_no", "")).strip().lstrip("0") == rno]
-        if match:
-            return match, None
-        # 날짜 오름차순 → 페이지 최소 날짜가 목표를 지나쳤으면 더 볼 필요 없음
         if page_ymds and page_ymds[0] > target:
             break
     return None, "해당 경주를 찾지 못했습니다 (날짜/경주장/경주번호를 확인하세요)."
@@ -415,8 +445,13 @@ def _kra_api_page(meet, rc_date, rc_no, page, rows, key, timeout=15):
 _KRA_MEET_CODE = {"서울": "1", "제주": "2", "부경": "3"}
 
 
-def fetch_kra_card(ymd, meet, race_no, key, timeout=15):
+def fetch_kra_card(ymd, meet, race_no, key, rows=50, max_pages=12, timeout=15):
     """KRA RaceDetailResult_1 에서 단일 경주 출주표 실시간 fetch.
+
+    KRA API 는 meet+rc_date+rc_no 를 서버측에서 필터하므로 totalCount 가
+    해당 경주의 두수(보통 ≤16)뿐 → 1콜로 끝난다. 경륜과 동일한 패턴으로
+    totalCount 기준 페이지를 보강해 두수가 numOfRows 를 넘는 예외도 안전하게
+    수집한다(역순 불필요: 한 경주만 반환되므로 페이지 1개면 충분).
     반환: (starters_list, None) 또는 (None, 에러문자열).
     """
     if not key:
@@ -430,16 +465,27 @@ def fetch_kra_card(ymd, meet, race_no, key, timeout=15):
     last_err = None
     for mv in candidates:
         try:
-            tc, items = _kra_api_page(mv, rc_date, rno, 1, 50, key, timeout)
+            tc, items = _kra_api_page(mv, rc_date, rno, 1, rows, key, timeout)
         except Exception as e:  # noqa: BLE001
             last_err = f"API 호출 실패: {type(e).__name__}: {e}"
             continue
-        if items:
-            # rc_no 클라이언트 재확인 (서버가 전체 반환할 때 대비)
-            match = [i for i in items
-                     if str(i.get("rcNo", rno)).strip().lstrip("0") == rno]
-            return (match or items), None
-        last_err = f"{meet} {rc_date} {rno}R 출주표 없음 (totalCount={tc})"
+        if not items:
+            last_err = f"{meet} {rc_date} {rno}R 출주표 없음 (totalCount={tc})"
+            continue
+        # totalCount 가 rows 보다 크면(드묾) 나머지 페이지도 모은다.
+        last_page = min(max_pages, math.ceil((tc or len(items)) / rows))
+        for p in range(2, last_page + 1):
+            try:
+                _, more = _kra_api_page(mv, rc_date, rno, p, rows, key, timeout)
+            except Exception:  # noqa: BLE001
+                break
+            if not more:
+                break
+            items += more
+        # rc_no 클라이언트 재확인 (서버가 전체 반환할 때 대비)
+        match = [i for i in items
+                 if str(i.get("rcNo", rno)).strip().lstrip("0") == rno]
+        return (match or items), None
     return None, last_err or "해당 경주를 찾지 못했습니다."
 
 
