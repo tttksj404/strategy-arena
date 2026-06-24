@@ -87,12 +87,62 @@ def _is_no_race(err):
     return any(m in str(err) for m in _NO_RACE_MARKERS)
 
 
-def _notice_no_race(sport, meet, race_no, ymd, base):
-    """그 날짜·경주장에 경주가 없을 때 안내 result(kind='notice')."""
+def _norm_day(ymd):
+    """'2026-06-21' / '20260621' / '2026.06.21' -> 'YYYY-MM-DD' 또는 None.
+
+    8자리가 아니거나 실제 달력 날짜가 아니면(예: 99999999, 20261332) None.
+    """
+    d = "".join(ch for ch in str(ymd or "") if ch.isdigit())
+    if len(d) != 8:
+        return None
+    try:
+        dt.date(int(d[0:4]), int(d[4:6]), int(d[6:8]))
+    except ValueError:
+        return None
+    return f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
+
+
+def _is_future_day(ymd):
+    """ymd(정상 포맷)가 오늘보다 미래면 True. 형식오류면 False."""
+    nd = _norm_day(ymd)
+    if not nd:
+        return False
+    return nd > dt.date.today().isoformat()
+
+
+def _notice_future(sport, meet, race_no, ymd, base):
+    """아직 열리지 않은(미래) 경주 → 예측 차단 안내(kind='notice')."""
     days = base.get("recent_days") or _recent_days_cached(sport, meet, _get_key())
+    nd = _norm_day(ymd) or ymd
+    msg = (f"{nd} {meet} {race_no}R 는 아직 열리지 않은(미개최) 경주입니다. "
+           "출전 확정·실시간 데이터가 없어 예측을 제공하지 않습니다. "
+           "이미 끝난 경주일을 선택하세요.")
+    return {"kind": "notice", "title": "아직 열리지 않은 경주",
+            "message": msg, "recent_days": days}
+
+
+def _notice_no_race(sport, meet, race_no, ymd, base):
+    """경주가 없을 때 안내 result(kind='notice').
+
+    두 경우를 구분한다:
+      (A) 그 날짜 자체가 비경주일  → '비경주일' 안내 + 최근 경주일 칩
+      (B) 날짜는 실제 경주일인데 그 경주번호만 없음
+          → '그 날은 N개 경주만 열렸으니 1~N 중 선택' 안내
+    """
+    days = base.get("recent_days") or _recent_days_cached(sport, meet, _get_key())
+    nd = _norm_day(ymd)
+    # 그 날짜가 최근 경주일 목록에 있으면 = 실제 경주일 → (B) 경주번호 문제
+    if nd and days and nd in days:
+        title = "해당 경주번호 없음"
+        msg = (f"{nd} {meet} 은(는) 실제 경주일이지만 {race_no}R 는 없습니다. "
+               "그 날 열린 경주 번호(보통 1R부터) 중에서 다시 선택하세요. "
+               "날짜는 그대로 두고 경주 번호만 낮추면 됩니다.")
+        return {"kind": "notice", "title": title, "message": msg,
+                "recent_days": days}
+    # 그 외 = (A) 비경주일
     if days:
         joined = ", ".join(days)
-        msg = (f"{ymd} {meet} {race_no}R 경주가 없습니다(비경주일). "
+        msg = (f"{ymd} {meet} 에는 경주가 없습니다(비경주일). "
                f"최근 실제 경주일: {joined}. 위 칩을 눌러 날짜를 채운 뒤 다시 예측하세요.")
     else:
         msg = (f"{ymd} {meet} 에 해당 경주가 없습니다. "
@@ -199,6 +249,18 @@ def predict():
                 result={"kind": "error", "title": "입력 오류",
                         "message": "날짜를 입력하세요."},
                 **base)
+        if _norm_day(ymd) is None:
+            return render_template(
+                "index.html",
+                result={"kind": "error", "title": "날짜 형식 오류",
+                        "message": f"'{ymd}' 는 올바른 날짜가 아닙니다. "
+                                   "YYYY-MM-DD 형식으로 입력하세요."},
+                **base)
+        if _is_future_day(ymd):
+            return render_template(
+                "index.html",
+                result=_notice_future(sport, meet, race_no, ymd, base),
+                **base)
         stnd_yr = engine.norm_ymd(ymd)[:4]
         starters, err = engine.fetch_race_card(stnd_yr, ymd, meet, race_no, key)
         if err and _is_no_race(err):
@@ -285,6 +347,18 @@ def _predict_horse(ymd, meet, race_no, base):
                 "index.html",
                 result={"kind": "error", "title": "입력 오류",
                         "message": "날짜를 입력하세요."},
+                **base)
+        if _norm_day(ymd) is None:
+            return render_template(
+                "index.html",
+                result={"kind": "error", "title": "날짜 형식 오류",
+                        "message": f"'{ymd}' 는 올바른 날짜가 아닙니다. "
+                                   "YYYY-MM-DD 형식으로 입력하세요."},
+                **base)
+        if _is_future_day(ymd):
+            return render_template(
+                "index.html",
+                result=_notice_future("horse", meet, race_no, ymd, base),
                 **base)
         starters, err = engine.fetch_kra_card(ymd, meet, race_no, key)
         if err and _is_no_race(err):

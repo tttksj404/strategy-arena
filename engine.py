@@ -213,6 +213,7 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
     반환: ['YYYY-MM-DD', ...] 내림차순.
     """
     import datetime as _dt
+    today_c = re.sub(r"\D", "", _dt.date.today().isoformat())  # YYYYMMDD
     days = set()
     years = [_dt.date.today().year]
     years.append(years[0] - 1)
@@ -231,7 +232,9 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
                 break
             for i in items:
                 d = re.sub(r"\D", "", str(i.get("race_ymd", "")))
-                if len(d) == 8 and str(i.get("meet_nm", "")).strip().startswith(meet):
+                # 미래 경주(아직 미개최)는 '최근 경주일'에서 제외.
+                if (len(d) == 8 and d <= today_c
+                        and str(i.get("meet_nm", "")).strip().startswith(meet)):
                     days.add(d)
             if len(days) >= n:
                 break
@@ -251,6 +254,7 @@ def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
     """
     import datetime as _dt
     today = _dt.date.today()
+    today_c = re.sub(r"\D", "", today.isoformat())  # YYYYMMDD
     days = set()
     meet_codes = [meet, _KRA_MEET_CODE.get(meet, meet)]
     for back in range(months_back):
@@ -279,7 +283,9 @@ def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
                 items += more
             for i in items:
                 d = re.sub(r"\D", "", str(i.get("rcDate", "")))
-                if len(d) == 8:
+                # 미래 경주(아직 열리지 않음)는 '최근 경주일'에서 제외 — KRA 월
+                # 조회가 예정 경주의 rcDate까지 반환하므로 today 이하만 신뢰한다.
+                if len(d) == 8 and d <= today_c:
                     days.add(d)
             got = True
             break  # 이 meet 코드로 성공 → 다음 코드 시도 불필요
@@ -525,8 +531,24 @@ def build_picks(rows):
     return picks
 
 
+def _top_confidence(top):
+    """최상위(연대확률 1위) 픽의 신뢰등급/표현.
+
+    트로피·'최고확신'은 절대 win 확률이 충분히 높을 때만 — 그렇지 않으면
+    과신을 막기 위해 '상대 1순위(저신뢰)' 중립 표현으로 다운그레이드한다.
+    반환 dict: {grade, label, icon}.
+    """
+    pwin = top.get("pwin", 0.0)
+    grade = _grade_win(pwin)  # 강(>=50%) / 중(>=30%) / 약
+    if grade == "강":
+        return {"grade": "강", "label": "최고확신 픽", "icon": "🏆"}
+    if grade == "중":
+        return {"grade": "중", "label": "상대 우세 픽", "icon": "▲"}
+    return {"grade": "약", "label": "상대 1순위 (저신뢰)", "icon": "①"}
+
+
 def predict(starters, meta=None):
-    """출주표 -> {rows, picks, top, meta, n_starters} 또는 {error}."""
+    """출주표 -> {rows, picks, top, top_conf, meta, n_starters} 또는 {error}."""
     rows, err = score_keirin(starters)
     if err:
         return {"error": err}
@@ -535,6 +557,7 @@ def predict(starters, meta=None):
         "rows": rows,
         "picks": picks,
         "top": rows[0],
+        "top_conf": _top_confidence(rows[0]),
         "meta": meta or {},
         "n_starters": len(rows),
     }
@@ -719,7 +742,7 @@ def score_kra(starters):
 
 
 def predict_kra(starters, meta=None):
-    """KRA 출주표 -> {rows, picks, top, meta, n_starters} 또는 {error}."""
+    """KRA 출주표 -> {rows, picks, top, top_conf, meta, n_starters} 또는 {error}."""
     rows, err = score_kra(starters)
     if err:
         return {"error": err}
@@ -728,6 +751,7 @@ def predict_kra(starters, meta=None):
         "rows": rows,
         "picks": picks,
         "top": rows[0],
+        "top_conf": _top_confidence(rows[0]),
         "meta": meta or {},
         "n_starters": len(rows),
     }

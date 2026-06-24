@@ -9,23 +9,27 @@
     --bg:#0f1115; --card:#181b22; --line:#272b34; --muted:#8b93a3;
     --text:#e8ebf0; --accent:#5b9dff; --warn:#ffcaca; --warnbg:#3a1414;
     --g-strong:#3ddc84; --g-mid:#ffcc4d; --g-weak:#9aa3b2;
+    --rank-bg:#1d2740; --track:#1c2029;
   }
   *{box-sizing:border-box}
+  html{scroll-padding-top:16px}
   body{margin:0;background:var(--bg);color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    line-height:1.5;font-size:15px}
+    line-height:1.55;font-size:15px}
+  /* 결과 없을 땐 폼을 세로로 압축해 빈 공간 최소화, 결과 있으면 넓게 */
   .wrap{max-width:880px;margin:0 auto;padding:18px 16px 60px}
+  .wrap.lean{max-width:680px}
   h1{font-size:20px;margin:6px 0 2px}
   .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
 
-  /* 면책 고정 배너 */
+  /* 면책 고정 배너 (모바일에선 sticky 해제 → 본문 가림 방지) */
   .disc{position:sticky;top:0;z-index:9;background:var(--warnbg);
     color:var(--warn);border:1px solid #5c2222;border-radius:10px;
     padding:10px 13px;font-size:13px;font-weight:600;margin-bottom:16px}
   .disc b{color:#ff8d8d}
 
   .card{background:var(--card);border:1px solid var(--line);
-    border-radius:12px;padding:16px;margin-bottom:16px}
+    border-radius:12px;padding:16px;margin-bottom:16px;scroll-margin-top:16px}
 
   form .row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
   .field{display:flex;flex-direction:column;gap:4px}
@@ -35,26 +39,42 @@
   button{background:var(--accent);color:#06122b;border:0;border-radius:8px;
     padding:10px 18px;font-size:15px;font-weight:700;cursor:pointer}
   button:hover{filter:brightness(1.08)}
+  button[disabled]{opacity:.6;cursor:progress;filter:none}
 
   .keynote{font-size:12px;margin-top:10px;color:var(--muted)}
   .keynote.warn{color:#ffcf8a}
 
-  .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:2px;max-width:340px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:2px}
+  .field .chips{max-width:360px}
   .chips-label{font-size:11px;color:var(--muted)}
   .chips-empty{font-size:11px;color:var(--muted);font-style:italic}
   .chip{background:#16202e;color:#bfe2ff;border:1px solid #264b5c;border-radius:999px;
     padding:3px 9px;font-size:12px;font-weight:600;cursor:pointer;min-width:0}
   .chip:hover{background:#1d2d40;filter:none}
   .chip.active{background:#264b5c;color:#eaf4ff}
+  /* 로딩 스켈레톤 pill */
+  .skel{display:inline-block;height:20px;width:74px;border-radius:999px;
+    background:linear-gradient(90deg,#1a1f29 25%,#222836 37%,#1a1f29 63%);
+    background-size:400% 100%;animation:shimmer 1.3s ease infinite}
+  @keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 
+  /* 결과 테이블 */
   table{width:100%;border-collapse:collapse;margin-top:6px;font-size:14px}
-  th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right}
-  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+  th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right;
+    vertical-align:middle}
+  th:first-child,td:first-child,th.lft,td.lft{text-align:left}
   th{color:var(--muted);font-weight:600;font-size:12px}
-  .bar{display:inline-block;height:7px;border-radius:4px;background:var(--accent);
-    vertical-align:middle;margin-left:6px}
-  tr.top td{background:#1d2740}
+  td.nm{max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  tr.top td{background:var(--rank-bg)}
+  /* 셀 배경형 트랙 막대: 시작점 정렬 통일 + 최소폭 보장 */
+  .probcell{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+  .pnum{min-width:42px;text-align:right;font-variant-numeric:tabular-nums}
+  .track{flex:1;max-width:88px;height:8px;border-radius:5px;background:var(--track);
+    overflow:hidden}
+  .fill{display:block;height:100%;border-radius:5px;background:var(--accent)}
+  .fill.plc{background:#6ad19a}
 
+  /* 7권종 픽 */
   .picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
   .pick{background:#12151c;border:1px solid var(--line);border-radius:10px;padding:12px}
   .pick .code{font-size:16px;font-weight:800}
@@ -66,18 +86,61 @@
   .gr.중{background:#33290f;color:var(--g-mid);border:1px solid #6e561c}
   .gr.약{background:#23262e;color:var(--g-weak);border:1px solid #3a3f4a}
 
-  .note{border-radius:10px;padding:14px;border:1px solid var(--line)}
+  /* topline (최상위 픽) — 등급에 따라 색·아이콘 다운그레이드 */
+  .topline{display:flex;align-items:center;flex-wrap:wrap;gap:8px;
+    font-size:15px;margin:10px 0;font-weight:700;padding:10px 12px;border-radius:10px;
+    background:#12151c;border:1px solid var(--line)}
+  .topline.강{border-color:#1c6e42}
+  .topline .ti{font-size:18px}
+  .topline .tlabel{font-weight:800}
+  .topline .tprob{color:var(--muted);font-weight:600;font-size:13px}
+
+  .note{border-radius:10px;padding:16px;border:1px solid var(--line);
+    display:flex;gap:12px;align-items:flex-start}
+  .note .ico{font-size:24px;line-height:1.1;flex:0 0 auto}
+  .note .body{flex:1;min-width:0}
+  .note .ntitle{font-weight:800;font-size:16px;margin-bottom:4px}
   .note.error{background:#2a1414;border-color:#5c2222;color:#ffb4b4}
   .note.notice{background:#14202a;border-color:#264b5c;color:#bfe2ff}
+  .note .chip{background:#1d3346;border-color:#3a6f88}
   .meta{color:var(--muted);font-size:12px;margin:2px 0 12px}
   .src-demo{color:#ffcf8a}
-  h2{font-size:16px;margin:18px 0 6px}
+  h2{font-size:16px;margin:2px 0 6px}
   .small{font-size:12px;color:var(--muted)}
-  .topline{font-size:15px;margin:8px 0;font-weight:700}
+
+  /* 결과 없을 때 채우는 안내(빈 공간 제거) */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+  .step{background:#12151c;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .step .n{display:inline-flex;align-items:center;justify-content:center;
+    width:24px;height:24px;border-radius:50%;background:var(--accent);color:#06122b;
+    font-weight:800;font-size:13px;margin-bottom:8px}
+  .step .t{font-weight:700;font-size:14px;margin-bottom:2px}
+  .step .x{color:var(--muted);font-size:12px}
+  .modelinfo li{margin:4px 0;font-size:12px;color:var(--muted);max-width:62ch}
+  .modelinfo ul{margin:6px 0 0;padding-left:18px}
+  .modelinfo b{color:var(--text)}
+
+  /* ── 모바일 ── */
+  @media (max-width:480px){
+    .disc{position:static}
+    form .row{flex-direction:column;align-items:stretch}
+    .field{width:100%}
+    select,input{width:100%;min-width:0}
+    .field .chips{max-width:none}
+    form .row .field:last-child button{width:100%}
+    .steps{grid-template-columns:1fr}
+    table{font-size:13px}
+    th,td{padding:6px 5px}
+    td.nm{max-width:96px}
+    /* 막대를 숫자 아래 풀폭으로 → 모바일 비교 용이 */
+    .probcell{flex-direction:column;align-items:flex-end;gap:3px}
+    .track{width:100%;max-width:none;flex:none}
+    .topline{font-size:14px}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap {{ '' if result and result.kind == 'ok' else 'lean' }}">
 
   <div class="disc">
     ⚠ <b>{{ disclaimer }}</b>
@@ -88,7 +151,7 @@
     <b>+EV 아님</b> — 적중률 예측 보조 도구입니다.</div>
 
   <div class="card">
-    <form method="post" action="/predict">
+    <form method="post" action="/predict" id="predict-form">
       <div class="row">
         <div class="field">
           <label>종목</label>
@@ -99,15 +162,17 @@
         </div>
         <div class="field">
           <label>날짜</label>
-          <input type="date" name="date" id="date" value="{{ date or default_date or today }}">
+          <input type="date" name="date" id="date" value="{{ date or default_date or today }}" max="{{ today }}">
           <div class="chips" id="recent-chips">
             <span class="chips-label">최근 경주일:</span>
             {% if recent_days %}
               {% for d in recent_days %}
                 <button type="button" class="chip" data-day="{{ d }}">{{ d }}</button>
               {% endfor %}
+            {% elif has_key %}
+              <span class="skel" data-skel></span><span class="skel" data-skel></span><span class="skel" data-skel></span>
             {% else %}
-              <span class="chips-empty">{{ '키 미설정' if not has_key else '조회 중…' }}</span>
+              <span class="chips-empty">키 미설정</span>
             {% endif %}
           </div>
         </div>
@@ -132,7 +197,7 @@
           <input type="number" name="race_no" min="1" max="22" value="{{ race_no or 1 }}">
         </div>
         <div class="field">
-          <button type="submit">예측</button>
+          <button type="submit" id="predict-btn">예측</button>
         </div>
       </div>
       {% if has_key %}
@@ -149,22 +214,33 @@
   {% if result %}
     {% if result.kind == 'error' %}
       <div class="note error">
-        <b>{{ result.title }}</b><br>{{ result.message }}
+        <div class="ico">⛔</div>
+        <div class="body">
+          <div class="ntitle">{{ result.title }}</div>
+          <div>{{ result.message }}</div>
+          <div class="small" style="margin-top:8px;color:#ffb4b4">입력값을 확인하고 다시 시도하세요.</div>
+        </div>
       </div>
     {% elif result.kind == 'notice' %}
       <div class="note notice">
-        <b>{{ result.title }}</b><br>{{ result.message }}
-        {% if result.recent_days %}
-          <div class="chips" style="margin-top:8px">
-            <span class="chips-label">최근 경주일:</span>
-            {% for d in result.recent_days %}
-              <button type="button" class="chip" data-day="{{ d }}">{{ d }}</button>
-            {% endfor %}
-          </div>
-        {% endif %}
+        <div class="ico">📅</div>
+        <div class="body">
+          <div class="ntitle">{{ result.title }}</div>
+          <div>{{ result.message }}</div>
+          {% if result.recent_days %}
+            <div class="chips" style="margin-top:10px">
+              <span class="chips-label">최근 경주일:</span>
+              {% for d in result.recent_days %}
+                <button type="button" class="chip" data-day="{{ d }}">{{ d }}</button>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
       </div>
     {% elif result.kind == 'ok' %}
       {% set info = result.info %}
+      {% set tc = result.top_conf %}
+      {% set is_horse = (result.sport_label is defined) %}
       <div class="card">
         <h2>채점 결과
           {% if result.src == 'demo' %}<span class="src-demo small">· 데모 캐시 경주</span>{% endif %}
@@ -178,27 +254,48 @@
           {% endif %}
         </div>
 
-        <div class="topline">
-          🏆 최고확신 픽: {{ result.top.bno }}번 {{ result.top.name }}
-          (win {{ '%.1f'|format(100*result.top.pwin) }}% / 연대 {{ '%.1f'|format(100*result.top.pplc) }}%)
+        <div class="topline {{ tc.grade }}">
+          <span class="ti">{{ tc.icon }}</span>
+          <span class="tlabel">{{ tc.label }}:</span>
+          <span>{{ result.top.bno }}번 {{ result.top.name }}</span>
+          <span class="gr {{ tc.grade }}">{{ tc.grade }}</span>
+          <span class="tprob">win {{ '%.1f'|format(100*result.top.pwin) }}% · 연대 {{ '%.1f'|format(100*result.top.pplc) }}%</span>
         </div>
 
+        {% set max_win = result.rows|map(attribute='pwin')|max %}
+        {% set max_plc = result.rows|map(attribute='pplc')|max %}
         <table>
-          <thead><tr><th>마번</th><th>선수</th><th>등급</th><th>win%</th><th>연대(plc)%</th></tr></thead>
+          <thead><tr>
+            <th>{{ '마번' if is_horse else '차번' }}</th>
+            <th class="lft">{{ '마명' if is_horse else '선수' }}</th>
+            {% if not is_horse %}<th class="lft">등급</th>{% endif %}
+            <th>win%</th><th>연대(plc)%</th>
+          </tr></thead>
           <tbody>
           {% for r in result.rows %}
             <tr class="{{ 'top' if loop.first else '' }}">
               <td>{{ r.bno }}</td>
-              <td>{{ r.name }}</td>
-              <td>{{ r.grade }}</td>
-              <td>{{ '%.1f'|format(100*r.pwin) }}
-                <span class="bar" style="width:{{ (60*r.pwin)|round(0,'floor')|int }}px"></span></td>
-              <td>{{ '%.1f'|format(100*r.pplc) }}
-                <span class="bar" style="width:{{ (60*r.pplc)|round(0,'floor')|int }}px;background:#6ad19a"></span></td>
+              <td class="lft nm" title="{{ r.name }}">{{ r.name }}</td>
+              {% if not is_horse %}<td class="lft">{{ r.grade }}</td>{% endif %}
+              <td>
+                <div class="probcell">
+                  <span class="pnum">{{ '%.1f'|format(100*r.pwin) }}</span>
+                  <span class="track"><span class="fill" style="width:{{ ((r.pwin/max_win*100) if max_win else 0)|round(1) }}%"></span></span>
+                </div>
+              </td>
+              <td>
+                <div class="probcell">
+                  <span class="pnum">{{ '%.1f'|format(100*r.pplc) }}</span>
+                  <span class="track"><span class="fill plc" style="width:{{ ((r.pplc/max_plc*100) if max_plc else 0)|round(1) }}%"></span></span>
+                </div>
+              </td>
             </tr>
           {% endfor %}
           </tbody>
         </table>
+        <div class="small" style="margin-top:6px">
+          ※ 막대는 각 열 내 상대 길이(win 열은 win 최댓값, 연대 열은 연대 최댓값 기준 정규화)이며, 두 열의 막대 길이를 서로 직접 비교하지 마세요.
+        </div>
         {% if result.src == 'demo' and info.actual %}
           <div class="small" style="margin-top:8px">
             ※ 데모 경주 실제 결과: 1착 {{ info.actual.rank1 }}번 · 2착 {{ info.actual.rank2 }}번 (사후 참고용)
@@ -220,6 +317,7 @@
         </div>
         <div class="small" style="margin-top:12px">
           신뢰등급: <b>강</b>(win&gt;50% 또는 연대&gt;85%) · <b>중</b>(win&gt;30% 또는 연대&gt;70%) · <b>약</b>(그 미만).
+          win 확률이 낮으면 '최고확신'이 아닌 '상대 1순위(저신뢰)'로 표시됩니다.
           픽은 적중률 최대화용 — 배당·기대값을 고려한 베팅 권유가 아닙니다.
           복/쌍/삼복/쌍복/삼쌍은 Harville 순서모형 근사(win확률 내림차순).
         </div>
@@ -227,9 +325,31 @@
     {% endif %}
   {% endif %}
 
+  {# 결과가 없을 때(홈) 빈 공간을 사용법·모델설명으로 채움 #}
+  {% if not result or result.kind != 'ok' %}
+    <div class="card">
+      <h2>사용법 3단계</h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div class="t">종목·경주장 선택</div>
+          <div class="x">경륜(광명) 또는 경마(서울·제주·부경)를 고릅니다.</div></div>
+        <div class="step"><span class="n">2</span><div class="t">날짜 칩 선택</div>
+          <div class="x">'최근 경주일' 칩을 누르면 실제 열린 경주일이 자동 입력됩니다.</div></div>
+        <div class="step"><span class="n">3</span><div class="t">예측 실행</div>
+          <div class="x">경주 번호(R)를 정하고 '예측'을 누르면 7권종 픽이 나옵니다.</div></div>
+      </div>
+    </div>
+
+    <div class="card modelinfo">
+      <h2>이 도구가 하는 일</h2>
+      <ul>
+        <li><b>출주표 실시간 채점</b> — 경륜 model_final(win·plc Calibrated, OOS 실측 top1 ≈60% · 연대 ≈77%), 경마 kra_model(HistGBM+isotonic, within-race 상대피처, 학습 2024-01~2026-06 / 서울·제주·부경 6,115경주).</li>
+        <li><b>7권종 픽 산출</b> — 단승·연승·복승·쌍승·삼복·쌍복·삼쌍을 Harville 순서모형 근사로 추천하고 신뢰등급(강·중·약)을 표시합니다.</li>
+        <li><b>정직 고지</b> — 두 종목 모두 공제(약 20~28%) 후 평균 −EV로 시장을 이기지 못함이 검증됐습니다. 적중률 예측 보조 도구일 뿐, <b>수익 도구가 아닙니다.</b></li>
+      </ul>
+    </div>
+  {% endif %}
+
   <div class="small" style="margin-top:24px;border-top:1px solid var(--line);padding-top:12px">
-    모델: 경륜 model_final (win·plc Calibrated, OOS 실측 top1 ≈60% · 연대 ≈77%) ·
-    경마 kra_model (HistGBM+isotonic, within-race 상대피처, 학습 2024-01~2026-06 / 서울·제주·부경 6,115경주).
     두 종목 모두 공제(약 20~28%) 후 평균 −EV로 시장을 이기지 못함이 검증됨. 본 도구는 수익 도구가 아닙니다.
     문제도박 상담: 한국도박문제예방치유원 ☎ 1336.
   </div>
@@ -241,7 +361,22 @@
     var meetSel = document.getElementById('meet');
     var dateInp = document.getElementById('date');
     var chipsBox = document.getElementById('recent-chips');
+    var form = document.getElementById('predict-form');
+    var btn = document.getElementById('predict-btn');
     if (!sportSel || !meetSel) return;
+
+    // 예측 버튼 로딩 피드백(더블클릭/이탈 방지)
+    if (form && btn) {
+      form.addEventListener('submit', function () {
+        btn.disabled = true;
+        btn.textContent = '예측 중…';
+      });
+    }
+
+    function skelHTML() {
+      return '<span class="chips-label">최근 경주일:</span>'
+        + '<span class="skel"></span><span class="skel"></span><span class="skel"></span>';
+    }
 
     // chip 클릭 → 날짜 입력 채움 (이벤트 위임: 새로 그린 chip 도 동작)
     document.addEventListener('click', function (e) {
@@ -250,7 +385,6 @@
       var inp = document.getElementById('date');
       if (inp) {
         inp.value = c.dataset.day;
-        // active 표시 (같은 chips 그룹 내에서만)
         var grp = c.parentNode;
         Array.prototype.forEach.call(grp.querySelectorAll('.chip'),
           function (x) { x.classList.remove('active'); });
@@ -273,20 +407,21 @@
         if (m === cur) o.selected = true;
         meetSel.appendChild(o);
       });
-      // 경륜↔경마 전환 시 현재 meet 이 새 목록에 없으면 첫 항목으로
       if (list.indexOf(cur) < 0 && first) meetSel.value = first;
     }
 
     // /recent 로 chip 갱신 (실패는 조용히 무시; 폼 동작엔 영향 없음)
     function refreshChips() {
       if (!chipsBox) return;
+      chipsBox.innerHTML = skelHTML();  // 콜드스타트 동안 스켈레톤 노출
       var sport = sportSel.value, meet = meetSel.value;
       var q = '/recent?sport=' + encodeURIComponent(sport)
             + '&meet=' + encodeURIComponent(meet);
       fetch(q, {headers: {'Accept': 'application/json'}})
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (j) {
-          if (!j || !Array.isArray(j.days)) return;
+          if (!j || !Array.isArray(j.days)) { chipsBox.innerHTML =
+            '<span class="chips-label">최근 경주일:</span><span class="chips-empty">조회 실패</span>'; return; }
           var label = '<span class="chips-label">최근 경주일:</span>';
           if (j.days.length === 0) {
             chipsBox.innerHTML = label
@@ -299,7 +434,10 @@
           }).join('');
           chipsBox.innerHTML = html;
         })
-        .catch(function () { /* 실패 무시 */ });
+        .catch(function () {
+          chipsBox.innerHTML = '<span class="chips-label">최근 경주일:</span>'
+            + '<span class="chips-empty">조회 실패</span>';
+        });
     }
 
     sportSel.addEventListener('change', function () {
@@ -307,6 +445,11 @@
       refreshChips();
     });
     meetSel.addEventListener('change', refreshChips);
+
+    // 초기에 칩이 비어있고(키 있음) 스켈레톤만 있으면 한번 fetch
+    if (chipsBox && chipsBox.querySelector('[data-skel]')) {
+      refreshChips();
+    }
   })();
 </script>
 </body>
