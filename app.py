@@ -17,9 +17,10 @@ gunicorn app:app 구조. 전역 `app`.
   키 없으면 데모(과거 1경주 캐시)로 폴백.
 """
 import os
+import time
 import datetime as dt
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 
 import engine
 
@@ -30,6 +31,33 @@ DISCLAIMER = ("예측(적중률) 도구입니다. 평균 −EV(검증 완료) ·
 
 KEIRIN_MEETS = engine.KEIRIN_MEETS  # ['광명']
 KRA_MEETS = engine.KRA_MEETS        # ['서울','제주','부경']
+
+# 운영 요일 안내(참고용 1줄; 공휴일·변경 가능 → 실제 날짜는 데이터 기반).
+SCHEDULE_HINT = ("운영 요일(대략): 경륜 광명 금·토·일 · 경마 서울 토·일 / "
+                 "부경 금·토·일 / 제주 금·토 (공휴일·변경 있으니 최근 경주일 칩 참고).")
+
+# (sport, meet) -> (days_list, fetched_ts) 모듈 전역 캐시 (~1h TTL).
+_RECENT_CACHE = {}
+_RECENT_TTL = 3600  # seconds
+
+
+def _recent_days_cached(sport, meet, key, n=6):
+    """recent_race_days 결과를 1h TTL 캐시로 감싼다. 키 없으면 []."""
+    if not key:
+        return []
+    now = time.time()
+    ck = (sport, meet)
+    hit = _RECENT_CACHE.get(ck)
+    if hit and (now - hit[1]) < _RECENT_TTL:
+        return hit[0]
+    try:
+        days = engine.recent_race_days(sport, meet, key, n=n)
+    except Exception:  # noqa: BLE001
+        days = []
+    # 성공(비어있지 않음)일 때만 캐시. 실패는 다음 요청에서 재시도.
+    if days:
+        _RECENT_CACHE[ck] = (days, now)
+    return days
 
 
 def _get_key():
@@ -45,9 +73,43 @@ def _has_key():
     return bool(_get_key())
 
 
+# fetch 가 "그 날짜·경주장에 경주 없음"을 뜻하는 메시지(에러 아님, 안내 대상).
+# vs. "API 호출/페이지 실패" 같은 실제 fetch 오류(기존 demo 폴백 유지).
+_NO_RACE_MARKERS = (
+    "찾지 못했", "출주표 데이터 없음", "출주표 없음", "출주 선수 없음",
+    "유효 마번 없음", "출주 두수 없음", "totalCount=0",
+)
+
+
+def _is_no_race(err):
+    if not err:
+        return False
+    return any(m in str(err) for m in _NO_RACE_MARKERS)
+
+
+def _notice_no_race(sport, meet, race_no, ymd, base):
+    """그 날짜·경주장에 경주가 없을 때 안내 result(kind='notice')."""
+    days = base.get("recent_days") or _recent_days_cached(sport, meet, _get_key())
+    if days:
+        joined = ", ".join(days)
+        msg = (f"{ymd} {meet} {race_no}R 경주가 없습니다(비경주일). "
+               f"최근 실제 경주일: {joined}. 위 칩을 눌러 날짜를 채운 뒤 다시 예측하세요.")
+    else:
+        msg = (f"{ymd} {meet} 에 해당 경주가 없습니다. "
+               "다른 날짜·경주장·경주번호를 확인하세요.")
+    return {"kind": "notice", "title": "해당 날짜·경주장 경주 없음",
+            "message": msg, "recent_days": days}
+
+
 @app.route("/")
 def index():
     today = dt.date.today().isoformat()
+    key = _get_key()
+    # 기본 경주장(경륜 광명) 최근 경주일 → 날짜 기본값을 최근 경주일로.
+    default_sport = "keirin"
+    default_meet = KEIRIN_MEETS[0]
+    recent = _recent_days_cached(default_sport, default_meet, key) if key else []
+    default_date = recent[0] if recent else today
     return render_template(
         "index.html",
         disclaimer=DISCLAIMER,
@@ -55,8 +117,29 @@ def index():
         kra_meets=KRA_MEETS,
         today=today,
         has_key=_has_key(),
+        recent_days=recent,
+        default_date=default_date,
+        schedule_hint=SCHEDULE_HINT,
         result=None,
     )
+
+
+@app.route("/recent")
+def recent():
+    """경주장 변경 시 chip 갱신용 JSON. ?sport=&meet= → {days:[...]}.
+    키 없거나 실패 시 days=[] (JS 는 실패 무시).
+    """
+    sport = (request.args.get("sport") or "keirin").strip()
+    meet = (request.args.get("meet") or "").strip()
+    if sport == "horse":
+        if meet not in KRA_MEETS:
+            meet = KRA_MEETS[0]
+    else:
+        sport = "keirin"
+        if meet not in KEIRIN_MEETS:
+            meet = KEIRIN_MEETS[0]
+    days = _recent_days_cached(sport, meet, _get_key())
+    return jsonify({"sport": sport, "meet": meet, "days": days})
 
 
 @app.route("/predict", methods=["GET", "POST"])
@@ -68,12 +151,17 @@ def predict():
     race_no = (f.get("race_no") or "1").strip()
     today = dt.date.today().isoformat()
 
+    key0 = _get_key()
+    recent = _recent_days_cached(sport, meet, key0) if key0 else []
     base = dict(
         disclaimer=DISCLAIMER,
         keirin_meets=KEIRIN_MEETS,
         kra_meets=KRA_MEETS,
         today=today,
         has_key=_has_key(),
+        recent_days=recent,
+        default_date=(recent[0] if recent else today),
+        schedule_hint=SCHEDULE_HINT,
         sport=sport, date=ymd, meet=meet, race_no=race_no,
     )
 
@@ -113,8 +201,14 @@ def predict():
                 **base)
         stnd_yr = engine.norm_ymd(ymd)[:4]
         starters, err = engine.fetch_race_card(stnd_yr, ymd, meet, race_no, key)
+        if err and _is_no_race(err):
+            # 경주 0건(에러 아님) → 조용한 demo 대신 안내(notice).
+            return render_template(
+                "index.html",
+                result=_notice_no_race(sport, meet, race_no, ymd, base),
+                **base)
         if err:
-            # 실시간 실패 → 데모 폴백(앱 안 죽음)
+            # 실시간 실패(API 오류) → 데모 폴백(앱 안 죽음)
             demo = engine.load_demo_race()
             if demo:
                 starters = demo["items"]
@@ -193,6 +287,12 @@ def _predict_horse(ymd, meet, race_no, base):
                         "message": "날짜를 입력하세요."},
                 **base)
         starters, err = engine.fetch_kra_card(ymd, meet, race_no, key)
+        if err and _is_no_race(err):
+            # 경주 0건(에러 아님) → 조용한 demo 대신 안내(notice).
+            return render_template(
+                "index.html",
+                result=_notice_no_race("horse", meet, race_no, ymd, base),
+                **base)
         if err:
             demo = engine.load_kra_demo()
             if demo:

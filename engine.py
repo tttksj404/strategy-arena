@@ -203,6 +203,132 @@ def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=12):
     return None, "해당 경주를 찾지 못했습니다 (날짜/경주장/경주번호를 확인하세요)."
 
 
+def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
+    """경륜 카드 API 역순 페이지네이션으로 meet 최근 실제 경주일 수집.
+
+    API 가 stnd_yr 만 서버측 필터하고 날짜 오름차순이라, 최근 경주일은
+    마지막 페이지 쪽에 몰린다 → last_page 부터 거슬러 올라가며 distinct
+    race_ymd(해당 meet)를 모은다. 최근 6일은 1~2콜로 끝난다.
+    올해에서 n개 못 채우면 작년으로 1년 더 확장.
+    반환: ['YYYY-MM-DD', ...] 내림차순.
+    """
+    import datetime as _dt
+    days = set()
+    years = [_dt.date.today().year]
+    years.append(years[0] - 1)
+    for yr in years:
+        try:
+            tc, _ = _api_page(yr, 1, 1, key)
+        except Exception:  # noqa: BLE001
+            continue
+        if not tc:
+            continue
+        last_page = math.ceil(tc / rows)
+        for p in range(last_page, max(0, last_page - max_pages), -1):
+            try:
+                _, items = _api_page(yr, p, rows, key)
+            except Exception:  # noqa: BLE001
+                break
+            for i in items:
+                d = re.sub(r"\D", "", str(i.get("race_ymd", "")))
+                if len(d) == 8 and str(i.get("meet_nm", "")).strip().startswith(meet):
+                    days.add(d)
+            if len(days) >= n:
+                break
+        if len(days) >= n:
+            break
+    out = sorted(days, reverse=True)[:n]
+    return [f"{d[0:4]}-{d[4:6]}-{d[6:8]}" for d in out]
+
+
+def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
+    """KRA RaceDetailResult_1 의 rc_month=YYYYMM 필터로 meet 최근 경주일 수집.
+
+    rc_date/rc_no 없이 rc_month 만 주면 그 달 전체 경주가 반환된다(실측 확인).
+    이번 달부터 거슬러 months_back 개월까지 distinct rcDate 를 모은다.
+    한 달이면 보통 1콜로 충분(서울/부경/제주 각 1콜로 6일 확보 실측).
+    반환: ['YYYY-MM-DD', ...] 내림차순.
+    """
+    import datetime as _dt
+    today = _dt.date.today()
+    days = set()
+    meet_codes = [meet, _KRA_MEET_CODE.get(meet, meet)]
+    for back in range(months_back):
+        m = today.month - back
+        y = today.year
+        while m <= 0:
+            m += 12
+            y -= 1
+        ym = f"{y}{m:02d}"
+        got = False
+        for mc in meet_codes:
+            try:
+                tc, items = _kra_api_page_month(mc, ym, 1, rows, key)
+            except Exception:  # noqa: BLE001
+                continue
+            if not items:
+                continue
+            last_page = min(max_pages, math.ceil((tc or len(items)) / rows))
+            for p in range(2, last_page + 1):
+                try:
+                    _, more = _kra_api_page_month(mc, ym, p, rows, key)
+                except Exception:  # noqa: BLE001
+                    break
+                if not more:
+                    break
+                items += more
+            for i in items:
+                d = re.sub(r"\D", "", str(i.get("rcDate", "")))
+                if len(d) == 8:
+                    days.add(d)
+            got = True
+            break  # 이 meet 코드로 성공 → 다음 코드 시도 불필요
+        if got and len(days) >= n:
+            break
+    out = sorted(days, reverse=True)[:n]
+    return [f"{d[0:4]}-{d[4:6]}-{d[6:8]}" for d in out]
+
+
+def _kra_api_page_month(meet, rc_month, page, rows, key, timeout=20):
+    """KRA RaceDetailResult_1 월 단위 조회 (rc_month=YYYYMM, rc_date/rc_no 없음)."""
+    qs = urllib.parse.urlencode({
+        "serviceKey": key, "_type": "json",
+        "numOfRows": rows, "pageNo": page,
+        "meet": str(meet), "rc_month": str(rc_month),
+    })
+    full = KRA_CARD_URL + "?" + qs
+    req = urllib.request.Request(full, headers={"User-Agent": "strategy-arena"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        data = json.loads(r.read().decode("utf-8", "replace"))
+    resp = data.get("response", {}) or {}
+    hdr = resp.get("header", {}) or {}
+    if str(hdr.get("resultCode")) not in ("00", "0"):
+        raise RuntimeError(f"API resultCode={hdr.get('resultCode')} {hdr.get('resultMsg')}")
+    bd = resp.get("body", {}) or {}
+    tc = int(bd.get("totalCount") or 0)
+    items_c = bd.get("items", {})
+    items = items_c.get("item", []) if isinstance(items_c, dict) else []
+    if isinstance(items, dict):
+        items = [items]
+    return tc, items
+
+
+def recent_race_days(sport, meet, key, n=6):
+    """해당 경주장의 최근 실제 경주일을 'YYYY-MM-DD' 내림차순 리스트로 반환.
+
+    sport: 'keirin' | 'horse'. 키 없거나 실패 시 [].
+    경륜=카드 API 역순 페이지네이션, 경마=KRA rc_month 필터.
+    """
+    if not key:
+        return []
+    try:
+        if sport == "horse":
+            return _recent_kra_days(meet, key, n)
+        return _recent_keirin_days(meet, key, n)
+    except Exception:  # noqa: BLE001
+        return []
+
+
 def load_demo_race():
     """키 없을 때 데모용 캐시 경주(실제 과거 1경주) 반환. 실패 시 None."""
     try:

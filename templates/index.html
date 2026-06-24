@@ -39,6 +39,14 @@
   .keynote{font-size:12px;margin-top:10px;color:var(--muted)}
   .keynote.warn{color:#ffcf8a}
 
+  .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:2px;max-width:340px}
+  .chips-label{font-size:11px;color:var(--muted)}
+  .chips-empty{font-size:11px;color:var(--muted);font-style:italic}
+  .chip{background:#16202e;color:#bfe2ff;border:1px solid #264b5c;border-radius:999px;
+    padding:3px 9px;font-size:12px;font-weight:600;cursor:pointer;min-width:0}
+  .chip:hover{background:#1d2d40;filter:none}
+  .chip.active{background:#264b5c;color:#eaf4ff}
+
   table{width:100%;border-collapse:collapse;margin-top:6px;font-size:14px}
   th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right}
   th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
@@ -91,7 +99,17 @@
         </div>
         <div class="field">
           <label>날짜</label>
-          <input type="date" name="date" value="{{ date or today }}">
+          <input type="date" name="date" id="date" value="{{ date or default_date or today }}">
+          <div class="chips" id="recent-chips">
+            <span class="chips-label">최근 경주일:</span>
+            {% if recent_days %}
+              {% for d in recent_days %}
+                <button type="button" class="chip" data-day="{{ d }}">{{ d }}</button>
+              {% endfor %}
+            {% else %}
+              <span class="chips-empty">{{ '키 미설정' if not has_key else '조회 중…' }}</span>
+            {% endif %}
+          </div>
         </div>
         <div class="field">
           <label>경주장</label>
@@ -124,6 +142,7 @@
         <div class="keynote warn">⚠ DATAGOKR_SERVICE_KEY 미설정 → <b>데모 캐시 경주</b>로 표시됩니다.
           실시간 조회는 Render 환경변수에 키 설정 필요.</div>
       {% endif %}
+      {% if schedule_hint %}<div class="keynote">{{ schedule_hint }}</div>{% endif %}
     </form>
   </div>
 
@@ -135,6 +154,14 @@
     {% elif result.kind == 'notice' %}
       <div class="note notice">
         <b>{{ result.title }}</b><br>{{ result.message }}
+        {% if result.recent_days %}
+          <div class="chips" style="margin-top:8px">
+            <span class="chips-label">최근 경주일:</span>
+            {% for d in result.recent_days %}
+              <button type="button" class="chip" data-day="{{ d }}">{{ d }}</button>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     {% elif result.kind == 'ok' %}
       {% set info = result.info %}
@@ -209,25 +236,77 @@
 
 </div>
 <script>
-  // 종목 전환 시 경주장 옵션 교체 (경륜=광명 / 경마=서울·제주·부경)
   (function () {
     var sportSel = document.getElementById('sport');
     var meetSel = document.getElementById('meet');
+    var dateInp = document.getElementById('date');
+    var chipsBox = document.getElementById('recent-chips');
     if (!sportSel || !meetSel) return;
-    function refill() {
+
+    // chip 클릭 → 날짜 입력 채움 (이벤트 위임: 새로 그린 chip 도 동작)
+    document.addEventListener('click', function (e) {
+      var c = e.target.closest && e.target.closest('.chip');
+      if (!c || !c.dataset.day) return;
+      var inp = document.getElementById('date');
+      if (inp) {
+        inp.value = c.dataset.day;
+        // active 표시 (같은 chips 그룹 내에서만)
+        var grp = c.parentNode;
+        Array.prototype.forEach.call(grp.querySelectorAll('.chip'),
+          function (x) { x.classList.remove('active'); });
+        c.classList.add('active');
+      }
+    });
+
+    // 종목 전환 시 경주장 옵션 교체 (경륜=광명 / 경마=서울·제주·부경)
+    function refillMeets() {
       var list = (sportSel.value === 'horse'
         ? meetSel.getAttribute('data-kra')
         : meetSel.getAttribute('data-keirin')) || '';
       var cur = meetSel.value;
       meetSel.innerHTML = '';
-      list.split(',').filter(Boolean).forEach(function (m) {
+      var first = null;
+      list.split(',').filter(Boolean).forEach(function (m, i) {
         var o = document.createElement('option');
         o.value = m; o.textContent = m;
+        if (i === 0) first = m;
         if (m === cur) o.selected = true;
         meetSel.appendChild(o);
       });
+      // 경륜↔경마 전환 시 현재 meet 이 새 목록에 없으면 첫 항목으로
+      if (list.indexOf(cur) < 0 && first) meetSel.value = first;
     }
-    sportSel.addEventListener('change', refill);
+
+    // /recent 로 chip 갱신 (실패는 조용히 무시; 폼 동작엔 영향 없음)
+    function refreshChips() {
+      if (!chipsBox) return;
+      var sport = sportSel.value, meet = meetSel.value;
+      var q = '/recent?sport=' + encodeURIComponent(sport)
+            + '&meet=' + encodeURIComponent(meet);
+      fetch(q, {headers: {'Accept': 'application/json'}})
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          if (!j || !Array.isArray(j.days)) return;
+          var label = '<span class="chips-label">최근 경주일:</span>';
+          if (j.days.length === 0) {
+            chipsBox.innerHTML = label
+              + '<span class="chips-empty">최근 경주일 조회 실패</span>';
+            return;
+          }
+          var html = label + j.days.map(function (d) {
+            return '<button type="button" class="chip" data-day="' + d + '">'
+                 + d + '</button>';
+          }).join('');
+          chipsBox.innerHTML = html;
+        })
+        .catch(function () { /* 실패 무시 */ });
+    }
+
+    sportSel.addEventListener('change', function () {
+      refillMeets();
+      refreshChips();
+    });
+    meetSel.addEventListener('change', refreshChips);
   })();
 </script>
 </body>
