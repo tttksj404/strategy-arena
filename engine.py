@@ -443,6 +443,19 @@ def _grade_win(p):
     return "약"
 
 
+# 권종별 대중용 1줄 뜻 (초보자가 7권종 차이를 바로 이해하도록).
+# desc 는 짧은 라벨(예 '1·2착 마번 무순'), mean 은 풀어쓴 설명.
+BET_MEANINGS = {
+    "단승": "1착(1등)을 맞히면 적중.",
+    "연승": "고른 한 마리가 2착 안에 들면 적중(가장 쉬움).",
+    "복승": "1·2착 둘 다 맞히기 — 순서는 상관없음.",
+    "쌍승": "1착·2착을 순서까지 정확히 맞히기.",
+    "삼복": "1·2·3착 셋 다 맞히기 — 순서는 상관없음.",
+    "쌍복": "1착은 정확히, 나머지 2·3착은 순서 없이 맞히기.",
+    "삼쌍": "1→2→3착 순서까지 전부 맞히기(가장 어려움).",
+}
+
+
 def build_picks(rows):
     """스코어링 rows -> 7권종 픽 리스트.
 
@@ -454,7 +467,7 @@ def build_picks(rows):
       삼복  = Harville 무순 top3
       쌍복  = 1위 고정 + (2·3위 무순)
       삼쌍  = Harville 순서 top3
-    각 픽 + 모델확률 + 신뢰등급.
+    각 픽 + 모델확률 + 신뢰등급 + 대중용 1줄 뜻(mean).
     """
     by_win = sorted(rows, key=lambda r: -r["pwin"])
     by_plc = sorted(rows, key=lambda r: -r["pplc"])
@@ -527,6 +540,10 @@ def build_picks(rows):
             "prob": f"순서 top3 (win {100*pw[a]:.0f}%)",
             "grade": _grade_win(pw[a]),
         })
+
+    # 대중용 1줄 뜻 부착 (7권종을 다 모르는 사용자 대상).
+    for p in picks:
+        p["mean"] = BET_MEANINGS.get(p["code"], "")
 
     return picks
 

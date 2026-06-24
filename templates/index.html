@@ -78,7 +78,8 @@
   .picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
   .pick{background:#12151c;border:1px solid var(--line);border-radius:10px;padding:12px}
   .pick .code{font-size:16px;font-weight:800}
-  .pick .d{color:var(--muted);font-size:12px;margin-bottom:6px}
+  .pick .mean{color:#cdd5e3;font-size:12.5px;margin:3px 0 2px;line-height:1.4}
+  .pick .d{color:var(--muted);font-size:11.5px;margin-bottom:6px}
   .pick .sel{font-size:15px;font-weight:700;margin:4px 0}
   .pick .pr{color:var(--muted);font-size:12px}
   .gr{display:inline-block;border-radius:6px;padding:1px 8px;font-size:12px;font-weight:800;margin-left:6px}
@@ -107,6 +108,10 @@
   .src-demo{color:#ffcf8a}
   h2{font-size:16px;margin:2px 0 6px}
   .small{font-size:12px;color:var(--muted)}
+  .small.probmean{color:#aeb6c6}
+  .small.probmean b{color:var(--text)}
+  .gradekey{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:-4px 0 12px}
+  .gradekey .gr{margin-left:0}
 
   /* 결과 없을 때 채우는 안내(빈 공간 제거) */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
@@ -119,6 +124,11 @@
   .modelinfo li{margin:4px 0;font-size:12px;color:var(--muted);max-width:62ch}
   .modelinfo ul{margin:6px 0 0;padding-left:18px}
   .modelinfo b{color:var(--text)}
+  .glossary ul{margin:6px 0 0;padding-left:18px;
+    columns:2;column-gap:24px}
+  .glossary li{margin:4px 0;font-size:12.5px;color:var(--muted);break-inside:avoid}
+  .glossary b{color:var(--text)}
+  @media (max-width:480px){ .glossary ul{columns:1} }
 
   /* ── 모바일 ── */
   @media (max-width:480px){
@@ -261,6 +271,10 @@
           <span class="gr {{ tc.grade }}">{{ tc.grade }}</span>
           <span class="tprob">win {{ '%.1f'|format(100*result.top.pwin) }}% · 연대 {{ '%.1f'|format(100*result.top.pplc) }}%</span>
         </div>
+        <div class="small gradekey">신뢰등급
+          <span class="gr 강">강</span> 높음 ·
+          <span class="gr 중">중</span> 보통 ·
+          <span class="gr 약">약</span> 낮음 — 모델 확신도이며 적중 보장이 아닙니다.</div>
 
         {% set max_win = result.rows|map(attribute='pwin')|max %}
         {% set max_plc = result.rows|map(attribute='pplc')|max %}
@@ -293,7 +307,10 @@
           {% endfor %}
           </tbody>
         </table>
-        <div class="small" style="margin-top:6px">
+        <div class="small probmean" style="margin-top:6px">
+          <b>win%</b> = 1착(1등)이 될 확률 · <b>연대%</b> = 2착 이내에 들 확률 (모델 추정치).
+        </div>
+        <div class="small" style="margin-top:4px">
           ※ 막대는 각 열 내 상대 길이(win 열은 win 최댓값, 연대 열은 연대 최댓값 기준 정규화)이며, 두 열의 막대 길이를 서로 직접 비교하지 마세요.
         </div>
         {% if result.src == 'demo' and info.actual %}
@@ -308,7 +325,8 @@
         <div class="picks">
           {% for p in result.picks %}
             <div class="pick">
-              <div class="code">{{ p.code }}<span class="gr {{ p.grade }}">{{ p.grade }}</span></div>
+              <div class="code" title="{{ p.mean }}">{{ p.code }}<span class="gr {{ p.grade }}">{{ p.grade }}</span></div>
+              {% if p.mean %}<div class="mean">{{ p.mean }}</div>{% endif %}
               <div class="d">{{ p.desc }} · {{ p.type }}</div>
               {% for s in p.pick %}<div class="sel">{{ s }}</div>{% endfor %}
               <div class="pr">{{ p.prob }}</div>
@@ -345,6 +363,19 @@
         <li><b>출주표 실시간 채점</b> — 경륜 model_final(win·plc Calibrated, OOS 실측 top1 ≈60% · 연대 ≈77%), 경마 kra_model(HistGBM+isotonic, within-race 상대피처, 학습 2024-01~2026-06 / 서울·제주·부경 6,115경주).</li>
         <li><b>7권종 픽 산출</b> — 단승·연승·복승·쌍승·삼복·쌍복·삼쌍을 Harville 순서모형 근사로 추천하고 신뢰등급(강·중·약)을 표시합니다.</li>
         <li><b>정직 고지</b> — 두 종목 모두 공제(약 20~28%) 후 평균 −EV로 시장을 이기지 못함이 검증됐습니다. 적중률 예측 보조 도구일 뿐, <b>수익 도구가 아닙니다.</b></li>
+      </ul>
+    </div>
+
+    <div class="card glossary">
+      <h2>7권종 한눈에</h2>
+      <ul>
+        <li><b>단승</b> — 1착(1등) 맞히기.</li>
+        <li><b>연승</b> — 고른 한 마리가 2착 안에 들면 적중(가장 쉬움).</li>
+        <li><b>복승</b> — 1·2착 둘 다, 순서 상관없이.</li>
+        <li><b>쌍승</b> — 1착·2착을 순서까지 정확히.</li>
+        <li><b>삼복</b> — 1·2·3착 셋 다, 순서 상관없이.</li>
+        <li><b>쌍복</b> — 1착은 정확히, 2·3착은 순서 없이.</li>
+        <li><b>삼쌍</b> — 1→2→3착 순서까지 전부(가장 어려움).</li>
       </ul>
     </div>
   {% endif %}
