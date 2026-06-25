@@ -106,6 +106,11 @@
   .note .chip{background:#1d3346;border-color:#3a6f88}
   .meta{color:var(--muted);font-size:12px;margin:2px 0 12px}
   .src-demo{color:#ffcf8a}
+  /* 예정(미래) 경주 사전 예측 뱃지/안내 */
+  .future-badge{display:inline-block;background:#241a3a;border:1px solid #5a47a0;
+    color:#cdbcff;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:800;
+    vertical-align:middle;margin-left:6px}
+  .note.future{background:#1b1830;border-color:#5a47a0;color:#cdbcff;margin-bottom:12px}
   h2{font-size:16px;margin:2px 0 6px}
   .small{font-size:12px;color:var(--muted)}
   .small.probmean{color:#aeb6c6}
@@ -251,8 +256,19 @@
       {% set info = result.info %}
       {% set tc = result.top_conf %}
       {% set is_horse = (result.sport_label is defined) %}
+      {% if result.is_future %}
+        <div class="note future">
+          <div class="ico">🔮</div>
+          <div class="body">
+            <div class="ntitle">예정 경주 — 사전 예측</div>
+            <div>아직 열리지 않은 경주입니다. 출주표 발표분으로 미리 예측한 결과이며,
+              <b>실제 경주 결과는 아직 없습니다</b>(결과 미발생). 경주 후 순위는 별도 확인하세요.</div>
+          </div>
+        </div>
+      {% endif %}
       <div class="card">
         <h2>채점 결과
+          {% if result.is_future %}<span class="future-badge">🔮 예정 · 사전예측</span>{% endif %}
           {% if result.src == 'demo' %}<span class="src-demo small">· 데모 캐시 경주</span>{% endif %}
         </h2>
         <div class="meta">

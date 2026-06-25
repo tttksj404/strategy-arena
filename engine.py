@@ -213,7 +213,6 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
     반환: ['YYYY-MM-DD', ...] 내림차순.
     """
     import datetime as _dt
-    today_c = re.sub(r"\D", "", _dt.date.today().isoformat())  # YYYYMMDD
     days = set()
     years = [_dt.date.today().year]
     years.append(years[0] - 1)
@@ -232,8 +231,9 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
                 break
             for i in items:
                 d = re.sub(r"\D", "", str(i.get("race_ymd", "")))
-                # 미래 경주(아직 미개최)는 '최근 경주일'에서 제외.
-                if (len(d) == 8 and d <= today_c
+                # 카드 API 에 존재하는 날짜는 모두 포함(다가올 발표분 포함).
+                # 미래라도 출주표가 발표된 날은 '사전 예측' 대상이므로 칩에 노출한다.
+                if (len(d) == 8
                         and str(i.get("meet_nm", "")).strip().startswith(meet)):
                     days.add(d)
             if len(days) >= n:
@@ -254,7 +254,6 @@ def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
     """
     import datetime as _dt
     today = _dt.date.today()
-    today_c = re.sub(r"\D", "", today.isoformat())  # YYYYMMDD
     days = set()
     meet_codes = [meet, _KRA_MEET_CODE.get(meet, meet)]
     for back in range(months_back):
@@ -283,9 +282,9 @@ def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
                 items += more
             for i in items:
                 d = re.sub(r"\D", "", str(i.get("rcDate", "")))
-                # 미래 경주(아직 열리지 않음)는 '최근 경주일'에서 제외 — KRA 월
-                # 조회가 예정 경주의 rcDate까지 반환하므로 today 이하만 신뢰한다.
-                if len(d) == 8 and d <= today_c:
+                # KRA 월 조회가 반환하는 날짜는 모두 포함(예정 경주 rcDate 포함).
+                # 출주표가 발표된 미래 경주일도 '사전 예측' 대상이므로 칩에 노출한다.
+                if len(d) == 8:
                     days.add(d)
             got = True
             break  # 이 meet 코드로 성공 → 다음 코드 시도 불필요

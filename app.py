@@ -110,17 +110,6 @@ def _is_future_day(ymd):
     return nd > dt.date.today().isoformat()
 
 
-def _notice_future(sport, meet, race_no, ymd, base):
-    """아직 열리지 않은(미래) 경주 → 예측 차단 안내(kind='notice')."""
-    days = base.get("recent_days") or _recent_days_cached(sport, meet, _get_key())
-    nd = _norm_day(ymd) or ymd
-    msg = (f"{nd} {meet} {race_no}R 는 아직 열리지 않은(미개최) 경주입니다. "
-           "출전 확정·실시간 데이터가 없어 예측을 제공하지 않습니다. "
-           "이미 끝난 경주일을 선택하세요.")
-    return {"kind": "notice", "title": "아직 열리지 않은 경주",
-            "message": msg, "recent_days": days}
-
-
 def _notice_no_race(sport, meet, race_no, ymd, base):
     """경주가 없을 때 안내 result(kind='notice').
 
@@ -256,11 +245,8 @@ def predict():
                         "message": f"'{ymd}' 는 올바른 날짜가 아닙니다. "
                                    "YYYY-MM-DD 형식으로 입력하세요."},
                 **base)
-        if _is_future_day(ymd):
-            return render_template(
-                "index.html",
-                result=_notice_future(sport, meet, race_no, ymd, base),
-                **base)
+        # 미래(다가올) 경주라도 하드 차단하지 않는다. 출주표 fetch 를 항상 시도해
+        # 카드가 있으면 사전 예측을 수행한다(아래 is_future 플래그로 라벨 표시).
         stnd_yr = engine.norm_ymd(ymd)[:4]
         starters, err = engine.fetch_race_card(stnd_yr, ymd, meet, race_no, key)
         if err and _is_no_race(err):
@@ -308,6 +294,8 @@ def predict():
     out["kind"] = "ok"
     out["src"] = src
     out["info"] = info
+    # 다가올(미래) 경주 = 사전 예측. 실거래 결과는 아직 없음을 라벨로 표시.
+    out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
     return render_template("index.html", result=out, **base)
 
 
@@ -355,11 +343,8 @@ def _predict_horse(ymd, meet, race_no, base):
                         "message": f"'{ymd}' 는 올바른 날짜가 아닙니다. "
                                    "YYYY-MM-DD 형식으로 입력하세요."},
                 **base)
-        if _is_future_day(ymd):
-            return render_template(
-                "index.html",
-                result=_notice_future("horse", meet, race_no, ymd, base),
-                **base)
+        # 미래(다가올) 경마라도 하드 차단하지 않는다. 출주표 fetch 를 항상 시도해
+        # 카드가 있으면 사전 예측을 수행한다(is_future 플래그로 라벨 표시).
         starters, err = engine.fetch_kra_card(ymd, meet, race_no, key)
         if err and _is_no_race(err):
             # 경주 0건(에러 아님) → 조용한 demo 대신 안내(notice).
@@ -406,6 +391,8 @@ def _predict_horse(ymd, meet, race_no, base):
     out["src"] = src
     out["info"] = info
     out["sport_label"] = "경마(KRA)"
+    # 다가올(미래) 경마 = 사전 예측. 실거래 결과는 아직 없음을 라벨로 표시.
+    out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
     return render_template("index.html", result=out, **base)
 
 
