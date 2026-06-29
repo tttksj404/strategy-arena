@@ -33,6 +33,7 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_model_final.joblib")
 FINAL_MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_final_model.joblib")
+MODEL_11R_PATH = os.path.join(HERE, "static", "models", "keirin_11r_plus_model.joblib")
 DEMO_PATH = os.path.join(HERE, "data", "demo_race.json")
 
 # ── 경마(KRA) ──
@@ -109,6 +110,23 @@ def load_final_model():
     except Exception as e:  # noqa: BLE001
         _FINAL_MODEL_ERR = f"결승전 모델 로드 실패: {type(e).__name__}: {e}"
     return _FINAL_MODEL, _FINAL_MODEL_ERR
+
+
+_MODEL_11R = None
+_MODEL_11R_ERR = None
+
+
+def load_11r_model():
+    """11R+ 특화 모델 지연 로드. top1 66% / 연대 80% (11R+ OOS 검증)."""
+    global _MODEL_11R, _MODEL_11R_ERR
+    if _MODEL_11R is not None or _MODEL_11R_ERR is not None:
+        return _MODEL_11R, _MODEL_11R_ERR
+    try:
+        import joblib
+        _MODEL_11R = joblib.load(MODEL_11R_PATH)
+    except Exception as e:  # noqa: BLE001
+        _MODEL_11R_ERR = f"11R+ 모델 로드 실패: {type(e).__name__}: {e}"
+    return _MODEL_11R, _MODEL_11R_ERR
 
 
 _KRA_MODEL = None
@@ -610,7 +628,7 @@ def predict(starters, meta=None):
             # 휴리스틱: 12R 이상이면 결승전 근처로 간주
             is_final = rno_i >= 12
 
-    # 결승전이면 특화 모델 사용
+    # 결승전이면 특화 모델 사용 (race_no >= 12 또는 day_max)
     if is_final:
         fm, ferr = load_final_model()
         if fm is not None:
@@ -626,6 +644,22 @@ def predict(starters, meta=None):
                     "meta": meta or {},
                     "n_starters": len(rows),
                     "final_model": True,
+                }
+    # 11R+ (결승전 아닌 상위 경주) 특화 모델
+    if rno_i >= 11:
+        m11, m11err = load_11r_model()
+        if m11 is not None:
+            rows, err = score_keirin_with_model(starters, m11)
+            if err is None:
+                picks = build_picks(rows)
+                return {
+                    "rows": rows,
+                    "picks": picks,
+                    "top": rows[0],
+                    "top_conf": _top_confidence(rows[0]),
+                    "meta": meta or {},
+                    "n_starters": len(rows),
+                    "model_11r": True,
                 }
     # 일반 모델
     rows, err = score_keirin(starters)
