@@ -32,6 +32,7 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_model_final.joblib")
+FINAL_MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_final_model.joblib")
 DEMO_PATH = os.path.join(HERE, "data", "demo_race.json")
 
 # ── 경마(KRA) ──
@@ -91,6 +92,23 @@ def load_model():
     except Exception as e:  # noqa: BLE001
         _MODEL_ERR = f"모델 로드 실패: {type(e).__name__}: {e}"
     return _MODEL, _MODEL_ERR
+
+
+_FINAL_MODEL = None
+_FINAL_MODEL_ERR = None
+
+
+def load_final_model():
+    """결승전 특화 모델 지연 로드. top1 78% / 연대 90% (결승전 OOS 검증)."""
+    global _FINAL_MODEL, _FINAL_MODEL_ERR
+    if _FINAL_MODEL is not None or _FINAL_MODEL_ERR is not None:
+        return _FINAL_MODEL, _FINAL_MODEL_ERR
+    try:
+        import joblib
+        _FINAL_MODEL = joblib.load(FINAL_MODEL_PATH)
+    except Exception as e:  # noqa: BLE001
+        _FINAL_MODEL_ERR = f"결승전 모델 로드 실패: {type(e).__name__}: {e}"
+    return _FINAL_MODEL, _FINAL_MODEL_ERR
 
 
 _KRA_MODEL = None
@@ -355,6 +373,11 @@ def score_keirin(starters):
     model, err = load_model()
     if err:
         return None, err
+    return score_keirin_with_model(starters, model)
+
+
+def score_keirin_with_model(starters, model):
+    """score_keirin의 모델 주입 버전. 결승전 특화 모델 등에 사용."""
     try:
         import numpy as np  # noqa: F401
         import pandas as pd
@@ -564,7 +587,47 @@ def _top_confidence(top):
 
 
 def predict(starters, meta=None):
-    """출주표 -> {rows, picks, top, top_conf, meta, n_starters} 또는 {error}."""
+    """출주표 -> {rows, picks, top, top_conf, meta, n_starters} 또는 {error}.
+
+    결승전(그 날의 마지막 경주) 감지 시 결승전 특화 모델 사용 (top1 78% vs 전체 60%).
+    """
+    # 결승전 감지: meta에 race_no와 day_max_race_no가 있으면 비교.
+    # 없으면 race_no >= 12 휴리스틱 (광명은 보통 12~15R).
+    is_final = False
+    if meta:
+        rno = str(meta.get("race_no", "")).strip().lstrip("0") or "0"
+        try:
+            rno_i = int(rno)
+        except ValueError:
+            rno_i = 0
+        day_max = meta.get("day_max_race_no")
+        if day_max:
+            try:
+                is_final = rno_i >= int(str(day_max).strip().lstrip("0"))
+            except (ValueError, TypeError):
+                is_final = False
+        else:
+            # 휴리스틱: 12R 이상이면 결승전 근처로 간주
+            is_final = rno_i >= 12
+
+    # 결승전이면 특화 모델 사용
+    if is_final:
+        fm, ferr = load_final_model()
+        if fm is not None:
+            rows, err = score_keirin_with_model(starters, fm)
+            if err is None:
+                rows[0]["_final_model"] = True if rows else False
+                picks = build_picks(rows)
+                return {
+                    "rows": rows,
+                    "picks": picks,
+                    "top": rows[0],
+                    "top_conf": _top_confidence(rows[0]),
+                    "meta": meta or {},
+                    "n_starters": len(rows),
+                    "final_model": True,
+                }
+    # 일반 모델
     rows, err = score_keirin(starters)
     if err:
         return {"error": err}
