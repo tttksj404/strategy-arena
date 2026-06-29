@@ -213,6 +213,16 @@ def recent():
     return jsonify({"sport": sport, "meet": meet, "days": days})
 
 
+# ── /predict 결과 캐싱 (같은 경주 재요청 시 즉시 응답 — data.go.kr 재호출 방지) ──
+# 출주표는 경주 시작 전까지 안 바뀜 → 캐싱 안전. TTL 30분.
+_PREDICT_CACHE = {}
+_PREDICT_TTL = 1800
+# 진행 중인 fetch 중복 방지 (같은 경주 동시 요청 시 1번만 fetch)
+_PREDICT_FETCHING = {}
+
+_PREDICT_LOCK = threading.Lock()
+
+
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
     f = request.values  # GET·POST 모두 수용
@@ -235,6 +245,13 @@ def predict():
         schedule_hint=SCHEDULE_HINT,
         sport=sport, date=ymd, meet=meet, race_no=race_no,
     )
+
+    # ── /predict 결과 캐시 확인 (data.go.kr 재호출 방지 — 핵심 안정화) ──
+    ck = (sport, ymd, meet, race_no)
+    now = time.time()
+    cached = _PREDICT_CACHE.get(ck)
+    if cached and (now - cached["ts"]) < _PREDICT_TTL:
+        return cached["rendered"]  # 캐시된 HTML 즉시 반환
 
     # ── 경마(KRA) ──
     if sport == "horse":
@@ -328,7 +345,13 @@ def predict():
     out["info"] = info
     # 다가올(미래) 경주 = 사전 예측. 실거래 결과는 아직 없음을 라벨로 표시.
     out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
-    return render_template("index.html", result=out, **base)
+    return _cache_and_return(ck, render_template("index.html", result=out, **base))
+
+
+def _cache_and_return(cache_key, rendered):
+    """성공 결과만 캐싱. error/notice는 캐싱하지 않음 (다음 요청에서 재시도)."""
+    _PREDICT_CACHE[cache_key] = {"rendered": rendered, "ts": time.time()}
+    return rendered
 
 
 def _predict_horse(ymd, meet, race_no, base):
