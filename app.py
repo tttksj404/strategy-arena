@@ -461,6 +461,24 @@ def healthz():
             "has_key": _has_key()}, (200 if err is None and kra_err is None else 500)
 
 
+@app.errorhandler(500)
+def handle_500(e):
+    """500 Internal Server Error → 명확한 JSON 에러 (Render 500 페이지 대신)."""
+    import traceback
+    return jsonify({"error": "internal_server_error",
+                    "detail": str(e),
+                    "trace": traceback.format_exc().splitlines()[-3:]}), 500
+
+
+@app.errorhandler(Exception)
+def handle_all_errors(e):
+    """모든 미처리 예외 → JSON 에러 (앱이 죽지 않도록)."""
+    import traceback
+    return jsonify({"error": type(e).__name__,
+                    "detail": str(e),
+                    "trace": traceback.format_exc().splitlines()[-3:]}), 500
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)

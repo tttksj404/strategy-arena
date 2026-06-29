@@ -113,7 +113,7 @@ def load_kra_model():
 # ───────────────────────── API fetch (경륜 카드) ─────────────────────────
 
 
-def _api_page(stnd_yr, page, rows, key, timeout=8):
+def _api_page(stnd_yr, page, rows, key, timeout=5):
     qs = urllib.parse.urlencode({
         "serviceKey": key, "resultType": "json",
         "numOfRows": rows, "pageNo": page, "stnd_yr": str(stnd_yr),
