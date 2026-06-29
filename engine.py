@@ -34,6 +34,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_model_final.joblib")
 FINAL_MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_final_model.joblib")
 MODEL_11R_PATH = os.path.join(HERE, "static", "models", "keirin_11r_plus_model.joblib")
+SPECIAL_11R_PATH = os.path.join(HERE, "static", "models", "keirin_special_11r_model.joblib")
 DEMO_PATH = os.path.join(HERE, "data", "demo_race.json")
 
 # ── 경마(KRA) ──
@@ -127,6 +128,23 @@ def load_11r_model():
     except Exception as e:  # noqa: BLE001
         _MODEL_11R_ERR = f"11R+ 모델 로드 실패: {type(e).__name__}: {e}"
     return _MODEL_11R, _MODEL_11R_ERR
+
+
+_SPECIAL_11R = None
+_SPECIAL_11R_ERR = None
+
+
+def load_special_11r_model():
+    """특선+11R+ 특화 모델. top1 69% / 연대 83% (특선 11R+ OOS 검증)."""
+    global _SPECIAL_11R, _SPECIAL_11R_ERR
+    if _SPECIAL_11R is not None or _SPECIAL_11R_ERR is not None:
+        return _SPECIAL_11R, _SPECIAL_11R_ERR
+    try:
+        import joblib
+        _SPECIAL_11R = joblib.load(SPECIAL_11R_PATH)
+    except Exception as e:  # noqa: BLE001
+        _SPECIAL_11R_ERR = f"특선11R+ 모델 로드 실패: {type(e).__name__}: {e}"
+    return _SPECIAL_11R, _SPECIAL_11R_ERR
 
 
 _KRA_MODEL = None
@@ -647,6 +665,23 @@ def predict(starters, meta=None):
                 }
     # 11R+ (결승전 아닌 상위 경주) 특화 모델
     if rno_i >= 11:
+        # 특선 등급 + 11R+ → 가장 정확한 특화 모델 (69%)
+        grade = ""
+        if starters and isinstance(starters, list) and len(starters) > 0:
+            grade = str(starters[0].get("racer_grd_cd", "") or "").strip()
+        if grade == "특선":
+            sp, sperr = load_special_11r_model()
+            if sp is not None:
+                rows, err = score_keirin_with_model(starters, sp)
+                if err is None:
+                    picks = build_picks(rows)
+                    return {
+                        "rows": rows, "picks": picks, "top": rows[0],
+                        "top_conf": _top_confidence(rows[0]),
+                        "meta": meta or {}, "n_starters": len(rows),
+                        "model_special_11r": True,
+                    }
+        # 일반 11R+ 특화 (66%)
         m11, m11err = load_11r_model()
         if m11 is not None:
             rows, err = score_keirin_with_model(starters, m11)
