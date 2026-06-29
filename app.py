@@ -19,6 +19,7 @@ gunicorn app:app 구조. 전역 `app`.
 import os
 import time
 import datetime as dt
+import threading
 
 from flask import Flask, request, render_template, jsonify
 
@@ -36,28 +37,59 @@ KRA_MEETS = engine.KRA_MEETS        # ['서울','제주','부경']
 SCHEDULE_HINT = ("운영 요일(대략): 경륜 광명 금·토·일 · 경마 서울 토·일 / "
                  "부경 금·토·일 / 제주 금·토 (공휴일·변경 있으니 최근 경주일 칩 참고).")
 
-# (sport, meet) -> (days_list, fetched_ts) 모듈 전역 캐시 (~1h TTL).
+# (sport, meet) -> (days_list, fetched_ts, status) 모듈 전역 캐시.
+# status: "ok"(성공, 1h TTL) / "empty"(빈 결과, 5분 TTL) / "fail"(에러, 60s 음수캐시).
 _RECENT_CACHE = {}
-_RECENT_TTL = 3600  # seconds
+_RECENT_TTL = 3600        # 성공 시 1시간
+_RECENT_EMPTY_TTL = 300   # 빈 결과 5분
+_RECENT_FAIL_TTL = 60     # 실패 60초 (음수 캐싱 → 반복 타임아웃 방지)
+_RECENT_FETCHING = set()   # 진행 중인 fetch 중복 방지
+
+
+def _bg_fetch_recent(sport, meet, key, n):
+    """백그라운드 스레드에서 recent_race_days 실행 → 캐시 갱신."""
+    ck = (sport, meet)
+    try:
+        days = engine.recent_race_days(sport, meet, key, n=n)
+        status = "ok" if days else "empty"
+        _RECENT_CACHE[ck] = (days, time.time(), status)
+    except Exception:  # noqa: BLE001
+        _RECENT_CACHE[ck] = ([], time.time(), "fail")
+    finally:
+        _RECENT_FETCHING.discard(ck)
 
 
 def _recent_days_cached(sport, meet, key, n=6):
-    """recent_race_days 결과를 1h TTL 캐시로 감싼다. 키 없으면 []."""
+    """recent_race_days 캐시. 캐시 미스/만료 시 백그라운드 fetch 후 빈 리스트 즉시 반환.
+
+    핵심 안정화: 루트 '/' 접속이 data.go.kr API 동기 대기로 블로킹되던 것을 해결.
+    캐시 히트 시 즉시 반환, 미스 시 백그라운드 fetch 시작 후 빈 리스트 반환(논블로킹).
+    실패도 짧은 TTL로 캐싱(음수 캐싱)하여 반복 API 호출·타임아웃 방지.
+    """
     if not key:
         return []
     now = time.time()
     ck = (sport, meet)
     hit = _RECENT_CACHE.get(ck)
-    if hit and (now - hit[1]) < _RECENT_TTL:
-        return hit[0]
-    try:
-        days = engine.recent_race_days(sport, meet, key, n=n)
-    except Exception:  # noqa: BLE001
-        days = []
-    # 성공(비어있지 않음)일 때만 캐시. 실패는 다음 요청에서 재시도.
-    if days:
-        _RECENT_CACHE[ck] = (days, now)
-    return days
+    if hit:
+        days, ts, status = hit
+        ttl = (_RECENT_TTL if status == "ok"
+               else _RECENT_EMPTY_TTL if status == "empty"
+               else _RECENT_FAIL_TTL)
+        if (now - ts) < ttl:
+            return days
+        # 만료: 캐시값 일단 반환, 백그라운드에서 갱신
+        if ck not in _RECENT_FETCHING:
+            _RECENT_FETCHING.add(ck)
+            threading.Thread(target=_bg_fetch_recent,
+                              args=(sport, meet, key, n), daemon=True).start()
+        return days
+    # 캐시 미스: 백그라운드 fetch 시작, 즉시 빈 리스트 반환 (논블로킹)
+    if ck not in _RECENT_FETCHING:
+        _RECENT_FETCHING.add(ck)
+        threading.Thread(target=_bg_fetch_recent,
+                         args=(sport, meet, key, n), daemon=True).start()
+    return []
 
 
 def _get_key():

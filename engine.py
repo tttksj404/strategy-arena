@@ -113,7 +113,7 @@ def load_kra_model():
 # ───────────────────────── API fetch (경륜 카드) ─────────────────────────
 
 
-def _api_page(stnd_yr, page, rows, key, timeout=15):
+def _api_page(stnd_yr, page, rows, key, timeout=8):
     qs = urllib.parse.urlencode({
         "serviceKey": key, "resultType": "json",
         "numOfRows": rows, "pageNo": page, "stnd_yr": str(stnd_yr),
@@ -134,7 +134,7 @@ def _api_page(stnd_yr, page, rows, key, timeout=15):
     return tc, items
 
 
-def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=12):
+def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=6):
     """data.go.kr 카드 API에서 단일 경주 출주표를 실시간 fetch (역순 페이지네이션).
 
     API가 stnd_yr 필터만 지원하고 날짜 오름차순이라, 최근 날짜(6월 등)는
@@ -203,7 +203,7 @@ def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=12):
     return None, "해당 경주를 찾지 못했습니다 (날짜/경주장/경주번호를 확인하세요)."
 
 
-def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
+def _recent_keirin_days(meet, key, n, rows=1000, max_pages=2):
     """경륜 카드 API 역순 페이지네이션으로 meet 최근 실제 경주일 수집.
 
     API 가 stnd_yr 만 서버측 필터하고 날짜 오름차순이라, 최근 경주일은
@@ -244,7 +244,7 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=4):
     return [f"{d[0:4]}-{d[4:6]}-{d[6:8]}" for d in out]
 
 
-def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
+def _recent_kra_days(meet, key, n, rows=1000, max_pages=3, months_back=2):
     """KRA RaceDetailResult_1 의 rc_month=YYYYMM 필터로 meet 최근 경주일 수집.
 
     rc_date/rc_no 없이 rc_month 만 주면 그 달 전체 경주가 반환된다(실측 확인).
@@ -294,7 +294,7 @@ def _recent_kra_days(meet, key, n, rows=1000, max_pages=6, months_back=3):
     return [f"{d[0:4]}-{d[4:6]}-{d[6:8]}" for d in out]
 
 
-def _kra_api_page_month(meet, rc_month, page, rows, key, timeout=20):
+def _kra_api_page_month(meet, rc_month, page, rows, key, timeout=10):
     """KRA RaceDetailResult_1 월 단위 조회 (rc_month=YYYYMM, rc_date/rc_no 없음)."""
     qs = urllib.parse.urlencode({
         "serviceKey": key, "_type": "json",
@@ -582,7 +582,7 @@ def predict(starters, meta=None):
 # ═══════════════════════ 경마(KRA) ═══════════════════════
 
 
-def _kra_api_page(meet, rc_date, rc_no, page, rows, key, timeout=15):
+def _kra_api_page(meet, rc_date, rc_no, page, rows, key, timeout=8):
     qs = urllib.parse.urlencode({
         "serviceKey": key, "_type": "json",
         "numOfRows": rows, "pageNo": page,
@@ -610,7 +610,7 @@ def _kra_api_page(meet, rc_date, rc_no, page, rows, key, timeout=15):
 _KRA_MEET_CODE = {"서울": "1", "제주": "2", "부경": "3"}
 
 
-def fetch_kra_card(ymd, meet, race_no, key, rows=50, max_pages=12, timeout=15):
+def fetch_kra_card(ymd, meet, race_no, key, rows=50, max_pages=4, timeout=8):
     """KRA RaceDetailResult_1 에서 단일 경주 출주표 실시간 fetch.
 
     KRA API 는 meet+rc_date+rc_no 를 서버측에서 필터하므로 totalCount 가
