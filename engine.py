@@ -719,6 +719,13 @@ def score_kra(starters):
     c["jk_wr_prior"] = pd.to_numeric(c["jk_wr_prior"], errors="coerce").fillna(gp)
     c["tr_wr_prior"] = pd.to_numeric(c["tr_wr_prior"], errors="coerce").fillna(gp)
 
+    # 배당 암시확률 (v2 odds-injected 모델용)
+    c["imp_win"] = np.where(c.get("winOdds", 0) > 0, 1.0 / c["winOdds"], 0.0)
+    c["imp_plc"] = np.where(c.get("plcOdds", 0) > 0, 2.0 / c["plcOdds"], 0.0)
+    sum_iw = c["imp_win"].sum(); sum_ip = c["imp_plc"].sum()
+    c["imp_win_norm"] = c["imp_win"] / sum_iw if sum_iw > 0 else 0.0
+    c["imp_plc_norm"] = c["imp_plc"] / sum_ip if sum_ip > 0 else 0.0
+
     # within-race 상대값 (해당 경주 평균 대비)
     for col in REL:
         if col in c.columns:
