@@ -606,20 +606,31 @@ def build_picks(rows):
     return picks
 
 
-def _top_confidence(top):
+def _top_confidence(top, rows=None):
     """최상위(연대확률 1위) 픽의 신뢰등급/표현.
 
     트로피·'최고확신'은 절대 win 확률이 충분히 높을 때만 — 그렇지 않으면
     과신을 막기 위해 '상대 1순위(저신뢰)' 중립 표현으로 다운그레이드한다.
-    반환 dict: {grade, label, icon}.
+    반환 dict: {grade, label, icon, race_confidence}.
     """
     pwin = top.get("pwin", 0.0)
     grade = _grade_win(pwin)  # 강(>=50%) / 중(>=30%) / 약
+    # 경주 내 확신도 (top1 - top2 확률 차이) → 고확신/혼전 판별
+    race_conf = ""
+    if rows and len(rows) >= 2:
+        sorted_rows = sorted(rows, key=lambda r: -r.get("pwin", 0))
+        gap = sorted_rows[0].get("pwin", 0) - sorted_rows[1].get("pwin", 0)
+        if gap >= 0.25:
+            race_conf = "고확신"  # 검증: 상위 30% 경주 80% 적중
+        elif gap <= 0.08:
+            race_conf = "혼전"  # 저확신 경주 (51% 적중)
+        else:
+            race_conf = "보통"
     if grade == "강":
-        return {"grade": "강", "label": "최고확신 픽", "icon": "🏆"}
-    if grade == "중":
-        return {"grade": "중", "label": "상대 우세 픽", "icon": "▲"}
-    return {"grade": "약", "label": "상대 1순위 (저신뢰)", "icon": "①"}
+        return {"grade": "강", "label": "최고확신 픽", "icon": "🏆", "race_confidence": race_conf}
+    if grade == "中":
+        return {"grade": "中", "label": "상대 우세 픽", "icon": "▲", "race_confidence": race_conf}
+    return {"grade": "약", "label": "상대 1순위 (저신뢰)", "icon": "①", "race_confidence": race_conf}
 
 
 def predict(starters, meta=None):
@@ -658,7 +669,7 @@ def predict(starters, meta=None):
                     "rows": rows,
                     "picks": picks,
                     "top": rows[0],
-                    "top_conf": _top_confidence(rows[0]),
+                    "top_conf": _top_confidence(rows[0], rows),
                     "meta": meta or {},
                     "n_starters": len(rows),
                     "final_model": True,
@@ -677,7 +688,7 @@ def predict(starters, meta=None):
                     picks = build_picks(rows)
                     return {
                         "rows": rows, "picks": picks, "top": rows[0],
-                        "top_conf": _top_confidence(rows[0]),
+                        "top_conf": _top_confidence(rows[0], rows),
                         "meta": meta or {}, "n_starters": len(rows),
                         "model_special_11r": True,
                     }
@@ -691,7 +702,7 @@ def predict(starters, meta=None):
                     "rows": rows,
                     "picks": picks,
                     "top": rows[0],
-                    "top_conf": _top_confidence(rows[0]),
+                    "top_conf": _top_confidence(rows[0], rows),
                     "meta": meta or {},
                     "n_starters": len(rows),
                     "model_11r": True,
@@ -705,7 +716,7 @@ def predict(starters, meta=None):
         "rows": rows,
         "picks": picks,
         "top": rows[0],
-        "top_conf": _top_confidence(rows[0]),
+        "top_conf": _top_confidence(rows[0], rows),
         "meta": meta or {},
         "n_starters": len(rows),
     }
@@ -906,7 +917,7 @@ def predict_kra(starters, meta=None):
         "rows": rows,
         "picks": picks,
         "top": rows[0],
-        "top_conf": _top_confidence(rows[0]),
+        "top_conf": _top_confidence(rows[0], rows),
         "meta": meta or {},
         "n_starters": len(rows),
     }
