@@ -219,8 +219,37 @@ _PREDICT_CACHE = {}
 _PREDICT_TTL = 1800
 # 진행 중인 fetch 중복 방지 (같은 경주 동시 요청 시 1번만 fetch)
 _PREDICT_FETCHING = {}
+_BASE_PREDICTION_CACHE = {}
 
 _PREDICT_LOCK = threading.Lock()
+
+
+def _base_cache_key(sport, ymd, meet, race_no):
+    return (sport, _norm_day(ymd) or ymd, meet, str(race_no).strip())
+
+
+def _get_base_prediction_cached(sport, ymd, meet, race_no):
+    ck = _base_cache_key(sport, ymd, meet, race_no)
+    hit = _BASE_PREDICTION_CACHE.get(ck)
+    if hit and (time.time() - hit["ts"]) < _PREDICT_TTL:
+        return hit["out"]
+    return None
+
+
+def _set_base_prediction_cache(sport, ymd, meet, race_no, out):
+    if not out or "error" in out:
+        return
+    ck = _base_cache_key(sport, ymd, meet, race_no)
+    _BASE_PREDICTION_CACHE[ck] = {"out": out, "ts": time.time()}
+
+
+def _compute_base_prediction_cached(sport, ymd, meet, race_no, key):
+    hit = _get_base_prediction_cached(sport, ymd, meet, race_no)
+    if hit is not None:
+        return hit
+    out = _compute_base_prediction(sport, ymd, meet, race_no, key)
+    _set_base_prediction_cache(sport, ymd, meet, race_no, out)
+    return out
 
 
 @app.route("/predict", methods=["GET", "POST"])
@@ -255,7 +284,7 @@ def predict():
 
     # ── 경마(KRA) ──
     if sport == "horse":
-        return _predict_horse(ymd, meet, race_no, base)
+        return _predict_horse(ymd, meet, race_no, base, cache_key=ck)
 
     # ── 경륜 ──
     starters = None
@@ -345,6 +374,7 @@ def predict():
     out["info"] = info
     # 다가올(미래) 경주 = 사전 예측. 실거래 결과는 아직 없음을 라벨로 표시.
     out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
+    _set_base_prediction_cache(sport, ymd, meet, race_no, out)
     return _cache_and_return(ck, render_template("index.html", result=out, **base))
 
 
@@ -354,7 +384,7 @@ def _cache_and_return(cache_key, rendered):
     return rendered
 
 
-def _predict_horse(ymd, meet, race_no, base):
+def _predict_horse(ymd, meet, race_no, base, cache_key=None):
     """경마(KRA) 경로: 실시간 출주표 fetch → KRA 모델 채점 → 7권종 픽.
     키 없거나 실패 시 데모(과거 1경주) 폴백. 경륜 경로와 동일 표시.
     """
@@ -448,7 +478,11 @@ def _predict_horse(ymd, meet, race_no, base):
     out["sport_label"] = "경마(KRA)"
     # 다가올(미래) 경마 = 사전 예측. 실거래 결과는 아직 없음을 라벨로 표시.
     out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
-    return render_template("index.html", result=out, **base)
+    _set_base_prediction_cache("horse", ymd, meet, race_no, out)
+    rendered = render_template("index.html", result=out, **base)
+    if cache_key is not None:
+        return _cache_and_return(cache_key, rendered)
+    return rendered
 
 
 @app.route("/healthz")
@@ -510,7 +544,7 @@ def api_live_decision():
     key0 = _get_key()
     base_out = None
     try:
-        base_out = _compute_base_prediction(sport, ymd, meet, race_no, key0)
+        base_out = _compute_base_prediction_cached(sport, ymd, meet, race_no, key0)
     except Exception as e:
         return jsonify({"ok": False, "status": "hold",
                         "message": f"예측 오류: {e}",

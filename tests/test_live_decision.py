@@ -4,6 +4,7 @@ import json
 import os
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -16,6 +17,7 @@ class LiveDecisionTestCase(unittest.TestCase):
     def setUp(self):
         app_module.app.config["TESTING"] = True
         self.client = app_module.app.test_client()
+        app_module._BASE_PREDICTION_CACHE.clear()
 
     def test_live_decision_no_date(self):
         """날짜 없으면 400 + hold."""
@@ -55,7 +57,27 @@ class LiveDecisionTestCase(unittest.TestCase):
             html = f.read()
         self.assertIn("startLivePolling", html)
         self.assertIn("/api/live-decision", html)
-        self.assertIn("setInterval", html)
+        self.assertIn("setTimeout", html)
+        self.assertIn("pollDelayMs", html)
+
+    def test_live_decision_reuses_cached_base_prediction(self):
+        base = {"kind": "ok", "rows": [{"bno": 1, "name": "A", "pwin": 0.6, "pplc": 0.9}]}
+        decision = {
+            "ok": True, "status": "pre_race", "message": "cached",
+            "updated_at": "2026-06-30T12:00:00", "odds_age_sec": None,
+            "market_odds": None, "top": base["rows"][0], "rows": base["rows"],
+            "decision": "hold", "market_used": False, "snapshot_phase": "pre_race",
+        }
+        url = "/api/live-decision?sport=keirin&date=2026-06-28&meet=광명&race_no=5"
+        with patch.dict(os.environ, {"DATAGOKR_SERVICE_KEY": "dummy"}, clear=False), \
+             patch.object(app_module, "_compute_base_prediction", return_value=base) as compute, \
+             patch.object(app_module.engine, "compute_live_decision", return_value=decision):
+            r1 = self.client.get(url)
+            r2 = self.client.get(url)
+
+        self.assertEqual(r1.status_code, 200)
+        self.assertEqual(r2.status_code, 200)
+        self.assertEqual(compute.call_count, 1)
 
 
 if __name__ == "__main__":

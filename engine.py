@@ -798,37 +798,8 @@ def predict(starters, meta=None):
     if err:
         return {"error": err}
 
-    # ── kcycle 실시간 배당 앙상블 (일반 경주 60% → 63%) ──
-    # 한국 서버에서만 작동 (Render 미국 서버는 kcycle 접근 불가 → 비활성화)
-    kcycle_odds = None
-    if meta and os.environ.get("KCYCLE_ENABLED", "0") == "1":
-        ymd = meta.get("ymd") or ""
-        rno_str = str(meta.get("race_no", "")).strip()
-        stnd_yr = str(meta.get("stnd_yr") or ymd[:4] or "")
-        try:
-            kcycle_odds = fetch_kcycle_odds(stnd_yr, ymd, rno_str)
-        except Exception:
-            kcycle_odds = None
-        if kcycle_odds:
-            # 시장 암시확률 계산
-            imp = {b: 1.0 / o for b, o in kcycle_odds.items() if o > 0}
-            total = sum(imp.values())
-            if total > 0:
-                imp_norm = {b: v / total for b, v in imp.items()}
-                # 모델 확률 + 시장 암시확률 가중 앙상블 (시장 0.7 + 모델 0.3)
-                for r in rows:
-                    bno = r.get("bno", 0)
-                    mkt_p = imp_norm.get(bno, 0.0)
-                    model_p = r.get("pwin", 0.0)
-                    r["pwin_blended"] = 0.3 * model_p + 0.7 * mkt_p
-                    r["mkt_pwin"] = mkt_p
-                # 블렌딩 확률로 재정렬
-                rows.sort(key=lambda r: -r.get("pwin_blended", r.get("pwin", 0)))
-                # top 교체
-                rows[0]["pwin"] = rows[0].get("pwin_blended", rows[0]["pwin"])
-
     picks = build_picks(rows)
-    result = {
+    return {
         "rows": rows,
         "picks": picks,
         "top": rows[0],
@@ -836,9 +807,6 @@ def predict(starters, meta=None):
         "meta": meta or {},
         "n_starters": len(rows),
     }
-    if kcycle_odds:
-        result["market_odds"] = True
-    return result
 
 
 # ═══════════════════════ 경마(KRA) ═══════════════════════
@@ -1081,7 +1049,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             "snapshot_phase": "unknown",
         }
 
-    rows = list(base_model_out.get("rows", []))
+    rows = [dict(r) for r in base_model_out.get("rows", [])]
     if not rows:
         return {
             "ok": False, "status": "hold", "message": "출주 데이터 없음",
