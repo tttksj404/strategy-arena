@@ -32,6 +32,7 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_model_final.joblib")
+CROSS_MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_cross_domain_model.joblib")
 FINAL_MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_final_model.joblib")
 MODEL_11R_PATH = os.path.join(HERE, "static", "models", "keirin_11r_plus_model.joblib")
 SPECIAL_11R_PATH = os.path.join(HERE, "static", "models", "keirin_special_11r_model.joblib")
@@ -180,6 +181,22 @@ def load_model():
     except Exception as e:  # noqa: BLE001
         _MODEL_ERR = f"모델 로드 실패: {type(e).__name__}: {e}"
     return _MODEL, _MODEL_ERR
+
+
+_CROSS_MODEL = None
+_CROSS_MODEL_ERR = None
+
+
+def load_cross_model():
+    global _CROSS_MODEL, _CROSS_MODEL_ERR
+    if _CROSS_MODEL is not None or _CROSS_MODEL_ERR is not None:
+        return _CROSS_MODEL, _CROSS_MODEL_ERR
+    try:
+        import joblib
+        _CROSS_MODEL = joblib.load(CROSS_MODEL_PATH)
+    except Exception as e:  # noqa: BLE001
+        _CROSS_MODEL_ERR = f"교차분야 모델 로드 실패: {type(e).__name__}: {e}"
+    return _CROSS_MODEL, _CROSS_MODEL_ERR
 
 
 _FINAL_MODEL = None
@@ -486,7 +503,7 @@ def load_demo_race():
 # ───────────────────────── 스코어링 (qprep2.py 파이프라인 재현) ─────────────────────────
 
 
-def score_keirin(starters):
+def score_keirin(starters, meta=None):
     """출주표 item 리스트 -> [{bno, name, grade, pwin, pplc}] (연대확률 내림차순).
 
     keirin/qprep2.py·recommend.py 의 피처 파이프라인을 그대로 재현한다.
@@ -495,10 +512,64 @@ def score_keirin(starters):
     model, err = load_model()
     if err:
         return None, err
-    return score_keirin_with_model(starters, model)
+    return score_keirin_with_model(starters, model, meta=meta)
 
 
-def score_keirin_with_model(starters, model):
+def _ymd_int(s):
+    d = re.sub(r"\D", "", str(s or ""))
+    return int(d) if len(d) >= 8 else 0
+
+
+def _keirin_cross_feature_frame(c, model, meta=None):
+    import numpy as np
+    import pandas as pd
+    maps = model.get("maps", {})
+    bf1 = ["bf1_day1_rank", "bf1_day2_rank", "bf1_day3_rank"]
+    bf2 = ["bf2_day1_rank", "bf2_day2_rank", "bf2_day3_rank"]
+    bf3 = ["bf3_day1_rank", "bf3_day2_rank", "bf3_day3_rank"]
+    for b in bf1 + bf2 + bf3:
+        if b not in c.columns:
+            c[b] = pd.NA
+        c[b] = pd.to_numeric(c[b], errors="coerce")
+    if "race_ymd" in c.columns and c["race_ymd"].notna().any():
+        ymd_i = _ymd_int(c["race_ymd"].dropna().iloc[0])
+    else:
+        ymd_i = _ymd_int((meta or {}).get("ymd"))
+    names = c.get("racer_nm", pd.Series([""] * len(c), index=c.index)).fillna("").astype(str)
+    wr = maps.get("racer_wr_prior", {})
+    pr = maps.get("racer_plc_prior", {})
+    elo = maps.get("elo_prior", {})
+    last = maps.get("last_ymd", {})
+    c["rank_momentum"] = c[bf2].mean(axis=1) - c[bf1].mean(axis=1)
+    c["rank_accel"] = c[bf3].mean(axis=1) - 2 * c[bf2].mean(axis=1) + c[bf1].mean(axis=1)
+    c["rank_vol"] = c[bf1 + bf2 + bf3].std(axis=1)
+    c["rank_energy"] = 1.0 / (1.0 + c["recent_mean_rank"].fillna(4.0))
+    c["racer_wr_prior"] = names.map(wr).fillna(model.get("global_win_rate", 0.15)).astype(float)
+    c["racer_plc_prior"] = names.map(pr).fillna(model.get("global_plc_rate", 0.3)).astype(float)
+    c["elo_prior"] = names.map(elo).fillna(1500.0).astype(float)
+    c["last_ymd"] = names.map(last).fillna(ymd_i)
+    c["rest_days"] = (float(ymd_i) - pd.to_numeric(c["last_ymd"], errors="coerce")).clip(lower=0)
+    c["speed_norm"] = c["rec_200m_scr"] / (c["race_len"] / 200.0)
+    c["gear_speed"] = c["gear_rate"] * c["speed_norm"]
+    c["age_sq"] = c["racer_age"] ** 2
+    rest_denom = np.log1p(c["rest_days"].clip(lower=0)).replace(0, np.nan)
+    c["fatigue_load"] = c["rank_vol"].fillna(0) / rest_denom
+    for col in ["win_rate", "high_rate", "gear_rate", "rec_200m_scr", "tot_tms_avg_scr", "racer_wr_prior", "racer_plc_prior"]:
+        mean = c[col].mean()
+        std = c[col].std()
+        c[col + "_z"] = (c[col] - mean) / std if std and not pd.isna(std) else 0.0
+        c[col + "_pct"] = c[col].rank(pct=True)
+    share = c["win_rate"].clip(lower=0) + 0.001
+    total = float(share.sum()) or 1.0
+    p = share / total
+    c["field_entropy"] = float((-p * np.log(p)).sum())
+    c["field_concentration"] = float(p.max())
+    for col in ["elo_prior", "racer_wr_prior", "racer_plc_prior"]:
+        c[col + "_rel"] = c[col] - c[col].mean()
+    return c
+
+
+def score_keirin_with_model(starters, model, meta=None):
     """score_keirin의 모델 주입 버전. 결승전 특화 모델 등에 사용."""
     try:
         import numpy as np  # noqa: F401
@@ -538,8 +609,13 @@ def score_keirin_with_model(starters, model):
             c[col + "_rel"] = 0.0
     if "racer_grd_cd" not in c.columns:
         c["racer_grd_cd"] = "NA"
+    if model.get("kind") == "keirin_cross_domain_v1":
+        c = _keirin_cross_feature_frame(c, model, meta=meta)
+        feat_cols = model.get("feats", NUM + ["recent_mean_rank", "recent_win_cnt"] + [x + "_rel" for x in REL])
+    else:
+        feat_cols = NUM + ["recent_mean_rank", "recent_win_cnt"] + [x + "_rel" for x in REL]
     F = pd.concat([
-        c[NUM + ["recent_mean_rank", "recent_win_cnt"] + [x + "_rel" for x in REL]],
+        c[feat_cols],
         pd.get_dummies(c["bno"], prefix="bn"),
         pd.get_dummies(c["racer_grd_cd"].fillna("NA").astype(str).str.strip(), prefix="g"),
     ], axis=1)
@@ -793,8 +869,23 @@ def predict(starters, meta=None):
                     "n_starters": len(rows),
                     "model_11r": True,
                 }
+    cross, cross_err = load_cross_model()
+    if cross is not None:
+        rows, err = score_keirin_with_model(starters, cross, meta=meta)
+        if err is None:
+            picks = build_picks(rows)
+            return {
+                "rows": rows,
+                "picks": picks,
+                "top": rows[0],
+                "top_conf": _top_confidence(rows[0], rows),
+                "meta": meta or {},
+                "n_starters": len(rows),
+                "model_cross_domain": True,
+            }
+
     # 일반 모델
-    rows, err = score_keirin(starters)
+    rows, err = score_keirin(starters, meta=meta)
     if err:
         return {"error": err}
 

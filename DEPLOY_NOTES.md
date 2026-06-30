@@ -1,8 +1,8 @@
 # strategy-arena 배포 노트 (경륜/경마 7권종 적중률 예측)
 
 ## 무엇인가
-- data.go.kr 출주표를 실시간 fetch → 경륜 `model_final` 또는 경마 `kra_model`(둘 다
-  win·plc Calibrated)로 채점 → **7권종(단승·연승·복승·쌍승·삼복·쌍복·삼쌍)** 추천픽 표시.
+- data.go.kr 출주표를 실시간 fetch → 경륜 `keirin_cross_domain_model`/특화 모델 또는
+  경마 `kra_model`(모두 win·plc Calibrated)로 채점 → **7권종(단승·연승·복승·쌍승·삼복·쌍복·삼쌍)** 추천픽 표시.
 - **+EV 도구 아님.** 적중률 예측 보조 도구이며 공제 후 평균 −EV(검증 완료). 수익 보장 없음.
 - 상단 고정 면책 배너 상시 노출(평균 −EV / 도박중독 주의 / 책임베팅 / 만 19세+).
 
@@ -21,8 +21,9 @@
 
 ## 구조 (gunicorn app:app 보존)
 - `app.py` — Flask, 전역 `app`. 라우트 `/`(폼), `/predict`(POST·GET), `/healthz`.
-- `engine.py` — 모델 로드 + 실시간 API fetch + qprep2 파이프라인 재현 + Harville 7권종 픽.
+- `engine.py` — 모델 로드 + 실시간 API fetch + cross-domain/qprep2 파이프라인 재현 + Harville 7권종 픽.
 - `templates/index.html` — 폼·마번별 win/plc 표·권종 카드·면책 배너(한글).
+- `static/models/keirin_cross_domain_model.joblib` — 경륜 일반 모델 3.2M. Elo·모멘텀·팩터·피로 feature 적용, OOS top1 61.6% / 연대 78.3%.
 - `static/models/keirin_model_final.joblib` — 경륜 모델 3.1M (repo 포함).
 - `static/models/kra_model.joblib` — 경마 모델 1.1M (repo 포함).
 - `data/demo_race.json` — 경륜 키 없을 때 폴백용 실제 과거 1경주(2025.12.28 광명 16R) 캐시.

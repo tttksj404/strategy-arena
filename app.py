@@ -488,11 +488,13 @@ def _predict_horse(ymd, meet, race_no, base, cache_key=None):
 @app.route("/healthz")
 def healthz():
     model, err = engine.load_model()
+    cross, cross_err = engine.load_cross_model()
     kra, kra_err = engine.load_kra_model()
-    return {"ok": err is None and kra_err is None,
+    return {"ok": err is None and cross_err is None and kra_err is None,
             "keirin_model": ("loaded" if model else "fail"), "keirin_err": err,
+            "keirin_cross_model": ("loaded" if cross else "fail"), "keirin_cross_err": cross_err,
             "kra_model": ("loaded" if kra else "fail"), "kra_err": kra_err,
-            "has_key": _has_key()}, (200 if err is None and kra_err is None else 500)
+            "has_key": _has_key()}, (200 if err is None and cross_err is None and kra_err is None else 500)
 
 
 @app.errorhandler(500)
