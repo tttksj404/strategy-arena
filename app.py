@@ -482,3 +482,148 @@ def handle_all_errors(e):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
+
+# ───────────────────────── 실시간 판단 API ─────────────────────────
+
+@app.route("/api/live-decision")
+def api_live_decision():
+    """실시간 판단 JSON. /predict HTML 캐시와 분리.
+    ?sport=keirin&date=2026-06-28&meet=광명&race_no=5
+    → {ok, status, message, updated_at, odds_age_sec, market_odds, top, rows, decision, market_used, snapshot_phase}
+    """
+    f = request.values
+    sport = (f.get("sport") or "keirin").strip()
+    ymd = (f.get("date") or "").strip()
+    meet = (f.get("meet") or "광명").strip()
+    race_no = (f.get("race_no") or "1").strip()
+
+    if not ymd:
+        return jsonify({"ok": False, "status": "hold",
+                        "message": "날짜 필요",
+                        "updated_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                        "market_used": False, "decision": "hold",
+                        "snapshot_phase": "unknown"}), 400
+
+    # base model 예측 (캐시 또는 재계산)
+    # /predict의 로직을 재사용 — demo 폴백 포함
+    key0 = _get_key()
+    base_out = None
+    try:
+        base_out = _compute_base_prediction(sport, ymd, meet, race_no, key0)
+    except Exception as e:
+        return jsonify({"ok": False, "status": "hold",
+                        "message": f"예측 오류: {e}",
+                        "updated_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                        "market_used": False, "decision": "hold",
+                        "snapshot_phase": "unknown"}), 500
+
+    # live-decision 계산
+    import datetime as _dt
+    result = engine.compute_live_decision(sport, ymd, meet, race_no, base_model_out=base_out)
+    return jsonify(result)
+
+
+def _compute_base_prediction(sport, ymd, meet, race_no, key):
+    """app.py 내부용: /predict 로직을 재사용해 base 모델 결과 dict 반환.
+    HTML 렌더링 없이 engine.predict() / engine.predict_kra() 결과만 반환.
+    """
+    today = dt.date.today().isoformat()
+    base = dict(
+        disclaimer=DISCLAIMER, keirin_meets=KEIRIN_MEETS, kra_meets=KRA_MEETS,
+        today=today, has_key=bool(key), recent_days=[],
+        default_date=today, schedule_hint=SCHEDULE_HINT,
+        sport=sport, date=ymd, meet=meet, race_no=race_no,
+    )
+
+    if sport == "horse":
+        return _base_predict_horse(ymd, meet, race_no, base)
+
+    # ── 경륜 ──
+    starters = None
+    info = {}
+    src = "live"
+
+    if not key:
+        demo = engine.load_demo_race()
+        if not demo:
+            return {"error": "DATAGOKR_SERVICE_KEY 미설정"}
+        starters = demo["items"]; src = "demo"
+        info = {"stnd_yr": demo.get("stnd_yr"), "ymd": demo.get("race_ymd"),
+                "meet": demo.get("meet_nm"), "race_no": demo.get("race_no")}
+    else:
+        if not ymd:
+            return {"error": "날짜 필요"}
+        if _norm_day(ymd) is None:
+            return {"error": f"날짜 형식 오류: {ymd}"}
+        stnd_yr = engine.norm_ymd(ymd)[:4]
+        starters, err = engine.fetch_race_card(stnd_yr, ymd, meet, race_no, key)
+        if err and _is_no_race(err):
+            return {"error": "no_race", "message": str(err)}
+        if err:
+            demo = engine.load_demo_race()
+            if demo:
+                starters = demo["items"]; src = "demo"
+                info = {"stnd_yr": demo.get("stnd_yr"), "ymd": demo.get("race_ymd"),
+                        "meet": demo.get("meet_nm"), "race_no": demo.get("race_no"),
+                        "actual": demo.get("actual"), "fetch_err": err}
+            else:
+                return {"error": str(err)}
+        else:
+            info = {"stnd_yr": stnd_yr, "ymd": engine.norm_ymd(ymd), "meet": meet, "race_no": race_no}
+
+    try:
+        out = engine.predict(starters, meta=info)
+    except Exception as e:
+        return {"error": f"예측 중 오류: {e}"}
+
+    if "error" in out:
+        return out
+    out["kind"] = "ok"; out["src"] = src; out["info"] = info
+    out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
+    return out
+
+
+def _base_predict_horse(ymd, meet, race_no, base):
+    """경마 base 예측 (engine.predict_kra 재사용)."""
+    if meet not in KRA_MEETS:
+        meet = KRA_MEETS[0]; base["meet"] = meet
+    starters = None; info = {}; src = "live"
+    key = _get_key()
+    if not key:
+        demo = engine.load_kra_demo()
+        if not demo:
+            return {"error": "DATAGOKR_SERVICE_KEY 미설정"}
+        starters = demo["items"]; src = "demo"
+        info = {"stnd_yr": str(demo.get("race_ymd",""))[:4], "ymd": demo.get("race_ymd"),
+                "meet": demo.get("meet_nm"), "race_no": demo.get("race_no")}
+    else:
+        if not ymd:
+            return {"error": "날짜 필요"}
+        if _norm_day(ymd) is None:
+            return {"error": "날짜 형식 오류"}
+        starters, err = engine.fetch_kra_card(ymd, meet, race_no, key)
+        if err and _is_no_race(err):
+            return {"error": "no_race", "message": str(err)}
+        if err:
+            demo = engine.load_kra_demo()
+            if demo:
+                starters = demo["items"]; src = "demo"
+                info = {"stnd_yr": str(demo.get("race_ymd",""))[:4], "ymd": demo.get("race_ymd"),
+                        "meet": demo.get("meet_nm"), "race_no": demo.get("race_no"),
+                        "actual": demo.get("actual"), "fetch_err": err}
+            else:
+                return {"error": str(err)}
+        else:
+            info = {"stnd_yr": str(engine.norm_ymd(ymd))[:4], "ymd": engine.norm_ymd(ymd),
+                    "meet": meet, "race_no": race_no}
+    try:
+        out = engine.predict_kra(starters, meta=info)
+    except Exception as e:
+        return {"error": f"예측 중 오류: {e}"}
+    if "error" in out:
+        return out
+    out["kind"] = "ok"; out["src"] = src; out["info"] = info
+    out["sport_label"] = "경마(KRA)"
+    out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
+    return out

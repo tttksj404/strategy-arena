@@ -506,6 +506,99 @@
       refreshChips();
     }
   })();
+
+  // ── 실시간 판단 자동 폴링 ──
+  var liveTimer = null;
+  var livePanel = null;
+
+  function ensureLivePanel() {
+    if (livePanel) return livePanel;
+    livePanel = document.createElement('div');
+    livePanel.id = 'live-panel';
+    livePanel.style.cssText = 'background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0;display:none';
+    // 결과 카드 앞에 삽입
+    var resultCard = document.querySelector('.wrap .card');
+    var wrap = document.querySelector('.wrap');
+    if (resultCard) wrap.insertBefore(livePanel, resultCard);
+    else wrap.appendChild(livePanel);
+    return livePanel;
+  }
+
+  function liveStatusBadge(status) {
+    var map = {
+      'pre_race': ['사전 예측', '#8b93a3'],
+      'odds_unavailable': ['배당 미확정', '#ffcc4d'],
+      'odds_live': ['실시간 배당', '#3ddc84'],
+      'final_candidate': ['최종 후보', '#3ddc84'],
+      'hold': ['보류', '#ffcc4d'],
+    };
+    var m = map[status] || ['알 수 없음', '#8b93a3'];
+    return '<span style="background:' + m[1] + '22;color:' + m[1] + ';padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600">' + m[0] + '</span>';
+  }
+
+  function startLivePolling(sport, date, meet, race_no) {
+    if (liveTimer) clearInterval(liveTimer);
+    var panel = ensureLivePanel();
+    panel.style.display = 'block';
+
+    function poll() {
+      var q = '/api/live-decision?sport=' + encodeURIComponent(sport)
+            + '&date=' + encodeURIComponent(date)
+            + '&meet=' + encodeURIComponent(meet)
+            + '&race_no=' + encodeURIComponent(race_no);
+      fetch(q, {headers: {Accept: 'application/json'}})
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) {
+          if (!d) { panel.innerHTML = '<div style="color:var(--muted);font-size:13px">판단 불가</div>'; return; }
+          var oddsAge = d.odds_age_sec != null ? d.odds_age_sec + '초 전' : '—';
+          var decisionTxt = d.decision === 'final_candidate' ? '✅ 최종 후보 확정' : '⏳ 보류 (배당 미확정)';
+          var oddsInfo = d.market_used
+            ? '배당 반영됨 (마지막 갱신: ' + oddsAge + ')'
+            : '배당 미반영';
+          var topHtml = d.top
+            ? '<b>' + d.top.bno + '번 ' + (d.top.name || '') + '</b> (win ' + (100*d.top.pwin).toFixed(1) + '% / 연대 ' + (100*d.top.pplc).toFixed(1) + '%)'
+            : '—';
+          panel.innerHTML =
+            '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px">'
+            + liveStatusBadge(d.status) + ' ' + liveStatusBadge(d.decision)
+            + '<span style="color:var(--muted);font-size:12px;margin-left:auto">' + oddsInfo + '</span>'
+            + '</div>'
+            + '<div style="font-size:14px;margin-bottom:4px">🏆 ' + topHtml + '</div>'
+            + '<div style="font-size:12px;color:var(--muted)">' + (d.message || '') + '</div>'
+            + '<div style="font-size:11px;color:var(--muted);margin-top:4px">자동 갱신: 15초마다 · 마지막: ' + (d.updated_at || '') + '</div>';
+        })
+        .catch(function() {
+          panel.innerHTML = '<div style="color:var(--muted);font-size:13px">갱신 실패 — 재시도 중</div>';
+        });
+    }
+
+    poll(); // 즉시 1회
+    liveTimer = setInterval(poll, 15000); // 15초마다
+  }
+
+  function stopLivePolling() {
+    if (liveTimer) { clearInterval(liveTimer); liveTimer = null; }
+    if (livePanel) { livePanel.style.display = 'none'; }
+  }
+
+  // 폼 제출 후 결과 페이지에서 자동 폴링 시작
+  var formEl = document.getElementById('predict-form');
+  if (formEl) {
+    formEl.addEventListener('submit', function() {
+      // submit 후 페이지 이동 — 새 페이지에서 URL 파라미터로 폴링 시작
+    });
+  }
+
+  // /predict 페이지 (GET/POST 결과)에서 URL 파라미터가 있으면 폴링 시작
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var sport = params.get('sport'), date = params.get('date'),
+        meet = params.get('meet'), race_no = params.get('race_no');
+    if (sport && date && meet && race_no) {
+      // 결과가 렌더링된 후 시작
+      setTimeout(function() { startLivePolling(sport, date, meet, race_no); }, 500);
+    }
+  })();
 </script>
 </body>
 </html>

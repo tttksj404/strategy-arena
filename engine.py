@@ -1040,3 +1040,139 @@ def predict_kra(starters, meta=None):
         "meta": meta or {},
         "n_starters": len(rows),
     }
+
+
+# ═══════════════════════ 실시간 판단 (live-decision) ═══════════════════════
+
+def fetch_kcycle_odds_with_ts(stnd_yr, ymd, race_no):
+    """kcycle 배당 fetch + 타임스탬프. 반환 (odds_dict, fetched_at_iso) 또는 (None, None)."""
+    import datetime as _dt
+    odds = None
+    try:
+        odds = fetch_kcycle_odds(stnd_yr, ymd, race_no)
+    except Exception:
+        odds = None
+    ts = _dt.datetime.now().isoformat(timespec="seconds")
+    return odds, ts
+
+
+def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
+    """실시간 판단. base_model_out은 이미 계산된 engine.predict/predict_kra 결과.
+    반환 dict:
+      ok, status, message, updated_at, odds_age_sec,
+      market_odds, top, rows, decision, market_used, snapshot_phase
+    """
+    import datetime as _dt
+    now = _dt.datetime.now()
+
+    # base_model_out이 없으면 demo 사용 (실시간 fetch는 app.py에서 미리 함)
+    if base_model_out is None or "error" in base_model_out:
+        return {
+            "ok": False,
+            "status": "hold",
+            "message": "모델 예측 불가 (출주표 없음 또는 오류)",
+            "updated_at": now.isoformat(timespec="seconds"),
+            "odds_age_sec": None,
+            "market_odds": None,
+            "top": None,
+            "rows": None,
+            "decision": "hold",
+            "market_used": False,
+            "snapshot_phase": "unknown",
+        }
+
+    rows = list(base_model_out.get("rows", []))
+    if not rows:
+        return {
+            "ok": False, "status": "hold", "message": "출주 데이터 없음",
+            "updated_at": now.isoformat(timespec="seconds"),
+            "odds_age_sec": None, "market_odds": None, "top": None,
+            "rows": None, "decision": "hold", "market_used": False,
+            "snapshot_phase": "unknown",
+        }
+
+    # ── kcycle 배당 fetch (경륜만) ──
+    market_odds = None
+    fetched_at = None
+    market_used = False
+    if sport == "keirin" and os.environ.get("KCYCLE_ENABLED", "0") == "1":
+        stnd_yr = str(ymd)[:4] if ymd else ""
+        try:
+            market_odds, fetched_at = fetch_kcycle_odds_with_ts(stnd_yr, ymd, race_no)
+        except Exception:
+            market_odds = None
+
+    # ── 상태 판정 ──
+    if market_odds and len(market_odds) >= 2:
+        # 시장 암시확률 → 모델과 앙상블
+        imp = {b: 1.0 / o for b, o in market_odds.items() if o and o > 0}
+        total = sum(imp.values())
+        if total > 0:
+            imp_norm = {b: v / total for b, v in imp.items()}
+            for r in rows:
+                bno = r.get("bno", 0)
+                mkt_p = imp_norm.get(bno, 0.0)
+                model_p = r.get("pwin", 0.0)
+                r["pwin_blended"] = 0.3 * model_p + 0.7 * mkt_p
+                r["mkt_pwin"] = mkt_p
+            # blended 로 재정렬
+            rows.sort(key=lambda r: -r.get("pwin_blended", r.get("pwin", 0)))
+            rows[0]["pwin"] = rows[0].get("pwin_blended", rows[0]["pwin"])
+            market_used = True
+            status = "odds_live"
+            message = "실시간 배당 반영 (시장 0.7 + 모델 0.3)"
+            snapshot_phase = "live_odds"
+        else:
+            status = "odds_unavailable"
+            message = "배당 수집 실패 — 사전 예측만 표시"
+            snapshot_phase = "pre_race"
+    else:
+        # 배당 없음
+        if os.environ.get("KCYCLE_ENABLED", "0") == "1" and sport == "keirin":
+            status = "odds_unavailable"
+            message = "배당 미확정 또는 수집 실패 — 사전 예측"
+            snapshot_phase = "pre_race"
+        else:
+            status = "pre_race"
+            message = "사전 예측 (배당 미반영 — Render에서는 kcycle 접근 제한)"
+            snapshot_phase = "pre_race"
+
+    # ── 최종판정 여부 ──
+    top = rows[0] if rows else None
+    # decision: final_candidate (배당 있음), hold (배당 없음/불확실)
+    if market_used:
+        # 확신도 높으면 final_candidate, 아니면 hold
+        tc = _top_confidence(top, rows) if top else {}
+        gap = 0
+        if len(rows) >= 2:
+            sorted_r = sorted(rows, key=lambda r: -r.get("pwin", 0))
+            gap = sorted_r[0].get("pwin", 0) - sorted_r[1].get("pwin", 0)
+        if gap >= 0.15 or tc.get("grade") == "강":
+            decision = "final_candidate"
+        else:
+            decision = "hold"
+    else:
+        decision = "hold"
+
+    # odds_age_sec
+    odds_age_sec = None
+    if fetched_at:
+        try:
+            ft = _dt.datetime.fromisoformat(fetched_at)
+            odds_age_sec = int((now - ft).total_seconds())
+        except Exception:
+            odds_age_sec = None
+
+    return {
+        "ok": True,
+        "status": status,
+        "message": message,
+        "updated_at": now.isoformat(timespec="seconds"),
+        "odds_age_sec": odds_age_sec,
+        "market_odds": market_odds,
+        "top": top,
+        "rows": rows,
+        "decision": decision,
+        "market_used": market_used,
+        "snapshot_phase": snapshot_phase,
+    }
