@@ -118,7 +118,7 @@ def fetch_kcycle_odds(stnd_yr, ymd, race_no):
             ctx.verify_mode = ssl.CERT_NONE
             req = urllib.request.Request(url, headers={
                 "Host": "www.kcycle.or.kr", "User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=8, context=ctx) as r:
+            with urllib.request.urlopen(req, timeout=3, context=ctx) as r:
                 html = r.read().decode("utf-8", "replace")
             text = re.sub(r"<[^>]+>", " ", html)
             text = re.sub(r"\s+", " ", text)
