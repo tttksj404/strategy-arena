@@ -81,6 +81,9 @@ class ConfidenceDisplayTest(unittest.TestCase):
                 "expected_top1": 0.8175,
                 "coverage": 0.2765,
                 "rule": "top_pplc >= 90.7%",
+                "rolling_weighted_top1": 0.8086,
+                "rolling_coverage": 0.3252,
+                "rolling_min_year_top1": 0.7871,
             },
             "rows": [
                 {"bno": 1, "name": "테스트선수", "grade": "선발", "pwin": 0.62, "pplc": 0.91},
@@ -110,6 +113,8 @@ class ConfidenceDisplayTest(unittest.TestCase):
 
         self.assertIn("82%급 고확신 선별", html)
         self.assertIn("OOS top1 81.8%", html)
+        self.assertIn("롤링 재검증 top1 80.9%", html)
+        self.assertIn("최저연도 78.7%", html)
 
 
 if __name__ == "__main__":

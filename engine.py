@@ -809,6 +809,9 @@ def _keirin_selective_confidence(top, rows=None):
             "expected_top1": 0.8467,
             "coverage": 0.2168,
             "rule": "top1-top2 win gap >= 63.7%p",
+            "rolling_weighted_top1": 0.8408,
+            "rolling_coverage": 0.2476,
+            "rolling_min_year_top1": 0.7915,
         }
     if gap >= 0.5646195759501839:
         return {
@@ -817,6 +820,9 @@ def _keirin_selective_confidence(top, rows=None):
             "expected_top1": 0.8214,
             "coverage": 0.3029,
             "rule": "top1-top2 win gap >= 56.5%p",
+            "rolling_weighted_top1": 0.8086,
+            "rolling_coverage": 0.3252,
+            "rolling_min_year_top1": 0.7871,
         }
     if pplc >= 0.9072363230215373:
         return {
@@ -825,6 +831,9 @@ def _keirin_selective_confidence(top, rows=None):
             "expected_top1": 0.8175,
             "coverage": 0.2765,
             "rule": "top_pplc >= 90.7%",
+            "rolling_weighted_top1": 0.8086,
+            "rolling_coverage": 0.3252,
+            "rolling_min_year_top1": 0.7871,
         }
     if pwin >= 0.6067814186919052:
         return {
@@ -833,6 +842,9 @@ def _keirin_selective_confidence(top, rows=None):
             "expected_top1": 0.7287,
             "coverage": 0.5619,
             "rule": "top_pwin >= 60.7%",
+            "rolling_weighted_top1": 0.7677,
+            "rolling_coverage": 0.4598,
+            "rolling_min_year_top1": 0.7544,
         }
     return {
         "tier": "normal",
