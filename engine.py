@@ -803,6 +803,7 @@ def predict(starters, meta=None):
     # 결승전 감지: meta에 race_no와 day_max_race_no가 있으면 비교.
     # 없으면 race_no >= 12 휴리스틱 (광명은 보통 12~15R).
     is_final = False
+    rno_i = 0
     if meta:
         rno = str(meta.get("race_no", "")).strip().lstrip("0") or "0"
         try:

@@ -32,6 +32,14 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertTrue(output.get("model_cross_domain"))
         self.assertEqual(len(output["rows"]), 7)
 
+    def test_keirin_predict_without_meta_does_not_crash(self):
+        demo = engine.load_demo_race()
+
+        output = engine.predict(demo["items"])
+
+        self.assertNotIn("error", output)
+        self.assertEqual(len(output["rows"]), 7)
+
 
 if __name__ == "__main__":
     unittest.main()
