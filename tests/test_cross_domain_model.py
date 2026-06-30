@@ -17,6 +17,17 @@ class CrossDomainModelTestCase(unittest.TestCase):
         data = response.get_json()
 
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(data["keirin_cross_model"], "present")
+        self.assertIsNone(data["keirin_cross_err"])
+
+    def test_deep_healthz_loads_cross_domain_model(self):
+        app_module.app.config["TESTING"] = True
+        client = app_module.app.test_client()
+
+        response = client.get("/healthz?deep=1")
+        data = response.get_json()
+
+        self.assertEqual(response.status_code, 200)
         self.assertEqual(data["keirin_cross_model"], "loaded")
         self.assertIsNone(data["keirin_cross_err"])
 

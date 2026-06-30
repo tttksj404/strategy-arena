@@ -487,14 +487,29 @@ def _predict_horse(ymd, meet, race_no, base, cache_key=None):
 
 @app.route("/healthz")
 def healthz():
-    model, err = engine.load_model()
-    cross, cross_err = engine.load_cross_model()
-    kra, kra_err = engine.load_kra_model()
-    return {"ok": err is None and cross_err is None and kra_err is None,
-            "keirin_model": ("loaded" if model else "fail"), "keirin_err": err,
-            "keirin_cross_model": ("loaded" if cross else "fail"), "keirin_cross_err": cross_err,
-            "kra_model": ("loaded" if kra else "fail"), "kra_err": kra_err,
-            "has_key": _has_key()}, (200 if err is None and cross_err is None and kra_err is None else 500)
+    deep = str(request.args.get("deep", "")).strip() == "1"
+    if deep:
+        model, err = engine.load_model()
+        cross, cross_err = engine.load_cross_model()
+        kra, kra_err = engine.load_kra_model()
+        ok = err is None and cross_err is None and kra_err is None
+        return {"ok": ok,
+                "keirin_model": ("loaded" if model else "fail"), "keirin_err": err,
+                "keirin_cross_model": ("loaded" if cross else "fail"), "keirin_cross_err": cross_err,
+                "kra_model": ("loaded" if kra else "fail"), "kra_err": kra_err,
+                "has_key": _has_key(), "deep": True}, (200 if ok else 500)
+    model_ok = os.path.exists(engine.MODEL_PATH)
+    cross_ok = os.path.exists(engine.CROSS_MODEL_PATH)
+    kra_ok = os.path.exists(engine.KRA_MODEL_PATH)
+    ok = model_ok and cross_ok and kra_ok
+    return {"ok": ok,
+            "keirin_model": "present" if model_ok else "missing",
+            "keirin_err": None if model_ok else "model file missing",
+            "keirin_cross_model": "present" if cross_ok else "missing",
+            "keirin_cross_err": None if cross_ok else "cross model file missing",
+            "kra_model": "present" if kra_ok else "missing",
+            "kra_err": None if kra_ok else "kra model file missing",
+            "has_key": _has_key(), "deep": False}, (200 if ok else 500)
 
 
 @app.errorhandler(500)
