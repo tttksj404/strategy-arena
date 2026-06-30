@@ -59,6 +59,7 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertIn("/api/live-decision", html)
         self.assertIn("setTimeout", html)
         self.assertIn("pollDelayMs", html)
+        self.assertIn('method="get"', html)
 
     def test_live_decision_reuses_cached_base_prediction(self):
         base = {"kind": "ok", "rows": [{"bno": 1, "name": "A", "pwin": 0.6, "pplc": 0.9}]}

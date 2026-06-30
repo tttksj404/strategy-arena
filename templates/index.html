@@ -49,7 +49,8 @@
   .chips-label{font-size:11px;color:var(--muted)}
   .chips-empty{font-size:11px;color:var(--muted);font-style:italic}
   .chip{background:#16202e;color:#bfe2ff;border:1px solid #264b5c;border-radius:999px;
-    padding:3px 9px;font-size:12px;font-weight:600;cursor:pointer;min-width:0}
+    padding:7px 10px;font-size:12px;font-weight:600;cursor:pointer;min-width:0;
+    min-height:34px;line-height:1.2}
   .chip:hover{background:#1d2d40;filter:none}
   .chip.active{background:#264b5c;color:#eaf4ff}
   /* 로딩 스켈레톤 pill */
@@ -171,7 +172,7 @@
     <b>+EV 아님</b> — 적중률 예측 보조 도구입니다.</div>
 
   <div class="card">
-    <form method="post" action="/predict" id="predict-form">
+    <form method="get" action="/predict" id="predict-form">
       <div class="row">
         <div class="field">
           <label>종목</label>
