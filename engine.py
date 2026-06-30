@@ -795,9 +795,29 @@ def _top_confidence(top, rows=None):
     return {"grade": "약", "label": "상대 1순위 (저신뢰)", "icon": "①", "race_confidence": race_conf}
 
 
-def _keirin_selective_confidence(top):
+def _keirin_selective_confidence(top, rows=None):
     pwin = float(top.get("pwin", 0.0))
     pplc = float(top.get("pplc", 0.0))
+    gap = 0.0
+    if rows and len(rows) >= 2:
+        sorted_rows = sorted(rows, key=lambda r: -r.get("pwin", 0))
+        gap = float(sorted_rows[0].get("pwin", 0.0) - sorted_rows[1].get("pwin", 0.0))
+    if gap >= 0.6369486741602512:
+        return {
+            "tier": "ultra",
+            "label": "85%급 초고확신 선별",
+            "expected_top1": 0.8467,
+            "coverage": 0.2168,
+            "rule": "top1-top2 win gap >= 63.7%p",
+        }
+    if gap >= 0.5646195759501839:
+        return {
+            "tier": "extreme_gap",
+            "label": "82%급 고확신 확장",
+            "expected_top1": 0.8214,
+            "coverage": 0.3029,
+            "rule": "top1-top2 win gap >= 56.5%p",
+        }
     if pplc >= 0.9072363230215373:
         return {
             "tier": "extreme",
@@ -908,7 +928,7 @@ def predict(starters, meta=None):
                 "picks": picks,
                 "top": rows[0],
                 "top_conf": _top_confidence(rows[0], rows),
-                "selective_conf": _keirin_selective_confidence(rows[0]),
+                "selective_conf": _keirin_selective_confidence(rows[0], rows),
                 "meta": meta or {},
                 "n_starters": len(rows),
                 "model_cross_domain": True,

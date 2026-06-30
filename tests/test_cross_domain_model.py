@@ -46,6 +46,28 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(tier["tier"], "extreme")
         self.assertAlmostEqual(tier["expected_top1"], 0.8175)
 
+    def test_keirin_selective_confidence_ultra_tier_uses_gap_first(self):
+        rows = [
+            {"pwin": 0.82, "pplc": 0.88},
+            {"pwin": 0.18, "pplc": 0.61},
+        ]
+
+        tier = engine._keirin_selective_confidence(rows[0], rows)
+
+        self.assertEqual(tier["tier"], "ultra")
+        self.assertAlmostEqual(tier["expected_top1"], 0.8467)
+
+    def test_keirin_selective_confidence_gap_extends_extreme_coverage(self):
+        rows = [
+            {"pwin": 0.75, "pplc": 0.86},
+            {"pwin": 0.18, "pplc": 0.60},
+        ]
+
+        tier = engine._keirin_selective_confidence(rows[0], rows)
+
+        self.assertEqual(tier["tier"], "extreme_gap")
+        self.assertAlmostEqual(tier["coverage"], 0.3029)
+
     def test_keirin_selective_confidence_broad_tier(self):
         tier = engine._keirin_selective_confidence({"pwin": 0.61, "pplc": 0.80})
 
