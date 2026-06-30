@@ -796,12 +796,24 @@ def _top_confidence(top, rows=None):
 
 
 def _keirin_selective_confidence(top, rows=None):
-    pwin = float(top.get("pwin", 0.0))
-    pplc = float(top.get("pplc", 0.0))
+    win_leader = top
+    if rows:
+        win_leader = max(rows, key=lambda r: r.get("pwin", 0.0))
+    pwin = float(win_leader.get("pwin", 0.0))
+    pplc = float(win_leader.get("pplc", 0.0))
     gap = 0.0
     if rows and len(rows) >= 2:
         sorted_rows = sorted(rows, key=lambda r: -r.get("pwin", 0))
         gap = float(sorted_rows[0].get("pwin", 0.0) - sorted_rows[1].get("pwin", 0.0))
+    if pwin >= 0.7962011883201475 and pplc >= 0.9274714236121064:
+        return {
+            "tier": "ultra_fixed_86",
+            "label": "86%급 고정 초고확신 선별",
+            "expected_top1": 0.8593,
+            "coverage": 0.1790,
+            "rule": "top_pwin >= 79.6% AND top_pplc >= 92.7%",
+            "validation_n": 2111,
+        }
     if gap >= 0.6369486741602512:
         return {
             "tier": "ultra",

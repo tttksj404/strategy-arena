@@ -43,6 +43,17 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertTrue(output.get("model_cross_domain"))
         self.assertEqual(len(output["rows"]), 7)
 
+    def test_keirin_top_pick_matches_win_probability_leader(self):
+        demo = engine.load_demo_race()
+
+        output = engine.predict(
+            demo["items"],
+            meta={"ymd": demo.get("race_ymd"), "meet": "광명", "race_no": "5"},
+        )
+        win_leader = max(output["rows"], key=lambda row: row["pwin"])
+
+        self.assertEqual(output["top"]["bno"], win_leader["bno"])
+
     def test_keirin_predict_without_meta_does_not_crash(self):
         demo = engine.load_demo_race()
 
@@ -68,6 +79,18 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(tier["tier"], "ultra")
         self.assertAlmostEqual(tier["expected_top1"], 0.8467)
 
+    def test_keirin_selective_confidence_fixed_ultra_86_tier(self):
+        rows = [
+            {"pwin": 0.80, "pplc": 0.93},
+            {"pwin": 0.30, "pplc": 0.70},
+        ]
+
+        tier = engine._keirin_selective_confidence(rows[0], rows)
+
+        self.assertEqual(tier["tier"], "ultra_fixed_86")
+        self.assertAlmostEqual(tier["expected_top1"], 0.8593)
+        self.assertEqual(tier["validation_n"], 2111)
+
     def test_keirin_selective_confidence_gap_extends_extreme_coverage(self):
         rows = [
             {"pwin": 0.75, "pplc": 0.86},
@@ -84,6 +107,17 @@ class CrossDomainModelTestCase(unittest.TestCase):
 
         self.assertEqual(tier["tier"], "broad")
         self.assertAlmostEqual(tier["expected_top1"], 0.7287)
+
+    def test_keirin_selective_confidence_uses_win_leader_for_pwin_gate(self):
+        rows = [
+            {"pwin": 0.34, "pplc": 0.88},
+            {"pwin": 0.61, "pplc": 0.78},
+            {"pwin": 0.22, "pplc": 0.60},
+        ]
+
+        tier = engine._keirin_selective_confidence(rows[0], rows)
+
+        self.assertEqual(tier["tier"], "broad")
 
 
 if __name__ == "__main__":

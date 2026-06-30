@@ -65,12 +65,19 @@
 
 운영 표시는 기존 고정 threshold의 2021+ OOS 수치를 유지하되, UI에 롤링 재검증 top1과 최저연도 top1을 함께 보여 과신을 줄인다.
 
+### 고정 ultra 룰 재탐색
+
+추가 검증: `/Users/tttksj/keirin/fixed_ultra_deploy_rule.py`.
+
+90%급 고정룰은 실패했다. 다만 `top_pwin >= 79.6% AND top_pplc >= 92.7%` 룰은 2021+ OOS에서 top1 0.8593, coverage 0.179, n=2,111로 기존 85%급 gap tier를 넘었다. 앱에는 이 룰만 `86%급 고정 초고확신 선별`로 추가한다.
+
 앱 표시는 다음처럼 분리한다.
 
 - 전체 일반 예측: OOS top1 약 61.6%.
 - 73%급 고확신 선별: top candidate의 `pwin >= 60.7%`.
 - 82%급 고확신 확장: top1과 top2의 win gap이 56.5%p 이상.
 - 85%급 초고확신 선별: top1과 top2의 win gap이 63.7%p 이상.
+- 86%급 고정 초고확신 선별: top candidate의 `pwin >= 79.6%`이고 `pplc >= 92.7%`.
 
 ## 배포 적용
 
