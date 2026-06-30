@@ -799,7 +799,9 @@ def predict(starters, meta=None):
         return {"error": err}
 
     # ── kcycle 실시간 배당 앙상블 (일반 경주 60% → 63%) ──
-    if meta:
+    # 한국 서버에서만 작동 (Render 미국 서버는 kcycle 접근 불가 → 비활성화)
+    kcycle_odds = None
+    if meta and os.environ.get("KCYCLE_ENABLED", "0") == "1":
         ymd = meta.get("ymd") or ""
         rno_str = str(meta.get("race_no", "")).strip()
         stnd_yr = str(meta.get("stnd_yr") or ymd[:4] or "")
