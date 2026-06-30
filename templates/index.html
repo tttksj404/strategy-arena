@@ -95,6 +95,11 @@
   .topline .ti{font-size:18px}
   .topline .tlabel{font-weight:800}
   .topline .tprob{color:var(--muted);font-weight:600;font-size:13px}
+  .conf-badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 9px;
+    font-size:12px;font-weight:800;border:1px solid var(--line);background:#1a1f29;color:#cdd5e3}
+  .conf-badge.고확신{background:#10331f;color:var(--g-strong);border-color:#1c6e42}
+  .conf-badge.혼전{background:#33290f;color:var(--g-mid);border-color:#6e561c}
+  .conf-badge.보통{background:#16202e;color:#bfe2ff;border-color:#264b5c}
 
   .note{border-radius:10px;padding:16px;border:1px solid var(--line);
     display:flex;gap:12px;align-items:flex-start}
@@ -285,6 +290,9 @@
           <span class="tlabel">{{ tc.label }}:</span>
           <span>{{ result.top.bno }}번 {{ result.top.name }}</span>
           <span class="gr {{ tc.grade }}">{{ tc.grade }}</span>
+          {% if tc.race_confidence %}
+            <span class="conf-badge {{ tc.race_confidence }}">확신도 {{ tc.race_confidence }}</span>
+          {% endif %}
           <span class="tprob">win {{ '%.1f'|format(100*result.top.pwin) }}% · 연대 {{ '%.1f'|format(100*result.top.pplc) }}%</span>
         </div>
         <div class="small gradekey">신뢰등급

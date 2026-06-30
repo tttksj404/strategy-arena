@@ -714,8 +714,8 @@ def _top_confidence(top, rows=None):
             race_conf = "보통"
     if grade == "강":
         return {"grade": "강", "label": "최고확신 픽", "icon": "🏆", "race_confidence": race_conf}
-    if grade == "中":
-        return {"grade": "中", "label": "상대 우세 픽", "icon": "▲", "race_confidence": race_conf}
+    if grade == "중":
+        return {"grade": "중", "label": "상대 우세 픽", "icon": "▲", "race_confidence": race_conf}
     return {"grade": "약", "label": "상대 1순위 (저신뢰)", "icon": "①", "race_confidence": race_conf}
 
 
