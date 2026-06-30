@@ -23,7 +23,7 @@
 - `app.py` — Flask, 전역 `app`. 라우트 `/`(폼), `/predict`(POST·GET), `/healthz`.
 - `engine.py` — 모델 로드 + 실시간 API fetch + cross-domain/qprep2 파이프라인 재현 + Harville 7권종 픽.
 - `templates/index.html` — 폼·마번별 win/plc 표·권종 카드·면책 배너(한글).
-- `static/models/keirin_cross_domain_model.joblib` — 경륜 일반 모델 3.2M. Elo·모멘텀·팩터·피로 feature 적용, OOS top1 61.6% / 연대 78.3%.
+- `static/models/keirin_cross_domain_model.joblib` — 경륜 일반 모델 3.2M. Elo·모멘텀·팩터·피로 feature 적용, OOS top1 61.6% / 연대 78.3%. 고확신 선별 tier는 `pwin>=60.7%`에서 top1 72.9%(coverage 56.2%), `pplc>=90.7%`에서 top1 81.8%(coverage 27.7%).
 - `static/models/keirin_model_final.joblib` — 경륜 모델 3.1M (repo 포함).
 - `static/models/kra_model.joblib` — 경마 모델 1.1M (repo 포함).
 - `data/demo_race.json` — 경륜 키 없을 때 폴백용 실제 과거 1경주(2025.12.28 광명 16R) 캐시.

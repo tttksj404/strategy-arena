@@ -300,6 +300,19 @@
           <span class="gr 강">강</span> 높음 ·
           <span class="gr 중">중</span> 보통 ·
           <span class="gr 약">약</span> 낮음 — 모델 확신도이며 적중 보장이 아닙니다.</div>
+        {% if result.selective_conf is defined and result.selective_conf.tier != 'normal' %}
+          <div class="note notice" style="margin-top:12px">
+            <div class="ico">✓</div>
+            <div class="body">
+              <div class="ntitle">{{ result.selective_conf.label }}</div>
+              <div>
+                검증 rule {{ result.selective_conf.rule }} ·
+                2021+ OOS top1 {{ '%.1f'|format(100*result.selective_conf.expected_top1) }}% ·
+                coverage {{ '%.1f'|format(100*result.selective_conf.coverage) }}%
+              </div>
+            </div>
+          </div>
+        {% endif %}
 
         {% set max_win = result.rows|map(attribute='pwin')|max %}
         {% set max_plc = result.rows|map(attribute='pplc')|max %}

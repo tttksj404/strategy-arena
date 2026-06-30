@@ -795,6 +795,34 @@ def _top_confidence(top, rows=None):
     return {"grade": "약", "label": "상대 1순위 (저신뢰)", "icon": "①", "race_confidence": race_conf}
 
 
+def _keirin_selective_confidence(top):
+    pwin = float(top.get("pwin", 0.0))
+    pplc = float(top.get("pplc", 0.0))
+    if pplc >= 0.9072363230215373:
+        return {
+            "tier": "extreme",
+            "label": "82%급 고확신 선별",
+            "expected_top1": 0.8175,
+            "coverage": 0.2765,
+            "rule": "top_pplc >= 90.7%",
+        }
+    if pwin >= 0.6067814186919052:
+        return {
+            "tier": "broad",
+            "label": "73%급 고확신 선별",
+            "expected_top1": 0.7287,
+            "coverage": 0.5619,
+            "rule": "top_pwin >= 60.7%",
+        }
+    return {
+        "tier": "normal",
+        "label": "일반 예측",
+        "expected_top1": 0.6166,
+        "coverage": 1.0,
+        "rule": "selective threshold 미충족",
+    }
+
+
 def predict(starters, meta=None):
     """출주표 -> {rows, picks, top, top_conf, meta, n_starters} 또는 {error}.
 
@@ -880,6 +908,7 @@ def predict(starters, meta=None):
                 "picks": picks,
                 "top": rows[0],
                 "top_conf": _top_confidence(rows[0], rows),
+                "selective_conf": _keirin_selective_confidence(rows[0]),
                 "meta": meta or {},
                 "n_starters": len(rows),
                 "model_cross_domain": True,

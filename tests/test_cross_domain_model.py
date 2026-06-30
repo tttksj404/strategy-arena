@@ -40,6 +40,18 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertNotIn("error", output)
         self.assertEqual(len(output["rows"]), 7)
 
+    def test_keirin_selective_confidence_extreme_tier(self):
+        tier = engine._keirin_selective_confidence({"pwin": 0.55, "pplc": 0.91})
+
+        self.assertEqual(tier["tier"], "extreme")
+        self.assertAlmostEqual(tier["expected_top1"], 0.8175)
+
+    def test_keirin_selective_confidence_broad_tier(self):
+        tier = engine._keirin_selective_confidence({"pwin": 0.61, "pplc": 0.80})
+
+        self.assertEqual(tier["tier"], "broad")
+        self.assertAlmostEqual(tier["expected_top1"], 0.7287)
+
 
 if __name__ == "__main__":
     unittest.main()

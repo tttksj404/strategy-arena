@@ -37,6 +37,23 @@
 | 2024 | 0.5958 | 0.6134 | 0.6114 | 0.7700 | 0.7772 | 0.7804 |
 | 2025 | 0.5819 | 0.6105 | 0.6097 | 0.7456 | 0.7649 | 0.7673 |
 
+## 고확신 선별 정책
+
+추가 검증: `/Users/tttksj/keirin/selective_confidence_sweep.py`.
+
+방법은 전체 경주를 모두 예측하지 않고, 2019-2020 검증구간에서 rule을 먼저 고른 뒤 2021+ OOS에 고정 적용했다. 따라서 아래 수치는 전체 경주 적중률이 아니라 `coverage`만큼의 선별 경주 top1이다.
+
+| selected rule | validation top1 | validation coverage | 2021+ OOS top1 | 2021+ OOS coverage | test races |
+|---|---:|---:|---:|---:|---:|
+| `top_pwin >= 60.7%` | 0.7642 | 0.500 | 0.7287 | 0.5619 | 6,627 |
+| `top_pplc >= 90.7%` | 0.8601 | 0.203 | 0.8175 | 0.2765 | 3,261 |
+
+앱 표시는 다음처럼 분리한다.
+
+- 전체 일반 예측: OOS top1 약 61.6%.
+- 73%급 고확신 선별: top candidate의 `pwin >= 60.7%`.
+- 82%급 고확신 선별: top candidate의 `pplc >= 90.7%`.
+
 ## 배포 적용
 
 생성 artifact:
@@ -48,6 +65,7 @@
 - 일반 경륜 fallback에서 `keirin_cross_domain_model.joblib`를 우선 사용한다.
 - 결승전, 11R+, 특선 11R+ 특화 모델 라우팅은 기존대로 유지한다.
 - 새 모델은 출주표 단일 경주에서 계산 가능한 feature와 artifact 안의 과거 선수 prior/Elo map만 사용한다.
+- 일반 cross-domain 경륜 모델에는 고확신 선별 tier를 추가한다. 이 tier는 적중 보장이 아니라 검증구간에서 고른 threshold가 OOS에서 보인 과거 성능 표시다.
 
 ```mermaid
 flowchart TD
@@ -66,5 +84,6 @@ flowchart TD
 ## 운영 판단
 
 - 전체 경주 기준으로 `all_cross_domain`은 top1 +1.51pp, 연대 +1.05pp로 기존 일반 모델을 넘었다.
+- 극 개선은 전체 강제 예측이 아니라 선별 정책에서 나온다. 가장 강한 tier는 coverage 27.7%에서 OOS top1 81.75%였다.
 - 이 결과는 적중률 개선이지 +EV 보장이 아니다.
 - 다음 검증은 live 배당 블렌딩과 충돌 여부, 결승/11R specialist 대비 router 재평가다.
