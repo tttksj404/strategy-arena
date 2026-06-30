@@ -64,6 +64,53 @@ class ConfidenceDisplayTest(unittest.TestCase):
         self.assertIn('class="conf-badge 고확신"', html)
         self.assertIn("확신도 고확신", " ".join(html.split()))
 
+    def test_template_renders_selective_confidence_tier(self):
+        app = Flask(__name__)
+        template = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
+        result = {
+            "kind": "ok",
+            "src": "live",
+            "is_future": False,
+            "n_starters": 3,
+            "info": {"stnd_yr": "2026", "ymd": "20260630", "meet": "광명", "race_no": "1"},
+            "top": {"bno": 1, "name": "테스트선수", "pwin": 0.62, "pplc": 0.91},
+            "top_conf": {"grade": "강", "label": "최고확신 픽", "icon": "🏆", "race_confidence": "고확신"},
+            "selective_conf": {
+                "tier": "extreme",
+                "label": "82%급 고확신 선별",
+                "expected_top1": 0.8175,
+                "coverage": 0.2765,
+                "rule": "top_pplc >= 90.7%",
+            },
+            "rows": [
+                {"bno": 1, "name": "테스트선수", "grade": "선발", "pwin": 0.62, "pplc": 0.91},
+                {"bno": 2, "name": "상대선수", "grade": "선발", "pwin": 0.28, "pplc": 0.70},
+                {"bno": 3, "name": "복병선수", "grade": "선발", "pwin": 0.10, "pplc": 0.42},
+            ],
+            "picks": [],
+        }
+
+        with app.app_context():
+            html = render_template_string(
+                template,
+                disclaimer="테스트 면책",
+                keirin_meets=["광명"],
+                kra_meets=["서울", "제주", "부경"],
+                today="2026-06-30",
+                has_key=True,
+                recent_days=[],
+                default_date="2026-06-30",
+                schedule_hint="",
+                result=result,
+                sport="keirin",
+                date="2026-06-30",
+                meet="광명",
+                race_no="1",
+            )
+
+        self.assertIn("82%급 고확신 선별", html)
+        self.assertIn("OOS top1 81.8%", html)
+
 
 if __name__ == "__main__":
     unittest.main()
