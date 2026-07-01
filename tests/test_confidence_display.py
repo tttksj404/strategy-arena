@@ -158,6 +158,8 @@ class ConfidenceDisplayTest(unittest.TestCase):
         self.assertIn("KCYCLE 시장3합의 보조픽", html)
         self.assertIn("OOS 광명, 고확신 제외 top1 66.6%", html)
         self.assertIn('class="code">단승<span class="gr 중">중</span>', html)
+        self.assertIn('class="code">쌍승<span class="gr 약">약</span>', html)
+        self.assertIn("순서권 리스크", html)
         self.assertIn("KCYCLE 보조합의 1순위", html)
 
 

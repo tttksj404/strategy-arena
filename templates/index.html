@@ -290,10 +290,10 @@
               <div class="pr">selective top1 {{ '%.1f'|format(100*sig.expected_top1) }}%</div>
             </div>
             <div class="pick">
-              <div class="code">쌍승<span class="gr 중">중</span></div>
+              <div class="code">쌍승<span class="gr 약">약</span></div>
               <div class="mean">공식 순서 후보</div>
               <div class="sel">{{ result.order[0] }}-{{ result.order[1] }}</div>
-              <div class="pr">순서형은 top1보다 불확실</div>
+              <div class="pr">순서권 리스크 · top1보다 불확실</div>
             </div>
             <div class="pick">
               <div class="code">삼쌍<span class="gr 약">약</span></div>
@@ -577,7 +577,7 @@
   var livePanel = null;
   var liveStopped = false;
   var inFlight = false;
-  var pollDelayMs = 30000;
+  var pollDelayMs = 15000;
 
   function ensureLivePanel() {
     if (livePanel) return livePanel;
@@ -604,11 +604,17 @@
     return '<span style="background:' + m[1] + '22;color:' + m[1] + ';padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600">' + m[0] + '</span>';
   }
 
+  function escapeHtml(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function (ch) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+
   function startLivePolling(sport, date, meet, race_no) {
     if (liveTimer) clearTimeout(liveTimer);
     liveStopped = false;
     inFlight = false;
-    pollDelayMs = 30000;
+    pollDelayMs = 15000;
     var panel = ensureLivePanel();
     panel.style.display = 'block';
 
@@ -635,22 +641,33 @@
         .then(function(r) { return r.ok ? r.json() : null; })
         .then(function(d) {
           if (!d) { panel.innerHTML = '<div style="color:var(--muted);font-size:13px">판단 불가</div>'; return; }
-          pollDelayMs = d.market_used || d.status === 'odds_live' ? 5000 : 30000;
+          pollDelayMs = Number(d.poll_delay_ms) || (d.market_used || d.status === 'odds_live' ? 5000 : 15000);
           var oddsAge = d.odds_age_sec != null ? d.odds_age_sec + '초 전' : '—';
-          var decisionTxt = d.decision === 'final_candidate' ? '✅ 최종 후보 확정' : '⏳ 보류 (배당 미확정)';
           var oddsInfo = d.market_used
             ? '배당 반영됨 (마지막 갱신: ' + oddsAge + ')'
             : '배당 미반영';
+          var marketRisk = d.market_risk || {};
+          var riskHtml = marketRisk.message
+            ? '<div style="font-size:12px;color:#ffcf8a;margin-top:4px">' + escapeHtml(marketRisk.message) + '</div>'
+            : '';
+          var fallbackHtml = d.fallback_signal && d.fallback_signal.label
+            ? '<div style="font-size:12px;color:#bfe2ff;margin-top:4px">대체 신호: '
+              + escapeHtml(d.fallback_signal.label)
+              + (d.fallback_signal.expected_top1 ? ' · 검증 top1 ' + (100*d.fallback_signal.expected_top1).toFixed(1) + '%' : '')
+              + '</div>'
+            : '';
           var topHtml = d.top
-            ? '<b>' + d.top.bno + '번 ' + (d.top.name || '') + '</b> (win ' + (100*d.top.pwin).toFixed(1) + '% / 연대 ' + (100*d.top.pplc).toFixed(1) + '%)'
+            ? '<b>' + escapeHtml(d.top.bno) + '번 ' + escapeHtml(d.top.name || '') + '</b> (win ' + (100*d.top.pwin).toFixed(1) + '% / 연대 ' + (100*d.top.pplc).toFixed(1) + '%)'
             : '—';
           panel.innerHTML =
             '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px">'
             + liveStatusBadge(d.status) + ' ' + liveStatusBadge(d.decision)
-            + '<span style="color:var(--muted);font-size:12px;margin-left:auto">' + oddsInfo + '</span>'
+            + '<span style="color:var(--muted);font-size:12px;margin-left:auto">' + escapeHtml(oddsInfo) + '</span>'
             + '</div>'
             + '<div style="font-size:14px;margin-bottom:4px">🏆 ' + topHtml + '</div>'
-            + '<div style="font-size:12px;color:var(--muted)">' + (d.message || '') + '</div>'
+            + '<div style="font-size:12px;color:var(--muted)">' + escapeHtml(d.message || '') + '</div>'
+            + riskHtml
+            + fallbackHtml
             + '<div style="font-size:11px;color:var(--muted);margin-top:4px">자동 갱신: ' + Math.round(pollDelayMs/1000) + '초마다 · 마지막: ' + (d.updated_at || '') + '</div>';
         })
         .catch(function() {

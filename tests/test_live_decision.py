@@ -49,6 +49,46 @@ class LiveDecisionTestCase(unittest.TestCase):
         d = r.get_json()
         if d and "market_used" in d:
             self.assertFalse(d["market_used"])
+            self.assertEqual(d["poll_delay_ms"], 15000)
+            self.assertEqual(d["market_risk"]["level"], "live_market_blocked")
+            self.assertIn("Render", d["market_risk"]["message"])
+
+    def test_live_decision_exposes_official_support_when_market_blocked(self):
+        base = {
+            "kind": "ok",
+            "rows": [{"bno": 3, "name": "A", "pwin": 0.61, "pplc": 0.82}],
+            "rankingpredict_signal": {
+                "tier": "kcycle_market3_support",
+                "label": "KCYCLE 시장3합의 보조픽",
+                "expected_top1": 0.6656,
+            },
+        }
+
+        with patch.dict(os.environ, {"KCYCLE_ENABLED": "0"}, clear=False):
+            decision = app_module.engine.compute_live_decision(
+                "keirin", "2026-06-28", "광명", "7", base_model_out=base,
+            )
+
+        self.assertFalse(decision["market_used"])
+        self.assertEqual(decision["fallback_signal"]["label"], "KCYCLE 시장3합의 보조픽")
+        self.assertEqual(decision["fallback_signal"]["expected_top1"], 0.6656)
+        self.assertEqual(decision["decision"], "hold")
+
+    def test_live_decision_keeps_official_signal_when_card_model_fails(self):
+        with patch.dict(os.environ, {"KCYCLE_ENABLED": "0"}, clear=False):
+            decision = app_module.engine.compute_live_decision(
+                "keirin",
+                "2026-06-28",
+                "광명",
+                "7",
+                base_model_out={"error": "출주표 조회 실패"},
+            )
+
+        self.assertTrue(decision["ok"])
+        self.assertFalse(decision["market_used"])
+        self.assertEqual(decision["fallback_signal"]["label"], "KCYCLE 시장3합의 보조픽")
+        self.assertEqual(decision["top"]["bno"], 3)
+        self.assertEqual(decision["poll_delay_ms"], 15000)
 
     def test_template_has_live_panel_js(self):
         """index.html에 live-decision 자동 폴링 JS가 있어야."""
@@ -59,6 +99,8 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertIn("/api/live-decision", html)
         self.assertIn("setTimeout", html)
         self.assertIn("pollDelayMs", html)
+        self.assertIn("d.poll_delay_ms", html)
+        self.assertIn("market_risk", html)
         self.assertIn('method="get"', html)
 
     def test_live_decision_reuses_cached_base_prediction(self):

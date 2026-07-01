@@ -120,6 +120,20 @@ class CrossDomainModelTestCase(unittest.TestCase):
 
         self.assertEqual(tier["tier"], "broad")
 
+    def test_ordered_exotic_picks_are_not_graded_like_single_win(self):
+        rows = [
+            {"bno": 1, "name": "A", "pwin": 0.80, "pplc": 0.94},
+            {"bno": 2, "name": "B", "pwin": 0.12, "pplc": 0.62},
+            {"bno": 3, "name": "C", "pwin": 0.08, "pplc": 0.55},
+        ]
+
+        picks = {pick["code"]: pick for pick in engine.build_picks(rows)}
+
+        self.assertEqual(picks["단승"]["grade"], "강")
+        self.assertEqual(picks["쌍승"]["grade"], "약")
+        self.assertEqual(picks["삼쌍"]["grade"], "약")
+        self.assertIn("순서권 리스크", picks["삼쌍"]["prob"])
+
     def test_kcycle_rankingpredict_cache_signal_uses_official_consensus(self):
         engine._KCYCLE_RANKINGPREDICT = None
         engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0

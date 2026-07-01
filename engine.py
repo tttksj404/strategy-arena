@@ -999,8 +999,8 @@ def build_picks(rows):
         picks.append({
             "code": "쌍승", "desc": "1착→2착 순서", "type": "조합(순서2)",
             "pick": [f"{lab(a)} → {lab(b)}"],
-            "prob": f"순서 top2 (win {100*pw[a]:.0f}% → {100*pw[b]:.0f}%)",
-            "grade": _grade_win(pw[a]),
+            "prob": f"순서 top2 (win {100*pw[a]:.0f}% → {100*pw[b]:.0f}%) · 순서권 리스크",
+            "grade": "약",
         })
 
     if len(order) >= 3:
@@ -1023,8 +1023,8 @@ def build_picks(rows):
         picks.append({
             "code": "삼쌍", "desc": "1→2→3착 순서", "type": "조합(순서3)",
             "pick": [f"{lab(a)} → {lab(b)} → {lab(c)}"],
-            "prob": f"순서 top3 (win {100*pw[a]:.0f}%)",
-            "grade": _grade_win(pw[a]),
+            "prob": f"순서 top3 (win {100*pw[a]:.0f}%) · 순서권 리스크",
+            "grade": "약",
         })
 
     # 대중용 1줄 뜻 부착 (7권종을 다 모르는 사용자 대상).
@@ -1460,6 +1460,55 @@ def fetch_kcycle_odds_with_ts(stnd_yr, ymd, race_no):
     return odds, ts
 
 
+def _live_poll_delay_ms(sport, market_used):
+    if market_used:
+        return 5000
+    if sport == "keirin":
+        return 15000
+    return 30000
+
+
+def _live_market_risk(sport, market_used, status):
+    if sport != "keirin":
+        return {
+            "level": "not_applicable",
+            "message": "경마 경로는 현재 경륜 KCYCLE 배당 수집 대상이 아닙니다.",
+        }
+    if market_used:
+        return {
+            "level": "live_market_used",
+            "message": "실시간 배당이 반영됐습니다.",
+        }
+    if os.environ.get("KCYCLE_ENABLED", "0") == "1":
+        return {
+            "level": "odds_unavailable",
+            "message": "KCYCLE 배당 수집을 시도했지만 현재 배당이 없거나 접근이 실패했습니다.",
+        }
+    return {
+        "level": "live_market_blocked",
+        "message": "Render 미국 리전에서는 KCYCLE 실시간 배당 접근이 막힐 수 있어 사전 예측과 공식예상 보조신호만 사용합니다.",
+    }
+
+
+def _live_fallback_signal(base_model_out):
+    signal = base_model_out.get("rankingpredict_signal")
+    if not signal:
+        signal = base_model_out.get("selective_conf")
+    if not signal or signal.get("tier") in (None, "normal"):
+        return None
+    return _live_signal_payload(signal)
+
+
+def _live_signal_payload(signal):
+    return {
+        "tier": signal.get("tier"),
+        "label": signal.get("label"),
+        "expected_top1": signal.get("expected_top1"),
+        "coverage": signal.get("coverage"),
+        "validation_split": signal.get("validation_split"),
+    }
+
+
 def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
     """실시간 판단. base_model_out은 이미 계산된 engine.predict/predict_kra 결과.
     반환 dict:
@@ -1471,18 +1520,36 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
 
     # base_model_out이 없으면 demo 사용 (실시간 fetch는 app.py에서 미리 함)
     if base_model_out is None or "error" in base_model_out:
+        signal = None
+        if sport == "keirin":
+            signal = _kcycle_rankingpredict_signal({"ymd": ymd, "meet": meet, "race_no": race_no})
+        fallback_signal = _live_signal_payload(signal) if signal else None
+        top = None
+        if signal:
+            top = {
+                "bno": signal.get("leader"),
+                "name": "KCYCLE 공식예상",
+                "pwin": signal.get("expected_top1", 0.0),
+                "pplc": 0.0,
+            }
         return {
-            "ok": False,
+            "ok": bool(signal),
             "status": "hold",
-            "message": "모델 예측 불가 (출주표 없음 또는 오류)",
+            "message": (
+                "출주표 기반 모델 예측 불가 — KCYCLE 공식예상 보조신호만 표시"
+                if signal else "모델 예측 불가 (출주표 없음 또는 오류)"
+            ),
             "updated_at": now.isoformat(timespec="seconds"),
             "odds_age_sec": None,
             "market_odds": None,
-            "top": None,
+            "top": top,
             "rows": None,
             "decision": "hold",
             "market_used": False,
             "snapshot_phase": "unknown",
+            "poll_delay_ms": _live_poll_delay_ms(sport, False),
+            "market_risk": _live_market_risk(sport, False, "hold"),
+            "fallback_signal": fallback_signal,
         }
 
     rows = [dict(r) for r in base_model_out.get("rows", [])]
@@ -1493,6 +1560,9 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             "odds_age_sec": None, "market_odds": None, "top": None,
             "rows": None, "decision": "hold", "market_used": False,
             "snapshot_phase": "unknown",
+            "poll_delay_ms": _live_poll_delay_ms(sport, False),
+            "market_risk": _live_market_risk(sport, False, "hold"),
+            "fallback_signal": None,
         }
 
     # ── kcycle 배당 fetch (경륜만) ──
@@ -1579,4 +1649,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
         "decision": decision,
         "market_used": market_used,
         "snapshot_phase": snapshot_phase,
+        "poll_delay_ms": _live_poll_delay_ms(sport, market_used),
+        "market_risk": _live_market_risk(sport, market_used, status),
+        "fallback_signal": _live_fallback_signal(base_model_out),
     }
