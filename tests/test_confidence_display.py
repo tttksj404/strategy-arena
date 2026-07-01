@@ -162,6 +162,51 @@ class ConfidenceDisplayTest(unittest.TestCase):
         self.assertIn("순서권 리스크", html)
         self.assertIn("KCYCLE 보조합의 1순위", html)
 
+    def test_template_renders_extreme_fallback_as_high_grade(self):
+        app = Flask(__name__)
+        template = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
+        result = {
+            "kind": "official_fallback",
+            "title": "KCYCLE 공식예상 폴백",
+            "info": {"stnd_yr": "2026", "ymd": "20260627", "meet": "광명", "race_no": "14"},
+            "signal": {
+                "tier": "kcycle_market3_day2_extreme",
+                "label": "KCYCLE 2일차 시장합의 91%급 극고확신",
+                "expected_top1": 0.9111,
+                "coverage": 0.0352,
+                "rule": "2일차 + AI 1순위>=21% + 인기배당률·적중률5%·환급률5% 1착 일치",
+                "validation_split": "2025 select n=94 -> 2026 OOS 광명 n=45",
+            },
+            "order": ["7", "6", "1"],
+            "top_bno": "7",
+            "fetch_err": "timeout",
+        }
+
+        with app.app_context():
+            html = render_template_string(
+                template,
+                disclaimer="테스트 면책",
+                keirin_meets=["광명"],
+                kra_meets=["서울", "제주", "부경"],
+                today="2026-06-30",
+                has_key=True,
+                recent_days=[],
+                default_date="2026-06-30",
+                schedule_hint="",
+                result=result,
+                sport="keirin",
+                date="2026-06-27",
+                meet="광명",
+                race_no="14",
+            )
+
+        self.assertIn("KCYCLE 2일차 시장합의 91%급 극고확신", html)
+        self.assertIn("2026 OOS 광명 n=45 top1 91.1%", html)
+        self.assertIn("coverage 3.5%", html)
+        self.assertIn('class="code">단승<span class="gr 강">강</span>', html)
+        self.assertIn("KCYCLE 극고확신 1순위", html)
+        self.assertIn("검증된 삼쌍 50% 신호 아님", html)
+
 
 if __name__ == "__main__":
     unittest.main()

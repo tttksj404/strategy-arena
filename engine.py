@@ -81,6 +81,24 @@ def _rankingpredict_key(ymd, meet, race_no):
     return f"{digits[:8]}|{str(meet or '').strip()}|{int(rno)}"
 
 
+def _kcycle_day_no(row, meta):
+    day = row.get("day") if isinstance(row, dict) else None
+    try:
+        if day is not None:
+            return int(day)
+    except (TypeError, ValueError):
+        pass
+    digits = re.sub(r"\D", "", str((row or {}).get("date") or (meta or {}).get("ymd") or ""))
+    if len(digits) < 8:
+        return 0
+    try:
+        import datetime as _dt
+        weekday = _dt.date(int(digits[:4]), int(digits[4:6]), int(digits[6:8])).weekday()
+    except ValueError:
+        return 0
+    return {4: 1, 5: 2, 6: 3}.get(weekday, 0)
+
+
 def _load_kcycle_rankingpredict_cache():
     global _KCYCLE_RANKINGPREDICT
     if _KCYCLE_RANKINGPREDICT is not None:
@@ -188,6 +206,7 @@ def _fetch_kcycle_rankingpredict_row(meta):
                     continue
                 return {
                     "date": re.sub(r"\D", "", str(meta.get("ymd") or ""))[:8],
+                    "day": day,
                     "meet": meet,
                     "race_no": int(rno),
                     "ai_order": _ai(cells[1]),
@@ -216,6 +235,29 @@ def _kcycle_rankingpredict_signal(meta):
     valid_orders = [order for order in orders if isinstance(order, list) and len(order) >= 3]
     ai_probs = row.get("ai_probs") if isinstance(row.get("ai_probs"), list) else []
     ai_p1 = float(ai_probs[0]) if ai_probs else 0.0
+    market_orders = [row.get(name) for name in ["popular_order", "hit5_order", "return5_order"]]
+    valid_market_orders = [order for order in market_orders if isinstance(order, list) and len(order) >= 3]
+    if (
+        len(valid_market_orders) == 3
+        and len({order[0] for order in valid_market_orders}) == 1
+        and ai_p1 >= 21.0
+        and _kcycle_day_no(row, meta) == 2
+    ):
+        leader = int(valid_market_orders[0][0])
+        return {
+            "tier": "kcycle_market3_day2_extreme",
+            "label": "KCYCLE 2일차 시장합의 91%급 극고확신",
+            "leader": leader,
+            "order": [int(x) for x in valid_market_orders[0][:3]],
+            "expected_top1": 0.9111,
+            "coverage": 0.0352,
+            "validation_n": 45,
+            "validation_split": "2025 select n=94 -> 2026 OOS 광명 n=45",
+            "rule": "2일차 + AI 1순위>=21% + 인기배당률·적중률5%·환급률5% 1착 일치",
+            "pair_order_expected": 1.0,
+            "trio_order_expected": 0.1778,
+            "source": row.get("source", "kcycle_cache"),
+        }
     if len(valid_orders) == 4 and len({order[0] for order in valid_orders}) == 1 and ai_p1 >= 22.0:
         leader = int(valid_orders[0][0])
         trio_agree = len({tuple(order[:3]) for order in valid_orders}) == 1
@@ -233,8 +275,6 @@ def _kcycle_rankingpredict_signal(meta):
             "trio_order_expected": 0.2719 if trio_agree else None,
             "source": row.get("source", "kcycle_cache"),
         }
-    market_orders = [row.get(name) for name in ["popular_order", "hit5_order", "return5_order"]]
-    valid_market_orders = [order for order in market_orders if isinstance(order, list) and len(order) >= 3]
     if len(valid_market_orders) == 3 and len({order[0] for order in valid_market_orders}) == 1:
         leader = int(valid_market_orders[0][0])
         return {
@@ -266,7 +306,14 @@ def _apply_kcycle_rankingpredict_overlay(out, rows, meta):
     leader_row = next((r for r in rows if int(r.get("bno", -1)) == int(signal["leader"])), None)
     if leader_row is not None:
         out["top"] = leader_row
-        if signal["tier"] == "kcycle_all_first_agree":
+        if signal["tier"] == "kcycle_market3_day2_extreme":
+            out["top_conf"] = {
+                "grade": "강",
+                "label": "KCYCLE 극고확신 픽",
+                "icon": "✓",
+                "race_confidence": "고확신",
+            }
+        elif signal["tier"] == "kcycle_all_first_agree":
             out["top_conf"] = {
                 "grade": "강",
                 "label": "KCYCLE 공식합의 픽",

@@ -147,6 +147,19 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(signal["leader"], 7)
         self.assertAlmostEqual(signal["expected_top1"], 0.8649)
 
+    def test_kcycle_saturday_market_consensus_promotes_extreme_signal(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        signal = engine._kcycle_rankingpredict_signal(
+            {"ymd": "2026.06.27", "meet": "광명", "race_no": "14"},
+        )
+
+        self.assertIsNotNone(signal)
+        self.assertEqual(signal["tier"], "kcycle_market3_day2_extreme")
+        self.assertEqual(signal["leader"], 7)
+        self.assertAlmostEqual(signal["expected_top1"], 0.9111)
+
     def test_kcycle_rankingpredict_support_signal_handles_non_high_confidence(self):
         engine._KCYCLE_RANKINGPREDICT = None
         engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
@@ -185,6 +198,33 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(boosted["top"]["bno"], 7)
         self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 공식합의 픽")
         self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_all_first_agree")
+
+    def test_kcycle_extreme_overlay_uses_high_confidence_label(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        rows = [
+            {"bno": 1, "name": "모델선두", "pwin": 0.62, "pplc": 0.90},
+            {"bno": 7, "name": "극고확신", "pwin": 0.31, "pplc": 0.75},
+        ]
+        out = {
+            "rows": rows,
+            "picks": [],
+            "top": rows[0],
+            "top_conf": engine._top_confidence(rows[0], rows),
+            "selective_conf": {"tier": "normal"},
+        }
+
+        boosted = engine._apply_kcycle_rankingpredict_overlay(
+            out,
+            rows,
+            {"ymd": "2026.06.27", "meet": "광명", "race_no": "14"},
+        )
+
+        self.assertEqual(boosted["top"]["bno"], 7)
+        self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 극고확신 픽")
+        self.assertEqual(boosted["top_conf"]["race_confidence"], "고확신")
+        self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_market3_day2_extreme")
 
     def test_kcycle_support_overlay_uses_middle_confidence_label(self):
         engine._KCYCLE_RANKINGPREDICT = None

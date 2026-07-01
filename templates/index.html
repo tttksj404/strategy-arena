@@ -261,7 +261,8 @@
     {% elif result.kind == 'official_fallback' %}
       {% set sig = result.signal %}
       {% set info = result.info %}
-      {% set is_official_high = (sig.tier == 'kcycle_all_first_agree') %}
+      {% set is_extreme = (sig.tier == 'kcycle_market3_day2_extreme') %}
+      {% set is_official_high = (sig.tier == 'kcycle_all_first_agree' or sig.tier == 'kcycle_market3_day2_extreme') %}
       <div class="card">
         <h2>{{ result.title }}</h2>
         <div class="meta">
@@ -285,7 +286,7 @@
           <div class="picks" style="margin-top:12px">
             <div class="pick">
               <div class="code">단승<span class="gr {{ '강' if is_official_high else '중' }}">{{ '강' if is_official_high else '중' }}</span></div>
-              <div class="mean">{{ 'KCYCLE 공식합의 1순위' if is_official_high else 'KCYCLE 보조합의 1순위' }}</div>
+              <div class="mean">{{ 'KCYCLE 극고확신 1순위' if is_extreme else ('KCYCLE 공식합의 1순위' if is_official_high else 'KCYCLE 보조합의 1순위') }}</div>
               <div class="sel">{{ result.order[0] }}번</div>
               <div class="pr">selective top1 {{ '%.1f'|format(100*sig.expected_top1) }}%</div>
             </div>
