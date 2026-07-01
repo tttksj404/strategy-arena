@@ -27,6 +27,7 @@ import os
 import re
 import json
 import math
+import time
 import urllib.parse
 import urllib.request
 
@@ -67,6 +68,7 @@ KEIRIN_MEETS = ["광명"]
 # (stnd_yr, week_tcnt, day_tcnt) → kcycle (tms, day) 매핑 캐시
 _KCYCLE_TMS_CACHE = {}
 _KCYCLE_RANKINGPREDICT = None
+_KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 
 
 def _rankingpredict_key(ymd, meet, race_no):
@@ -95,11 +97,25 @@ def _load_kcycle_rankingpredict_cache():
     return data
 
 
+def kcycle_rankingpredict_cache_status():
+    data = _load_kcycle_rankingpredict_cache()
+    dates = [key.split("|", 1)[0] for key in data]
+    return {
+        "rows": len(data),
+        "latest_date": max(dates) if dates else None,
+        "live_enabled": os.environ.get("KCYCLE_RANKINGPREDICT_ENABLED", "1") == "1",
+        "live_cooldown": time.time() < _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL,
+    }
+
+
 def _fetch_kcycle_rankingpredict_row(meta):
+    global _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL
     import ssl
     from html.parser import HTMLParser
 
-    if os.environ.get("KCYCLE_RANKINGPREDICT_ENABLED", "0") != "1":
+    if os.environ.get("KCYCLE_RANKINGPREDICT_ENABLED", "1") != "1":
+        return None
+    if time.time() < _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL:
         return None
     if not meta:
         return None
@@ -143,7 +159,8 @@ def _fetch_kcycle_rankingpredict_row(meta):
 
     meet = str(meta.get("meet") or "").strip()
     rno = str(meta.get("race_no") or "").strip().lstrip("0") or "0"
-    for dt in [0, -1, 1, -2, 2]:
+    failures = 0
+    for dt in [0, -1, 1]:
         try:
             url = f"https://{KCYCLE_IP}/rankingpredict/{year}/{tms+dt}/{day}"
             ctx = ssl.create_default_context()
@@ -154,7 +171,7 @@ def _fetch_kcycle_rankingpredict_row(meta):
                 "User-Agent": "Mozilla/5.0",
                 "X-Requested-With": "XMLHttpRequest",
             })
-            with urllib.request.urlopen(req, timeout=4, context=ctx) as response:
+            with urllib.request.urlopen(req, timeout=2, context=ctx) as response:
                 html = response.read().decode("utf-8", "replace")
             parser = _TableParser()
             parser.feed(html)
@@ -175,7 +192,9 @@ def _fetch_kcycle_rankingpredict_row(meta):
                     "source": "kcycle_live",
                 }
         except Exception:  # noqa: BLE001
-            continue
+            failures += 1
+    if failures:
+        _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = time.time() + 300
     return None
 
 

@@ -1,6 +1,7 @@
 import os
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -120,6 +121,9 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(tier["tier"], "broad")
 
     def test_kcycle_rankingpredict_cache_signal_uses_official_consensus(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
         signal = engine._kcycle_rankingpredict_signal(
             {"ymd": "2026.06.28", "meet": "광명", "race_no": "7"},
         )
@@ -130,6 +134,9 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertAlmostEqual(signal["expected_top1"], 0.8649)
 
     def test_kcycle_rankingpredict_overlay_promotes_official_leader(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
         rows = [
             {"bno": 1, "name": "모델선두", "pwin": 0.62, "pplc": 0.90},
             {"bno": 3, "name": "공식합의", "pwin": 0.31, "pplc": 0.75},
@@ -151,6 +158,40 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(boosted["top"]["bno"], 3)
         self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 공식합의 픽")
         self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_all_first_agree")
+
+    def test_healthz_reports_rankingpredict_cache_status(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        app_module.app.config["TESTING"] = True
+        client = app_module.app.test_client()
+
+        response = client.get("/healthz")
+        data = response.get_json()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertGreaterEqual(data["rankingpredict_cache"]["rows"], 10000)
+        self.assertEqual(data["rankingpredict_cache"]["latest_date"], "20260628")
+
+    def test_kcycle_rankingpredict_live_failure_uses_cooldown(self):
+        engine._KCYCLE_RANKINGPREDICT = {}
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        with patch.dict(os.environ, {"KCYCLE_RANKINGPREDICT_ENABLED": "1"}, clear=False), \
+             patch.object(engine.urllib.request, "urlopen", side_effect=TimeoutError("blocked")) as urlopen:
+            first = engine._kcycle_rankingpredict_signal(
+                {"stnd_yr": "2026", "ymd": "2026.07.03", "meet": "광명", "race_no": "1"},
+            )
+            second = engine._kcycle_rankingpredict_signal(
+                {"stnd_yr": "2026", "ymd": "2026.07.03", "meet": "광명", "race_no": "1"},
+            )
+
+        self.assertIsNone(first)
+        self.assertIsNone(second)
+        self.assertGreater(urlopen.call_count, 0)
+        self.assertLessEqual(urlopen.call_count, 3)
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 
 
 if __name__ == "__main__":

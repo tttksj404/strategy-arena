@@ -497,6 +497,7 @@ def healthz():
                 "keirin_model": ("loaded" if model else "fail"), "keirin_err": err,
                 "keirin_cross_model": ("loaded" if cross else "fail"), "keirin_cross_err": cross_err,
                 "kra_model": ("loaded" if kra else "fail"), "kra_err": kra_err,
+                "rankingpredict_cache": engine.kcycle_rankingpredict_cache_status(),
                 "has_key": _has_key(), "deep": True}, (200 if ok else 500)
     model_ok = os.path.exists(engine.MODEL_PATH)
     cross_ok = os.path.exists(engine.CROSS_MODEL_PATH)
@@ -509,6 +510,7 @@ def healthz():
             "keirin_cross_err": None if cross_ok else "cross model file missing",
             "kra_model": "present" if kra_ok else "missing",
             "kra_err": None if kra_ok else "kra model file missing",
+            "rankingpredict_cache": engine.kcycle_rankingpredict_cache_status(),
             "has_key": _has_key(), "deep": False}, (200 if ok else 500)
 
 
