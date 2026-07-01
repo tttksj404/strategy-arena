@@ -235,6 +235,7 @@ def _kcycle_rankingpredict_signal(meta):
     valid_orders = [order for order in orders if isinstance(order, list) and len(order) >= 3]
     ai_probs = row.get("ai_probs") if isinstance(row.get("ai_probs"), list) else []
     ai_p1 = float(ai_probs[0]) if ai_probs else 0.0
+    all4_trio_agree = len(valid_orders) == 4 and len({tuple(order[:3]) for order in valid_orders}) == 1
     market_orders = [row.get(name) for name in ["popular_order", "hit5_order", "return5_order"]]
     valid_market_orders = [order for order in market_orders if isinstance(order, list) and len(order) >= 3]
     if (
@@ -254,8 +255,8 @@ def _kcycle_rankingpredict_signal(meta):
             "validation_n": 45,
             "validation_split": "2025 select n=94 -> 2026 OOS 광명 n=45",
             "rule": "2일차 + AI 1순위>=21% + 인기배당률·적중률5%·환급률5% 1착 일치",
-            "pair_order_expected": 1.0,
-            "trio_order_expected": 0.1778,
+            "pair_order_expected": 0.4649 if all4_trio_agree else 1.0,
+            "trio_order_expected": 0.2719 if all4_trio_agree else 0.1778,
             "source": row.get("source", "kcycle_cache"),
         }
     if len(valid_orders) == 4 and len({order[0] for order in valid_orders}) == 1 and ai_p1 >= 22.0:
@@ -298,11 +299,108 @@ def kcycle_rankingpredict_signal(meta):
     return _kcycle_rankingpredict_signal(meta)
 
 
+def _replace_pick(picks, code, patch):
+    for pick in picks:
+        if pick.get("code") == code:
+            pick.update(patch)
+            return
+
+
+def _apply_kcycle_pick_overlay(out, rows, signal):
+    picks = out.get("picks")
+    order = signal.get("order") if isinstance(signal, dict) else None
+    if not isinstance(picks, list) or not isinstance(order, list) or not order:
+        return
+    by_bno = {int(r["bno"]): r for r in rows if "bno" in r}
+
+    def lab(bno):
+        row = by_bno.get(int(bno), {})
+        name = str(row.get("name", "") or "").strip()
+        return f"{int(bno)}번 {name}".strip()
+
+    leader = int(order[0])
+    expected_top1 = float(signal.get("expected_top1") or 0.0)
+    _replace_pick(
+        picks,
+        "단승",
+        {
+            "pick": [lab(leader)],
+            "prob": f"KCYCLE top1 {100*expected_top1:.1f}%",
+            "grade": "강" if expected_top1 >= 0.86 else "중",
+        },
+    )
+    if len(order) >= 2 and all(int(bno) in by_bno for bno in order[:2]):
+        a, b = int(order[0]), int(order[1])
+        _replace_pick(
+            picks,
+            "연승",
+            {
+                "pick": [lab(a), lab(b)],
+                "prob": f"KCYCLE 1·2순위 후보 · top1 {100*expected_top1:.1f}%",
+                "grade": "중",
+            },
+        )
+    trio_expected = signal.get("trio_order_expected")
+    if not isinstance(trio_expected, (int, float)) or trio_expected < 0.17:
+        return
+    if len(order) < 3 or not all(int(bno) in by_bno for bno in order[:3]):
+        return
+    a, b, c = [int(bno) for bno in order[:3]]
+    pair_expected = signal.get("pair_order_expected")
+    pair_text = f"pair {100*pair_expected:.1f}% · " if isinstance(pair_expected, (int, float)) else ""
+    _replace_pick(
+        picks,
+        "복승",
+        {
+            "pick": [f"{lab(a)} ↔ {lab(b)}"],
+            "prob": f"KCYCLE 순서신호 top2 · {pair_text}순서권 리스크",
+            "grade": "중" if isinstance(pair_expected, (int, float)) and pair_expected >= 0.45 else "약",
+        },
+    )
+    _replace_pick(
+        picks,
+        "쌍승",
+        {
+            "pick": [f"{lab(a)} → {lab(b)}"],
+            "prob": f"KCYCLE 순서신호 top2 · {pair_text}순서권 리스크",
+            "grade": "중" if isinstance(pair_expected, (int, float)) and pair_expected >= 0.45 else "약",
+        },
+    )
+    _replace_pick(
+        picks,
+        "삼복",
+        {
+            "pick": [f"{lab(a)} ↔ {lab(b)} ↔ {lab(c)}"],
+            "prob": f"KCYCLE 순서신호 top3 board · 삼쌍 exact {100*trio_expected:.1f}%",
+            "grade": "중" if trio_expected >= 0.25 else "약",
+        },
+    )
+    _replace_pick(
+        picks,
+        "쌍복",
+        {
+            "pick": [f"1착 {lab(a)} 고정 + ({lab(b)} ↔ {lab(c)})"],
+            "prob": f"KCYCLE 1착 고정 · top1 {100*expected_top1:.1f}%",
+            "grade": "강" if expected_top1 >= 0.86 else "중",
+        },
+    )
+    _replace_pick(
+        picks,
+        "삼쌍",
+        {
+            "pick": [f"{lab(a)} → {lab(b)} → {lab(c)}"],
+            "prob": f"KCYCLE 순서신호 top3 · exact {100*trio_expected:.1f}% · 50% 미만",
+            "grade": "중" if trio_expected >= 0.25 else "약",
+        },
+    )
+
+
 def _apply_kcycle_rankingpredict_overlay(out, rows, meta):
     signal = _kcycle_rankingpredict_signal(meta)
     if not signal:
         return out
     out["rankingpredict_signal"] = signal
+    _apply_kcycle_pick_overlay(out, rows, signal)
     leader_row = next((r for r in rows if int(r.get("bno", -1)) == int(signal["leader"])), None)
     if leader_row is not None:
         out["top"] = leader_row

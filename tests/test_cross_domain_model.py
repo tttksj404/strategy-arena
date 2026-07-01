@@ -226,6 +226,36 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(boosted["top_conf"]["race_confidence"], "고확신")
         self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_market3_day2_extreme")
 
+    def test_kcycle_order_signal_rewrites_ordered_exotic_picks(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        rows = [
+            {"bno": 1, "name": "기본모델1", "pwin": 0.50, "pplc": 0.78},
+            {"bno": 5, "name": "공식1착", "pwin": 0.31, "pplc": 0.72},
+            {"bno": 7, "name": "공식3착", "pwin": 0.19, "pplc": 0.61},
+        ]
+        out = {
+            "rows": rows,
+            "picks": engine.build_picks(rows),
+            "top": rows[0],
+            "top_conf": engine._top_confidence(rows[0], rows),
+            "selective_conf": {"tier": "normal"},
+        }
+
+        boosted = engine._apply_kcycle_rankingpredict_overlay(
+            out,
+            rows,
+            {"ymd": "2026.06.27", "meet": "광명", "race_no": "15"},
+        )
+        picks = {pick["code"]: pick for pick in boosted["picks"]}
+
+        self.assertEqual(picks["단승"]["pick"], ["5번 공식1착"])
+        self.assertEqual(picks["쌍승"]["pick"], ["5번 공식1착 → 1번 기본모델1"])
+        self.assertEqual(picks["삼쌍"]["pick"], ["5번 공식1착 → 1번 기본모델1 → 7번 공식3착"])
+        self.assertIn("KCYCLE 순서신호", picks["삼쌍"]["prob"])
+        self.assertIn("exact 27.2%", picks["삼쌍"]["prob"])
+
     def test_kcycle_support_overlay_uses_middle_confidence_label(self):
         engine._KCYCLE_RANKINGPREDICT = None
         engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
