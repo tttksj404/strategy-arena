@@ -172,6 +172,27 @@ def _notice_no_race(sport, meet, race_no, ymd, base):
             "message": msg, "recent_days": days}
 
 
+def _kcycle_official_fallback_result(ymd, meet, race_no, fetch_err=None):
+    if _norm_day(ymd) is None:
+        return None
+    info = {"stnd_yr": engine.norm_ymd(ymd)[:4], "ymd": engine.norm_ymd(ymd),
+            "meet": meet, "race_no": race_no}
+    signal = engine.kcycle_rankingpredict_signal(info)
+    if not signal:
+        return None
+    order = [str(x) for x in signal.get("order", [])]
+    return {
+        "kind": "official_fallback",
+        "title": "KCYCLE 공식합의 폴백",
+        "message": "실시간 출주표 조회가 실패해 데모 경주를 섞지 않고 KCYCLE 공식 예상 신호만 표시합니다.",
+        "info": info,
+        "signal": signal,
+        "order": order,
+        "top_bno": str(signal.get("leader")),
+        "fetch_err": fetch_err,
+    }
+
+
 @app.route("/")
 def index():
     today = dt.date.today().isoformat()
@@ -279,7 +300,7 @@ def predict():
     ck = (sport, ymd, meet, race_no)
     now = time.time()
     cached = _PREDICT_CACHE.get(ck)
-    if cached and (now - cached["ts"]) < _PREDICT_TTL:
+    if cached and (now - cached["ts"]) < cached.get("ttl", _PREDICT_TTL):
         return cached["rendered"]  # 캐시된 HTML 즉시 반환
 
     # ── 경마(KRA) ──
@@ -293,6 +314,9 @@ def predict():
     key = _get_key()
 
     if not key:
+        fallback = _kcycle_official_fallback_result(ymd, meet, race_no, "DATAGOKR_SERVICE_KEY 미설정")
+        if fallback:
+            return _cache_and_return(ck, render_template("index.html", result=fallback, **base), ttl=60)
         # 키 없음 → 데모 캐시 폴백
         demo = engine.load_demo_race()
         if not demo:
@@ -334,20 +358,14 @@ def predict():
                 result=_notice_no_race(sport, meet, race_no, ymd, base),
                 **base)
         if err:
-            # 실시간 실패(API 오류) → 데모 폴백(앱 안 죽음)
-            demo = engine.load_demo_race()
-            if demo:
-                starters = demo["items"]
-                src = "demo"
-                info = {"stnd_yr": demo.get("stnd_yr"), "ymd": demo.get("race_ymd"),
-                        "meet": demo.get("meet_nm"), "race_no": demo.get("race_no"),
-                        "actual": demo.get("actual"), "fetch_err": err}
-            else:
-                return render_template(
-                    "index.html",
-                    result={"kind": "error", "title": "출주표 조회 실패",
-                            "message": err},
-                    **base)
+            fallback = _kcycle_official_fallback_result(ymd, meet, race_no, err)
+            if fallback:
+                return _cache_and_return(ck, render_template("index.html", result=fallback, **base), ttl=60)
+            return render_template(
+                "index.html",
+                result={"kind": "error", "title": "출주표 조회 실패",
+                        "message": err},
+                **base)
         else:
             info = {"stnd_yr": stnd_yr, "ymd": engine.norm_ymd(ymd),
                     "meet": meet, "race_no": race_no}
@@ -378,9 +396,11 @@ def predict():
     return _cache_and_return(ck, render_template("index.html", result=out, **base))
 
 
-def _cache_and_return(cache_key, rendered):
+def _cache_and_return(cache_key, rendered, ttl=None):
     """성공 결과만 캐싱. error/notice는 캐싱하지 않음 (다음 요청에서 재시도)."""
     _PREDICT_CACHE[cache_key] = {"rendered": rendered, "ts": time.time()}
+    if ttl is not None:
+        _PREDICT_CACHE[cache_key]["ttl"] = ttl
     return rendered
 
 
@@ -614,14 +634,7 @@ def _compute_base_prediction(sport, ymd, meet, race_no, key):
         if err and _is_no_race(err):
             return {"error": "no_race", "message": str(err)}
         if err:
-            demo = engine.load_demo_race()
-            if demo:
-                starters = demo["items"]; src = "demo"
-                info = {"stnd_yr": demo.get("stnd_yr"), "ymd": demo.get("race_ymd"),
-                        "meet": demo.get("meet_nm"), "race_no": demo.get("race_no"),
-                        "actual": demo.get("actual"), "fetch_err": err}
-            else:
-                return {"error": str(err)}
+            return {"error": str(err)}
         else:
             info = {"stnd_yr": stnd_yr, "ymd": engine.norm_ymd(ymd), "meet": meet, "race_no": race_no}
 

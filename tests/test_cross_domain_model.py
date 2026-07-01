@@ -159,6 +159,23 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 공식합의 픽")
         self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_all_first_agree")
 
+    def test_predict_uses_official_fallback_instead_of_demo_on_card_failure(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+        app_module._PREDICT_CACHE.clear()
+        app_module.app.config["TESTING"] = True
+        client = app_module.app.test_client()
+
+        with patch.dict(os.environ, {"DATAGOKR_SERVICE_KEY": "dummy"}, clear=False), \
+             patch.object(app_module.engine, "fetch_race_card", return_value=(None, "API 호출 실패: timeout")):
+            response = client.get("/predict?sport=keirin&date=2026-06-28&meet=광명&race_no=7")
+
+        html = response.data.decode("utf-8")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("KCYCLE 공식합의 폴백", html)
+        self.assertIn("KCYCLE 공식합의 86%급 고확신", html)
+        self.assertNotIn("데모 캐시 경주", html)
+
     def test_healthz_reports_rankingpredict_cache_status(self):
         engine._KCYCLE_RANKINGPREDICT = None
         engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0

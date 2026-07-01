@@ -258,6 +258,51 @@
           {% endif %}
         </div>
       </div>
+    {% elif result.kind == 'official_fallback' %}
+      {% set sig = result.signal %}
+      {% set info = result.info %}
+      <div class="card">
+        <h2>{{ result.title }}</h2>
+        <div class="meta">
+          {{ info.stnd_yr }} · {{ info.ymd }} · {{ info.meet|trim }} · {{ info.race_no }}R
+          <br><span class="src-demo">출주표 조회 실패{% if result.fetch_err %}: {{ result.fetch_err }}{% endif %}</span>
+        </div>
+        <div class="note notice">
+          <div class="ico">✓</div>
+          <div class="body">
+            <div class="ntitle">{{ sig.label }}</div>
+            <div>
+              1순위 {{ result.top_bno }}번
+              {% if result.order %} · 공식 순서 {{ result.order|join('-') }}{% endif %}
+              <br>검증 rule {{ sig.rule }} ·
+              {{ sig.validation_split }} top1 {{ '%.1f'|format(100*sig.expected_top1) }}% ·
+              coverage {{ '%.1f'|format(100*sig.coverage) }}%
+            </div>
+          </div>
+        </div>
+        {% if result.order|length >= 3 %}
+          <div class="picks" style="margin-top:12px">
+            <div class="pick">
+              <div class="code">단승<span class="gr 강">강</span></div>
+              <div class="mean">KCYCLE 공식합의 1순위</div>
+              <div class="sel">{{ result.order[0] }}번</div>
+              <div class="pr">selective top1 {{ '%.1f'|format(100*sig.expected_top1) }}%</div>
+            </div>
+            <div class="pick">
+              <div class="code">쌍승<span class="gr 중">중</span></div>
+              <div class="mean">공식 순서 후보</div>
+              <div class="sel">{{ result.order[0] }}-{{ result.order[1] }}</div>
+              <div class="pr">순서형은 top1보다 불확실</div>
+            </div>
+            <div class="pick">
+              <div class="code">삼쌍<span class="gr 약">약</span></div>
+              <div class="mean">공식 순서 후보</div>
+              <div class="sel">{{ result.order[0] }}-{{ result.order[1] }}-{{ result.order[2] }}</div>
+              <div class="pr">검증된 삼쌍 50% 신호 아님</div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
     {% elif result.kind == 'ok' %}
       {% set info = result.info %}
       {% set tc = result.top_conf %}

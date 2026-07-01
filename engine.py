@@ -228,6 +228,10 @@ def _kcycle_rankingpredict_signal(meta):
     return None
 
 
+def kcycle_rankingpredict_signal(meta):
+    return _kcycle_rankingpredict_signal(meta)
+
+
 def _apply_kcycle_rankingpredict_overlay(out, rows, meta):
     signal = _kcycle_rankingpredict_signal(meta)
     if not signal:
