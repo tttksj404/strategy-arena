@@ -117,6 +117,49 @@ class ConfidenceDisplayTest(unittest.TestCase):
         self.assertIn("롤링 재검증 top1 80.9%", html)
         self.assertIn("최저연도 78.7%", html)
 
+    def test_template_renders_official_support_fallback_as_middle_grade(self):
+        app = Flask(__name__)
+        template = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
+        result = {
+            "kind": "official_fallback",
+            "title": "KCYCLE 공식예상 폴백",
+            "info": {"stnd_yr": "2026", "ymd": "20260628", "meet": "광명", "race_no": "7"},
+            "signal": {
+                "tier": "kcycle_market3_support",
+                "label": "KCYCLE 시장3합의 보조픽",
+                "expected_top1": 0.6656,
+                "coverage": 0.7195,
+                "rule": "인기배당률·적중률5%·환급률5% 1착 일치",
+                "validation_split": "2025 select -> 2026 OOS 광명, 고확신 제외",
+            },
+            "order": ["3", "6", "7"],
+            "top_bno": "3",
+            "fetch_err": "timeout",
+        }
+
+        with app.app_context():
+            html = render_template_string(
+                template,
+                disclaimer="테스트 면책",
+                keirin_meets=["광명"],
+                kra_meets=["서울", "제주", "부경"],
+                today="2026-06-30",
+                has_key=True,
+                recent_days=[],
+                default_date="2026-06-30",
+                schedule_hint="",
+                result=result,
+                sport="keirin",
+                date="2026-06-28",
+                meet="광명",
+                race_no="7",
+            )
+
+        self.assertIn("KCYCLE 시장3합의 보조픽", html)
+        self.assertIn("OOS 광명, 고확신 제외 top1 66.6%", html)
+        self.assertIn('class="code">단승<span class="gr 중">중</span>', html)
+        self.assertIn("KCYCLE 보조합의 1순위", html)
+
 
 if __name__ == "__main__":
     unittest.main()

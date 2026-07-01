@@ -159,6 +159,9 @@ def _fetch_kcycle_rankingpredict_row(meta):
     def _ai(text):
         return [int(n) for n, _ in re.findall(r"(\d)\s+([0-9]+(?:\.[0-9]+)?)%", str(text or ""))][:3]
 
+    def _ai_probs(text):
+        return [float(p) for _, p in re.findall(r"(\d)\s+([0-9]+(?:\.[0-9]+)?)%", str(text or ""))][:3]
+
     meet = str(meta.get("meet") or "").strip()
     rno = str(meta.get("race_no") or "").strip().lstrip("0") or "0"
     failures = 0
@@ -188,6 +191,7 @@ def _fetch_kcycle_rankingpredict_row(meta):
                     "meet": meet,
                     "race_no": int(rno),
                     "ai_order": _ai(cells[1]),
+                    "ai_probs": _ai_probs(cells[1]),
                     "popular_order": _nums(cells[3])[:3] if len(cells) > 3 else [],
                     "hit5_order": _nums(cells[4])[:3] if len(cells) > 4 else [],
                     "return5_order": _nums(cells[5])[:3] if len(cells) > 5 else [],
@@ -210,7 +214,9 @@ def _kcycle_rankingpredict_signal(meta):
     source_names = ["ai_order", "popular_order", "hit5_order", "return5_order"]
     orders = [row.get(name) for name in source_names]
     valid_orders = [order for order in orders if isinstance(order, list) and len(order) >= 3]
-    if len(valid_orders) == 4 and len({order[0] for order in valid_orders}) == 1:
+    ai_probs = row.get("ai_probs") if isinstance(row.get("ai_probs"), list) else []
+    ai_p1 = float(ai_probs[0]) if ai_probs else 0.0
+    if len(valid_orders) == 4 and len({order[0] for order in valid_orders}) == 1 and ai_p1 >= 22.0:
         leader = int(valid_orders[0][0])
         trio_agree = len({tuple(order[:3]) for order in valid_orders}) == 1
         return {
@@ -225,6 +231,24 @@ def _kcycle_rankingpredict_signal(meta):
             "rule": "AI 예측·인기배당률·적중률5%·환급률5% 1착 모두 일치",
             "pair_order_expected": 0.4649 if trio_agree else None,
             "trio_order_expected": 0.2719 if trio_agree else None,
+            "source": row.get("source", "kcycle_cache"),
+        }
+    market_orders = [row.get(name) for name in ["popular_order", "hit5_order", "return5_order"]]
+    valid_market_orders = [order for order in market_orders if isinstance(order, list) and len(order) >= 3]
+    if len(valid_market_orders) == 3 and len({order[0] for order in valid_market_orders}) == 1:
+        leader = int(valid_market_orders[0][0])
+        return {
+            "tier": "kcycle_market3_support",
+            "label": "KCYCLE 시장3합의 보조픽",
+            "leader": leader,
+            "order": [int(x) for x in valid_market_orders[0][:3]],
+            "expected_top1": 0.6656,
+            "coverage": 0.7195,
+            "validation_n": 921,
+            "validation_split": "2025 select -> 2026 OOS 광명, 고확신 제외",
+            "rule": "인기배당률·적중률5%·환급률5% 1착 일치",
+            "pair_order_expected": 0.2762,
+            "trio_order_expected": 0.1371,
             "source": row.get("source", "kcycle_cache"),
         }
     return None
@@ -242,12 +266,20 @@ def _apply_kcycle_rankingpredict_overlay(out, rows, meta):
     leader_row = next((r for r in rows if int(r.get("bno", -1)) == int(signal["leader"])), None)
     if leader_row is not None:
         out["top"] = leader_row
-        out["top_conf"] = {
-            "grade": "강",
-            "label": "KCYCLE 공식합의 픽",
-            "icon": "✓",
-            "race_confidence": "고확신",
-        }
+        if signal["tier"] == "kcycle_all_first_agree":
+            out["top_conf"] = {
+                "grade": "강",
+                "label": "KCYCLE 공식합의 픽",
+                "icon": "✓",
+                "race_confidence": "고확신",
+            }
+        else:
+            out["top_conf"] = {
+                "grade": "중",
+                "label": "KCYCLE 보조합의 픽",
+                "icon": "▲",
+                "race_confidence": "보통",
+            }
     out["selective_conf"] = {
         "tier": signal["tier"],
         "label": signal["label"],

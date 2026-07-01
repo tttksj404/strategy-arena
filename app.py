@@ -183,7 +183,7 @@ def _kcycle_official_fallback_result(ymd, meet, race_no, fetch_err=None):
     order = [str(x) for x in signal.get("order", [])]
     return {
         "kind": "official_fallback",
-        "title": "KCYCLE 공식합의 폴백",
+        "title": "KCYCLE 공식예상 폴백",
         "message": "실시간 출주표 조회가 실패해 데모 경주를 섞지 않고 KCYCLE 공식 예상 신호만 표시합니다.",
         "info": info,
         "signal": signal,

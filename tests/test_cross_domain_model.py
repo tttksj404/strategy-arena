@@ -49,7 +49,7 @@ class CrossDomainModelTestCase(unittest.TestCase):
 
         output = engine.predict(
             demo["items"],
-            meta={"ymd": demo.get("race_ymd"), "meet": "광명", "race_no": "5"},
+            meta={"ymd": "1900.01.01", "meet": "광명", "race_no": "5"},
         )
         win_leader = max(output["rows"], key=lambda row: row["pwin"])
 
@@ -125,13 +125,26 @@ class CrossDomainModelTestCase(unittest.TestCase):
         engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 
         signal = engine._kcycle_rankingpredict_signal(
-            {"ymd": "2026.06.28", "meet": "광명", "race_no": "7"},
+            {"ymd": "2024.12.08", "meet": "광명", "race_no": "16"},
         )
 
         self.assertIsNotNone(signal)
         self.assertEqual(signal["tier"], "kcycle_all_first_agree")
-        self.assertEqual(signal["leader"], 3)
+        self.assertEqual(signal["leader"], 7)
         self.assertAlmostEqual(signal["expected_top1"], 0.8649)
+
+    def test_kcycle_rankingpredict_support_signal_handles_non_high_confidence(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        signal = engine._kcycle_rankingpredict_signal(
+            {"ymd": "2026.06.28", "meet": "광명", "race_no": "7"},
+        )
+
+        self.assertIsNotNone(signal)
+        self.assertEqual(signal["tier"], "kcycle_market3_support")
+        self.assertEqual(signal["leader"], 3)
+        self.assertAlmostEqual(signal["expected_top1"], 0.6656)
 
     def test_kcycle_rankingpredict_overlay_promotes_official_leader(self):
         engine._KCYCLE_RANKINGPREDICT = None
@@ -139,7 +152,33 @@ class CrossDomainModelTestCase(unittest.TestCase):
 
         rows = [
             {"bno": 1, "name": "모델선두", "pwin": 0.62, "pplc": 0.90},
-            {"bno": 3, "name": "공식합의", "pwin": 0.31, "pplc": 0.75},
+            {"bno": 7, "name": "공식합의", "pwin": 0.31, "pplc": 0.75},
+        ]
+        out = {
+            "rows": rows,
+            "picks": [],
+            "top": rows[0],
+            "top_conf": engine._top_confidence(rows[0], rows),
+            "selective_conf": {"tier": "normal"},
+        }
+
+        boosted = engine._apply_kcycle_rankingpredict_overlay(
+            out,
+            rows,
+            {"ymd": "2024.12.08", "meet": "광명", "race_no": "16"},
+        )
+
+        self.assertEqual(boosted["top"]["bno"], 7)
+        self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 공식합의 픽")
+        self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_all_first_agree")
+
+    def test_kcycle_support_overlay_uses_middle_confidence_label(self):
+        engine._KCYCLE_RANKINGPREDICT = None
+        engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+
+        rows = [
+            {"bno": 4, "name": "모델선두", "pwin": 0.42, "pplc": 0.76},
+            {"bno": 3, "name": "보조합의", "pwin": 0.31, "pplc": 0.69},
         ]
         out = {
             "rows": rows,
@@ -156,8 +195,9 @@ class CrossDomainModelTestCase(unittest.TestCase):
         )
 
         self.assertEqual(boosted["top"]["bno"], 3)
-        self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 공식합의 픽")
-        self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_all_first_agree")
+        self.assertEqual(boosted["top_conf"]["label"], "KCYCLE 보조합의 픽")
+        self.assertEqual(boosted["top_conf"]["race_confidence"], "보통")
+        self.assertEqual(boosted["selective_conf"]["tier"], "kcycle_market3_support")
 
     def test_predict_uses_official_fallback_instead_of_demo_on_card_failure(self):
         engine._KCYCLE_RANKINGPREDICT = None
@@ -172,8 +212,8 @@ class CrossDomainModelTestCase(unittest.TestCase):
 
         html = response.data.decode("utf-8")
         self.assertEqual(response.status_code, 200)
-        self.assertIn("KCYCLE 공식합의 폴백", html)
-        self.assertIn("KCYCLE 공식합의 86%급 고확신", html)
+        self.assertIn("KCYCLE 공식예상 폴백", html)
+        self.assertIn("KCYCLE 시장3합의 보조픽", html)
         self.assertNotIn("데모 캐시 경주", html)
 
     def test_fetch_race_card_reuses_keirin_card_page_cache(self):
