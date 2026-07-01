@@ -176,6 +176,30 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertIn("KCYCLE 공식합의 86%급 고확신", html)
         self.assertNotIn("데모 캐시 경주", html)
 
+    def test_fetch_race_card_reuses_keirin_card_page_cache(self):
+        engine.clear_keirin_card_page_cache()
+        page_items = [
+            {"race_ymd": "20260628", "meet_nm": "광명", "race_no": "5", "racer_no": "1"},
+            {"race_ymd": "20260628", "meet_nm": "광명", "race_no": "7", "racer_no": "3"},
+        ]
+
+        def fake_api_page(stnd_yr, page, rows, key, timeout=8):
+            if page == 1 and rows == 1:
+                return 2000, []
+            if page == 2 and rows == 1000:
+                return 2000, page_items
+            return 2000, []
+
+        with patch.object(engine, "_api_page", side_effect=fake_api_page) as api_page:
+            first, first_err = engine.fetch_race_card("2026", "2026-06-28", "광명", "5", "dummy")
+            second, second_err = engine.fetch_race_card("2026", "2026-06-28", "광명", "7", "dummy")
+
+        self.assertIsNone(first_err)
+        self.assertIsNone(second_err)
+        self.assertEqual(first[0]["race_no"], "5")
+        self.assertEqual(second[0]["race_no"], "7")
+        self.assertEqual(api_page.call_count, 2)
+
     def test_healthz_reports_rankingpredict_cache_status(self):
         engine._KCYCLE_RANKINGPREDICT = None
         engine._KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
@@ -189,6 +213,8 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertGreaterEqual(data["rankingpredict_cache"]["rows"], 10000)
         self.assertEqual(data["rankingpredict_cache"]["latest_date"], "20260628")
+        self.assertIn("pages", data["keirin_card_page_cache"])
+        self.assertGreaterEqual(data["keirin_card_page_cache"]["ttl"], 60)
 
     def test_kcycle_rankingpredict_live_failure_uses_cooldown(self):
         engine._KCYCLE_RANKINGPREDICT = {}

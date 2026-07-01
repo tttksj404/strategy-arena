@@ -241,6 +241,7 @@ _PREDICT_TTL = 1800
 # 진행 중인 fetch 중복 방지 (같은 경주 동시 요청 시 1번만 fetch)
 _PREDICT_FETCHING = {}
 _BASE_PREDICTION_CACHE = {}
+_PREWARM_STARTED = False
 
 _PREDICT_LOCK = threading.Lock()
 
@@ -271,6 +272,24 @@ def _compute_base_prediction_cached(sport, ymd, meet, race_no, key):
     out = _compute_base_prediction(sport, ymd, meet, race_no, key)
     _set_base_prediction_cache(sport, ymd, meet, race_no, out)
     return out
+
+
+def _bg_prewarm_keirin_pages():
+    key = _get_key()
+    if not key:
+        return
+    try:
+        engine.prewarm_keirin_card_pages(dt.date.today().year, key)
+    except Exception:  # noqa: BLE001
+        return
+
+
+def _start_keirin_card_prewarm():
+    global _PREWARM_STARTED
+    if _PREWARM_STARTED or os.environ.get("KEIRIN_PREWARM_ENABLED", "1") != "1":
+        return
+    _PREWARM_STARTED = True
+    threading.Thread(target=_bg_prewarm_keirin_pages, daemon=True).start()
 
 
 @app.route("/predict", methods=["GET", "POST"])
@@ -518,6 +537,7 @@ def healthz():
                 "keirin_cross_model": ("loaded" if cross else "fail"), "keirin_cross_err": cross_err,
                 "kra_model": ("loaded" if kra else "fail"), "kra_err": kra_err,
                 "rankingpredict_cache": engine.kcycle_rankingpredict_cache_status(),
+                "keirin_card_page_cache": engine.keirin_card_page_cache_status(),
                 "has_key": _has_key(), "deep": True}, (200 if ok else 500)
     model_ok = os.path.exists(engine.MODEL_PATH)
     cross_ok = os.path.exists(engine.CROSS_MODEL_PATH)
@@ -531,6 +551,7 @@ def healthz():
             "kra_model": "present" if kra_ok else "missing",
             "kra_err": None if kra_ok else "kra model file missing",
             "rankingpredict_cache": engine.kcycle_rankingpredict_cache_status(),
+            "keirin_card_page_cache": engine.keirin_card_page_cache_status(),
             "has_key": _has_key(), "deep": False}, (200 if ok else 500)
 
 
@@ -693,3 +714,6 @@ def _base_predict_horse(ymd, meet, race_no, base):
     out["sport_label"] = "경마(KRA)"
     out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
     return out
+
+
+_start_keirin_card_prewarm()

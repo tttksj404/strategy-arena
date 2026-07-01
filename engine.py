@@ -69,6 +69,8 @@ KEIRIN_MEETS = ["광명"]
 _KCYCLE_TMS_CACHE = {}
 _KCYCLE_RANKINGPREDICT = None
 _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
+_KEIRIN_CARD_PAGE_CACHE = {}
+_KEIRIN_CARD_PAGE_TTL = int(os.environ.get("KEIRIN_CARD_PAGE_TTL", "1800"))
 
 
 def _rankingpredict_key(ymd, meet, race_no):
@@ -485,6 +487,44 @@ def _api_page(stnd_yr, page, rows, key, timeout=8):
     return tc, items
 
 
+def clear_keirin_card_page_cache():
+    _KEIRIN_CARD_PAGE_CACHE.clear()
+
+
+def keirin_card_page_cache_status():
+    now = time.time()
+    live = [
+        hit for hit in _KEIRIN_CARD_PAGE_CACHE.values()
+        if (now - hit["ts"]) < _KEIRIN_CARD_PAGE_TTL
+    ]
+    return {"pages": len(live), "ttl": _KEIRIN_CARD_PAGE_TTL}
+
+
+def _api_page_cached(stnd_yr, page, rows, key, timeout=8):
+    ck = (str(stnd_yr), int(page), int(rows), CARD_URL)
+    now = time.time()
+    hit = _KEIRIN_CARD_PAGE_CACHE.get(ck)
+    if hit and (now - hit["ts"]) < _KEIRIN_CARD_PAGE_TTL:
+        return hit["data"]
+    data = _api_page(stnd_yr, page, rows, key, timeout=timeout)
+    _KEIRIN_CARD_PAGE_CACHE[ck] = {"data": data, "ts": now}
+    return data
+
+
+def prewarm_keirin_card_pages(stnd_yr, key, rows=1000, max_pages=2):
+    if not key:
+        return {"warmed": 0, "pages": 0}
+    tc, _ = _api_page_cached(stnd_yr, 1, 1, key)
+    if not tc:
+        return {"warmed": 1, "pages": keirin_card_page_cache_status()["pages"]}
+    last_page = math.ceil(tc / rows)
+    warmed = 1
+    for p in range(last_page, max(0, last_page - max_pages), -1):
+        _api_page_cached(stnd_yr, p, rows, key)
+        warmed += 1
+    return {"warmed": warmed, "pages": keirin_card_page_cache_status()["pages"]}
+
+
 def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=6):
     """data.go.kr 카드 API에서 단일 경주 출주표를 실시간 fetch (역순 페이지네이션).
 
@@ -501,7 +541,7 @@ def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=6):
     target = re.sub(r"\D", "", ymd)  # YYYYMMDD
     rno = str(race_no).strip().lstrip("0") or "0"
     try:
-        tc, _ = _api_page(stnd_yr, 1, 1, key)
+        tc, _ = _api_page_cached(stnd_yr, 1, 1, key)
     except Exception as e:  # noqa: BLE001
         return None, f"API 호출 실패: {type(e).__name__}: {e}"
     if tc == 0:
@@ -521,7 +561,7 @@ def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=6):
     for p in range(last_page, max(0, last_page - pages), -1):
         scanned.add(p)
         try:
-            _, items = _api_page(stnd_yr, p, rows, key)
+            _, items = _api_page_cached(stnd_yr, p, rows, key)
         except Exception as e:  # noqa: BLE001
             return None, f"API 페이지 {p} 실패: {type(e).__name__}: {e}"
         if not items:
@@ -540,7 +580,7 @@ def fetch_race_card(stnd_yr, ymd, meet, race_no, key, rows=1000, max_pages=6):
         if p in scanned:
             continue
         try:
-            _, items = _api_page(stnd_yr, p, rows, key)
+            _, items = _api_page_cached(stnd_yr, p, rows, key)
         except Exception as e:  # noqa: BLE001
             return None, f"API 페이지 {p} 실패: {type(e).__name__}: {e}"
         if not items:
@@ -569,7 +609,7 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=2):
     years.append(years[0] - 1)
     for yr in years:
         try:
-            tc, _ = _api_page(yr, 1, 1, key)
+            tc, _ = _api_page_cached(yr, 1, 1, key)
         except Exception:  # noqa: BLE001
             continue
         if not tc:
@@ -577,7 +617,7 @@ def _recent_keirin_days(meet, key, n, rows=1000, max_pages=2):
         last_page = math.ceil(tc / rows)
         for p in range(last_page, max(0, last_page - max_pages), -1):
             try:
-                _, items = _api_page(yr, p, rows, key)
+                _, items = _api_page_cached(yr, p, rows, key)
             except Exception:  # noqa: BLE001
                 break
             for i in items:
