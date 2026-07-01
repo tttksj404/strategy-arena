@@ -76,11 +76,12 @@ class ConfidenceDisplayTest(unittest.TestCase):
             "top": {"bno": 1, "name": "테스트선수", "pwin": 0.62, "pplc": 0.91},
             "top_conf": {"grade": "강", "label": "최고확신 픽", "icon": "🏆", "race_confidence": "고확신"},
             "selective_conf": {
-                "tier": "extreme",
-                "label": "82%급 고확신 선별",
-                "expected_top1": 0.8175,
-                "coverage": 0.2765,
-                "rule": "top_pplc >= 90.7%",
+                "tier": "kcycle_all_first_agree",
+                "label": "KCYCLE 공식합의 86%급 고확신",
+                "expected_top1": 0.8649,
+                "coverage": 0.0664,
+                "rule": "AI 예측·인기배당률·적중률5%·환급률5% 1착 모두 일치",
+                "validation_split": "2025 select -> 2026 OOS",
                 "rolling_weighted_top1": 0.8086,
                 "rolling_coverage": 0.3252,
                 "rolling_min_year_top1": 0.7871,
@@ -111,8 +112,8 @@ class ConfidenceDisplayTest(unittest.TestCase):
                 race_no="1",
             )
 
-        self.assertIn("82%급 고확신 선별", html)
-        self.assertIn("OOS top1 81.8%", html)
+        self.assertIn("KCYCLE 공식합의 86%급 고확신", html)
+        self.assertIn("2025 select -&gt; 2026 OOS top1 86.5%", html)
         self.assertIn("롤링 재검증 top1 80.9%", html)
         self.assertIn("최저연도 78.7%", html)
 

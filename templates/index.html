@@ -307,7 +307,7 @@
               <div class="ntitle">{{ result.selective_conf.label }}</div>
               <div>
                 검증 rule {{ result.selective_conf.rule }} ·
-                2021+ OOS top1 {{ '%.1f'|format(100*result.selective_conf.expected_top1) }}% ·
+                {{ result.selective_conf.validation_split|default('2021+ OOS') }} top1 {{ '%.1f'|format(100*result.selective_conf.expected_top1) }}% ·
                 coverage {{ '%.1f'|format(100*result.selective_conf.coverage) }}%
                 {% if result.selective_conf.rolling_weighted_top1 is defined %}
                   <br>롤링 재검증 top1 {{ '%.1f'|format(100*result.selective_conf.rolling_weighted_top1) }}%

@@ -54,6 +54,10 @@ CARD_URL = os.environ.get("KEIRIN_CARD_URL", DEFAULT_CARD_URL)
 
 # kcycle 실시간 배당 (IP 직접 접속 — DNS 회피; 검증 2026-06-30)
 KCYCLE_IP = "210.90.29.27"
+KCYCLE_RANKINGPREDICT_PATH = os.environ.get(
+    "KCYCLE_RANKINGPREDICT_PATH",
+    os.path.join(HERE, "data", "kcycle_rankingpredict_signals.json"),
+)
 
 CIRCLE = {chr(0x2460 + i): i + 1 for i in range(9)}
 
@@ -62,6 +66,173 @@ KEIRIN_MEETS = ["광명"]
 
 # (stnd_yr, week_tcnt, day_tcnt) → kcycle (tms, day) 매핑 캐시
 _KCYCLE_TMS_CACHE = {}
+_KCYCLE_RANKINGPREDICT = None
+
+
+def _rankingpredict_key(ymd, meet, race_no):
+    digits = re.sub(r"\D", "", str(ymd or ""))
+    if len(digits) < 8:
+        return None
+    rno = str(race_no or "").strip().lstrip("0") or "0"
+    return f"{digits[:8]}|{str(meet or '').strip()}|{int(rno)}"
+
+
+def _load_kcycle_rankingpredict_cache():
+    global _KCYCLE_RANKINGPREDICT
+    if _KCYCLE_RANKINGPREDICT is not None:
+        return _KCYCLE_RANKINGPREDICT
+    data = {}
+    try:
+        with open(KCYCLE_RANKINGPREDICT_PATH, encoding="utf-8") as f:
+            payload = json.load(f)
+        for row in payload.get("rows", []):
+            key = _rankingpredict_key(row.get("date"), row.get("meet"), row.get("race_no"))
+            if key:
+                data[key] = row
+    except Exception:  # noqa: BLE001
+        data = {}
+    _KCYCLE_RANKINGPREDICT = data
+    return data
+
+
+def _fetch_kcycle_rankingpredict_row(meta):
+    import ssl
+    from html.parser import HTMLParser
+
+    if os.environ.get("KCYCLE_RANKINGPREDICT_ENABLED", "0") != "1":
+        return None
+    if not meta:
+        return None
+    tms_day = _resolve_kcycle_tms(meta.get("stnd_yr"), meta.get("ymd"))
+    if not tms_day:
+        return None
+    year, tms, day = tms_day
+    if day == 0:
+        return None
+
+    class _TableParser(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.in_cell = False
+            self.current = ""
+            self.cells = []
+            self.rows = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag in ("td", "th"):
+                self.in_cell = True
+                self.current = ""
+
+        def handle_data(self, data):
+            if self.in_cell:
+                self.current += data + " "
+
+        def handle_endtag(self, tag):
+            if tag in ("td", "th") and self.in_cell:
+                self.cells.append(re.sub(r"\s+", " ", self.current).strip())
+                self.in_cell = False
+            if tag == "tr" and self.cells:
+                self.rows.append(self.cells)
+                self.cells = []
+
+    def _nums(text):
+        return [int(x) for x in re.findall(r"\d+", str(text or "")) if 1 <= int(x) <= 9]
+
+    def _ai(text):
+        return [int(n) for n, _ in re.findall(r"(\d)\s+([0-9]+(?:\.[0-9]+)?)%", str(text or ""))][:3]
+
+    meet = str(meta.get("meet") or "").strip()
+    rno = str(meta.get("race_no") or "").strip().lstrip("0") or "0"
+    for dt in [0, -1, 1, -2, 2]:
+        try:
+            url = f"https://{KCYCLE_IP}/rankingpredict/{year}/{tms+dt}/{day}"
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            req = urllib.request.Request(url, headers={
+                "Host": "www.kcycle.or.kr",
+                "User-Agent": "Mozilla/5.0",
+                "X-Requested-With": "XMLHttpRequest",
+            })
+            with urllib.request.urlopen(req, timeout=4, context=ctx) as response:
+                html = response.read().decode("utf-8", "replace")
+            parser = _TableParser()
+            parser.feed(html)
+            for cells in parser.rows:
+                if len(cells) < 6:
+                    continue
+                m = re.match(r"([가-힣]+)\s*0?(\d+)", cells[0])
+                if not m or not m.group(1).startswith(meet) or str(int(m.group(2))) != str(int(rno)):
+                    continue
+                return {
+                    "date": re.sub(r"\D", "", str(meta.get("ymd") or ""))[:8],
+                    "meet": meet,
+                    "race_no": int(rno),
+                    "ai_order": _ai(cells[1]),
+                    "popular_order": _nums(cells[3])[:3] if len(cells) > 3 else [],
+                    "hit5_order": _nums(cells[4])[:3] if len(cells) > 4 else [],
+                    "return5_order": _nums(cells[5])[:3] if len(cells) > 5 else [],
+                    "source": "kcycle_live",
+                }
+        except Exception:  # noqa: BLE001
+            continue
+    return None
+
+
+def _kcycle_rankingpredict_signal(meta):
+    key = _rankingpredict_key((meta or {}).get("ymd"), (meta or {}).get("meet"), (meta or {}).get("race_no"))
+    row = _load_kcycle_rankingpredict_cache().get(key) if key else None
+    if row is None:
+        row = _fetch_kcycle_rankingpredict_row(meta)
+    if not row:
+        return None
+    source_names = ["ai_order", "popular_order", "hit5_order", "return5_order"]
+    orders = [row.get(name) for name in source_names]
+    valid_orders = [order for order in orders if isinstance(order, list) and len(order) >= 3]
+    if len(valid_orders) == 4 and len({order[0] for order in valid_orders}) == 1:
+        leader = int(valid_orders[0][0])
+        trio_agree = len({tuple(order[:3]) for order in valid_orders}) == 1
+        return {
+            "tier": "kcycle_all_first_agree",
+            "label": "KCYCLE 공식합의 86%급 고확신",
+            "leader": leader,
+            "order": [int(x) for x in valid_orders[0][:3]],
+            "expected_top1": 0.8649,
+            "coverage": 0.0664,
+            "validation_n": 111,
+            "validation_split": "2025 select -> 2026 OOS",
+            "rule": "AI 예측·인기배당률·적중률5%·환급률5% 1착 모두 일치",
+            "pair_order_expected": 0.4649 if trio_agree else None,
+            "trio_order_expected": 0.2719 if trio_agree else None,
+            "source": row.get("source", "kcycle_cache"),
+        }
+    return None
+
+
+def _apply_kcycle_rankingpredict_overlay(out, rows, meta):
+    signal = _kcycle_rankingpredict_signal(meta)
+    if not signal:
+        return out
+    out["rankingpredict_signal"] = signal
+    leader_row = next((r for r in rows if int(r.get("bno", -1)) == int(signal["leader"])), None)
+    if leader_row is not None:
+        out["top"] = leader_row
+        out["top_conf"] = {
+            "grade": "강",
+            "label": "KCYCLE 공식합의 픽",
+            "icon": "✓",
+            "race_confidence": "고확신",
+        }
+    out["selective_conf"] = {
+        "tier": signal["tier"],
+        "label": signal["label"],
+        "expected_top1": signal["expected_top1"],
+        "coverage": signal["coverage"],
+        "rule": signal["rule"],
+        "validation_n": signal["validation_n"],
+        "validation_split": signal["validation_split"],
+    }
+    return out
 
 
 def _resolve_kcycle_tms(stnd_yr, ymd):
@@ -900,7 +1071,7 @@ def predict(starters, meta=None):
             if err is None:
                 rows[0]["_final_model"] = True if rows else False
                 picks = build_picks(rows)
-                return {
+                out = {
                     "rows": rows,
                     "picks": picks,
                     "top": rows[0],
@@ -909,6 +1080,7 @@ def predict(starters, meta=None):
                     "n_starters": len(rows),
                     "final_model": True,
                 }
+                return _apply_kcycle_rankingpredict_overlay(out, rows, meta)
     # 11R+ (결승전 아닌 상위 경주) 특화 모델
     if rno_i >= 11:
         # 특선 등급 + 11R+ → 가장 정확한 특화 모델 (69%)
@@ -921,19 +1093,20 @@ def predict(starters, meta=None):
                 rows, err = score_keirin_with_model(starters, sp)
                 if err is None:
                     picks = build_picks(rows)
-                    return {
+                    out = {
                         "rows": rows, "picks": picks, "top": rows[0],
                         "top_conf": _top_confidence(rows[0], rows),
                         "meta": meta or {}, "n_starters": len(rows),
                         "model_special_11r": True,
                     }
+                    return _apply_kcycle_rankingpredict_overlay(out, rows, meta)
         # 일반 11R+ 특화 (66%)
         m11, m11err = load_11r_model()
         if m11 is not None:
             rows, err = score_keirin_with_model(starters, m11)
             if err is None:
                 picks = build_picks(rows)
-                return {
+                out = {
                     "rows": rows,
                     "picks": picks,
                     "top": rows[0],
@@ -942,12 +1115,13 @@ def predict(starters, meta=None):
                     "n_starters": len(rows),
                     "model_11r": True,
                 }
+                return _apply_kcycle_rankingpredict_overlay(out, rows, meta)
     cross, cross_err = load_cross_model()
     if cross is not None:
         rows, err = score_keirin_with_model(starters, cross, meta=meta)
         if err is None:
             picks = build_picks(rows)
-            return {
+            out = {
                 "rows": rows,
                 "picks": picks,
                 "top": rows[0],
@@ -957,6 +1131,7 @@ def predict(starters, meta=None):
                 "n_starters": len(rows),
                 "model_cross_domain": True,
             }
+            return _apply_kcycle_rankingpredict_overlay(out, rows, meta)
 
     # 일반 모델
     rows, err = score_keirin(starters, meta=meta)
@@ -964,7 +1139,7 @@ def predict(starters, meta=None):
         return {"error": err}
 
     picks = build_picks(rows)
-    return {
+    out = {
         "rows": rows,
         "picks": picks,
         "top": rows[0],
@@ -972,6 +1147,7 @@ def predict(starters, meta=None):
         "meta": meta or {},
         "n_starters": len(rows),
     }
+    return _apply_kcycle_rankingpredict_overlay(out, rows, meta)
 
 
 # ═══════════════════════ 경마(KRA) ═══════════════════════
