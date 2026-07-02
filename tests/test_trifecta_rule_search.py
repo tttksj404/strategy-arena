@@ -52,6 +52,24 @@ class TrifectaRuleSearchTestCase(unittest.TestCase):
 
         self.assertEqual(len(names), len(set(names)))
         self.assertIn("all", names)
+        self.assertTrue(any(name.startswith("xdom_") for name in names))
+
+    def test_xdom_methods_are_real_prediction_methods(self):
+        board = make_trifecta_candidate_board()
+        df = search.frame_from_records([
+            {
+                "date": "20260628",
+                "stnd_yr": "2026",
+                "actual_order": "5-1-7",
+                "board_count": len(board),
+                "board": board,
+            }
+        ])
+
+        self.assertGreaterEqual(len(search.XDOM_METHODS), 5)
+        for method in search.XDOM_METHODS:
+            self.assertIn(f"hit_{method}", df.columns)
+            self.assertTrue(bool(df.loc[0, f"hit_{method}"]))
 
     def test_eval_candidate_requires_holdout_year_coverage(self):
         hits = np.array([True] * 60 + [True] * 5 + [True] * 5 + [True] * 5)

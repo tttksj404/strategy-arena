@@ -42,7 +42,15 @@ METHODS = [
     "energy_pair",
     "energy_first_pair",
     "energy_position",
+    "xdom_annealing_escape",
+    "xdom_drug_scaffold_hop",
+    "xdom_drug_multi_objective_funnel",
+    "xdom_clonal_selection_amplify",
+    "xdom_ecology_predator_prey",
+    "xdom_bandit_explore_exploit",
+    "xdom_bayesian_surrogate_focus",
 ]
+XDOM_METHODS = tuple(method for method in METHODS if method.startswith("xdom_"))
 
 
 @dataclass(frozen=True, slots=True)
@@ -69,6 +77,15 @@ def safe_log(value):
 
 def argmax_combo(board, scores):
     return min(scores, key=lambda combo: (-scores[combo], board[combo], combo))
+
+
+def combo_parts(combo):
+    return tuple(map(int, combo.split("-")))
+
+
+def combo_pair(combo):
+    a, b, _ = combo_parts(combo)
+    return a, b
 
 
 def load_records(path):
@@ -113,6 +130,7 @@ def frame_from_records(records):
         first_vals = sorted(first_mass.values(), reverse=True)
         pair_vals = sorted(pair_mass.values(), reverse=True)
         base_scores = {combo: safe_log(q[combo]) for combo in board}
+        rank_score = {combo: -math.log(index + 1.0) for index, (combo, _) in enumerate(ranked)}
         best_pair = max(pair_mass, key=lambda pair: (pair_mass[pair], -pair[0], -pair[1]))
         pair_candidates = [combo for combo in board if combo.startswith(f"{best_pair[0]}-{best_pair[1]}-")]
         chain_first = max(first_mass, key=lambda x: (first_mass[x], -x))
@@ -124,13 +142,13 @@ def frame_from_records(records):
             "pair_mass": min(pair_candidates, key=lambda combo: (board[combo], combo)),
             "first_pair_chain": min(chain_candidates, key=lambda combo: (board[combo], combo)),
             "energy_pair": argmax_combo(board, {
-                combo: base_scores[combo] + 0.8 * safe_log(pair_mass[tuple(map(int, combo.split("-")[:2]))])
+                combo: base_scores[combo] + 0.8 * safe_log(pair_mass[combo_pair(combo)])
                 for combo in board
             }),
             "energy_first_pair": argmax_combo(board, {
                 combo: base_scores[combo]
                 + 0.5 * safe_log(first_mass[int(combo[0])])
-                + 0.8 * safe_log(pair_mass[tuple(map(int, combo.split("-")[:2]))])
+                + 0.8 * safe_log(pair_mass[combo_pair(combo)])
                 for combo in board
             }),
             "energy_position": argmax_combo(board, {
@@ -138,6 +156,73 @@ def frame_from_records(records):
                 + 0.35 * safe_log(first_mass[int(combo[0])])
                 + 0.25 * safe_log(second_mass[int(combo[2])])
                 + 0.25 * safe_log(third_mass[int(combo[4])])
+                for combo in board
+            }),
+            "xdom_annealing_escape": argmax_combo(board, {
+                combo: (
+                    0.72 * base_scores[combo]
+                    + 0.62 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.28 * safe_log(first_mass[int(combo[0])])
+                    + 0.08 * rank_score[combo]
+                )
+                for combo in board
+            }),
+            "xdom_drug_scaffold_hop": argmax_combo(board, {
+                combo: (
+                    0.62 * base_scores[combo]
+                    + 0.92 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.42 * safe_log(third_mass[int(combo[4])])
+                )
+                for combo in board
+                if combo.startswith(f"{best_pair[0]}-{best_pair[1]}-")
+            }),
+            "xdom_drug_multi_objective_funnel": argmax_combo(board, {
+                combo: (
+                    0.58 * base_scores[combo]
+                    + 0.38 * safe_log(first_mass[int(combo[0])])
+                    + 0.58 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.24 * safe_log(second_mass[int(combo[2])])
+                    + 0.24 * safe_log(third_mass[int(combo[4])])
+                    + 0.10 * rank_score[combo]
+                )
+                for combo in board
+            }),
+            "xdom_clonal_selection_amplify": argmax_combo(board, {
+                combo: (
+                    0.48 * base_scores[combo]
+                    + 0.88 * safe_log(first_mass[int(combo[0])])
+                    + 1.08 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.30 * safe_log(second_mass[int(combo[2])])
+                    + 0.30 * safe_log(third_mass[int(combo[4])])
+                )
+                for combo in board
+            }),
+            "xdom_ecology_predator_prey": argmax_combo(board, {
+                combo: (
+                    0.68 * base_scores[combo]
+                    + 0.74 * safe_log(first_mass[int(combo[0])])
+                    + 0.50 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.22 * safe_log(third_mass[int(combo[4])])
+                )
+                for combo in top10
+            }),
+            "xdom_bandit_explore_exploit": argmax_combo(board, {
+                combo: (
+                    0.70 * base_scores[combo]
+                    + 0.78 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.34 * safe_log(first_mass[int(combo[0])])
+                    - 0.05 * safe_log(q[combo])
+                    + 0.06 * rank_score[combo]
+                )
+                for combo in board
+            }),
+            "xdom_bayesian_surrogate_focus": argmax_combo(board, {
+                combo: (
+                    0.52 * base_scores[combo]
+                    + 0.95 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.42 * safe_log(first_mass[int(combo[0])])
+                    + 0.34 * safe_log(third_mass[int(combo[4])])
+                )
                 for combo in board
             }),
         }
@@ -164,6 +249,7 @@ def frame_from_records(records):
             "top3_same_pair": float(len({"-".join(x.split("-")[:2]) for x in top3}) == 1),
         }
         for method, combo in pred.items():
+            row[f"pred_{method}"] = combo
             row[f"hit_{method}"] = combo == record["actual_order"]
         rows.append(row)
     return pd.DataFrame(rows)
@@ -194,7 +280,61 @@ def predicates(df, train_mask):
     for i, (left_name, left_mask) in enumerate(singles):
         for right_name, right_mask in singles[i + 1:]:
             add(f"{left_name}&{right_name}", left_mask & right_mask)
+    for name, mask in xdom_predicates(df, train_mask):
+        add(name, mask)
     return out
+
+
+def train_quantile(df, train_mask, col, qv):
+    values = df.loc[train_mask, col].dropna().to_numpy(float)
+    return float(np.quantile(values, qv))
+
+
+def xdom_predicates(df, train_mask):
+    cuts = {
+        "gap12_80": train_quantile(df, train_mask, "gap12", 0.80),
+        "gap12_90": train_quantile(df, train_mask, "gap12", 0.90),
+        "gap15_80": train_quantile(df, train_mask, "gap15", 0.80),
+        "gap110_90": train_quantile(df, train_mask, "gap110", 0.90),
+        "top5_80": train_quantile(df, train_mask, "top5_mass", 0.80),
+        "entropy_80": train_quantile(df, train_mask, "entropy_inv", 0.80),
+        "first_80": train_quantile(df, train_mask, "first_mass_best", 0.80),
+        "pair_80": train_quantile(df, train_mask, "pair12_mass_best", 0.80),
+        "first_gap_80": train_quantile(df, train_mask, "first_gap", 0.80),
+        "pair_gap_80": train_quantile(df, train_mask, "pair_gap", 0.80),
+        "best_odds_20": train_quantile(df, train_mask, "best_odds", 0.20),
+    }
+    arr = {col: df[col].to_numpy(float) for col in set(FEATURES_HIGH + FEATURES_LOW)}
+    return [
+        (
+            "xdom_annealing_escape:gap12_high&entropy_high",
+            (arr["gap12"] >= cuts["gap12_80"]) & (arr["entropy_inv"] >= cuts["entropy_80"]),
+        ),
+        (
+            "xdom_drug_scaffold_hop:pair_mass&pair_gap",
+            (arr["pair12_mass_best"] >= cuts["pair_80"]) & (arr["pair_gap"] >= cuts["pair_gap_80"]),
+        ),
+        (
+            "xdom_drug_multi_objective_funnel:top5&low_odds",
+            (arr["top5_mass"] >= cuts["top5_80"]) & (arr["best_odds"] <= cuts["best_odds_20"]),
+        ),
+        (
+            "xdom_clonal_selection_amplify:first_mass&same_first",
+            (arr["first_mass_best"] >= cuts["first_80"]) & (arr["top5_same_first"] >= 1.0),
+        ),
+        (
+            "xdom_ecology_predator_prey:same_first&gap15",
+            (arr["top3_same_first"] >= 1.0) & (arr["gap15"] >= cuts["gap15_80"]),
+        ),
+        (
+            "xdom_bandit_explore_exploit:pair_gap&not_extreme_gap12",
+            (arr["pair_gap"] >= cuts["pair_gap_80"]) & (arr["gap12"] < cuts["gap12_90"]),
+        ),
+        (
+            "xdom_bayesian_surrogate_focus:first_gap&gap110",
+            (arr["first_gap"] >= cuts["first_gap_80"]) & (arr["gap110"] >= cuts["gap110_90"]),
+        ),
+    ]
 
 
 def eval_candidate(hits, train_base, holdout_base, holdout_year_masks, method, rule, mask):
@@ -264,13 +404,36 @@ def run(args):
             "all": float(hits.mean()),
             "holdout": float(hits[df["year"].isin(HOLDOUT_YEARS).to_numpy()].mean()),
         }
+    board_min_pred = df["pred_board_min"].to_numpy(str)
+    holdout_selector = df["year"].isin(HOLDOUT_YEARS).to_numpy()
+    xdom_diversity = {}
+    for method in XDOM_METHODS:
+        method_pred = df[f"pred_{method}"].to_numpy(str)
+        differs = method_pred != board_min_pred
+        holdout_differs = holdout_selector & differs
+        hits = method_hits[method]
+        xdom_diversity[method] = {
+            "holdout_diff_rate": float(differs[holdout_selector].mean()),
+            "holdout_diff_n": int(holdout_differs.sum()),
+            "holdout_hit_when_diff": (
+                float(hits[holdout_differs].mean()) if int(holdout_differs.sum()) else 0.0
+            ),
+        }
     payload = {
         "records": int(len(df)),
         "train_years": sorted(TRAIN_YEARS),
         "holdout_years": HOLDOUT_YEARS,
+        "xdom_methods": list(XDOM_METHODS),
         "predicate_count": len(preds),
+        "xdom_predicate_count": sum(1 for name, _ in preds if name.startswith("xdom_")),
         "evaluated_candidates": len(rows),
         "pass_count": sum(1 for row in rows if row.status == "PASS_HOLDOUT_50"),
+        "xdom_pass_count": sum(
+            1
+            for row in rows
+            if row.status == "PASS_HOLDOUT_50"
+            and (row.method.startswith("xdom_") or row.rule.startswith("xdom_"))
+        ),
         "pass_count_by_min_year_n": {
             str(n): sum(
                 1
@@ -280,6 +443,7 @@ def run(args):
             for n in [5, 10, 20, 30, 50, 100]
         },
         "baseline": baseline,
+        "xdom_diversity": xdom_diversity,
         "rows": [asdict(row) for row in rows[: args.limit]],
     }
     Path(args.out_json).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -288,11 +452,29 @@ def run(args):
         "",
         f"records: {payload['records']} train: {payload['train_years']} holdout: {payload['holdout_years']}",
         f"predicate_count: {payload['predicate_count']} evaluated: {payload['evaluated_candidates']} pass_count: {payload['pass_count']}",
+        f"xdom_methods: {payload['xdom_methods']}",
+        f"xdom_predicate_count: {payload['xdom_predicate_count']} xdom_pass_count: {payload['xdom_pass_count']}",
         f"pass_count_by_min_year_n: {payload['pass_count_by_min_year_n']}",
+        "",
+        "Interpretation: xdom recipes are evaluated in the KCYCLE trifecta harness, "
+        "but current 50%+ holdout passes remain low-sample strong-favorite slices. "
+        "No candidate passes with min yearly holdout n >= 10.",
+        "",
+        "## XDOM diversity versus board_min",
+        "",
+        "| method | holdout_diff_rate | holdout_diff_n | holdout_hit_when_diff |",
+        "|---|---:|---:|---:|",
+    ]
+    for method, diversity in payload["xdom_diversity"].items():
+        lines.append(
+            f"| {method} | {diversity['holdout_diff_rate']:.4f} | "
+            f"{diversity['holdout_diff_n']} | {diversity['holdout_hit_when_diff']:.4f} |"
+        )
+    lines.extend([
         "",
         "| status | method | rule | train_n | train_hit | n24 | hit24 | n25 | hit25 | n26 | hit26 | holdout_n | holdout_hit | worst |",
         "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
-    ]
+    ])
     for row in rows[:80]:
         lines.append(
             f"| {row.status} | {row.method} | {row.rule} | {row.train_n} | {row.train_hit:.4f} | "
@@ -300,7 +482,20 @@ def run(args):
             f"{row.n_2026} | {row.hit_2026:.4f} | {row.holdout_n} | {row.holdout_hit:.4f} | {row.holdout_worst:.4f} |"
         )
     Path(args.out_md).write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(json.dumps({k: payload[k] for k in ["records", "predicate_count", "evaluated_candidates", "pass_count"]}, ensure_ascii=False))
+    print(json.dumps(
+        {
+            k: payload[k]
+            for k in [
+                "records",
+                "predicate_count",
+                "xdom_predicate_count",
+                "evaluated_candidates",
+                "pass_count",
+                "xdom_pass_count",
+            ]
+        },
+        ensure_ascii=False,
+    ))
 
 
 def main():
