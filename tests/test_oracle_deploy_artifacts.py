@@ -53,6 +53,19 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
         self.assertIn("market_risk.level=odds_live", smoke_script)
         self.assertIn("live_market_blocked risk", smoke_script)
 
+    def test_korea_vps_deploy_script_is_provider_agnostic_and_fail_closed(self):
+        deploy_script = (ROOT / "deploy" / "korea-vps" / "deploy.sh").read_text(encoding="utf-8")
+
+        self.assertIn("VPS_HOST is required", deploy_script)
+        self.assertIn("Korea VPS SSH is not reachable", deploy_script)
+        self.assertIn("Docker Engine and the Docker Compose plugin are required", deploy_script)
+        self.assertIn("resolve_datagokr_key", deploy_script)
+        self.assertIn("$HOME/keirin/.env", deploy_script)
+        self.assertIn("$HOME/kra/.env", deploy_script)
+        self.assertIn("KCYCLE_ENABLED=1", deploy_script)
+        self.assertIn("deploy/oracle/docker-compose.yml", deploy_script)
+        self.assertIn("deploy/oracle/smoke.sh", deploy_script)
+
 
 if __name__ == "__main__":
     unittest.main()
