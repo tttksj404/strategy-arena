@@ -61,6 +61,10 @@ KCYCLE_RANKINGPREDICT_PATH = os.environ.get(
     os.path.join(HERE, "data", "kcycle_rankingpredict_signals.json"),
 )
 KCYCLE_TRIFECTA_ENABLED = os.environ.get("KCYCLE_TRIFECTA_ENABLED", "1") == "1"
+KCYCLE_TRIFECTA_SNAPSHOT_PATH = os.environ.get(
+    "KCYCLE_TRIFECTA_SNAPSHOT_PATH",
+    os.path.join(HERE, "data", "kcycle_trifecta_snapshots.jsonl"),
+)
 
 CIRCLE = {chr(0x2460 + i): i + 1 for i in range(9)}
 
@@ -73,6 +77,7 @@ _KCYCLE_RANKINGPREDICT = None
 _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 _KEIRIN_CARD_PAGE_CACHE = {}
 _KEIRIN_CARD_PAGE_TTL = int(os.environ.get("KEIRIN_CARD_PAGE_TTL", "1800"))
+_KCYCLE_TRIFECTA_SNAPSHOT_LAST = {}
 
 
 class _KcycleTableTextParser(HTMLParser):
@@ -1850,6 +1855,59 @@ def _market_trifecta_signal(trifecta_board):
     }
 
 
+def _trifecta_board_hash(trifecta_board):
+    import hashlib
+    payload = json.dumps(
+        sorted((str(combo), float(odds)) for combo, odds in (trifecta_board or {}).items()),
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def save_kcycle_trifecta_snapshot(stnd_yr, ymd, meet, race_no, trifecta_board, fetched_at=None, signal=None, source="live_decision"):
+    if os.environ.get("KCYCLE_TRIFECTA_SNAPSHOT_ENABLED", "1") != "1":
+        return False
+    valid = {
+        str(combo): float(odds)
+        for combo, odds in (trifecta_board or {}).items()
+        if re.fullmatch(r"[1-7]-[1-7]-[1-7]", str(combo)) and odds and float(odds) > 0
+    }
+    if len(valid) < 150:
+        return False
+    import datetime as _dt
+    board_hash = _trifecta_board_hash(valid)
+    ymd_key = re.sub(r"\D", "", str(ymd or ""))[:8]
+    key = (ymd_key, str(meet or ""), str(race_no or ""), board_hash)
+    now = time.time()
+    min_interval = float(os.environ.get("KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC", "60") or "0")
+    last = _KCYCLE_TRIFECTA_SNAPSHOT_LAST.get(key)
+    if last is not None and now - last < min_interval:
+        return False
+    _KCYCLE_TRIFECTA_SNAPSHOT_LAST[key] = now
+    path = os.environ.get("KCYCLE_TRIFECTA_SNAPSHOT_PATH", KCYCLE_TRIFECTA_SNAPSHOT_PATH)
+    best20 = sorted(valid.items(), key=lambda kv: (kv[1], kv[0]))[:20]
+    record = {
+        "schema": "kcycle_trifecta_snapshot_v1",
+        "captured_at": _dt.datetime.now().isoformat(timespec="seconds"),
+        "fetched_at": fetched_at,
+        "source": source,
+        "stnd_yr": str(stnd_yr or ""),
+        "date": ymd_key or str(ymd or ""),
+        "meet": str(meet or "광명"),
+        "race_no": str(race_no or ""),
+        "board_count": len(valid),
+        "board_hash": board_hash,
+        "best20": best20,
+        "signal": _live_signal_payload(signal) if signal else None,
+        "board": dict(sorted(valid.items())),
+    }
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
+    return True
+
+
 def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
     """실시간 판단. base_model_out은 이미 계산된 engine.predict/predict_kra 결과.
     반환 dict:
@@ -1925,6 +1983,15 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             try:
                 trifecta_board, trifecta_fetched_at = fetch_kcycle_trifecta_board_with_ts(stnd_yr, ymd, race_no)
                 trifecta_signal = _market_trifecta_signal(trifecta_board)
+                save_kcycle_trifecta_snapshot(
+                    stnd_yr,
+                    ymd,
+                    meet,
+                    race_no,
+                    trifecta_board,
+                    fetched_at=trifecta_fetched_at,
+                    signal=trifecta_signal,
+                )
                 fetched_at = fetched_at or trifecta_fetched_at
             except Exception:
                 trifecta_signal = None

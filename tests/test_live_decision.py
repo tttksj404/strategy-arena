@@ -3,6 +3,7 @@
 import json
 import os
 import sys
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -163,6 +164,76 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertAlmostEqual(decision["trifecta_signal"]["expected_trio_exact"], 0.5)
         self.assertIn("robust 미통과", decision["message"])
         self.assertEqual(decision["poll_delay_ms"], 5000)
+
+    def test_trifecta_snapshot_writer_appends_and_dedupes(self):
+        app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "snapshots.jsonl")
+            with patch.dict(os.environ, {
+                "KCYCLE_TRIFECTA_SNAPSHOT_PATH": path,
+                "KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC": "60",
+            }, clear=False):
+                signal = app_module.engine._market_trifecta_signal(make_trifecta_candidate_board())
+                first = app_module.engine.save_kcycle_trifecta_snapshot(
+                    "2026", "20260628", "광명", "7",
+                    make_trifecta_candidate_board(),
+                    fetched_at="2026-07-02T12:00:00",
+                    signal=signal,
+                    source="test",
+                )
+                second = app_module.engine.save_kcycle_trifecta_snapshot(
+                    "2026", "20260628", "광명", "7",
+                    make_trifecta_candidate_board(),
+                    fetched_at="2026-07-02T12:00:01",
+                    signal=signal,
+                    source="test",
+                )
+
+            self.assertTrue(first)
+            self.assertFalse(second)
+            lines = open(path, encoding="utf-8").read().splitlines()
+            self.assertEqual(len(lines), 1)
+            record = json.loads(lines[0])
+            self.assertEqual(record["schema"], "kcycle_trifecta_snapshot_v1")
+            self.assertEqual(record["board_count"], 210)
+            self.assertEqual(record["signal"]["tier"], "market_trifecta_50_candidate")
+            self.assertIn("5-1-7", record["board"])
+
+    def test_live_decision_saves_trifecta_snapshot_when_board_is_available(self):
+        app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()
+        base = {
+            "kind": "ok",
+            "rows": [
+                {"bno": 1, "name": "모델선두", "pwin": 0.62, "pplc": 0.86},
+                {"bno": 5, "name": "시장삼쌍", "pwin": 0.20, "pplc": 0.70},
+                {"bno": 7, "name": "상대", "pwin": 0.18, "pplc": 0.64},
+            ],
+            "picks": [],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "snapshots.jsonl")
+            with patch.dict(os.environ, {
+                "KCYCLE_ENABLED": "1",
+                "KCYCLE_TRIFECTA_SNAPSHOT_PATH": path,
+                "KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC": "0",
+            }, clear=False), \
+                 patch.object(app_module.engine, "fetch_kcycle_odds_with_ts", return_value=(
+                     {1: 4.2, 5: 1.2, 7: 9.5},
+                     "2026-07-02T12:00:00",
+                 )), \
+                 patch.object(app_module.engine, "fetch_kcycle_trifecta_board_with_ts", return_value=(
+                     make_trifecta_candidate_board(),
+                     "2026-07-02T12:00:00",
+                 )):
+                decision = app_module.engine.compute_live_decision(
+                    "keirin", "2026-06-28", "광명", "7", base_model_out=base,
+                )
+
+            self.assertEqual(decision["trifecta_signal"]["tier"], "market_trifecta_50_candidate")
+            record = json.loads(open(path, encoding="utf-8").readline())
+            self.assertEqual(record["source"], "live_decision")
+            self.assertEqual(record["date"], "20260628")
+            self.assertEqual(record["race_no"], "7")
 
     def test_live_decision_keeps_official_signal_when_card_model_fails(self):
         with patch.dict(os.environ, {"KCYCLE_ENABLED": "0"}, clear=False):
