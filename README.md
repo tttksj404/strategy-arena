@@ -19,8 +19,21 @@ gunicorn app:app --bind 0.0.0.0:$PORT
 ```
 종목·날짜·경주장·경주번호 선택 → 출주표 실시간 fetch → 7권종 예측 픽 + 마번별 win·연대 확률.
 
-## 배포 (Render)
-`render.yaml`(gunicorn app:app) 자동배포. **Render → Environment 에 `DATAGOKR_SERVICE_KEY` 설정 필수**(실시간 데이터용; 미설정 시 데모만).
+## 배포
+
+### Oracle Korea 권장
+KCYCLE 실시간 배당을 쓰려면 Oracle Seoul/Chuncheon 같은 한국 리전 배포가 기본이다.
+
+```bash
+cp deploy/oracle/.env.oracle.example deploy/oracle/.env.oracle
+# deploy/oracle/.env.oracle 에 DATAGOKR_SERVICE_KEY 설정
+docker compose -f deploy/oracle/docker-compose.yml --env-file deploy/oracle/.env.oracle up -d --build
+```
+
+상세 이전 절차와 리스크 closure: `docs/oracle_migration_runbook.md`.
+
+### Render fallback
+`render.yaml`(gunicorn app:app) 자동배포. **Render → Environment 에 `DATAGOKR_SERVICE_KEY` 설정 필수**(실시간 데이터용; 미설정 시 데모만). Render는 한국 리전이 없어 KCYCLE live market은 `market_used=false`로 폴백될 수 있다.
 
 ## 제약
 - 경륜 = 광명만 (출주표 API가 광명만 제공). 경마 = 서울·제주·부경.

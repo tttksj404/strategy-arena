@@ -1,0 +1,72 @@
+services:
+  app:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      PORT: "8000"
+      KCYCLE_ENABLED: "1"
+      KCYCLE_TRIFECTA_ENABLED: "1"
+      KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl
+      KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC: "${KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC:-10}"
+    restart: unless-stopped
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+      - strategy_backups:/app/backups
+    expose:
+      - "8000"
+
+  caddy:
+    image: caddy:2.9-alpine
+    depends_on:
+      - app
+    env_file:
+      - .env.oracle
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  collector:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      KCYCLE_ENABLED: "1"
+      KCYCLE_TRIFECTA_ENABLED: "1"
+      KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl
+      KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC: "${KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC:-10}"
+      KCYCLE_COLLECTOR_INTERVAL_SEC: "${KCYCLE_COLLECTOR_INTERVAL_SEC:-15}"
+    restart: unless-stopped
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+    command: ["sh", "-c", "while true; do scripts/run_kcycle_trifecta_collector_if_race_window.sh >> /app/logs/collector.log 2>&1 || true; sleep $${KCYCLE_COLLECTOR_INTERVAL_SEC:-15}; done"]
+
+  search-loop:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl
+      SEARCH_LOOP_INTERVAL_SEC: "${SEARCH_LOOP_INTERVAL_SEC:-3600}"
+    restart: unless-stopped
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+    command: ["sh", "-c", "while true; do scripts/run_prediction_search_loop.sh >> /app/logs/search-loop.log 2>&1 || true; sleep $${SEARCH_LOOP_INTERVAL_SEC:-3600}; done"]
+
+volumes:
+  strategy_data:
+  strategy_logs:
+  strategy_backups:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import unittest
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class OracleDeployArtifactsTestCase(unittest.TestCase):
+    def test_compose_enables_kcycle_live_and_persistent_search_outputs(self):
+        compose = (ROOT / "deploy" / "oracle" / "docker-compose.yml").read_text(encoding="utf-8")
+
+        self.assertIn("KCYCLE_ENABLED: \"1\"", compose)
+        self.assertIn("KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl", compose)
+        self.assertIn("collector:", compose)
+        self.assertIn("search-loop:", compose)
+        self.assertIn("strategy_data:/app/data", compose)
+        self.assertIn("restart: unless-stopped", compose)
+
+    def test_oracle_env_template_never_contains_real_secret(self):
+        env_template = (ROOT / "deploy" / "oracle" / ".env.oracle.example").read_text(encoding="utf-8")
+
+        self.assertIn("DATAGOKR_SERVICE_KEY=", env_template)
+        self.assertNotIn("serviceKey=", env_template)
+        self.assertNotIn("apikey", env_template.lower())
+
+    def test_deploy_script_requires_explicit_oracle_host(self):
+        deploy_script = (ROOT / "deploy" / "oracle" / "deploy.sh").read_text(encoding="utf-8")
+
+        self.assertIn("ORACLE_HOST is required", deploy_script)
+        self.assertIn("docker compose -f deploy/oracle/docker-compose.yml", deploy_script)
+        self.assertIn("--exclude \"deploy/oracle/.env.oracle\"", deploy_script)
+
+    def test_prediction_search_loop_writes_to_persistent_data_volume(self):
+        loop_script = (ROOT / "scripts" / "run_prediction_search_loop.sh").read_text(encoding="utf-8")
+
+        self.assertIn("--snapshots \"$snapshot_path\"", loop_script)
+        self.assertIn("--out-json data/kcycle_trifecta_rule_search_results.json", loop_script)
+        self.assertIn("--out-md data/kcycle_trifecta_rule_search_results.md", loop_script)
+
+
+if __name__ == "__main__":
+    unittest.main()

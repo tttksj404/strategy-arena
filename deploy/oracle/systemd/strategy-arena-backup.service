@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup Strategy Arena prediction snapshots
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/strategy-arena
+Environment=STRATEGY_ARENA_HOME=/opt/strategy-arena
+Environment=STRATEGY_ARENA_BACKUP_DIR=/opt/strategy-arena/backups
+ExecStart=/opt/strategy-arena/deploy/oracle/backup_snapshots.sh
