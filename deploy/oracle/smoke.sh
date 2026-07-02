@@ -36,6 +36,9 @@ for path, params in checks:
                 raise SystemExit("live-decision market_odds must be a list")
             if parsed["market_used"] and parsed.get("market_risk", {}).get("level") != "odds_live":
                 raise SystemExit("live market_used response must expose market_risk.level=odds_live")
+            if urllib.parse.urlparse(base).hostname not in {"127.0.0.1", "localhost"}:
+                if parsed.get("market_risk", {}).get("level") == "live_market_blocked":
+                    raise SystemExit("Oracle smoke must not expose Render-specific live_market_blocked risk")
         print(json.dumps({
             "url": url,
             "status": response.status,

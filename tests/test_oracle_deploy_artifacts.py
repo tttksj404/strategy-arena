@@ -28,6 +28,12 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
         deploy_script = (ROOT / "deploy" / "oracle" / "deploy.sh").read_text(encoding="utf-8")
 
         self.assertIn("ORACLE_HOST is required", deploy_script)
+        self.assertIn("Oracle SSH is not reachable", deploy_script)
+        self.assertIn("resolve_datagokr_key", deploy_script)
+        self.assertIn("$HOME/keirin/.env", deploy_script)
+        self.assertIn("$HOME/kra/.env", deploy_script)
+        self.assertIn("umask 077", deploy_script)
+        self.assertIn("deploy/oracle/smoke.sh", deploy_script)
         self.assertIn("docker compose -f deploy/oracle/docker-compose.yml", deploy_script)
         self.assertIn("--exclude \"deploy/oracle/.env.oracle\"", deploy_script)
 
@@ -45,6 +51,7 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
         self.assertIn("live-decision missing fields", smoke_script)
         self.assertIn("market_odds must be a list", smoke_script)
         self.assertIn("market_risk.level=odds_live", smoke_script)
+        self.assertIn("live_market_blocked risk", smoke_script)
 
 
 if __name__ == "__main__":

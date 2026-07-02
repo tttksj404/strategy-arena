@@ -18,10 +18,9 @@ Strategy Arena should run from an Oracle Korea region host when live KCYCLE odds
 1. Create an OCI VM in Seoul or Chuncheon.
 2. Open inbound TCP 80 and 443 in the OCI security list or NSG.
 3. Install Docker Engine and the Docker Compose plugin.
-4. Put this repository at `/opt/strategy-arena`.
-5. Copy `deploy/oracle/.env.oracle.example` to `deploy/oracle/.env.oracle`.
-6. Fill `DATAGOKR_SERVICE_KEY`.
-7. If a domain is ready, set `ORACLE_SITE_ADDRESS=your.domain.example`; otherwise keep `:80`.
+4. Put this repository at `/opt/strategy-arena`, or let `deploy/oracle/deploy.sh` create/update it.
+5. Keep `DATAGOKR_SERVICE_KEY` on the local deploy machine in one of these places: current shell env, `LOCAL_DATAGOKR_ENV`, `~/keirin/.env`, or `~/kra/.env`.
+6. If a domain is ready, set `ORACLE_SITE_ADDRESS=your.domain.example`; otherwise keep `:80`.
 
 ## Deploy from local machine
 
@@ -32,7 +31,7 @@ export ORACLE_PATH="/opt/strategy-arena"
 deploy/oracle/deploy.sh
 ```
 
-The script intentionally stops if `deploy/oracle/.env.oracle` does not exist on the server. That prevents silently deploying without the data.go.kr key.
+The script now fails closed before deployment if SSH is unreachable or if a local `DATAGOKR_SERVICE_KEY` cannot be resolved. On success it uploads a fresh `deploy/oracle/.env.oracle` with `0600`-style permissions, starts Docker Compose, checks container health, and runs `deploy/oracle/smoke.sh` against the Oracle URL.
 
 ## Enable boot recovery and daily backup
 
@@ -54,6 +53,7 @@ Required outcomes:
 - `/api/live-decision` returns JSON.
 - `/predict` returns HTML with no legacy `market_trifecta_50_candidate` or `삼쌍 50% 후보` text.
 - During a live race window, `market_risk.level` should not be `live_market_blocked`. If it is, check collector logs before switching traffic.
+- Against any non-localhost Oracle URL, `smoke.sh` fails if `/api/live-decision` still exposes the Render-specific `live_market_blocked` risk.
 
 ## Risk closure table
 
@@ -67,7 +67,8 @@ Required outcomes:
 | Algorithm search stalls | `search-loop` reruns audit/search on `SEARCH_LOOP_INTERVAL_SEC`. |
 | Server reboot | Docker restart policies plus optional systemd compose service. |
 | TLS/HTTP exposure | Caddy handles reverse proxy and HTTPS when `ORACLE_SITE_ADDRESS` is a domain. |
-| Secret leakage | Real `.env.oracle` is excluded from git and rsync overwrite. |
+| Missing production env | `deploy.sh` resolves the local data.go.kr key, uploads `.env.oracle`, and stops if the key is unavailable. |
+| Secret leakage | Real `.env.oracle` is excluded from git/rsync, generated in a local temp file, uploaded over SSH, and removed locally on exit. |
 
 ## Render retirement gate
 
