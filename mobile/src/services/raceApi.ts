@@ -1,11 +1,12 @@
 import Constants from 'expo-constants';
 
-import type { RaceDecision, RaceParticipant, Sport } from '../types/race';
+import type { MarketOddsEntry, RaceDecision, RaceParticipant, Sport } from '../types/race';
 
 const extraApiBaseUrl = (Constants.expoConfig?.extra?.apiBaseUrl as string | undefined) ?? '';
 const apiBaseUrl = normalizeApiBaseUrl(extraApiBaseUrl);
 const apiTimeoutMs = 6000;
 const maxParticipants = 16;
+const maxMarketOdds = 12;
 
 type JsonRecord = Record<string, unknown>;
 
@@ -31,8 +32,26 @@ const horseParticipants: RaceParticipant[] = [
   { number: 8, name: '레드노바', subtitle: '기수 한서우 / 53kg', stats: '최근 4전 0-0-1', trait: '자유', note: '부담중량 이점, 최근 컨디션 확인 필요', signal: 'rose' }
 ];
 
+const keirinMarketOdds: MarketOddsEntry[] = [
+  { code: 'WIN', label: '단승', selection: '5', odds: 2.1, change: '대기', signal: 'teal' },
+  { code: 'QNL', label: '복승', selection: '5-1', odds: 4.8, change: '대기', signal: 'primary' },
+  { code: 'EXA', label: '쌍승', selection: '5-1', odds: 7.6, change: '대기', signal: 'amber' },
+  { code: 'TRI', label: '삼쌍', selection: '5-1-7', odds: 21.4, change: '대기', signal: 'violet' }
+];
+
+const horseMarketOdds: MarketOddsEntry[] = [
+  { code: 'WIN', label: '단승', selection: '5', odds: 2.4, change: '대기', signal: 'teal' },
+  { code: 'QNL', label: '복승', selection: '5-3', odds: 5.2, change: '대기', signal: 'primary' },
+  { code: 'EXA', label: '쌍승', selection: '5-3', odds: 8.1, change: '대기', signal: 'amber' },
+  { code: 'TRI', label: '삼쌍', selection: '5-3-1', odds: 24.6, change: '대기', signal: 'violet' }
+];
+
 function demoParticipants(sport: Sport) {
   return sport === 'horse' ? horseParticipants : keirinParticipants;
+}
+
+function demoMarketOdds(sport: Sport) {
+  return sport === 'horse' ? horseMarketOdds : keirinMarketOdds;
 }
 
 const demoDecision: RaceDecision = {
@@ -61,6 +80,7 @@ const demoDecision: RaceDecision = {
     { code: 'TRB', label: '삼복 조합', selection: '1-5-7', probability: 0.26, grade: '중' }
   ],
   participants: keirinParticipants,
+  marketOdds: keirinMarketOdds,
   updatedAt: new Date().toISOString()
 };
 
@@ -95,6 +115,14 @@ function safeSignal(value: unknown): RaceParticipant['signal'] {
     return value;
   }
   return 'primary';
+}
+
+function safeOdds(value: unknown, fallback: number) {
+  const numeric = Number(value);
+  if (Number.isFinite(numeric) && numeric >= 1 && numeric <= 9999) {
+    return Math.round(numeric * 100) / 100;
+  }
+  return fallback;
 }
 
 function fallbackParticipant(sport: Sport, index: number): RaceParticipant {
@@ -132,6 +160,38 @@ function sanitizeParticipants(value: unknown, sport: Sport) {
   return parsed.length ? parsed : demoParticipants(sport);
 }
 
+function fallbackMarketOdds(sport: Sport, index: number): MarketOddsEntry {
+  const list = demoMarketOdds(sport);
+  return list[index % list.length] ?? {
+    code: 'ODDS',
+    label: '배당',
+    selection: '-',
+    odds: 1,
+    change: '대기',
+    signal: 'primary'
+  };
+}
+
+function sanitizeMarketOdds(value: unknown, sport: Sport) {
+  if (!Array.isArray(value)) return demoMarketOdds(sport);
+  const parsed = value
+    .slice(0, maxMarketOdds)
+    .map((item, index): MarketOddsEntry | null => {
+      if (!isRecord(item)) return null;
+      const fallback = fallbackMarketOdds(sport, index);
+      return {
+        code: safeText(item.code, fallback.code, 8).toUpperCase(),
+        label: safeText(item.label, fallback.label, 18),
+        selection: safeText(item.selection, fallback.selection, 18),
+        odds: safeOdds(item.odds, fallback.odds),
+        change: safeText(item.change, fallback.change, 16),
+        signal: safeSignal(item.signal)
+      };
+    })
+    .filter((item): item is MarketOddsEntry => item !== null);
+  return parsed.length ? parsed : demoMarketOdds(sport);
+}
+
 function riskLevel(level: string | undefined): RaceDecision['marketRisk']['level'] {
   if (level === 'blocked' || level === 'live_blocked') return 'blocked';
   if (level === 'odds_live') return 'verified';
@@ -153,6 +213,7 @@ export async function fetchRaceDecision(params: {
       meet: params.meet,
       raceNo: params.raceNo,
       participants: demoParticipants(params.sport),
+      marketOdds: demoMarketOdds(params.sport),
       updatedAt: new Date().toISOString()
     };
   }
@@ -187,6 +248,7 @@ export async function fetchRaceDecision(params: {
   }
   const payload = isRecord(rawPayload) ? rawPayload : {};
   const marketRisk = isRecord(payload.market_risk) ? payload.market_risk : undefined;
+  const rawMarketOdds = payload.market_odds ?? payload.odds;
   const level = riskLevel(typeof marketRisk?.level === 'string' ? marketRisk.level : undefined);
   const status = typeof payload.status === 'string' ? payload.status : '';
   return {
@@ -204,6 +266,7 @@ export async function fetchRaceDecision(params: {
       message: safeText(marketRisk?.message, demoDecision.marketRisk.message, 160)
     },
     participants: sanitizeParticipants(payload.participants, params.sport),
+    marketOdds: sanitizeMarketOdds(rawMarketOdds, params.sport),
     updatedAt: new Date().toISOString()
   };
 }

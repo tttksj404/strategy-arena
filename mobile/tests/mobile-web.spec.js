@@ -29,6 +29,8 @@ test('home screen exposes the expected analysis controls', async ({ page }) => {
   await expect(page.getByText('광명 5R')).toBeVisible();
   await expect(page.getByText('1순위 신호')).toBeVisible();
   await expect(page.getByText('삼쌍 순서 신호')).toBeVisible();
+  await expect(page.getByText('실시간 배당', { exact: true })).toBeVisible();
+  await expect(page.getByText('21.4배')).toBeVisible();
   await expect(page.getByText('출전 선수')).toBeVisible();
   await expect(page.getByText('최강우')).toBeVisible();
   await expect(page.getByRole('button', { name: /경륜/ })).toHaveAttribute('aria-selected', 'true');
@@ -79,6 +81,7 @@ test('race selector updates sport, race, and opens analysis', async ({ page }) =
 
   await page.getByRole('button', { name: /경마/ }).click();
   await expect(page.getByText('서울', { exact: true })).toBeVisible();
+  await expect(page.getByText('24.6배')).toBeVisible();
   await expect(page.getByText('출전마')).toBeVisible();
   await expect(page.getByText('골든포커스')).toBeVisible();
   await page.getByRole('button', { name: /8R/ }).click();
@@ -86,6 +89,7 @@ test('race selector updates sport, race, and opens analysis', async ({ page }) =
   await page.getByRole('button', { name: '모델 신호 보기' }).click();
 
   await expect(page.getByText('분석 상세')).toBeVisible();
+  await expect(page.getByText('실시간 배당', { exact: true })).toBeVisible();
   await expect(page.getByText('기수 문태오 / 57kg')).toBeVisible();
   await expect(page.getByText('표본 10,886')).toBeVisible();
   await expect(page.getByText('삼쌍 순서')).toBeVisible();

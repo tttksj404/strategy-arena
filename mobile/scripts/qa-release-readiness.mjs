@@ -100,7 +100,7 @@ try {
       height: 720,
       colorScheme: 'light',
       flow: async (page) => {
-        await page.getByText('출전 선수').scrollIntoViewIfNeeded();
+        await page.getByText('실시간 배당', { exact: true }).scrollIntoViewIfNeeded();
       }
     },
     {

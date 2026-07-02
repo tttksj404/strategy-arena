@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { LensCard } from '../components/LensCard';
+import { MarketOddsBoard } from '../components/MarketOddsBoard';
 import { ParticipantBoard } from '../components/ParticipantBoard';
 import { ProbabilityRail } from '../components/ProbabilityRail';
 import { RaceSelector } from '../components/RaceSelector';
@@ -68,6 +69,8 @@ export function HomeScreen({
         onRaceChange={onRaceChange}
         onSportChange={onSportChange}
       />
+
+      <MarketOddsBoard compact marketUsed={decision.marketUsed} mode={mode} odds={decision.marketOdds} />
 
       <ParticipantBoard compact mode={mode} participants={decision.participants} sport={sport} />
 

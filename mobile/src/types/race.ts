@@ -20,6 +20,15 @@ export type RaceParticipant = {
   signal: 'primary' | 'teal' | 'amber' | 'rose' | 'violet';
 };
 
+export type MarketOddsEntry = {
+  code: string;
+  label: string;
+  selection: string;
+  odds: number;
+  change: string;
+  signal: 'primary' | 'teal' | 'amber' | 'rose' | 'violet';
+};
+
 export type RaceDecision = {
   status: 'ready' | 'hold' | 'blocked';
   sport: Sport;
@@ -41,6 +50,7 @@ export type RaceDecision = {
   };
   picks: RacePick[];
   participants: RaceParticipant[];
+  marketOdds: MarketOddsEntry[];
   updatedAt: string;
 };
 

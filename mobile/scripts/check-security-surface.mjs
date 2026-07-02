@@ -51,7 +51,8 @@ const requiredApiGuards = [
   'normalizeApiBaseUrl',
   'AbortController',
   'safeText',
-  'sanitizeParticipants'
+  'sanitizeParticipants',
+  'sanitizeMarketOdds'
 ];
 for (const guard of requiredApiGuards) {
   if (!raceApi.includes(guard)) offenders.push(`src/services/raceApi.ts: missing ${guard} guard`);

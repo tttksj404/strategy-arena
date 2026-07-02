@@ -71,6 +71,24 @@ const apiServer = createServer((request, response) => {
         signal: 'teal'
       }
     ],
+    market_odds: [
+      {
+        code: 'win',
+        label: '단승',
+        selection: '5',
+        odds: 2.13,
+        change: '-0.2',
+        signal: 'teal'
+      },
+      {
+        code: 'tri',
+        label: '삼쌍 순서'.repeat(8),
+        selection: '5-1-7'.repeat(6),
+        odds: 999999,
+        change: '급등락 확인 필요'.repeat(5),
+        signal: 'unknown'
+      }
+    ],
     poll_delay_ms: 15000
   }));
 });
@@ -106,6 +124,9 @@ try {
   await page.getByRole('button', { name: '모델 신호 보기' }).click();
   await page.getByText('실시간 시장 신호 반영').waitFor();
   await page.getByText('실시간 배당 반영').waitFor();
+  await page.getByText('실시간 배당', { exact: true }).waitFor();
+  await page.getByText('2.13배').waitFor();
+  await page.getByText('4.8배').waitFor();
   await page.getByText(/QA mock: live market path is reachable and rendered/).waitFor();
   await page.getByText(/<script>alert/).waitFor();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);

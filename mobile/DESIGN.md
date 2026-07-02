@@ -141,6 +141,14 @@ All spacing derives from 4px.
 - **Accessibility**: every row includes a combined label so the source data is readable without relying on model picks.
 - **Purpose**: keep RaceLens from forcing a judgement by showing the underlying provided race materials next to the model signal.
 
+### MarketOddsBoard
+- **Structure**: market-source board for win, quinella/exacta, and trifecta odds: code/label left, selection and odds right, change text below in detailed mode.
+- **Variants**: compact for home, detailed for analysis, live, fallback, empty.
+- **Spacing**: rows use space3 gap and inset surface; the live/fallback pill stays 32px+ high.
+- **States**: live data, fallback/waiting, empty.
+- **Accessibility**: every row exposes label, selection, odds, and change text in one readable label.
+- **Purpose**: show real-time odds as neutral market material, separate from model recommendations, so users can compare source signals without being pushed toward an action.
+
 ### BottomTab
 - **Structure**: four fixed tabs with line icons and labels.
 - **Variants**: home, analyze, lab, pro.

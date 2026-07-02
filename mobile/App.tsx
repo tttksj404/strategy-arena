@@ -72,6 +72,7 @@ export default function App() {
     },
     picks: [],
     participants: [],
+    marketOdds: [],
     updatedAt: new Date().toISOString()
   };
 
