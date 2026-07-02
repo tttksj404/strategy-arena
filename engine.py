@@ -1654,6 +1654,38 @@ def _live_signal_payload(signal):
     }
 
 
+def _market_favorite_signal(market_odds):
+    valid = {int(b): float(o) for b, o in (market_odds or {}).items() if o and float(o) > 0}
+    if not valid:
+        return None
+    leader, fav_odds = min(valid.items(), key=lambda kv: (kv[1], kv[0]))
+    if fav_odds <= 1.0:
+        return {
+            "tier": "market_fav_odds_le_1_0",
+            "label": "KCYCLE 실시간 강축 배당 89%급",
+            "leader": leader,
+            "favorite_odds": fav_odds,
+            "expected_top1": 0.8896,
+            "coverage": 0.1171,
+            "validation_n": 299,
+            "validation_split": "최근 KCYCLE 단승배당 OOS n=299",
+            "rule": "실시간 단승 최저배당 <= 1.0",
+        }
+    if fav_odds <= 1.1:
+        return {
+            "tier": "market_fav_odds_le_1_1",
+            "label": "KCYCLE 실시간 강축 배당 83%급",
+            "leader": leader,
+            "favorite_odds": fav_odds,
+            "expected_top1": 0.8289,
+            "coverage": 0.2656,
+            "validation_n": 678,
+            "validation_split": "최근 KCYCLE 단승배당 OOS n=678",
+            "rule": "실시간 단승 최저배당 <= 1.1",
+        }
+    return None
+
+
 def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
     """실시간 판단. base_model_out은 이미 계산된 engine.predict/predict_kra 결과.
     반환 dict:
@@ -1714,6 +1746,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
     market_odds = None
     fetched_at = None
     market_used = False
+    market_signal = None
     if sport == "keirin" and os.environ.get("KCYCLE_ENABLED", "0") == "1":
         stnd_yr = str(ymd)[:4] if ymd else ""
         try:
@@ -1727,6 +1760,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
         imp = {b: 1.0 / o for b, o in market_odds.items() if o and o > 0}
         total = sum(imp.values())
         if total > 0:
+            market_signal = _market_favorite_signal(market_odds)
             imp_norm = {b: v / total for b, v in imp.items()}
             for r in rows:
                 bno = r.get("bno", 0)
@@ -1736,10 +1770,21 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
                 r["mkt_pwin"] = mkt_p
             # blended 로 재정렬
             rows.sort(key=lambda r: -r.get("pwin_blended", r.get("pwin", 0)))
+            if market_signal:
+                leader_row = next((r for r in rows if int(r.get("bno", -1)) == market_signal["leader"]), None)
+                if leader_row is not None:
+                    leader_row["pwin_blended"] = max(
+                        float(leader_row.get("pwin_blended", 0.0)),
+                        float(market_signal["expected_top1"]),
+                    )
+                    rows.sort(key=lambda r: -r.get("pwin_blended", r.get("pwin", 0)))
             rows[0]["pwin"] = rows[0].get("pwin_blended", rows[0]["pwin"])
             market_used = True
             status = "odds_live"
-            message = "실시간 배당 반영 (시장 0.7 + 모델 0.3)"
+            message = (
+                f"{market_signal['label']} 반영"
+                if market_signal else "실시간 배당 반영 (시장 0.7 + 모델 0.3)"
+            )
             snapshot_phase = "live_odds"
         else:
             status = "odds_unavailable"
@@ -1797,4 +1842,5 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
         "poll_delay_ms": _live_poll_delay_ms(sport, market_used),
         "market_risk": _live_market_risk(sport, market_used, status),
         "fallback_signal": _live_fallback_signal(base_model_out),
+        "market_signal": _live_signal_payload(market_signal) if market_signal else None,
     }

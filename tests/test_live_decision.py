@@ -74,6 +74,33 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(decision["fallback_signal"]["expected_top1"], 0.6656)
         self.assertEqual(decision["decision"], "hold")
 
+    def test_live_decision_promotes_strong_market_favorite_when_enabled(self):
+        base = {
+            "kind": "ok",
+            "rows": [
+                {"bno": 1, "name": "모델선두", "pwin": 0.62, "pplc": 0.86},
+                {"bno": 5, "name": "시장강축", "pwin": 0.20, "pplc": 0.70},
+                {"bno": 7, "name": "상대", "pwin": 0.18, "pplc": 0.64},
+            ],
+            "picks": [],
+        }
+
+        with patch.dict(os.environ, {"KCYCLE_ENABLED": "1"}, clear=False), \
+             patch.object(app_module.engine, "fetch_kcycle_odds_with_ts", return_value=(
+                 {1: 4.2, 5: 1.0, 7: 9.5},
+                 "2026-07-02T12:00:00",
+             )):
+            decision = app_module.engine.compute_live_decision(
+                "keirin", "2026-06-28", "광명", "7", base_model_out=base,
+            )
+
+        self.assertTrue(decision["market_used"])
+        self.assertEqual(decision["decision"], "final_candidate")
+        self.assertEqual(decision["top"]["bno"], 5)
+        self.assertEqual(decision["market_signal"]["tier"], "market_fav_odds_le_1_0")
+        self.assertAlmostEqual(decision["market_signal"]["expected_top1"], 0.8896)
+        self.assertEqual(decision["poll_delay_ms"], 5000)
+
     def test_live_decision_keeps_official_signal_when_card_model_fails(self):
         with patch.dict(os.environ, {"KCYCLE_ENABLED": "0"}, clear=False):
             decision = app_module.engine.compute_live_decision(
@@ -101,6 +128,7 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertIn("pollDelayMs", html)
         self.assertIn("d.poll_delay_ms", html)
         self.assertIn("market_risk", html)
+        self.assertIn("market_signal", html)
         self.assertIn('method="get"', html)
 
     def test_live_decision_reuses_cached_base_prediction(self):
