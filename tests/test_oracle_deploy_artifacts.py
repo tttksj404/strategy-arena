@@ -34,6 +34,7 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
     def test_prediction_search_loop_writes_to_persistent_data_volume(self):
         loop_script = (ROOT / "scripts" / "run_prediction_search_loop.sh").read_text(encoding="utf-8")
 
+        self.assertIn("waiting_for_snapshots", loop_script)
         self.assertIn("--snapshots \"$snapshot_path\"", loop_script)
         self.assertIn("--out-json data/kcycle_trifecta_rule_search_results.json", loop_script)
         self.assertIn("--out-md data/kcycle_trifecta_rule_search_results.md", loop_script)
