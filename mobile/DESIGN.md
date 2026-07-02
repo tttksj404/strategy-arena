@@ -5,9 +5,19 @@
 RaceLens is a calm race-intelligence terminal, not a gambling product. It should feel like Apple Sports met a premium finance dashboard: quick, precise, restrained, and honest about uncertainty. The signature is the "lens stack": translucent race-state panels layered over a quiet graphite canvas, with probability rails and risk labels that make model confidence inspectable instead of magical.
 
 Reference synthesis:
+- curated.design: category-level scan for data apps, AI products, finance tools, and mobile app structure.
+- godly.website: recent design taste checks across web interface, branding, product, typography, motion, and app icons.
+- awwwards.com: high-craft interaction benchmark; borrow restraint and polish, not heavy web spectacle.
+- landing.love: motion and launch-page references for any RaceLens web marketing surface.
+- saaspo.com: SaaS dashboard hierarchy, subscription framing, and compact operational UI density.
+- onepagelove.com: concise one-page launch/onboarding structure.
+- navbar.gallery and cta.gallery: navigation and call-to-action hierarchy, especially for safe non-betting conversion.
+- collectui.com and mobbin.com: practical mobile flows, paywall patterns, onboarding, and recurring app screen structure.
 - 60fps.design: micro-interactions should be small, tactile, and useful: rail fill, chip press, tab transition, loading shimmer.
+- 21st.dev: component quality benchmark for React primitives and templates.
 - open-design.ai and getdesign.md: every app screen derives from this DESIGN.md, so the visual language is reusable instead of one-off.
 - component.gallery: use standard interface patterns with names users already understand: tabs, carousel-like chips, popovers/sheets later, accordions for legal details, pagination only for long archives.
+- rebrand.gallery, logofolio.com, svgl.app, coolors.co, fontpair.co, hugeicons.com: brand, logo, SVG, palette, font, and icon research inputs; final app tokens and assets must remain license-safe.
 - Dezign Heroes: use curated icon/motion resources as taste signals, but keep implementation native and store-safe.
 
 ## 2. Color

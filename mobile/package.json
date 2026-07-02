@@ -10,7 +10,9 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "export:web": "expo export --platform web",
-    "lint:design": "node scripts/check-design-tokens.mjs"
+    "lint:design": "node scripts/check-design-tokens.mjs && node scripts/check-design-resources.mjs",
+    "lint:design-tokens": "node scripts/check-design-tokens.mjs",
+    "lint:design-resources": "node scripts/check-design-resources.mjs"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

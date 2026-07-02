@@ -44,8 +44,12 @@ Change them before first store submission if a final publisher namespace is chos
 
 ## Design References
 
-- 60fps.design: mobile motion and micro-interaction detail.
+- curated.design, godly.website, awwwards.com, landing.love, saaspo.com, onepagelove.com: product, landing, and high-polish visual benchmarks.
+- navbar.gallery, cta.gallery, collectui.com, mobbin.com: navigation, CTA, common UI flows, and native mobile screen references.
+- 60fps.design, 21st.dev, component.gallery: mobile motion, component quality, and standard interface pattern checks.
+- rebrand.gallery, logofolio.com, svgl.app, coolors.co, fontpair.co, hugeicons.com: brand, logo, SVG, palette, font, and icon research inputs.
+- dezignheroes.framer.website: curated discovery layer for design resources and tool references.
 - open-design.ai and getdesign.md: DESIGN.md-driven reusable design systems.
-- component.gallery: named component patterns and accessibility expectations.
-- Dezign Heroes: curated motion, icon, mockup, and design resource discovery.
 - Apple Sports/Revolut style synthesis: calm sports terminal plus finance-grade trust.
+
+Run `npm run lint:design` to confirm design token discipline and required resource registry coverage.
