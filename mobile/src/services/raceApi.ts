@@ -3,11 +3,7 @@ import Constants from 'expo-constants';
 import type { RaceDecision, Sport } from '../types/race';
 
 const extraApiBaseUrl = (Constants.expoConfig?.extra?.apiBaseUrl as string | undefined) ?? '';
-const runtimeEnv = (globalThis as {
-  process?: { env?: Record<string, string | undefined> };
-}).process?.env;
-const envApiBaseUrl = runtimeEnv?.EXPO_PUBLIC_RACELENS_API_BASE_URL ?? '';
-const apiBaseUrl = envApiBaseUrl || extraApiBaseUrl;
+const apiBaseUrl = extraApiBaseUrl;
 
 const demoDecision: RaceDecision = {
   status: 'hold',

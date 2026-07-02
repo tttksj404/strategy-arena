@@ -9,11 +9,14 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
-    "export:web": "expo export --platform web",
+    "export:web": "expo export --platform web --clear",
     "qa:mobile": "npm run export:web && playwright test",
-    "lint:design": "node scripts/check-design-tokens.mjs && node scripts/check-design-resources.mjs",
+    "qa:api-live": "EXPO_PUBLIC_RACELENS_API_BASE_URL=http://127.0.0.1:8065 npm run export:web && node scripts/qa-api-live.mjs",
+    "qa:preflight": "npm run lint:design && npm run typecheck && npm audit --audit-level=moderate && npx expo-doctor && npm run qa:mobile && npm run qa:api-live",
+    "lint:design": "node scripts/check-design-tokens.mjs && node scripts/check-design-resources.mjs && node scripts/check-design-contrast.mjs",
     "lint:design-tokens": "node scripts/check-design-tokens.mjs",
-    "lint:design-resources": "node scripts/check-design-resources.mjs"
+    "lint:design-resources": "node scripts/check-design-resources.mjs",
+    "lint:design-contrast": "node scripts/check-design-contrast.mjs"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

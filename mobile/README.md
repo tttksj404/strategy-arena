@@ -53,3 +53,11 @@ Change them before first store submission if a final publisher namespace is chos
 - Apple Sports/Revolut style synthesis: calm sports terminal plus finance-grade trust.
 
 Run `npm run lint:design` to confirm design token discipline and required resource registry coverage.
+
+## Pre-Release QA
+
+```bash
+npm run qa:preflight
+```
+
+This gate checks design-token discipline, required design-resource registry coverage, WCAG AA contrast for the current palette, TypeScript, npm audit, Expo Doctor, light/dark mobile and tablet Playwright smoke tests, and a mocked live API path. The app is not ready for store submission unless this command passes cleanly.

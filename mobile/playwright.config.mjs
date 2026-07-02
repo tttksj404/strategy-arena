@@ -21,18 +21,38 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'mobile-390',
+      name: 'mobile-light-390',
       use: {
         ...devices['iPhone 15'],
         browserName: 'chromium',
+        colorScheme: 'light',
         viewport: { width: 390, height: 844 }
       }
     },
     {
-      name: 'tablet-768',
+      name: 'mobile-dark-390',
+      use: {
+        ...devices['iPhone 15'],
+        browserName: 'chromium',
+        colorScheme: 'dark',
+        viewport: { width: 390, height: 844 }
+      }
+    },
+    {
+      name: 'tablet-light-768',
       use: {
         ...devices['iPad Pro 11'],
         browserName: 'chromium',
+        colorScheme: 'light',
+        viewport: { width: 768, height: 1024 }
+      }
+    },
+    {
+      name: 'tablet-dark-768',
+      use: {
+        ...devices['iPad Pro 11'],
+        browserName: 'chromium',
+        colorScheme: 'dark',
         viewport: { width: 768, height: 1024 }
       }
     }

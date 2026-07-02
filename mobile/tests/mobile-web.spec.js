@@ -16,6 +16,10 @@ function collectErrors(page) {
   return errors;
 }
 
+function rgbChannels(value) {
+  return value.match(/\d+/g).slice(0, 3).map(Number);
+}
+
 test('home screen exposes the expected analysis controls', async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto('/');
@@ -28,6 +32,24 @@ test('home screen exposes the expected analysis controls', async ({ page }) => {
   await expect(page.getByRole('button', { name: /경륜/ })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByRole('button', { name: /5R/ })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByRole('button', { name: '모델 신호 보기' })).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('layout keeps the copper identity without horizontal overflow', async ({ page }) => {
+  const errors = collectErrors(page);
+  await page.goto('/');
+
+  const ctaBackground = await page.getByRole('button', { name: '모델 신호 보기' }).evaluate((element) =>
+    getComputedStyle(element).backgroundColor
+  );
+  const [red, green, blue] = rgbChannels(ctaBackground);
+  expect(red).toBeGreaterThan(green + 35);
+  expect(red).toBeGreaterThan(blue + 55);
+
+  const overflow = await page.evaluate(() =>
+    document.documentElement.scrollWidth - document.documentElement.clientWidth
+  );
+  expect(overflow).toBeLessThanOrEqual(1);
   expect(errors).toEqual([]);
 });
 
