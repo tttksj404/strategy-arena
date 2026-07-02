@@ -25,6 +25,17 @@ for path, params in checks:
         url = f"{url}?{urllib.parse.urlencode(params)}"
     with urllib.request.urlopen(url, timeout=30) as response:
         body = response.read().decode("utf-8", "replace")
+        parsed = None
+        if path == "/api/live-decision":
+            parsed = json.loads(body)
+            required = ["market_used", "market_risk", "market_odds", "poll_delay_ms", "snapshot_phase"]
+            missing = [key for key in required if key not in parsed]
+            if missing:
+                raise SystemExit(f"live-decision missing fields: {missing}")
+            if not isinstance(parsed["market_odds"], list):
+                raise SystemExit("live-decision market_odds must be a list")
+            if parsed["market_used"] and parsed.get("market_risk", {}).get("level") != "odds_live":
+                raise SystemExit("live market_used response must expose market_risk.level=odds_live")
         print(json.dumps({
             "url": url,
             "status": response.status,
@@ -32,5 +43,6 @@ for path, params in checks:
             "has_live_blocked": "live_market_blocked" in body,
             "has_trifecta_text": "삼쌍" in body,
             "has_old_50_candidate": "삼쌍 50% 후보" in body or "market_trifecta_50_candidate" in body,
+            "live_contract_ok": bool(parsed is not None),
         }, ensure_ascii=False))
 PY

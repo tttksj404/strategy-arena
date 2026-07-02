@@ -1738,7 +1738,7 @@ def _live_market_risk(sport, market_used, status):
         }
     if market_used:
         return {
-            "level": "live_market_used",
+            "level": "odds_live",
             "message": "실시간 배당이 반영됐습니다.",
         }
     if os.environ.get("KCYCLE_ENABLED", "0") == "1":
@@ -1810,6 +1810,55 @@ def _market_favorite_signal(market_odds):
             "rule": "실시간 단승 최저배당 <= 1.1",
         }
     return None
+
+
+def _market_odds_entries(market_odds, trifecta_board=None, max_entries=12):
+    entries = []
+    win_valid = []
+    for bno, odds in (market_odds or {}).items():
+        try:
+            b = int(bno)
+            o = float(odds)
+        except (TypeError, ValueError):
+            continue
+        if b <= 0 or o <= 0:
+            continue
+        win_valid.append((b, o))
+    for index, (b, odds) in enumerate(sorted(win_valid, key=lambda kv: (kv[1], kv[0]))):
+        entries.append({
+            "code": "WIN",
+            "label": "단승",
+            "selection": str(b),
+            "odds": round(odds, 2),
+            "change": "실시간",
+            "signal": "teal" if index == 0 else "primary",
+        })
+        if len(entries) >= max_entries:
+            return entries
+
+    tri_valid = []
+    for combo, odds in (trifecta_board or {}).items():
+        if not re.fullmatch(r"[1-7]-[1-7]-[1-7]", str(combo)):
+            continue
+        try:
+            o = float(odds)
+        except (TypeError, ValueError):
+            continue
+        if o <= 0:
+            continue
+        tri_valid.append((str(combo), o))
+    for combo, odds in sorted(tri_valid, key=lambda kv: (kv[1], kv[0]))[:3]:
+        entries.append({
+            "code": "TRI",
+            "label": "삼쌍",
+            "selection": combo,
+            "odds": round(odds, 2),
+            "change": "실시간",
+            "signal": "violet",
+        })
+        if len(entries) >= max_entries:
+            break
+    return entries
 
 
 def _market_trifecta_signal(trifecta_board):
@@ -1992,7 +2041,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             ),
             "updated_at": now.isoformat(timespec="seconds"),
             "odds_age_sec": None,
-            "market_odds": None,
+            "market_odds": [],
             "top": top,
             "rows": None,
             "decision": "hold",
@@ -2009,7 +2058,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
         return {
             "ok": False, "status": "hold", "message": "출주 데이터 없음",
             "updated_at": now.isoformat(timespec="seconds"),
-            "odds_age_sec": None, "market_odds": None, "top": None,
+            "odds_age_sec": None, "market_odds": [], "top": None,
             "rows": None, "decision": "hold", "market_used": False,
             "snapshot_phase": "unknown",
             "poll_delay_ms": _live_poll_delay_ms(sport, False),
@@ -2024,6 +2073,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
     market_used = False
     market_signal = None
     trifecta_signal = None
+    trifecta_board = None
     live_market_used = False
     if sport == "keirin" and os.environ.get("KCYCLE_ENABLED", "0") == "1":
         stnd_yr = str(ymd)[:4] if ymd else ""
@@ -2132,7 +2182,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
         "message": message,
         "updated_at": now.isoformat(timespec="seconds"),
         "odds_age_sec": odds_age_sec,
-        "market_odds": market_odds,
+        "market_odds": _market_odds_entries(market_odds, trifecta_board),
         "top": top,
         "rows": rows,
         "decision": decision,

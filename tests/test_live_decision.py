@@ -71,6 +71,7 @@ class LiveDecisionTestCase(unittest.TestCase):
             self.assertEqual(d["poll_delay_ms"], 15000)
             self.assertEqual(d["market_risk"]["level"], "live_market_blocked")
             self.assertIn("Render", d["market_risk"]["message"])
+            self.assertEqual(d["market_odds"], [])
 
     def test_live_decision_exposes_official_support_when_market_blocked(self):
         base = {
@@ -123,6 +124,11 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(decision["market_signal"]["tier"], "market_fav_odds_le_1_0")
         self.assertAlmostEqual(decision["market_signal"]["expected_top1"], 0.8896)
         self.assertEqual(decision["poll_delay_ms"], 5000)
+        self.assertEqual(decision["market_risk"]["level"], "odds_live")
+        self.assertIsInstance(decision["market_odds"], list)
+        self.assertEqual(decision["market_odds"][0]["label"], "단승")
+        self.assertEqual(decision["market_odds"][0]["selection"], "5")
+        self.assertEqual(decision["market_odds"][0]["odds"], 1.0)
 
     def test_trifecta_signal_exposes_immediate_prior_lift_with_robust_warning(self):
         signal = app_module.engine._market_trifecta_signal(make_trifecta_candidate_board())
@@ -165,6 +171,7 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertIsNone(decision["trifecta_signal"]["expected_trio_exact"])
         self.assertIn("50% 배포 금지", decision["message"])
         self.assertEqual(decision["poll_delay_ms"], 5000)
+        self.assertTrue(any(item["code"] == "TRI" and item["selection"] == "5-1-7" for item in decision["market_odds"]))
 
     def test_trifecta_snapshot_writer_appends_and_dedupes(self):
         app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()

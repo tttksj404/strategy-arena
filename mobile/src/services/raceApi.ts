@@ -173,7 +173,26 @@ function fallbackMarketOdds(sport: Sport, index: number): MarketOddsEntry {
 }
 
 function sanitizeMarketOdds(value: unknown, sport: Sport) {
-  if (!Array.isArray(value)) return demoMarketOdds(sport);
+  if (isRecord(value)) {
+    const parsedFromBoard = Object.entries(value)
+      .map(([selection, odds]) => ({ selection, odds: Number(odds) }))
+      .filter((entry) => Number.isFinite(entry.odds) && entry.odds >= 1 && entry.odds <= 9999)
+      .sort((left, right) => left.odds - right.odds || left.selection.localeCompare(right.selection))
+      .slice(0, maxMarketOdds)
+      .map((entry, index): MarketOddsEntry => {
+        const fallback = fallbackMarketOdds(sport, index);
+        return {
+          code: 'WIN',
+          label: '단승',
+          selection: safeText(entry.selection, fallback.selection, 18),
+          odds: safeOdds(entry.odds, fallback.odds),
+          change: '실시간',
+          signal: index === 0 ? 'teal' : 'primary'
+        };
+      });
+    return parsedFromBoard;
+  }
+  if (!Array.isArray(value)) return [];
   const parsed = value
     .slice(0, maxMarketOdds)
     .map((item, index): MarketOddsEntry | null => {
@@ -189,7 +208,7 @@ function sanitizeMarketOdds(value: unknown, sport: Sport) {
       };
     })
     .filter((item): item is MarketOddsEntry => item !== null);
-  return parsed.length ? parsed : demoMarketOdds(sport);
+  return parsed;
 }
 
 function riskLevel(level: string | undefined): RaceDecision['marketRisk']['level'] {

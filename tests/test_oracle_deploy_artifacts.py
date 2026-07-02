@@ -39,6 +39,13 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
         self.assertIn("--out-json data/kcycle_trifecta_rule_search_results.json", loop_script)
         self.assertIn("--out-md data/kcycle_trifecta_rule_search_results.md", loop_script)
 
+    def test_oracle_smoke_enforces_live_decision_contract(self):
+        smoke_script = (ROOT / "deploy" / "oracle" / "smoke.sh").read_text(encoding="utf-8")
+
+        self.assertIn("live-decision missing fields", smoke_script)
+        self.assertIn("market_odds must be a list", smoke_script)
+        self.assertIn("market_risk.level=odds_live", smoke_script)
+
 
 if __name__ == "__main__":
     unittest.main()
