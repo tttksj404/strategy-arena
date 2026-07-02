@@ -3,7 +3,11 @@ import Constants from 'expo-constants';
 import type { RaceDecision, RaceParticipant, Sport } from '../types/race';
 
 const extraApiBaseUrl = (Constants.expoConfig?.extra?.apiBaseUrl as string | undefined) ?? '';
-const apiBaseUrl = extraApiBaseUrl;
+const apiBaseUrl = normalizeApiBaseUrl(extraApiBaseUrl);
+const apiTimeoutMs = 6000;
+const maxParticipants = 16;
+
+type JsonRecord = Record<string, unknown>;
 
 const keirinParticipants: RaceParticipant[] = [
   { number: 1, name: '김태훈', subtitle: '우수급 / 87.4점', stats: '최근 3주 2-1-0', trait: '선행', note: '초반 주도력 강점, 후반 유지력은 보통', signal: 'teal' },
@@ -60,13 +64,73 @@ const demoDecision: RaceDecision = {
   updatedAt: new Date().toISOString()
 };
 
-type LiveDecisionPayload = {
-  status?: string;
-  market_used?: boolean;
-  market_risk?: { level?: string; message?: string };
-  participants?: RaceParticipant[];
-  poll_delay_ms?: number;
-};
+function isRecord(value: unknown): value is JsonRecord {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function normalizeApiBaseUrl(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) return '';
+  try {
+    const parsed = new URL(trimmed);
+    const local = parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1';
+    if (parsed.protocol === 'https:' || (parsed.protocol === 'http:' && local)) {
+      return parsed.toString().replace(/\/$/, '');
+    }
+  } catch {
+    return '';
+  }
+  return '';
+}
+
+function safeText(value: unknown, fallback: string, maxLength: number) {
+  if (typeof value !== 'string') return fallback;
+  const compact = value.replace(/\s+/g, ' ').trim();
+  if (!compact) return fallback;
+  return compact.length > maxLength ? `${compact.slice(0, maxLength - 1)}…` : compact;
+}
+
+function safeSignal(value: unknown): RaceParticipant['signal'] {
+  if (value === 'teal' || value === 'amber' || value === 'rose' || value === 'violet' || value === 'primary') {
+    return value;
+  }
+  return 'primary';
+}
+
+function fallbackParticipant(sport: Sport, index: number): RaceParticipant {
+  const list = demoParticipants(sport);
+  return list[index % list.length] ?? {
+    number: index + 1,
+    name: sport === 'horse' ? '출전마' : '출전 선수',
+    subtitle: '기본 정보 대기',
+    stats: '최근 흐름 대기',
+    trait: '확인',
+    note: '상세 자료가 도착하면 자동 갱신됩니다.',
+    signal: 'primary'
+  };
+}
+
+function sanitizeParticipants(value: unknown, sport: Sport) {
+  if (!Array.isArray(value)) return demoParticipants(sport);
+  const parsed = value
+    .slice(0, maxParticipants)
+    .map((item, index): RaceParticipant | null => {
+      if (!isRecord(item)) return null;
+      const fallback = fallbackParticipant(sport, index);
+      const rawNumber = Number(item.number);
+      return {
+        number: Number.isInteger(rawNumber) && rawNumber > 0 && rawNumber <= 99 ? rawNumber : index + 1,
+        name: safeText(item.name, fallback.name, 24),
+        subtitle: safeText(item.subtitle, fallback.subtitle, 44),
+        stats: safeText(item.stats, fallback.stats, 36),
+        trait: safeText(item.trait, fallback.trait, 12),
+        note: safeText(item.note, fallback.note, 72),
+        signal: safeSignal(item.signal)
+      };
+    })
+    .filter((item): item is RaceParticipant => item !== null);
+  return parsed.length ? parsed : demoParticipants(sport);
+}
 
 function riskLevel(level: string | undefined): RaceDecision['marketRisk']['level'] {
   if (level === 'blocked' || level === 'live_blocked') return 'blocked';
@@ -99,27 +163,47 @@ export async function fetchRaceDecision(params: {
     meet: params.meet,
     race_no: String(params.raceNo)
   });
-  const response = await fetch(`${apiBaseUrl.replace(/\/$/, '')}/api/live-decision?${query.toString()}`);
-  if (!response.ok) {
-    throw new Error(`RaceLens API ${response.status}`);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), apiTimeoutMs);
+  let response: Response;
+  try {
+    response = await fetch(`${apiBaseUrl}/api/live-decision?${query.toString()}`, { signal: controller.signal });
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('RaceLens API 응답 시간이 초과됐습니다.');
+    }
+    throw new Error('RaceLens API에 연결할 수 없습니다.');
+  } finally {
+    clearTimeout(timeout);
   }
-  const payload = (await response.json()) as LiveDecisionPayload;
-  const level = riskLevel(payload.market_risk?.level);
+  if (!response.ok) {
+    throw new Error(`RaceLens API 응답 오류 ${response.status}`);
+  }
+  let rawPayload: unknown;
+  try {
+    rawPayload = await response.json();
+  } catch {
+    throw new Error('RaceLens API 응답 형식이 올바르지 않습니다.');
+  }
+  const payload = isRecord(rawPayload) ? rawPayload : {};
+  const marketRisk = isRecord(payload.market_risk) ? payload.market_risk : undefined;
+  const level = riskLevel(typeof marketRisk?.level === 'string' ? marketRisk.level : undefined);
+  const status = typeof payload.status === 'string' ? payload.status : '';
   return {
     ...demoDecision,
     sport: params.sport,
     date: params.date,
     meet: params.meet,
     raceNo: params.raceNo,
-    status: payload.status === 'blocked' ? 'blocked' : payload.status === 'ready' ? 'ready' : 'hold',
-    headline: payload.market_used ? '실시간 시장 신호 반영' : '모델 신호 중심 분석',
-    marketUsed: Boolean(payload.market_used),
+    status: status === 'blocked' ? 'blocked' : status === 'ready' ? 'ready' : 'hold',
+    headline: payload.market_used === true ? '실시간 시장 신호 반영' : '모델 신호 중심 분석',
+    marketUsed: payload.market_used === true,
     marketRisk: {
       level,
       title: level === 'verified' ? '실시간 배당 반영' : level === 'blocked' ? '실시간 접근 제한' : '배당 미사용',
-      message: payload.market_risk?.message ?? demoDecision.marketRisk.message
+      message: safeText(marketRisk?.message, demoDecision.marketRisk.message, 160)
     },
-    participants: payload.participants?.length ? payload.participants : demoParticipants(params.sport),
+    participants: sanitizeParticipants(payload.participants, params.sport),
     updatedAt: new Date().toISOString()
   };
 }

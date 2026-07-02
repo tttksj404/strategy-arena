@@ -49,8 +49,28 @@ const apiServer = createServer((request, response) => {
     market_used: true,
     market_risk: {
       level: 'odds_live',
-      message: 'QA mock: live market path is reachable and rendered.'
+      message: 'QA mock: live market path is reachable and rendered. '.repeat(8)
     },
+    participants: [
+      {
+        number: 999,
+        name: '<script>alert("x")</script>검증용초장문출전마이름'.repeat(2),
+        subtitle: '기수 QA / 55kg '.repeat(6),
+        stats: '최근 4전 1-1-1 '.repeat(5),
+        trait: '선입'.repeat(8),
+        note: '외부 API가 길거나 깨진 텍스트를 내려도 카드가 터지지 않아야 합니다. '.repeat(5),
+        signal: 'unknown'
+      },
+      {
+        number: 2,
+        name: '',
+        subtitle: '',
+        stats: '',
+        trait: '',
+        note: '',
+        signal: 'teal'
+      }
+    ],
     poll_delay_ms: 15000
   }));
 });
@@ -86,7 +106,10 @@ try {
   await page.getByRole('button', { name: '모델 신호 보기' }).click();
   await page.getByText('실시간 시장 신호 반영').waitFor();
   await page.getByText('실시간 배당 반영').waitFor();
-  await page.getByText('QA mock: live market path is reachable and rendered.').waitFor();
+  await page.getByText(/QA mock: live market path is reachable and rendered/).waitFor();
+  await page.getByText(/<script>alert/).waitFor();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  if (overflow > 1) throw new Error(`Horizontal overflow after hostile API payload: ${overflow}px`);
   if (errors.length) throw new Error(`Console/page errors:\n${errors.join('\n')}`);
   console.log('live API QA passed');
 } finally {
