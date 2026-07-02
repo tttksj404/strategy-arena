@@ -129,6 +129,8 @@ const styles = StyleSheet.create({
   raceChip: {
     alignItems: 'center',
     borderRadius: radius.pill,
+    justifyContent: 'center',
+    minHeight: 44,
     minWidth: 58,
     paddingHorizontal: space.space3,
     paddingVertical: space.space2

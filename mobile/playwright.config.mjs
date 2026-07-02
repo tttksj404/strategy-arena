@@ -21,6 +21,24 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'compact-light-320',
+      use: {
+        ...devices['iPhone SE'],
+        browserName: 'chromium',
+        colorScheme: 'light',
+        viewport: { width: 320, height: 740 }
+      }
+    },
+    {
+      name: 'compact-dark-320',
+      use: {
+        ...devices['iPhone SE'],
+        browserName: 'chromium',
+        colorScheme: 'dark',
+        viewport: { width: 320, height: 740 }
+      }
+    },
+    {
       name: 'mobile-light-390',
       use: {
         ...devices['iPhone 15'],

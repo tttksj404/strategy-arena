@@ -53,6 +53,24 @@ test('layout keeps the copper identity without horizontal overflow', async ({ pa
   expect(errors).toEqual([]);
 });
 
+test('interactive controls keep mobile-friendly tap targets', async ({ page }) => {
+  const errors = collectErrors(page);
+  await page.goto('/');
+
+  const smallTargets = await page.evaluate(() =>
+    [...document.querySelectorAll('[role="button"], [role="tab"], button')]
+      .map((element) => {
+        const rect = element.getBoundingClientRect();
+        const label = (element.textContent || element.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim();
+        return { label, width: Math.round(rect.width), height: Math.round(rect.height) };
+      })
+      .filter((target) => target.width < 44 || target.height < 44)
+  );
+
+  expect(smallTargets).toEqual([]);
+  expect(errors).toEqual([]);
+});
+
 test('race selector updates sport, race, and opens analysis', async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto('/');

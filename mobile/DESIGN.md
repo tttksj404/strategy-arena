@@ -131,6 +131,7 @@ All spacing derives from 4px.
 - **Spacing**: space3 between controls, space4 around group.
 - **States**: default, selected, disabled, loading, error.
 - **Accessibility**: each control is a button with selected state.
+- **Touch target**: interactive chips and buttons must be at least 44px tall on mobile.
 
 ### BottomTab
 - **Structure**: four fixed tabs with line icons and labels.
