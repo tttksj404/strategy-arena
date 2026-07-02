@@ -76,7 +76,7 @@ def snapshot_from_item(item, lookup):
         for combo, odds in (item.get("board") or {}).items()
         if re.fullmatch(r"[1-7]-[1-7]-[1-7]", str(combo)) and float(odds) > 0
     }
-    if len(board) < 150:
+    if len(board) != 210:
         return None
     year = str(item.get("year", "")).strip()
     meet_code = str(item.get("meet", "")).strip()

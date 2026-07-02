@@ -202,6 +202,20 @@ class LiveDecisionTestCase(unittest.TestCase):
             self.assertIn("5-1-7", record["board"])
             self.assertTrue(os.path.exists(path + ".keys"))
 
+    def test_trifecta_snapshot_writer_rejects_incomplete_board(self):
+        app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()
+        board = make_trifecta_candidate_board()
+        board.pop("1-2-3")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "snapshots.jsonl")
+            with patch.dict(os.environ, {"KCYCLE_TRIFECTA_SNAPSHOT_PATH": path}, clear=False):
+                saved = app_module.engine.save_kcycle_trifecta_snapshot(
+                    "2026", "20260628", "광명", "7", board, source="test",
+                )
+
+            self.assertFalse(saved)
+            self.assertFalse(os.path.exists(path))
+
     def test_live_decision_saves_trifecta_snapshot_when_board_is_available(self):
         app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()
         base = {

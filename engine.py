@@ -1915,7 +1915,7 @@ def save_kcycle_trifecta_snapshot(stnd_yr, ymd, meet, race_no, trifecta_board, f
         for combo, odds in (trifecta_board or {}).items()
         if re.fullmatch(r"[1-7]-[1-7]-[1-7]", str(combo)) and odds and float(odds) > 0
     }
-    if len(valid) < 150:
+    if len(valid) != 210:
         return False
     import datetime as _dt
     board_hash = _trifecta_board_hash(valid)
