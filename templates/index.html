@@ -644,7 +644,8 @@
           if (!d) { panel.innerHTML = '<div style="color:var(--muted);font-size:13px">판단 불가</div>'; return; }
           pollDelayMs = Number(d.poll_delay_ms) || (d.market_used || d.status === 'odds_live' ? 5000 : 15000);
           var oddsAge = d.odds_age_sec != null ? d.odds_age_sec + '초 전' : '—';
-          var oddsInfo = d.market_used
+          var hasLiveSignal = d.market_used || !!d.trifecta_signal;
+          var oddsInfo = hasLiveSignal
             ? '배당 반영됨 (마지막 갱신: ' + oddsAge + ')'
             : '배당 미반영';
           var marketRisk = d.market_risk || {};
@@ -663,6 +664,14 @@
               + (d.market_signal.expected_top1 ? ' · 검증 top1 ' + (100*d.market_signal.expected_top1).toFixed(1) + '%' : '')
               + '</div>'
             : '';
+          var trifectaHtml = d.trifecta_signal && d.trifecta_signal.label
+            ? '<div style="font-size:12px;color:#ffd6a8;margin-top:4px">삼쌍 신호: '
+              + escapeHtml(d.trifecta_signal.label)
+              + (d.trifecta_signal.expected_trio_exact ? ' · 검증 exact ' + (100*d.trifecta_signal.expected_trio_exact).toFixed(1) + '%' : '')
+              + (d.trifecta_signal.lift_pp ? ' · 직전대비 +' + Number(d.trifecta_signal.lift_pp).toFixed(2) + '%p' : '')
+              + (d.trifecta_signal.robust_warning ? '<br><span style="color:#ffcf8a">' + escapeHtml(d.trifecta_signal.robust_warning) + '</span>' : '')
+              + '</div>'
+            : '';
           var topHtml = d.top
             ? '<b>' + escapeHtml(d.top.bno) + '번 ' + escapeHtml(d.top.name || '') + '</b> (win ' + (100*d.top.pwin).toFixed(1) + '% / 연대 ' + (100*d.top.pplc).toFixed(1) + '%)'
             : '—';
@@ -675,6 +684,7 @@
             + '<div style="font-size:12px;color:var(--muted)">' + escapeHtml(d.message || '') + '</div>'
             + riskHtml
             + marketHtml
+            + trifectaHtml
             + fallbackHtml
             + '<div style="font-size:11px;color:var(--muted);margin-top:4px">자동 갱신: ' + Math.round(pollDelayMs/1000) + '초마다 · 마지막: ' + (d.updated_at || '') + '</div>';
         })

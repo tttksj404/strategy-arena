@@ -30,6 +30,7 @@ import math
 import time
 import urllib.parse
 import urllib.request
+from html.parser import HTMLParser
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "static", "models", "keirin_model_final.joblib")
@@ -59,6 +60,7 @@ KCYCLE_RANKINGPREDICT_PATH = os.environ.get(
     "KCYCLE_RANKINGPREDICT_PATH",
     os.path.join(HERE, "data", "kcycle_rankingpredict_signals.json"),
 )
+KCYCLE_TRIFECTA_ENABLED = os.environ.get("KCYCLE_TRIFECTA_ENABLED", "1") == "1"
 
 CIRCLE = {chr(0x2460 + i): i + 1 for i in range(9)}
 
@@ -71,6 +73,77 @@ _KCYCLE_RANKINGPREDICT = None
 _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 _KEIRIN_CARD_PAGE_CACHE = {}
 _KEIRIN_CARD_PAGE_TTL = int(os.environ.get("KEIRIN_CARD_PAGE_TTL", "1800"))
+
+
+class _KcycleTableTextParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.rows = []
+        self._in_cell = False
+        self._in_row = False
+        self._cell_parts = []
+        self._row = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "tr":
+            self._in_row = True
+            self._row = []
+        elif tag in {"th", "td"} and self._in_row:
+            self._in_cell = True
+            self._cell_parts = []
+
+    def handle_data(self, data):
+        if self._in_cell:
+            self._cell_parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag in {"th", "td"} and self._in_cell:
+            text = re.sub(r"\s+", " ", "".join(self._cell_parts)).strip()
+            self._row.append(text)
+            self._cell_parts = []
+            self._in_cell = False
+        elif tag == "tr" and self._in_row:
+            if any(cell for cell in self._row):
+                self.rows.append(self._row)
+            self._row = []
+            self._in_row = False
+
+
+def _kcycle_float(text):
+    text = str(text or "").strip().replace(",", "")
+    if text in {"", "-", "0", "0.0"}:
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def parse_kcycle_trifecta_board(html):
+    parser = _KcycleTableTextParser()
+    parser.feed(html or "")
+    board = {}
+    prefixes = []
+    for cells in parser.rows:
+        row_prefixes = [x for x in cells if re.fullmatch(r"[1-7]-[1-7]", x or "")]
+        if row_prefixes:
+            prefixes = row_prefixes
+            continue
+        if not prefixes or len(cells) < 2:
+            continue
+        for idx, prefix in enumerate(prefixes):
+            pos = idx * 2
+            if pos + 1 >= len(cells):
+                continue
+            third = cells[pos]
+            odds = _kcycle_float(cells[pos + 1])
+            if odds is None or not re.fullmatch(r"[1-7]", third or ""):
+                continue
+            a, b = prefix.split("-")
+            if third in {a, b}:
+                continue
+            board[f"{a}-{b}-{third}"] = odds
+    return board
 
 
 def _rankingpredict_key(ymd, meet, race_no):
@@ -473,7 +546,7 @@ def fetch_kcycle_odds(stnd_yr, ymd, race_no):
     """kcycle에서 실시간 마번별 단승/연승 배당 fetch.
     반환: {bno: win_odds} 또는 None.
     """
-    import urllib.request, ssl, json as _json
+    import urllib.request, ssl
     tms_day = _resolve_kcycle_tms(stnd_yr, ymd)
     if not tms_day:
         return None
@@ -502,7 +575,6 @@ def fetch_kcycle_odds(stnd_yr, ymd, race_no):
             nums = m.group(1).strip().split()
             if len(nums) < 14:
                 continue
-            bnos = nums[:7]
             odds = nums[7:14]  # 마번 1~7 배당
             result = {}
             for i, o in enumerate(odds, 1):
@@ -512,6 +584,34 @@ def fetch_kcycle_odds(stnd_yr, ymd, race_no):
                     continue
             if result:
                 return result
+        except Exception:
+            continue
+    return None
+
+
+def fetch_kcycle_trifecta_board(stnd_yr, ymd, race_no):
+    import ssl
+    tms_day = _resolve_kcycle_tms(stnd_yr, ymd)
+    if not tms_day:
+        return None
+    year, tms, day = tms_day
+    if day == 0:
+        return None
+    rno = (str(race_no).strip().lstrip("0") or "0").zfill(2)
+    for dt in [0, -1, 1, -2, 2]:
+        url = (f"https://{KCYCLE_IP}/race/dividendrate/final/"
+               f"{year}/{tms+dt}/{day}/001/{rno}")
+        try:
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            req = urllib.request.Request(url, headers={
+                "Host": "www.kcycle.or.kr", "User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=3, context=ctx) as r:
+                html = r.read().decode("utf-8", "replace")
+            board = parse_kcycle_trifecta_board(html)
+            if len(board) >= 150:
+                return board
         except Exception:
             continue
     return None
@@ -1605,6 +1705,17 @@ def fetch_kcycle_odds_with_ts(stnd_yr, ymd, race_no):
     return odds, ts
 
 
+def fetch_kcycle_trifecta_board_with_ts(stnd_yr, ymd, race_no):
+    import datetime as _dt
+    board = None
+    try:
+        board = fetch_kcycle_trifecta_board(stnd_yr, ymd, race_no)
+    except Exception:
+        board = None
+    ts = _dt.datetime.now().isoformat(timespec="seconds")
+    return board, ts
+
+
 def _live_poll_delay_ms(sport, market_used):
     if market_used:
         return 5000
@@ -1648,9 +1759,17 @@ def _live_signal_payload(signal):
     return {
         "tier": signal.get("tier"),
         "label": signal.get("label"),
+        "order": signal.get("order"),
         "expected_top1": signal.get("expected_top1"),
+        "expected_trio_exact": signal.get("expected_trio_exact"),
+        "baseline_trio_exact": signal.get("baseline_trio_exact"),
+        "lift_pp": signal.get("lift_pp"),
         "coverage": signal.get("coverage"),
+        "rule": signal.get("rule"),
+        "validation_n": signal.get("validation_n"),
         "validation_split": signal.get("validation_split"),
+        "robust_status": signal.get("robust_status"),
+        "robust_warning": signal.get("robust_warning"),
     }
 
 
@@ -1684,6 +1803,51 @@ def _market_favorite_signal(market_odds):
             "rule": "실시간 단승 최저배당 <= 1.1",
         }
     return None
+
+
+def _market_trifecta_signal(trifecta_board):
+    valid = {
+        str(combo): float(odds)
+        for combo, odds in (trifecta_board or {}).items()
+        if re.fullmatch(r"[1-7]-[1-7]-[1-7]", str(combo)) and odds and float(odds) > 0
+    }
+    if len(valid) < 150:
+        return None
+    ranked = sorted(valid.items(), key=lambda kv: (kv[1], kv[0]))
+    if len(ranked) < 2:
+        return None
+    best_combo, best_odds = ranked[0]
+    if best_odds <= 0:
+        return None
+    second_odds = ranked[1][1]
+    gap12 = second_odds / best_odds
+    implied = {combo: 1.0 / odds for combo, odds in valid.items()}
+    total = sum(implied.values())
+    if total <= 0:
+        return None
+    a, b, c = [int(x) for x in best_combo.split("-")]
+    pair_prefix = f"{a}-{b}-"
+    pair12_mass = sum(v for combo, v in implied.items() if combo.startswith(pair_prefix)) / total
+    if gap12 < 2.28571 or pair12_mass < 0.532879:
+        return None
+    return {
+        "tier": "market_trifecta_50_candidate",
+        "label": "KCYCLE 삼쌍 시장강합의 50% 후보(실험)",
+        "leader": a,
+        "order": [a, b, c],
+        "favorite_odds": best_odds,
+        "gap12": gap12,
+        "pair12_mass": pair12_mass,
+        "expected_trio_exact": 0.5,
+        "baseline_trio_exact": 0.2719,
+        "lift_pp": 22.81,
+        "coverage": 0.0217,
+        "validation_n": 30,
+        "validation_split": "2026 OOS n=30 exact 50.0%; 2025 n=41 exact 53.7%; 2024 n=6",
+        "rule": "전체 삼쌍 최저배당 gap12>=2.28571 + 같은 1-2순서 암시확률>=53.2879%",
+        "robust_status": "failed_small_n",
+        "robust_warning": "직전 삼쌍 27.19% 대비 +22.81%p 후보지만 전연도 robust PASS는 아닙니다.",
+    }
 
 
 def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
@@ -1727,6 +1891,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             "poll_delay_ms": _live_poll_delay_ms(sport, False),
             "market_risk": _live_market_risk(sport, False, "hold"),
             "fallback_signal": fallback_signal,
+            "trifecta_signal": None,
         }
 
     rows = [dict(r) for r in base_model_out.get("rows", [])]
@@ -1740,6 +1905,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             "poll_delay_ms": _live_poll_delay_ms(sport, False),
             "market_risk": _live_market_risk(sport, False, "hold"),
             "fallback_signal": None,
+            "trifecta_signal": None,
         }
 
     # ── kcycle 배당 fetch (경륜만) ──
@@ -1747,12 +1913,21 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
     fetched_at = None
     market_used = False
     market_signal = None
+    trifecta_signal = None
+    live_market_used = False
     if sport == "keirin" and os.environ.get("KCYCLE_ENABLED", "0") == "1":
         stnd_yr = str(ymd)[:4] if ymd else ""
         try:
             market_odds, fetched_at = fetch_kcycle_odds_with_ts(stnd_yr, ymd, race_no)
         except Exception:
             market_odds = None
+        if KCYCLE_TRIFECTA_ENABLED:
+            try:
+                trifecta_board, trifecta_fetched_at = fetch_kcycle_trifecta_board_with_ts(stnd_yr, ymd, race_no)
+                trifecta_signal = _market_trifecta_signal(trifecta_board)
+                fetched_at = fetched_at or trifecta_fetched_at
+            except Exception:
+                trifecta_signal = None
 
     # ── 상태 판정 ──
     if market_odds and len(market_odds) >= 2:
@@ -1800,6 +1975,11 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             status = "pre_race"
             message = "사전 예측 (배당 미반영 — Render에서는 kcycle 접근 제한)"
             snapshot_phase = "pre_race"
+    if trifecta_signal:
+        suffix = " · 삼쌍 50% 후보 감지(실험/robust 미통과)"
+        if suffix not in message:
+            message = f"{message}{suffix}"
+    live_market_used = market_used or bool(trifecta_signal)
 
     # ── 최종판정 여부 ──
     top = rows[0] if rows else None
@@ -1839,8 +2019,9 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
         "decision": decision,
         "market_used": market_used,
         "snapshot_phase": snapshot_phase,
-        "poll_delay_ms": _live_poll_delay_ms(sport, market_used),
-        "market_risk": _live_market_risk(sport, market_used, status),
+        "poll_delay_ms": _live_poll_delay_ms(sport, live_market_used),
+        "market_risk": _live_market_risk(sport, live_market_used, status),
         "fallback_signal": _live_fallback_signal(base_model_out),
         "market_signal": _live_signal_payload(market_signal) if market_signal else None,
+        "trifecta_signal": _live_signal_payload(trifecta_signal) if trifecta_signal else None,
     }

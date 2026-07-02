@@ -13,6 +13,24 @@ os.environ["KCYCLE_ENABLED"] = "0"  # Render와 동일 (kcycle 비활성화)
 import app as app_module
 
 
+def make_trifecta_candidate_board():
+    board = {}
+    for a in range(1, 8):
+        for b in range(1, 8):
+            for c in range(1, 8):
+                if len({a, b, c}) == 3:
+                    board[f"{a}-{b}-{c}"] = 10000.0
+    for combo, odds in {
+        "5-1-7": 10.0,
+        "5-1-2": 23.0,
+        "5-1-3": 24.0,
+        "5-1-4": 25.0,
+        "5-1-6": 26.0,
+    }.items():
+        board[combo] = odds
+    return board
+
+
 class LiveDecisionTestCase(unittest.TestCase):
     def setUp(self):
         app_module.app.config["TESTING"] = True
@@ -89,6 +107,10 @@ class LiveDecisionTestCase(unittest.TestCase):
              patch.object(app_module.engine, "fetch_kcycle_odds_with_ts", return_value=(
                  {1: 4.2, 5: 1.0, 7: 9.5},
                  "2026-07-02T12:00:00",
+             )), \
+             patch.object(app_module.engine, "fetch_kcycle_trifecta_board_with_ts", return_value=(
+                 None,
+                 "2026-07-02T12:00:00",
              )):
             decision = app_module.engine.compute_live_decision(
                 "keirin", "2026-06-28", "광명", "7", base_model_out=base,
@@ -99,6 +121,47 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(decision["top"]["bno"], 5)
         self.assertEqual(decision["market_signal"]["tier"], "market_fav_odds_le_1_0")
         self.assertAlmostEqual(decision["market_signal"]["expected_top1"], 0.8896)
+        self.assertEqual(decision["poll_delay_ms"], 5000)
+
+    def test_trifecta_signal_exposes_immediate_prior_lift_with_robust_warning(self):
+        signal = app_module.engine._market_trifecta_signal(make_trifecta_candidate_board())
+
+        self.assertEqual(signal["tier"], "market_trifecta_50_candidate")
+        self.assertEqual(signal["order"], [5, 1, 7])
+        self.assertAlmostEqual(signal["expected_trio_exact"], 0.5)
+        self.assertAlmostEqual(signal["baseline_trio_exact"], 0.2719)
+        self.assertAlmostEqual(signal["lift_pp"], 22.81)
+        self.assertEqual(signal["robust_status"], "failed_small_n")
+        self.assertIn("robust PASS", signal["robust_warning"])
+
+    def test_live_decision_exposes_trifecta_signal_without_overwriting_top1_signal(self):
+        base = {
+            "kind": "ok",
+            "rows": [
+                {"bno": 1, "name": "모델선두", "pwin": 0.62, "pplc": 0.86},
+                {"bno": 5, "name": "시장삼쌍", "pwin": 0.20, "pplc": 0.70},
+                {"bno": 7, "name": "상대", "pwin": 0.18, "pplc": 0.64},
+            ],
+            "picks": [],
+        }
+
+        with patch.dict(os.environ, {"KCYCLE_ENABLED": "1"}, clear=False), \
+             patch.object(app_module.engine, "fetch_kcycle_odds_with_ts", return_value=(
+                 {1: 4.2, 5: 1.2, 7: 9.5},
+                 "2026-07-02T12:00:00",
+             )), \
+             patch.object(app_module.engine, "fetch_kcycle_trifecta_board_with_ts", return_value=(
+                 make_trifecta_candidate_board(),
+                 "2026-07-02T12:00:00",
+             )):
+            decision = app_module.engine.compute_live_decision(
+                "keirin", "2026-06-28", "광명", "7", base_model_out=base,
+            )
+
+        self.assertIsNone(decision["market_signal"])
+        self.assertEqual(decision["trifecta_signal"]["tier"], "market_trifecta_50_candidate")
+        self.assertAlmostEqual(decision["trifecta_signal"]["expected_trio_exact"], 0.5)
+        self.assertIn("robust 미통과", decision["message"])
         self.assertEqual(decision["poll_delay_ms"], 5000)
 
     def test_live_decision_keeps_official_signal_when_card_model_fails(self):
@@ -129,6 +192,8 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertIn("d.poll_delay_ms", html)
         self.assertIn("market_risk", html)
         self.assertIn("market_signal", html)
+        self.assertIn("trifecta_signal", html)
+        self.assertIn("expected_trio_exact", html)
         self.assertIn('method="get"', html)
 
     def test_live_decision_reuses_cached_base_prediction(self):
