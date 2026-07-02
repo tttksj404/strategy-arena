@@ -58,6 +58,8 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
 
         self.assertIn("VPS_HOST is required", deploy_script)
         self.assertIn("Korea VPS SSH is not reachable", deploy_script)
+        self.assertIn("VPS_BOOTSTRAP_DOCKER", deploy_script)
+        self.assertIn("bootstrap_ubuntu_docker.sh", deploy_script)
         self.assertIn("Docker Engine and the Docker Compose plugin are required", deploy_script)
         self.assertIn("resolve_datagokr_key", deploy_script)
         self.assertIn("$HOME/keirin/.env", deploy_script)
@@ -65,6 +67,15 @@ class OracleDeployArtifactsTestCase(unittest.TestCase):
         self.assertIn("KCYCLE_ENABLED=1", deploy_script)
         self.assertIn("deploy/oracle/docker-compose.yml", deploy_script)
         self.assertIn("deploy/oracle/smoke.sh", deploy_script)
+
+    def test_korea_vps_bootstrap_installs_docker_compose_on_ubuntu(self):
+        bootstrap_script = (ROOT / "deploy" / "korea-vps" / "bootstrap_ubuntu_docker.sh").read_text(encoding="utf-8")
+
+        self.assertIn("set -eu", bootstrap_script)
+        self.assertIn("Ubuntu-compatible OS is required", bootstrap_script)
+        self.assertIn("docker-ce", bootstrap_script)
+        self.assertIn("docker-compose-plugin", bootstrap_script)
+        self.assertIn("systemctl enable --now docker", bootstrap_script)
 
 
 if __name__ == "__main__":

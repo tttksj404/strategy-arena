@@ -52,6 +52,12 @@ if ! ssh -o BatchMode=yes -o ConnectTimeout="${VPS_CONNECT_TIMEOUT:-12}" "$SSH_T
 fi
 
 if ! ssh "$SSH_TARGET" "command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1"; then
+  if [ "${VPS_BOOTSTRAP_DOCKER:-1}" = "1" ]; then
+    ssh "$SSH_TARGET" "bash -s" < "$repo_root/deploy/korea-vps/bootstrap_ubuntu_docker.sh"
+  fi
+fi
+
+if ! ssh "$SSH_TARGET" "command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1"; then
   echo "Docker Engine and the Docker Compose plugin are required on $SSH_TARGET" >&2
   exit 6
 fi
