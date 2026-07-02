@@ -36,6 +36,7 @@ export function RaceSelector({
           const selected = item === sport;
           return (
             <Pressable
+              aria-selected={selected}
               accessibilityRole="button"
               accessibilityState={{ selected }}
               key={item}
@@ -66,6 +67,7 @@ export function RaceSelector({
           const selected = raceNo === race;
           return (
             <Pressable
+              aria-selected={selected}
               accessibilityRole="button"
               accessibilityState={{ selected }}
               key={race}

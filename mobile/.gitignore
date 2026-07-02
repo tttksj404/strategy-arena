@@ -4,6 +4,7 @@ dist/
 web-build/
 build/
 test-results/
+playwright-report/
 android/
 ios/
 .env

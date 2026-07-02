@@ -22,6 +22,7 @@ export default function App() {
   const [sport, setSport] = useState<Sport>('keirin');
   const [raceNo, setRaceNo] = useState(5);
   const [decision, setDecision] = useState<RaceDecision | null>(null);
+  const activeDecision = decision && decision.sport === sport && decision.raceNo === raceNo ? decision : null;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -50,7 +51,7 @@ export default function App() {
     void fetchRaceDecision(params).then(setDecision).catch(() => undefined);
   }, [params]);
 
-  const currentDecision = decision ?? {
+  const currentDecision = activeDecision ?? {
     status: 'hold',
     sport,
     date: params.date,
