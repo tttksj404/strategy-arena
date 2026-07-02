@@ -10,6 +10,16 @@ export type RacePick = {
   grade: '강' | '중' | '약';
 };
 
+export type RaceParticipant = {
+  number: number;
+  name: string;
+  subtitle: string;
+  stats: string;
+  trait: string;
+  note: string;
+  signal: 'primary' | 'teal' | 'amber' | 'rose' | 'violet';
+};
+
 export type RaceDecision = {
   status: 'ready' | 'hold' | 'blocked';
   sport: Sport;
@@ -30,6 +40,7 @@ export type RaceDecision = {
     sample: number;
   };
   picks: RacePick[];
+  participants: RaceParticipant[];
   updatedAt: string;
 };
 

@@ -71,6 +71,7 @@ export default function App() {
       sample: 10886
     },
     picks: [],
+    participants: [],
     updatedAt: new Date().toISOString()
   };
 

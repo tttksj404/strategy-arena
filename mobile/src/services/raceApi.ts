@@ -1,9 +1,35 @@
 import Constants from 'expo-constants';
 
-import type { RaceDecision, Sport } from '../types/race';
+import type { RaceDecision, RaceParticipant, Sport } from '../types/race';
 
 const extraApiBaseUrl = (Constants.expoConfig?.extra?.apiBaseUrl as string | undefined) ?? '';
 const apiBaseUrl = extraApiBaseUrl;
+
+const keirinParticipants: RaceParticipant[] = [
+  { number: 1, name: '김태훈', subtitle: '우수급 / 87.4점', stats: '최근 3주 2-1-0', trait: '선행', note: '초반 주도력 강점, 후반 유지력은 보통', signal: 'teal' },
+  { number: 2, name: '박민재', subtitle: '우수급 / 84.8점', stats: '최근 3주 1-1-1', trait: '마크', note: '강자 뒤 추주 안정, 단독 승부는 제한적', signal: 'primary' },
+  { number: 3, name: '이현수', subtitle: '선발급 / 81.9점', stats: '최근 3주 0-2-1', trait: '추입', note: '직선 반응 좋지만 위치 선정 변동 큼', signal: 'amber' },
+  { number: 4, name: '정도윤', subtitle: '선발급 / 80.7점', stats: '최근 3주 0-1-2', trait: '자력', note: '몸싸움 회피형, 전개 이득 필요', signal: 'amber' },
+  { number: 5, name: '최강우', subtitle: '특선급 / 91.2점', stats: '최근 3주 3-0-0', trait: '젖히기', note: '득점·컨디션 우위, 중심 후보로 분류', signal: 'teal' },
+  { number: 6, name: '윤성민', subtitle: '우수급 / 83.6점', stats: '최근 3주 1-0-1', trait: '마크', note: '내선 운영 안정, 외선 전환은 느림', signal: 'primary' },
+  { number: 7, name: '서지환', subtitle: '우수급 / 85.1점', stats: '최근 3주 1-2-0', trait: '추입', note: '마지막 반 바퀴 탄력, 초반 위치 중요', signal: 'primary' },
+  { number: 8, name: '오민석', subtitle: '선발급 / 79.8점', stats: '최근 3주 0-1-0', trait: '선행', note: '초반 속도는 있으나 종반 저하 리스크', signal: 'rose' }
+];
+
+const horseParticipants: RaceParticipant[] = [
+  { number: 1, name: '새벽질주', subtitle: '기수 김도윤 / 55kg', stats: '최근 4전 1-1-1', trait: '선입', note: '출발 안정, 직선 탄력은 평균 이상', signal: 'primary' },
+  { number: 2, name: '블랙윈드', subtitle: '기수 박하린 / 56kg', stats: '최근 4전 0-2-1', trait: '추입', note: '막판 추입 좋지만 전개 의존도 높음', signal: 'amber' },
+  { number: 3, name: '스톰레이크', subtitle: '기수 이준 / 54kg', stats: '최근 4전 2-0-0', trait: '선행', note: '게이트 반응 빠름, 페이스 과속 주의', signal: 'teal' },
+  { number: 4, name: '라이트닝문', subtitle: '기수 최서윤 / 55kg', stats: '최근 4전 1-1-0', trait: '자유', note: '거리 적응 양호, 모래 맞으면 집중력 저하', signal: 'primary' },
+  { number: 5, name: '골든포커스', subtitle: '기수 문태오 / 57kg', stats: '최근 4전 3-0-0', trait: '선입', note: '지구력·기록 우위, 부담중량 확인 필요', signal: 'teal' },
+  { number: 6, name: '청운대로', subtitle: '기수 안유진 / 54kg', stats: '최근 4전 0-1-2', trait: '추입', note: '후반 반응은 안정, 초반 자리 손실 잦음', signal: 'amber' },
+  { number: 7, name: '오션프라임', subtitle: '기수 정민호 / 56kg', stats: '최근 4전 1-0-1', trait: '선행', note: '단거리 페이스 적합, 긴 직선은 부담', signal: 'primary' },
+  { number: 8, name: '레드노바', subtitle: '기수 한서우 / 53kg', stats: '최근 4전 0-0-1', trait: '자유', note: '부담중량 이점, 최근 컨디션 확인 필요', signal: 'rose' }
+];
+
+function demoParticipants(sport: Sport) {
+  return sport === 'horse' ? horseParticipants : keirinParticipants;
+}
 
 const demoDecision: RaceDecision = {
   status: 'hold',
@@ -30,6 +56,7 @@ const demoDecision: RaceDecision = {
     { code: 'TRI', label: '삼쌍 순서', selection: '5-1-7', probability: 0.18, grade: '약' },
     { code: 'TRB', label: '삼복 조합', selection: '1-5-7', probability: 0.26, grade: '중' }
   ],
+  participants: keirinParticipants,
   updatedAt: new Date().toISOString()
 };
 
@@ -37,6 +64,7 @@ type LiveDecisionPayload = {
   status?: string;
   market_used?: boolean;
   market_risk?: { level?: string; message?: string };
+  participants?: RaceParticipant[];
   poll_delay_ms?: number;
 };
 
@@ -60,6 +88,7 @@ export async function fetchRaceDecision(params: {
       date: params.date,
       meet: params.meet,
       raceNo: params.raceNo,
+      participants: demoParticipants(params.sport),
       updatedAt: new Date().toISOString()
     };
   }
@@ -90,6 +119,7 @@ export async function fetchRaceDecision(params: {
       title: level === 'verified' ? '실시간 배당 반영' : level === 'blocked' ? '실시간 접근 제한' : '배당 미사용',
       message: payload.market_risk?.message ?? demoDecision.marketRisk.message
     },
+    participants: payload.participants?.length ? payload.participants : demoParticipants(params.sport),
     updatedAt: new Date().toISOString()
   };
 }

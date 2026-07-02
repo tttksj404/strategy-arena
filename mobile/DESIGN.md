@@ -133,6 +133,14 @@ All spacing derives from 4px.
 - **Accessibility**: each control is a button with selected state.
 - **Touch target**: interactive chips and buttons must be at least 44px tall on mobile.
 
+### ParticipantBoard
+- **Structure**: information-first list for each rider or horse: number, name, supporting profile, recent flow, style, and neutral note.
+- **Variants**: compact for home, detailed for analysis.
+- **Spacing**: rows use space3 gap and inset surface; no nested cards.
+- **States**: default, empty later, live data later.
+- **Accessibility**: every row includes a combined label so the source data is readable without relying on model picks.
+- **Purpose**: keep RaceLens from forcing a judgement by showing the underlying provided race materials next to the model signal.
+
 ### BottomTab
 - **Structure**: four fixed tabs with line icons and labels.
 - **Variants**: home, analyze, lab, pro.

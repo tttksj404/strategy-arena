@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { LensCard } from '../components/LensCard';
+import { ParticipantBoard } from '../components/ParticipantBoard';
 import { ProbabilityRail } from '../components/ProbabilityRail';
 import { RaceSelector } from '../components/RaceSelector';
 import { StatusPill } from '../components/StatusPill';
@@ -67,6 +68,8 @@ export function HomeScreen({
         onRaceChange={onRaceChange}
         onSportChange={onSportChange}
       />
+
+      <ParticipantBoard compact mode={mode} participants={decision.participants} sport={sport} />
 
       <StoreSafeNotice mode={mode} compact />
     </ScrollView>

@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { LensCard } from '../components/LensCard';
+import { ParticipantBoard } from '../components/ParticipantBoard';
 import { ProbabilityRail } from '../components/ProbabilityRail';
 import { StatusPill } from '../components/StatusPill';
 import { StoreSafeNotice } from '../components/StoreSafeNotice';
@@ -29,6 +30,8 @@ export function AnalyzeScreen({ mode, decision }: AnalyzeScreenProps) {
         </View>
         <Text style={[styles.riskMessage, { color: colors.textSecondary }]}>{decision.marketRisk.message}</Text>
       </LensCard>
+
+      <ParticipantBoard mode={mode} participants={decision.participants} sport={decision.sport} />
 
       <View style={styles.pickList}>
         {decision.picks.map((pick) => (
