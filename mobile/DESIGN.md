@@ -26,25 +26,26 @@ Reference synthesis:
 
 | Role | Token | Light | Dark | Usage |
 |------|-------|-------|------|-------|
-| Surface/base | surfaceBase | #F6F7FA | #080A0D | App background |
-| Surface/raised | surfaceRaised | #FFFFFF | #11151B | Primary panels |
-| Surface/inset | surfaceInset | #EDF0F5 | #171D25 | Inputs, chips, metric wells |
-| Surface/glass | surfaceGlass | #F7F9FCE6 | #151B24E6 | Overlay panels |
-| Text/primary | textPrimary | #101318 | #F5F7FB | Headlines, body |
-| Text/secondary | textSecondary | #596270 | #AAB3C2 | Captions, helper text |
-| Text/muted | textMuted | #87909E | #697282 | Disabled, quiet metadata |
-| Border/subtle | borderSubtle | #E2E6EE | #252D38 | Dividers, cards |
-| Accent/primary | accentPrimary | #276EF1 | #68A0FF | Main action, focus |
-| Accent/teal | accentTeal | #008F72 | #4AD6B0 | Positive verified states |
-| Accent/amber | accentAmber | #B66A00 | #FFB64D | Caution, market missing |
-| Accent/rose | accentRose | #C7334D | #FF6B86 | Error, restriction |
-| Accent/violet | accentViolet | #6547D9 | #9E8CFF | Pro, model lab |
-| Rail/base | railBase | #DDE3EC | #25303D | Probability rail track |
+| Surface/base | surfaceBase | #E8F0E3 | #0B0D0C | Moss-tinted app background |
+| Surface/raised | surfaceRaised | #FFF8EA | #151310 | Warm porcelain/obsidian panels |
+| Surface/inset | surfaceInset | #DDE8D2 | #221B15 | Inputs, chips, metric wells |
+| Surface/glass | surfaceGlass | #FFF8EAE8 | #1C1712E8 | Overlay panels |
+| Text/primary | textPrimary | #17130F | #F7EFE2 | Headlines, body |
+| Text/secondary | textSecondary | #5E554B | #B9AC9D | Captions, helper text |
+| Text/muted | textMuted | #746557 | #958776 | Disabled, quiet metadata |
+| Border/subtle | borderSubtle | #D7CFC1 | #3A3027 | Dividers, cards |
+| Accent/primary | accentPrimary | #A9431F | #FF8B55 | Main action, focus, selected state |
+| Accent/teal | accentTeal | #006B5D | #4ED1B6 | Positive verified states |
+| Accent/amber | accentAmber | #9B6A00 | #FFC35A | Caution, market missing |
+| Accent/rose | accentRose | #B8324B | #FF6F8A | Error, restriction |
+| Accent/violet | accentViolet | #5940B5 | #B79CFF | Pro, model lab |
+| Rail/base | railBase | #D6D0C1 | #3A332D | Probability rail track |
 
 ### Rules
-- Blue is only for primary action and focus, not decoration.
-- Teal means verified or healthy data path. Amber means uncertain/missing data. Rose means blocked or unsafe.
-- Backgrounds stay graphite or near-white; racing content should not become casino neon.
+- The signature color is oxidized copper, not default app blue. It marks primary action, selected state, and the hero confidence number.
+- Verdigris teal means verified or healthy data path. Amber means uncertain/missing data. Rose means blocked or unsafe.
+- Surfaces use warm porcelain, moss tint, and obsidian so the app feels like a race-intelligence instrument rather than a generic SaaS screen.
+- Keep accent colors purposeful. No casino neon, no purple-blue AI gradient, and no raw colors outside `src/theme/tokens.ts`.
 - Any legal/safety notice uses amber or rose with plain language.
 
 ## 3. Typography
@@ -172,4 +173,4 @@ Mixed: tonal-shift plus restrained glass and hairline borders.
 | Inset | surfaceInset | Metric wells, selectors |
 | Glass | surfaceGlass + blur where native supports it | Hero lens panels |
 
-Depth must not look like casino lighting. No heavy drop shadows. Use surface stepping, thin borders, and compact motion.
+Depth must not look like casino lighting. Use copper-tinted borders, warm porcelain panels, obsidian dark surfaces, and compact motion instead of heavy drop shadows or generic blue glow.

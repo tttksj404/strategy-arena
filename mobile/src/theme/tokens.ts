@@ -1,23 +1,23 @@
 export const colors = {
-  surfaceBase: { light: '#F6F7FA', dark: '#080A0D' },
-  surfaceRaised: { light: '#FFFFFF', dark: '#11151B' },
-  surfaceInset: { light: '#EDF0F5', dark: '#171D25' },
-  surfaceGlass: { light: '#F7F9FCE6', dark: '#151B24E6' },
-  textPrimary: { light: '#101318', dark: '#F5F7FB' },
-  textSecondary: { light: '#596270', dark: '#AAB3C2' },
-  textMuted: { light: '#87909E', dark: '#697282' },
-  borderSubtle: { light: '#E2E6EE', dark: '#252D38' },
-  accentPrimary: { light: '#276EF1', dark: '#68A0FF' },
-  accentTeal: { light: '#008F72', dark: '#4AD6B0' },
-  accentAmber: { light: '#B66A00', dark: '#FFB64D' },
-  accentRose: { light: '#C7334D', dark: '#FF6B86' },
-  accentViolet: { light: '#6547D9', dark: '#9E8CFF' },
-  railBase: { light: '#DDE3EC', dark: '#25303D' }
+  surfaceBase: { light: '#E8F0E3', dark: '#0B0D0C' },
+  surfaceRaised: { light: '#FFF8EA', dark: '#151310' },
+  surfaceInset: { light: '#DDE8D2', dark: '#221B15' },
+  surfaceGlass: { light: '#FFF8EAE8', dark: '#1C1712E8' },
+  textPrimary: { light: '#17130F', dark: '#F7EFE2' },
+  textSecondary: { light: '#5E554B', dark: '#B9AC9D' },
+  textMuted: { light: '#746557', dark: '#958776' },
+  borderSubtle: { light: '#D7CFC1', dark: '#3A3027' },
+  accentPrimary: { light: '#A9431F', dark: '#FF8B55' },
+  accentTeal: { light: '#006B5D', dark: '#4ED1B6' },
+  accentAmber: { light: '#9B6A00', dark: '#FFC35A' },
+  accentRose: { light: '#B8324B', dark: '#FF6F8A' },
+  accentViolet: { light: '#5940B5', dark: '#B79CFF' },
+  railBase: { light: '#D6D0C1', dark: '#3A332D' }
 } as const;
 
 export const gradients = {
-  appTop: { light: '#FFFFFF', dark: '#11151B' },
-  appBottom: { light: '#F6F7FA', dark: '#080A0D' }
+  appTop: { light: '#FFF8EA', dark: '#151310' },
+  appBottom: { light: '#E8F0E3', dark: '#0B0D0C' }
 } as const;
 
 export const space = {

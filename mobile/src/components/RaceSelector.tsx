@@ -41,7 +41,7 @@ export function RaceSelector({
               accessibilityState={{ selected }}
               key={item}
               onPress={() => onSportChange(item)}
-              style={[styles.segmentItem, selected && { backgroundColor: colors.textPrimary }]}
+              style={[styles.segmentItem, selected && { backgroundColor: colors.accentPrimary }]}
             >
               <Text style={[styles.segmentText, { color: selected ? colors.surfaceRaised : colors.textSecondary }]}>
                 {item === 'keirin' ? '경륜' : '경마'}
