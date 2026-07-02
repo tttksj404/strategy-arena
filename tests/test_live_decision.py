@@ -181,6 +181,8 @@ class LiveDecisionTestCase(unittest.TestCase):
                     signal=signal,
                     source="test",
                 )
+                app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()
+                app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_FILE_KEYS.clear()
                 second = app_module.engine.save_kcycle_trifecta_snapshot(
                     "2026", "20260628", "광명", "7",
                     make_trifecta_candidate_board(),
@@ -198,6 +200,7 @@ class LiveDecisionTestCase(unittest.TestCase):
             self.assertEqual(record["board_count"], 210)
             self.assertEqual(record["signal"]["tier"], "market_trifecta_50_candidate")
             self.assertIn("5-1-7", record["board"])
+            self.assertTrue(os.path.exists(path + ".keys"))
 
     def test_live_decision_saves_trifecta_snapshot_when_board_is_available(self):
         app_module.engine._KCYCLE_TRIFECTA_SNAPSHOT_LAST.clear()

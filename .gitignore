@@ -4,5 +4,6 @@ __pycache__/
 .env
 *.db
 data/kcycle_trifecta_snapshots*.jsonl
+data/kcycle_trifecta_snapshots*.jsonl.keys
 venv/
 .venv/

@@ -78,6 +78,7 @@ _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 _KEIRIN_CARD_PAGE_CACHE = {}
 _KEIRIN_CARD_PAGE_TTL = int(os.environ.get("KEIRIN_CARD_PAGE_TTL", "1800"))
 _KCYCLE_TRIFECTA_SNAPSHOT_LAST = {}
+_KCYCLE_TRIFECTA_SNAPSHOT_FILE_KEYS = {}
 
 
 class _KcycleTableTextParser(HTMLParser):
@@ -1865,6 +1866,47 @@ def _trifecta_board_hash(trifecta_board):
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
+def _snapshot_key_token(key):
+    return "\t".join(str(part) for part in key)
+
+
+def _snapshot_index_path(path):
+    return f"{path}.keys"
+
+
+def _load_snapshot_file_keys(path):
+    cached = _KCYCLE_TRIFECTA_SNAPSHOT_FILE_KEYS.get(path)
+    if cached is not None:
+        return cached
+    keys = set()
+    index_path = _snapshot_index_path(path)
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as f:
+            keys = {line.strip() for line in f if line.strip()}
+    elif os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                if not line.strip():
+                    continue
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                key = (
+                    str(row.get("date", "")),
+                    str(row.get("meet", "")),
+                    str(row.get("race_no", "")).zfill(2),
+                    str(row.get("board_hash", "")),
+                )
+                keys.add(_snapshot_key_token(key))
+        os.makedirs(os.path.dirname(index_path) or ".", exist_ok=True)
+        with open(index_path, "w", encoding="utf-8") as f:
+            for token in sorted(keys):
+                f.write(token + "\n")
+    _KCYCLE_TRIFECTA_SNAPSHOT_FILE_KEYS[path] = keys
+    return keys
+
+
 def save_kcycle_trifecta_snapshot(stnd_yr, ymd, meet, race_no, trifecta_board, fetched_at=None, signal=None, source="live_decision"):
     if os.environ.get("KCYCLE_TRIFECTA_SNAPSHOT_ENABLED", "1") != "1":
         return False
@@ -1886,6 +1928,11 @@ def save_kcycle_trifecta_snapshot(stnd_yr, ymd, meet, race_no, trifecta_board, f
         return False
     _KCYCLE_TRIFECTA_SNAPSHOT_LAST[key] = now
     path = os.environ.get("KCYCLE_TRIFECTA_SNAPSHOT_PATH", KCYCLE_TRIFECTA_SNAPSHOT_PATH)
+    file_key = (ymd_key, str(meet or ""), str(race_no or "").zfill(2), board_hash)
+    token = _snapshot_key_token(file_key)
+    file_keys = _load_snapshot_file_keys(path)
+    if token in file_keys:
+        return False
     best20 = sorted(valid.items(), key=lambda kv: (kv[1], kv[0]))[:20]
     record = {
         "schema": "kcycle_trifecta_snapshot_v1",
@@ -1905,6 +1952,9 @@ def save_kcycle_trifecta_snapshot(stnd_yr, ymd, meet, race_no, trifecta_board, f
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
+    with open(_snapshot_index_path(path), "a", encoding="utf-8") as f:
+        f.write(token + "\n")
+    file_keys.add(token)
     return True
 
 
