@@ -71,7 +71,7 @@ class TrifectaRuleSearchTestCase(unittest.TestCase):
             self.assertIn(f"hit_{method}", df.columns)
             self.assertTrue(bool(df.loc[0, f"hit_{method}"]))
 
-    def test_eval_candidate_requires_holdout_year_coverage(self):
+    def test_eval_candidate_marks_low_sample_50_as_watch_only(self):
         hits = np.array([True] * 60 + [True] * 5 + [True] * 5 + [True] * 5)
         train_base = np.array([True] * 60 + [False] * 15)
         holdout_base = ~train_base
@@ -92,8 +92,33 @@ class TrifectaRuleSearchTestCase(unittest.TestCase):
         )
 
         self.assertIsNotNone(row)
-        self.assertEqual(row.status, "PASS_HOLDOUT_50")
+        self.assertEqual(row.status, "WATCH_LOW_SAMPLE_50")
         self.assertEqual(row.holdout_n, 15)
+        self.assertEqual(row.min_holdout_year_n, 5)
+
+    def test_eval_candidate_promotes_only_when_each_holdout_year_has_enough_sample(self):
+        hits = np.array([True] * 60 + [True] * 10 + [True] * 10 + [True] * 10)
+        train_base = np.array([True] * 60 + [False] * 30)
+        holdout_base = ~train_base
+        holdout_year_masks = {
+            "2024": np.array([False] * 60 + [True] * 10 + [False] * 20),
+            "2025": np.array([False] * 70 + [True] * 10 + [False] * 10),
+            "2026": np.array([False] * 80 + [True] * 10),
+        }
+
+        row = search.eval_candidate(
+            hits,
+            train_base,
+            holdout_base,
+            holdout_year_masks,
+            "board_min",
+            "all",
+            np.ones(90, dtype=bool),
+        )
+
+        self.assertIsNotNone(row)
+        self.assertEqual(row.status, "PROMOTE_ROBUST_50")
+        self.assertEqual(row.min_holdout_year_n, 10)
 
 
 if __name__ == "__main__":

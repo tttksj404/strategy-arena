@@ -49,8 +49,16 @@ METHODS = [
     "xdom_ecology_predator_prey",
     "xdom_bandit_explore_exploit",
     "xdom_bayesian_surrogate_focus",
+    "xdom_bradley_terry_position",
+    "xdom_harville_order_flow",
+    "xdom_information_bottleneck",
+    "xdom_particle_filter_resample",
 ]
 XDOM_METHODS = tuple(method for method in METHODS if method.startswith("xdom_"))
+MIN_TRAIN_N = 50
+MIN_HOLDOUT_YEAR_N = 5
+PROMOTION_MIN_HOLDOUT_YEAR_N = 10
+PROMOTION_MIN_WORST_HIT = 0.5
 
 
 @dataclass(frozen=True, slots=True)
@@ -69,6 +77,7 @@ class Candidate:
     holdout_n: int
     holdout_hit: float
     holdout_worst: float
+    min_holdout_year_n: int
 
 
 def safe_log(value):
@@ -225,6 +234,44 @@ def frame_from_records(records):
                 )
                 for combo in board
             }),
+            "xdom_bradley_terry_position": argmax_combo(board, {
+                combo: (
+                    0.44 * base_scores[combo]
+                    + 0.92 * safe_log(first_mass[int(combo[0])])
+                    + 0.66 * safe_log(second_mass[int(combo[2])])
+                    + 0.48 * safe_log(third_mass[int(combo[4])])
+                )
+                for combo in board
+            }),
+            "xdom_harville_order_flow": argmax_combo(board, {
+                combo: (
+                    0.50 * base_scores[combo]
+                    + 1.10 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.60 * safe_log(first_mass[int(combo[0])])
+                    + 0.38 * safe_log(third_mass[int(combo[4])])
+                    + 0.05 * rank_score[combo]
+                )
+                for combo in board
+            }),
+            "xdom_information_bottleneck": argmax_combo(board, {
+                combo: (
+                    0.46 * base_scores[combo]
+                    + 1.05 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.85 * safe_log(first_mass[int(combo[0])])
+                    + 0.15 * rank_score[combo]
+                )
+                for combo in top10
+            }),
+            "xdom_particle_filter_resample": argmax_combo(board, {
+                combo: (
+                    0.36 * base_scores[combo]
+                    + 0.80 * safe_log(pair_mass[combo_pair(combo)])
+                    + 0.45 * safe_log(second_mass[int(combo[2])])
+                    + 0.45 * safe_log(third_mass[int(combo[4])])
+                    + 0.20 * rank_score[combo]
+                )
+                for combo in top5
+            }),
         }
         row = {
             "year": str(record.get("stnd_yr") or str(record.get("date"))[:4]),
@@ -303,6 +350,9 @@ def xdom_predicates(df, train_mask):
         "first_gap_80": train_quantile(df, train_mask, "first_gap", 0.80),
         "pair_gap_80": train_quantile(df, train_mask, "pair_gap", 0.80),
         "best_odds_20": train_quantile(df, train_mask, "best_odds", 0.20),
+        "second_80": train_quantile(df, train_mask, "second_mass_best", 0.80),
+        "third_80": train_quantile(df, train_mask, "third_mass_best", 0.80),
+        "top10_80": train_quantile(df, train_mask, "top10_mass", 0.80),
     }
     arr = {col: df[col].to_numpy(float) for col in set(FEATURES_HIGH + FEATURES_LOW)}
     return [
@@ -334,26 +384,50 @@ def xdom_predicates(df, train_mask):
             "xdom_bayesian_surrogate_focus:first_gap&gap110",
             (arr["first_gap"] >= cuts["first_gap_80"]) & (arr["gap110"] >= cuts["gap110_90"]),
         ),
+        (
+            "xdom_bradley_terry_position:position_mass",
+            (arr["first_mass_best"] >= cuts["first_80"])
+            & (arr["second_mass_best"] >= cuts["second_80"])
+            & (arr["third_mass_best"] >= cuts["third_80"]),
+        ),
+        (
+            "xdom_harville_order_flow:pair_position",
+            (arr["pair12_mass_best"] >= cuts["pair_80"]) & (arr["third_mass_best"] >= cuts["third_80"]),
+        ),
+        (
+            "xdom_information_bottleneck:compressed_top10",
+            (arr["top10_mass"] >= cuts["top10_80"]) & (arr["entropy_inv"] >= cuts["entropy_80"]),
+        ),
+        (
+            "xdom_particle_filter_resample:top5_pair_gap",
+            (arr["top5_mass"] >= cuts["top5_80"]) & (arr["pair_gap"] >= cuts["pair_gap_80"]),
+        ),
     ]
 
 
 def eval_candidate(hits, train_base, holdout_base, holdout_year_masks, method, rule, mask):
     train_mask = train_base & mask
     train_n = int(train_mask.sum())
-    if train_n < 50:
+    if train_n < MIN_TRAIN_N:
         return None
     by_year = {}
     for year in HOLDOUT_YEARS:
         year_mask = holdout_year_masks[year] & mask
         n = int(year_mask.sum())
-        if n < 5:
+        if n < MIN_HOLDOUT_YEAR_N:
             return None
         by_year[year] = (n, float(hits[year_mask].mean()))
     holdout_mask = holdout_base & mask
     holdout_n = int(holdout_mask.sum())
     holdout_hit = float(hits[holdout_mask].mean()) if holdout_n else 0.0
     worst = min(hit for _, hit in by_year.values())
-    status = "PASS_HOLDOUT_50" if worst >= 0.5 else "FAIL"
+    min_year_n = min(n for n, _ in by_year.values())
+    if worst >= PROMOTION_MIN_WORST_HIT and min_year_n >= PROMOTION_MIN_HOLDOUT_YEAR_N:
+        status = "PROMOTE_ROBUST_50"
+    elif worst >= PROMOTION_MIN_WORST_HIT:
+        status = "WATCH_LOW_SAMPLE_50"
+    else:
+        status = "FAIL"
     return Candidate(
         status,
         method,
@@ -369,6 +443,24 @@ def eval_candidate(hits, train_base, holdout_base, holdout_year_masks, method, r
         holdout_n,
         holdout_hit,
         worst,
+        min_year_n,
+    )
+
+
+def candidate_metric_signature(row):
+    return (
+        row.rule,
+        row.train_n,
+        round(row.train_hit, 12),
+        row.n_2024,
+        round(row.hit_2024, 12),
+        row.n_2025,
+        round(row.hit_2025, 12),
+        row.n_2026,
+        round(row.hit_2026, 12),
+        row.holdout_n,
+        round(row.holdout_hit, 12),
+        round(row.holdout_worst, 12),
     )
 
 
@@ -390,7 +482,8 @@ def run(args):
                 rows.append(row)
     rows.sort(
         key=lambda r: (
-            r.status == "PASS_HOLDOUT_50",
+            r.status == "PROMOTE_ROBUST_50",
+            r.status == "WATCH_LOW_SAMPLE_50",
             min(r.n_2024, r.n_2025, r.n_2026),
             r.holdout_worst,
             r.holdout_hit,
@@ -419,31 +512,58 @@ def run(args):
                 float(hits[holdout_differs].mean()) if int(holdout_differs.sum()) else 0.0
             ),
         }
+    fifty_rows = [row for row in rows if row.status in {"PROMOTE_ROBUST_50", "WATCH_LOW_SAMPLE_50"}]
+    promote_rows = [row for row in rows if row.status == "PROMOTE_ROBUST_50"]
+    xdom_fifty_rows = [
+        row
+        for row in fifty_rows
+        if row.method.startswith("xdom_") or row.rule.startswith("xdom_")
+    ]
+    xdom_promote_rows = [
+        row
+        for row in promote_rows
+        if row.method.startswith("xdom_") or row.rule.startswith("xdom_")
+    ]
+    deduped_fifty_count = len({candidate_metric_signature(row) for row in fifty_rows})
+    deduped_xdom_fifty_count = len({candidate_metric_signature(row) for row in xdom_fifty_rows})
+    risk_flags = {
+        "no_robust_promotion": len(promote_rows) == 0,
+        "low_sample_watch_only": len(fifty_rows) > 0 and len(promote_rows) == 0,
+        "xdom_duplicate_inflation": len(xdom_fifty_rows) > deduped_xdom_fifty_count,
+        "requires_more_outcome_linked_snapshots": len(promote_rows) == 0,
+    }
     payload = {
         "records": int(len(df)),
         "train_years": sorted(TRAIN_YEARS),
         "holdout_years": HOLDOUT_YEARS,
+        "promotion_rules": {
+            "min_train_n": MIN_TRAIN_N,
+            "min_eval_holdout_year_n": MIN_HOLDOUT_YEAR_N,
+            "min_promote_holdout_year_n": PROMOTION_MIN_HOLDOUT_YEAR_N,
+            "min_worst_year_hit": PROMOTION_MIN_WORST_HIT,
+        },
         "xdom_methods": list(XDOM_METHODS),
         "predicate_count": len(preds),
         "xdom_predicate_count": sum(1 for name, _ in preds if name.startswith("xdom_")),
         "evaluated_candidates": len(rows),
-        "pass_count": sum(1 for row in rows if row.status == "PASS_HOLDOUT_50"),
-        "xdom_pass_count": sum(
-            1
-            for row in rows
-            if row.status == "PASS_HOLDOUT_50"
-            and (row.method.startswith("xdom_") or row.rule.startswith("xdom_"))
-        ),
+        "fifty_watch_or_promote_count": len(fifty_rows),
+        "promotion_count": len(promote_rows),
+        "xdom_fifty_watch_or_promote_count": len(xdom_fifty_rows),
+        "xdom_promotion_count": len(xdom_promote_rows),
+        "deduped_fifty_watch_or_promote_count": deduped_fifty_count,
+        "deduped_xdom_fifty_watch_or_promote_count": deduped_xdom_fifty_count,
         "pass_count_by_min_year_n": {
             str(n): sum(
                 1
                 for row in rows
-                if row.status == "PASS_HOLDOUT_50" and min(row.n_2024, row.n_2025, row.n_2026) >= n
+                if row.status in {"PROMOTE_ROBUST_50", "WATCH_LOW_SAMPLE_50"}
+                and row.min_holdout_year_n >= n
             )
             for n in [5, 10, 20, 30, 50, 100]
         },
         "baseline": baseline,
         "xdom_diversity": xdom_diversity,
+        "risk_flags": risk_flags,
         "rows": [asdict(row) for row in rows[: args.limit]],
     }
     Path(args.out_json).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -451,14 +571,31 @@ def run(args):
         "# KCYCLE trifecta rule search",
         "",
         f"records: {payload['records']} train: {payload['train_years']} holdout: {payload['holdout_years']}",
-        f"predicate_count: {payload['predicate_count']} evaluated: {payload['evaluated_candidates']} pass_count: {payload['pass_count']}",
+        f"promotion_rules: {payload['promotion_rules']}",
+        f"predicate_count: {payload['predicate_count']} evaluated: {payload['evaluated_candidates']}",
         f"xdom_methods: {payload['xdom_methods']}",
-        f"xdom_predicate_count: {payload['xdom_predicate_count']} xdom_pass_count: {payload['xdom_pass_count']}",
+        (
+            "fifty_watch_or_promote_count: "
+            f"{payload['fifty_watch_or_promote_count']} "
+            f"promotion_count: {payload['promotion_count']}"
+        ),
+        (
+            "xdom_fifty_watch_or_promote_count: "
+            f"{payload['xdom_fifty_watch_or_promote_count']} "
+            f"xdom_promotion_count: {payload['xdom_promotion_count']}"
+        ),
+        (
+            "deduped_fifty_watch_or_promote_count: "
+            f"{payload['deduped_fifty_watch_or_promote_count']} "
+            "deduped_xdom_fifty_watch_or_promote_count: "
+            f"{payload['deduped_xdom_fifty_watch_or_promote_count']}"
+        ),
         f"pass_count_by_min_year_n: {payload['pass_count_by_min_year_n']}",
+        f"risk_flags: {payload['risk_flags']}",
         "",
         "Interpretation: xdom recipes are evaluated in the KCYCLE trifecta harness, "
         "but current 50%+ holdout passes remain low-sample strong-favorite slices. "
-        "No candidate passes with min yearly holdout n >= 10.",
+        "No candidate is promoted unless every holdout year has n >= 10.",
         "",
         "## XDOM diversity versus board_min",
         "",
@@ -472,14 +609,15 @@ def run(args):
         )
     lines.extend([
         "",
-        "| status | method | rule | train_n | train_hit | n24 | hit24 | n25 | hit25 | n26 | hit26 | holdout_n | holdout_hit | worst |",
-        "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| status | method | rule | train_n | train_hit | n24 | hit24 | n25 | hit25 | n26 | hit26 | holdout_n | holdout_hit | worst | min_year_n |",
+        "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ])
     for row in rows[:80]:
         lines.append(
             f"| {row.status} | {row.method} | {row.rule} | {row.train_n} | {row.train_hit:.4f} | "
             f"{row.n_2024} | {row.hit_2024:.4f} | {row.n_2025} | {row.hit_2025:.4f} | "
-            f"{row.n_2026} | {row.hit_2026:.4f} | {row.holdout_n} | {row.holdout_hit:.4f} | {row.holdout_worst:.4f} |"
+            f"{row.n_2026} | {row.hit_2026:.4f} | {row.holdout_n} | {row.holdout_hit:.4f} | "
+            f"{row.holdout_worst:.4f} | {row.min_holdout_year_n} |"
         )
     Path(args.out_md).write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(
@@ -490,8 +628,11 @@ def run(args):
                 "predicate_count",
                 "xdom_predicate_count",
                 "evaluated_candidates",
-                "pass_count",
-                "xdom_pass_count",
+                "fifty_watch_or_promote_count",
+                "promotion_count",
+                "xdom_fifty_watch_or_promote_count",
+                "xdom_promotion_count",
+                "risk_flags",
             ]
         },
         ensure_ascii=False,

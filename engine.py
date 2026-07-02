@@ -1768,6 +1768,7 @@ def _live_signal_payload(signal):
         "order": signal.get("order"),
         "expected_top1": signal.get("expected_top1"),
         "expected_trio_exact": signal.get("expected_trio_exact"),
+        "observed_trio_exact": signal.get("observed_trio_exact"),
         "baseline_trio_exact": signal.get("baseline_trio_exact"),
         "lift_pp": signal.get("lift_pp"),
         "coverage": signal.get("coverage"),
@@ -1837,14 +1838,15 @@ def _market_trifecta_signal(trifecta_board):
     if gap12 < 2.28571 or pair12_mass < 0.532879:
         return None
     return {
-        "tier": "market_trifecta_50_candidate",
-        "label": "KCYCLE 삼쌍 시장강합의 50% 후보(실험)",
+        "tier": "market_trifecta_watch_low_sample",
+        "label": "KCYCLE 삼쌍 시장강합의 watch(저표본)",
         "leader": a,
         "order": [a, b, c],
         "favorite_odds": best_odds,
         "gap12": gap12,
         "pair12_mass": pair12_mass,
-        "expected_trio_exact": 0.5,
+        "expected_trio_exact": None,
+        "observed_trio_exact": 0.5,
         "baseline_trio_exact": 0.2719,
         "lift_pp": 22.81,
         "coverage": 0.0217,
@@ -1852,7 +1854,7 @@ def _market_trifecta_signal(trifecta_board):
         "validation_split": "2026 OOS n=30 exact 50.0%; 2025 n=41 exact 53.7%; 2024 n=6",
         "rule": "전체 삼쌍 최저배당 gap12>=2.28571 + 같은 1-2순서 암시확률>=53.2879%",
         "robust_status": "failed_small_n",
-        "robust_warning": "직전 삼쌍 27.19% 대비 +22.81%p 후보지만 전연도 robust PASS는 아닙니다.",
+        "robust_warning": "50%로 배포 금지: 2024 n=6이라 robust promotion gate(n>=10)를 통과하지 못했습니다.",
     }
 
 
@@ -2093,7 +2095,7 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             message = "사전 예측 (배당 미반영 — Render에서는 kcycle 접근 제한)"
             snapshot_phase = "pre_race"
     if trifecta_signal:
-        suffix = " · 삼쌍 50% 후보 감지(실험/robust 미통과)"
+        suffix = " · 삼쌍 저표본 watch 감지(50% 배포 금지)"
         if suffix not in message:
             message = f"{message}{suffix}"
     live_market_used = market_used or bool(trifecta_signal)

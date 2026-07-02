@@ -43,12 +43,20 @@ def year_of(record):
     return str(record.get("date") or "")[:4]
 
 
+def is_compatible_signal_downgrade(stored_tier, recomputed_tier):
+    return (
+        stored_tier == "market_trifecta_50_candidate"
+        and recomputed_tier == "market_trifecta_watch_low_sample"
+    )
+
+
 def audit(records, key_tokens):
     seen = set()
     duplicate_keys = 0
     hash_mismatch = 0
     board_count_mismatch = 0
     stored_signal_mismatch = 0
+    stored_signal_compatible_downgrades = 0
     selected_by_year = {}
     hits_by_year = {}
     actual_by_year = {}
@@ -70,7 +78,9 @@ def audit(records, key_tokens):
         stored_signal = record.get("signal")
         stored_tier = stored_signal.get("tier") if isinstance(stored_signal, dict) else None
         recomputed_tier = recomputed_signal.get("tier") if recomputed_signal else None
-        if stored_tier != recomputed_tier:
+        if is_compatible_signal_downgrade(stored_tier, recomputed_tier):
+            stored_signal_compatible_downgrades += 1
+        elif stored_tier != recomputed_tier:
             stored_signal_mismatch += 1
         if recomputed_signal:
             signal_count += 1
@@ -111,6 +121,7 @@ def audit(records, key_tokens):
         "key_index_tokens": len(key_tokens),
         "actual_count": actual_count,
         "signal_count": signal_count,
+        "stored_signal_compatible_downgrades": stored_signal_compatible_downgrades,
         "critical_failures": critical_failures,
         "rule_metrics_by_year": by_year,
         "rule_selected_total": sum(selected_by_year.values()),

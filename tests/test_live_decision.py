@@ -127,13 +127,14 @@ class LiveDecisionTestCase(unittest.TestCase):
     def test_trifecta_signal_exposes_immediate_prior_lift_with_robust_warning(self):
         signal = app_module.engine._market_trifecta_signal(make_trifecta_candidate_board())
 
-        self.assertEqual(signal["tier"], "market_trifecta_50_candidate")
+        self.assertEqual(signal["tier"], "market_trifecta_watch_low_sample")
         self.assertEqual(signal["order"], [5, 1, 7])
-        self.assertAlmostEqual(signal["expected_trio_exact"], 0.5)
+        self.assertIsNone(signal["expected_trio_exact"])
+        self.assertAlmostEqual(signal["observed_trio_exact"], 0.5)
         self.assertAlmostEqual(signal["baseline_trio_exact"], 0.2719)
         self.assertAlmostEqual(signal["lift_pp"], 22.81)
         self.assertEqual(signal["robust_status"], "failed_small_n")
-        self.assertIn("robust PASS", signal["robust_warning"])
+        self.assertIn("배포 금지", signal["robust_warning"])
 
     def test_live_decision_exposes_trifecta_signal_without_overwriting_top1_signal(self):
         base = {
@@ -160,9 +161,9 @@ class LiveDecisionTestCase(unittest.TestCase):
             )
 
         self.assertIsNone(decision["market_signal"])
-        self.assertEqual(decision["trifecta_signal"]["tier"], "market_trifecta_50_candidate")
-        self.assertAlmostEqual(decision["trifecta_signal"]["expected_trio_exact"], 0.5)
-        self.assertIn("robust 미통과", decision["message"])
+        self.assertEqual(decision["trifecta_signal"]["tier"], "market_trifecta_watch_low_sample")
+        self.assertIsNone(decision["trifecta_signal"]["expected_trio_exact"])
+        self.assertIn("50% 배포 금지", decision["message"])
         self.assertEqual(decision["poll_delay_ms"], 5000)
 
     def test_trifecta_snapshot_writer_appends_and_dedupes(self):
@@ -198,7 +199,7 @@ class LiveDecisionTestCase(unittest.TestCase):
             record = json.loads(lines[0])
             self.assertEqual(record["schema"], "kcycle_trifecta_snapshot_v1")
             self.assertEqual(record["board_count"], 210)
-            self.assertEqual(record["signal"]["tier"], "market_trifecta_50_candidate")
+            self.assertEqual(record["signal"]["tier"], "market_trifecta_watch_low_sample")
             self.assertIn("5-1-7", record["board"])
             self.assertTrue(os.path.exists(path + ".keys"))
 
@@ -246,7 +247,7 @@ class LiveDecisionTestCase(unittest.TestCase):
                     "keirin", "2026-06-28", "광명", "7", base_model_out=base,
                 )
 
-            self.assertEqual(decision["trifecta_signal"]["tier"], "market_trifecta_50_candidate")
+            self.assertEqual(decision["trifecta_signal"]["tier"], "market_trifecta_watch_low_sample")
             record = json.loads(open(path, encoding="utf-8").readline())
             self.assertEqual(record["source"], "live_decision")
             self.assertEqual(record["date"], "20260628")
