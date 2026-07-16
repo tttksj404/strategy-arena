@@ -86,8 +86,9 @@ def main() -> int:
     """Execute the sweep."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-symbols", type=int, default=0)
+    parser.add_argument("--suffix", default="", help="manifest/output suffix, e.g. _crypto")
     args = parser.parse_args()
-    manifest = json.loads((ROOT / "out/data_manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads((ROOT / f"out/data_manifest{args.suffix}.json").read_text(encoding="utf-8"))
     usable = [x for x in manifest if x.get("tier") in {"A", "B"}]
     if args.max_symbols: usable = usable[:args.max_symbols]
     all_frames = {x["symbol"]: pd.read_parquet(ROOT / "data/candles_1h" / f"{x['symbol']}.parquet") for x in usable}
@@ -122,10 +123,11 @@ def main() -> int:
                         row["selected_L"] = selected["L"]
                         if row["L"] == selected["L"]: row["all_pass"] = bool(json.loads(str(row["gate"]))["all_pass"])
     df = pd.DataFrame(rows).sort_values("test_net_return", ascending=False)
-    df.to_csv(ROOT / "out/leaderboard.csv", index=False)
-    df.to_json(ROOT / "out/leaderboard.json", orient="records", indent=2)
-    write_report(df, manifest, attempts)
-    with (ROOT / "out/PROGRESS.md").open("a", encoding="utf-8") as f: f.write(f"{datetime.now(UTC).isoformat()} | sweep | rows={len(df)} attempts={attempts}\n")
+    df.to_csv(ROOT / f"out/leaderboard{args.suffix}.csv", index=False)
+    df.to_json(ROOT / f"out/leaderboard{args.suffix}.json", orient="records", indent=2)
+    if not args.suffix:
+        write_report(df, manifest, attempts)
+    with (ROOT / "out/PROGRESS.md").open("a", encoding="utf-8") as f: f.write(f"{datetime.now(UTC).isoformat()} | sweep{args.suffix} | rows={len(df)} attempts={attempts}\n")
     return 0
 
 

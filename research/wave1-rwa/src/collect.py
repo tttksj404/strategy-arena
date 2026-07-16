@@ -44,9 +44,12 @@ def api_get(path: str, params: dict[str, str]) -> list[dict[str, str]]:
     raise RuntimeError(f"Bitget request failed after retries: {path}") from last
 
 
-def contracts() -> list[dict[str, str]]:
-    """Return all RWA contracts with stable metadata."""
+def contracts(universe: str = "rwa") -> list[dict[str, str]]:
+    """Return contracts for one universe ("rwa", "crypto", or "all")."""
     rows = api_get("/api/v2/mix/market/contracts", {"productType": "usdt-futures"})
+    def wanted(row: dict) -> bool:
+        is_rwa = str(row.get("isRwa", "")).upper() == "YES"
+        return {"rwa": is_rwa, "crypto": not is_rwa, "all": True}[universe]
     return [
         {
             "symbol": str(row["symbol"]),
@@ -58,7 +61,7 @@ def contracts() -> list[dict[str, str]]:
             "isRwa": str(row.get("isRwa", "")),
         }
         for row in rows
-        if str(row.get("isRwa", "")).upper() == "YES"
+        if wanted(row)
     ]
 
 
@@ -79,8 +82,8 @@ def tickers() -> dict[str, dict[str, float]]:
     return result
 
 
-def history(symbol: str, granularity: str, end_time: int | None = None) -> pd.DataFrame:
-    """Page history candles until the exchange returns no older rows."""
+def history(symbol: str, granularity: str, end_time: int | None = None, min_ts: int | None = None) -> pd.DataFrame:
+    """Page history candles until the exchange returns no older rows (or min_ts is reached)."""
     rows: list[list[str]] = []
     cursor = end_time or int(datetime.now(UTC).timestamp() * 1000)
     while True:
@@ -93,9 +96,11 @@ def history(symbol: str, granularity: str, end_time: int | None = None) -> pd.Da
             break
         rows.extend([list(map(str, row)) for row in page])
         oldest = min(int(row[0]) for row in page)
-        if len(page) < 200 or oldest >= cursor:
+        if len(page) < 200 or oldest >= cursor or (min_ts and oldest <= min_ts):
             break
         cursor = oldest - 1
+    if min_ts:
+        rows = [row for row in rows if int(row[0]) >= min_ts]
     if not rows:
         return pd.DataFrame(columns=["ts", "open", "high", "low", "close", "vol_base", "vol_quote"])
     frame = pd.DataFrame(rows, columns=["ts", "open", "high", "low", "close", "vol_base", "vol_quote"])
@@ -154,15 +159,19 @@ def quality(frame: pd.DataFrame, granularity: str) -> tuple[str, float, int]:
 
 
 def main() -> int:
-    """Collect all RWA market data and write the manifest."""
+    """Collect one universe's market data and write its manifest."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--force", action="store_true", help="refetch files")
+    parser.add_argument("--universe", choices=["rwa", "crypto", "all"], default="rwa")
+    parser.add_argument("--max-days", type=int, default=0, help="cap 1H history depth in days (0 = full)")
     args = parser.parse_args()
     for directory in [ROOT / "data/candles_1h", ROOT / "data/candles_1d", ROOT / "data/funding", ROOT / "out"]:
         directory.mkdir(parents=True, exist_ok=True)
-    rwa = contracts()
+    suffix = "" if args.universe == "rwa" else f"_{args.universe}"
+    min_ts = int((datetime.now(UTC).timestamp() - args.max_days * 86_400) * 1000) if args.max_days else None
+    rwa = contracts(args.universe)
     spread = tickers()
-    (ROOT / "data/contracts.json").write_text(json.dumps(rwa, indent=2), encoding="utf-8")
+    (ROOT / f"data/contracts{suffix}.json").write_text(json.dumps(rwa, indent=2), encoding="utf-8")
     manifest: list[dict[str, object]] = []
     progress("collect", f"contracts={len(rwa)}")
     for index, contract in enumerate(rwa, 1):
@@ -173,7 +182,7 @@ def main() -> int:
             if path.exists() and not args.force:
                 frames[granularity] = pd.read_parquet(path)
             else:
-                frames[granularity] = history(symbol, granularity)
+                frames[granularity] = history(symbol, granularity, min_ts=min_ts if granularity == "1H" else None)
                 frames[granularity].to_parquet(path, index=False)
         fund_path = ROOT / "data/funding" / f"{symbol}.parquet"
         fund = pd.read_parquet(fund_path) if fund_path.exists() and not args.force else funding(symbol)
@@ -190,8 +199,8 @@ def main() -> int:
                          "funding_rows": len(fund)})
         if index == 1 or index % 10 == 0 or index == len(rwa):
             progress("collect", f"{index}/{len(rwa)} symbols")
-    (ROOT / "out/data_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    progress("collect", f"manifest={len(manifest)}")
+    (ROOT / f"out/data_manifest{suffix}.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    progress("collect", f"manifest{suffix}={len(manifest)}")
     return 0
 
 
