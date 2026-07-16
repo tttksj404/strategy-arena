@@ -197,6 +197,7 @@ def run_portfolio(
                 trade_weights[symbol] = current_weight
             elif previous_weight > 0.0 and current_weight > 0.0 and previous_weight != current_weight:
                 trade_growth[symbol] *= 1.0 - abs(current_weight - previous_weight) * leg_rate / max(current_weight, previous_weight)
+                trade_weights[symbol] = current_weight
             if current_weight > 0.0:
                 trade_growth[symbol] *= 1.0 + float(intraday[symbol])
         pnl = capital - start_capital

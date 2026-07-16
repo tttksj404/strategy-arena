@@ -6,6 +6,7 @@ from dataclasses import asdict, dataclass
 from datetime import timedelta
 import json
 import math
+import os
 from pathlib import Path
 import re
 import time
@@ -77,16 +78,20 @@ def utc_timestamp(value: str | int | float | pd.Timestamp) -> pd.Timestamp:
 def normalize_market_frame(frame: pd.DataFrame, timestamp_column: str = "timestamp") -> pd.DataFrame:
     normalized = frame.copy()
     if timestamp_column in normalized.columns:
-        normalized[timestamp_column] = pd.to_datetime(normalized[timestamp_column], utc=True)
+        # format="ISO8601": cached CSVs mix second and sub-second precision; pandas 3 no longer infers mixed formats.
+        normalized[timestamp_column] = pd.to_datetime(normalized[timestamp_column], utc=True, format="ISO8601")
         normalized = normalized.set_index(timestamp_column)
-    normalized.index = pd.to_datetime(normalized.index, utc=True)
+    normalized.index = pd.to_datetime(normalized.index, utc=True, format="ISO8601")
     normalized.index.name = "timestamp"
     return normalized
 
 
 def save_frame(path: Path, frame: pd.DataFrame) -> None:
+    # Atomic write: a killed process must never leave a partially written cache file.
     path.parent.mkdir(parents=True, exist_ok=True)
-    normalize_market_frame(frame).to_csv(path, compression="gzip", encoding="utf-8")
+    tmp_path = path.with_suffix(path.suffix + f".tmp{os.getpid()}")
+    normalize_market_frame(frame).to_csv(tmp_path, compression="gzip", encoding="utf-8")
+    os.replace(tmp_path, path)
 
 
 def load_frame(path: Path) -> pd.DataFrame:
@@ -155,8 +160,16 @@ def integrity_report(frame: pd.DataFrame, expected_interval: timedelta) -> Integ
 
 
 def close_correlation(left: pd.DataFrame, right: pd.DataFrame) -> float:
+    # Daily bars are stamped at different UTC hours per exchange (Binance 00:00, Bitget 16:00);
+    # align on calendar date so the overlap is non-empty.
+    left_close = left["close"].copy()
+    right_close = right["close"].copy()
+    left_close.index = pd.DatetimeIndex(left_close.index).normalize()
+    right_close.index = pd.DatetimeIndex(right_close.index).normalize()
+    left_close = left_close[~left_close.index.duplicated(keep="last")]
+    right_close = right_close[~right_close.index.duplicated(keep="last")]
     aligned = pd.concat(
-        [left["close"].rename("left"), right["close"].rename("right")],
+        [left_close.rename("left"), right_close.rename("right")],
         axis=1,
         join="inner",
     ).dropna()
