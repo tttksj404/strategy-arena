@@ -30,7 +30,7 @@ from research.validation.deep_stats import (
 )
 
 
-CANDIDATES: Final = ("W2c", "F1e", "W3c", "W3d")
+CANDIDATES: Final = ("W2c", "F1e", "F1f", "W3c", "W3d")
 CARRY_THRESHOLDS: Final = {"F1e": 0.08, "W2c": 0.15}
 NATIVE_REQUIRED_DAYS: Final = 133
 JsonValue: TypeAlias = str | int | float | bool | None | list["JsonValue"] | dict[str, "JsonValue"]
@@ -172,7 +172,8 @@ def _candidate_result(
     if isinstance(native_payload, dict):
         native_payload["required_coverage_days"] = NATIVE_REQUIRED_DAYS
         native_payload["coverage_sufficient"] = native is not None and native.coverage_days >= NATIVE_REQUIRED_DAYS
-    semantic = "closed_trade_net_simple_return" if candidate in {"F1e", "W2c"} else "daily_active_net_simple_return"
+    # F1f shares the wave-1 F1 engine with F1e, so its trade_returns carry the same closed-trade semantics.
+    semantic = "closed_trade_net_simple_return" if candidate in {"F1e", "F1f", "W2c"} else "daily_active_net_simple_return"
     mc_gate = bootstrap.unit.p05 > 300.0 and bootstrap.unit.ruin_probability < 0.05
     mc_status = _status(mc_gate) if semantic == "closed_trade_net_simple_return" else "UNDETERMINED"
     native_status = native is None or (cache_integrity.get("status") == "PASS" and native.sign_agreement > 0.80 and native.coverage_days >= NATIVE_REQUIRED_DAYS)
@@ -208,7 +209,7 @@ def run(root: Path) -> tuple[dict[str, JsonValue], ...]:
     cache_integrity = _cache_integrity(root, cache_dir)
     results: list[dict[str, JsonValue]] = []
     for candidate in CANDIDATES:
-        source_dir = result_dir if candidate == "F1e" else root / "research" / ("wave2" if candidate == "W2c" else "wave3") / "results"
+        source_dir = result_dir if candidate in ("F1e", "F1f") else root / "research" / ("wave2" if candidate == "W2c" else "wave3") / "results"
         result = _candidate_result(candidate, source_dir, cache_dir, funding, cache_integrity)
         results.append(result)
         output_dir.mkdir(parents=True, exist_ok=True)

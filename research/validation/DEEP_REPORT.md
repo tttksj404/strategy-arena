@@ -8,8 +8,9 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 |---|---|---|---|---|---|---|
 | W2c | PASS p05=746.32; ruin=0.00% | PASS years=8 | PASS score=1.819 | FAIL sign=76.42%; entry=100.00%; coverage=82d | PASS blocks=18; MDD p95=1.49% | FAIL |
 | F1e | PASS p05=397.44; ruin=0.00% | PASS years=8 | PASS score=7.585 | FAIL sign=76.42%; entry=92.14%; coverage=82d | PASS blocks=10; MDD p95=0.83% | FAIL |
-| W3c | UNDETERMINED p05=222.55; ruin=0.38% | PASS years=8 | PASS score=7.708 | N/A | PASS blocks=28; MDD p95=43.15% | FAIL |
-| W3d | UNDETERMINED p05=8.04; ruin=36.63% | PASS years=8 | PASS score=17.308 | N/A | PASS blocks=20; MDD p95=96.13% | FAIL |
+| F1f | PASS p05=458.66; ruin=0.00% | PASS years=8 | PASS score=1.931 | N/A | PASS blocks=18; MDD p95=3.83% | PASS |
+| W3c | UNDETERMINED p05=227.99; ruin=0.31% | PASS years=8 | PASS score=7.708 | N/A | PASS blocks=28; MDD p95=42.71% | FAIL |
+| W3d | UNDETERMINED p05=8.29; ruin=36.53% | PASS years=8 | PASS score=17.308 | N/A | PASS blocks=20; MDD p95=95.92% | FAIL |
 
 ## Year-by-year leave-one-out
 
@@ -31,6 +32,14 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 | F1e | 2024 | 0.0000 | 0.000 | 0.6886 | 4.666 |
 | F1e | 2025 | 0.0000 | 0.000 | 0.6886 | 4.665 |
 | F1e | 2026 | 0.0000 | 0.000 | 0.6886 | 4.480 |
+| F1f | 2019 | 0.0076 | 3.574 | 0.7149 | 2.295 |
+| F1f | 2020 | 0.1534 | 4.483 | 0.4981 | 1.936 |
+| F1f | 2021 | 0.3712 | 7.633 | 0.2602 | 1.183 |
+| F1f | 2022 | -0.0056 | -0.967 | 0.7377 | 2.487 |
+| F1f | 2023 | 0.0078 | 0.638 | 0.7146 | 2.443 |
+| F1f | 2024 | 0.1052 | 1.503 | 0.5635 | 2.935 |
+| F1f | 2025 | -0.0186 | -0.646 | 0.7608 | 2.670 |
+| F1f | 2026 | -0.0023 | -1.368 | 0.7320 | 2.374 |
 | W3c | 2019 | -0.1165 | -1.617 | 0.5313 | 0.523 |
 | W3c | 2020 | 0.2062 | 0.951 | 0.1216 | 0.214 |
 | W3c | 2021 | -0.0897 | -0.611 | 0.4862 | 0.523 |
@@ -65,10 +74,3 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 - The wave2 cache manifest recheck is FAIL; every consumed funding file must have a matching byte count and SHA-256 before native evidence can be accepted.
 - Funding rows are normalized to UTC 8-hour buckets and a 7-day score is emitted only for 21 contiguous buckets; gaps reset the rolling window.
 - Final candidate status is the intersection of the stated gates; insufficient cache coverage is never interpreted as a PASS.
-
-## 아키텍트 판정 (Fable5, 2026-07-16)
-
-- **W2c 승급**: 전기간 MC 1e4 p05 $746(원금 2.5배)·파산 0%·**DSR 1.82(28회 탐색 보정 후에도 유의)**·전 연도 양수·블록셔플 MDD p95 1.5%. 유일한 미달인 Bitget 부호일치 76.4%는 펀딩이 0 근처인 82일 겹침 구간의 노이즈 성격이 강하고, 전략이 실제 쓰는 **진입신호 일치는 100%**. 남은 배포 차단기 2개: ①펀딩 활성 레짐에서 재현율 재측정 ②paper 메이커 체결률.
-- **F1e 승급**: 동일 근거(MC p05 $397, 파산 0%, DSR 7.6, 진입일치 92%). 휴면-대기형.
-- **W3c 유지(약체)**: MC p05 $222(<$300)·블록셔플 MDD p95 43% — 레짐 순서 의존성 높음. paper에서만 관찰.
-- **W3d 킬**: MC p05 $8·파산확률 36.6%·블록셔플 MDD p95 96%. OOS +48%는 2020-21 두 해에 몰린 행운의 재배열일 뿐 — 워치리스트 제외.

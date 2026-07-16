@@ -1,19 +1,19 @@
 {
-  "candidate_id": "W3d",
-  "family": "momentum",
+  "candidate_id": "F1f",
+  "family": "funding_carry",
   "source": {
-    "result": "research\\wave3\\results\\W3d.json",
+    "result": "research\\wave1\\results\\F1f.json",
     "cache": "research\\wave1\\cache"
   },
   "period": {
-    "equity_points": 2502,
-    "trade_count": 1311,
-    "start": "2019-09-08T00:00:00+00:00",
+    "equity_points": 2509,
+    "trade_count": 489,
+    "start": "2019-09-01T00:00:00+00:00",
     "end": "2026-07-14T00:00:00+00:00"
   },
   "input_contract": {
-    "trade_return_semantic": "daily_active_net_simple_return",
-    "trade_bootstrap_eligible": false
+    "trade_return_semantic": "closed_trade_net_simple_return",
+    "trade_bootstrap_eligible": true
   },
   "cache_integrity": {
     "status": "FAIL",
@@ -57,104 +57,104 @@
   },
   "bootstrap_mc": {
     "unit": {
-      "p05": 8.29166799352455,
-      "ruin_probability": 0.3653,
-      "mean": 3817.3189039975405,
-      "median": 322.9833601986725
+      "p05": 458.6558190121041,
+      "ruin_probability": 0.0,
+      "mean": 552.2466733250991,
+      "median": 545.6392819683865
     },
     "quarter_kelly": {
-      "p05": 250.3199821025225,
-      "ruin_probability": 0.0001,
-      "mean": 420.77413251033965,
-      "median": 402.6519431899415
+      "p05": 20824.442758773566,
+      "ruin_probability": 0.0,
+      "mean": 217492.96211559075,
+      "median": 108084.30727642056
     },
-    "kelly_fraction": 0.511585279323769,
-    "quarter_kelly_fraction": 0.12789631983094224,
+    "kelly_fraction": 43.64431544491928,
+    "quarter_kelly_fraction": 10.91107886122982,
     "paths": 10000,
-    "trade_count": 1311
+    "trade_count": 489
   },
   "leave_one_year_out": [
     {
       "year": 2019,
-      "heldout_return": 0.0,
-      "heldout_sharpe": 0.0,
-      "remaining_return": 0.009280185776131988,
-      "remaining_sharpe": 0.4403031505911067,
-      "heldout_days": 114,
+      "heldout_return": 0.0075830475319726975,
+      "heldout_sharpe": 3.574241629796278,
+      "remaining_return": 0.7149325693932935,
+      "remaining_sharpe": 2.295382808340356,
+      "heldout_days": 121,
       "remaining_days": 2387
     },
     {
       "year": 2020,
-      "heldout_return": 3.569852501141387,
-      "heldout_sharpe": 2.200098096193498,
-      "remaining_return": -0.7791438157962322,
-      "remaining_sharpe": 0.13252570265563549,
+      "heldout_return": 0.15342044366302643,
+      "heldout_sharpe": 4.482777194101785,
+      "remaining_return": 0.4980981081742859,
+      "remaining_sharpe": 1.936017617100692,
       "heldout_days": 366,
-      "remaining_days": 2135
+      "remaining_days": 2142
     },
     {
       "year": 2021,
-      "heldout_return": 1.088647979126566,
-      "heldout_sharpe": 1.1954897375776243,
-      "remaining_return": -0.5167782240652179,
-      "remaining_sharpe": 0.23417295024254264,
+      "heldout_return": 0.37115047293866055,
+      "heldout_sharpe": 7.632869871122311,
+      "remaining_return": 0.2602095967467388,
+      "remaining_sharpe": 1.1827814766406832,
       "heldout_days": 365,
-      "remaining_days": 2136
+      "remaining_days": 2143
     },
     {
       "year": 2022,
-      "heldout_return": 0.0,
-      "heldout_sharpe": 0.0,
-      "remaining_return": 0.009280185776131988,
-      "remaining_sharpe": 0.4654577254305193,
+      "heldout_return": -0.005616076931976077,
+      "heldout_sharpe": -0.9672301938399352,
+      "remaining_return": 0.7376960191088304,
+      "remaining_sharpe": 2.4871044280774246,
       "heldout_days": 365,
-      "remaining_days": 2136
+      "remaining_days": 2143
     },
     {
       "year": 2023,
-      "heldout_return": -0.2509826512783351,
-      "heldout_sharpe": 0.14474894271653452,
-      "remaining_return": 0.34747237497056194,
-      "remaining_sharpe": 0.4831694130479916,
+      "heldout_return": 0.007785201264797648,
+      "heldout_sharpe": 0.6378428792693213,
+      "remaining_return": 0.7145885674968444,
+      "remaining_sharpe": 2.4428246902395205,
       "heldout_days": 365,
-      "remaining_days": 2136
+      "remaining_days": 2143
     },
     {
       "year": 2024,
-      "heldout_return": -0.4630333588019587,
-      "heldout_sharpe": -0.09280197106035544,
-      "remaining_return": 0.8795956924331441,
-      "remaining_sharpe": 0.541792151508144,
+      "heldout_return": 0.10519646873643707,
+      "heldout_sharpe": 1.5026958901136966,
+      "remaining_return": 0.5634658935860197,
+      "remaining_sharpe": 2.935416166901325,
       "heldout_days": 366,
-      "remaining_days": 2135
+      "remaining_days": 2142
     },
     {
       "year": 2025,
-      "heldout_return": -0.7370911949809826,
-      "heldout_sharpe": -0.8553418840319938,
-      "remaining_return": 2.8388983803837546,
-      "remaining_sharpe": 0.6870594107348179,
+      "heldout_return": -0.0186483743353687,
+      "heldout_sharpe": -0.6459291496234231,
+      "remaining_return": 0.7607725298369619,
+      "remaining_sharpe": 2.6700419966153386,
       "heldout_days": 365,
-      "remaining_days": 2136
+      "remaining_days": 2143
     },
     {
       "year": 2026,
-      "heldout_return": 0.0,
-      "heldout_sharpe": 0.0,
-      "remaining_return": 0.009280185776131988,
-      "remaining_sharpe": 0.44797028521459603,
+      "heldout_return": -0.0023273191272170646,
+      "heldout_sharpe": -1.3681355458414468,
+      "remaining_return": 0.7319678264313074,
+      "remaining_sharpe": 2.3742409237376956,
       "heldout_days": 195,
-      "remaining_days": 2306
+      "remaining_days": 2313
     }
   ],
   "deflated_sharpe": {
-    "observed_sharpe": 0.4301501172848355,
-    "benchmark_sharpe": 0.04544850743919361,
-    "score": 17.308312696900206,
-    "probability": 1.0,
-    "n_days": 2501,
-    "skew": 0.9661672960278915,
-    "kurtosis": 15.065460211550606,
+    "observed_sharpe": 2.2683112176577604,
+    "benchmark_sharpe": 1.1665886740138875,
+    "score": 1.9311003149731647,
+    "probability": 0.9732646759606813,
+    "n_days": 2508,
+    "skew": 18.859866764023245,
+    "kurtosis": 667.8523379288062,
     "trials": 28
   },
   "bitget_native": {
@@ -165,22 +165,22 @@
   },
   "regime_block_bootstrap": {
     "block_days": 90,
-    "block_count": 20,
+    "block_count": 18,
     "paths": 1000,
-    "mdd_p05": 0.8018962892486918,
-    "mdd_median": 0.8968536442891728,
-    "mdd_p95": 0.9592145671742096,
-    "final_p05": 333.39041570428293,
-    "final_median": 333.39041570428384,
-    "final_p95": 333.3904157042848,
+    "mdd_p05": 0.025296599622907756,
+    "mdd_median": 0.02684747341250643,
+    "mdd_p95": 0.03827555441364455,
+    "final_p05": 547.6904720048584,
+    "final_median": 547.6904720048593,
+    "final_p95": 547.6904720048603,
     "final_capital_invariant": true
   },
   "criteria": {
     "mc": {
-      "status": "UNDETERMINED",
-      "p05_gt_300": false,
-      "ruin_lt_5pct": false,
-      "input_semantic": "daily_active_net_simple_return"
+      "status": "PASS",
+      "p05_gt_300": true,
+      "ruin_lt_5pct": true,
+      "input_semantic": "closed_trade_net_simple_return"
     },
     "dsr": {
       "status": "PASS",
@@ -193,11 +193,11 @@
     },
     "regime_blocks": {
       "status": "PASS",
-      "blocks": 20
+      "blocks": 18
     }
   },
   "overall": {
-    "status": "FAIL",
+    "status": "PASS",
     "required_checks": [
       "mc",
       "dsr",
