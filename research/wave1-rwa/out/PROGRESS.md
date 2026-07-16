@@ -82,3 +82,5 @@
 2026-07-16T16:43:17.827216+00:00 | collect | 469/469 symbols
 2026-07-16T16:43:17.830989+00:00 | collect | manifest_crypto=469
 2026-07-16T17:29:24.435920+00:00 | sweep_crypto | rows=21471 attempts=21471
+2026-07-16T23:33:20.915881+00:00 | sweep_hiL | rows=2448 attempts=2448
+2026-07-16T23:45:09.675801+00:00 | sweep_crypto_hiL | rows=13786 attempts=13786

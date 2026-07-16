@@ -23,7 +23,7 @@ def split(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     return frame.iloc[:cut].reset_index(drop=True), frame.iloc[cut:].reset_index(drop=True)
 
 
-def run_one(symbol: str, frame: pd.DataFrame, fund: pd.DataFrame, spec: StrategySpec, spread: float, session: tuple[str, set[int], float] | None = None) -> list[dict[str, object]]:
+def run_one(symbol: str, frame: pd.DataFrame, fund: pd.DataFrame, spec: StrategySpec, spread: float, session: tuple[str, set[int], float] | None = None, levers: tuple[int, ...] = LEVERS) -> list[dict[str, object]]:
     """Evaluate one symbol/strategy at all leverage levels."""
     train, test = split(frame)
     train_fund = fund[(fund["ts"] >= train["ts"].iloc[0]) & (fund["ts"] <= train["ts"].iloc[-1])]
@@ -32,7 +32,7 @@ def run_one(symbol: str, frame: pd.DataFrame, fund: pd.DataFrame, spec: Strategy
     train_sig, test_sig = sig.iloc[:len(train)].reset_index(drop=True), sig.iloc[len(train):].reset_index(drop=True)
     costs = Costs(spread)
     rows: list[dict[str, object]] = []
-    leverage_set = (1, 5) if spec.name == "B0_buy_hold" else LEVERS
+    leverage_set = (1, 5) if spec.name == "B0_buy_hold" else levers
     for leverage in leverage_set:
         train_result = run_backtest(train, train_sig, train_fund, leverage, costs)
         test_result = run_backtest(test, test_sig, test_fund, leverage, costs)
@@ -87,7 +87,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-symbols", type=int, default=0)
     parser.add_argument("--suffix", default="", help="manifest/output suffix, e.g. _crypto")
+    parser.add_argument("--levers", default="", help="comma list overriding the leverage grid")
+    parser.add_argument("--tag", default="", help="extra suffix for output files only")
     args = parser.parse_args()
+    levers = tuple(int(x) for x in args.levers.split(",")) if args.levers else LEVERS
     manifest = json.loads((ROOT / f"out/data_manifest{args.suffix}.json").read_text(encoding="utf-8"))
     usable = [x for x in manifest if x.get("tier") in {"A", "B"}]
     if args.max_symbols: usable = usable[:args.max_symbols]
@@ -98,6 +101,13 @@ def main() -> int:
     attempts = 0
     for meta in usable:
         symbol, frame, fund = meta["symbol"], all_frames[meta["symbol"]], all_funding[meta["symbol"]]
+        try:
+            max_lever = int(float(meta.get("maxLever") or 20))
+        except (TypeError, ValueError):
+            max_lever = 20
+        sym_levers = tuple(lever for lever in levers if lever <= max_lever)
+        if not sym_levers:
+            continue
         train, _ = split(frame)
         session_sets = session_candidates(train)
         for spec in specs():
@@ -105,13 +115,13 @@ def main() -> int:
             if spec.name == "B0_buy_hold": candidates = [None]
             for session in candidates:
                 run_spec = StrategySpec(spec.name, {**spec.params, "which": session[0]}) if session else spec
-                batch = run_one(symbol, frame, fund, run_spec, float(meta.get("half_spread_bp", 1.0)), session)
+                batch = run_one(symbol, frame, fund, run_spec, float(meta.get("half_spread_bp", 1.0)), session, sym_levers)
                 for row in batch: row["exploratory"] = meta["tier"] == "B"
                 rows.extend(batch); attempts += len(batch)
         if meta["tier"] == "A" and symbol in cross:
             spec = StrategySpec("B5_cross_section", {"lookback": 20, "top": 3, "bottom": 3, "rebalance": "weekly"})
             sig = cross[symbol]; train, test = split(frame); train_sig, test_sig = sig.iloc[:len(train)], sig.iloc[len(train):]
-            for leverage in LEVERS:
+            for leverage in sym_levers:
                 tr = run_backtest(train, train_sig.reset_index(drop=True), all_funding[symbol], leverage, Costs(float(meta.get("half_spread_bp", 1.0))))
                 te = run_backtest(test, test_sig.reset_index(drop=True), all_funding[symbol], leverage, Costs(float(meta.get("half_spread_bp", 1.0))))
                 train_gates = gate_result(tr, tr); gates = gate_result(te, tr)
@@ -123,11 +133,11 @@ def main() -> int:
                         row["selected_L"] = selected["L"]
                         if row["L"] == selected["L"]: row["all_pass"] = bool(json.loads(str(row["gate"]))["all_pass"])
     df = pd.DataFrame(rows).sort_values("test_net_return", ascending=False)
-    df.to_csv(ROOT / f"out/leaderboard{args.suffix}.csv", index=False)
-    df.to_json(ROOT / f"out/leaderboard{args.suffix}.json", orient="records", indent=2)
-    if not args.suffix:
+    df.to_csv(ROOT / f"out/leaderboard{args.suffix}{args.tag}.csv", index=False)
+    df.to_json(ROOT / f"out/leaderboard{args.suffix}{args.tag}.json", orient="records", indent=2)
+    if not args.suffix and not args.tag:
         write_report(df, manifest, attempts)
-    with (ROOT / "out/PROGRESS.md").open("a", encoding="utf-8") as f: f.write(f"{datetime.now(UTC).isoformat()} | sweep{args.suffix} | rows={len(df)} attempts={attempts}\n")
+    with (ROOT / "out/PROGRESS.md").open("a", encoding="utf-8") as f: f.write(f"{datetime.now(UTC).isoformat()} | sweep{args.suffix}{args.tag} | rows={len(df)} attempts={attempts}\n")
     return 0
 
 
