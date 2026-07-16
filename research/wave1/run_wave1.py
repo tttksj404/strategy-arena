@@ -110,7 +110,10 @@ def _stage_fetch(force: bool) -> None:
                 f"binance_spot_{symbol}_1d": integrity_report(spot_frame, timedelta(days=1)),
                 f"bitget_{symbol}_1D": integrity_report(bitget_daily, timedelta(days=1)),
             }
-            reports_pass = all(not frame.empty and reports[name].valid for name, frame in zip(reports, (funding, perp, perp_4h, spot_frame, bitget_daily), strict=True))
+            # Bitget daily has exchange-side single-day holes at quarter boundaries; it is a cross-validation
+            # series, so eligibility gates on Binance research sources only (Bitget must exist + correlate).
+            binance_names = [name for name in reports if name.startswith("binance_")]
+            reports_pass = all(reports[name].valid for name in binance_names) and not any(frame.empty for frame in (funding, perp, perp_4h, spot_frame, bitget_daily))
             integrity_reports.update({name: report_payload(report) for name, report in reports.items()})
             correlation = close_correlation(perp, bitget_daily)
             passes = has_history and reports_pass and pd.notna(correlation) and correlation > 0.99

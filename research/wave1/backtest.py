@@ -60,7 +60,8 @@ class StopState:
 
 def _stop_fill(state: StopState) -> float | None:
     open_price = float(state.row["open"])
-    level = state.reference_price * (1.0 - state.distance * state.position)
+    direction = 1.0 if state.position > 0.0 else -1.0
+    level = state.reference_price * (1.0 - state.distance * direction)
     if state.position > 0.0 and open_price <= level:
         level = open_price
     elif state.position < 0.0 and open_price >= level:
