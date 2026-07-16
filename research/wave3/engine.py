@@ -345,4 +345,52 @@ def run_candidate(
     return replace(result, stress_total_return=_oos_return(stress.equity), metadata=metadata)
 
 
-__all__ = ["W3_CANDIDATES", "W3_CANDIDATE_IDS", "AssetMarket", "CandidateConfig", "btc_above_ma200", "load_listings", "load_markets", "run_candidate"]
+def current_targets(
+    markets: dict[str, AssetMarket],
+    config: CandidateConfig,
+    as_of: pd.Timestamp | None = None,
+    volume_limit: int = 150,
+) -> tuple[Target, ...]:
+    """Replay the registered wave-3 selector and return its latest targets."""
+    if not markets:
+        raise PipelineError("wave-3 market set is empty")
+    closes = {symbol: _daily_close(market.perp) for symbol, market in markets.items()}
+    volumes = {symbol: _daily_quote_volume(market.perp) for symbol, market in markets.items()}
+    quote_frame = pd.DataFrame(volumes).sort_index()
+    carry = pd.DataFrame({symbol: _carry_apr(market.funding) for symbol, market in markets.items()})
+    for symbol, market in markets.items():
+        if market.spot is None:
+            carry[symbol] = np.nan
+    momentum = pd.DataFrame({symbol: _momentum(close) for symbol, close in closes.items()})
+    returns = {symbol: close.pct_change().fillna(0.0) for symbol, close in closes.items()}
+    days = sorted(pd.DatetimeIndex(pd.concat(closes.values()).index).unique())
+    if as_of is not None:
+        cutoff = pd.Timestamp(as_of)
+        cutoff = cutoff.tz_localize("UTC") if cutoff.tzinfo is None else cutoff.tz_convert("UTC")
+        days = [day for day in days if pd.Timestamp(day) <= cutoff.normalize()]
+    if not days:
+        raise PipelineError("wave-3 market bars have no usable day")
+    regime = btc_above_ma200(closes["BTCUSDT"]) if "BTCUSDT" in closes else pd.Series(False, index=pd.DatetimeIndex(days))
+    listings = tuple(market.listing for market in markets.values() if not config.crypto_only or market.listing.asset_type is AssetType.CRYPTO)
+    previous: tuple[RankedSignal, ...] = ()
+    targets: tuple[Target, ...] = ()
+    index = pd.DatetimeIndex(days)
+    for day in index:
+        current_day = pd.Timestamp(day)
+        eligible = eligible_symbols_at(listings, quote_frame, current_day, volume_limit)
+        targets = _targets_for_day(
+            config,
+            current_day,
+            eligible,
+            carry.reindex(index),
+            momentum.reindex(index),
+            previous,
+            bool(regime.get(current_day, False)),
+        )
+        if config.candidate_id == "W3c":
+            targets = _vol_target_targets(targets, returns, current_day)
+        previous = tuple(target.signal for target in targets)
+    return targets
+
+
+__all__ = ["W3_CANDIDATES", "W3_CANDIDATE_IDS", "AssetMarket", "CandidateConfig", "Target", "btc_above_ma200", "current_targets", "load_listings", "load_markets", "run_candidate"]
