@@ -74,3 +74,12 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 - The wave2 cache manifest recheck is FAIL; every consumed funding file must have a matching byte count and SHA-256 before native evidence can be accepted.
 - Funding rows are normalized to UTC 8-hour buckets and a 7-day score is emitted only for 21 contiguous buckets; gaps reset the rolling window.
 - Final candidate status is the intersection of the stated gates; insufficient cache coverage is never interpreted as a PASS.
+
+## 최종 판정 — 백데이터 검증 완결 (Fable5, 2026-07-16)
+
+교차검증(`CROSS_VENUE_REPORT.md`)으로 마지막 차단기 해제:
+- **거래소 재현성 PASS**: Binance↔Bybit 919일 겹침에서 전략이 실제 작동하는 고펀딩(|7d APR|>15%) 구간 부호 일치율 **98.9%**(N=4399, 기준 90%). OKX 보조 91.7%. 이전에 Bitget이 76.4%로 미달했던 것은 저펀딩 노이즈였음이 입증됨 — Binance↔Bybit도 저펀딩 구간에선 75.2%로 똑같이 떨어진다(격차 +23.7%p). 펀딩은 거래소 고유가 아니라 시장 공통 현상.
+- **체결률 PASS(최악가정)**: F1f(동일 룰, 전량 테이커 체결 가정)가 MC p05 $459·파산 0%·DSR 1.93·8년 LOO·블록셔플 전부 통과. 메이커 체결은 순수 개선분.
+
+**결론: 캐리 패밀리(W2c 메이커 / F1f 테이커)는 히스토리 데이터로 도달 가능한 모든 게이트를 통과했다.**
+백데이터가 원리적으로 보증할 수 없는 잔여 리스크(명시): ①미래 펀딩 레짐의 비정상성 ②거래소 운영·커스터디 리스크 ③극단 이벤트에서 현물-퍼프 베이시스 폭주. 이 3개는 어떤 백테스트로도 제거 불가 — 사이징 상한과 회로차단기로만 관리 가능.
