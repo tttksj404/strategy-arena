@@ -31,7 +31,7 @@ def _series(value: JsonValue) -> pd.Series:
     if not isinstance(value, list):
         raise PipelineError("series payload must be a list")
     records = [item for item in value if isinstance(item, dict) and isinstance(item.get("timestamp"), str)]
-    timestamps = pd.DatetimeIndex([pd.Timestamp(item["timestamp"]) for item in records])
+    timestamps = pd.DatetimeIndex([pd.Timestamp(item["timestamp"]) for item in records]) if records else pd.DatetimeIndex([], tz="UTC")
     samples = [float(item.get("value", 0.0)) for item in records]
     return pd.Series(samples, index=timestamps, dtype=float).sort_index()
 

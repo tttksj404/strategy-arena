@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from math import ceil
 from pathlib import Path
-from typing import Final
+from typing import Callable, Final
 
 import pandas as pd  # noqa: PANDAS_OK
 
@@ -118,6 +118,8 @@ def run_portfolio(
     markets: dict[str, FundingMarket],
     candidate: FundingCandidate,
     stress_multiplier: float = 1.0,
+    position_builder: Callable[[pd.Series, pd.Series, FundingCandidate], pd.Series] | None = None,
+    cost_model: Callable[[str, float], float] | None = None,
 ) -> FundingResult:
     spot_open: dict[str, pd.Series] = {}
     spot_close: dict[str, pd.Series] = {}
@@ -137,7 +139,7 @@ def run_portfolio(
         perp_close[symbol] = perp_daily["close"]
         funding_returns[symbol] = funding_daily
         scores[symbol] = funding_apr
-        active[symbol] = carry_position(funding_apr, candidate)
+        active[symbol] = position_builder(market.funding, funding_apr, candidate) if position_builder is not None else carry_position(funding_apr, candidate)
     spot_open_frame = pd.DataFrame(spot_open).sort_index()
     spot_close_frame = pd.DataFrame(spot_close).reindex(spot_open_frame.index)
     perp_open_frame = pd.DataFrame(perp_open).reindex(spot_open_frame.index)
@@ -157,6 +159,9 @@ def run_portfolio(
     previous_weights = pd.Series(0.0, index=spot_open_frame.columns)
     trade_growth: dict[str, float] = {}
     trade_weights: dict[str, float] = {}
+    slippage_factor = stress_multiplier
+    def cost_for(symbol: str) -> float:
+        return cost_model(symbol, slippage_factor) if cost_model is not None else SPOT_TAKER_RATE + PERP_TAKER_RATE + 2.0 * slippage_rate(symbol, slippage_factor)
     for timestamp in spot_open_frame.index:
         start_capital = capital
         available = spot_open_frame.loc[timestamp].notna() & spot_close_frame.loc[timestamp].notna() & perp_open_frame.loc[timestamp].notna() & perp_close_frame.loc[timestamp].notna()
@@ -175,7 +180,7 @@ def run_portfolio(
         turnover = float((weights - previous_weights).abs().sum())
         cost_return = sum(
             abs(float(weights[symbol] - previous_weights[symbol]))
-            * (SPOT_TAKER_RATE + PERP_TAKER_RATE + 2.0 * slippage_rate(symbol, stress_multiplier))
+            * cost_for(symbol)
             for symbol in spot_open_frame.columns
         )
         capital *= 1.0 - cost_return
@@ -185,7 +190,7 @@ def run_portfolio(
         for symbol in spot_open_frame.columns:
             previous_weight = float(previous_weights[symbol])
             current_weight = float(weights[symbol])
-            leg_rate = SPOT_TAKER_RATE + PERP_TAKER_RATE + 2.0 * slippage_rate(symbol, stress_multiplier)
+            leg_rate = cost_for(symbol)
             if previous_weight > 0.0 and symbol in trade_growth:
                 trade_growth[symbol] *= 1.0 + float(gap_by_symbol[symbol])
             if previous_weight > 0.0 and current_weight == 0.0:
@@ -210,7 +215,7 @@ def run_portfolio(
         previous_weights = weights
     if len(spot_open_frame.index) > 0 and float(previous_weights.abs().sum()) > 0.0:
         final_cost = sum(
-            float(previous_weights[symbol]) * (SPOT_TAKER_RATE + PERP_TAKER_RATE + 2.0 * slippage_rate(symbol, stress_multiplier))
+            float(previous_weights[symbol]) * cost_for(symbol)
             for symbol in spot_open_frame.columns
         )
         capital *= 1.0 - final_cost
@@ -218,7 +223,7 @@ def run_portfolio(
         turnover_values[-1] += float(previous_weights.abs().sum())
         final_timestamp = pd.Timestamp(spot_open_frame.index[-1])
         for symbol, growth in trade_growth.items():
-            leg_rate = SPOT_TAKER_RATE + PERP_TAKER_RATE + 2.0 * slippage_rate(symbol, stress_multiplier)
+            leg_rate = cost_for(symbol)
             trade_values.append((growth * (1.0 - leg_rate) - 1.0) * trade_weights[symbol])
             trade_times.append(final_timestamp)
     equity = pd.Series(equity_values, index=spot_open_frame.index, dtype=float)
