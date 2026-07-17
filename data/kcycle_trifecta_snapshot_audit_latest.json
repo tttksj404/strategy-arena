@@ -1,0 +1,94 @@
+{
+  "ok": true,
+  "records": 14113,
+  "unique_keys": 14113,
+  "key_index_tokens": 14113,
+  "actual_count": 13900,
+  "signal_count": 416,
+  "training_classes": {
+    "post_result_archive_join": 13951,
+    "unsettled_or_unknown": 56,
+    "live_like_pre_result": 106
+  },
+  "timing_quality": {
+    "live_like_with_timing": 72,
+    "live_like_missing_timing": 34,
+    "pre_start_snapshots": 72,
+    "post_start_snapshots": 21
+  },
+  "signal_deployability": {
+    "none": 13697,
+    "watch_only_failed_small_n": 416
+  },
+  "stored_signal_compatible_downgrades": 415,
+  "critical_failures": {
+    "duplicate_keys": 0,
+    "hash_mismatch": 0,
+    "board_count_mismatch": 0,
+    "stored_signal_mismatch": 0,
+    "missing_index_tokens": 0,
+    "extra_index_tokens": 0,
+    "actual_joined_live_like_risk": 0,
+    "missing_timing_for_live_like_v2": 0,
+    "post_start_marked_pre_result": 0
+  },
+  "rule_metrics_by_year": {
+    "2018": {
+      "actual_n": 2468,
+      "selected_n": 51,
+      "hits": 22,
+      "exact": 0.43137254901960786
+    },
+    "2019": {
+      "actual_n": 1458,
+      "selected_n": 62,
+      "hits": 25,
+      "exact": 0.4032258064516129
+    },
+    "2020": {
+      "actual_n": 512,
+      "selected_n": 11,
+      "hits": 5,
+      "exact": 0.45454545454545453
+    },
+    "2021": {
+      "actual_n": 399,
+      "selected_n": 20,
+      "hits": 9,
+      "exact": 0.45
+    },
+    "2022": {
+      "actual_n": 2492,
+      "selected_n": 113,
+      "hits": 48,
+      "exact": 0.4247787610619469
+    },
+    "2023": {
+      "actual_n": 2664,
+      "selected_n": 77,
+      "hits": 36,
+      "exact": 0.4675324675324675
+    },
+    "2024": {
+      "actual_n": 770,
+      "selected_n": 6,
+      "hits": 4,
+      "exact": 0.6666666666666666
+    },
+    "2025": {
+      "actual_n": 1753,
+      "selected_n": 41,
+      "hits": 22,
+      "exact": 0.5365853658536586
+    },
+    "2026": {
+      "actual_n": 1384,
+      "selected_n": 30,
+      "hits": 15,
+      "exact": 0.5
+    }
+  },
+  "rule_selected_total": 411,
+  "rule_hits_total": 186,
+  "rule_exact_total": 0.45255474452554745
+}

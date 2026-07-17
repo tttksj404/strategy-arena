@@ -1,0 +1,1874 @@
+{
+  "status": "searching",
+  "method": "hybrid_structured_pair_boundary_plus_multifidelity_pareto_diversity_beam",
+  "cycle": 42,
+  "seed": 20260917,
+  "generations": 5,
+  "candidates_per_generation": 20000,
+  "tested_this_cycle": 100000,
+  "tested_total": 4200000,
+  "assay_evaluations_this_cycle": 103520,
+  "stage_beams": [
+    256,
+    64,
+    64
+  ],
+  "hierarchical_stages": [
+    {
+      "generation": 0,
+      "fold_count": 1,
+      "input_count": 20000,
+      "output_count": 256,
+      "assay_evaluations": 20000,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 0,
+      "fold_count": 2,
+      "input_count": 256,
+      "output_count": 64,
+      "assay_evaluations": 512,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 0,
+      "fold_count": 3,
+      "input_count": 64,
+      "output_count": 64,
+      "assay_evaluations": 192,
+      "best_market_gap_pp": -1.2335526315789491
+    },
+    {
+      "generation": 1,
+      "fold_count": 1,
+      "input_count": 20000,
+      "output_count": 256,
+      "assay_evaluations": 20000,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 1,
+      "fold_count": 2,
+      "input_count": 256,
+      "output_count": 64,
+      "assay_evaluations": 512,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 1,
+      "fold_count": 3,
+      "input_count": 64,
+      "output_count": 64,
+      "assay_evaluations": 192,
+      "best_market_gap_pp": -1.2335526315789491
+    },
+    {
+      "generation": 2,
+      "fold_count": 1,
+      "input_count": 20000,
+      "output_count": 256,
+      "assay_evaluations": 20000,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 2,
+      "fold_count": 2,
+      "input_count": 256,
+      "output_count": 64,
+      "assay_evaluations": 512,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 2,
+      "fold_count": 3,
+      "input_count": 64,
+      "output_count": 64,
+      "assay_evaluations": 192,
+      "best_market_gap_pp": -1.2335526315789491
+    },
+    {
+      "generation": 3,
+      "fold_count": 1,
+      "input_count": 20000,
+      "output_count": 256,
+      "assay_evaluations": 20000,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 3,
+      "fold_count": 2,
+      "input_count": 256,
+      "output_count": 64,
+      "assay_evaluations": 512,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 3,
+      "fold_count": 3,
+      "input_count": 64,
+      "output_count": 64,
+      "assay_evaluations": 192,
+      "best_market_gap_pp": -1.2335526315789491
+    },
+    {
+      "generation": 4,
+      "fold_count": 1,
+      "input_count": 20000,
+      "output_count": 256,
+      "assay_evaluations": 20000,
+      "best_market_gap_pp": -1.1484823625922902
+    },
+    {
+      "generation": 4,
+      "fold_count": 2,
+      "input_count": 256,
+      "output_count": 64,
+      "assay_evaluations": 512,
+      "best_market_gap_pp": -1.2305168170631708
+    },
+    {
+      "generation": 4,
+      "fold_count": 3,
+      "input_count": 64,
+      "output_count": 64,
+      "assay_evaluations": 192,
+      "best_market_gap_pp": -1.2335526315789491
+    }
+  ],
+  "model_library": [
+    "v4",
+    "sectional_dynamic_win_d2",
+    "sectional_dynamic_win_d3",
+    "sectional_dynamic_win_d4",
+    "sectional_dynamic_place_d3",
+    "sectional_dynamic_finish_d3",
+    "sectional_dynamic_extra_d12",
+    "sectional_dynamic_pairwise_d3",
+    "global_winner_svm_c003",
+    "global_winner_svm_c010",
+    "global_neural_network_a001",
+    "global_neural_network_a010",
+    "global_random_forest_leaf15",
+    "global_random_forest_leaf30",
+    "global_conditional_logit_r2",
+    "global_conditional_logit_r8",
+    "full_order_plackett_luce_top3_r2",
+    "full_order_plackett_luce_top5_r8",
+    "full_order_full_order_pairwise_d2",
+    "full_order_full_order_pairwise_d3"
+  ],
+  "prediction_cache_hit": true,
+  "prediction_fingerprint": "7eb785a85618001601f75dafc4c5fa8b61f9de2e61dc116835ceb40f2ef736fe",
+  "market_weight_cap": 0.15,
+  "minimum_market_advantage_pp": 5.0,
+  "market_parity_tolerance_pp": 0.5,
+  "selection_uses_confirmation": false,
+  "selected": {
+    "weights": {
+      "sectional_dynamic_pairwise_d3": 0.130350759593846,
+      "global_winner_svm_c003": 0.18197228721382144,
+      "global_winner_svm_c010": 0.06783491756321988,
+      "global_neural_network_a001": 0.0018957246199975486,
+      "full_order_full_order_pairwise_d2": 0.00564977278938299,
+      "full_order_full_order_pairwise_d3": 0.46507807822787883
+    },
+    "market_weight": 0.14543280321932558,
+    "discovery_market_gaps_pp": [
+      -1.2305168170631708,
+      -1.2087026591458494,
+      -1.2335526315789491
+    ],
+    "discovery_v4_lifts_pp": [
+      9.10582444626743,
+      6.929895245769541,
+      7.648026315789469
+    ],
+    "confirmation_market_gap_pp": -2.102607232968884,
+    "confirmation_v4_lift_pp": 6.72834314550042,
+    "historical_market_parity_pass": false,
+    "folds": [
+      {
+        "fold": "2024H2",
+        "candidate": {
+          "races": 1219,
+          "top1": 0.33962264150943394,
+          "top3": 0.6431501230516817,
+          "race_logloss": 2.0598741842795563
+        },
+        "market": {
+          "races": 1219,
+          "top1": 0.35192780968006565,
+          "top3": 0.667760459392945,
+          "race_logloss": 1.8400588169376673
+        },
+        "v4": {
+          "races": 1219,
+          "top1": 0.24856439704675964,
+          "top3": 0.5758818703855619,
+          "race_logloss": 2.1048113898830088
+        },
+        "candidate_vs_market_top1_pp": -1.2305168170631708,
+        "candidate_vs_v4_top1_pp": 9.10582444626743,
+        "bootstrap_vs_market": {
+          "mean_pp": -1.2305168170631664,
+          "ci95_low_pp": -2.9532403609515994,
+          "ci95_high_pp": 0.4922067268252666,
+          "probability_positive": 0.07475
+        },
+        "bootstrap_vs_v4": {
+          "mean_pp": 9.105824446267432,
+          "ci95_low_pp": 6.726825266611977,
+          "ci95_high_pp": 11.566858080393766,
+          "probability_positive": 1.0
+        }
+      },
+      {
+        "fold": "2025H1",
+        "candidate": {
+          "races": 1241,
+          "top1": 0.3682514101531023,
+          "top3": 0.6575342465753424,
+          "race_logloss": 2.05596965513448
+        },
+        "market": {
+          "races": 1241,
+          "top1": 0.38033843674456086,
+          "top3": 0.6889605157131345,
+          "race_logloss": 1.807876002588104
+        },
+        "v4": {
+          "races": 1241,
+          "top1": 0.2989524576954069,
+          "top3": 0.5882352941176471,
+          "race_logloss": 2.0301794287013273
+        },
+        "candidate_vs_market_top1_pp": -1.208702659145855,
+        "candidate_vs_v4_top1_pp": 6.929895245769541,
+        "bootstrap_vs_market": {
+          "mean_pp": -1.20870265914585,
+          "ci95_low_pp": -2.8203062046736505,
+          "ci95_high_pp": 0.32232070910556004,
+          "probability_positive": 0.0565
+        },
+        "bootstrap_vs_v4": {
+          "mean_pp": 6.929895245769541,
+          "ci95_low_pp": 4.43190975020145,
+          "ci95_high_pp": 9.427880741337631,
+          "probability_positive": 1.0
+        }
+      },
+      {
+        "fold": "2025H2",
+        "candidate": {
+          "races": 1216,
+          "top1": 0.37417763157894735,
+          "top3": 0.7014802631578947,
+          "race_logloss": 2.019609541377182
+        },
+        "market": {
+          "races": 1216,
+          "top1": 0.38651315789473684,
+          "top3": 0.7261513157894737,
+          "race_logloss": 1.7516979866728126
+        },
+        "v4": {
+          "races": 1216,
+          "top1": 0.29769736842105265,
+          "top3": 0.6200657894736842,
+          "race_logloss": 1.9759878804860649
+        },
+        "candidate_vs_market_top1_pp": -1.2335526315789491,
+        "candidate_vs_v4_top1_pp": 7.648026315789469,
+        "bootstrap_vs_market": {
+          "mean_pp": -1.2335526315789473,
+          "ci95_low_pp": -2.9605263157894735,
+          "ci95_high_pp": 0.3289473684210526,
+          "probability_positive": 0.057
+        },
+        "bootstrap_vs_v4": {
+          "mean_pp": 7.6480263157894735,
+          "ci95_low_pp": 5.180921052631579,
+          "ci95_high_pp": 10.197368421052632,
+          "probability_positive": 1.0
+        }
+      },
+      {
+        "fold": "2026_PRE_FRESH",
+        "candidate": {
+          "races": 1189,
+          "top1": 0.3599663582842725,
+          "top3": 0.7056349873843566,
+          "race_logloss": 2.0258013416448155
+        },
+        "market": {
+          "races": 1189,
+          "top1": 0.3809924306139613,
+          "top3": 0.7098402018502944,
+          "race_logloss": 1.7702047802583731
+        },
+        "v4": {
+          "races": 1189,
+          "top1": 0.2926829268292683,
+          "top3": 0.6181665264928511,
+          "race_logloss": 1.9713443999737097
+        },
+        "candidate_vs_market_top1_pp": -2.102607232968884,
+        "candidate_vs_v4_top1_pp": 6.72834314550042,
+        "bootstrap_vs_market": {
+          "mean_pp": -2.1026072329688814,
+          "ci95_low_pp": -3.616484440706476,
+          "ci95_high_pp": -0.5887300252312868,
+          "probability_positive": 0.002
+        },
+        "bootstrap_vs_v4": {
+          "mean_pp": 6.72834314550042,
+          "ci95_low_pp": 4.289318755256518,
+          "ci95_high_pp": 9.167367535744322,
+          "probability_positive": 1.0
+        }
+      }
+    ]
+  },
+  "frontier": [
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.130350759593846,
+        "global_winner_svm_c003": 0.18197228721382144,
+        "global_winner_svm_c010": 0.06783491756321988,
+        "global_neural_network_a001": 0.0018957246199975486,
+        "full_order_full_order_pairwise_d2": 0.00564977278938299,
+        "full_order_full_order_pairwise_d3": 0.46507807822787883
+      },
+      "market_weight": 0.14543280321932558,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1300351723417848,
+        "global_winner_svm_c003": 0.1819386255765086,
+        "global_winner_svm_c010": 0.0685833459961471,
+        "global_neural_network_a001": 0.0019168829322323022,
+        "full_order_full_order_pairwise_d2": 0.00567393606902162,
+        "full_order_full_order_pairwise_d3": 0.4647093088530605
+      },
+      "market_weight": 0.14543376792590798,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1300957093131235,
+        "global_winner_svm_c003": 0.17990354189151359,
+        "global_winner_svm_c010": 0.07047172291859018,
+        "global_neural_network_a001": 0.0019512950065950468,
+        "full_order_full_order_pairwise_d2": 0.005919703032033668,
+        "full_order_full_order_pairwise_d3": 0.464445007176552
+      },
+      "market_weight": 0.14545667179674382,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13001411580374805,
+        "global_winner_svm_c003": 0.18092310249568663,
+        "global_winner_svm_c010": 0.06935124500013061,
+        "global_neural_network_a001": 0.0018935629662224407,
+        "full_order_full_order_pairwise_d2": 0.00656510125771777,
+        "full_order_full_order_pairwise_d3": 0.4640296082353015
+      },
+      "market_weight": 0.14546836823348294,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13011785337326723,
+        "global_winner_svm_c003": 0.17731053561465177,
+        "global_winner_svm_c010": 0.07316746137166134,
+        "global_neural_network_a001": 0.0020412943037440494,
+        "full_order_full_order_pairwise_d2": 0.005390869355298137,
+        "full_order_full_order_pairwise_d3": 0.46471420771937105
+      },
+      "market_weight": 0.14547055007925422,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13099725088993738,
+        "global_winner_svm_c003": 0.18001529142703573,
+        "global_winner_svm_c010": 0.06964997241572056,
+        "global_neural_network_a001": 0.0019421675016431667,
+        "full_order_full_order_pairwise_d2": 0.0058376504193720135,
+        "full_order_full_order_pairwise_d3": 0.4642633547269768
+      },
+      "market_weight": 0.14548735997148377,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13118454246778596,
+        "global_winner_svm_c003": 0.18155004619618273,
+        "global_winner_svm_c010": 0.06768413200899222,
+        "global_neural_network_a001": 0.0018832534229097926,
+        "full_order_full_order_pairwise_d2": 0.006031696334728433,
+        "full_order_full_order_pairwise_d3": 0.4643765596220391
+      },
+      "market_weight": 0.1454941906451263,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1310699357903356,
+        "global_winner_svm_c003": 0.1813951945469682,
+        "global_winner_svm_c010": 0.0684744074928732,
+        "global_neural_network_a001": 0.001891841420339272,
+        "full_order_full_order_pairwise_d2": 0.005985603520556378,
+        "full_order_full_order_pairwise_d3": 0.4639619583318829
+      },
+      "market_weight": 0.14549464268634965,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13081627670018664,
+        "global_winner_svm_c003": 0.17821866156083221,
+        "global_winner_svm_c010": 0.07153322154974055,
+        "global_neural_network_a001": 0.001979418345624156,
+        "full_order_full_order_pairwise_d2": 0.005908608024221301,
+        "full_order_full_order_pairwise_d3": 0.4642270816046858
+      },
+      "market_weight": 0.14550246366671793,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12983509314679575,
+        "global_winner_svm_c003": 0.18143906209897878,
+        "global_winner_svm_c010": 0.0686481954097122,
+        "global_neural_network_a001": 0.0018348418358653314,
+        "full_order_full_order_pairwise_d2": 0.007484103274404269,
+        "full_order_full_order_pairwise_d3": 0.46344575276188277
+      },
+      "market_weight": 0.1455042048717695,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1297066981446941,
+        "global_winner_svm_c003": 0.18144982139549948,
+        "global_winner_svm_c010": 0.06884953903751675,
+        "global_neural_network_a001": 0.0019317054470532537,
+        "full_order_full_order_pairwise_d2": 0.0052950614237999944,
+        "full_order_full_order_pairwise_d3": 0.46547413221435985
+      },
+      "market_weight": 0.1455046523568869,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1298822321233258,
+        "global_winner_svm_c003": 0.18556250726089157,
+        "global_winner_svm_c010": 0.06438458340261914,
+        "global_neural_network_a001": 0.0018398554066668717,
+        "full_order_full_order_pairwise_d2": 0.005906432366889479,
+        "full_order_full_order_pairwise_d3": 0.46509281923046863
+      },
+      "market_weight": 0.14550718865643483,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13026184780646455,
+        "global_winner_svm_c003": 0.18149759683948313,
+        "global_winner_svm_c010": 0.0689048966203711,
+        "global_neural_network_a001": 0.0019066927306277278,
+        "full_order_full_order_pairwise_d2": 0.006076800038653397,
+        "full_order_full_order_pairwise_d3": 0.4640998452729874
+      },
+      "market_weight": 0.1455106636089534,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12989786167468423,
+        "global_winner_svm_c003": 0.18200215586639842,
+        "global_winner_svm_c010": 0.06797237017182683,
+        "global_neural_network_a001": 0.0018691881173473852,
+        "full_order_full_order_pairwise_d2": 0.006732457931938464,
+        "full_order_full_order_pairwise_d3": 0.46415601523594624
+      },
+      "market_weight": 0.14551090869001157,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1313059233600291,
+        "global_winner_svm_c003": 0.18251102643592731,
+        "global_winner_svm_c010": 0.066769425280999,
+        "global_neural_network_a001": 0.0018415495424132426,
+        "full_order_full_order_pairwise_d2": 0.0060537317490976,
+        "full_order_full_order_pairwise_d3": 0.4643137010824119
+      },
+      "market_weight": 0.1455135853878509,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12982957702246287,
+        "global_winner_svm_c003": 0.18281181506036193,
+        "global_winner_svm_c010": 0.06767365852157231,
+        "global_neural_network_a001": 0.0018976602759294419,
+        "full_order_full_order_pairwise_d2": 0.005467242495124306,
+        "full_order_full_order_pairwise_d3": 0.4650955496959248
+      },
+      "market_weight": 0.14551484303920734,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13010200460525573,
+        "global_winner_svm_c003": 0.18072995120614446,
+        "global_winner_svm_c010": 0.06982356161220322,
+        "global_neural_network_a001": 0.0019538655870622547,
+        "full_order_full_order_pairwise_d2": 0.005566826228154804,
+        "full_order_full_order_pairwise_d3": 0.46459503233472077
+      },
+      "market_weight": 0.145519401609994,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13014267096110932,
+        "global_winner_svm_c003": 0.18006891400886857,
+        "global_winner_svm_c010": 0.06996102376048419,
+        "global_neural_network_a001": 0.0019099058060361687,
+        "full_order_full_order_pairwise_d2": 0.006570658396803253,
+        "full_order_full_order_pairwise_d3": 0.46403849056195695
+      },
+      "market_weight": 0.14551942359968595,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12991475460004848,
+        "global_winner_svm_c003": 0.18544387790404426,
+        "global_winner_svm_c010": 0.06519767317515926,
+        "global_neural_network_a001": 0.0018434317989625107,
+        "full_order_full_order_pairwise_d2": 0.005985733547151211,
+        "full_order_full_order_pairwise_d3": 0.46438319711079923
+      },
+      "market_weight": 0.14552329592195248,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1301965169216327,
+        "global_winner_svm_c003": 0.1811403215564617,
+        "global_winner_svm_c010": 0.0690776721737379,
+        "global_neural_network_a001": 0.001926438314939715,
+        "full_order_full_order_pairwise_d2": 0.00555152405656518,
+        "full_order_full_order_pairwise_d3": 0.4647971636759119
+      },
+      "market_weight": 0.14552893079781593,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13000720769923207,
+        "global_winner_svm_c003": 0.17783003601379557,
+        "global_winner_svm_c010": 0.0727288729794582,
+        "global_neural_network_a001": 0.002014396307712451,
+        "full_order_full_order_pairwise_d2": 0.0058657451988790256,
+        "full_order_full_order_pairwise_d3": 0.46419940713087765
+      },
+      "market_weight": 0.14552974627324347,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13035959240090386,
+        "global_winner_svm_c003": 0.17812518287776338,
+        "global_winner_svm_c010": 0.07202745818651733,
+        "global_neural_network_a001": 0.0020085849681909804,
+        "full_order_full_order_pairwise_d2": 0.005532176085621866,
+        "full_order_full_order_pairwise_d3": 0.4646177765156263
+      },
+      "market_weight": 0.145533709163956,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12989842084911282,
+        "global_winner_svm_c003": 0.18362540355845072,
+        "global_winner_svm_c010": 0.06686178091823711,
+        "global_neural_network_a001": 0.0018739112479657697,
+        "full_order_full_order_pairwise_d2": 0.005999047138927149,
+        "full_order_full_order_pairwise_d3": 0.4644629805376182
+      },
+      "market_weight": 0.14553571671775298,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13048002404172834,
+        "global_winner_svm_c003": 0.18359303431202798,
+        "global_winner_svm_c010": 0.06608108717728049,
+        "global_neural_network_a001": 0.0018437682793347526,
+        "full_order_full_order_pairwise_d2": 0.0057007435151070355,
+        "full_order_full_order_pairwise_d3": 0.4651250521871629
+      },
+      "market_weight": 0.1455423163639687,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13292951878005393,
+        "global_winner_svm_c003": 0.17530926604907512,
+        "global_winner_svm_c010": 0.07245485333153716,
+        "global_neural_network_a001": 0.001982183517930122,
+        "full_order_full_order_pairwise_d2": 0.005982892930542913,
+        "full_order_full_order_pairwise_d3": 0.4638624402406272
+      },
+      "market_weight": 0.14554763102780807,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13232506099753572,
+        "global_winner_svm_c003": 0.17934041257493544,
+        "global_winner_svm_c010": 0.06894403585083614,
+        "global_neural_network_a001": 0.0018824493115345857,
+        "full_order_full_order_pairwise_d2": 0.006439178591344745,
+        "full_order_full_order_pairwise_d3": 0.4636984062293949
+      },
+      "market_weight": 0.145552165844216,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1306139024730492,
+        "global_winner_svm_c003": 0.1794864684021639,
+        "global_winner_svm_c010": 0.07062747127667404,
+        "global_neural_network_a001": 0.001992204091901516,
+        "full_order_full_order_pairwise_d2": 0.005229571574392419,
+        "full_order_full_order_pairwise_d3": 0.4648087272276467
+      },
+      "market_weight": 0.1455558920315494,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1298944754025556,
+        "global_winner_svm_c003": 0.18406999350811112,
+        "global_winner_svm_c010": 0.06581235155074361,
+        "global_neural_network_a001": 0.0018961302546926225,
+        "full_order_full_order_pairwise_d2": 0.005838180921954908,
+        "full_order_full_order_pairwise_d3": 0.46500046026322345
+      },
+      "market_weight": 0.1455596862503574,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13006749331152978,
+        "global_winner_svm_c003": 0.17966878451677096,
+        "global_winner_svm_c010": 0.070762591934785,
+        "global_neural_network_a001": 0.0019425681155075647,
+        "full_order_full_order_pairwise_d2": 0.0064133697138619335,
+        "full_order_full_order_pairwise_d3": 0.4638334354828261
+      },
+      "market_weight": 0.14556163129787747,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1336769206261712,
+        "global_winner_svm_c003": 0.177426426280193,
+        "global_winner_svm_c010": 0.06970008994437053,
+        "global_neural_network_a001": 0.0019066157239099573,
+        "full_order_full_order_pairwise_d2": 0.006146073755206077,
+        "full_order_full_order_pairwise_d3": 0.46369680437300775
+      },
+      "market_weight": 0.14557019338079172,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13000000467043044,
+        "global_winner_svm_c003": 0.17880319599883837,
+        "global_winner_svm_c010": 0.07164687248314011,
+        "global_neural_network_a001": 0.001975730654759383,
+        "full_order_full_order_pairwise_d2": 0.006088265455842481,
+        "full_order_full_order_pairwise_d3": 0.46411169568523414
+      },
+      "market_weight": 0.14557199557965858,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12945869292069973,
+        "global_winner_svm_c003": 0.18092236434811346,
+        "global_winner_svm_c010": 0.06958433633403859,
+        "global_neural_network_a001": 0.0019555329303763067,
+        "full_order_full_order_pairwise_d2": 0.005185929758535913,
+        "full_order_full_order_pairwise_d3": 0.4654917880864541
+      },
+      "market_weight": 0.1455736328471407,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12921299132891642,
+        "global_winner_svm_c003": 0.17918173777425753,
+        "global_winner_svm_c010": 0.07225416472170405,
+        "global_neural_network_a001": 0.0020000621983812306,
+        "full_order_full_order_pairwise_d2": 0.005818113432803576,
+        "full_order_full_order_pairwise_d3": 0.46412238363495195
+      },
+      "market_weight": 0.14558135388514548,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12974007252584924,
+        "global_winner_svm_c003": 0.17611465084032887,
+        "global_winner_svm_c010": 0.07470034075095441,
+        "global_neural_network_a001": 0.0020649487647725353,
+        "full_order_full_order_pairwise_d2": 0.005753614508248961,
+        "full_order_full_order_pairwise_d3": 0.46418239035522385
+      },
+      "market_weight": 0.1455843120613479,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13021537798333999,
+        "global_winner_svm_c003": 0.18641159406096963,
+        "global_winner_svm_c010": 0.0637040949678747,
+        "global_neural_network_a001": 0.0017577269500083184,
+        "full_order_full_order_pairwise_d2": 0.006120989193502963,
+        "full_order_full_order_pairwise_d3": 0.46464123512484473
+      },
+      "market_weight": 0.14558654478343575,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1297264967436584,
+        "global_winner_svm_c003": 0.18300836331778234,
+        "global_winner_svm_c010": 0.06771483836132335,
+        "global_neural_network_a001": 0.0018881643637086419,
+        "full_order_full_order_pairwise_d2": 0.005918598099756679,
+        "full_order_full_order_pairwise_d3": 0.4644153646551023
+      },
+      "market_weight": 0.1455946129597572,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13173605399386895,
+        "global_winner_svm_c003": 0.17846728008915858,
+        "global_winner_svm_c010": 0.07048875272639868,
+        "global_neural_network_a001": 0.0019524576183250087,
+        "full_order_full_order_pairwise_d2": 0.005836343353074513,
+        "full_order_full_order_pairwise_d3": 0.46410264096621623
+      },
+      "market_weight": 0.1456121008787922,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1308223466384001,
+        "global_winner_svm_c003": 0.1805846413491181,
+        "global_winner_svm_c010": 0.06908294885877819,
+        "global_neural_network_a001": 0.0019272609568059627,
+        "full_order_full_order_pairwise_d2": 0.00578319069612224,
+        "full_order_full_order_pairwise_d3": 0.46438946534572273
+      },
+      "market_weight": 0.14562915886803246,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13310284415729878,
+        "global_winner_svm_c003": 0.17833343430875712,
+        "global_winner_svm_c010": 0.06923987430225696,
+        "global_neural_network_a001": 0.0019011644430244764,
+        "full_order_full_order_pairwise_d2": 0.006119727645182967,
+        "full_order_full_order_pairwise_d3": 0.46379967276845135
+      },
+      "market_weight": 0.14564486509315927,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13181772018279672,
+        "global_winner_svm_c003": 0.18135023691661034,
+        "global_winner_svm_c010": 0.06714658025716477,
+        "global_neural_network_a001": 0.001874103583203419,
+        "full_order_full_order_pairwise_d2": 0.006032539307524334,
+        "full_order_full_order_pairwise_d3": 0.4642819354081801
+      },
+      "market_weight": 0.14565114384088787,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13003417658799377,
+        "global_winner_svm_c003": 0.18498249887146845,
+        "global_winner_svm_c010": 0.06500524475014671,
+        "global_neural_network_a001": 0.0018690959598548587,
+        "full_order_full_order_pairwise_d2": 0.005894007389721733,
+        "full_order_full_order_pairwise_d3": 0.4647295412586122
+      },
+      "market_weight": 0.14565669089212252,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13019146914448632,
+        "global_winner_svm_c003": 0.1786888535792022,
+        "global_winner_svm_c010": 0.0715072889745566,
+        "global_neural_network_a001": 0.0019920991261191245,
+        "full_order_full_order_pairwise_d2": 0.005605860505016148,
+        "full_order_full_order_pairwise_d3": 0.46453552844025153
+      },
+      "market_weight": 0.14568239272416897,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12965875346059652,
+        "global_winner_svm_c003": 0.18242561733013843,
+        "global_winner_svm_c010": 0.0678411662475274,
+        "global_neural_network_a001": 0.0019042794050339474,
+        "full_order_full_order_pairwise_d2": 0.005722172700261783,
+        "full_order_full_order_pairwise_d3": 0.46493796219678357
+      },
+      "market_weight": 0.1456993301764136,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12956943912200114,
+        "global_winner_svm_c003": 0.18160476167892656,
+        "global_winner_svm_c010": 0.06926448684152052,
+        "global_neural_network_a001": 0.0019300680756460884,
+        "full_order_full_order_pairwise_d2": 0.005917023904225244,
+        "full_order_full_order_pairwise_d3": 0.46423139163045934
+      },
+      "market_weight": 0.1457016823130932,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13173872469393863,
+        "global_winner_svm_c003": 0.17915018844945615,
+        "global_winner_svm_c010": 0.06978251631633635,
+        "global_neural_network_a001": 0.001926011633029397,
+        "full_order_full_order_pairwise_d2": 0.0059508139798874786,
+        "full_order_full_order_pairwise_d3": 0.4639492375737136
+      },
+      "market_weight": 0.14570972290370743,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1325068518744928,
+        "global_winner_svm_c003": 0.1779942677734659,
+        "global_winner_svm_c010": 0.07024764552563342,
+        "global_neural_network_a001": 0.001936657428255416,
+        "full_order_full_order_pairwise_d2": 0.00597486261412707,
+        "full_order_full_order_pairwise_d3": 0.46378201017228793
+      },
+      "market_weight": 0.14572032550738395,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13066686809405442,
+        "global_winner_svm_c003": 0.18235220592692064,
+        "global_winner_svm_c010": 0.06709186365568384,
+        "global_neural_network_a001": 0.0018815737102001588,
+        "full_order_full_order_pairwise_d2": 0.005967901771666026,
+        "full_order_full_order_pairwise_d3": 0.46449057683613043
+      },
+      "market_weight": 0.1457239497444638,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13084373473835384,
+        "global_winner_svm_c003": 0.18206999631939774,
+        "global_winner_svm_c010": 0.06767287739843601,
+        "global_neural_network_a001": 0.0018756120666238959,
+        "full_order_full_order_pairwise_d2": 0.005890745864724275,
+        "full_order_full_order_pairwise_d3": 0.46422678117374355
+      },
+      "market_weight": 0.1457245650332394,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12999598531100984,
+        "global_winner_svm_c003": 0.1763836664088803,
+        "global_winner_svm_c010": 0.07410616360955764,
+        "global_neural_network_a001": 0.0020455253435804565,
+        "full_order_full_order_pairwise_d2": 0.00583820034023592,
+        "full_order_full_order_pairwise_d3": 0.46403111247016776
+      },
+      "market_weight": 0.14574576350384863,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12972059098468483,
+        "global_winner_svm_c003": 0.17943652849994854,
+        "global_winner_svm_c010": 0.07109521225370717,
+        "global_neural_network_a001": 0.0019576033371638615,
+        "full_order_full_order_pairwise_d2": 0.006256964640122883,
+        "full_order_full_order_pairwise_d3": 0.4639532730570841
+      },
+      "market_weight": 0.14575505836161545,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13020386917814922,
+        "global_winner_svm_c003": 0.1828801154295787,
+        "global_winner_svm_c010": 0.0669126912035369,
+        "global_neural_network_a001": 0.001870258527996873,
+        "full_order_full_order_pairwise_d2": 0.005574352095545098,
+        "full_order_full_order_pairwise_d3": 0.46509539723749416
+      },
+      "market_weight": 0.1457823536407136,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13028604963450502,
+        "global_winner_svm_c003": 0.179551280983514,
+        "global_winner_svm_c010": 0.0707200803316787,
+        "global_neural_network_a001": 0.001977902535157079,
+        "full_order_full_order_pairwise_d2": 0.0056134667327481695,
+        "full_order_full_order_pairwise_d3": 0.4643245603480291
+      },
+      "market_weight": 0.14578728356441464,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.1308120347102814,
+        "global_winner_svm_c003": 0.1795437297258232,
+        "global_winner_svm_c010": 0.07013303601473465,
+        "global_neural_network_a001": 0.001955663700471945,
+        "full_order_full_order_pairwise_d2": 0.005770085184882937,
+        "full_order_full_order_pairwise_d3": 0.4641665995457262
+      },
+      "market_weight": 0.1458150178477497,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13055464391616017,
+        "global_winner_svm_c003": 0.1805032875368795,
+        "global_winner_svm_c010": 0.06926665614374952,
+        "global_neural_network_a001": 0.0019135379573548838,
+        "full_order_full_order_pairwise_d2": 0.006228744170099613,
+        "full_order_full_order_pairwise_d3": 0.46392711954788357
+      },
+      "market_weight": 0.14583479643828098,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13163768625628666,
+        "global_winner_svm_c003": 0.18002935451607827,
+        "global_winner_svm_c010": 0.06876616541730493,
+        "global_neural_network_a001": 0.0018901724857388576,
+        "full_order_full_order_pairwise_d2": 0.006308225885302048,
+        "full_order_full_order_pairwise_d3": 0.4637207557963781
+      },
+      "market_weight": 0.14583633317774036,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13125338173646273,
+        "global_winner_svm_c003": 0.17773494095163675,
+        "global_winner_svm_c010": 0.0714658581769932,
+        "global_neural_network_a001": 0.001958934890393949,
+        "full_order_full_order_pairwise_d2": 0.006226236004249239,
+        "full_order_full_order_pairwise_d3": 0.46368940364814437
+      },
+      "market_weight": 0.1458438982447198,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12986301251419544,
+        "global_winner_svm_c003": 0.1771454280165065,
+        "global_winner_svm_c010": 0.07341389666061812,
+        "global_neural_network_a001": 0.002031906806159024,
+        "full_order_full_order_pairwise_d2": 0.005823109225753155,
+        "full_order_full_order_pairwise_d3": 0.4640227543094386
+      },
+      "market_weight": 0.14586330906286,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13018875874266364,
+        "global_winner_svm_c003": 0.18210268994017142,
+        "global_winner_svm_c010": 0.06803220419675451,
+        "global_neural_network_a001": 0.0018731443150051602,
+        "full_order_full_order_pairwise_d2": 0.006284640967583666,
+        "full_order_full_order_pairwise_d3": 0.46392335790545947
+      },
+      "market_weight": 0.14587211758556665,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.13003057128657639,
+        "global_winner_svm_c003": 0.1801831948967191,
+        "global_winner_svm_c010": 0.07014549287443095,
+        "global_neural_network_a001": 0.001973863559311479,
+        "full_order_full_order_pairwise_d2": 0.0056784975777699155,
+        "full_order_full_order_pairwise_d3": 0.46428553294541436
+      },
+      "market_weight": 0.145891694123816,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12964342569851514,
+        "global_winner_svm_c003": 0.18232587149941076,
+        "global_winner_svm_c010": 0.06828323163312806,
+        "global_neural_network_a001": 0.0019157947489334814,
+        "full_order_full_order_pairwise_d2": 0.005910384160546546,
+        "full_order_full_order_pairwise_d3": 0.46423221010827265
+      },
+      "market_weight": 0.14589758641979253,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12970964890777317,
+        "global_winner_svm_c003": 0.1832806011670256,
+        "global_winner_svm_c010": 0.06760780354206555,
+        "global_neural_network_a001": 0.0018775287043581897,
+        "full_order_full_order_pairwise_d2": 0.006035297868799295,
+        "full_order_full_order_pairwise_d3": 0.4638901727330386
+      },
+      "market_weight": 0.14591304064206317,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.2335526315789491
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.648026315789469
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12971639853691375,
+        "global_winner_svm_c003": 0.17806896027634525,
+        "global_winner_svm_c010": 0.07235178411021068,
+        "global_neural_network_a001": 0.001976013482990078,
+        "full_order_full_order_pairwise_d2": 0.0064125972797922,
+        "full_order_full_order_pairwise_d3": 0.46368605673011987
+      },
+      "market_weight": 0.14594884986949677,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.315789473684209
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.565789473684209
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.12955471489919002,
+        "global_winner_svm_c003": 0.17998078297497272,
+        "global_winner_svm_c010": 0.0707168879361053,
+        "global_neural_network_a001": 0.0019440242461235403,
+        "full_order_full_order_pairwise_d2": 0.006200184297686084,
+        "full_order_full_order_pairwise_d3": 0.46381774655431546
+      },
+      "market_weight": 0.14599579985962008,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.315789473684209
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.565789473684209
+      ],
+      "confirmation_market_gap_pp": -2.102607232968884,
+      "confirmation_v4_lift_pp": 6.72834314550042,
+      "historical_market_parity_pass": false
+    },
+    {
+      "weights": {
+        "sectional_dynamic_pairwise_d3": 0.03695422882231046,
+        "global_winner_svm_c003": 0.2134240126759664,
+        "global_winner_svm_c010": 0.06250192294767662,
+        "global_neural_network_a001": 0.0017251271554934542,
+        "full_order_full_order_pairwise_d2": 0.10962287901688818,
+        "full_order_full_order_pairwise_d3": 0.42461187899098873
+      },
+      "market_weight": 0.14987071804813484,
+      "discovery_market_gaps_pp": [
+        -1.2305168170631708,
+        -1.2087026591458494,
+        -1.64473684210526
+      ],
+      "discovery_v4_lifts_pp": [
+        9.10582444626743,
+        6.929895245769541,
+        7.236842105263158
+      ],
+      "confirmation_market_gap_pp": -1.766190075693863,
+      "confirmation_v4_lift_pp": 7.064760302775442,
+      "historical_market_parity_pass": false
+    }
+  ],
+  "historical_market_parity_pass": false,
+  "pristine_forward_pass": false,
+  "promotion_pass": false,
+  "elapsed_sec": 220.91353725001682
+}

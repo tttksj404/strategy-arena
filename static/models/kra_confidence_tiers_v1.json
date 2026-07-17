@@ -1,0 +1,70 @@
+{
+  "source": "kra_tiers_v1",
+  "generated_at": "2026-07-12T03:49:29+00:00",
+  "measurement_note": "과거 6,249경주(2024-2026) 측정 기준",
+  "date_range": {
+    "start": "20240101",
+    "end": "20260731"
+  },
+  "corpus": {
+    "races": 6249,
+    "entries": 64548,
+    "races_with_dividend": 3535
+  },
+  "field_buckets": {
+    "field_le_7": {"max_field_size": 7},
+    "field_8_10": {"min_field_size": 8, "max_field_size": 10},
+    "field_11_plus": {"min_field_size": 11}
+  },
+  "thresholds": {
+    "very_strong_pull": {"favorite_odds_max": 1.8, "ratio12_min": 1.5},
+    "strong_pull": {"favorite_odds_max": 2.5, "ratio12_min": 1.3},
+    "price_short": {"favorite_odds_max": 2.0},
+    "gap_wide": {"ratio12_min": 1.5},
+    "weak_or_open": {"favorite_odds_min_exclusive": 4.0, "ratio12_max_exclusive": 1.1}
+  },
+  "tier_priority": [
+    "weak_or_open",
+    "very_strong_pull",
+    "strong_pull",
+    "price_short",
+    "gap_wide",
+    "all"
+  ],
+  "win_market": {
+    "tiers": {
+      "all": {"races": 6249, "coverage": 1.0, "top1": 0.36741878700592095, "top3": 0.6916306609057449},
+      "very_strong_pull": {"races": 1597, "coverage": 0.2555608897423588, "top1": 0.5422667501565435, "top3": 0.7726988102692548},
+      "strong_pull": {"races": 3478, "coverage": 0.5565690510481677, "top1": 0.44508338125359403, "top3": 0.7363427257044278},
+      "price_short": {"races": 2230, "coverage": 0.3568570971355417, "top1": 0.5067264573991032, "top3": 0.7623318385650224},
+      "gap_wide": {"races": 3729, "coverage": 0.5967354776764282, "top1": 0.4239742558326629, "top3": 0.7138643067846607},
+      "weak_or_open": {"races": 735, "coverage": 0.11761881901104176, "top1": 0.24353741496598638, "top3": 0.6136054421768707}
+    },
+    "by_field_size": {
+      "field_le_7": {
+        "all": {"races": 73, "coverage": 1.0, "top1": 0.3287671232876712, "top3": 0.7123287671232876},
+        "very_strong_pull": {"races": 24, "coverage": 0.3287671232876712, "top1": 0.4583333333333333, "top3": 0.7083333333333334},
+        "strong_pull": {"races": 46, "coverage": 0.6301369863013698, "top1": 0.3695652173913043, "top3": 0.6956521739130435},
+        "price_short": {"races": 34, "coverage": 0.4657534246575342, "top1": 0.4411764705882353, "top3": 0.6470588235294118},
+        "gap_wide": {"races": 44, "coverage": 0.6027397260273972, "top1": 0.38636363636363635, "top3": 0.7272727272727273},
+        "weak_or_open": {"races": 8, "coverage": 0.1095890410958904, "top1": 0.125, "top3": 0.5}
+      },
+      "field_8_10": {
+        "all": {"races": 3429, "coverage": 1.0, "top1": 0.38232720909886264, "top3": 0.7080781568970546},
+        "very_strong_pull": {"races": 933, "coverage": 0.27209098862642167, "top1": 0.5734190782422294, "top3": 0.789924973204716},
+        "strong_pull": {"races": 1974, "coverage": 0.5756780402449694, "top1": 0.46656534954407297, "top3": 0.7578520770010132},
+        "price_short": {"races": 1291, "coverage": 0.3764946048410615, "top1": 0.5360185902401239, "top3": 0.7792408985282726},
+        "gap_wide": {"races": 2069, "coverage": 0.6033829104695246, "top1": 0.44804253262445626, "top3": 0.7322377960367327},
+        "weak_or_open": {"races": 396, "coverage": 0.11548556430446194, "top1": 0.22727272727272727, "top3": 0.6338383838383839}
+      },
+      "field_11_plus": {
+        "all": {"races": 2747, "coverage": 1.0, "top1": 0.34983618492901347, "top3": 0.6705496905715326},
+        "very_strong_pull": {"races": 640, "coverage": 0.23298143429195486, "top1": 0.5, "top3": 0.75},
+        "strong_pull": {"races": 1458, "coverage": 0.5307608299963597, "top1": 0.41838134430727025, "top3": 0.7085048010973937},
+        "price_short": {"races": 905, "coverage": 0.3294503094284674, "top1": 0.46740331491712706, "top3": 0.7425414364640884},
+        "gap_wide": {"races": 1616, "coverage": 0.5882781215871861, "top1": 0.3941831683168317, "top3": 0.6899752475247525},
+        "weak_or_open": {"races": 331, "coverage": 0.1204950855478704, "top1": 0.26586102719033233, "top3": 0.5921450151057401}
+      }
+    }
+  }
+}

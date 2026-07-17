@@ -1,0 +1,198 @@
+{
+  "round": "KRA Round 9",
+  "created_at": "2026-07-12T21:51:15.875941+09:00",
+  "windows": {
+    "train": [
+      "20190101",
+      "20250531"
+    ],
+    "val": [
+      "20250601",
+      "20260531"
+    ],
+    "fresh_holdout": [
+      "20260622",
+      "20260711"
+    ]
+  },
+  "sectional_time_features": [
+    "bu_1fGTime",
+    "bu_2fGTime",
+    "bu_3fGTime",
+    "je_1cTime",
+    "je_2cTime",
+    "je_3cTime",
+    "je_4cTime"
+  ],
+  "sectional_missing_policy": "bu_*fGTime and je_*cTime columns are coerced numeric; missing/non-numeric values remain NaN through relative transforms and are median-imputed from the training split only at model fit/predict time.",
+  "baseline": {
+    "current_v4_overall": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.373134328358209,
+      "top3": 0.7014925373134329,
+      "log_loss": 0.255149533064695
+    },
+    "current_v4_pre_odds_median_filled": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.17164179104477612,
+      "top3": 0.5,
+      "log_loss": 0.34102963148454746
+    }
+  },
+  "val_metrics": {
+    "expanded_2019_202505": {
+      "races": 2465,
+      "rows": 25515,
+      "top1": 0.2645030425963489,
+      "top3": 0.5760649087221096,
+      "log_loss": 0.2883802912805802
+    },
+    "no_covid_2020_2021_excluded": {
+      "races": 2465,
+      "rows": 25515,
+      "top1": 0.2608519269776876,
+      "top3": 0.5789046653144017,
+      "log_loss": 0.28852171180408764
+    },
+    "recent_weighted": {
+      "races": 2465,
+      "rows": 25515,
+      "top1": 0.26734279918864096,
+      "top3": 0.5748478701825558,
+      "log_loss": 0.2883320982383973
+    },
+    "sectional_times": {
+      "races": 2465,
+      "rows": 25515,
+      "top1": 0.3594320486815416,
+      "top3": 0.6945233265720081,
+      "log_loss": 0.2573942245485009
+    },
+    "sectional_recent_weighted": {
+      "races": 2465,
+      "rows": 25515,
+      "top1": 0.36024340770791075,
+      "top3": 0.6941176470588235,
+      "log_loss": 0.2577584512600491
+    },
+    "rank_average_ensemble_top3": {
+      "races": 2465,
+      "rows": 25515,
+      "top1": 0.3505070993914807,
+      "top3": 0.6884381338742394,
+      "log_loss": 1.2952475822360248
+    }
+  },
+  "fresh_metrics": {
+    "expanded_2019_202505": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.31343283582089554,
+      "top3": 0.5746268656716418,
+      "log_loss": 0.2922179845534765
+    },
+    "no_covid_2020_2021_excluded": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.31343283582089554,
+      "top3": 0.5671641791044776,
+      "log_loss": 0.291984121047472
+    },
+    "recent_weighted": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.29850746268656714,
+      "top3": 0.582089552238806,
+      "log_loss": 0.29160333179684067
+    },
+    "sectional_times": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.44776119402985076,
+      "top3": 0.7089552238805971,
+      "log_loss": 0.25342609933537535
+    },
+    "sectional_recent_weighted": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.417910447761194,
+      "top3": 0.7089552238805971,
+      "log_loss": 0.25292110847468674
+    },
+    "rank_average_ensemble_top3": {
+      "races": 134,
+      "rows": 1343,
+      "top1": 0.417910447761194,
+      "top3": 0.7164179104477612,
+      "log_loss": 1.2150854918157934
+    }
+  },
+  "val_rank_table": [
+    {
+      "name": "sectional_times",
+      "top1": 0.3594320486815416,
+      "top3": 0.6945233265720081,
+      "log_loss": 0.2573942245485009,
+      "r_top1": 2.0,
+      "r_top3": 1.0,
+      "r_log_loss": 1.0,
+      "rank_average": 1.3333333333333333
+    },
+    {
+      "name": "sectional_recent_weighted",
+      "top1": 0.36024340770791075,
+      "top3": 0.6941176470588235,
+      "log_loss": 0.2577584512600491,
+      "r_top1": 1.0,
+      "r_top3": 2.0,
+      "r_log_loss": 2.0,
+      "rank_average": 1.6666666666666667
+    },
+    {
+      "name": "recent_weighted",
+      "top1": 0.26734279918864096,
+      "top3": 0.5748478701825558,
+      "log_loss": 0.2883320982383973,
+      "r_top1": 3.0,
+      "r_top3": 5.0,
+      "r_log_loss": 3.0,
+      "rank_average": 3.6666666666666665
+    },
+    {
+      "name": "expanded_2019_202505",
+      "top1": 0.2645030425963489,
+      "top3": 0.5760649087221096,
+      "log_loss": 0.2883802912805802,
+      "r_top1": 4.0,
+      "r_top3": 4.0,
+      "r_log_loss": 4.0,
+      "rank_average": 4.0
+    },
+    {
+      "name": "no_covid_2020_2021_excluded",
+      "top1": 0.2608519269776876,
+      "top3": 0.5789046653144017,
+      "log_loss": 0.28852171180408764,
+      "r_top1": 5.0,
+      "r_top3": 3.0,
+      "r_log_loss": 5.0,
+      "rank_average": 4.333333333333333
+    }
+  ],
+  "ensemble": {
+    "source": "fallback_ablation_variants_no_prior_campaign_pool_found",
+    "selection_metric": "mean rank of val top1 desc, top3 desc, log_loss asc",
+    "selected": [
+      "sectional_times",
+      "sectional_recent_weighted",
+      "recent_weighted"
+    ]
+  },
+  "promotion_rule": "fresh top1 >= current_v4_pre_odds + 1.5pp AND val non-inferior AND pre-odds improved",
+  "best_fresh_top1": "sectional_times",
+  "qualifies_for_fable5_review": true,
+  "candidate_artifact": "/private/tmp/kra_round9/kra_model_v6_candidate.joblib",
+  "write_limitation": "Workspace sandbox cannot write /Users/tttksj/kra in this session; outputs are staged under /private/tmp/kra_round9."
+}

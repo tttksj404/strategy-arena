@@ -1,0 +1,106 @@
+{
+  "cycle": 1861,
+  "updated_at": "2026-07-12T03:04:43+00:00",
+  "next_seed": 20264425,
+  "last_seeds": [
+    20264423,
+    20264424
+  ],
+  "last_top_ks": [
+    10,
+    20,
+    40
+  ],
+  "best_test_exact": 0.18786127865314484,
+  "best_candidate": {
+    "name": "gen2_mut_436",
+    "top_k": 20,
+    "seed": 20262249,
+    "formula": "+0.502*neg_log_odds +0.470*log_q +0.376*pair_gap +0.318*top3_same_pair -0.275*rank_score -0.269*third_share +0.178*unordered_trio_mass +0.164*entropy_inv",
+    "deployable": true,
+    "breakthrough_10pp": false,
+    "current_axis_exact": 0.16062351745171127,
+    "test_current_axis_lift_pp": 2.7237761201433566,
+    "target_gap_pp": 7.276223879856643,
+    "test_exact": 0.18786127865314484,
+    "test_board_exact": 0.17196531791907516,
+    "test_board_lift_pp": 1.589596073406968,
+    "val_exact": 0.1518034040927887,
+    "val_board_lift_pp": 0.15854096417383667,
+    "all_exact": 0.16496403515338898,
+    "all_board_lift_pp": -0.03597058538052644,
+    "metrics": [
+      {
+        "split": "train",
+        "races": 9993,
+        "exact": 0.1651155799627304,
+        "exact_hits": 1650,
+        "top1": 0.606924831867218,
+        "top1_hits": 6065,
+        "board_exact": 0.1682177524266987,
+        "board_top1": 0.6067247072951065,
+        "exact_lift_pp": -0.31021724639682946,
+        "top1_lift_pp": 0.020012457211149304
+      },
+      {
+        "split": "val",
+        "races": 2523,
+        "exact": 0.1518034040927887,
+        "exact_hits": 383,
+        "top1": 0.6385255455970764,
+        "top1_hits": 1611,
+        "board_exact": 0.15021799445105033,
+        "board_top1": 0.6393182718985335,
+        "exact_lift_pp": 0.15854096417383667,
+        "top1_lift_pp": -0.07927263014571029
+      },
+      {
+        "split": "test",
+        "races": 1384,
+        "exact": 0.18786127865314484,
+        "exact_hits": 260,
+        "top1": 0.6401734352111816,
+        "top1_hits": 886,
+        "board_exact": 0.17196531791907516,
+        "board_top1": 0.634393063583815,
+        "exact_lift_pp": 1.589596073406968,
+        "top1_lift_pp": 0.5780371627366665
+      },
+      {
+        "split": "all",
+        "races": 13900,
+        "exact": 0.16496403515338898,
+        "exact_hits": 2293,
+        "top1": 0.6159712076187134,
+        "top1_hits": 8562,
+        "board_exact": 0.16532374100719424,
+        "board_top1": 0.6153956834532374,
+        "exact_lift_pp": -0.03597058538052644,
+        "top1_lift_pp": 0.05755241654760157
+      }
+    ],
+    "weights": {
+      "rank_score": -0.275085,
+      "log_q": 0.470387,
+      "neg_log_odds": 0.502232,
+      "first_mass": 0.12753,
+      "second_mass": 0.074591,
+      "third_mass": -0.126456,
+      "pair_mass": -0.054801,
+      "unordered_trio_mass": 0.177744,
+      "pair_share": 0.14415,
+      "third_share": -0.269407,
+      "pair_gap": 0.375555,
+      "gap12": -0.117182,
+      "gap110": -0.02512,
+      "entropy_inv": 0.163644,
+      "top3_same_first": -0.038642,
+      "top5_same_first": 0.018329,
+      "top3_same_pair": 0.31774
+    }
+  },
+  "improved_this_cycle": false,
+  "breakthrough_10pp_count": 0,
+  "deployable_count": 262,
+  "best_target_gap_pp": 7.276223879856643
+}

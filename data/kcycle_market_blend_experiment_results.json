@@ -1,0 +1,1269 @@
+{
+  "started_at": 1783140660.3725178,
+  "years": {
+    "2025": {
+      "joined_races": 2445,
+      "val_races": 1467,
+      "test_races": 978,
+      "chosen": "blend_w0.70",
+      "val": [
+        {
+          "name": "model",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6094069529652352,
+          "coverage": 1.0,
+          "market_flip_rate": 0.0,
+          "guarded_flip_rate": 0.0,
+          "rule": "model only"
+        },
+        {
+          "name": "market",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6509884117246081,
+          "coverage": 1.0,
+          "market_flip_rate": 1.0,
+          "guarded_flip_rate": 1.0,
+          "rule": "market favorite only"
+        },
+        {
+          "name": "blend_w0.05",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6114519427402862,
+          "coverage": 1.0,
+          "market_flip_rate": 0.0081799591002045,
+          "guarded_flip_rate": 0.007498295841854124,
+          "rule": "(1-w)*model+w*market, w=0.05"
+        },
+        {
+          "name": "blend_norm_w0.05",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6114519427402862,
+          "coverage": 1.0,
+          "market_flip_rate": 0.007498295841854124,
+          "guarded_flip_rate": 0.006134969325153374,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.05"
+        },
+        {
+          "name": "blend_w0.10",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.015678254942058625,
+          "guarded_flip_rate": 0.015678254942058625,
+          "rule": "(1-w)*model+w*market, w=0.10"
+        },
+        {
+          "name": "blend_norm_w0.10",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.015678254942058625,
+          "guarded_flip_rate": 0.014996591683708248,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.10"
+        },
+        {
+          "name": "blend_w0.15",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6121336059986366,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021813224267211998,
+          "guarded_flip_rate": 0.021813224267211998,
+          "rule": "(1-w)*model+w*market, w=0.15"
+        },
+        {
+          "name": "blend_norm_w0.15",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.610770279481936,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021131561008861623,
+          "guarded_flip_rate": 0.021131561008861623,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.15"
+        },
+        {
+          "name": "blend_w0.20",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02794819359236537,
+          "guarded_flip_rate": 0.027266530334014997,
+          "rule": "(1-w)*model+w*market, w=0.20"
+        },
+        {
+          "name": "blend_norm_w0.20",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.029993183367416496,
+          "guarded_flip_rate": 0.02931152010906612,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.20"
+        },
+        {
+          "name": "blend_w0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6189502385821404,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03612815269256987,
+          "guarded_flip_rate": 0.0354464894342195,
+          "rule": "(1-w)*model+w*market, w=0.25"
+        },
+        {
+          "name": "blend_norm_w0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.034764826175869123,
+          "guarded_flip_rate": 0.03408316291751875,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.25"
+        },
+        {
+          "name": "blend_w0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6196319018404908,
+          "coverage": 1.0,
+          "market_flip_rate": 0.04158145875937287,
+          "guarded_flip_rate": 0.0408997955010225,
+          "rule": "(1-w)*model+w*market, w=0.30"
+        },
+        {
+          "name": "blend_norm_w0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6209952283571916,
+          "coverage": 1.0,
+          "market_flip_rate": 0.04158145875937287,
+          "guarded_flip_rate": 0.0408997955010225,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.30"
+        },
+        {
+          "name": "blend_w0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.621676891615542,
+          "coverage": 1.0,
+          "market_flip_rate": 0.04976141785957737,
+          "guarded_flip_rate": 0.049079754601226995,
+          "rule": "(1-w)*model+w*market, w=0.35"
+        },
+        {
+          "name": "blend_norm_w0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6209952283571916,
+          "coverage": 1.0,
+          "market_flip_rate": 0.049079754601226995,
+          "guarded_flip_rate": 0.049079754601226995,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.35"
+        },
+        {
+          "name": "blend_w0.40",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6244035446489434,
+          "coverage": 1.0,
+          "market_flip_rate": 0.05998636673483299,
+          "guarded_flip_rate": 0.05930470347648262,
+          "rule": "(1-w)*model+w*market, w=0.40"
+        },
+        {
+          "name": "blend_norm_w0.40",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6264485344239945,
+          "coverage": 1.0,
+          "market_flip_rate": 0.05930470347648262,
+          "guarded_flip_rate": 0.05862304021813224,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.40"
+        },
+        {
+          "name": "blend_w0.50",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6359918200408998,
+          "coverage": 1.0,
+          "market_flip_rate": 0.07975460122699386,
+          "guarded_flip_rate": 0.0790729379686435,
+          "rule": "(1-w)*model+w*market, w=0.50"
+        },
+        {
+          "name": "blend_norm_w0.50",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.634628493524199,
+          "coverage": 1.0,
+          "market_flip_rate": 0.08111792774369461,
+          "guarded_flip_rate": 0.08043626448534424,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.50"
+        },
+        {
+          "name": "blend_w0.70",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6468984321745058,
+          "coverage": 1.0,
+          "market_flip_rate": 0.11792774369461487,
+          "guarded_flip_rate": 0.11588275391956374,
+          "rule": "(1-w)*model+w*market, w=0.70"
+        },
+        {
+          "name": "blend_norm_w0.70",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6441717791411042,
+          "coverage": 1.0,
+          "market_flip_rate": 0.1165644171779141,
+          "guarded_flip_rate": 0.11451942740286299,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.70"
+        },
+        {
+          "name": "tiered_b0.05_m0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6148602590320382,
+          "coverage": 1.0,
+          "market_flip_rate": 0.01772324471710975,
+          "guarded_flip_rate": 0.017041581458759374,
+          "rule": "market weight 0.05; if p>=.55/gap>=.08 then 0.25; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.05_m0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.019768234492160874,
+          "guarded_flip_rate": 0.0190865712338105,
+          "rule": "market weight 0.05; if p>=.55/gap>=.08 then 0.30; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.05_m0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021813224267211998,
+          "guarded_flip_rate": 0.021131561008861623,
+          "rule": "market weight 0.05; if p>=.55/gap>=.08 then 0.35; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.10_m0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021813224267211998,
+          "guarded_flip_rate": 0.021813224267211998,
+          "rule": "market weight 0.10; if p>=.55/gap>=.08 then 0.25; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.10_m0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.023858214042263123,
+          "guarded_flip_rate": 0.023858214042263123,
+          "rule": "market weight 0.10; if p>=.55/gap>=.08 then 0.30; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.10_m0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.025903203817314247,
+          "guarded_flip_rate": 0.025903203817314247,
+          "rule": "market weight 0.10; if p>=.55/gap>=.08 then 0.35; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "disagree_guard_g0.12_w0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03067484662576687,
+          "guarded_flip_rate": 0.029993183367416496,
+          "rule": "normal w=0.25; if model-market disagree and model_gap>=0.12 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.12_w0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.032719836400818,
+          "guarded_flip_rate": 0.032719836400818,
+          "rule": "normal w=0.30; if model-market disagree and model_gap>=0.12 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.12_w0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03749147920927062,
+          "guarded_flip_rate": 0.03749147920927062,
+          "rule": "normal w=0.35; if model-market disagree and model_gap>=0.12 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.18_w0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.032719836400818,
+          "guarded_flip_rate": 0.032038173142467624,
+          "rule": "normal w=0.25; if model-market disagree and model_gap>=0.18 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.18_w0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03612815269256987,
+          "guarded_flip_rate": 0.03612815269256987,
+          "rule": "normal w=0.30; if model-market disagree and model_gap>=0.18 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.18_w0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6182685753237901,
+          "coverage": 1.0,
+          "market_flip_rate": 0.04294478527607362,
+          "guarded_flip_rate": 0.04294478527607362,
+          "rule": "normal w=0.35; if model-market disagree and model_gap>=0.18 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.24_w0.25",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.032719836400818,
+          "guarded_flip_rate": 0.032038173142467624,
+          "rule": "normal w=0.25; if model-market disagree and model_gap>=0.24 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.24_w0.30",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6169052488070893,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03680981595092025,
+          "guarded_flip_rate": 0.03680981595092025,
+          "rule": "normal w=0.30; if model-market disagree and model_gap>=0.24 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.24_w0.35",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6182685753237901,
+          "coverage": 1.0,
+          "market_flip_rate": 0.04430811179277437,
+          "guarded_flip_rate": 0.04430811179277437,
+          "rule": "normal w=0.35; if model-market disagree and model_gap>=0.24 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "strong_p0.55_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.6155419222903885,
+          "guarded_flip_rate": 0.6155419222903885,
+          "rule": "market only if p>=0.55 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.55_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.025903203817314247,
+          "guarded_flip_rate": 0.025903203817314247,
+          "rule": "base market weight 0.10; only p>=0.55, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.55_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.6155419222903885,
+          "guarded_flip_rate": 0.6155419222903885,
+          "rule": "market only if p>=0.55 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.55_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.025903203817314247,
+          "guarded_flip_rate": 0.025903203817314247,
+          "rule": "base market weight 0.10; only p>=0.55, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.55_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.6155419222903885,
+          "guarded_flip_rate": 0.6155419222903885,
+          "rule": "market only if p>=0.55 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.55_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.025903203817314247,
+          "guarded_flip_rate": 0.025903203817314247,
+          "rule": "base market weight 0.10; only p>=0.55, gap>=0.16 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.60_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.5262440354464895,
+          "guarded_flip_rate": 0.5262440354464895,
+          "rule": "market only if p>=0.60 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.60_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021131561008861623,
+          "guarded_flip_rate": 0.021131561008861623,
+          "rule": "base market weight 0.10; only p>=0.60, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.60_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.5262440354464895,
+          "guarded_flip_rate": 0.5262440354464895,
+          "rule": "market only if p>=0.60 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.60_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021131561008861623,
+          "guarded_flip_rate": 0.021131561008861623,
+          "rule": "base market weight 0.10; only p>=0.60, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.60_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.5262440354464895,
+          "guarded_flip_rate": 0.5262440354464895,
+          "rule": "market only if p>=0.60 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.60_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6162235855487389,
+          "coverage": 1.0,
+          "market_flip_rate": 0.021131561008861623,
+          "guarded_flip_rate": 0.021131561008861623,
+          "rule": "base market weight 0.10; only p>=0.60, gap>=0.16 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.65_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6121336059986366,
+          "coverage": 1.0,
+          "market_flip_rate": 0.4226312201772324,
+          "guarded_flip_rate": 0.4226312201772324,
+          "rule": "market only if p>=0.65 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.65_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6148602590320382,
+          "coverage": 1.0,
+          "market_flip_rate": 0.019768234492160874,
+          "guarded_flip_rate": 0.019768234492160874,
+          "rule": "base market weight 0.10; only p>=0.65, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.65_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6121336059986366,
+          "coverage": 1.0,
+          "market_flip_rate": 0.4226312201772324,
+          "guarded_flip_rate": 0.4226312201772324,
+          "rule": "market only if p>=0.65 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.65_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6148602590320382,
+          "coverage": 1.0,
+          "market_flip_rate": 0.019768234492160874,
+          "guarded_flip_rate": 0.019768234492160874,
+          "rule": "base market weight 0.10; only p>=0.65, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.65_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6121336059986366,
+          "coverage": 1.0,
+          "market_flip_rate": 0.4226312201772324,
+          "guarded_flip_rate": 0.4226312201772324,
+          "rule": "market only if p>=0.65 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.65_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6148602590320382,
+          "coverage": 1.0,
+          "market_flip_rate": 0.019768234492160874,
+          "guarded_flip_rate": 0.019768234492160874,
+          "rule": "base market weight 0.10; only p>=0.65, gap>=0.16 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.70_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.610770279481936,
+          "coverage": 1.0,
+          "market_flip_rate": 0.2849352419904567,
+          "guarded_flip_rate": 0.2849352419904567,
+          "rule": "market only if p>=0.70 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.70_gap0.08",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.01772324471710975,
+          "guarded_flip_rate": 0.01772324471710975,
+          "rule": "base market weight 0.10; only p>=0.70, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.70_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.610770279481936,
+          "coverage": 1.0,
+          "market_flip_rate": 0.2849352419904567,
+          "guarded_flip_rate": 0.2849352419904567,
+          "rule": "market only if p>=0.70 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.70_gap0.12",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.01772324471710975,
+          "guarded_flip_rate": 0.01772324471710975,
+          "rule": "base market weight 0.10; only p>=0.70, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.70_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.610770279481936,
+          "coverage": 1.0,
+          "market_flip_rate": 0.2849352419904567,
+          "guarded_flip_rate": 0.2849352419904567,
+          "rule": "market only if p>=0.70 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.70_gap0.16",
+          "split": "val",
+          "n": 1467,
+          "top1": 0.6141785957736878,
+          "coverage": 1.0,
+          "market_flip_rate": 0.01772324471710975,
+          "guarded_flip_rate": 0.01772324471710975,
+          "rule": "base market weight 0.10; only p>=0.70, gap>=0.16 uses weight 0.35"
+        }
+      ],
+      "test": [
+        {
+          "name": "model",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.0,
+          "guarded_flip_rate": 0.0,
+          "rule": "model only"
+        },
+        {
+          "name": "market",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6104294478527608,
+          "coverage": 1.0,
+          "market_flip_rate": 1.0,
+          "guarded_flip_rate": 1.0,
+          "rule": "market favorite only"
+        },
+        {
+          "name": "blend_w0.05",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.0081799591002045,
+          "guarded_flip_rate": 0.006134969325153374,
+          "rule": "(1-w)*model+w*market, w=0.05"
+        },
+        {
+          "name": "blend_norm_w0.05",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.0081799591002045,
+          "guarded_flip_rate": 0.007157464212678937,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.05"
+        },
+        {
+          "name": "blend_w0.10",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.018404907975460124,
+          "guarded_flip_rate": 0.014314928425357873,
+          "rule": "(1-w)*model+w*market, w=0.10"
+        },
+        {
+          "name": "blend_norm_w0.10",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.017382413087934562,
+          "guarded_flip_rate": 0.013292433537832311,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.10"
+        },
+        {
+          "name": "blend_w0.15",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02556237218813906,
+          "guarded_flip_rate": 0.02044989775051125,
+          "rule": "(1-w)*model+w*market, w=0.15"
+        },
+        {
+          "name": "blend_norm_w0.15",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.027607361963190184,
+          "guarded_flip_rate": 0.022494887525562373,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.15"
+        },
+        {
+          "name": "blend_w0.20",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.032719836400818,
+          "guarded_flip_rate": 0.027607361963190184,
+          "rule": "(1-w)*model+w*market, w=0.20"
+        },
+        {
+          "name": "blend_norm_w0.20",
+          "split": "test",
+          "n": 978,
+          "top1": 0.614519427402863,
+          "coverage": 1.0,
+          "market_flip_rate": 0.032719836400818,
+          "guarded_flip_rate": 0.027607361963190184,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.20"
+        },
+        {
+          "name": "blend_w0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03987730061349693,
+          "guarded_flip_rate": 0.034764826175869123,
+          "rule": "(1-w)*model+w*market, w=0.25"
+        },
+        {
+          "name": "blend_norm_w0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6196319018404908,
+          "coverage": 1.0,
+          "market_flip_rate": 0.0408997955010225,
+          "guarded_flip_rate": 0.03578732106339468,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.25"
+        },
+        {
+          "name": "blend_w0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.621676891615542,
+          "coverage": 1.0,
+          "market_flip_rate": 0.050102249488752554,
+          "guarded_flip_rate": 0.044989775051124746,
+          "rule": "(1-w)*model+w*market, w=0.30"
+        },
+        {
+          "name": "blend_norm_w0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6186094069529653,
+          "coverage": 1.0,
+          "market_flip_rate": 0.04805725971370143,
+          "guarded_flip_rate": 0.04294478527607362,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.30"
+        },
+        {
+          "name": "blend_w0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6186094069529653,
+          "coverage": 1.0,
+          "market_flip_rate": 0.06032719836400818,
+          "guarded_flip_rate": 0.0541922290388548,
+          "rule": "(1-w)*model+w*market, w=0.35"
+        },
+        {
+          "name": "blend_norm_w0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6206543967280164,
+          "coverage": 1.0,
+          "market_flip_rate": 0.05725971370143149,
+          "guarded_flip_rate": 0.050102249488752554,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.35"
+        },
+        {
+          "name": "blend_w0.40",
+          "split": "test",
+          "n": 978,
+          "top1": 0.621676891615542,
+          "coverage": 1.0,
+          "market_flip_rate": 0.06748466257668712,
+          "guarded_flip_rate": 0.06237218813905931,
+          "rule": "(1-w)*model+w*market, w=0.40"
+        },
+        {
+          "name": "blend_norm_w0.40",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6206543967280164,
+          "coverage": 1.0,
+          "market_flip_rate": 0.06646216768916155,
+          "guarded_flip_rate": 0.06032719836400818,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.40"
+        },
+        {
+          "name": "blend_w0.50",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6206543967280164,
+          "coverage": 1.0,
+          "market_flip_rate": 0.08077709611451943,
+          "guarded_flip_rate": 0.0787321063394683,
+          "rule": "(1-w)*model+w*market, w=0.50"
+        },
+        {
+          "name": "blend_norm_w0.50",
+          "split": "test",
+          "n": 978,
+          "top1": 0.621676891615542,
+          "coverage": 1.0,
+          "market_flip_rate": 0.08077709611451943,
+          "guarded_flip_rate": 0.07770961145194274,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.50"
+        },
+        {
+          "name": "blend_w0.70",
+          "split": "test",
+          "n": 978,
+          "top1": 0.614519427402863,
+          "coverage": 1.0,
+          "market_flip_rate": 0.11247443762781185,
+          "guarded_flip_rate": 0.11042944785276074,
+          "rule": "(1-w)*model+w*market, w=0.70"
+        },
+        {
+          "name": "blend_norm_w0.70",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.10940695296523517,
+          "guarded_flip_rate": 0.1083844580777096,
+          "rule": "(1-w)*race-normalized-model+w*market, w=0.70"
+        },
+        {
+          "name": "tiered_b0.05_m0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.017382413087934562,
+          "guarded_flip_rate": 0.015337423312883436,
+          "rule": "market weight 0.05; if p>=.55/gap>=.08 then 0.25; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.05_m0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6186094069529653,
+          "coverage": 1.0,
+          "market_flip_rate": 0.019427402862985686,
+          "guarded_flip_rate": 0.017382413087934562,
+          "rule": "market weight 0.05; if p>=.55/gap>=.08 then 0.30; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.05_m0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02147239263803681,
+          "guarded_flip_rate": 0.019427402862985686,
+          "rule": "market weight 0.05; if p>=.55/gap>=.08 then 0.35; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.10_m0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02556237218813906,
+          "guarded_flip_rate": 0.02147239263803681,
+          "rule": "market weight 0.10; if p>=.55/gap>=.08 then 0.25; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.10_m0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6186094069529653,
+          "coverage": 1.0,
+          "market_flip_rate": 0.027607361963190184,
+          "guarded_flip_rate": 0.023517382413087935,
+          "rule": "market weight 0.10; if p>=.55/gap>=.08 then 0.30; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "tiered_b0.10_m0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02965235173824131,
+          "guarded_flip_rate": 0.02556237218813906,
+          "rule": "market weight 0.10; if p>=.55/gap>=.08 then 0.35; if p>=.75/gap>=.16 then .70"
+        },
+        {
+          "name": "disagree_guard_g0.12_w0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.614519427402863,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03578732106339468,
+          "guarded_flip_rate": 0.03067484662576687,
+          "rule": "normal w=0.25; if model-market disagree and model_gap>=0.12 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.12_w0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.041922290388548056,
+          "guarded_flip_rate": 0.03680981595092025,
+          "rule": "normal w=0.30; if model-market disagree and model_gap>=0.12 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.12_w0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.049079754601226995,
+          "guarded_flip_rate": 0.04294478527607362,
+          "rule": "normal w=0.35; if model-market disagree and model_gap>=0.12 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.18_w0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03680981595092025,
+          "guarded_flip_rate": 0.03169734151329243,
+          "rule": "normal w=0.25; if model-market disagree and model_gap>=0.18 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.18_w0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6196319018404908,
+          "coverage": 1.0,
+          "market_flip_rate": 0.046012269938650305,
+          "guarded_flip_rate": 0.0408997955010225,
+          "rule": "normal w=0.30; if model-market disagree and model_gap>=0.18 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.18_w0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.05521472392638037,
+          "guarded_flip_rate": 0.049079754601226995,
+          "rule": "normal w=0.35; if model-market disagree and model_gap>=0.18 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.24_w0.25",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.03680981595092025,
+          "guarded_flip_rate": 0.03169734151329243,
+          "rule": "normal w=0.25; if model-market disagree and model_gap>=0.24 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.24_w0.30",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6196319018404908,
+          "coverage": 1.0,
+          "market_flip_rate": 0.046012269938650305,
+          "guarded_flip_rate": 0.0408997955010225,
+          "rule": "normal w=0.30; if model-market disagree and model_gap>=0.24 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "disagree_guard_g0.24_w0.35",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.05623721881390593,
+          "guarded_flip_rate": 0.050102249488752554,
+          "rule": "normal w=0.35; if model-market disagree and model_gap>=0.24 use .05; if weak market gap use .10"
+        },
+        {
+          "name": "strong_p0.55_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.6114519427402862,
+          "guarded_flip_rate": 0.6114519427402862,
+          "rule": "market only if p>=0.55 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.55_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02965235173824131,
+          "guarded_flip_rate": 0.02556237218813906,
+          "rule": "base market weight 0.10; only p>=0.55, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.55_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.6114519427402862,
+          "guarded_flip_rate": 0.6114519427402862,
+          "rule": "market only if p>=0.55 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.55_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02965235173824131,
+          "guarded_flip_rate": 0.02556237218813906,
+          "rule": "base market weight 0.10; only p>=0.55, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.55_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.6114519427402862,
+          "guarded_flip_rate": 0.6114519427402862,
+          "rule": "market only if p>=0.55 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.55_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02965235173824131,
+          "guarded_flip_rate": 0.02556237218813906,
+          "rule": "base market weight 0.10; only p>=0.55, gap>=0.16 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.60_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.5143149284253579,
+          "guarded_flip_rate": 0.5143149284253579,
+          "rule": "market only if p>=0.60 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.60_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.026584867075664622,
+          "guarded_flip_rate": 0.022494887525562373,
+          "rule": "base market weight 0.10; only p>=0.60, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.60_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.5143149284253579,
+          "guarded_flip_rate": 0.5143149284253579,
+          "rule": "market only if p>=0.60 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.60_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.026584867075664622,
+          "guarded_flip_rate": 0.022494887525562373,
+          "rule": "base market weight 0.10; only p>=0.60, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.60_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6175869120654397,
+          "coverage": 1.0,
+          "market_flip_rate": 0.5143149284253579,
+          "guarded_flip_rate": 0.5143149284253579,
+          "rule": "market only if p>=0.60 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.60_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.026584867075664622,
+          "guarded_flip_rate": 0.022494887525562373,
+          "rule": "base market weight 0.10; only p>=0.60, gap>=0.16 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.65_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.4110429447852761,
+          "guarded_flip_rate": 0.4110429447852761,
+          "rule": "market only if p>=0.65 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.65_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02044989775051125,
+          "guarded_flip_rate": 0.016359918200409,
+          "rule": "base market weight 0.10; only p>=0.65, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.65_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.4110429447852761,
+          "guarded_flip_rate": 0.4110429447852761,
+          "rule": "market only if p>=0.65 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.65_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02044989775051125,
+          "guarded_flip_rate": 0.016359918200409,
+          "rule": "base market weight 0.10; only p>=0.65, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.65_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6165644171779141,
+          "coverage": 1.0,
+          "market_flip_rate": 0.4110429447852761,
+          "guarded_flip_rate": 0.4110429447852761,
+          "rule": "market only if p>=0.65 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.65_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6155419222903885,
+          "coverage": 1.0,
+          "market_flip_rate": 0.02044989775051125,
+          "guarded_flip_rate": 0.016359918200409,
+          "rule": "base market weight 0.10; only p>=0.65, gap>=0.16 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.70_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.2740286298568507,
+          "guarded_flip_rate": 0.2740286298568507,
+          "rule": "market only if p>=0.70 and gap>=0.08; else model"
+        },
+        {
+          "name": "guarded_w35_p0.70_gap0.08",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.018404907975460124,
+          "guarded_flip_rate": 0.014314928425357873,
+          "rule": "base market weight 0.10; only p>=0.70, gap>=0.08 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.70_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.2740286298568507,
+          "guarded_flip_rate": 0.2740286298568507,
+          "rule": "market only if p>=0.70 and gap>=0.12; else model"
+        },
+        {
+          "name": "guarded_w35_p0.70_gap0.12",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.018404907975460124,
+          "guarded_flip_rate": 0.014314928425357873,
+          "rule": "base market weight 0.10; only p>=0.70, gap>=0.12 uses weight 0.35"
+        },
+        {
+          "name": "strong_p0.70_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.2740286298568507,
+          "guarded_flip_rate": 0.2740286298568507,
+          "rule": "market only if p>=0.70 and gap>=0.16; else model"
+        },
+        {
+          "name": "guarded_w35_p0.70_gap0.16",
+          "split": "test",
+          "n": 978,
+          "top1": 0.6134969325153374,
+          "coverage": 1.0,
+          "market_flip_rate": 0.018404907975460124,
+          "guarded_flip_rate": 0.014314928425357873,
+          "rule": "base market weight 0.10; only p>=0.70, gap>=0.16 uses weight 0.35"
+        }
+      ],
+      "chosen_test": {
+        "name": "blend_w0.70",
+        "split": "test_chosen",
+        "n": 978,
+        "top1": 0.614519427402863,
+        "coverage": 1.0,
+        "market_flip_rate": 0.11247443762781185,
+        "guarded_flip_rate": 0.11042944785276074,
+        "rule": "(1-w)*model+w*market, w=0.70"
+      },
+      "robust_test": {
+        "name": "blend_w0.30",
+        "split": "test",
+        "n": 978,
+        "top1": 0.621676891615542,
+        "coverage": 1.0,
+        "market_flip_rate": 0.050102249488752554,
+        "guarded_flip_rate": 0.044989775051124746,
+        "rule": "(1-w)*model+w*market, w=0.30"
+      }
+    }
+  },
+  "chosen": {
+    "2025": {
+      "label": "blend_w0.70",
+      "name": "blend",
+      "params": {
+        "weight": 0.7
+      },
+      "rule": "(1-w)*model+w*market, w=0.70"
+    }
+  },
+  "notes": [
+    "2026: insufficient joined races 79"
+  ],
+  "elapsed_sec": 70.10298109054565
+}

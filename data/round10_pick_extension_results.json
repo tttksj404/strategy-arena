@@ -1,0 +1,1160 @@
+{
+  "decision_criterion": "market or hybrid is a correction candidate if 2026/fresh split lift over model is >= +1.0pp",
+  "generated_at": "2026-07-12T13:17:45+00:00",
+  "inputs": {
+    "kcycle_entries": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_entries.jsonl",
+    "kcycle_snapshots": [
+      "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_trifecta_snapshots.jsonl",
+      "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_trifecta_snapshots_expansion.jsonl"
+    ],
+    "kra_db": "/Users/tttksj/kra/data/kra.db",
+    "kra_market_corpus": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kra_market_corpus.jsonl"
+  },
+  "kcycle": {
+    "bets": {
+      "exacta": {
+        "by_year": {
+          "2018": {
+            "agree_n": 1235,
+            "agree_rate": 0.5467020805666224,
+            "disagree_n": 1024,
+            "label": "2018",
+            "market_minus_model_pp": 5.13501549358123,
+            "market_trifecta_board_proxy": 0.3377600708277999,
+            "model": 0.2864099158919876,
+            "n": 2259
+          },
+          "2019": {
+            "agree_n": 786,
+            "agree_rate": 0.5666906993511175,
+            "disagree_n": 601,
+            "label": "2019",
+            "market_minus_model_pp": 5.984138428262437,
+            "market_trifecta_board_proxy": 0.40663302090843545,
+            "model": 0.3467916366258111,
+            "n": 1387
+          },
+          "2020": {
+            "agree_n": 194,
+            "agree_rate": 0.6043613707165109,
+            "disagree_n": 127,
+            "label": "2020",
+            "market_minus_model_pp": 3.738317757009346,
+            "market_trifecta_board_proxy": 0.3987538940809969,
+            "model": 0.3613707165109034,
+            "n": 321
+          },
+          "2021": {
+            "agree_n": 124,
+            "agree_rate": 0.5933014354066986,
+            "disagree_n": 85,
+            "label": "2021",
+            "market_minus_model_pp": 15.311004784688997,
+            "market_trifecta_board_proxy": 0.430622009569378,
+            "model": 0.27751196172248804,
+            "n": 209
+          },
+          "2022": {
+            "agree_n": 1300,
+            "agree_rate": 0.5541346973572038,
+            "disagree_n": 1046,
+            "label": "2022",
+            "market_minus_model_pp": 7.800511508951407,
+            "market_trifecta_board_proxy": 0.36871270247229326,
+            "model": 0.2907075873827792,
+            "n": 2346
+          },
+          "2023": {
+            "agree_n": 1073,
+            "agree_rate": 0.45659574468085107,
+            "disagree_n": 1277,
+            "label": "2023",
+            "market_minus_model_pp": 8.000000000000002,
+            "market_trifecta_board_proxy": 0.3374468085106383,
+            "model": 0.2574468085106383,
+            "n": 2350
+          },
+          "2024": {
+            "agree_n": 319,
+            "agree_rate": 0.4142857142857143,
+            "disagree_n": 451,
+            "label": "2024",
+            "market_minus_model_pp": 7.792207792207792,
+            "market_trifecta_board_proxy": 0.3090909090909091,
+            "model": 0.23116883116883116,
+            "n": 770
+          },
+          "2025": {
+            "agree_n": 708,
+            "agree_rate": 0.40387906446092414,
+            "disagree_n": 1045,
+            "label": "2025",
+            "market_minus_model_pp": 10.89560752994866,
+            "market_trifecta_board_proxy": 0.34112949229891615,
+            "model": 0.23217341699942956,
+            "n": 1753
+          },
+          "2026": {
+            "agree_n": 472,
+            "agree_rate": 0.39398998330550916,
+            "disagree_n": 726,
+            "label": "2026",
+            "market_minus_model_pp": 10.18363939899833,
+            "market_trifecta_board_proxy": 0.3313856427378965,
+            "model": 0.2295492487479132,
+            "n": 1198
+          }
+        },
+        "decision": {
+          "criterion": "correction candidate if 2026 market or P3-refined lift over model is >= +1.0pp",
+          "hybrid_candidate": true,
+          "market_candidate": true,
+          "verdict": "candidate"
+        },
+        "definition": "1-2착 ordered pair; 삼쌍보드 1-2 슬롯 주변화",
+        "hybrid_policy": {
+          "2026": {
+            "P0_model": 0.2295492487479132,
+            "P1_market_proxy": 0.3313856427378965,
+            "P1_minus_P0_pp": 10.18363939899833,
+            "P3_minus_P0_pp": 10.18363939899833,
+            "P3_refined": 0.3313856427378965,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "2026",
+            "n": 1198
+          },
+          "all": {
+            "P0_model": 0.27388231557214326,
+            "P1_market_proxy": 0.35225919161438896,
+            "P1_minus_P0_pp": 7.837687604224569,
+            "P3_minus_P0_pp": 7.837687604224569,
+            "P3_refined": 0.35225919161438896,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "all",
+            "n": 12593
+          },
+          "model_wins_non_strong_pull": false
+        },
+        "label_ko": "쌍승",
+        "source_comparison": {
+          "2026_agree": {
+            "agree_n": 472,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "2026_agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.3580508474576271,
+            "model": 0.3580508474576271,
+            "n": 472
+          },
+          "2026_all": {
+            "agree_n": 472,
+            "agree_rate": 0.39398998330550916,
+            "disagree_n": 726,
+            "label": "2026_all",
+            "market_minus_model_pp": 10.18363939899833,
+            "market_trifecta_board_proxy": 0.3313856427378965,
+            "model": 0.2295492487479132,
+            "n": 1198
+          },
+          "2026_disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 726,
+            "label": "2026_disagree",
+            "market_minus_model_pp": 16.804407713498623,
+            "market_trifecta_board_proxy": 0.3140495867768595,
+            "model": 0.14600550964187328,
+            "n": 726
+          },
+          "agree": {
+            "agree_n": 6211,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.40025760747061667,
+            "model": 0.40025760747061667,
+            "n": 6211
+          },
+          "all": {
+            "agree_n": 6211,
+            "agree_rate": 0.4932105137774954,
+            "disagree_n": 6382,
+            "label": "all",
+            "market_minus_model_pp": 7.837687604224569,
+            "market_trifecta_board_proxy": 0.35225919161438896,
+            "model": 0.27388231557214326,
+            "n": 12593
+          },
+          "disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 6382,
+            "label": "disagree",
+            "market_minus_model_pp": 15.465371356941398,
+            "market_trifecta_board_proxy": 0.3055468505170793,
+            "model": 0.15089313694766532,
+            "n": 6382
+          }
+        },
+        "tier_matrix": {
+          "2026_non_strong_pull": {
+            "agree_n": 361,
+            "agree_rate": 0.3570722057368942,
+            "disagree_n": 650,
+            "label": "2026_non_strong_pull",
+            "market_minus_model_pp": 9.990108803165182,
+            "market_trifecta_board_proxy": 0.2898120672601385,
+            "model": 0.18991097922848665,
+            "n": 1011
+          },
+          "non_strong_pull": {
+            "agree_n": 4764,
+            "agree_rate": 0.4520781932055418,
+            "disagree_n": 5774,
+            "label": "non_strong_pull",
+            "market_minus_model_pp": 7.458720819889924,
+            "market_trifecta_board_proxy": 0.3052761434807364,
+            "model": 0.23068893528183715,
+            "n": 10538
+          },
+          "strong_pull": {
+            "agree_n": 1447,
+            "agree_rate": 0.7041362530413625,
+            "disagree_n": 608,
+            "label": "strong_pull",
+            "market_minus_model_pp": 9.781021897810216,
+            "market_trifecta_board_proxy": 0.5931873479318734,
+            "model": 0.4953771289537713,
+            "n": 2055
+          }
+        }
+      },
+      "quinella": {
+        "by_year": {
+          "2018": {
+            "agree_n": 1499,
+            "agree_rate": 0.6635679504205401,
+            "disagree_n": 760,
+            "label": "2018",
+            "market_minus_model_pp": 5.489154493138554,
+            "market_trifecta_board_proxy": 0.46126604692341744,
+            "model": 0.4063745019920319,
+            "n": 2259
+          },
+          "2019": {
+            "agree_n": 945,
+            "agree_rate": 0.6813266041816871,
+            "disagree_n": 442,
+            "label": "2019",
+            "market_minus_model_pp": 5.407354001441961,
+            "market_trifecta_board_proxy": 0.524873828406633,
+            "model": 0.4708002883922134,
+            "n": 1387
+          },
+          "2020": {
+            "agree_n": 235,
+            "agree_rate": 0.7320872274143302,
+            "disagree_n": 86,
+            "label": "2020",
+            "market_minus_model_pp": 7.476635514018687,
+            "market_trifecta_board_proxy": 0.5545171339563862,
+            "model": 0.4797507788161994,
+            "n": 321
+          },
+          "2021": {
+            "agree_n": 145,
+            "agree_rate": 0.69377990430622,
+            "disagree_n": 64,
+            "label": "2021",
+            "market_minus_model_pp": 15.789473684210526,
+            "market_trifecta_board_proxy": 0.5311004784688995,
+            "model": 0.37320574162679426,
+            "n": 209
+          },
+          "2022": {
+            "agree_n": 1555,
+            "agree_rate": 0.6628303495311167,
+            "disagree_n": 791,
+            "label": "2022",
+            "market_minus_model_pp": 7.544757033248079,
+            "market_trifecta_board_proxy": 0.46845694799658993,
+            "model": 0.39300937766410915,
+            "n": 2346
+          },
+          "2023": {
+            "agree_n": 1309,
+            "agree_rate": 0.5570212765957446,
+            "disagree_n": 1041,
+            "label": "2023",
+            "market_minus_model_pp": 8.510638297872342,
+            "market_trifecta_board_proxy": 0.42936170212765956,
+            "model": 0.34425531914893615,
+            "n": 2350
+          },
+          "2024": {
+            "agree_n": 413,
+            "agree_rate": 0.5363636363636364,
+            "disagree_n": 357,
+            "label": "2024",
+            "market_minus_model_pp": 5.064935064935066,
+            "market_trifecta_board_proxy": 0.38441558441558443,
+            "model": 0.33376623376623377,
+            "n": 770
+          },
+          "2025": {
+            "agree_n": 908,
+            "agree_rate": 0.517969195664575,
+            "disagree_n": 845,
+            "label": "2025",
+            "market_minus_model_pp": 11.180832857957784,
+            "market_trifecta_board_proxy": 0.43981745579007414,
+            "model": 0.3280091272104963,
+            "n": 1753
+          },
+          "2026": {
+            "agree_n": 603,
+            "agree_rate": 0.503338898163606,
+            "disagree_n": 595,
+            "label": "2026",
+            "market_minus_model_pp": 11.268781302170282,
+            "market_trifecta_board_proxy": 0.4307178631051753,
+            "model": 0.31803005008347246,
+            "n": 1198
+          }
+        },
+        "decision": {
+          "criterion": "correction candidate if 2026 market or P3-refined lift over model is >= +1.0pp",
+          "hybrid_candidate": true,
+          "market_candidate": true,
+          "verdict": "candidate"
+        },
+        "definition": "1-2착 unordered pair; 삼쌍보드 1-2 슬롯 주변화",
+        "hybrid_policy": {
+          "2026": {
+            "P0_model": 0.31803005008347246,
+            "P1_market_proxy": 0.4307178631051753,
+            "P1_minus_P0_pp": 11.268781302170282,
+            "P3_minus_P0_pp": 11.268781302170282,
+            "P3_refined": 0.4307178631051753,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "2026",
+            "n": 1198
+          },
+          "all": {
+            "P0_model": 0.3769554514412769,
+            "P1_market_proxy": 0.4566028746128802,
+            "P1_minus_P0_pp": 7.964742317160328,
+            "P3_minus_P0_pp": 7.964742317160328,
+            "P3_refined": 0.4566028746128802,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "all",
+            "n": 12593
+          },
+          "model_wins_non_strong_pull": false
+        },
+        "label_ko": "복승",
+        "source_comparison": {
+          "2026_agree": {
+            "agree_n": 603,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "2026_agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.4444444444444444,
+            "model": 0.4444444444444444,
+            "n": 603
+          },
+          "2026_all": {
+            "agree_n": 603,
+            "agree_rate": 0.503338898163606,
+            "disagree_n": 595,
+            "label": "2026_all",
+            "market_minus_model_pp": 11.268781302170282,
+            "market_trifecta_board_proxy": 0.4307178631051753,
+            "model": 0.31803005008347246,
+            "n": 1198
+          },
+          "2026_disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 595,
+            "label": "2026_disagree",
+            "market_minus_model_pp": 22.689075630252102,
+            "market_trifecta_board_proxy": 0.41680672268907565,
+            "model": 0.1899159663865546,
+            "n": 595
+          },
+          "agree": {
+            "agree_n": 7612,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.4973725696269049,
+            "model": 0.4973725696269049,
+            "n": 7612
+          },
+          "all": {
+            "agree_n": 7612,
+            "agree_rate": 0.6044627967918685,
+            "disagree_n": 4981,
+            "label": "all",
+            "market_minus_model_pp": 7.964742317160328,
+            "market_trifecta_board_proxy": 0.4566028746128802,
+            "model": 0.3769554514412769,
+            "n": 12593
+          },
+          "disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 4981,
+            "label": "disagree",
+            "market_minus_model_pp": 20.13651877133106,
+            "market_trifecta_board_proxy": 0.39429833366793815,
+            "model": 0.19293314595462757,
+            "n": 4981
+          }
+        },
+        "tier_matrix": {
+          "2026_non_strong_pull": {
+            "agree_n": 478,
+            "agree_rate": 0.47279920870425324,
+            "disagree_n": 533,
+            "label": "2026_non_strong_pull",
+            "market_minus_model_pp": 11.17705242334322,
+            "market_trifecta_board_proxy": 0.3916913946587537,
+            "model": 0.2799208704253215,
+            "n": 1011
+          },
+          "non_strong_pull": {
+            "agree_n": 6044,
+            "agree_rate": 0.5735433668627823,
+            "disagree_n": 4494,
+            "label": "non_strong_pull",
+            "market_minus_model_pp": 7.68646802049725,
+            "market_trifecta_board_proxy": 0.4136458531030556,
+            "model": 0.3367811728980831,
+            "n": 10538
+          },
+          "strong_pull": {
+            "agree_n": 1568,
+            "agree_rate": 0.7630170316301703,
+            "disagree_n": 487,
+            "label": "strong_pull",
+            "market_minus_model_pp": 9.39172749391728,
+            "market_trifecta_board_proxy": 0.6768856447688565,
+            "model": 0.5829683698296837,
+            "n": 2055
+          }
+        }
+      },
+      "quinella_place": {
+        "by_year": {
+          "2018": {
+            "agree_n": 1499,
+            "agree_rate": 0.6635679504205401,
+            "disagree_n": 760,
+            "label": "2018",
+            "market_minus_model_pp": 5.489154493138554,
+            "market_trifecta_board_proxy": 0.46126604692341744,
+            "model": 0.4063745019920319,
+            "n": 2259
+          },
+          "2019": {
+            "agree_n": 945,
+            "agree_rate": 0.6813266041816871,
+            "disagree_n": 442,
+            "label": "2019",
+            "market_minus_model_pp": 5.407354001441961,
+            "market_trifecta_board_proxy": 0.524873828406633,
+            "model": 0.4708002883922134,
+            "n": 1387
+          },
+          "2020": {
+            "agree_n": 235,
+            "agree_rate": 0.7320872274143302,
+            "disagree_n": 86,
+            "label": "2020",
+            "market_minus_model_pp": 7.476635514018687,
+            "market_trifecta_board_proxy": 0.5545171339563862,
+            "model": 0.4797507788161994,
+            "n": 321
+          },
+          "2021": {
+            "agree_n": 145,
+            "agree_rate": 0.69377990430622,
+            "disagree_n": 64,
+            "label": "2021",
+            "market_minus_model_pp": 15.789473684210526,
+            "market_trifecta_board_proxy": 0.5311004784688995,
+            "model": 0.37320574162679426,
+            "n": 209
+          },
+          "2022": {
+            "agree_n": 1555,
+            "agree_rate": 0.6628303495311167,
+            "disagree_n": 791,
+            "label": "2022",
+            "market_minus_model_pp": 7.544757033248079,
+            "market_trifecta_board_proxy": 0.46845694799658993,
+            "model": 0.39300937766410915,
+            "n": 2346
+          },
+          "2023": {
+            "agree_n": 1309,
+            "agree_rate": 0.5570212765957446,
+            "disagree_n": 1041,
+            "label": "2023",
+            "market_minus_model_pp": 8.510638297872342,
+            "market_trifecta_board_proxy": 0.42936170212765956,
+            "model": 0.34425531914893615,
+            "n": 2350
+          },
+          "2024": {
+            "agree_n": 413,
+            "agree_rate": 0.5363636363636364,
+            "disagree_n": 357,
+            "label": "2024",
+            "market_minus_model_pp": 5.064935064935066,
+            "market_trifecta_board_proxy": 0.38441558441558443,
+            "model": 0.33376623376623377,
+            "n": 770
+          },
+          "2025": {
+            "agree_n": 908,
+            "agree_rate": 0.517969195664575,
+            "disagree_n": 845,
+            "label": "2025",
+            "market_minus_model_pp": 11.180832857957784,
+            "market_trifecta_board_proxy": 0.43981745579007414,
+            "model": 0.3280091272104963,
+            "n": 1753
+          },
+          "2026": {
+            "agree_n": 603,
+            "agree_rate": 0.503338898163606,
+            "disagree_n": 595,
+            "label": "2026",
+            "market_minus_model_pp": 11.268781302170282,
+            "market_trifecta_board_proxy": 0.4307178631051753,
+            "model": 0.31803005008347246,
+            "n": 1198
+          }
+        },
+        "decision": {
+          "criterion": "correction candidate if 2026 market or P3-refined lift over model is >= +1.0pp",
+          "hybrid_candidate": true,
+          "market_candidate": true,
+          "verdict": "candidate"
+        },
+        "definition": "사용자 지정: 1-2착 unordered pair; 복승과 동일한 삼쌍보드 근사",
+        "hybrid_policy": {
+          "2026": {
+            "P0_model": 0.31803005008347246,
+            "P1_market_proxy": 0.4307178631051753,
+            "P1_minus_P0_pp": 11.268781302170282,
+            "P3_minus_P0_pp": 11.268781302170282,
+            "P3_refined": 0.4307178631051753,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "2026",
+            "n": 1198
+          },
+          "all": {
+            "P0_model": 0.3769554514412769,
+            "P1_market_proxy": 0.4566028746128802,
+            "P1_minus_P0_pp": 7.964742317160328,
+            "P3_minus_P0_pp": 7.964742317160328,
+            "P3_refined": 0.4566028746128802,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "all",
+            "n": 12593
+          },
+          "model_wins_non_strong_pull": false
+        },
+        "label_ko": "쌍복승",
+        "source_comparison": {
+          "2026_agree": {
+            "agree_n": 603,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "2026_agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.4444444444444444,
+            "model": 0.4444444444444444,
+            "n": 603
+          },
+          "2026_all": {
+            "agree_n": 603,
+            "agree_rate": 0.503338898163606,
+            "disagree_n": 595,
+            "label": "2026_all",
+            "market_minus_model_pp": 11.268781302170282,
+            "market_trifecta_board_proxy": 0.4307178631051753,
+            "model": 0.31803005008347246,
+            "n": 1198
+          },
+          "2026_disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 595,
+            "label": "2026_disagree",
+            "market_minus_model_pp": 22.689075630252102,
+            "market_trifecta_board_proxy": 0.41680672268907565,
+            "model": 0.1899159663865546,
+            "n": 595
+          },
+          "agree": {
+            "agree_n": 7612,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.4973725696269049,
+            "model": 0.4973725696269049,
+            "n": 7612
+          },
+          "all": {
+            "agree_n": 7612,
+            "agree_rate": 0.6044627967918685,
+            "disagree_n": 4981,
+            "label": "all",
+            "market_minus_model_pp": 7.964742317160328,
+            "market_trifecta_board_proxy": 0.4566028746128802,
+            "model": 0.3769554514412769,
+            "n": 12593
+          },
+          "disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 4981,
+            "label": "disagree",
+            "market_minus_model_pp": 20.13651877133106,
+            "market_trifecta_board_proxy": 0.39429833366793815,
+            "model": 0.19293314595462757,
+            "n": 4981
+          }
+        },
+        "tier_matrix": {
+          "2026_non_strong_pull": {
+            "agree_n": 478,
+            "agree_rate": 0.47279920870425324,
+            "disagree_n": 533,
+            "label": "2026_non_strong_pull",
+            "market_minus_model_pp": 11.17705242334322,
+            "market_trifecta_board_proxy": 0.3916913946587537,
+            "model": 0.2799208704253215,
+            "n": 1011
+          },
+          "non_strong_pull": {
+            "agree_n": 6044,
+            "agree_rate": 0.5735433668627823,
+            "disagree_n": 4494,
+            "label": "non_strong_pull",
+            "market_minus_model_pp": 7.68646802049725,
+            "market_trifecta_board_proxy": 0.4136458531030556,
+            "model": 0.3367811728980831,
+            "n": 10538
+          },
+          "strong_pull": {
+            "agree_n": 1568,
+            "agree_rate": 0.7630170316301703,
+            "disagree_n": 487,
+            "label": "strong_pull",
+            "market_minus_model_pp": 9.39172749391728,
+            "market_trifecta_board_proxy": 0.6768856447688565,
+            "model": 0.5829683698296837,
+            "n": 2055
+          }
+        }
+      },
+      "trio": {
+        "by_year": {
+          "2018": {
+            "agree_n": 1399,
+            "agree_rate": 0.6193005754758742,
+            "disagree_n": 860,
+            "label": "2018",
+            "market_minus_model_pp": 3.3643204957945985,
+            "market_trifecta_board_proxy": 0.33643204957945994,
+            "model": 0.30278884462151395,
+            "n": 2259
+          },
+          "2019": {
+            "agree_n": 833,
+            "agree_rate": 0.6005767844268205,
+            "disagree_n": 554,
+            "label": "2019",
+            "market_minus_model_pp": 4.974765681326604,
+            "market_trifecta_board_proxy": 0.37779379956741166,
+            "model": 0.3280461427541456,
+            "n": 1387
+          },
+          "2020": {
+            "agree_n": 207,
+            "agree_rate": 0.6448598130841121,
+            "disagree_n": 114,
+            "label": "2020",
+            "market_minus_model_pp": 3.4267912772585674,
+            "market_trifecta_board_proxy": 0.3613707165109034,
+            "model": 0.32710280373831774,
+            "n": 321
+          },
+          "2021": {
+            "agree_n": 119,
+            "agree_rate": 0.569377990430622,
+            "disagree_n": 90,
+            "label": "2021",
+            "market_minus_model_pp": 10.047846889952156,
+            "market_trifecta_board_proxy": 0.39712918660287083,
+            "model": 0.2966507177033493,
+            "n": 209
+          },
+          "2022": {
+            "agree_n": 1404,
+            "agree_rate": 0.59846547314578,
+            "disagree_n": 942,
+            "label": "2022",
+            "market_minus_model_pp": 8.525149190110826,
+            "market_trifecta_board_proxy": 0.3695652173913043,
+            "model": 0.28431372549019607,
+            "n": 2346
+          },
+          "2023": {
+            "agree_n": 1387,
+            "agree_rate": 0.5902127659574468,
+            "disagree_n": 963,
+            "label": "2023",
+            "market_minus_model_pp": 6.042553191489364,
+            "market_trifecta_board_proxy": 0.34085106382978725,
+            "model": 0.2804255319148936,
+            "n": 2350
+          },
+          "2024": {
+            "agree_n": 453,
+            "agree_rate": 0.5883116883116883,
+            "disagree_n": 317,
+            "label": "2024",
+            "market_minus_model_pp": 4.155844155844157,
+            "market_trifecta_board_proxy": 0.3,
+            "model": 0.2584415584415584,
+            "n": 770
+          },
+          "2025": {
+            "agree_n": 990,
+            "agree_rate": 0.5647461494580719,
+            "disagree_n": 763,
+            "label": "2025",
+            "market_minus_model_pp": 7.130633200228176,
+            "market_trifecta_board_proxy": 0.32686822589845976,
+            "model": 0.255561893896178,
+            "n": 1753
+          },
+          "2026": {
+            "agree_n": 734,
+            "agree_rate": 0.6126878130217028,
+            "disagree_n": 464,
+            "label": "2026",
+            "market_minus_model_pp": 6.844741235392321,
+            "market_trifecta_board_proxy": 0.3363939899833055,
+            "model": 0.2679465776293823,
+            "n": 1198
+          }
+        },
+        "decision": {
+          "criterion": "correction candidate if 2026 market or P3-refined lift over model is >= +1.0pp",
+          "hybrid_candidate": true,
+          "market_candidate": true,
+          "verdict": "candidate"
+        },
+        "definition": "1-2-3착 unordered trio; 삼쌍보드 3슬롯 주변화",
+        "hybrid_policy": {
+          "2026": {
+            "P0_model": 0.2679465776293823,
+            "P1_market_proxy": 0.3363939899833055,
+            "P1_minus_P0_pp": 6.844741235392321,
+            "P3_minus_P0_pp": 6.844741235392321,
+            "P3_refined": 0.3363939899833055,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "2026",
+            "n": 1198
+          },
+          "all": {
+            "P0_model": 0.2858731041054554,
+            "P1_market_proxy": 0.34606527435877077,
+            "P1_minus_P0_pp": 6.019217025331535,
+            "P3_minus_P0_pp": 6.019217025331535,
+            "P3_refined": 0.34606527435877077,
+            "P3_rule": "market default; no weak-tier model switch because model did not beat market in non_strong_pull tier",
+            "P3_switch_n": 0,
+            "label": "all",
+            "n": 12593
+          },
+          "model_wins_non_strong_pull": false
+        },
+        "label_ko": "삼복승",
+        "source_comparison": {
+          "2026_agree": {
+            "agree_n": 734,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "2026_agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.3528610354223433,
+            "model": 0.3528610354223433,
+            "n": 734
+          },
+          "2026_all": {
+            "agree_n": 734,
+            "agree_rate": 0.6126878130217028,
+            "disagree_n": 464,
+            "label": "2026_all",
+            "market_minus_model_pp": 6.844741235392321,
+            "market_trifecta_board_proxy": 0.3363939899833055,
+            "model": 0.2679465776293823,
+            "n": 1198
+          },
+          "2026_disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 464,
+            "label": "2026_disagree",
+            "market_minus_model_pp": 17.672413793103452,
+            "market_trifecta_board_proxy": 0.3103448275862069,
+            "model": 0.1336206896551724,
+            "n": 464
+          },
+          "agree": {
+            "agree_n": 7526,
+            "agree_rate": 1.0,
+            "disagree_n": 0,
+            "label": "agree",
+            "market_minus_model_pp": 0.0,
+            "market_trifecta_board_proxy": 0.385330853042785,
+            "model": 0.385330853042785,
+            "n": 7526
+          },
+          "all": {
+            "agree_n": 7526,
+            "agree_rate": 0.5976336059715716,
+            "disagree_n": 5067,
+            "label": "all",
+            "market_minus_model_pp": 6.019217025331535,
+            "market_trifecta_board_proxy": 0.34606527435877077,
+            "model": 0.2858731041054554,
+            "n": 12593
+          },
+          "disagree": {
+            "agree_n": 0,
+            "agree_rate": 0.0,
+            "disagree_n": 5067,
+            "label": "disagree",
+            "market_minus_model_pp": 14.959542135385831,
+            "market_trifecta_board_proxy": 0.2877442273534636,
+            "model": 0.1381488059996053,
+            "n": 5067
+          }
+        },
+        "tier_matrix": {
+          "2026_non_strong_pull": {
+            "agree_n": 602,
+            "agree_rate": 0.5954500494559841,
+            "disagree_n": 409,
+            "label": "2026_non_strong_pull",
+            "market_minus_model_pp": 6.726013847675569,
+            "market_trifecta_board_proxy": 0.3036597428288823,
+            "model": 0.23639960435212662,
+            "n": 1011
+          },
+          "non_strong_pull": {
+            "agree_n": 5985,
+            "agree_rate": 0.5679445815145189,
+            "disagree_n": 4553,
+            "label": "non_strong_pull",
+            "market_minus_model_pp": 5.617764281647375,
+            "market_trifecta_board_proxy": 0.30546593281457585,
+            "model": 0.2492882899981021,
+            "n": 10538
+          },
+          "strong_pull": {
+            "agree_n": 1541,
+            "agree_rate": 0.7498783454987834,
+            "disagree_n": 514,
+            "label": "strong_pull",
+            "market_minus_model_pp": 8.077858880778589,
+            "market_trifecta_board_proxy": 0.5542579075425791,
+            "model": 0.4734793187347932,
+            "n": 2055
+          }
+        }
+      }
+    },
+    "counts": {
+      "base_kept": 13900,
+      "base_read": 14148,
+      "deduped_valid_snapshots": 17312,
+      "entries": 12593,
+      "exp_added": 3412,
+      "exp_read": 3450,
+      "joined_keys": 12593,
+      "scored_races": 12593
+    },
+    "method": {
+      "market": "삼쌍보드 근사: q=normalize(1/odds), then marginalize to each requested ticket type",
+      "model": "keirin model_final pwin Harville order reproduced with PARTICIPANT_LEARNING_ENABLED=0",
+      "scope": "pure measurement only; engine.py/app.py/tests unchanged",
+      "tier": "strong_pull iff best trifecta odds <= 3.0 and gap12 >= 1.2; non_strong_pull is complement"
+    }
+  },
+  "kra_place": {
+    "by_year": {
+      "2024": {
+        "agree_n": 1264,
+        "agree_rate": 0.5119481571486432,
+        "disagree_n": 1205,
+        "label": "2024",
+        "market_minus_model_pp": 7.573916565411098,
+        "market_plc_odds_top1_in_top3": 0.6727420008100445,
+        "model_v4_pplc_top1_in_top3": 0.5970028351559336,
+        "n": 2469
+      },
+      "2025": {
+        "agree_n": 1273,
+        "agree_rate": 0.5181115181115181,
+        "disagree_n": 1184,
+        "label": "2025",
+        "market_minus_model_pp": 6.715506715506714,
+        "market_plc_odds_top1_in_top3": 0.6853886853886854,
+        "model_v4_pplc_top1_in_top3": 0.6182336182336182,
+        "n": 2457
+      },
+      "2026": {
+        "agree_n": 717,
+        "agree_rate": 0.5419501133786848,
+        "disagree_n": 606,
+        "label": "2026",
+        "market_minus_model_pp": 6.802721088435371,
+        "market_plc_odds_top1_in_top3": 0.6795162509448224,
+        "model_v4_pplc_top1_in_top3": 0.6114890400604687,
+        "n": 1323
+      }
+    },
+    "counts": {
+      "entries_seen": 64548,
+      "model_scored_races": 6249,
+      "races": 6249
+    },
+    "decision": {
+      "criterion": "correction candidate if fresh market or P3-refined lift over v4 place model is >= +1.0pp",
+      "hybrid_candidate": true,
+      "market_candidate": true,
+      "verdict": "candidate"
+    },
+    "hybrid_policy": {
+      "2026": {
+        "P0_v4_place_model": 0.6114890400604687,
+        "P1_minus_P0_pp": 6.802721088435371,
+        "P1_place_market": 0.6795162509448224,
+        "P3_minus_P0_pp": 6.802721088435371,
+        "P3_refined": 0.6795162509448224,
+        "P3_rule": "market default; no weak-tier model switch because model did not beat market in weak_or_open tier",
+        "P3_switch_n": 0,
+        "label": "2026",
+        "n": 1323
+      },
+      "all": {
+        "P0_v4_place_model": 0.6084173467754841,
+        "P1_minus_P0_pp": 7.073131701072166,
+        "P1_place_market": 0.6791486637862058,
+        "P3_minus_P0_pp": 7.073131701072166,
+        "P3_refined": 0.6791486637862058,
+        "P3_rule": "market default; no weak-tier model switch because model did not beat market in weak_or_open tier",
+        "P3_switch_n": 0,
+        "label": "all",
+        "n": 6249
+      },
+      "fresh": {
+        "P0_v4_place_model": 0.6194029850746269,
+        "P1_minus_P0_pp": 6.716417910447758,
+        "P1_place_market": 0.6865671641791045,
+        "P3_minus_P0_pp": 6.716417910447758,
+        "P3_refined": 0.6865671641791045,
+        "P3_rule": "market default; no weak-tier model switch because model did not beat market in weak_or_open tier",
+        "P3_switch_n": 0,
+        "label": "fresh",
+        "n": 134
+      },
+      "model_wins_weak_or_open": false
+    },
+    "method": {
+      "fresh_split": "rcDate >= 20260622",
+      "market": "lowest plcOdds per race; hit if selected runner finished in top3",
+      "model": "production KRA v4 plc classifier; pick highest raw pplc per race",
+      "tier": "Round5B win-odds tier definition reused for weak_or_open gating"
+    },
+    "source_comparison": {
+      "2026_agree": {
+        "agree_n": 717,
+        "agree_rate": 1.0,
+        "disagree_n": 0,
+        "label": "2026_agree",
+        "market_minus_model_pp": 0.0,
+        "market_plc_odds_top1_in_top3": 0.7126917712691772,
+        "model_v4_pplc_top1_in_top3": 0.7126917712691772,
+        "n": 717
+      },
+      "2026_all": {
+        "agree_n": 717,
+        "agree_rate": 0.5419501133786848,
+        "disagree_n": 606,
+        "label": "2026_all",
+        "market_minus_model_pp": 6.802721088435371,
+        "market_plc_odds_top1_in_top3": 0.6795162509448224,
+        "model_v4_pplc_top1_in_top3": 0.6114890400604687,
+        "n": 1323
+      },
+      "2026_disagree": {
+        "agree_n": 0,
+        "agree_rate": 0.0,
+        "disagree_n": 606,
+        "label": "2026_disagree",
+        "market_minus_model_pp": 14.851485148514849,
+        "market_plc_odds_top1_in_top3": 0.6402640264026402,
+        "model_v4_pplc_top1_in_top3": 0.49174917491749176,
+        "n": 606
+      },
+      "agree": {
+        "agree_n": 3254,
+        "agree_rate": 1.0,
+        "disagree_n": 0,
+        "label": "agree",
+        "market_minus_model_pp": 0.0,
+        "market_plc_odds_top1_in_top3": 0.7148125384142594,
+        "model_v4_pplc_top1_in_top3": 0.7148125384142594,
+        "n": 3254
+      },
+      "all": {
+        "agree_n": 3254,
+        "agree_rate": 0.5207233157305169,
+        "disagree_n": 2995,
+        "label": "all",
+        "market_minus_model_pp": 7.073131701072166,
+        "market_plc_odds_top1_in_top3": 0.6791486637862058,
+        "model_v4_pplc_top1_in_top3": 0.6084173467754841,
+        "n": 6249
+      },
+      "disagree": {
+        "agree_n": 0,
+        "agree_rate": 0.0,
+        "disagree_n": 2995,
+        "label": "disagree",
+        "market_minus_model_pp": 14.75792988313856,
+        "market_plc_odds_top1_in_top3": 0.6404006677796327,
+        "model_v4_pplc_top1_in_top3": 0.4928213689482471,
+        "n": 2995
+      },
+      "fresh_agree": {
+        "agree_n": 65,
+        "agree_rate": 1.0,
+        "disagree_n": 0,
+        "label": "fresh_agree",
+        "market_minus_model_pp": 0.0,
+        "market_plc_odds_top1_in_top3": 0.7538461538461538,
+        "model_v4_pplc_top1_in_top3": 0.7538461538461538,
+        "n": 65
+      },
+      "fresh_all": {
+        "agree_n": 65,
+        "agree_rate": 0.48507462686567165,
+        "disagree_n": 69,
+        "label": "fresh_all",
+        "market_minus_model_pp": 6.716417910447758,
+        "market_plc_odds_top1_in_top3": 0.6865671641791045,
+        "model_v4_pplc_top1_in_top3": 0.6194029850746269,
+        "n": 134
+      },
+      "fresh_disagree": {
+        "agree_n": 0,
+        "agree_rate": 0.0,
+        "disagree_n": 69,
+        "label": "fresh_disagree",
+        "market_minus_model_pp": 13.043478260869563,
+        "market_plc_odds_top1_in_top3": 0.6231884057971014,
+        "model_v4_pplc_top1_in_top3": 0.4927536231884058,
+        "n": 69
+      }
+    },
+    "tier_matrix": {
+      "all": {
+        "agree_n": 3254,
+        "agree_rate": 0.5207233157305169,
+        "disagree_n": 2995,
+        "label": "all",
+        "market_minus_model_pp": 7.073131701072166,
+        "market_plc_odds_top1_in_top3": 0.6791486637862058,
+        "model_v4_pplc_top1_in_top3": 0.6084173467754841,
+        "n": 6249
+      },
+      "gap_wide": {
+        "agree_n": 239,
+        "agree_rate": 0.4450651769087523,
+        "disagree_n": 298,
+        "label": "gap_wide",
+        "market_minus_model_pp": 7.076350093109873,
+        "market_plc_odds_top1_in_top3": 0.5567970204841713,
+        "model_v4_pplc_top1_in_top3": 0.4860335195530726,
+        "n": 537
+      },
+      "price_short": {
+        "agree_n": 13,
+        "agree_rate": 0.5652173913043478,
+        "disagree_n": 10,
+        "label": "price_short",
+        "market_minus_model_pp": 8.695652173913038,
+        "market_plc_odds_top1_in_top3": 0.8695652173913043,
+        "model_v4_pplc_top1_in_top3": 0.782608695652174,
+        "n": 23
+      },
+      "strong_pull": {
+        "agree_n": 1059,
+        "agree_rate": 0.5629984051036683,
+        "disagree_n": 822,
+        "label": "strong_pull",
+        "market_minus_model_pp": 7.92131844763424,
+        "market_plc_odds_top1_in_top3": 0.6884635832004253,
+        "model_v4_pplc_top1_in_top3": 0.6092503987240829,
+        "n": 1881
+      },
+      "very_strong_pull": {
+        "agree_n": 1133,
+        "agree_rate": 0.7094552285535379,
+        "disagree_n": 464,
+        "label": "very_strong_pull",
+        "market_minus_model_pp": 8.9542892924233,
+        "market_plc_odds_top1_in_top3": 0.8171571696931748,
+        "model_v4_pplc_top1_in_top3": 0.7276142767689417,
+        "n": 1597
+      },
+      "weak_or_open": {
+        "agree_n": 249,
+        "agree_rate": 0.33877551020408164,
+        "disagree_n": 486,
+        "label": "weak_or_open",
+        "market_minus_model_pp": 4.081632653061218,
+        "market_plc_odds_top1_in_top3": 0.5795918367346938,
+        "model_v4_pplc_top1_in_top3": 0.5387755102040817,
+        "n": 735
+      }
+    }
+  },
+  "round": "round10_pick_extension",
+  "scope": "pure measurement only; no engine modifications; no commit"
+}

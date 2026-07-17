@@ -1,0 +1,1297 @@
+
+> racelens-mobile@0.1.0 qa:mobile
+> node scripts/qa-mobile.mjs
+
+Starting Metro Bundler
+
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:72363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 2726ms node_modules/expo/AppEntry.js (397 modules)
+
+› Assets (19):
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.3f78af31cca60105799838a1a7a59fbd.ttf (130KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Entypo.31b5ffea3daddc69dd01a1f3d6cf63c5.ttf (66KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/EvilIcons.140c53a7643ea949007aa9a282153849.ttf (13KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.ca4b48e04dc1ce10bfbddb262c8b835f.ttf (56KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.b06871f281fee6b241d60582ae9369b9.ttf (166KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.3b89dd103490708d19a95adcae52210e.ttf (134KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.1f77739ca9ff2188b539c36f30ffa2be.ttf (34KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.605ed7926cf39a2ad5ec2d1f9d391d3d.ttf (203KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Brands.56c8d80832e37783f12c05db7c8849e2.ttf (209KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Regular.370dd5af19f8364907b6e2c41f45dbbf.ttf (68KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Solid.adec7d6f310bc577f05e8fe06a5daccf.ttf (424KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Fontisto.b49ae8ab2dbccb02c4d11caaacf09eab.ttf (314KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Foundation.e20945d7c929279ef7a6f1db184a4470.ttf (57KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf (390KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.6e435534bd35da5fef04168860a9b8fa.ttf (1.3MB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.4e85bc9ebe07e0340c9c4fc2f6c38908.ttf (357KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Octicons.871378c6eab492a3e689a9385dc45a12.ttf (69KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/SimpleLineIcons.d2285965fe34b05465047401b8595dd0.ttf (54KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Zocial.1681f34aaca71b8dfb70756bca331eb2.ttf (26KB)
+
+› web bundles (1):
+_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js (1.1MB)
+
+› Files (3):
+favicon.ico (15KB)
+index.html (1.2KB)
+metadata.json (49B)
+
+Exported: /var/folders/b9/yvr3_kh17ng5bwr9bhfzzg_00000gn/T/racelens-qa-mobile-FLXWln
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:47] "GET / HTTP/1.1" 200 -
+
+Running 66 tests using 5 workers
+
+(node:72594) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72593) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72597) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:48] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓   5 [compact-dark-320] › tests/mobile-web.spec.js:57:5 › home screen exposes the expected analysis controls (587ms)
+  ✓   3 [mobile-dark-390] › tests/mobile-web.spec.js:57:5 › home screen exposes the expected analysis controls (618ms)
+  ✓   4 [mobile-light-390] › tests/mobile-web.spec.js:57:5 › home screen exposes the expected analysis controls (572ms)
+  ✓   2 [compact-light-320] › tests/mobile-web.spec.js:57:5 › home screen exposes the expected analysis controls (633ms)
+  ✓   1 [tablet-light-768] › tests/mobile-web.spec.js:57:5 › home screen exposes the expected analysis controls (611ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓   6 [compact-dark-320] › tests/mobile-web.spec.js:86:5 › calendar auto-refreshes to the current race day when the app resumes (303ms)
+  ✓   7 [mobile-dark-390] › tests/mobile-web.spec.js:86:5 › calendar auto-refreshes to the current race day when the app resumes (321ms)
+  ✓   8 [mobile-light-390] › tests/mobile-web.spec.js:86:5 › calendar auto-refreshes to the current race day when the app resumes (310ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓   9 [compact-light-320] › tests/mobile-web.spec.js:86:5 › calendar auto-refreshes to the current race day when the app resumes (340ms)
+  ✓  10 [tablet-light-768] › tests/mobile-web.spec.js:86:5 › calendar auto-refreshes to the current race day when the app resumes (340ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  11 [compact-dark-320] › tests/mobile-web.spec.js:104:5 › calendar refresh keeps a manually selected historical race day stable (379ms)
+  ✓  12 [mobile-dark-390] › tests/mobile-web.spec.js:104:5 › calendar refresh keeps a manually selected historical race day stable (378ms)
+  ✓  13 [mobile-light-390] › tests/mobile-web.spec.js:104:5 › calendar refresh keeps a manually selected historical race day stable (390ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓  14 [compact-light-320] › tests/mobile-web.spec.js:104:5 › calendar refresh keeps a manually selected historical race day stable (393ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓  15 [tablet-light-768] › tests/mobile-web.spec.js:104:5 › calendar refresh keeps a manually selected historical race day stable (405ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:49] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:50] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:50] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:50] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  16 [compact-dark-320] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable (5.4s)
+  ✘  17 [mobile-dark-390] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable (5.4s)
+  ✘  19 [compact-light-320] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable (5.4s)
+  ✘  18 [mobile-light-390] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable (5.4s)
+  ✘  20 [tablet-light-768] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable (5.4s)
+(node:72658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72661) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:55] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  23 [compact-light-320] › tests/mobile-web.spec.js:144:5 › layout keeps the tomato action identity without horizontal overflow (380ms)
+  ✓  22 [mobile-light-390] › tests/mobile-web.spec.js:144:5 › layout keeps the tomato action identity without horizontal overflow (394ms)
+  ✓  24 [mobile-dark-390] › tests/mobile-web.spec.js:144:5 › layout keeps the tomato action identity without horizontal overflow (383ms)
+  ✓  25 [tablet-light-768] › tests/mobile-web.spec.js:144:5 › layout keeps the tomato action identity without horizontal overflow (375ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓  21 [compact-dark-320] › tests/mobile-web.spec.js:144:5 › layout keeps the tomato action identity without horizontal overflow (463ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓  26 [compact-light-320] › tests/mobile-web.spec.js:162:5 › interactive controls keep mobile-friendly tap targets (249ms)
+  ✓  29 [tablet-light-768] › tests/mobile-web.spec.js:162:5 › interactive controls keep mobile-friendly tap targets (256ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  27 [mobile-light-390] › tests/mobile-web.spec.js:162:5 › interactive controls keep mobile-friendly tap targets (289ms)
+  ✓  28 [mobile-dark-390] › tests/mobile-web.spec.js:162:5 › interactive controls keep mobile-friendly tap targets (288ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓  30 [compact-dark-320] › tests/mobile-web.spec.js:162:5 › interactive controls keep mobile-friendly tap targets (262ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:08:56] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  31 [compact-light-320] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state (5.5s)
+  ✘  35 [compact-dark-320] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state (5.4s)
+  ✘  34 [mobile-dark-390] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state (5.4s)
+  ✘  33 [mobile-light-390] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state (5.5s)
+  ✘  32 [tablet-light-768] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state (5.5s)
+(node:72765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72766) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72767) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  37 [compact-light-320] › tests/mobile-web.spec.js:196:5 › bottom content remains reachable above the tab bar (493ms)
+  ✓  36 [compact-dark-320] › tests/mobile-web.spec.js:196:5 › bottom content remains reachable above the tab bar (512ms)
+  ✓  39 [mobile-light-390] › tests/mobile-web.spec.js:196:5 › bottom content remains reachable above the tab bar (531ms)
+  ✓  38 [mobile-dark-390] › tests/mobile-web.spec.js:196:5 › bottom content remains reachable above the tab bar (531ms)
+  ✓  40 [tablet-light-768] › tests/mobile-web.spec.js:196:5 › bottom content remains reachable above the tab bar (534ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:02] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  41 [compact-light-320] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis (5.5s)
+  ✘  43 [mobile-light-390] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis (5.6s)
+  ✘  42 [compact-dark-320] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis (5.6s)
+  ✘  44 [mobile-dark-390] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis (5.6s)
+  ✘  45 [tablet-light-768] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis (5.6s)
+(node:72840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:08] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:08] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:08] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:08] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  46 [compact-light-320] › tests/mobile-web.spec.js:251:5 › all bottom tabs render their primary workflows (469ms)
+  ✓  47 [mobile-light-390] › tests/mobile-web.spec.js:251:5 › all bottom tabs render their primary workflows (508ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+  ✓  49 [compact-dark-320] › tests/mobile-web.spec.js:251:5 › all bottom tabs render their primary workflows (424ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  48 [mobile-dark-390] › tests/mobile-web.spec.js:251:5 › all bottom tabs render their primary workflows (451ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+  ✓  50 [tablet-light-768] › tests/mobile-web.spec.js:251:5 › all bottom tabs render their primary workflows (519ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  51 [compact-light-320] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions (5.4s)
+  ✘  52 [mobile-light-390] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions (5.4s)
+  ✘  53 [compact-dark-320] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions (5.3s)
+  ✘  54 [mobile-dark-390] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions (5.4s)
+(node:72918) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  55 [tablet-light-768] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions (5.3s)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  56 [tablet-dark-768] › tests/mobile-web.spec.js:57:5 › home screen exposes the expected analysis controls (254ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  57 [tablet-dark-768] › tests/mobile-web.spec.js:86:5 › calendar auto-refreshes to the current race day when the app resumes (209ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  58 [tablet-dark-768] › tests/mobile-web.spec.js:104:5 › calendar refresh keeps a manually selected historical race day stable (260ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:15] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  59 [tablet-dark-768] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable (5.3s)
+(node:72945) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  60 [tablet-dark-768] › tests/mobile-web.spec.js:144:5 › layout keeps the tomato action identity without horizontal overflow (224ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  61 [tablet-dark-768] › tests/mobile-web.spec.js:162:5 › interactive controls keep mobile-friendly tap targets (178ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:21] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  62 [tablet-dark-768] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state (5.3s)
+(node:72980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:27] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:27] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:27] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  63 [tablet-dark-768] › tests/mobile-web.spec.js:196:5 › bottom content remains reachable above the tab bar (351ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:27] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:27] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:27] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  64 [tablet-dark-768] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis (5.4s)
+(node:73018) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:33] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:33] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:33] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  65 [tablet-dark-768] › tests/mobile-web.spec.js:251:5 › all bottom tabs render their primary workflows (351ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:33] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:33] "GET /_expo/static/js/web/AppEntry-d631bfc9f2640b0cec6f53388830dfe4.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:09:33] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✘  66 [tablet-dark-768] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions (5.3s)
+
+
+  1) [compact-light-320] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:128:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-light-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-light-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-light-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-light-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [compact-light-320] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:185:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-light-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-light-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-light-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-light-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [compact-light-320] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      232 |   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+      233 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 234 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+          |                                                             ^
+      235 |   await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+      236 |
+      237 |   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:234:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-light-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-light-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-light-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-light-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [compact-light-320] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('분석 중간 광고 슬롯 표시', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('분석 중간 광고 슬롯 표시', { exact: true })
+
+
+      275 |   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+      276 |   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+    > 277 |   await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
+          |                                                                   ^
+      278 |   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+      279 |   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+      280 |   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:277:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-light-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-light-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-light-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-light-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [compact-dark-320] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:128:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-dark-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-dark-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-dark-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-compact-dark-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [compact-dark-320] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:185:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-dark-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-dark-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-dark-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-compact-dark-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [compact-dark-320] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      232 |   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+      233 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 234 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+          |                                                             ^
+      235 |   await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+      236 |
+      237 |   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:234:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-dark-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-dark-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-dark-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-compact-dark-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [compact-dark-320] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('분석 중간 광고 슬롯 표시', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('분석 중간 광고 슬롯 표시', { exact: true })
+
+
+      275 |   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+      276 |   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+    > 277 |   await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
+          |                                                                   ^
+      278 |   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+      279 |   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+      280 |   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:277:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-dark-320/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-dark-320/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-dark-320/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-compact-dark-320/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [mobile-light-390] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:128:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-light-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-light-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-light-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-light-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [mobile-light-390] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:185:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-light-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-light-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-light-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-light-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [mobile-light-390] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      232 |   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+      233 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 234 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+          |                                                             ^
+      235 |   await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+      236 |
+      237 |   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:234:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-light-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-light-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-light-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-light-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [mobile-light-390] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('분석 중간 광고 슬롯 표시', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('분석 중간 광고 슬롯 표시', { exact: true })
+
+
+      275 |   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+      276 |   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+    > 277 |   await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
+          |                                                                   ^
+      278 |   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+      279 |   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+      280 |   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:277:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-light-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-light-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-light-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-light-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [mobile-dark-390] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:128:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-dark-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-dark-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-dark-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-mobile-dark-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [mobile-dark-390] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:185:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-dark-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-dark-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-dark-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-mobile-dark-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [mobile-dark-390] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      232 |   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+      233 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 234 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+          |                                                             ^
+      235 |   await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+      236 |
+      237 |   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:234:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-dark-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-dark-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-dark-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-mobile-dark-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [mobile-dark-390] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('분석 중간 광고 슬롯 표시', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('분석 중간 광고 슬롯 표시', { exact: true })
+
+
+      275 |   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+      276 |   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+    > 277 |   await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
+          |                                                                   ^
+      278 |   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+      279 |   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+      280 |   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:277:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-dark-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-dark-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-dark-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-mobile-dark-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [tablet-light-768] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:128:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-light-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-light-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-light-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-light-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [tablet-light-768] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:185:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-light-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-light-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-light-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-light-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [tablet-light-768] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      232 |   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+      233 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 234 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+          |                                                             ^
+      235 |   await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+      236 |
+      237 |   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:234:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-light-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-light-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-light-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-light-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [tablet-light-768] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('분석 중간 광고 슬롯 표시', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('분석 중간 광고 슬롯 표시', { exact: true })
+
+
+      275 |   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+      276 |   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+    > 277 |   await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
+          |                                                                   ^
+      278 |   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+      279 |   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+      280 |   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:277:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-light-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-light-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-light-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-light-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [tablet-dark-768] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:128:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-dark-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-dark-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-dark-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-analysis-does-n-e6bd1-official-API-is-unavailable-tablet-dark-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [tablet-dark-768] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      48 | async function requestFreeAnalysis(page) {
+      49 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 50 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+         |                                                             ^
+      51 |   await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+      52 |   await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+      53 |   await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+        at requestFreeAnalysis (/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:50:61)
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:185:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-dark-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-dark-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-dark-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-free-analysis-limit-becomes-a-real-disabled-state-tablet-dark-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [tablet-dark-768] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('무료 플랜 광고', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('무료 플랜 광고', { exact: true })
+
+
+      232 |   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+      233 |   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+    > 234 |   await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+          |                                                             ^
+      235 |   await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+      236 |
+      237 |   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:234:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-dark-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-dark-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-dark-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-race-selector-u-fe62c-ort-race-and-opens-analysis-tablet-dark-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [tablet-dark-768] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('분석 중간 광고 슬롯 표시', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('분석 중간 광고 슬롯 표시', { exact: true })
+
+
+      275 |   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+      276 |   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+    > 277 |   await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
+          |                                                                   ^
+      278 |   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+      279 |   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+      280 |   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+        at /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js:277:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-dark-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-dark-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-dark-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/mobile-web-store-safety-an-cd727-faces-avoid-betting-actions-tablet-dark-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24 failed
+    [compact-light-320] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+    [compact-light-320] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+    [compact-light-320] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+    [compact-light-320] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+    [compact-dark-320] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+    [compact-dark-320] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+    [compact-dark-320] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+    [compact-dark-320] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+    [mobile-light-390] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+    [mobile-light-390] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+    [mobile-light-390] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+    [mobile-light-390] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+    [mobile-dark-390] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+    [mobile-dark-390] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+    [mobile-dark-390] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+    [mobile-dark-390] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+    [tablet-light-768] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+    [tablet-light-768] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+    [tablet-light-768] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+    [tablet-light-768] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+    [tablet-dark-768] › tests/mobile-web.spec.js:123:5 › analysis does not invent demo racers when the official API is unavailable 
+    [tablet-dark-768] › tests/mobile-web.spec.js:180:5 › free analysis limit becomes a real disabled state 
+    [tablet-dark-768] › tests/mobile-web.spec.js:217:5 › race selector updates sport, race, and opens analysis 
+    [tablet-dark-768] › tests/mobile-web.spec.js:264:5 › store safety and pro surfaces avoid betting actions 
+  42 passed (51.6s)

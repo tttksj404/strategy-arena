@@ -1,0 +1,361 @@
+time="2026-07-06T14:06:54Z" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+#0 building with "default" instance using docker driver
+
+#1 [app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 830B 0.0s done
+#1 DONE 0.2s
+
+#2 [collector internal] load build definition from Dockerfile
+#2 transferring dockerfile: 830B 0.0s done
+#2 DONE 0.1s
+
+#3 [search-loop internal] load build definition from Dockerfile
+#3 transferring dockerfile: 830B 0.1s done
+#3 DONE 0.1s
+
+#4 [collector internal] load metadata for docker.io/library/python:3.13-slim
+#4 DONE 0.3s
+
+#5 [app internal] load .dockerignore
+#5 transferring context: 330B 0.1s done
+#5 DONE 0.1s
+
+#6 [collector internal] load .dockerignore
+#6 transferring context: 330B 0.1s done
+#6 DONE 0.1s
+
+#7 [search-loop internal] load .dockerignore
+#7 transferring context: 330B 0.0s done
+#7 DONE 0.1s
+
+#8 [app internal] load build context
+#8 DONE 0.0s
+
+#9 [search-loop internal] load build context
+#9 DONE 0.0s
+
+#10 [collector internal] load build context
+#10 DONE 0.0s
+
+#11 [collector 1/7] FROM docker.io/library/python:3.13-slim@sha256:eb43ff125d8d58d7449dcba7d336c23bcac412f526d861db493b9994d8010280
+#11 resolve docker.io/library/python:3.13-slim@sha256:eb43ff125d8d58d7449dcba7d336c23bcac412f526d861db493b9994d8010280
+#11 resolve docker.io/library/python:3.13-slim@sha256:eb43ff125d8d58d7449dcba7d336c23bcac412f526d861db493b9994d8010280 0.5s done
+#11 resolve docker.io/library/python:3.13-slim@sha256:eb43ff125d8d58d7449dcba7d336c23bcac412f526d861db493b9994d8010280 0.5s done
+#11 DONE 0.5s
+
+#9 [search-loop internal] load build context
+#9 transferring context: 13.21MB 3.9s
+#9 transferring context: 30.75MB 7.0s done
+#9 ...
+
+#10 [collector internal] load build context
+#10 ...
+
+#9 [search-loop internal] load build context
+#9 DONE 7.7s
+
+#8 [app internal] load build context
+#8 transferring context: 30.75MB 6.9s done
+#8 DONE 7.7s
+
+#10 [collector internal] load build context
+#10 transferring context: 44.78MB 7.6s done
+#10 DONE 7.8s
+
+#12 [search-loop 2/7] WORKDIR /app
+#12 CACHED
+
+#13 [search-loop 3/7] RUN addgroup --system app && adduser --system --ingroup app app
+#13 CACHED
+
+#14 [search-loop 4/7] COPY requirements.txt .
+#14 CACHED
+
+#15 [search-loop 5/7] RUN python -m pip install --no-cache-dir --upgrade pip     && python -m pip install --no-cache-dir -r requirements.txt
+#15 CACHED
+
+#16 [collector 6/7] COPY . .
+#16 DONE 2.7s
+
+#17 [search-loop 7/7] RUN mkdir -p /app/data /app/logs /app/backups     && chown -R app:app /app/data /app/logs /app/backups
+#17 DONE 4.4s
+
+#18 [collector] exporting to image
+#18 exporting layers
+#18 exporting layers 5.2s done
+#18 exporting manifest sha256:3b9527546bda8bad8a3bf392b92c62c86b8df0684161b8eaa1b15a10cc711e6b 0.1s done
+#18 exporting config sha256:7fa1bac3739300b2559992a5eed975b2956da9fb47d99b78a7e4279d8635a4f1
+#18 exporting config sha256:7fa1bac3739300b2559992a5eed975b2956da9fb47d99b78a7e4279d8635a4f1 0.0s done
+#18 exporting attestation manifest sha256:85e1c8d5ebabc85aa9a23d9e5395f5a830e0f5918d89fcfbb6ae03bffeb0ac76
+#18 exporting attestation manifest sha256:85e1c8d5ebabc85aa9a23d9e5395f5a830e0f5918d89fcfbb6ae03bffeb0ac76 0.2s done
+#18 exporting manifest list sha256:1e11d4c6c587a0a065bf4582ddededfcd7b23ba8a001a24b1de56361b77eb93e 0.1s done
+#18 naming to docker.io/library/oracle-collector:latest
+#18 naming to docker.io/library/oracle-collector:latest 0.0s done
+#18 unpacking to docker.io/library/oracle-collector:latest
+#18 ...
+
+#19 [app] exporting to image
+#19 exporting layers 5.2s done
+#19 exporting manifest sha256:2e6ae423472124eb7cbde292d4099b5a36019e640c01347572e43bd45e1aff6a 0.0s done
+#19 exporting config sha256:dfebf6da6b722ceed726eac7d03fc8fc99fec22e54eb7be0307b913aa1e7c939 0.1s done
+#19 exporting attestation manifest sha256:2750fe65286d8b1366b393dac40da41196ecba3cb210342f5022e9d044ffeddd 0.2s done
+#19 exporting manifest list sha256:f650848488a6e18d9a2a539d6064b7a9e533af407686f70e5e49c66ce39df203 0.1s done
+#19 naming to docker.io/library/oracle-app:latest 0.0s done
+#19 unpacking to docker.io/library/oracle-app:latest
+#19 ...
+
+#20 [search-loop] exporting to image
+#20 exporting layers 5.2s done
+#20 exporting manifest sha256:ed2094efe2e631562654d5dfc6bb50f9dae70e863bec18dd4706edf1634b9a7c 0.0s done
+#20 exporting config sha256:c710a394b208d3279634e351ddf23f64cfb17dd3f4724b5ee09c31bc2c71522f 0.1s done
+#20 exporting attestation manifest sha256:7fe57a6aa3cefadb5a9a06f76499fa005413d6192ef257080ea9120e7f8f9222 0.2s done
+#20 exporting manifest list sha256:3e6c1449912d874a7db335ce31a1d2ea80573b12ae64fb6f6de328906f0b9f14 0.1s done
+#20 naming to docker.io/library/oracle-search-loop:latest done
+#20 unpacking to docker.io/library/oracle-search-loop:latest
+#20 ...
+
+#18 [collector] exporting to image
+#18 unpacking to docker.io/library/oracle-collector:latest 8.6s done
+#18 ...
+
+#20 [search-loop] exporting to image
+#20 unpacking to docker.io/library/oracle-search-loop:latest 8.6s done
+#20 DONE 15.0s
+
+#19 [app] exporting to image
+#19 unpacking to docker.io/library/oracle-app:latest 8.6s done
+#19 ...
+
+#18 [collector] exporting to image
+#18 DONE 15.2s
+
+#19 [app] exporting to image
+#19 DONE 15.3s
+
+#21 [search-loop] resolving provenance for metadata file
+#21 ...
+
+#22 [app] resolving provenance for metadata file
+#22 DONE 0.9s
+
+#21 [search-loop] resolving provenance for metadata file
+#21 DONE 0.9s
+
+#23 [collector] resolving provenance for metadata file
+#23 DONE 0.3s
+
+#24 [mobile-web internal] load build definition from mobile.Dockerfile
+#24 transferring dockerfile:
+#24 transferring dockerfile: 540B 0.2s done
+#24 DONE 0.2s
+
+#25 [mobile-web internal] load metadata for docker.io/library/node:22-alpine
+#25 DONE 1.0s
+
+#26 [mobile-web internal] load .dockerignore
+#26 transferring context: 33B
+#26 transferring context: 330B 0.1s done
+#26 DONE 0.2s
+
+#27 [mobile-web internal] load build context
+#27 transferring context: 4.19kB 0.4s done
+#27 DONE 0.5s
+
+#28 [mobile-web build 1/6] FROM docker.io/library/node:22-alpine@sha256:16e22a550f3863206a3f701448c45f7912c6896a62de43add43bb9c86130c3e2
+#28 resolve docker.io/library/node:22-alpine@sha256:16e22a550f3863206a3f701448c45f7912c6896a62de43add43bb9c86130c3e2
+#28 resolve docker.io/library/node:22-alpine@sha256:16e22a550f3863206a3f701448c45f7912c6896a62de43add43bb9c86130c3e2 0.7s done
+#28 DONE 0.8s
+
+#29 [mobile-web build 2/6] WORKDIR /src/mobile
+#29 CACHED
+
+#30 [mobile-web build 3/6] COPY mobile/package*.json ./
+#30 CACHED
+
+#31 [mobile-web build 4/6] RUN npm ci
+#31 CACHED
+
+#32 [mobile-web build 5/6] COPY mobile ./
+#32 DONE 0.6s
+
+#33 [mobile-web build 6/6] RUN npm run export:web
+#33 2.910 
+#33 2.910 > racelens-mobile@0.1.0 export:web
+#33 2.910 > expo export --platform web --clear
+#33 2.910 
+#33 7.760 Starting Metro Bundler
+#33 7.760 
+#33 7.763 warning: Bundler cache is empty, rebuilding (this may take a minute)
+#33 144.3 Web Bundled 131590ms node_modules/expo/AppEntry.js (394 modules)
+#33 147.9 
+#33 147.9 › Assets (19):
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.3f78af31cca60105799838a1a7a59fbd.ttf (130KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Entypo.31b5ffea3daddc69dd01a1f3d6cf63c5.ttf (66KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/EvilIcons.140c53a7643ea949007aa9a282153849.ttf (13KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.ca4b48e04dc1ce10bfbddb262c8b835f.ttf (56KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.b06871f281fee6b241d60582ae9369b9.ttf (166KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.3b89dd103490708d19a95adcae52210e.ttf (134KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.1f77739ca9ff2188b539c36f30ffa2be.ttf (34KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.605ed7926cf39a2ad5ec2d1f9d391d3d.ttf (203KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Brands.56c8d80832e37783f12c05db7c8849e2.ttf (209KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Regular.370dd5af19f8364907b6e2c41f45dbbf.ttf (68KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Solid.adec7d6f310bc577f05e8fe06a5daccf.ttf (424KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Fontisto.b49ae8ab2dbccb02c4d11caaacf09eab.ttf (314KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Foundation.e20945d7c929279ef7a6f1db184a4470.ttf (57KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf (390KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.6e435534bd35da5fef04168860a9b8fa.ttf (1.3MB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.4e85bc9ebe07e0340c9c4fc2f6c38908.ttf (357KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Octicons.871378c6eab492a3e689a9385dc45a12.ttf (69KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/SimpleLineIcons.d2285965fe34b05465047401b8595dd0.ttf (54KB)
+#33 148.1 node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Zocial.1681f34aaca71b8dfb70756bca331eb2.ttf (26KB)
+#33 148.1 
+#33 148.1 › web bundles (1):
+#33 148.1 _expo/static/js/web/AppEntry-964c39b05bc0e5cd19a6f8f79bc7bdf9.js (1.1MB)
+#33 148.1 
+#33 148.1 › Files (3):
+#33 148.1 favicon.ico (15KB)
+#33 148.1 index.html (1.2KB)
+#33 148.1 metadata.json (49B)
+#33 148.2 
+#33 148.2 Exported: dist
+#33 DONE 149.0s
+
+#34 [mobile-web stage-1 2/4] WORKDIR /app
+#34 CACHED
+
+#35 [mobile-web stage-1 3/4] COPY --from=build /src/mobile/dist ./dist
+#35 DONE 0.4s
+
+#36 [mobile-web stage-1 4/4] COPY mobile/scripts/preview-proxy-server.cjs ./scripts/preview-proxy-server.cjs
+#36 DONE 0.2s
+
+#37 [mobile-web] exporting to image
+#37 exporting layers
+#37 exporting layers 1.5s done
+#37 exporting manifest sha256:892e54218b049ce2f31dca9494f37bded490ce88cecc12e1908ebab28764b0e5 0.0s done
+#37 exporting config sha256:36ce6033bb828607088b214e261d19edbeb5b435377e0a0f1f04dff0f3a6690d 0.1s done
+#37 exporting attestation manifest sha256:5542f704757f39f7e195566121c153cad0c112b8f82598add3d8012d516e9ec6
+#37 exporting attestation manifest sha256:5542f704757f39f7e195566121c153cad0c112b8f82598add3d8012d516e9ec6 0.1s done
+#37 exporting manifest list sha256:06136da6553113ccb66864f4cc96f2b0e058c7858b90926ee085d1ddf661aa1a
+#37 exporting manifest list sha256:06136da6553113ccb66864f4cc96f2b0e058c7858b90926ee085d1ddf661aa1a 0.1s done
+#37 naming to docker.io/library/oracle-mobile-web:latest done
+#37 unpacking to docker.io/library/oracle-mobile-web:latest
+#37 unpacking to docker.io/library/oracle-mobile-web:latest 0.9s done
+#37 DONE 3.2s
+
+#38 [mobile-web] resolving provenance for metadata file
+#38 DONE 0.2s
+ app  Built
+ collector  Built
+ mobile-web  Built
+ search-loop  Built
+ Container oracle-postgres-1  Recreate
+ Container oracle-postgres-1  Recreated
+ Container oracle-search-loop-1  Recreate
+ Container oracle-app-1  Recreate
+ Container oracle-collector-1  Recreate
+ Container oracle-collector-1  Recreated
+ Container oracle-search-loop-1  Recreated
+ Container oracle-app-1  Recreated
+ Container oracle-mobile-web-1  Recreate
+ Container oracle-mobile-web-1  Recreated
+ Container oracle-caddy-1  Recreate
+ Container oracle-caddy-1  Recreated
+ Container oracle-postgres-1  Starting
+ Container oracle-postgres-1  Started
+ Container oracle-app-1  Starting
+ Container oracle-collector-1  Starting
+ Container oracle-search-loop-1  Starting
+ Container oracle-app-1  Started
+ Container oracle-mobile-web-1  Starting
+ Container oracle-collector-1  Started
+ Container oracle-search-loop-1  Started
+ Container oracle-mobile-web-1  Started
+ Container oracle-caddy-1  Starting
+ Container oracle-caddy-1  Started
+NAME                   IMAGE                COMMAND                  SERVICE       CREATED          STATUS                             PORTS
+oracle-app-1           oracle-app           "sh -c 'gunicorn app…"   app           40 seconds ago   Up 10 seconds (health: starting)   8000/tcp
+oracle-caddy-1         caddy:2.9-alpine     "caddy run --config …"   caddy         16 seconds ago   Up 5 seconds                       0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 443/udp, 2019/tcp
+oracle-collector-1     oracle-collector     "sh -c 'while true; …"   collector     41 seconds ago   Up 10 seconds                      
+oracle-mobile-web-1    oracle-mobile-web    "docker-entrypoint.s…"   mobile-web    28 seconds ago   Up 7 seconds                       4173/tcp
+oracle-postgres-1      postgres:16-alpine   "docker-entrypoint.s…"   postgres      44 seconds ago   Up 10 seconds                      5432/tcp
+oracle-search-loop-1   oracle-search-loop   "sh -c 'while true; …"   search-loop   41 seconds ago   Up 10 seconds                      
+200 {"deep":false,"entitlement_mode":"production","has_key":true,"keirin_card_page_cache":{"pages":2,"ttl":1800},"keirin_cross_err":null,"keirin_cross_model":"present","keirin_err":null,"keirin_model":"present","kra_err":null,"kra_model":"present","ok":true,"rankingpredict_cache":{"latest_date":"2026062
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1358, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1404, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1113, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1057, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1499, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+                                          server_hostname=server_hostname)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+ssl.SSLError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1081)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 25, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 525, in error
+    result = self._call_chain(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 718, in http_error_302
+    return self.parent.open(new, timeout=req.timeout)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 487, in open
+    response = self._open(req, data)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1369, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        context=self._context)
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1081)>

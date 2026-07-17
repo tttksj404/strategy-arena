@@ -1,0 +1,16 @@
+$ cd mobile && npx tsc --noEmit
+tsc: PASS
+
+$ cd mobile && node scripts/check-design-contrast.mjs
+design contrast check passed
+
+RUN D 화면 요약
+1. 홈(경륜): 라임 헤더 틴트와 라임 활성 칩으로 기존 경륜 신호색을 유지.
+2. 홈(경마): 골드 활성 칩과 터프 그린 헤더 틴트로 경륜과 분리.
+3. 분석 상단: 출주표 검증·배당 신선도·phase를 3슬롯 상태 스트립으로 통합.
+4. 분석 본문: 번호 배지 기반 시상대 요약과 접힘 참가자 카드로 위계를 재구성.
+5. Pro: 가격은 중간 크기 보조 텍스트로 낮추고 플랜 상태 중심 카드만 유지.
+
+기존 테스트 확인
+npx playwright test: FAIL_TO_START - python http.server bind EPERM on 127.0.0.1:8064 in sandbox.
+npm run qa:mobile: FAIL_TO_START - node listen EPERM on 127.0.0.1 in sandbox.

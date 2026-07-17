@@ -1,0 +1,52 @@
+{
+  "method": "v5_pairwise_plus_recent_distance_meet_top3_restricted",
+  "selection_policy": "first_three_folds_max_min_net_then_mean_lift",
+  "minimum_absolute_top1_lift_pp": 5.0,
+  "selected": {
+    "context_weight": 0.6,
+    "rerank_weight": 1.0,
+    "fold_lifts_pp": [
+      0.8203445447087787,
+      0.3223207091055613,
+      0.4111842105263108,
+      2.500000000000002
+    ],
+    "fold_net_wins": [
+      10,
+      4,
+      5,
+      29
+    ]
+  },
+  "v5_reference": {
+    "context_weight": 0.0,
+    "rerank_weight": 0.5,
+    "fold_lifts_pp": [
+      0.3281378178835115,
+      0.725221595487513,
+      0.3289473684210509,
+      0.8064516129032306
+    ],
+    "fold_net_wins": [
+      4,
+      9,
+      4,
+      10
+    ]
+  },
+  "versus_v4_bootstrap": {
+    "mean_pp": 0.9764035801464606,
+    "ci95_low_pp": 0.26444263628966636,
+    "ci95_high_pp": 1.6883645240032545,
+    "probability_positive": 0.9959
+  },
+  "versus_v5_bootstrap": {
+    "mean_pp": 0.42717656631407647,
+    "ci95_low_pp": -0.26444263628966636,
+    "ci95_high_pp": 1.098454027664768,
+    "probability_positive": 0.8762
+  },
+  "top_three_membership": "unchanged_v4",
+  "probabilities": "unchanged_v4",
+  "promotion_pass": false
+}

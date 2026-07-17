@@ -1,0 +1,60 @@
+# KRA market corpus progress
+
+- 2026-07-12T12:52:00+09:00 probe: shell live API probe blocked by local DNS sandbox (`apis.data.go.kr` resolution failed); no key was printed.
+- 2026-07-12T12:52:00+09:00 probe: local official data.go.kr collector catalog contains `RaceDetailResult_1` (`B551015/API214_1`) for race result/card fields and `API160_1/integratedInfo_1` for confirmed dividends.
+- 2026-07-12T12:52:00+09:00 probe: `RaceDetailResult_1` local official DB fields include `meet`, `rcDate`, `rcNo`, `chulNo`, `ord`, `winOdds`, `plcOdds`, `wgHr`, `rating`; sufficient for win/place market rank and finish-order measurement.
+- 2026-07-12T12:52:00+09:00 probe: confirmed dividend endpoint fields from prior verified official collection are `meet`, `rcDate`, `rcNo`, `pool`, `chulNo`, `chulNo2`, `chulNo3`, `odds`; pools present locally are `단승식`, `연승식`, `복승식`, `복연승식`, `쌍승식`, `삼복승식`, `삼쌍승식`.
+- 2026-07-12T12:52:00+09:00 probe: source DB coverage `/Users/tttksj/kra/data/kra.db`: `race_result` 20240105..20260711, 65,762 rows / 6,278 races; `dividend` 20250103..20260621, 4,305,716 rows / 3,546 races.
+- 2026-07-12T03:41:52+00:00 collection start
+- 2026-07-12T03:42:00+00:00 corpus write checkpoint races=1000
+- 2026-07-12T03:42:03+00:00 corpus write checkpoint races=2000
+- 2026-07-12T03:42:04+00:00 corpus write checkpoint races=3000
+- 2026-07-12T03:42:07+00:00 corpus write checkpoint races=4000
+- 2026-07-12T03:42:09+00:00 corpus write checkpoint races=5000
+- 2026-07-12T03:42:11+00:00 corpus write checkpoint races=6000
+- 2026-07-12T03:42:12+00:00 corpus complete races=6249 entries=64548
+- 2026-07-12T03:42:27+00:00 collection start
+- 2026-07-12T03:42:32+00:00 corpus write checkpoint races=1000
+- 2026-07-12T03:42:35+00:00 corpus write checkpoint races=2000
+- 2026-07-12T03:42:36+00:00 corpus write checkpoint races=3000
+- 2026-07-12T03:42:39+00:00 corpus write checkpoint races=4000
+- 2026-07-12T03:42:40+00:00 corpus write checkpoint races=5000
+- 2026-07-12T03:42:43+00:00 corpus write checkpoint races=6000
+- 2026-07-12T03:42:44+00:00 corpus complete races=6249 entries=64548
+- 2026-07-12T03:43:50+00:00 model disagreement checkpoint races=1000
+- 2026-07-12T03:44:51+00:00 model disagreement checkpoint races=2000
+- 2026-07-12T03:44:53+00:00 collection start
+- 2026-07-12T03:45:01+00:00 corpus write checkpoint races=1000
+- 2026-07-12T03:45:06+00:00 corpus write checkpoint races=2000
+- 2026-07-12T03:45:08+00:00 corpus write checkpoint races=3000
+- 2026-07-12T03:45:13+00:00 corpus write checkpoint races=4000
+- 2026-07-12T03:45:16+00:00 corpus write checkpoint races=5000
+- 2026-07-12T03:45:20+00:00 corpus write checkpoint races=6000
+- 2026-07-12T03:45:21+00:00 corpus complete races=6249 entries=64548
+- 2026-07-12T03:45:21+00:00 model batch scoring start
+- 2026-07-12T03:45:29+00:00 model batch scoring complete scored=6249 errors=0
+- 2026-07-12T03:45:42+00:00 measurement complete
+- 2026-07-12T03:45:56+00:00 model disagreement checkpoint races=3000
+- 2026-07-12T03:46:56+00:00 model disagreement checkpoint races=4000
+- 2026-07-12T03:47:44+00:00 model disagreement checkpoint races=5000
+- 2026-07-12T03:48:12+00:00 model disagreement checkpoint races=6000
+- 2026-07-12T03:48:31+00:00 measurement complete
+- 2026-07-12T03:49:02+00:00 collection start
+- 2026-07-12T03:49:07+00:00 corpus write checkpoint races=1000
+- 2026-07-12T03:49:09+00:00 corpus write checkpoint races=2000
+- 2026-07-12T03:49:10+00:00 corpus write checkpoint races=3000
+- 2026-07-12T03:49:13+00:00 corpus write checkpoint races=4000
+- 2026-07-12T03:49:15+00:00 corpus write checkpoint races=5000
+- 2026-07-12T03:49:17+00:00 corpus write checkpoint races=6000
+- 2026-07-12T03:49:17+00:00 corpus complete races=6249 entries=64548
+- 2026-07-12T03:49:17+00:00 model batch scoring start
+- 2026-07-12T03:49:22+00:00 model batch scoring complete scored=6249 errors=0
+- 2026-07-12T03:49:29+00:00 measurement complete
+- 2026-07-12T04:09:25+00:00 round6 server tier artifact and engine wiring complete; tests/test_kra_confidence_tier.py passed 5/5
+- 2026-07-12T04:09:57+00:00 round6 full validation complete; python -m pytest tests -q passed 279 tests, 4 subtests
+- 2026-07-12T07:44:41+00:00 round7 policy simulation start
+- 2026-07-12T07:44:46+00:00 round7 policy simulation complete winner=market_if_odds fresh_lift_pp=6.72
+- 2026-07-12T07:47:15+00:00 round7 policy simulation start
+- 2026-07-12T07:47:20+00:00 round7 policy simulation complete winner=market_if_odds fresh_lift_pp=6.72
+- 2026-07-12T07:47:44+00:00 round7 history extension blocked probe=20190104 meet=1 reason=dns_resolution_failed rows=0
+- 2026-07-12T22:04:36.948665+09:00 round9b pace-form complete fresh_top1=0.3209 val_noninferior=False qualifies=False

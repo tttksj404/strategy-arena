@@ -1,0 +1,1 @@
+deploy/oracle/deploy.sh: line 62: SSH_OPTS[@]: unbound variable

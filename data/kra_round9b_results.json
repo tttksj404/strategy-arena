@@ -1,0 +1,134 @@
+{
+  "round": "KRA Round 9b",
+  "created_at": "2026-07-12T22:04:36.940287+09:00",
+  "enabled": false,
+  "production_replace": false,
+  "odds_columns_excluded": true,
+  "baseline_config": "hgb_d3",
+  "windows": {
+    "train": [
+      "20190101",
+      "20250531"
+    ],
+    "val": [
+      "20250601",
+      "20260531"
+    ],
+    "fresh": [
+      "20260622",
+      "20260711"
+    ]
+  },
+  "rows": {
+    "train": 154453,
+    "val": 25515,
+    "fresh": 1343
+  },
+  "races": {
+    "train": 14464,
+    "val": 2465,
+    "fresh": 134
+  },
+  "pace_raw_columns": [
+    "bu_1fGTime",
+    "bu_2fGTime",
+    "bu_3fGTime",
+    "je_1cTime",
+    "seS1fAccTime",
+    "buS1fTime",
+    "jeS1fTime"
+  ],
+  "pace_feature_columns": [
+    "pace_recent3_fast_z_mean",
+    "pace_recent5_fast_z_mean",
+    "pace_recent3_best_final_time",
+    "pace_recent5_best_final_time",
+    "pace_recent3_fast_z_trend",
+    "pace_recent5_fast_z_trend",
+    "pace_recent3_avg_ord",
+    "pace_recent3_top3_rate",
+    "pace_days_since_last",
+    "pace_wg_budam_delta",
+    "pace_rating_delta",
+    "pace_distance_band_top3_rate",
+    "pace_prior_start_count",
+    "pace_is_first_start",
+    "pace_recent3_fast_z_mean_rel",
+    "pace_recent5_fast_z_mean_rel",
+    "pace_recent3_best_final_time_rel",
+    "pace_recent5_best_final_time_rel",
+    "pace_recent3_fast_z_trend_rel",
+    "pace_recent5_fast_z_trend_rel",
+    "pace_recent3_avg_ord_rel",
+    "pace_recent3_top3_rate_rel",
+    "pace_days_since_last_rel",
+    "pace_wg_budam_delta_rel",
+    "pace_rating_delta_rel",
+    "pace_distance_band_top3_rate_rel",
+    "pace_prior_start_count_rel"
+  ],
+  "leakage_gate": {
+    "status": "pass",
+    "rule": "each pace feature uses only same-horse rows with rcDate strictly less than the target rcDate",
+    "future_deletion_assertions": [
+      {
+        "hrNo": "0051024",
+        "rcDate": "20250601",
+        "rk": "서울|20250601|1",
+        "status": "pass"
+      },
+      {
+        "hrNo": "0051486",
+        "rcDate": "20250601",
+        "rk": "서울|20250601|1",
+        "status": "pass"
+      },
+      {
+        "hrNo": "1412351",
+        "rcDate": "20250601",
+        "rk": "서울|20250601|1",
+        "status": "pass"
+      }
+    ]
+  },
+  "metrics": {
+    "baseline_v4_pre_odds": {
+      "val": {
+        "races": 2465,
+        "top1": 0.3050709939148073,
+        "top3": 0.6141987829614605,
+        "race_logloss": 1.9632210598505653
+      },
+      "fresh": {
+        "races": 134,
+        "top1": 0.3283582089552239,
+        "top3": 0.6343283582089553,
+        "race_logloss": 1.8879469879930328
+      }
+    },
+    "pace_form_candidate": {
+      "val": {
+        "races": 2465,
+        "top1": 0.30425963488843816,
+        "top3": 0.6393509127789047,
+        "race_logloss": 1.9406482914981074
+      },
+      "fresh": {
+        "races": 134,
+        "top1": 0.3208955223880597,
+        "top3": 0.6194029850746269,
+        "race_logloss": 1.8693734981446357
+      }
+    },
+    "r9_reference": {
+      "expanded_2019_202505_fresh_top1": 0.31343283582089554
+    }
+  },
+  "promotion": {
+    "fresh_threshold": 0.33,
+    "fresh_top1_gate_33pct": false,
+    "val_noninferior": false,
+    "qualifies_candidate": false,
+    "conclusion": "missed_gate; KRA fundamental pace-form lever exhausted under this protocol"
+  }
+}

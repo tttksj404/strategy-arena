@@ -1,0 +1,122 @@
+- 2026-07-12T02:12:28+00:00 Phase 0: rank-average best top_k=20 val_lift=+0.436pp test_lift=+1.012pp
+- 2026-07-12T02:14:00+00:00 Phase 1: entry coverage=0.9060, public_probe_success=false, written=12593
+- 2026-07-12T02:19:19+00:00 Phase 2: joined top_k=10 beta=0.95 val_lift=-0.198pp test_lift=-0.334pp
+- 2026-07-12T02:26:20+00:00 Phase 2: joined top_k=10 beta=0.95 val_lift=-0.198pp test_lift=-0.334pp
+- 2026-07-12T02:37:18+00:00 Round2: round2 blend_test_purchase_lift=+0.000pp line_vs_market_only_test_purchase_lift=-0.650pp cond_logit_test_purchase_lift=-4.263pp out=/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_round2_results.json
+- 2026-07-12T02:39:14+00:00 Round2: round2 blend_test_purchase_lift=-0.217pp line_vs_market_only_test_purchase_lift=-0.650pp cond_logit_test_purchase_lift=-4.263pp out=/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_round2_results.json
+- 2026-07-12T02:41:12+00:00 Round2: round2 blend_test_purchase_lift=-0.217pp line_vs_market_only_test_purchase_lift=-0.650pp cond_logit_test_purchase_lift=-4.263pp out=/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_round2_results.json
+- 2026-07-12T02:49:16+00:00 Round3: runner_test_purchase_lift=-4.191pp trio_test_purchase_lift=-0.145pp bonus_test_delta=-0.072pp out=/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_round3_results.json
+- 2026-07-12T02:51:05+00:00 Round3: runner_test_purchase_lift=-4.191pp trio_test_purchase_lift=-0.145pp bonus_test_delta=-0.072pp out=/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_round3_results.json
+- 2026-07-12T02:59:28+00:00 Round4: ensemble_v1 artifact + server additive trifecta_ensemble wired; new pytest 5 passed
+- 2026-07-12T03:41:06+00:00 Round5A expansion: target_gap=6136 local_archive_added=0 remaining_http=6136
+- 2026-07-12T03:45:25+00:00 Round5A eval: done records=13900 exp=0 best_top_k=40 model_written=True
+- 2026-07-12T03:48:00+00:00 Round5A expansion: target_gap=6136 local_archive_added=0 remaining_http=6136
+- 2026-07-12T03:49:23+00:00 Round5A expansion: http_progress=100/6136 fetched=0 invalid=100 failed=0
+- 2026-07-12T03:50:47+00:00 Round5A expansion: http_progress=200/6136 fetched=0 invalid=200 failed=0
+- 2026-07-12T03:52:11+00:00 Round5A expansion: http_progress=300/6136 fetched=0 invalid=300 failed=0
+- 2026-07-12T03:53:35+00:00 Round5A expansion: http_progress=400/6136 fetched=0 invalid=400 failed=0
+- 2026-07-12T03:54:59+00:00 Round5A expansion: target_gap=6136 local_archive_added=0 remaining_http=6136
+- 2026-07-12T03:56:23+00:00 Round5A expansion: http_progress=100/6136 fetched=0 invalid=100 failed=0
+- 2026-07-12T03:57:48+00:00 Round5A expansion: http_progress=200/6136 fetched=2 invalid=198 failed=0
+- 2026-07-12T03:59:13+00:00 Round5A expansion: http_progress=300/6136 fetched=2 invalid=298 failed=0
+- 2026-07-12T04:00:38+00:00 Round5A expansion: http_progress=400/6136 fetched=5 invalid=395 failed=0
+- 2026-07-12T04:01:57+00:00 Round5A expansion: target_gap=6136 local_archive_added=0 remaining_http=6136
+- 2026-07-12T04:03:22+00:00 Round5A expansion: http_progress=100/6136 fetched=0 invalid=100 failed=0
+- 2026-07-12T04:04:47+00:00 Round5A expansion: http_progress=200/6136 fetched=0 invalid=200 failed=0
+- 2026-07-12T04:06:12+00:00 Round5A expansion: http_progress=300/6136 fetched=0 invalid=300 failed=0
+- 2026-07-12T04:07:37+00:00 Round5A expansion: http_progress=400/6136 fetched=2 invalid=398 failed=0
+- 2026-07-12T04:09:02+00:00 Round5A expansion: http_progress=500/6136 fetched=2 invalid=498 failed=0
+- 2026-07-12T04:10:27+00:00 Round5A expansion: http_progress=600/6136 fetched=2 invalid=598 failed=0
+- 2026-07-12T04:11:52+00:00 Round5A expansion: http_progress=700/6136 fetched=3 invalid=697 failed=0
+- 2026-07-12T04:13:18+00:00 Round5A expansion: http_progress=800/6136 fetched=3 invalid=797 failed=0
+- 2026-07-12T04:14:44+00:00 Round5A expansion: http_progress=900/6136 fetched=3 invalid=897 failed=0
+- 2026-07-12T04:16:09+00:00 Round5A expansion: http_progress=1000/6136 fetched=3 invalid=997 failed=0
+- 2026-07-12T04:17:35+00:00 Round5A expansion: http_progress=1100/6136 fetched=3 invalid=1097 failed=0
+- 2026-07-12T04:19:02+00:00 Round5A expansion: http_progress=1200/6136 fetched=3 invalid=1197 failed=0
+- 2026-07-12T04:20:27+00:00 Round5A expansion: http_progress=1300/6136 fetched=4 invalid=1296 failed=0
+- 2026-07-12T04:21:52+00:00 Round5A expansion: http_progress=1400/6136 fetched=6 invalid=1394 failed=0
+- 2026-07-12T04:23:17+00:00 Round5A expansion: http_progress=1500/6136 fetched=6 invalid=1494 failed=0
+- 2026-07-12T04:24:43+00:00 Round5A expansion: http_progress=1600/6136 fetched=6 invalid=1594 failed=0
+- 2026-07-12T04:26:09+00:00 Round5A expansion: http_progress=1700/6136 fetched=6 invalid=1694 failed=0
+- 2026-07-12T04:27:33+00:00 Round5A expansion: http_progress=1800/6136 fetched=7 invalid=1793 failed=0
+- 2026-07-12T04:28:58+00:00 Round5A expansion: http_progress=1900/6136 fetched=8 invalid=1892 failed=0
+- 2026-07-12T04:30:24+00:00 Round5A expansion: http_progress=2000/6136 fetched=8 invalid=1992 failed=0
+- 2026-07-12T04:31:49+00:00 Round5A expansion: http_progress=2100/6136 fetched=8 invalid=2092 failed=0
+- 2026-07-12T04:33:14+00:00 Round5A expansion: http_progress=2200/6136 fetched=8 invalid=2192 failed=0
+- 2026-07-12T04:34:45+00:00 Round5A expansion: http_progress=2300/6136 fetched=89 invalid=2211 failed=0
+- 2026-07-12T04:36:12+00:00 Round5A expansion: http_progress=2400/6136 fetched=117 invalid=2283 failed=0
+- 2026-07-12T04:37:44+00:00 Round5A expansion: http_progress=2500/6136 fetched=217 invalid=2283 failed=0
+- 2026-07-12T04:39:17+00:00 Round5A expansion: http_progress=2600/6136 fetched=317 invalid=2283 failed=0
+- 2026-07-12T04:40:48+00:00 Round5A expansion: http_progress=2700/6136 fetched=397 invalid=2303 failed=0
+- 2026-07-12T04:42:16+00:00 Round5A expansion: http_progress=2800/6136 fetched=477 invalid=2323 failed=0
+- 2026-07-12T04:43:47+00:00 Round5A expansion: http_progress=2900/6136 fetched=557 invalid=2343 failed=0
+- 2026-07-12T04:45:18+00:00 Round5A expansion: http_progress=3000/6136 fetched=637 invalid=2363 failed=0
+- 2026-07-12T04:46:49+00:00 Round5A expansion: http_progress=3100/6136 fetched=721 invalid=2379 failed=0
+- 2026-07-12T04:48:22+00:00 Round5A expansion: http_progress=3200/6136 fetched=820 invalid=2380 failed=0
+- 2026-07-12T04:49:54+00:00 Round5A expansion: http_progress=3300/6136 fetched=920 invalid=2380 failed=0
+- 2026-07-12T04:51:27+00:00 Round5A expansion: http_progress=3400/6136 fetched=1020 invalid=2380 failed=0
+- 2026-07-12T04:52:59+00:00 Round5A expansion: http_progress=3500/6136 fetched=1120 invalid=2380 failed=0
+- 2026-07-12T04:54:30+00:00 Round5A expansion: http_progress=3600/6136 fetched=1200 invalid=2400 failed=0
+- 2026-07-12T04:56:00+00:00 Round5A expansion: http_progress=3700/6136 fetched=1280 invalid=2420 failed=0
+- 2026-07-12T04:57:31+00:00 Round5A expansion: http_progress=3800/6136 fetched=1360 invalid=2440 failed=0
+- 2026-07-12T04:59:06+00:00 Round5A expansion: http_progress=3900/6136 fetched=1440 invalid=2460 failed=0
+- 2026-07-12T05:00:37+00:00 Round5A expansion: http_progress=4000/6136 fetched=1519 invalid=2481 failed=0
+- 2026-07-12T05:02:08+00:00 Round5A expansion: http_progress=4100/6136 fetched=1599 invalid=2501 failed=0
+- 2026-07-12T05:03:40+00:00 Round5A expansion: http_progress=4200/6136 fetched=1695 invalid=2505 failed=0
+- 2026-07-12T05:05:12+00:00 Round5A expansion: http_progress=4300/6136 fetched=1795 invalid=2505 failed=0
+- 2026-07-12T05:06:43+00:00 Round5A expansion: http_progress=4400/6136 fetched=1875 invalid=2525 failed=0
+- 2026-07-12T05:08:15+00:00 Round5A expansion: http_progress=4500/6136 fetched=1971 invalid=2529 failed=0
+- 2026-07-12T05:09:48+00:00 Round5A expansion: http_progress=4600/6136 fetched=2071 invalid=2529 failed=0
+- 2026-07-12T05:11:16+00:00 Round5A expansion: http_progress=4700/6136 fetched=2111 invalid=2589 failed=0
+- 2026-07-12T05:12:46+00:00 Round5A expansion: http_progress=4800/6136 fetched=2182 invalid=2618 failed=0
+- 2026-07-12T05:14:18+00:00 Round5A expansion: http_progress=4900/6136 fetched=2263 invalid=2637 failed=0
+- 2026-07-12T05:15:45+00:00 Round5A expansion: http_progress=5000/6136 fetched=2294 invalid=2706 failed=0
+- 2026-07-12T05:17:14+00:00 Round5A expansion: http_progress=5100/6136 fetched=2343 invalid=2757 failed=0
+- 2026-07-12T05:18:45+00:00 Round5A expansion: http_progress=5200/6136 fetched=2426 invalid=2774 failed=0
+- 2026-07-12T05:20:15+00:00 Round5A expansion: http_progress=5300/6136 fetched=2503 invalid=2797 failed=0
+- 2026-07-12T05:21:46+00:00 Round5A expansion: http_progress=5400/6136 fetched=2583 invalid=2817 failed=0
+- 2026-07-12T05:23:17+00:00 Round5A expansion: http_progress=5500/6136 fetched=2663 invalid=2837 failed=0
+- 2026-07-12T05:24:48+00:00 Round5A expansion: http_progress=5600/6136 fetched=2743 invalid=2857 failed=0
+- 2026-07-12T05:26:19+00:00 Round5A expansion: http_progress=5700/6136 fetched=2835 invalid=2865 failed=0
+- 2026-07-12T05:27:51+00:00 Round5A expansion: http_progress=5800/6136 fetched=2935 invalid=2865 failed=0
+- 2026-07-12T05:29:23+00:00 Round5A expansion: http_progress=5900/6136 fetched=3035 invalid=2865 failed=0
+- 2026-07-12T05:30:50+00:00 Round5A expansion: http_progress=6000/6136 fetched=3067 invalid=2933 failed=0
+- 2026-07-12T05:32:15+00:00 Round5A expansion: http_progress=6100/6136 fetched=3067 invalid=3033 failed=0
+- 2026-07-12T05:34:26+00:00 Round5A eval: done records=16934 exp=3034 best_top_k=20 model_written=True
+- 2026-07-12T05:35:46+00:00 Round5A expansion: target_gap=3069 local_archive_added=0 remaining_http=3069
+- 2026-07-12T05:42:34+00:00 Round5A expansion: http_progress=100/3069 fetched=3 invalid=97 failed=0
+- 2026-07-12T05:49:41+00:00 Round5A expansion: http_progress=200/3069 fetched=3 invalid=197 failed=0
+- 2026-07-12T05:56:44+00:00 Round5A expansion: http_progress=300/3069 fetched=5 invalid=295 failed=0
+- 2026-07-12T06:02:51+00:00 Round5A expansion: http_progress=400/3069 fetched=28 invalid=372 failed=0
+- 2026-07-12T06:09:56+00:00 Round5A expansion: http_progress=500/3069 fetched=28 invalid=472 failed=0
+- 2026-07-12T06:17:01+00:00 Round5A expansion: http_progress=600/3069 fetched=28 invalid=572 failed=0
+- 2026-07-12T06:23:28+00:00 Round5A expansion: http_progress=700/3069 fetched=57 invalid=643 failed=0
+- 2026-07-12T06:30:37+00:00 Round5A expansion: http_progress=800/3069 fetched=57 invalid=743 failed=0
+- 2026-07-12T06:37:46+00:00 Round5A expansion: http_progress=900/3069 fetched=57 invalid=843 failed=0
+- 2026-07-12T06:44:54+00:00 Round5A expansion: http_progress=1000/3069 fetched=57 invalid=943 failed=0
+- 2026-07-12T06:52:06+00:00 Round5A expansion: http_progress=1100/3069 fetched=57 invalid=1043 failed=0
+- 2026-07-12T06:58:59+00:00 Round5A expansion: http_progress=1200/3069 fetched=75 invalid=1125 failed=0
+- 2026-07-12T07:05:22+00:00 Round5A expansion: http_progress=1300/3069 fetched=83 invalid=1217 failed=0
+- 2026-07-12T07:11:23+00:00 Round5A expansion: http_progress=1400/3069 fetched=110 invalid=1290 failed=0
+- 2026-07-12T07:16:40+00:00 Round5A expansion: http_progress=1500/3069 fetched=155 invalid=1345 failed=0
+- 2026-07-12T07:21:49+00:00 Round5A expansion: http_progress=1600/3069 fetched=203 invalid=1397 failed=0
+- 2026-07-12T07:27:18+00:00 Round5A expansion: http_progress=1700/3069 fetched=243 invalid=1457 failed=0
+- 2026-07-12T07:32:24+00:00 Round5A expansion: http_progress=1800/3069 fetched=292 invalid=1508 failed=0
+- 2026-07-12T07:38:14+00:00 Round5A expansion: http_progress=1900/3069 fetched=324 invalid=1576 failed=0
+- 2026-07-12T07:45:22+00:00 Round5A expansion: http_progress=2000/3069 fetched=324 invalid=1676 failed=0
+- 2026-07-12T07:52:26+00:00 Round5A expansion: http_progress=2100/3069 fetched=324 invalid=1776 failed=0
+- 2026-07-12T07:58:47+00:00 Round5A expansion: http_progress=2200/3069 fetched=341 invalid=1859 failed=0
+- 2026-07-12T08:00:35.329649+00:00 Round8 pick-policy: scored=12593 2026_n=1198 P0=0.5902 P1=0.6377 P2=0.6336 verdict=candidate
+- 2026-07-12T08:05:53+00:00 Round5A expansion: http_progress=2300/3069 fetched=341 invalid=1959 failed=0
+- 2026-07-12T08:09:27+00:00 Round8b keirin pick-policy: KEIRIN_PICK_POLICY implemented; targeted tests green; full tests running
+- 2026-07-12T08:09:57+00:00 Round8b keirin pick-policy: full pytest green 289 passed; no expansion snapshot writes
+- 2026-07-12T08:12:59+00:00 Round5A expansion: http_progress=2400/3069 fetched=342 invalid=2058 failed=0
+- 2026-07-12T08:19:55+00:00 Round5A expansion: http_progress=2500/3069 fetched=350 invalid=2150 failed=0
+- 2026-07-12T08:25:47+00:00 Round5A expansion: http_progress=2600/3069 fetched=371 invalid=2229 failed=0
+- 2026-07-12T08:32:58+00:00 Round5A expansion: http_progress=2700/3069 fetched=371 invalid=2329 failed=0
+- 2026-07-12T08:39:48+00:00 Round5A expansion: http_progress=2800/3069 fetched=383 invalid=2417 failed=0
+- 2026-07-12T08:46:57+00:00 Round5A expansion: http_progress=2900/3069 fetched=383 invalid=2517 failed=0
+- 2026-07-12T08:54:03+00:00 Round5A expansion: http_progress=3000/3069 fetched=383 invalid=2617 failed=0
+- 2026-07-12T09:00:10+00:00 Round5A eval: done records=17312 exp=3412 best_top_k=20 model_written=True
+- 2026-07-12T13:17:45+00:00 Round10 pick-extension measurement complete quinella:candidate exacta:candidate trio:candidate quinella_place:candidate
+- 2026-07-12T13:26:40+00:00 Round10b pick-policy extension implemented keirin=all_ticket_market_marginals kra=place_plcOdds tests=305_passed

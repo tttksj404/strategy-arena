@@ -1,10 +1,14 @@
 services:
   - type: web
-    name: strategy-arena
+    name: racelens-api
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 1 --timeout 120
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11.0"
+        value: "3.13.4"
+      # Render 공개 웹 배포는 결제 전 Pro 기능을 전체 사용자에게 제공한다.
+      # 앱은 production에서 이 명시적 opt-in 없이는 Free로 fail-closed 한다.
+      - key: RACELENS_PUBLIC_PRO
+        value: "1"

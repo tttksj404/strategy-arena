@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "RaceLens",
+    "slug": "racelens",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "racelens",
+    "userInterfaceStyle": "automatic",
+    "description": "경륜·경마 경주 데이터를 분석하고 모델 신호와 검증 리스크를 투명하게 보여주는 정보 앱입니다.",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tttksj.racelens",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.tttksj.racelens",
+      "versionCode": 9,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B0D0C"
+      },
+      "permissions": []
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiBaseUrl": "",
+      "analyticsUrl": "",
+      "accountDeletionUrl": "",
+      "billingMode": "",
+      "firebaseAuthEnabled": "",
+      "firebaseEnabled": "",
+      "offlineExampleEnabled": "",
+      "privacyPolicyUrl": "",
+      "rewardedAds": "",
+      "supportEmail": "",
+      "supportUrl": "",
+      "termsUrl": "",
+      "eas": {
+        "projectId": "a0d2f189-44a3-4765-ac5b-f5dc367811ea"
+      }
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#0B0D0C"
+        }
+      ],
+      "expo-status-bar"
+    ],
+    "owner": "tttksj"
+  }
+}
