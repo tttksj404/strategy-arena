@@ -665,7 +665,6 @@ _NEGATIVE_BASE_PREDICTION_TTL = 600
 _LIVE_DECISION_PROVIDER_TIMEOUT = 1.5
 _LIVE_DECISION_PROVIDER_MAX_PAGES = 1
 _LIVE_DECISION_RESULT_TTL = 15
-_PREWARM_STARTED = False
 
 _PREDICT_LOCK = threading.Lock()
 _LIVE_DECISION_WORK_LOCK = threading.RLock()
@@ -936,24 +935,6 @@ def _live_decision_pending_response(session, data_layer, ymd, pending_reason):
         "data_layer": data_layer,
         "race_date": ymd,
     }
-
-
-def _bg_prewarm_keirin_pages():
-    key = _get_key()
-    if not key:
-        return
-    try:
-        engine.prewarm_keirin_card_pages(dt.date.today().year, key)
-    except Exception:  # noqa: BLE001
-        return
-
-
-def _start_keirin_card_prewarm():
-    global _PREWARM_STARTED
-    if _PREWARM_STARTED or os.environ.get("KEIRIN_PREWARM_ENABLED", "1") != "1":
-        return
-    _PREWARM_STARTED = True
-    threading.Thread(target=_bg_prewarm_keirin_pages, daemon=True).start()
 
 
 @app.route("/predict", methods=["GET", "POST"])
@@ -1706,9 +1687,6 @@ def _base_predict_horse(ymd, meet, race_no, base, live_decision=False):
         out["_kra_result"] = settled
     out["is_future"] = (src == "live" and _is_future_day(info.get("ymd") or ymd))
     return out
-
-
-_start_keirin_card_prewarm()
 
 
 if __name__ == "__main__":

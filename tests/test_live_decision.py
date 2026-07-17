@@ -115,10 +115,6 @@ def make_trifecta_global_rerank_board():
 class LiveDecisionTestCase(unittest.TestCase):
     def setUp(self):
         app_module.app.config["TESTING"] = True
-        self._prewarm_started = app_module._PREWARM_STARTED
-        app_module._PREWARM_STARTED = True
-        self._prewarm_patch = patch.object(app_module.engine, "prewarm_keirin_card_pages", return_value=None)
-        self._prewarm_patch.start()
         self._db_tmp = tempfile.TemporaryDirectory()
         db_path = os.path.join(self._db_tmp.name, "strategy.sqlite")
         self._env_patch = patch.dict(os.environ, {
@@ -135,8 +131,6 @@ class LiveDecisionTestCase(unittest.TestCase):
         app_module._LIVE_DECISION_PREWARM_STATUS.clear()
 
     def tearDown(self):
-        self._prewarm_patch.stop()
-        app_module._PREWARM_STARTED = self._prewarm_started
         self._result_patch.stop()
         self._env_patch.stop()
         self._db_tmp.cleanup()
