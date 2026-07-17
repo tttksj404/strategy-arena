@@ -911,8 +911,20 @@ def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
     return {"state": "warming"}
 
 
-def _live_decision_pending_response(session, data_layer, ymd, pending_reason):
-    message = "공식 출전표를 확인하고 있습니다. 잠시 후 자동으로 갱신됩니다."
+def _official_card_prewarm_is_ready(sport, ymd, meet):
+    with _LIVE_DECISION_WORK_LOCK:
+        status = _LIVE_DECISION_PREWARM_STATUS.get((sport, ymd, meet), {})
+        return status.get("state") == "ready"
+
+
+def _live_decision_pending_response(session, data_layer, ymd, pending_reason, entry_cards_ready=False):
+    message = (
+        "공식 출전표는 준비됐습니다. 분석 결과를 계산하고 있습니다."
+        if entry_cards_ready
+        else "공식 출전표를 확인하고 있습니다. 잠시 후 자동으로 갱신됩니다."
+    )
+    title = "분석 결과 계산 중" if entry_cards_ready else "공식 출전표 확인 중"
+    level = "analysis_in_progress" if entry_cards_ready else "official_data_pending"
     return {
         "ok": True,
         "status": "hold",
@@ -927,8 +939,8 @@ def _live_decision_pending_response(session, data_layer, ymd, pending_reason):
         "snapshot_phase": pending_reason,
         "poll_delay_ms": 3000,
         "market_risk": {
-            "level": "official_data_pending",
-            "title": "공식 출전표 확인 중",
+            "level": level,
+            "title": title,
             "message": message,
         },
         "app_session": session,
@@ -1517,7 +1529,13 @@ def api_live_decision():
 
     if pending_reason:
         session, release_data_layer = datastore.release_live_decision_session_safely(device_id, platform, session)
-        return jsonify(_live_decision_pending_response(session, release_data_layer, ymd, pending_reason))
+        return jsonify(_live_decision_pending_response(
+            session,
+            release_data_layer,
+            ymd,
+            pending_reason,
+            entry_cards_ready=_official_card_prewarm_is_ready(sport, ymd, meet),
+        ))
 
     result["race_date"] = ymd
     if _should_release_live_decision_quota(result):

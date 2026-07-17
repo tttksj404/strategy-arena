@@ -166,6 +166,15 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(payload["prewarm"]["state"], "idle")
         self.assertIn("pages", payload["prewarm"]["cache"])
 
+    def test_pending_copy_distinguishes_card_fetch_from_analysis(self):
+        result = app_module._live_decision_pending_response(
+            {}, {}, "2026-07-17", "pending", entry_cards_ready=True,
+        )
+
+        self.assertEqual(result["market_risk"]["title"], "분석 결과 계산 중")
+        self.assertEqual(result["market_risk"]["level"], "analysis_in_progress")
+        self.assertIn("출전표는 준비", result["message"])
+
     def test_keirin_prewarm_only_fetches_the_shared_official_card_page(self):
         with patch.object(app_module.engine, "prewarm_keirin_card_pages") as prewarm, \
              patch.object(app_module, "_run_live_decision_with_budget") as decision:
