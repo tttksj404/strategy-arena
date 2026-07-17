@@ -27,18 +27,20 @@ module.exports = ({ config }) => {
     ? [
         '@react-native-firebase/app',
         '@react-native-firebase/analytics',
-        '@react-native-firebase/crashlytics',
-        [
-          'expo-build-properties',
-          {
-            ios: {
-              forceStaticLinking: ['RNFBAnalytics', 'RNFBApp', 'RNFBCrashlytics'],
-              useFrameworks: 'static'
-            }
-          }
-        ]
+        '@react-native-firebase/crashlytics'
       ]
       : [];
+  const buildPropertiesPlugin = firebaseEnabled
+    ? [
+        'expo-build-properties',
+        {
+          ios: {
+            forceStaticLinking: ['RNFBAnalytics', 'RNFBApp', 'RNFBCrashlytics'],
+            useFrameworks: 'static'
+          }
+        }
+      ]
+    : 'expo-build-properties';
   const rewardedAdsEnabled = enabled(process.env.EXPO_PUBLIC_RACELENS_REWARDED_ADS);
   const rewardedAdTestMode = enabled(process.env.EXPO_PUBLIC_RACELENS_ADMOB_TEST_MODE);
   const rewardedAndroidAppId = (
@@ -89,6 +91,7 @@ module.exports = ({ config }) => {
     plugins: [
       ...(config.plugins || []),
       'expo-secure-store',
+      buildPropertiesPlugin,
       ...rewardedAdPlugins,
       ...firebasePlugins
     ]

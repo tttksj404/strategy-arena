@@ -21,6 +21,18 @@
     "production": {
       "environment": "production",
       "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_RACELENS_API_BASE_URL": "https://strategy-arena.onrender.com",
+        "EXPO_PUBLIC_RACELENS_ANALYTICS_URL": "https://strategy-arena.onrender.com/api/ux-events",
+        "RACELENS_PRIVACY_URL": "https://strategy-arena.onrender.com/legal/privacy",
+        "RACELENS_TERMS_URL": "https://strategy-arena.onrender.com/legal/terms",
+        "RACELENS_ACCOUNT_DELETION_URL": "https://strategy-arena.onrender.com/legal/account-deletion",
+        "RACELENS_SUPPORT_URL": "https://strategy-arena.onrender.com/legal/support",
+        "RACELENS_SUPPORT_EMAIL": "tttksj@gmail.com",
+        "RACELENS_BILLING_MODE": "disabled",
+        "EXPO_PUBLIC_RACELENS_FIREBASE_AUTH_ENABLED": "0",
+        "EXPO_PUBLIC_RACELENS_OFFLINE_EXAMPLE": "0"
+      },
       "android": {
         "buildType": "app-bundle"
       },

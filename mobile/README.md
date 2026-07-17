@@ -49,7 +49,9 @@ npx eas build --platform android --profile production
 npx eas build --platform ios --profile production
 ```
 
-For store submission, copy `release.env.example` into your secret manager or local release shell and replace every `.invalid` placeholder with the final Oracle HTTPS domain and a real support email. The readiness gate rejects placeholder domains, HTTP URLs, localhost URLs, unreachable policy pages, unreachable `/health`, and broken Korean text.
+The production profile already fixes the public app contract to `https://strategy-arena.onrender.com`: API, anonymous analytics, legal pages, support page, support email, disabled billing, disabled Firebase Auth, and disabled offline examples. `qa:store-readiness` reads those profile defaults, so local release shells only need the non-public submission credentials. It rejects placeholder domains, HTTP URLs, localhost URLs, unreachable policy pages, unreachable `/health`, and broken Korean text.
+
+Keep Firebase service files and real AdMob/SSV IDs in EAS production secrets or a local ignored `release.env`; never commit them. Production builds stay blocked until Firebase Analytics/Crashlytics and real rewarded-ad IDs are present.
 
 Run `node scripts/finalize-release.mjs --domain <domain> --support-email <email>` to write `release.env` and smoke-test production.
 Review `runs/release_finalize_report.md` for the PASS/WARN/FAIL table before EAS submission.
