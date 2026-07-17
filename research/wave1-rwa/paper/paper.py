@@ -28,7 +28,9 @@ SLOTS = [
     {"name": "xau_dch_L5", "symbol": "XAUUSDT", "kind": "donchian", "L": 5, "capital": 100.0, "spread": 0.0001},
     {"name": "tqqq_dch_L2", "symbol": "TQQQUSDT", "kind": "donchian", "L": 2, "capital": 50.0, "spread": 0.0004},
     {"name": "eth_wed_L10", "symbol": "ETHUSDT", "kind": "wed_short", "L": 10, "capital": 50.0, "spread": 0.0001},
+    {"name": "listing_fade_L2", "symbol": "", "kind": "listing_fade", "L": 2, "capital": 50.0, "spread": 0.0010},
 ]
+FADE_HOLD_MS = 96 * 3600 * 1000
 
 
 def api(path: str, params: dict) -> list | dict:
@@ -84,11 +86,63 @@ def log(line: str) -> None:
         handle.write(f"{stamp} {line}\n")
 
 
+def handle_listing_fade(slot: dict, entry: dict) -> None:
+    lev = slot["L"]
+    if entry.get("pos"):
+        symbol = entry["symbol"]
+        bars = closed_candles(symbol, 110)
+        price = mid_price(symbol)
+        liq = entry["entry_px"] * (1 + 1 / lev - MM)
+        if any(bar["high"] >= liq for bar in bars if bar["ts"] > entry["entry_ts"]):
+            entry.update(equity=0.0, pos=0, liquidated=True)
+            log(f"{slot['name']} {symbol} LIQUIDATED")
+            return
+        if time.time() * 1000 - entry["entry_ts"] >= FADE_HOLD_MS:
+            gross = -lev * (price / entry["entry_px"] - 1)
+            entry["equity"] = max(0.0, entry["equity"] * (1 + gross) - entry["equity"] * lev * side_cost(slot))
+            TRADES.open("a").write(json.dumps({"slot": slot["name"], "event": "close", "symbol": symbol, "entry": entry["entry_px"], "exit": price, "equity": round(entry["equity"], 2), "ts": datetime.now(UTC).isoformat()}) + "\n")
+            entry.update(pos=0, symbol="", entry_px=0.0, entry_ts=0)
+        else:
+            entry["mark"] = round(entry["equity"] * (1 - lev * (price / entry["entry_px"] - 1)), 2)
+            log(f"{slot['name']} holding {symbol} mark={entry['mark']}")
+        return
+    now_ms = int(time.time() * 1000)
+    traded = set(entry.setdefault("traded", []))
+    contracts = api("/api/v2/mix/market/contracts", {"productType": "usdt-futures"})
+    fresh = [row["symbol"] for row in contracts if row.get("openTime") and now_ms - 72 * 3600 * 1000 <= int(row["openTime"]) <= now_ms - 26 * 3600 * 1000 and row["symbol"] not in traded]
+    for symbol in fresh[:5]:
+        try:
+            bars = closed_candles(symbol, 100)
+        except Exception:  # noqa: BLE001
+            continue
+        if len(bars) < 26:
+            continue
+        day1 = bars[:24]
+        day1_ret = day1[-1]["close"] / day1[0]["open"] - 1
+        if day1_ret <= 0.30:
+            traded.add(symbol)
+            continue
+        price = mid_price(symbol)
+        entry["equity"] = max(0.0, entry["equity"] * (1 - lev * side_cost(slot)))
+        entry.update(pos=-1, symbol=symbol, entry_px=price, entry_ts=now_ms)
+        traded.add(symbol)
+        TRADES.open("a").write(json.dumps({"slot": slot["name"], "event": "open", "symbol": symbol, "day1_ret": round(day1_ret, 3), "price": price, "ts": datetime.now(UTC).isoformat()}) + "\n")
+        log(f"{slot['name']} SHORT {symbol} day1={day1_ret:+.0%} px={price:.4g}")
+        break
+    entry["traded"] = sorted(traded)
+
+
 def tick() -> None:
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {"slots": {}, "started": datetime.now(UTC).isoformat()}
     for slot in SLOTS:
         entry = state["slots"].setdefault(slot["name"], {"equity": slot["capital"], "pos": 0, "entry_px": 0.0, "entry_ts": 0, "peak": slot["capital"], "liquidated": False})
         if entry["liquidated"] or entry["equity"] <= 1:
+            continue
+        if slot["kind"] == "listing_fade":
+            try:
+                handle_listing_fade(slot, entry)
+            except Exception as error:  # noqa: BLE001
+                log(f"{slot['name']} API_ERROR {error}")
             continue
         try:
             bars = closed_candles(slot["symbol"])
