@@ -3,6 +3,7 @@ import json
 import math
 import os
 import sys
+import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -58,6 +59,24 @@ def test_kcycle_ensemble_artifact_integrity():
     for formula in payload["formulas"]:
         assert set(payload["feature_names"]) == set(formula["weights"])
         assert all(math.isfinite(float(value)) for value in formula["weights"].values())
+
+
+def test_kcycle_ensemble_rejects_test_selected_artifact():
+    with tempfile.TemporaryDirectory() as temporary_dir:
+        artifact_path = Path(temporary_dir) / "test_selected_ensemble.json"
+        artifact_path.write_text(
+            json.dumps({
+                "schema": "kcycle_trifecta_ensemble_v1",
+                "selection": {"criteria": "test-only candidate selection"},
+            }),
+            encoding="utf-8",
+        )
+        with patch.dict(
+            os.environ,
+            {"KCYCLE_TRIFECTA_ENSEMBLE_PATH": str(artifact_path)},
+            clear=False,
+        ):
+            assert engine._load_kcycle_trifecta_ensemble_artifact() is None
 
 
 def test_live_decision_keeps_harville_fallback_when_board_missing():
