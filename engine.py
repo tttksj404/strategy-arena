@@ -3785,7 +3785,14 @@ def _load_kcycle_trifecta_ensemble_artifact():
             payload = json.load(f)
     except (OSError, json.JSONDecodeError):
         payload = None
-    if not isinstance(payload, dict) or payload.get("schema") != "kcycle_trifecta_ensemble_v1":
+    selection = payload.get("selection") if isinstance(payload, dict) else None
+    selection_criteria = selection.get("criteria") if isinstance(selection, dict) else None
+    if (
+        not isinstance(payload, dict)
+        or payload.get("schema") != "kcycle_trifecta_ensemble_v1"
+        or not isinstance(selection_criteria, str)
+        or not selection_criteria.startswith("val-only")
+    ):
         payload = None
     _KCYCLE_TRIFECTA_ENSEMBLE_CACHE.update({"path": path, "mtime": mtime, "payload": payload})
     return payload
