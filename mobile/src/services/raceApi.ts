@@ -32,6 +32,7 @@ const apiTimeoutMs = 10000;
 const apiClientPlatform = Platform.OS === 'web' ? 'web' : 'mobile';
 export const hostedPublicPro = apiBaseUrl === 'https://strategy-arena.onrender.com';
 const inFlightRequests = new Map<string, Promise<RaceDecision>>();
+const inFlightPreloads = new Map<string, Promise<void>>();
 const kstDateFormatter = new Intl.DateTimeFormat('en-CA', {
   day: '2-digit',
   month: '2-digit',
@@ -408,6 +409,24 @@ export async function fetchRaceDecision(params: {
   return request;
 }
 
+export async function preloadRaceDecisions(params: {
+  sport: Sport;
+  date: string;
+  meet: string;
+  raceCount: number;
+  priorityRaceNo: number;
+}): Promise<void> {
+  if (!apiBaseUrl) return;
+  const requestKey = `${params.sport}|${params.date}|${params.meet}|${params.raceCount}|${params.priorityRaceNo}`;
+  const activeRequest = inFlightPreloads.get(requestKey);
+  if (activeRequest) return activeRequest;
+  const request = preloadRaceDecisionsUncached(params).finally(() => {
+    inFlightPreloads.delete(requestKey);
+  });
+  inFlightPreloads.set(requestKey, request);
+  return request;
+}
+
 export async function fetchAppSession(): Promise<{ appSession: AppSession; dataLayer: DataLayerStatus }> {
   const clientDeviceId = await getClientDeviceId();
   if (!apiBaseUrl) {
@@ -573,6 +592,39 @@ function sanitizeRaceNo(value: unknown, raceCount: number) {
   const numeric = Number(value);
   if (!Number.isInteger(numeric)) return 1;
   return Math.max(1, Math.min(raceCount, numeric));
+}
+
+async function preloadRaceDecisionsUncached(params: {
+  sport: Sport;
+  date: string;
+  meet: string;
+  raceCount: number;
+  priorityRaceNo: number;
+}): Promise<void> {
+  const clientDeviceId = await getClientDeviceId();
+  const query = new URLSearchParams({
+    sport: params.sport,
+    date: params.date,
+    meet: params.meet,
+    race_count: String(params.raceCount),
+    priority_race_no: String(params.priorityRaceNo)
+  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), apiTimeoutMs);
+  try {
+    await fetch(`${apiBaseUrl}/api/live-decisions/preload?${query.toString()}`, {
+      method: 'POST',
+      headers: {
+        'X-RaceLens-Device-Id': clientDeviceId,
+        'X-RaceLens-Platform': apiClientPlatform
+      },
+      signal: controller.signal
+    });
+  } catch {
+    return;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 async function fetchRaceDecisionUncached(params: {

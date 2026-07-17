@@ -28,6 +28,7 @@ import re
 import json
 import math
 import time
+import threading
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -105,6 +106,7 @@ _KCYCLE_TMS_CACHE = {}
 _KCYCLE_RANKINGPREDICT = None
 _KCYCLE_RANKINGPREDICT_LIVE_DISABLED_UNTIL = 0.0
 _KEIRIN_CARD_PAGE_CACHE = {}
+_KEIRIN_CARD_PAGE_CACHE_LOCK = threading.RLock()
 _KEIRIN_CARD_PAGE_TTL = int(os.environ.get("KEIRIN_CARD_PAGE_TTL", "1800"))
 _KCYCLE_TRIFECTA_SNAPSHOT_LAST = {}
 _KCYCLE_TRIFECTA_SNAPSHOT_FILE_KEYS = {}
@@ -890,7 +892,8 @@ def _api_page(stnd_yr, page, rows, key, timeout=8):
 
 
 def clear_keirin_card_page_cache():
-    _KEIRIN_CARD_PAGE_CACHE.clear()
+    with _KEIRIN_CARD_PAGE_CACHE_LOCK:
+        _KEIRIN_CARD_PAGE_CACHE.clear()
 
 
 def keirin_card_page_cache_status():
@@ -904,13 +907,14 @@ def keirin_card_page_cache_status():
 
 def _api_page_cached(stnd_yr, page, rows, key, timeout=8):
     ck = (str(stnd_yr), int(page), int(rows), CARD_URL)
-    now = time.time()
-    hit = _KEIRIN_CARD_PAGE_CACHE.get(ck)
-    if hit and (now - hit["ts"]) < _KEIRIN_CARD_PAGE_TTL:
-        return hit["data"]
-    data = _api_page(stnd_yr, page, rows, key, timeout=timeout)
-    _KEIRIN_CARD_PAGE_CACHE[ck] = {"data": data, "ts": now}
-    return data
+    with _KEIRIN_CARD_PAGE_CACHE_LOCK:
+        now = time.time()
+        hit = _KEIRIN_CARD_PAGE_CACHE.get(ck)
+        if hit and (now - hit["ts"]) < _KEIRIN_CARD_PAGE_TTL:
+            return hit["data"]
+        data = _api_page(stnd_yr, page, rows, key, timeout=timeout)
+        _KEIRIN_CARD_PAGE_CACHE[ck] = {"data": data, "ts": now}
+        return data
 
 
 def prewarm_keirin_card_pages(stnd_yr, key, rows=1000, max_pages=2):

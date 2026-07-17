@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { BottomTabs } from './src/components/BottomTabs';
 import { FadeInUp } from './src/components/FadeInUp';
 import { PressableScale } from './src/components/PressableScale';
-import { fetchAppSession, fetchRaceDates, fetchRaceDecision, hostedPublicPro } from './src/services/raceApi';
+import { fetchAppSession, fetchRaceDates, fetchRaceDecision, hostedPublicPro, preloadRaceDecisions } from './src/services/raceApi';
 import { isRewardedAdsEnabled } from './src/services/monetization';
 import { isRewardedAdPreview, showRewardedAd } from './src/services/rewardedAds';
 import { availableRaceDates, defaultRaceCount, defaultRaceVenue, nearestRaceDate, todayInKorea } from './src/services/raceSchedule';
@@ -249,6 +249,16 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    void preloadRaceDecisions({
+      sport,
+      date: analysisDate,
+      meet,
+      raceCount,
+      priorityRaceNo: raceNo
+    });
+  }, [analysisDate, meet, raceCount, raceNo, sport]);
+
+  useEffect(() => {
     let cancelled = false;
     void fetchRaceDates({ sport, meet }).then((calendar) => {
       if (cancelled) return;
@@ -392,7 +402,7 @@ export default function App() {
     marketRisk: {
       level: 'neutral' as const,
       title: '분석 전',
-      message: '모델 신호 보기를 누르면 선택한 경기의 공식 출전표와 배당을 조회합니다.'
+      message: '앱을 열 때 전체 공식 출전표를 미리 불러오고 있습니다. 선택한 경기는 즉시 표시됩니다.'
     },
     confidence: {
       label: '대기',

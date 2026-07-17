@@ -1,6 +1,8 @@
 import os
 import sys
+import time
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -336,6 +338,31 @@ class CrossDomainModelTestCase(unittest.TestCase):
         self.assertIsNone(second_err)
         self.assertEqual(first[0]["race_no"], "5")
         self.assertEqual(second[0]["race_no"], "7")
+        self.assertEqual(api_page.call_count, 2)
+
+    def test_fetch_race_card_coalesces_concurrent_same_page_requests(self):
+        engine.clear_keirin_card_page_cache()
+        page_items = [
+            {"race_ymd": "20260717", "meet_nm": "광명", "race_no": str(race_no), "racer_no": "1"}
+            for race_no in ("1", "2", "3")
+        ]
+
+        def fake_api_page(stnd_yr, page, rows, key, timeout=8):
+            time.sleep(0.03)
+            if page == 1 and rows == 1:
+                return 1000, []
+            if page == 1 and rows == 1000:
+                return 1000, page_items
+            return 1000, []
+
+        with patch.object(engine, "_api_page", side_effect=fake_api_page) as api_page:
+            with ThreadPoolExecutor(max_workers=3) as executor:
+                results = list(executor.map(
+                    lambda race_no: engine.fetch_race_card("2026", "2026-07-17", "광명", race_no, "dummy", max_pages=1),
+                    ("1", "2", "3"),
+                ))
+
+        self.assertTrue(all(error is None for _starters, error in results))
         self.assertEqual(api_page.call_count, 2)
 
     def test_healthz_reports_rankingpredict_cache_status(self):
