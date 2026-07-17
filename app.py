@@ -669,9 +669,11 @@ _PREWARM_STARTED = False
 
 _PREDICT_LOCK = threading.Lock()
 _LIVE_DECISION_WORK_LOCK = threading.RLock()
-_LIVE_DECISION_EXECUTOR = ThreadPoolExecutor(max_workers=3, thread_name_prefix="live-decision")
+_LIVE_DECISION_EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix="live-decision")
+_LIVE_DECISION_PREWARM_EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix="official-card-prewarm")
 _LIVE_DECISION_FUTURES = {}
 _LIVE_DECISION_RESULT_CACHE = {}
+_LIVE_DECISION_PREWARM_FUTURES = {}
 
 
 def _base_cache_key(sport, ymd, meet, race_no):
@@ -850,10 +852,46 @@ def _run_live_decision_with_budget(sport, ymd, meet, race_no, key):
     return None, "pending"
 
 
-def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
-    """앱 진입 때 모든 경기 판단을 큐에 올려, 선택 시 캐시 응답을 제공한다."""
+def _prewarm_official_entry_cards(sport, ymd, meet, race_nos, key):
+    """모델 계산 없이 원본 출전표 캐시만 한 번 적재한다."""
+    if not key:
+        return
+    if sport == "keirin":
+        engine.prewarm_keirin_card_pages(int(ymd[:4]), key, max_pages=1)
+        return
     for race_no in race_nos:
-        _run_live_decision_with_budget(sport, ymd, meet, race_no, key)
+        engine.fetch_kra_card(
+            ymd,
+            meet,
+            race_no,
+            key,
+            max_pages=1,
+            timeout=_LIVE_DECISION_PROVIDER_TIMEOUT,
+        )
+
+
+def _clear_live_decision_prewarm(task_key, _future):
+    with _LIVE_DECISION_WORK_LOCK:
+        _LIVE_DECISION_PREWARM_FUTURES.pop(task_key, None)
+
+
+def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
+    """경기 선택 전 원본 출전표만 단일 작업으로 예열한다."""
+    task_key = (sport, ymd, meet)
+    with _LIVE_DECISION_WORK_LOCK:
+        active = _LIVE_DECISION_PREWARM_FUTURES.get(task_key)
+        if active is not None and not active.done():
+            return
+        future = _LIVE_DECISION_PREWARM_EXECUTOR.submit(
+            _prewarm_official_entry_cards,
+            sport,
+            ymd,
+            meet,
+            race_nos,
+            key,
+        )
+        _LIVE_DECISION_PREWARM_FUTURES[task_key] = future
+        future.add_done_callback(lambda completed: _clear_live_decision_prewarm(task_key, completed))
 
 
 def _live_decision_pending_response(session, data_layer, ymd, pending_reason):

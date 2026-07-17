@@ -160,6 +160,16 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(payload["race_nos"], [3, 1, 2])
         enqueue.assert_called_once_with("keirin", "2026-07-17", "광명", ("3", "1", "2"), ANY)
 
+    def test_keirin_prewarm_only_fetches_the_shared_official_card_page(self):
+        with patch.object(app_module.engine, "prewarm_keirin_card_pages") as prewarm, \
+             patch.object(app_module, "_run_live_decision_with_budget") as decision:
+            app_module._prewarm_official_entry_cards(
+                "keirin", "2026-07-17", "광명", ("3", "1", "2"), "dummy"
+            )
+
+        prewarm.assert_called_once_with(2026, "dummy", max_pages=1)
+        decision.assert_not_called()
+
     def test_live_decision_never_uses_demo_racers_without_api_key(self):
         with patch.dict(os.environ, {"DATAGOKR_SERVICE_KEY": ""}, clear=False), \
              patch.object(app_module.engine, "_kcycle_rankingpredict_signal", return_value=None):
