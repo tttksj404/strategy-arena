@@ -132,6 +132,7 @@ class LiveDecisionTestCase(unittest.TestCase):
         app_module._BASE_PREDICTION_CACHE.clear()
         app_module._NEGATIVE_BASE_PREDICTION_CACHE.clear()
         app_module._LIVE_DECISION_RESULT_CACHE.clear()
+        app_module._LIVE_DECISION_PREWARM_STATUS.clear()
 
     def tearDown(self):
         self._prewarm_patch.stop()
@@ -149,7 +150,7 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(d["decision"], "hold")
 
     def test_preload_endpoint_queues_every_race_before_user_selects_one(self):
-        with patch.object(app_module, "_enqueue_live_decision_prewarm") as enqueue:
+        with patch.object(app_module, "_enqueue_live_decision_prewarm", return_value={"state": "warming"}) as enqueue:
             response = self.client.post(
                 "/api/live-decisions/preload?sport=keirin&date=2026-07-17&meet=광명&race_count=3&priority_race_no=3",
             )
@@ -158,7 +159,18 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 202)
         self.assertTrue(payload["ok"])
         self.assertEqual(payload["race_nos"], [3, 1, 2])
+        self.assertEqual(payload["prewarm"], {"state": "warming"})
         enqueue.assert_called_once_with("keirin", "2026-07-17", "광명", ("3", "1", "2"), ANY)
+
+    def test_preload_status_reports_current_cache_and_task_state(self):
+        response = self.client.get(
+            "/api/live-decisions/preload?sport=keirin&date=2026-07-17&meet=광명&race_count=3",
+        )
+
+        payload = response.get_json()
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(payload["prewarm"]["state"], "idle")
+        self.assertIn("pages", payload["prewarm"]["cache"])
 
     def test_keirin_prewarm_only_fetches_the_shared_official_card_page(self):
         with patch.object(app_module.engine, "prewarm_keirin_card_pages") as prewarm, \

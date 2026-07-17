@@ -674,6 +674,7 @@ _LIVE_DECISION_PREWARM_EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_
 _LIVE_DECISION_FUTURES = {}
 _LIVE_DECISION_RESULT_CACHE = {}
 _LIVE_DECISION_PREWARM_FUTURES = {}
+_LIVE_DECISION_PREWARM_STATUS = {}
 
 
 def _base_cache_key(sport, ymd, meet, race_no):
@@ -855,10 +856,10 @@ def _run_live_decision_with_budget(sport, ymd, meet, race_no, key):
 def _prewarm_official_entry_cards(sport, ymd, meet, race_nos, key):
     """모델 계산 없이 원본 출전표 캐시만 한 번 적재한다."""
     if not key:
-        return
+        return {"warmed": 0, "reason": "missing_api_key"}
     if sport == "keirin":
-        engine.prewarm_keirin_card_pages(int(ymd[:4]), key, max_pages=1)
-        return
+        return engine.prewarm_keirin_card_pages(int(ymd[:4]), key, max_pages=1)
+    warmed = 0
     for race_no in race_nos:
         engine.fetch_kra_card(
             ymd,
@@ -868,11 +869,26 @@ def _prewarm_official_entry_cards(sport, ymd, meet, race_nos, key):
             max_pages=1,
             timeout=_LIVE_DECISION_PROVIDER_TIMEOUT,
         )
+        warmed += 1
+    return {"warmed": warmed}
 
 
-def _clear_live_decision_prewarm(task_key, _future):
+def _cache_live_decision_prewarm(task_key, future):
+    now = time.time()
+    try:
+        result = future.result()
+    except Exception as exc:  # noqa: BLE001
+        app.logger.warning("official card prewarm failed: %s", exc)
+        status = {
+            "state": "failed",
+            "updated_at": now,
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+    else:
+        status = {"state": "ready", "updated_at": now, "result": result or {}}
     with _LIVE_DECISION_WORK_LOCK:
         _LIVE_DECISION_PREWARM_FUTURES.pop(task_key, None)
+        _LIVE_DECISION_PREWARM_STATUS[task_key] = status
 
 
 def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
@@ -881,7 +897,7 @@ def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
     with _LIVE_DECISION_WORK_LOCK:
         active = _LIVE_DECISION_PREWARM_FUTURES.get(task_key)
         if active is not None and not active.done():
-            return
+            return {"state": "warming"}
         future = _LIVE_DECISION_PREWARM_EXECUTOR.submit(
             _prewarm_official_entry_cards,
             sport,
@@ -891,7 +907,9 @@ def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
             key,
         )
         _LIVE_DECISION_PREWARM_FUTURES[task_key] = future
-        future.add_done_callback(lambda completed: _clear_live_decision_prewarm(task_key, completed))
+        _LIVE_DECISION_PREWARM_STATUS[task_key] = {"state": "warming", "updated_at": time.time()}
+        future.add_done_callback(lambda completed: _cache_live_decision_prewarm(task_key, completed))
+    return {"state": "warming"}
 
 
 def _live_decision_pending_response(session, data_layer, ymd, pending_reason):
@@ -1531,7 +1549,7 @@ def api_live_decision():
     return jsonify(result)
 
 
-@app.route("/api/live-decisions/preload", methods=["POST"])
+@app.route("/api/live-decisions/preload", methods=["GET", "POST"])
 def api_live_decisions_preload():
     """선택 전 전체 경기를 제한된 워커로 예열한다."""
     f = request.values
@@ -1548,12 +1566,19 @@ def api_live_decisions_preload():
     race_nos = tuple(str(number) for number in range(1, race_count + 1))
     if priority_race_no in race_nos:
         race_nos = (priority_race_no,) + tuple(number for number in race_nos if number != priority_race_no)
-    _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, _get_key())
+    task_key = (sport, ymd, meet)
+    if request.method == "GET":
+        with _LIVE_DECISION_WORK_LOCK:
+            prewarm = _LIVE_DECISION_PREWARM_STATUS.get(task_key, {"state": "idle"}).copy()
+        prewarm["cache"] = engine.keirin_card_page_cache_status() if sport == "keirin" else {}
+        return jsonify({"ok": True, "race_date": ymd, "prewarm": prewarm})
+    prewarm = _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, _get_key())
     return jsonify({
         "ok": True,
         "status": "warming",
         "race_date": ymd,
         "race_nos": [int(number) for number in race_nos],
+        "prewarm": prewarm,
         "poll_delay_ms": 750,
     }), 202
 
