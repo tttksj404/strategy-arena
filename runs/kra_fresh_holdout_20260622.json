@@ -2,27 +2,27 @@
   "holdout_from": "20260622",
   "minimum_absolute_top1_lift_pp": 5.0,
   "baseline": {
-    "races": 134,
-    "top1": 0.31343283582089554,
-    "top3": 0.664179104477612,
-    "race_logloss": 1.913506339445693
+    "races": 151,
+    "top1": 0.32450331125827814,
+    "top3": 0.6225165562913907,
+    "race_logloss": 1.8931482455170674
   },
   "pairwise_candidate": {
-    "races": 134,
-    "top1": 0.29850746268656714,
-    "top3": 0.664179104477612,
-    "race_logloss": 1.913671060879691
+    "races": 151,
+    "top1": 0.32450331125827814,
+    "top3": 0.6225165562913907,
+    "race_logloss": 1.8929304647891536
   },
   "bootstrap": {
-    "mean_pp": -1.4925373134328357,
-    "ci95_low_pp": -3.731343283582089,
-    "ci95_high_pp": 0.0,
-    "probability_positive": 0.0
+    "mean_pp": 0.0,
+    "ci95_low_pp": -2.6490066225165565,
+    "ci95_high_pp": 2.6490066225165565,
+    "probability_positive": 0.4004
   },
   "evidence": {
-    "top1_lift_pp": -1.4925373134328401,
-    "net_wins": -2,
-    "ci95_low_pp": -3.731343283582089
+    "top1_lift_pp": 0.0,
+    "net_wins": 0,
+    "ci95_low_pp": -2.6490066225165565
   },
   "promotion_pass": false,
   "decision": "keep_v4_baseline"

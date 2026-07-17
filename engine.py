@@ -57,7 +57,7 @@ DEFAULT_KRA_URL = ("https://apis.data.go.kr/B551015/API214_1/RaceDetailResult_1"
 KRA_CARD_URL = os.environ.get("KRA_CARD_URL", DEFAULT_KRA_URL)
 # 학습 데이터에 존재하는 경주장 (실측)
 KRA_MEETS = ["서울", "제주", "부경"]
-KRA_PICK_POLICY_DEFAULT = "current_gate"
+KRA_PICK_POLICY_DEFAULT = "market_if_odds"
 KRA_PICK_POLICIES = {"current_gate", "market_if_odds", "market_except_weak_disagree"}
 KEIRIN_PICK_POLICY_DEFAULT = "market_if_board"
 KEIRIN_PICK_POLICIES = {"market_if_board", "model_always"}
@@ -5167,6 +5167,8 @@ def compute_live_decision(sport, ymd, meet, race_no, base_model_out=None):
             if sport == "horse"
             else "market" if market_pick_order else "model"
         ),
+        "algorithm_version": base_model_out.get("algorithm_version"),
+        "prediction_phase": base_model_out.get("prediction_phase"),
         "snapshot_phase": snapshot_phase,
         "poll_delay_ms": _live_poll_delay_ms(sport, live_market_used),
         "market_risk": _live_market_risk(sport, live_market_used, status),
