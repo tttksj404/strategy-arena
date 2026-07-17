@@ -1,0 +1,546 @@
+{
+  "actual_win_favorite_verification": {
+    "actual_win_odds_favorite_top1": 0.6368390470656595,
+    "board_first_mass_matches_win_odds_favorite": 0.9343404997094712,
+    "board_first_mass_top1_on_same_sample": 0.641487507263219,
+    "n": 1721,
+    "note": "keirin.db payoff has only winning payout fields, so full favorite ranking was checked with the local 2025 win-odds file.",
+    "source": "/Users/tttksj/keirin/data/wodds_2025.txt",
+    "year": "2025"
+  },
+  "by_grade": {
+    "선발": {
+      "agree_n": 3175,
+      "agree_rate": 0.7945445445445446,
+      "disagree_n": 821,
+      "label": "선발",
+      "n": 3996,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3360860860860861,
+        "exacta_ordered_top2_model": 0.262012012012012,
+        "quinella_unordered_top2_market": 0.4552052052052052,
+        "quinella_unordered_top2_model": 0.37487487487487486
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 3.753753753753756,
+        "market": 0.6201201201201201,
+        "model": 0.5825825825825826
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 2.177177177177171,
+        "market_first_mass_top2": 0.825075075075075,
+        "model_plc_top2": 0.806056056056056,
+        "model_win_top2": 0.8033033033033034
+      }
+    },
+    "우수": {
+      "agree_n": 4165,
+      "agree_rate": 0.8084239130434783,
+      "disagree_n": 987,
+      "label": "우수",
+      "n": 5152,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3144409937888199,
+        "exacta_ordered_top2_model": 0.234472049689441,
+        "quinella_unordered_top2_market": 0.4266304347826087,
+        "quinella_unordered_top2_model": 0.3472437888198758
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 4.309006211180119,
+        "market": 0.610248447204969,
+        "model": 0.5671583850931677
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 1.9215838509316683,
+        "market_first_mass_top2": 0.8165760869565217,
+        "model_plc_top2": 0.7917313664596274,
+        "model_win_top2": 0.797360248447205
+      }
+    },
+    "특선": {
+      "agree_n": 3029,
+      "agree_rate": 0.879245283018868,
+      "disagree_n": 416,
+      "label": "특선",
+      "n": 3445,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.4275761973875181,
+        "exacta_ordered_top2_model": 0.346589259796807,
+        "quinella_unordered_top2_market": 0.5030478955007257,
+        "quinella_unordered_top2_model": 0.42380261248185774
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 2.46734397677794,
+        "market": 0.7285921625544267,
+        "model": 0.7039187227866474
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 1.654571843251091,
+        "market_first_mass_top2": 0.8685050798258346,
+        "model_plc_top2": 0.8539912917271408,
+        "model_win_top2": 0.8519593613933236
+      }
+    }
+  },
+  "by_year": {
+    "2018": {
+      "agree_n": 1822,
+      "agree_rate": 0.8065515714918106,
+      "disagree_n": 437,
+      "label": "2018",
+      "n": 2259,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3377600708277999,
+        "exacta_ordered_top2_model": 0.2864099158919876,
+        "quinella_unordered_top2_market": 0.46126604692341744,
+        "quinella_unordered_top2_model": 0.4063745019920319
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 2.2133687472332966,
+        "market": 0.6259406817175741,
+        "model": 0.6038069942452412
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 0.8410801239486432,
+        "market_first_mass_top2": 0.8233731739707836,
+        "model_plc_top2": 0.8047808764940239,
+        "model_win_top2": 0.814962372731297
+      }
+    },
+    "2019": {
+      "agree_n": 1153,
+      "agree_rate": 0.8312905551550108,
+      "disagree_n": 234,
+      "label": "2019",
+      "n": 1387,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.40663302090843545,
+        "exacta_ordered_top2_model": 0.3467916366258111,
+        "quinella_unordered_top2_market": 0.524873828406633,
+        "quinella_unordered_top2_model": 0.4708002883922134
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 1.7303532804614292,
+        "market": 0.67267483777938,
+        "model": 0.6553713049747657
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": -1.297764960346072,
+        "market_first_mass_top2": 0.8435472242249459,
+        "model_plc_top2": 0.8507570295602018,
+        "model_win_top2": 0.8565248738284066
+      }
+    },
+    "2020": {
+      "agree_n": 269,
+      "agree_rate": 0.838006230529595,
+      "disagree_n": 52,
+      "label": "2020",
+      "n": 321,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3987538940809969,
+        "exacta_ordered_top2_model": 0.3613707165109034,
+        "quinella_unordered_top2_market": 0.5545171339563862,
+        "quinella_unordered_top2_model": 0.4797507788161994
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": -0.6230529595015568,
+        "market": 0.6355140186915887,
+        "model": 0.6417445482866043
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 2.803738317757009,
+        "market_first_mass_top2": 0.8535825545171339,
+        "model_plc_top2": 0.8286604361370716,
+        "model_win_top2": 0.8255451713395638
+      }
+    },
+    "2021": {
+      "agree_n": 175,
+      "agree_rate": 0.8373205741626795,
+      "disagree_n": 34,
+      "label": "2021",
+      "n": 209,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.430622009569378,
+        "exacta_ordered_top2_model": 0.27751196172248804,
+        "quinella_unordered_top2_market": 0.5311004784688995,
+        "quinella_unordered_top2_model": 0.37320574162679426
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 8.133971291866033,
+        "market": 0.7272727272727273,
+        "model": 0.645933014354067
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 2.3923444976076667,
+        "market_first_mass_top2": 0.8660287081339713,
+        "model_plc_top2": 0.8325358851674641,
+        "model_win_top2": 0.8421052631578947
+      }
+    },
+    "2022": {
+      "agree_n": 1934,
+      "agree_rate": 0.824381926683717,
+      "disagree_n": 412,
+      "label": "2022",
+      "n": 2346,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.36871270247229326,
+        "exacta_ordered_top2_model": 0.2907075873827792,
+        "quinella_unordered_top2_market": 0.46845694799658993,
+        "quinella_unordered_top2_model": 0.39300937766410915
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 3.8789428815004356,
+        "market": 0.6466325660699063,
+        "model": 0.6078431372549019
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 2.7706734867860234,
+        "market_first_mass_top2": 0.829070758738278,
+        "model_plc_top2": 0.8052003410059676,
+        "model_win_top2": 0.8013640238704177
+      }
+    },
+    "2023": {
+      "agree_n": 2013,
+      "agree_rate": 0.8565957446808511,
+      "disagree_n": 337,
+      "label": "2023",
+      "n": 2350,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3374468085106383,
+        "exacta_ordered_top2_model": 0.2574468085106383,
+        "quinella_unordered_top2_market": 0.42936170212765956,
+        "quinella_unordered_top2_model": 0.34425531914893615
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 3.1063829787234027,
+        "market": 0.6497872340425532,
+        "model": 0.6187234042553191
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 2.2127659574468055,
+        "market_first_mass_top2": 0.8327659574468085,
+        "model_plc_top2": 0.8191489361702128,
+        "model_win_top2": 0.8106382978723404
+      }
+    },
+    "2024": {
+      "agree_n": 632,
+      "agree_rate": 0.8207792207792208,
+      "disagree_n": 138,
+      "label": "2024",
+      "n": 770,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3090909090909091,
+        "exacta_ordered_top2_model": 0.23116883116883116,
+        "quinella_unordered_top2_market": 0.38441558441558443,
+        "quinella_unordered_top2_model": 0.33376623376623377
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 4.415584415584419,
+        "market": 0.6428571428571429,
+        "model": 0.5987012987012987
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 2.337662337662323,
+        "market_first_mass_top2": 0.8441558441558441,
+        "model_plc_top2": 0.8207792207792208,
+        "model_win_top2": 0.8207792207792208
+      }
+    },
+    "2025": {
+      "agree_n": 1404,
+      "agree_rate": 0.8009127210496292,
+      "disagree_n": 349,
+      "label": "2025",
+      "n": 1753,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.34112949229891615,
+        "exacta_ordered_top2_model": 0.23217341699942956,
+        "quinella_unordered_top2_market": 0.43981745579007414,
+        "quinella_unordered_top2_model": 0.3280091272104963
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 6.446092413006269,
+        "market": 0.6423274386765545,
+        "model": 0.5778665145464917
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 4.1072447233314335,
+        "market_first_mass_top2": 0.8351397604107245,
+        "model_plc_top2": 0.7917855105533371,
+        "model_win_top2": 0.7940673131774102
+      }
+    },
+    "2026": {
+      "agree_n": 967,
+      "agree_rate": 0.8071786310517529,
+      "disagree_n": 231,
+      "label": "2026",
+      "n": 1198,
+      "pair_approx": {
+        "exacta_ordered_top2_market": 0.3313856427378965,
+        "exacta_ordered_top2_model": 0.2295492487479132,
+        "quinella_unordered_top2_market": 0.4307178631051753,
+        "quinella_unordered_top2_model": 0.31803005008347246
+      },
+      "win_top1": {
+        "delta_market_minus_model_pp": 4.757929883138566,
+        "market": 0.6377295492487479,
+        "model": 0.5901502504173622
+      },
+      "winner_in_top2": {
+        "delta_market_minus_model_win_top2_pp": 1.752921535893151,
+        "market_first_mass_top2": 0.830550918196995,
+        "model_plc_top2": 0.8096828046744574,
+        "model_win_top2": 0.8130217028380634
+      }
+    }
+  },
+  "counts": {
+    "base_kept": 13900,
+    "base_read": 14142,
+    "entries": 12593,
+    "exp_added": 3372,
+    "exp_read": 3408,
+    "joined_keys": 12593,
+    "scored_races": 12593
+  },
+  "decision": {
+    "P1_candidate": true,
+    "P2_candidate": true,
+    "criterion": "P1 or P2 is a correction candidate if 2026 top1 lift over P0 is >= +1.0pp.",
+    "verdict": "candidate"
+  },
+  "generated_at": "2026-07-12T08:00:35.329649+00:00",
+  "inputs": {
+    "entries": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_entries.jsonl",
+    "model": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/static/models/keirin_model_final.joblib",
+    "payoff_db_probe": {
+      "available": true,
+      "limitation": "payoff rows expose winning payout values, not all runner win odds; cannot identify actual win favorite from payoff alone.",
+      "path": "/Users/tttksj/keirin/data/keirin.db",
+      "payoff_rows": 59202,
+      "sample_2026": [
+        "2026",
+        "20260102",
+        "01",
+        "2.5",
+        "1.2",
+        "2.1"
+      ],
+      "tables": [
+        "payoff",
+        "race_card",
+        "race_result",
+        "racer_info"
+      ]
+    },
+    "snapshots": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_trifecta_snapshots.jsonl",
+    "snapshots_expansion": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kcycle_trifecta_snapshots_expansion.jsonl"
+  },
+  "method": {
+    "P0": "model top1 always",
+    "P1": "board market top1 when board exists, else model",
+    "P2": "P1 but if model/market disagree and market_gap_ratio < 1.10 or market_first_mass < 0.22, use model.",
+    "market": "trifecta board q=normalize(1/odds); market top1/top2 from first_mass marginal.",
+    "model": "engine.load_model model_final with vectorized reproduction of engine.score_keirin_with_model feature pipeline; PARTICIPANT_LEARNING_ENABLED=0."
+  },
+  "overall": {
+    "agree_n": 10369,
+    "agree_rate": 0.8233939490192964,
+    "disagree_n": 2224,
+    "label": "all",
+    "n": 12593,
+    "pair_approx": {
+      "exacta_ordered_top2_market": 0.35225919161438896,
+      "exacta_ordered_top2_model": 0.27388231557214326,
+      "quinella_unordered_top2_market": 0.4566028746128802,
+      "quinella_unordered_top2_model": 0.3769554514412769
+    },
+    "win_top1": {
+      "delta_market_minus_model_pp": 3.629000238227583,
+      "market": 0.6457555784959899,
+      "model": 0.609465576113714
+    },
+    "winner_in_top2": {
+      "delta_market_minus_model_win_top2_pp": 1.9296434527118294,
+      "market_first_mass_top2": 0.8334789168585722,
+      "model_plc_top2": 0.8133089811800206,
+      "model_win_top2": 0.814182482331454
+    }
+  },
+  "policy": {
+    "2026": {
+      "P0_model_always": 0.5901502504173622,
+      "P1_board_market_else_model": 0.6377295492487479,
+      "P1_minus_P0_pp": 4.757929883138566,
+      "P2_market_else_model_on_disagree_weak_signal": 0.6335559265442404,
+      "P2_minus_P0_pp": 4.3405676126878205,
+      "P2_model_fallback_n": 22,
+      "P2_model_fallback_rate": 0.018363939899833055,
+      "label": "2026",
+      "n": 1198
+    },
+    "all": {
+      "P0_model_always": 0.609465576113714,
+      "P1_board_market_else_model": 0.6457555784959899,
+      "P1_minus_P0_pp": 3.629000238227583,
+      "P2_market_else_model_on_disagree_weak_signal": 0.6444056221710474,
+      "P2_minus_P0_pp": 3.4940046057333447,
+      "P2_model_fallback_n": 234,
+      "P2_model_fallback_rate": 0.0185817517668546,
+      "label": "all",
+      "n": 12593
+    },
+    "by_year": {
+      "2018": {
+        "P0_model_always": 0.6038069942452412,
+        "P1_board_market_else_model": 0.6259406817175741,
+        "P1_minus_P0_pp": 2.2133687472332966,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6272687029659141,
+        "P2_minus_P0_pp": 2.3461708720672902,
+        "P2_model_fallback_n": 55,
+        "P2_model_fallback_rate": 0.02434705621956618,
+        "label": "2018",
+        "n": 2259
+      },
+      "2019": {
+        "P0_model_always": 0.6553713049747657,
+        "P1_board_market_else_model": 0.67267483777938,
+        "P1_minus_P0_pp": 1.7303532804614292,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6719538572458543,
+        "P2_minus_P0_pp": 1.6582552271088673,
+        "P2_model_fallback_n": 25,
+        "P2_model_fallback_rate": 0.01802451333813987,
+        "label": "2019",
+        "n": 1387
+      },
+      "2020": {
+        "P0_model_always": 0.6417445482866043,
+        "P1_board_market_else_model": 0.6355140186915887,
+        "P1_minus_P0_pp": -0.6230529595015568,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6386292834890965,
+        "P2_minus_P0_pp": -0.31152647975077485,
+        "P2_model_fallback_n": 7,
+        "P2_model_fallback_rate": 0.021806853582554516,
+        "label": "2020",
+        "n": 321
+      },
+      "2021": {
+        "P0_model_always": 0.645933014354067,
+        "P1_board_market_else_model": 0.7272727272727273,
+        "P1_minus_P0_pp": 8.133971291866033,
+        "P2_market_else_model_on_disagree_weak_signal": 0.7320574162679426,
+        "P2_minus_P0_pp": 8.612440191387563,
+        "P2_model_fallback_n": 3,
+        "P2_model_fallback_rate": 0.014354066985645933,
+        "label": "2021",
+        "n": 209
+      },
+      "2022": {
+        "P0_model_always": 0.6078431372549019,
+        "P1_board_market_else_model": 0.6466325660699063,
+        "P1_minus_P0_pp": 3.8789428815004356,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6470588235294118,
+        "P2_minus_P0_pp": 3.9215686274509807,
+        "P2_model_fallback_n": 40,
+        "P2_model_fallback_rate": 0.017050298380221655,
+        "label": "2022",
+        "n": 2346
+      },
+      "2023": {
+        "P0_model_always": 0.6187234042553191,
+        "P1_board_market_else_model": 0.6497872340425532,
+        "P1_minus_P0_pp": 3.1063829787234027,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6485106382978724,
+        "P2_minus_P0_pp": 2.9787234042553195,
+        "P2_model_fallback_n": 42,
+        "P2_model_fallback_rate": 0.017872340425531916,
+        "label": "2023",
+        "n": 2350
+      },
+      "2024": {
+        "P0_model_always": 0.5987012987012987,
+        "P1_board_market_else_model": 0.6428571428571429,
+        "P1_minus_P0_pp": 4.415584415584419,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6376623376623377,
+        "P2_minus_P0_pp": 3.896103896103895,
+        "P2_model_fallback_n": 17,
+        "P2_model_fallback_rate": 0.02207792207792208,
+        "label": "2024",
+        "n": 770
+      },
+      "2025": {
+        "P0_model_always": 0.5778665145464917,
+        "P1_board_market_else_model": 0.6423274386765545,
+        "P1_minus_P0_pp": 6.446092413006269,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6366229321163719,
+        "P2_minus_P0_pp": 5.875641756988017,
+        "P2_model_fallback_n": 23,
+        "P2_model_fallback_rate": 0.013120365088419851,
+        "label": "2025",
+        "n": 1753
+      },
+      "2026": {
+        "P0_model_always": 0.5901502504173622,
+        "P1_board_market_else_model": 0.6377295492487479,
+        "P1_minus_P0_pp": 4.757929883138566,
+        "P2_market_else_model_on_disagree_weak_signal": 0.6335559265442404,
+        "P2_minus_P0_pp": 4.3405676126878205,
+        "P2_model_fallback_n": 22,
+        "P2_model_fallback_rate": 0.018363939899833055,
+        "label": "2026",
+        "n": 1198
+      }
+    }
+  },
+  "scope": "Round 8 kcycle pick source policy measurement; engine.py/app.py/tests unchanged; input snapshots read-only.",
+  "source_comparison": {
+    "2026_agree": {
+      "label": "2026_agree",
+      "market_minus_model_pp": 0.0,
+      "market_top1": 0.6732161323681489,
+      "model_top1": 0.6732161323681489,
+      "n": 967
+    },
+    "2026_all": {
+      "label": "2026_all",
+      "market_minus_model_pp": 4.757929883138566,
+      "market_top1": 0.6377295492487479,
+      "model_top1": 0.5901502504173622,
+      "n": 1198
+    },
+    "2026_disagree": {
+      "label": "2026_disagree",
+      "market_minus_model_pp": 24.675324675324674,
+      "market_top1": 0.48917748917748916,
+      "model_top1": 0.24242424242424243,
+      "n": 231
+    },
+    "agree": {
+      "label": "agree",
+      "market_minus_model_pp": 0.0,
+      "market_top1": 0.6813578937216703,
+      "model_top1": 0.6813578937216703,
+      "n": 10369
+    },
+    "all": {
+      "label": "all",
+      "market_minus_model_pp": 3.629000238227583,
+      "market_top1": 0.6457555784959899,
+      "model_top1": 0.609465576113714,
+      "n": 12593
+    },
+    "disagree": {
+      "label": "disagree",
+      "market_minus_model_pp": 20.548561151079138,
+      "market_top1": 0.4797661870503597,
+      "model_top1": 0.27428057553956836,
+      "n": 2224
+    }
+  }
+}

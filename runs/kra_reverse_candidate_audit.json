@@ -1,0 +1,123 @@
+{
+  "method": "strict_date_walk_forward_same_day_excluded",
+  "config": "hgb_d3",
+  "folds": [
+    {
+      "fold": "2024H2",
+      "baseline": {
+        "races": 1219,
+        "top1": 0.22149302707136997,
+        "top3": 0.534864643150123,
+        "race_logloss": 2.1457851296000934
+      },
+      "horse_history": {
+        "races": 1219,
+        "top1": 0.24856439704675964,
+        "top3": 0.5758818703855619,
+        "race_logloss": 2.1048113898830088
+      },
+      "horse_history_top1_lift_pp": 2.707136997538967,
+      "horse_history_top3_lift_pp": 4.1017227235438884,
+      "reverse_place_leader": {
+        "races": 1219,
+        "top1": 0.25922887612797374,
+        "top3": 0.5750615258408531,
+        "race_logloss": 2.0951630576164106
+      },
+      "reverse_place_top1_lift_pp": 1.0664479081214095
+    },
+    {
+      "fold": "2025H1",
+      "baseline": {
+        "races": 1241,
+        "top1": 0.25141015310233683,
+        "top3": 0.5713134568896051,
+        "race_logloss": 2.0971087525128502
+      },
+      "horse_history": {
+        "races": 1241,
+        "top1": 0.2989524576954069,
+        "top3": 0.5882352941176471,
+        "race_logloss": 2.0301794287013273
+      },
+      "horse_history_top1_lift_pp": 4.754230459307007,
+      "horse_history_top3_lift_pp": 1.692183722804197,
+      "reverse_place_leader": {
+        "races": 1241,
+        "top1": 0.29170024174053183,
+        "top3": 0.6011281224818694,
+        "race_logloss": 2.0695762417005734
+      },
+      "reverse_place_top1_lift_pp": -0.7252215954875074
+    },
+    {
+      "fold": "2025H2",
+      "baseline": {
+        "races": 1216,
+        "top1": 0.2582236842105263,
+        "top3": 0.571546052631579,
+        "race_logloss": 2.062880389398843
+      },
+      "horse_history": {
+        "races": 1216,
+        "top1": 0.29769736842105265,
+        "top3": 0.6200657894736842,
+        "race_logloss": 1.9759878804860649
+      },
+      "horse_history_top1_lift_pp": 3.9473684210526327,
+      "horse_history_top3_lift_pp": 4.85197368421052,
+      "reverse_place_leader": {
+        "races": 1216,
+        "top1": 0.3092105263157895,
+        "top3": 0.640625,
+        "race_logloss": 2.019840388568586
+      },
+      "reverse_place_top1_lift_pp": 1.1513157894736836
+    },
+    {
+      "fold": "2026H1",
+      "baseline": {
+        "races": 1189,
+        "top1": 0.24053826745164003,
+        "top3": 0.5744322960470984,
+        "race_logloss": 2.0617882418764504
+      },
+      "horse_history": {
+        "races": 1189,
+        "top1": 0.2926829268292683,
+        "top3": 0.6181665264928511,
+        "race_logloss": 1.9713443999737097
+      },
+      "horse_history_top1_lift_pp": 5.214465937762824,
+      "horse_history_top3_lift_pp": 4.373423044575264,
+      "reverse_place_leader": {
+        "races": 1189,
+        "top1": 0.28595458368376786,
+        "top3": 0.6215306980656014,
+        "race_logloss": 2.025679765470241
+      },
+      "reverse_place_top1_lift_pp": -0.6728343145500415
+    }
+  ],
+  "pooled": {
+    "horse_history_vs_baseline": {
+      "mean_pp": 4.152106885919835,
+      "ci95_low_pp": 3.0416238437821175,
+      "ci95_high_pp": 5.282631038026722,
+      "probability_positive": 1.0
+    },
+    "reverse_place_vs_win": {
+      "mean_pp": 0.20554984583761562,
+      "ci95_low_pp": -0.6783144912641316,
+      "ci95_high_pp": 1.0894141829393629,
+      "probability_positive": 0.662
+    }
+  },
+  "promotion_gate": {
+    "horse_history_all_fold_top1_positive": true,
+    "horse_history_all_fold_top3_nonnegative": true,
+    "horse_history_pooled_ci_low_positive": true,
+    "horse_history_promoted": true,
+    "reverse_place_promoted": false
+  }
+}

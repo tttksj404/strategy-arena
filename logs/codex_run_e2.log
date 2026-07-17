@@ -1,0 +1,2214 @@
+warning: `--full-auto` is deprecated; use `--sandbox workspace-write` instead.
+2026-07-06T22:26:18.415731Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:18.415986Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:18.416665Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:18.418051Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:18.461146Z ERROR codex_core_skills::loader: failed to read skills symlink dir /Users/tttksj/.codex/skills/develop-web-game/node_modules: Operation not permitted (os error 1)
+2026-07-06T22:26:18.515425Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:18.704820Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-verbal-orchestrator/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 74, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:26:18.704870Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-weakness-analyze/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 37, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:26:18.704875Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-reasoning-generate/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 56, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:26:18.704879Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/session-housekeeping/SKILL.md: invalid YAML: did not find expected comment or line break at line 2 column 16, while scanning a block scalar at line 2 column 14
+2026-07-06T22:26:18.704882Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-verbal-validate/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 69, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:26:18.704884Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/session-handoff/SKILL.md: invalid YAML: did not find expected comment or line break at line 2 column 16, while scanning a block scalar at line 2 column 14
+2026-07-06T22:26:18.704887Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-reasoning-orchestrator/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 58, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:26:18.704889Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-reasoning-validate/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 95, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:26:18.752310Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:26:18.793324Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:26:18.803697Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 80772: Operation not permitted (os error 1)
+2026-07-06T22:26:18.808598Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 80774: Operation not permitted (os error 1)
+2026-07-06T22:26:18.808597Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 80773: Operation not permitted (os error 1)
+2026-07-06T22:26:18.811570Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 80776: Operation not permitted (os error 1)
+2026-07-06T22:26:18.816404Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer realm=\"OAuth\", resource_metadata=\"https://mcp.notion.com/.well-known/oauth-protected-resource/mcp\", error=\"invalid_token\", error_description=\"Missing or invalid access token\"" })
+OpenAI Codex v0.133.0
+--------
+workdir: /Users/tttksj/github-portfolio-docs-work/strategy-arena
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019f398a-145b-7150-a60f-cd667777f621
+--------
+user
+mobile/만 수정, 커밋 금지. qa:mobile 잔여 6 fail = tests/mobile-web.spec.js:309 "store safety and pro surfaces avoid betting actions"의 expect(locator).toBeDisabled() 실패 (6 viewport 전부). 원인: monetization off일 때 Pro 구매 CTA가 DOM에서 disabled/aria-disabled 시맨틱을 안 가짐(RN-web Pressable). ProScreen의 비활성 CTA에 disabled + accessibilityState disabled + testID를 제대로 주고, 테스트는 그 testID로 단언하되 "베팅 유도 문구 금지" 단언은 유지. 완료 조건: cd mobile && npx tsc --noEmit 0에러. 브라우저 실행은 sandbox에서 불가하니 시도하지 말 것(내가 밖에서 돌린다). 보고 20자 이내.
+
+2026-07-06T22:26:18.849549Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:26:18.856985Z  WARN codex_memories_write::phase1: state db prune_stage1_outputs_for_retention failed during memories startup: error returned from database: (code: 1) no such table: stage1_outputs
+2026-07-06T22:26:18.888402Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:26:18.920832Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:26:19.302264Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="browser" marketplace="openai-bundled"
+2026-07-06T22:26:19.302280Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="chrome" marketplace="openai-bundled"
+2026-07-06T22:26:19.306692Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="computer-use" marketplace="openai-bundled"
+2026-07-06T22:26:19.306705Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="documents" marketplace="openai-primary-runtime"
+2026-07-06T22:26:19.306708Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="omo" marketplace="sisyphuslabs"
+2026-07-06T22:26:19.306711Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="pdf" marketplace="openai-primary-runtime"
+2026-07-06T22:26:19.306713Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="presentations" marketplace="openai-primary-runtime"
+2026-07-06T22:26:19.306715Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="spreadsheets" marketplace="openai-primary-runtime"
+2026-07-06T22:26:19.306717Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="template-creator" marketplace="openai-primary-runtime"
+2026-07-06T22:26:21.132156Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:21.132789Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:21.174420Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:21.174999Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:21.182849Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:26:21.188685Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:21.201785Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:21.201806Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:21.203011Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:21.203021Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:21.203297Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:21.203302Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:21.203567Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:21.203571Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:21.203833Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:21.203836Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:21.204765Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:21.204773Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: UserPromptSubmit
+hook: UserPromptSubmit
+hook: UserPromptSubmit
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+hook: UserPromptSubmit Completed
+hook: UserPromptSubmit Completed
+hook: UserPromptSubmit Completed
+2026-07-06T22:26:22.544835Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:22.545442Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:22.547061Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:26:22.551034Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:22.560676Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:22.560692Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:22.560981Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:22.560991Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:22.561284Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:22.561288Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:22.561568Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:22.561576Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:22.561868Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:22.561872Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:22.562472Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:22.562478Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+의도: mobile 한정 버그 수정. Pro CTA 비활성 시맨틱을 고치고 tsc만 검증합니다.
+  → ProScreen CTA 구현과 모바일 테스트 단언 위치 확인
+  • 비활성 Pro CTA disabled 시맨틱과 testID 적용
+  • mobile 타입체크로 검증
+2026-07-06T22:26:34.752144Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:34.752725Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:34.754353Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:26:34.757635Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:34.766438Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:34.766448Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:34.766719Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:34.766725Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:34.767009Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:34.767019Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:34.767305Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:34.767314Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:34.767578Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:34.767583Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:34.768159Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:34.768165Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+2026-07-06T22:26:39.038303Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.skill.injected] failed: tag value contains invalid characters: omo:programming
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/tttksj/.codex/plugins/cache/sisyphuslabs/omo/4.15.1/skills/programming/SKILL.md" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+---
+name: programming
+description: "MUST USE for ANY work on .py .pyi .rs .ts .tsx .mts .cts .go files. One philosophy: strict types, modern stacks (Pydantic v2 / serde+thiserror / Zod / gin+sqlc+pgx+slog), modern toolchains (uv+basedpyright+ruff / cargo+clippy+miri / Bun+Biome+tsc / gofumpt+golangci-lint v2+nilaway+go-race), parse-don't-validate, exhaustive match, typed errors, no any/unwrap/panic, 250 LOC ceiling, TDD. Routes to references/{python,rust,typescript,rust-ub,go}/. Triggers: write/edit Python/Rust/TypeScript/Go code, new project, gin server, bubbletea TUI, CJK IME, connect-go RPC, sqlc pgx, branded ids, exhaustive match, unsafe Rust, miri, oversized file, refactor, TDD, e2e test, arena, allocator, bumpalo, const fn, const generics, comptime, zero-alloc, bitfield, repr, scopeguard, errdefer, Zig-like, zerocopy, packed struct."
+---
+
+# Programming
+
+You are a lazy senior engineer — lazy meaning efficient, never careless. **The best code is the code never written; the code you do write is type-strict, stack-first, async-correct, and architecturally honest about size.**
+
+This skill is an index. The hard per-language rules live under `references/`. Load the language-specific reference **before** writing a single line of code.
+
+---
+
+## PHASE 0 — LANGUAGE GATE (RUN THIS FIRST, EVERY TIME)
+
+**DO NOT WRITE OR EDIT A SINGLE LINE OF CODE BEFORE COMPLETING THIS GATE.**
+
+1. **Identify the language** from the file extension or the user's request.
+2. **STOP** and read the matching reference set:
+
+   | File / Language | MANDATORY reading (load `Read` tool on every file below) |
+   |---|---|
+   | `.py`, `.pyi`, "Python" | `references/python/README.md` + every file under `references/python/` that the README tells you to load on demand |
+   | `.rs`, `Cargo.toml`, "Rust" | `references/rust/README.md` + every file under `references/rust/` that the README tells you to load on demand. **IF the change touches `unsafe`, `*mut`, `*const`, `MaybeUninit`, FFI, `unsafe impl Send/Sync`, or a custom lock-free primitive: ALSO load `references/rust-ub/README.md` plus every file under `references/rust-ub/`.** |
+   | `.ts`, `.tsx`, `.mts`, `.cts`, "TypeScript" | `references/typescript/README.md` + every file under `references/typescript/` that the README tells you to load on demand |
+   | `.go`, `go.mod`, `go.sum`, `.golangci.yml`, `*.proto` next to a Go module, "Go" / "Golang" | `references/go/README.md` + every file under `references/go/` that the README tells you to load on demand |
+
+3. Only after the references are loaded, apply the **shared philosophy** below plus the per-language iron list from the reference.
+
+**No exceptions for "small" or "one-off" code.** The whole point of the modern toolchain (uv + PEP 723, `rust-script`, Bun) is that disposable scripts cost nothing to write with full discipline.
+
+---
+
+## Shared philosophy (all three languages)
+
+These are not style preferences. They are the seven axioms every recipe in `references/` derives from.
+
+0. **The best code is the code never written.** Before writing, stop at the first rung that holds: (1) does this need to exist at all? (YAGNI) (2) does this codebase already have it? — reuse the helper or pattern, do not re-implement. (3) does the standard library do it? (4) does a native platform feature cover it? (5) does an installed dependency solve it? (6) can it be one line? (7) only then, write the minimum that works. Climb the ladder *after* you understand the problem and trace the real flow end to end — the smallest diff in the wrong place is a second bug, not laziness. The ladder is a fast decision, not a written essay: pick the rung and move. **Bug fix = root cause, not symptom.** A ticket names a symptom; grep every caller of the function you touch and fix the shared seam once — one guard at the source is a smaller, more correct diff than one guard per caller, and patching only the path the ticket names leaves a sibling caller broken.
+
+1. **The type system is your proof system.** Make illegal states unrepresentable. The compiler / type checker is the cheapest test you will ever run. If a bug can be expressed as a type error, it is *required* to be expressed as a type error.
+
+2. **Parse, don't validate.** Untrusted input crosses a boundary exactly once - at the boundary it is parsed into a typed value (Pydantic v2 in Python, `serde` + `#[derive]` in Rust, Zod in TypeScript). Inside the boundary, code receives typed values and never re-validates. The boundary owns trust; the interior owns logic.
+
+3. **One name = one concept.** A `UserId` is not a `string`. A `Seconds` is not a `Milliseconds`. Use `NewType` (Python), newtype tuple structs (Rust), or branded types (TypeScript) for every distinct semantic primitive. The compiler refuses to let two semantic units mix.
+
+4. **Exhaustive variant matching, always.** Discriminated unions and enums are matched exhaustively. Python: `match` + `case unreachable: assert_never(unreachable)`. Rust: `match` (the compiler enforces). TypeScript: `switch` + `assertNever`. **`if`/`elif`/`else` is forbidden for discriminating on a tagged variant** - it silently swallows new variants.
+
+5. **Trust framework guarantees. Validate only at boundaries.** No null checks for values the type system already proves non-null. No `try/except` around code that cannot raise. No `unwrap`/`!`/`as` to paper over a contract you should have encoded in types. No defensive layer for a scenario you cannot name.
+
+6. **Test-driven, with the right shape of test.** No production line ships without a failing test that proves it was needed. Behavior is locked by tests, not by hope. See the TDD discipline below.
+
+---
+
+## TDD DISCIPLINE — NON-NEGOTIABLE
+
+**Every change follows the red → green → refactor loop.** The order is mandatory; reverse it and you have written speculative code.
+
+### The order
+
+1. **Red.** Write a failing test that names the behavior in `Given / When / Then`. Run it. *Confirm it fails for the right reason* — not a typo, not an import error. A test that fails because the function does not exist yet is the right reason. A test that fails because of a missing import is not.
+2. **Green.** Write the minimum code to make the test pass. Resist adding the second case until the first passes. The second case is the next red.
+3. **Refactor.** With the test green, restructure ruthlessly. The test is your safety net. If the test is hard to refactor against, the test is bad — fix the test before the code.
+
+### The shape of the test pyramid
+
+Every feature ships with all three rungs, sized in this proportion:
+
+| Rung | Count | Purpose | Speed budget |
+|---|---|---|---|
+| **Unit** | many | Pure-function correctness for every meaningful input class (happy + edges + boundaries + error paths) | < 10 ms each |
+| **Integration** | some | The real adapter against the real downstream (DB, queue, HTTP) — via `testcontainers`, `httptest`, or equivalent. NEVER a unit test pretending to be integration. | < 1 s each |
+| **E2E scenario** | few | One narrative per user-visible outcome. Spins the binary or the full app; drives it through its real surface (HTTP route, CLI invocation, TUI keystroke). Asserts the *observable outcome*, not internal state. | seconds, run on CI |
+
+If a feature has zero E2E coverage, it is undone — even if every unit test passes.
+
+### Given / When / Then is mandatory
+
+Every test — unit, integration, E2E — is structured by these three blocks. Names follow `Test_<Behavior>_when_<Condition>` or the language idiom (`it("<does X> when <Y>")`, `#[test] fn behavior_when_condition`).
+
+```
+Given: the preconditions and fixtures
+When:  the single action under test
+Then:  the observable outcome AND only that outcome
+```
+
+One `When` per test. Multiple `When`s = multiple tests. The `Then` asserts only what changed because of the `When` — not unrelated invariants.
+
+### Less mock, the better
+
+Mocks are a last resort, not a default. The priority order:
+
+1. **Real object.** Use it when constructable in <1 ms (most domain types, pure functions, value objects).
+2. **In-memory fake.** A real implementation of the interface backed by a map/slice — for stores, caches, queues. The fake has its OWN test that proves it behaves like the real one.
+3. **Testcontainer / sandbox.** Real Postgres, real Redis, real S3-compatible (MinIO), via `testcontainers`. Slow but truthful.
+4. **HTTP-level fake.** `httptest.Server` (Go), `respx` (Python), `msw` (TS) — fake at the wire, not at the SDK.
+5. **Mock.** Only when 1–4 are genuinely infeasible (clock, randomness, external SaaS with no sandbox). Then mock the **narrowest** seam — never an entire service. A mock that returns whatever the test wants is a tautology and proves nothing.
+
+**The rule**: if your test fails when the production code's *implementation* changes but its *behavior* did not, the test is over-mocked. Delete the mock; assert on observable outputs.
+
+### Efficient AND accurate — both, not either
+
+- **Accurate**: the test fails for the bug it names, and only that bug. No incidental coupling to format, ordering, whitespace, or unrelated fields. Assert on the *contract*, not on the dump.
+- **Efficient**: the whole unit suite runs in < 30 seconds on a developer laptop. The whole integration suite in < 5 minutes. If you cross those budgets, profile and split — fast tests run on every save, slow ones run on push.
+- **Deterministic**: no `sleep`, no wall-clock dependence, no order dependence (`-shuffle=on`, pytest-randomly, vitest random seed). Inject a `Clock`. Subscribe to the event, do not poll for it. Time-based flake is a bug, not a test issue.
+- **Isolated**: every test starts from a known fixture and tears down. `t.TempDir()`, `t.Setenv()`, transactional rollback for DB tests. Two tests passing individually but failing together is a fixture leak — fix it immediately.
+
+### Prompt tests follow the same rule
+
+When tests cover LLM prompts or agent outputs, assert on **parsed structure, decisions, or rule data**, never on exact prompt strings. Pinning a sentence is brittle pretend-coverage; asserting that the prompt instructs the model to refuse on category X is real coverage.
+
+### Anti-patterns the skill rejects
+
+| Anti-pattern | Why it fails | Fix |
+|---|---|---|
+| Writing code first, tests "to add later" | Tests-after rationalize the existing design, even when wrong. | Red first. Always. |
+| One mega-test asserting 12 things | First failure hides the next 11. | Split by `Then` clause — one assertion class per test. |
+| Mocking every collaborator | Test passes regardless of real behavior. | Use a fake or the real thing. Mock only true unmockables. |
+| `time.sleep(0.1)` to "let it finish" | Flake guaranteed. | Subscribe to the completion signal; bounded await. |
+| Snapshot tests for everything | Locks formatting, not behavior. | Snapshots for *structure* (CLI help, JSON shape). Assertions for *behavior*. |
+| Removing a failing test to "unblock CI" | You just deleted a bug report. | Fix the code or fix the test — never delete to silence. |
+| `assert result is not None` and stopping there | Passes when result is garbage. | Assert the *value*, not its existence. |
+| Single happy-path E2E, no edges | Most bugs live on edges. | Edges are unit-test territory — but include at least one E2E that exercises an error path. |
+
+---
+
+## Cross-language iron list
+
+Apply unless the per-language reference overrides with something stricter.
+
+| Rule | Python | Rust | TypeScript | Go |
+|---|---|---|---|---|
+| Immutable by default | `@dataclass(frozen=True, slots=True)` / Pydantic `frozen=True` | every binding is `let` (not `let mut`) unless mutation is the documented purpose | every field is `readonly`; arrays are `readonly T[]` | value types, unexported fields, no mutation methods unless mutation is the purpose |
+| Branded primitives | `UserId = NewType("UserId", int)` | `struct UserId(u64);` (newtype tuple) | `type UserId = Brand<string, "UserId">` | `type UserID string` + smart constructor with unexported field |
+| Exhaustive variant matching | `match` + `assert_never` | `match` (compiler-enforced) | `switch` + `assertNever` | sealed interface + type switch + **`exhaustive` linter** (the compiler will not help) |
+| No untyped escape hatches | no `Any` in public sigs, no `cast`, no `# type: ignore` | no `unwrap`/`expect` outside `main`/tests, no `as` for narrowing, no `#[allow]` to silence real warnings | no `any`, no `as` (except `as const`, `satisfies`), no `!`, no `@ts-ignore`, no `@ts-expect-error` | no `interface{}` / bare `any` in domain sigs; no `_ = err`; no `//nolint` without reason |
+| No bare error strings | typed exception dataclass with `__str__` | `thiserror` enum (lib) or `anyhow` with `.context(...)` (app) | `Error` subclass with typed fields | sentinel `errors.New` + typed `*XError` struct; wrap with `%w`; check via `errors.Is/As` |
+| Boundary catch only | catch the exact exception you expect; broad `except Exception` only in `main()`, with logging + re-raise | `?` everywhere; never `panic!` in library code | `catch` must narrow with `instanceof` and re-throw or convert; no empty catch | every `(T, error)` checked; `panic` only in `main`/tests; one `httperr.Write` funnel in handlers |
+| Resources via RAII | `with` (sync) / `async with` (async) | `Drop` impl or RAII guard | `using`/`await using` (TC39 explicit resource management) | `defer x.Close()` immediately after acquisition; `bodyclose`/`sqlclosecheck` linters enforce |
+| Async runtime is mandatory | `anyio` (NEVER bare `asyncio`) | `tokio` (`async-std` is unmaintained) | platform-native async (Bun/Node) with structured cancellation via `AbortSignal` | `context.Context` as first param + `errgroup` for structured concurrency; `-race` on every test |
+| Modern HTTP client | [`httpx2`](https://github.com/pydantic/httpx2) with HTTP/2 + brotli + zstd | `reqwest` with rustls | `ky` (default) / `undici` direct API (Node perf) - NEVER bare `fetch` in prod | stdlib `net/http.Client` with tuned `Transport` + `go-retryablehttp` for retry/backoff |
+| No parameter mutation | params are inputs; produce a new value | `&mut` only when mutation is the documented purpose | parameters never reassigned (`noParameterAssign`) | value receivers when not mutating; pointer receivers only for genuine mutation; `copylocks` vet enforces |
+| No helpers for one-off | inline a 3-line operation; do not abstract until the second caller | same | same | same |
+
+---
+
+## Modern ecosystem - canonical libraries (2026)
+
+Use these unless the project's manifest explicitly picks something else.
+
+| Domain | Python | Rust | TypeScript | Go |
+|---|---|---|---|---|
+| Data validation / boundary parse | **Pydantic v2** | **serde** + `#[derive(Deserialize)]` + `validator` | **Zod v4** (Standard Schema) | `validator/v10` (HTTP) + `protovalidate` (proto) + smart constructors (domain) |
+| Internal value object | `@dataclass(frozen=True, slots=True)` | newtype tuple struct or plain `struct` | `type` alias with `readonly` | struct with unexported fields + `NewX(...)` constructor |
+| Error types | typed exception dataclass | `thiserror` (lib) + `anyhow` (app) | `Error` subclass + Result pattern | sentinel `errors.New` + typed `*XError` struct + `%w` wrap |
+| HTTP client | [`httpx2`](https://github.com/pydantic/httpx2) | `reqwest` | `ky` / `undici` | stdlib `net/http` + `go-retryablehttp` |
+| Web framework | **FastAPI** | **axum** | **Hono** + `hono-openapi` | **gin** (de facto, ~48%) / `chi` (minimalist) / `connect-go` (RPC) |
+| ORM / DB | SQLAlchemy 2.x async + `asyncpg` | `sqlx` (compile-time checked) | **Drizzle** | **sqlc** (codegen from `.sql`) + `pgx/v5` + `goose` migrations |
+| CLI | **typer** + `rich` | **clap** (derive) + `color-eyre` + `indicatif` | `@clack/prompts` + `commander` | **cobra** + `huh` (prompts) + `slog` |
+| Logging / observability | `structlog` (prod) or `rich.logging` (dev) | **tracing** + `tracing-subscriber` | `pino` (structured JSON) | stdlib **`log/slog`** (NEVER logrus/zap/zerolog for new code) |
+| Testing | `pytest` | `cargo nextest` + `proptest` + `insta` | `bun test` / `vitest` | stdlib `testing` + `testify/require` + `goleak` + `autogold` + `rapid` + `testcontainers` |
+| Data / analytics | **polars** + **duckdb** + `numpy` (NEVER pandas) | `polars-rs` or `arrow` | (defer to backend service) | `arrow-go` + DuckDB-Go bindings + `gonum` |
+| LLM / agent | **pydantic-ai** | (call out to Python via subprocess) | **Vercel AI SDK** | direct `net/http` + Connect (langchaingo not recommended) |
+| TUI | **textual** | `ratatui` | `@clack/prompts` or ink | **bubbletea v2 RC** + `bubbles/v2` + `lipgloss/v2` (v2 mandatory for CJK IME) |
+| Config from env | **pydantic-settings** | `figment` or `config` | `zod` + `process.env` | `caarlos0/env/v11` (struct-tag env) |
+
+A bare default constructor for any of these (no timeouts, no pool tuning, no schema) is a bug. See the per-language reference for the canonical production defaults.
+
+---
+
+## Modern toolchain - the only acceptable setup
+
+| Tool category | Python | Rust | TypeScript | Go |
+|---|---|---|---|---|
+| Package / project manager | **uv** (NEVER pip/poetry/conda) | **cargo** + `cargo-nextest` + `cargo-machete` + `cargo-deny` | **Bun** (runtime + package manager); pnpm if Node is forced | **`go modules`** + `go work` for monorepos |
+| Type checker | **basedpyright** with `typeCheckingMode = "all"` | the Rust compiler with `-D warnings` + clippy `pedantic` + `nursery` + `cargo` groups | `tsc --noEmit` (or `tsgo` when available) with `strict` + `noUncheckedIndexedAccess` + `exactOptionalPropertyTypes` + `verbatimModuleSyntax` | the Go compiler + **`golangci-lint v2`** with the strict bundle + **`nilaway`** (nil-deref static analysis) |
+| Linter + formatter | **ruff** with `select = ["ALL"]` | `clippy` + `rustfmt` | **Biome** (single binary - replaces ESLint + Prettier) | **`gofumpt`** (stricter gofmt) + `goimports -local` + `golangci-lint v2` |
+| Test runner | **pytest** | **cargo-nextest** | `bun test` / `vitest` | stdlib `go test -race -shuffle=on -count=1` + `goleak` |
+| UB / soundness gate | (n/a) | **nightly miri** with strict provenance + Tree Borrows pass | (n/a) | **`nilaway`** + `-race` detector + `goleak` are the equivalent gate |
+| Disposable scripts | **PEP 723** inline metadata + `uv run script.py` | **rust-script** with inline `Cargo.toml` block | `bun run script.ts` | `//go:build ignore` + `go run script.go` |
+| Bootstrap a new project | `scripts/python/new-project.py` | `scripts/rust/new-project.py` | `scripts/typescript/new-project.ts` | `scripts/go/new-project.py` |
+| Pre-commit / CI gate | `ruff check . && basedpyright && pytest` | `cargo +nightly clippy -- -D warnings && cargo nextest run && cargo +nightly miri test` | `bunx biome check . && bunx tsc --noEmit && bun test` | `gofumpt -l . && golangci-lint run ./... && nilaway ./... && go test -race -shuffle=on -count=1 ./...` |
+
+A `tsconfig.json` with `"strict": true` alone is **not** strict. The reference enumerates the additional flags. Same for `pyproject.toml` and `Cargo.toml` - the references contain the canonical full configuration.
+
+---
+
+## CODE SMELLS — AUTOMATIC REVIEW TRIGGERS
+
+Most smells below are design review triggers: STOP, re-examine the code, and either fix the smell or justify carrying it with a SPECIFIC reason. **The 250 pure LOC ceiling is stricter: >250 is a DEFECT. Refactor before adding lines except for rare SIZE_OK or pure-data-table exceptions.**
+
+Full rationale, measurement methods, workaround detection, and split examples: **[`references/code-smells.md`](references/code-smells.md)**.
+
+### Smell 1 — File exceeds 250 pure LOC
+
+A source file past 250 non-blank, non-comment lines has outgrown a single reviewer's working memory. The module is almost certainly doing more than one thing. Measure: `awk '!/^[[:space:]]*$/ && !/^[[:space:]]*(\/\/|#|--)/' <file> | wc -l`.
+
+**When detected:** Name what the file owns in one short noun phrase. If the answer needs "and", the file needs splitting. Load `/refactor` and split by responsibility. If the file genuinely cannot be split (generated parser, indivisible state machine), mark with `// allow: SIZE_OK — <reason>`.
+
+### Smell 2 — Function with more than 3 parameters
+
+More than 3 arguments signals the function is doing too much, or that related parameters belong in a typed struct. **Workarounds count as the same smell** — passing `dict`/`Record<string, unknown>`/`map[string]any`/`**kwargs`/`...args` to smuggle parameters through one argument, or a throwaway "config" object with 6+ fields that exists solely to wrap what would otherwise be positional args (genuine reusable domain types like `HttpClientConfig` are fine).
+
+**When detected:** Group related parameters into a typed value object with a domain name. If 4+ independent inputs are genuinely required, the justification must be SPECIFIC. See [`references/code-smells.md` Smell 2](references/code-smells.md#smell-2--function-with-more-than-3-parameters) for examples in every language.
+
+### Smell 3 — Redundant verification after a destructive action
+
+Performing a delete/remove/clear/drop and then immediately querying to "confirm" the thing is gone. **The operation's contract IS the verification.** Re-checking is AI-generated defensive bloat that wastes cycles and teaches the reader the operation is unreliable — which it is not. Same smell: calling a setter then getting to "confirm", writing a file then reading it back, inserting a row then SELECT-ing it, pushing to an array then checking `.length`.
+
+**When detected:** Delete the verification code. Trust the operation's contract. If the operation can genuinely fail silently, fix the operation — do not paper over it with a post-check. See [`references/code-smells.md` Smell 3](references/code-smells.md#smell-3--redundant-verification-after-a-destructive-action) for examples.
+
+### Smell 4 — Negative-form names and conditions
+
+Naming variables, functions, or flags by the **absence** of a quality (`isNotValid`, `noErrors`, `cannotProceed`, `DisableLogging`) instead of its **presence** (`isValid`, `isClean`, `canProceed`, `LoggingEnabled`). Every negation forces the reader to invert mentally; two negations (`if !isNotReady`) become a logic puzzle nobody reviews confidently.
+
+**When detected:** Rename to the positive form and invert the branch logic. Negation IS appropriate in guard clauses (`if !authorized { return }`) and filters (`items.filter(|x| !x.is_expired())`) — the negative form is the intent there. See [`references/code-smells.md` Smell 4](references/code-smells.md#smell-4--negative-form-names-and-conditions) for the full naming table and examples.
+
+---
+
+## MANDATORY POST-WRITE REVIEW LOOP
+
+
+hook: PostToolUse
+exec
+/bin/zsh -lc 'rg -n "ProScreen|pro|monetization|Pressable|store safety|betting actions|toBeDisabled|testID" mobile tests/mobile-web.spec.js' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ exited 2 in 0ms:
+rg: tests/mobile-web.spec.js: No such file or directory (os error 2)
+mobile/playwright.config.mjs:3:const qaPort = process.env.RACELENS_QA_PORT ?? '8064';
+mobile/playwright.config.mjs:5:const qaDist = process.env.RACELENS_QA_DIST ?? 'dist';
+mobile/playwright.config.mjs:6:const noServer = process.env.RACELENS_QA_NO_SERVER === '1';
+mobile/playwright.config.mjs:24:      reuseExistingServer: !process.env.CI,
+mobile/playwright.config.mjs:29:  projects: [
+mobile/src/services/monetization.ts:3:declare const process: { env?: Record<string, string | undefined> } | undefined;
+mobile/src/services/monetization.ts:15:function monetizationFlagValue() {
+mobile/src/services/monetization.ts:16:  const envValue = typeof process === 'undefined' ? undefined : process.env?.EXPO_PUBLIC_MONETIZATION;
+mobile/src/services/monetization.ts:17:  const extraValue = Constants.expoConfig?.extra?.monetization;
+mobile/src/services/monetization.ts:22:  return ['1', 'true', 'yes', 'on'].includes(monetizationFlagValue());
+mobile/DESIGN.md:5:RaceLens is a race-intelligence cockpit, not a gambling product. It should feel closer to a commercial finance/sports app than a soft wellness dashboard: graphite control surfaces, clean neutral cards, one kinetic lime signal, and a controlled action orange. The signature is the "race board": near-black track panels, bright signal selections, neutral data cards, teal verification states, and plain uncertainty cues that make model confidence inspectable instead of magical. Home is only for choosing race conditions and starting analysis. The analysis screen must first answer the user's core question: who is predicted 1st, 2nd, and 3rd. Only then should detailed rider/horse data, evidence, odds, and risk context follow.
+mobile/DESIGN.md:9:- curated.design: category-level scan for data apps, AI products, finance tools, and mobile app structure.
+mobile/DESIGN.md:10:- godly.website: recent design taste checks across web interface, branding, product, typography, motion, and app icons.
+mobile/DESIGN.md:119:- **Variants**: base, glass, warning, danger, verified, pro.
+mobile/DESIGN.md:127:- **Variants**: verified, caution, blocked, pro, neutral.
+mobile/DESIGN.md:168:- **Rules**: the only large number on the screen is the 1st-candidate model estimate; TRI probability is small and explicitly labeled `모델 추정`; empty/error states never show candidate badges, podium slots, or 0% model values.
+mobile/DESIGN.md:174:- **Expanded state**: profile, recent flow, tactics, note, and Pro reasons.
+mobile/DESIGN.md:179:- **Purpose**: keep RaceLens from forcing a judgement by showing the underlying provided race materials next to the model signal.
+mobile/DESIGN.md:199:- **Variants**: home, analyze, pro.
+mobile/DESIGN.md:218:- **Purpose**: make the free plan feel materially different by requiring an ad confirmation before checking another race while keeping model output and betting actions separate.
+mobile/src/services/racePayload.ts:98:    profile: [],
+mobile/src/services/racePayload.ts:122:        profile: sanitizeMetrics(item.profile, fallback.profile),
+mobile/src/services/racePayload.ts:197:    probability: 0,
+mobile/src/services/racePayload.ts:212:        probability: safeProbability(item.probability, fallback.probability),
+mobile/src/services/racePayload.ts:266:    entitlement: value.entitlement === 'pro' ? 'pro' : 'free',
+mobile/MONETIZATION_SETUP.md:11:1. Set `EXPO_PUBLIC_MONETIZATION=1` in the Expo build profile.
+mobile/MONETIZATION_SETUP.md:14:4. Install and wire the native IAP SDK only after store products exist.
+mobile/MONETIZATION_SETUP.md:15:5. Keep AdMob disabled until policy review approves ad placements.
+mobile/MONETIZATION_SETUP.md:17:Current mobile code exposes only `purchasePro`, `restorePurchases`, and `adSlot` interfaces in `src/services/monetization.ts`; it does not install IAP or AdMob native modules.
+mobile/src/screens/HomeScreen.tsx:78:        proActive={decision.appSession.entitlement === 'pro'}
+mobile/src/types/race.ts:20:  probability: number;
+mobile/src/types/race.ts:40:  profile: ParticipantMetric[];
+mobile/src/types/race.ts:94:  entitlement: 'free' | 'pro';
+mobile/src/types/race.ts:132:export type TabKey = 'home' | 'analyze' | 'pro';
+mobile/src/services/demoRaceData.ts:13:    profile: [
+mobile/src/services/demoRaceData.ts:40:    profile: [
+mobile/src/services/demoRaceData.ts:67:    profile: [
+mobile/src/services/demoRaceData.ts:94:    profile: [
+mobile/src/services/demoRaceData.ts:121:    profile: [
+mobile/src/services/demoRaceData.ts:148:    profile: [
+mobile/src/services/demoRaceData.ts:175:    profile: [
+mobile/src/services/demoRaceData.ts:205:    profile: [
+mobile/src/services/demoRaceData.ts:232:    profile: [
+mobile/src/services/demoRaceData.ts:259:    profile: [
+mobile/src/services/demoRaceData.ts:286:    profile: [
+mobile/src/services/demoRaceData.ts:313:    profile: [
+mobile/src/services/demoRaceData.ts:349:  { code: 'TOP1', label: '1착 후보', selection: '5', probability: 0.62, grade: '중' },
+mobile/src/services/demoRaceData.ts:350:  { code: 'QNL', label: '복승 조합', selection: '5-1', probability: 0.31, grade: '중' },
+mobile/src/services/demoRaceData.ts:351:  { code: 'TRI', label: '1-2-3 순서', selection: '5-1-7', probability: 0.18, grade: '약' },
+mobile/src/services/demoRaceData.ts:352:  { code: 'TRB', label: '삼복 조합', selection: '1-5-7', probability: 0.26, grade: '중' }
+mobile/src/services/demoRaceData.ts:356:  { code: 'TOP1', label: '1착 후보', selection: '5', probability: 0.62, grade: '중' },
+mobile/src/services/demoRaceData.ts:357:  { code: 'QNL', label: '복승 조합', selection: '5-3', probability: 0.31, grade: '중' },
+mobile/src/services/demoRaceData.ts:358:  { code: 'TRI', label: '1-2-3 순서', selection: '5-3-1', probability: 0.18, grade: '약' },
+mobile/src/services/demoRaceData.ts:359:  { code: 'TRB', label: '삼복 조합', selection: '1-3-5', probability: 0.26, grade: '중' }
+mobile/src/services/raceApi.ts:94:    if (parsed.protocol === 'https:' || (parsed.protocol === 'http:' && local)) {
+mobile/src/services/raceApi.ts:106:  const protocol = window.location.protocol;
+mobile/src/services/raceApi.ts:110:  if (protocol !== 'https:' && protocol !== 'http:') return '';
+mobile/src/services/raceApi.ts:174:function pickGrade(probability: number): RacePick['grade'] {
+mobile/src/services/raceApi.ts:175:  if (probability >= 0.45) return '강';
+mobile/src/services/raceApi.ts:176:  if (probability >= 0.25) return '중';
+mobile/src/services/raceApi.ts:184:    .map((row) => ({ number: rowNumber(row), probability: rowProbability(row) }))
+mobile/src/services/raceApi.ts:185:    .filter((row): row is { number: number; probability: number } => row.number !== null)
+mobile/src/services/raceApi.ts:189:  const first = firstRow.probability;
+mobile/src/services/raceApi.ts:194:    probability: first,
+mobile/src/services/raceApi.ts:199:    const pairProbability = Math.max(0, Math.min(1, (firstRow.probability + secondRow.probability) / 2));
+mobile/src/services/raceApi.ts:204:      probability: pairProbability,
+mobile/src/services/raceApi.ts:214:      Math.min(1, firstRow.probability * Math.max(secondRow.probability, 0.01) * Math.max(thirdRow.probability, 0.01))
+mobile/src/services/raceApi.ts:216:    const trio = Math.max(0, Math.min(1, (firstRow.probability + secondRow.probability + thirdRow.probability) / 3));
+mobile/src/services/raceApi.ts:222:        probability: trifecta,
+mobile/src/services/raceApi.ts:229:        probability: trio,
+mobile/src/services/uxAnalytics.ts:53:    if (parsed.protocol === 'https:' || (parsed.protocol === 'http:' && local)) {
+mobile/src/components/BottomTabs.tsx:1:import { Pressable, StyleSheet, Text, View } from 'react-native';
+mobile/src/components/BottomTabs.tsx:12:  { key: 'pro', label: 'Pro', icon: 'diamond-outline' }
+mobile/src/components/BottomTabs.tsx:31:          <Pressable
+mobile/src/components/BottomTabs.tsx:48:          </Pressable>
+mobile/eas.json:16:    "production": {
+mobile/eas.json:27:    "production": {}
+mobile/src/components/StatusPill.tsx:10:  level?: RiskLevel | 'pro';
+mobile/src/components/StatusPill.tsx:20:    level === 'pro' ? colors.accentViolet :
+mobile/src/screens/AnalyzeScreen.tsx:15:import { adSlot } from '../services/monetization';
+mobile/src/screens/AnalyzeScreen.tsx:30:  const proActive = decision.appSession.entitlement === 'pro';
+mobile/src/screens/AnalyzeScreen.tsx:33:  const freeAdSlot = !proActive ? adSlot('free_analysis_gate') : null;
+mobile/src/screens/AnalyzeScreen.tsx:61:          <StatusPill mode={mode} level={proActive ? 'pro' : 'neutral'} label={proActive ? 'PRO 활성' : '무료 이용'} />
+mobile/src/screens/AnalyzeScreen.tsx:91:        proActive={proActive}
+mobile/src/screens/AnalyzeScreen.tsx:122:      <ParticipantBoard mode={mode} participants={decision.participants} proActive={proActive} sport={decision.sport} />
+mobile/src/screens/AnalyzeScreen.tsx:137:              value={pick.probability}
+mobile/src/screens/AnalyzeScreen.tsx:192:      <View testID="analysis-empty-state" style={styles.emptyState}>
+mobile/src/screens/AnalyzeScreen.tsx:329:      weight: metricValue(participant.profile, '부담중량'),
+mobile/src/screens/AnalyzeScreen.tsx:330:      body: metricValue(participant.profile, '마체')
+mobile/src/screens/AnalyzeScreen.tsx:374:  proActive
+mobile/src/screens/AnalyzeScreen.tsx:380:  proActive: boolean;
+mobile/src/screens/AnalyzeScreen.tsx:387:    <LensCard mode={mode} variant={proActive ? 'pro' : 'caution'}>
+mobile/src/screens/AnalyzeScreen.tsx:391:            {proActive ? 'Pro 고급 분석 열림' : `무료 분석 ${safeUsed}/${freeAnalysisLimit} 사용`}
+mobile/src/screens/AnalyzeScreen.tsx:394:            {proActive ? '광고 없이 전체 신호와 검증 로그를 바로 확인합니다.' : '핵심 예측은 제공하고, 고급 신호는 Pro에서 열립니다.'}
+mobile/src/screens/AnalyzeScreen.tsx:397:        <StatusPill mode={mode} level={proActive ? 'pro' : 'neutral'} label={proActive ? '무제한' : remaining > 0 ? `오늘 ${remaining}회 남음` : '오늘 한도 종료'} />
+mobile/src/screens/AnalyzeScreen.tsx:400:      {!proActive ? (
+mobile/src/screens/AnalyzeScreen.tsx:413:              name={proActive ? 'checkmark-circle-outline' : 'lock-closed-outline'}
+mobile/src/screens/AnalyzeScreen.tsx:415:              color={proActive ? colors.accentTeal : colors.textMuted}
+mobile/src/screens/AnalyzeScreen.tsx:419:                {proActive ? row.label : `${row.label} 잠금`}
+mobile/src/screens/AnalyzeScreen.tsx:422:                {proActive ? row.value : 'Pro에서 실제 값과 복기 내역을 엽니다.'}
+mobile/src/services/participantInsight.ts:3:type MetricGroup = Pick<RaceParticipant, 'form' | 'profile' | 'tactics'>;
+mobile/src/services/participantInsight.ts:23:  return [...participant.profile, ...participant.form, ...participant.tactics];
+mobile/src/services/participantInsight.ts:51:    label: participant.profile[0]?.label ?? '기본 지표',
+mobile/src/services/participantInsight.ts:52:    value: participant.profile[0]?.value ?? '-',
+mobile/src/services/participantInsight.ts:106:  const score = metricNumber(metrics.profile, '평균득점');
+mobile/src/services/participantInsight.ts:107:  const sprint = metricValue(metrics.profile, '200m');
+mobile/src/services/participantInsight.ts:108:  const sprintNumber = metricNumber(metrics.profile, '200m');
+mobile/src/services/participantInsight.ts:109:  const gear = metricValue(metrics.profile, '기어');
+mobile/src/services/participantInsight.ts:152:  const weight = metricValue(metrics.profile, '부담중량');
+mobile/src/services/participantInsight.ts:153:  const weightNumber = metricNumber(metrics.profile, '부담중량');
+mobile/src/services/participantInsight.ts:154:  const body = metricValue(metrics.profile, '마체');
+mobile/src/services/participantInsight.ts:155:  const distance = metricValue(metrics.profile, '거리');
+mobile/src/services/participantInsight.ts:156:  const training = metricValue(metrics.profile, '조교');
+mobile/src/services/participantInsight.ts:179:  const bodyRead = body.startsWith('+') && Math.abs(metricNumber(metrics.profile, '마체') ?? 0) >= 4
+mobile/src/services/participantInsight.ts:195:    profile: participant.profile,
+mobile/src/components/LensCard.tsx:3:import { Animated, Pressable, StyleSheet, View } from 'react-native';
+mobile/src/components/LensCard.tsx:13:  variant?: RiskLevel | 'pro' | 'base';
+mobile/src/components/LensCard.tsx:24:    variant === 'pro' ? colors.accentViolet :
+mobile/src/components/LensCard.tsx:48:    <Pressable
+mobile/src/components/LensCard.tsx:55:    </Pressable>
+mobile/src/components/PredictionSummary.tsx:104:      <View testID="prediction-podium" style={styles.podium}>
+mobile/src/components/PredictionSummary.tsx:133:                  <Text style={[styles.probabilityLabel, { color: colors.textBoardQuiet }]}>모델 추정</Text>
+mobile/src/components/PredictionSummary.tsx:134:                  <Text style={[styles.probabilityValue, { color: sportColors.pickHighlight }]}>
+mobile/src/components/PredictionSummary.tsx:157:          <Text style={[styles.probabilityLabel, { color: colors.textMuted }]}>모델 추정</Text>
+mobile/src/components/PredictionSummary.tsx:254:  probabilityLabel: {
+mobile/src/components/PredictionSummary.tsx:257:  probabilityValue: {
+mobile/src/components/ParticipantBoard.tsx:2:import { Pressable, StyleSheet, Text, View } from 'react-native';
+mobile/src/components/ParticipantBoard.tsx:17:  proActive?: boolean;
+mobile/src/components/ParticipantBoard.tsx:38:  return [...participant.profile, ...participant.form, ...participant.tactics].find((item) => item.label === label);
+mobile/src/components/ParticipantBoard.tsx:82:  proActive
+mobile/src/components/ParticipantBoard.tsx:86:  proActive: boolean;
+mobile/src/components/ParticipantBoard.tsx:88:  if (participant.algorithmReasons?.length && proActive) {
+mobile/src/components/ParticipantBoard.tsx:113:export function ParticipantBoard({ mode, sport, participants, compact = false, proActive = false }: ParticipantBoardProps) {
+mobile/src/components/ParticipantBoard.tsx:150:            <Pressable
+mobile/src/components/ParticipantBoard.tsx:190:                      <MetricGrid colors={colors} compact={false} items={participant.profile} />
+mobile/src/components/ParticipantBoard.tsx:205:                    <AlgorithmReasons colors={colors} participant={participant} proActive={proActive} />
+mobile/src/components/ParticipantBoard.tsx:209:            </Pressable>
+mobile/src/screens/ProScreen.tsx:1:import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+mobile/src/screens/ProScreen.tsx:7:import { isMonetizationEnabled, purchasePro, restorePurchases } from '../services/monetization';
+mobile/src/screens/ProScreen.tsx:12:type ProScreenProps = {
+mobile/src/screens/ProScreen.tsx:26:const proFeatures = [
+mobile/src/screens/ProScreen.tsx:40:const proExperience = [
+mobile/src/screens/ProScreen.tsx:47:export function ProScreen({ mode, decision, freeAnalysisLimit, freeAnalysisUsed }: ProScreenProps) {
+mobile/src/screens/ProScreen.tsx:49:  const proActive = decision.appSession.entitlement === 'pro';
+mobile/src/screens/ProScreen.tsx:50:  const monetizationEnabled = isMonetizationEnabled();
+mobile/src/screens/ProScreen.tsx:56:    ['광고', monetizationEnabled ? '분석 중간 광고 슬롯 표시' : '심사 전 비활성'],
+mobile/src/screens/ProScreen.tsx:62:        <StatusPill mode={mode} level={proActive ? 'verified' : 'neutral'} label={proActive ? 'PRO ACTIVE' : 'FREE PLAN'} />
+mobile/src/screens/ProScreen.tsx:69:      <LensCard mode={mode} variant={proActive ? 'pro' : 'caution'}>
+mobile/src/screens/ProScreen.tsx:72:          <StatusPill mode={mode} level={proActive ? 'pro' : 'neutral'} label={proActive ? 'Pro 경험' : '무료 경험'} />
+mobile/src/screens/ProScreen.tsx:75:          {(proActive ? proExperience : freeExperience).map(([label, value]) => (
+mobile/src/screens/ProScreen.tsx:85:        <LensCard mode={mode} variant={proActive ? 'neutral' : 'verified'}>
+mobile/src/screens/ProScreen.tsx:88:            {!proActive ? <StatusPill mode={mode} level="verified" label="현재 이용 중" /> : null}
+mobile/src/screens/ProScreen.tsx:99:        <LensCard mode={mode} variant="pro">
+mobile/src/screens/ProScreen.tsx:102:            {proActive ? <StatusPill mode={mode} level="pro" label="활성" /> : <StatusPill mode={mode} level="pro" label="월 구독" />}
+mobile/src/screens/ProScreen.tsx:107:            {proFeatures.map((feature) => (
+mobile/src/screens/ProScreen.tsx:112:            <Pressable
+mobile/src/screens/ProScreen.tsx:114:              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
+mobile/src/screens/ProScreen.tsx:116:                if (monetizationEnabled && !proActive) void purchasePro();
+mobile/src/screens/ProScreen.tsx:121:                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+mobile/src/screens/ProScreen.tsx:122:                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
+mobile/src/screens/ProScreen.tsx:127:              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
+mobile/src/screens/ProScreen.tsx:128:                {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+mobile/src/screens/ProScreen.tsx:130:            </Pressable>
+mobile/src/screens/ProScreen.tsx:131:            <Pressable
+mobile/src/screens/ProScreen.tsx:133:              accessibilityState={{ disabled: !monetizationEnabled }}
+mobile/src/screens/ProScreen.tsx:135:                if (monetizationEnabled) void restorePurchases();
+mobile/src/screens/ProScreen.tsx:139:              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
+mobile/src/screens/ProScreen.tsx:140:            </Pressable>
+mobile/src/screens/ProScreen.tsx:145:      {monetizationEnabled ? (
+mobile/src/screens/ProScreen.tsx:154:      <LensCard mode={mode} variant={proActive ? 'verified' : 'caution'}>
+mobile/src/screens/ProScreen.tsx:161:            <FeatureRow key={feature} mode={mode} label={proActive ? `${feature} 사용 가능` : `${feature} 잠금`} locked={!proActive} />
+mobile/src/screens/ProScreen.tsx:166:      <LensCard mode={mode} variant={decision.appSession.entitlement === 'pro' ? 'verified' : 'neutral'}>
+mobile/src/components/RaceSelector.tsx:1:import { Pressable, StyleSheet, Text, View } from 'react-native';
+mobile/src/components/RaceSelector.tsx:17:  proActive: boolean;
+mobile/src/components/RaceSelector.tsx:35:  proActive,
+mobile/src/components/RaceSelector.tsx:49:  const freeExhausted = !proActive && freeRemaining === 0;
+mobile/src/components/RaceSelector.tsx:61:            <Pressable
+mobile/src/components/RaceSelector.tsx:72:            </Pressable>
+mobile/src/components/RaceSelector.tsx:81:            <Pressable
+mobile/src/components/RaceSelector.tsx:97:            </Pressable>
+mobile/src/components/RaceSelector.tsx:104:            <Pressable
+mobile/src/components/RaceSelector.tsx:120:            </Pressable>
+mobile/src/components/RaceSelector.tsx:126:                <Pressable
+mobile/src/components/RaceSelector.tsx:137:                </Pressable>
+mobile/src/components/RaceSelector.tsx:152:              <Pressable
+mobile/src/components/RaceSelector.tsx:161:              </Pressable>
+mobile/src/components/RaceSelector.tsx:171:            <Pressable
+mobile/src/components/RaceSelector.tsx:182:            </Pressable>
+mobile/src/components/RaceSelector.tsx:187:      <Pressable
+mobile/src/components/RaceSelector.tsx:206:      </Pressable>
+mobile/src/components/RaceSelector.tsx:208:        {proActive ? 'Pro 무제한 분석 활성' : `무료 분석 ${Math.min(freeAnalysisUsed, freeAnalysisLimit)}/${freeAnalysisLimit} 사용 · 오늘 ${freeRemaining}회 남음`}
+mobile/App.tsx:2:import { ActivityIndicator, AppState, Pressable, StyleSheet, Text, useColorScheme, View } from 'react-native';
+mobile/App.tsx:9:import { isMonetizationEnabled } from './src/services/monetization';
+mobile/App.tsx:13:import { ProScreen } from './src/screens/ProScreen';
+mobile/App.tsx:100:    if (currentDecision.appSession.entitlement !== 'pro' && effectiveRemaining <= 0) {
+mobile/App.tsx:102:      setActiveTab('pro');
+mobile/App.tsx:105:    if (currentDecision.appSession.entitlement !== 'pro' && isMonetizationEnabled()) {
+mobile/App.tsx:128:      if (next.appSession.entitlement !== 'pro' && next.status !== 'blocked') {
+mobile/App.tsx:157:    if (activeTab !== 'analyze' || !activeDecision || activeDecision.appSession.entitlement !== 'pro') {
+mobile/App.tsx:403:        {activeTab === 'pro' && (
+mobile/App.tsx:404:          <ProScreen
+mobile/App.tsx:460:        <Pressable
+mobile/App.tsx:473:        </Pressable>
+mobile/App.tsx:474:        <Pressable
+mobile/App.tsx:481:        </Pressable>
+mobile/src/components/EvidenceGuide.tsx:81:        detail: `${metricValue(primary.profile, '평균득점')}점 · 200m ${metricValue(primary.profile, '200m')} · 입상률 ${metricValue(primary.form, '입상률')}`,
+mobile/src/components/EvidenceGuide.tsx:103:      detail: `${metricValue(primary.profile, '마체')} · 거리 ${metricValue(primary.profile, '거리')} · 복승률 ${metricValue(primary.form, '복승률')}`,
+mobile/src/components/EvidenceGuide.tsx:108:      value: `${metricValue(primary.profile, '기수')} · ${metricValue(primary.profile, '부담중량')}`,
+mobile/tests/mobile-web.spec.js:5:const qaDist = process.env.RACELENS_QA_DIST ?? 'dist';
+mobile/tests/mobile-web.spec.js:6:const qaNoServer = process.env.RACELENS_QA_NO_SERVER === '1';
+mobile/tests/mobile-web.spec.js:63:    FixedDate.prototype = RealDate.prototype;
+mobile/tests/mobile-web.spec.js:233:  await expect(page.getByRole('button', { name: 'Pro에서 무제한 사용' })).toBeDisabled();
+mobile/tests/mobile-web.spec.js:309:test('store safety and pro surfaces avoid betting actions', async ({ page }) => {
+mobile/tests/mobile-web.spec.js:329:  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
+mobile/scripts/qa-api-failure.mjs:1:import { spawnSync } from 'node:child_process';
+mobile/scripts/qa-api-failure.mjs:27:    ...process.env,
+mobile/scripts/qa-api-failure.mjs:33:if (exportResult.status !== 0) process.exit(exportResult.status ?? 1);
+mobile/scripts/qa-api-failure.mjs:47:  process.exit(1);
+mobile/app.config.js:5:    apiBaseUrl: process.env.EXPO_PUBLIC_RACELENS_API_BASE_URL || config.extra?.apiBaseUrl || '',
+mobile/app.config.js:6:    analyticsUrl: process.env.EXPO_PUBLIC_RACELENS_ANALYTICS_URL || config.extra?.analyticsUrl || ''
+mobile/STORE_POLICY.md:15:- Guaranteed profit
+mobile/STORE_POLICY.md:26:- User-entered bankroll, profit target, or loss-chasing tools.
+mobile/STORE_POLICY.md:33:- It does not provide financial advice, betting instructions, or guaranteed results.
+mobile/STORE_POLICY.md:46:- Privacy policy, terms, and account deletion pages are live before reviewer access at `/legal/privacy`, `/legal/terms`, and `/legal/account-deletion` on the production HTTPS API domain.
+mobile/STORE_POLICY.md:47:- EAS production submit credentials are configured outside git.
+mobile/STORE_POLICY.md:52:- Store listing copy keeps the product framed as data analysis, with no betting CTA, purchase link, or profit guarantee.
+mobile/scripts/live-preview-control.sh:232:    command="cd $repo; if [[ -f \"\$HOME/kra/.env\" ]]; then set -a; source \"\$HOME/kra/.env\"; set +a; fi; if [[ -f \"\$HOME/keirin/.env\" ]]; then set -a; source \"\$HOME/keirin/.env\"; set +a; fi; export KCYCLE_ENABLED=\"\${KCYCLE_ENABLED:-1}\"; export KCYCLE_TRIFECTA_ENABLED=\"\${KCYCLE_TRIFECTA_ENABLED:-1}\"; export FLASK_ENV=production; exec $python -m flask --app app run --host 127.0.0.1 --port $BACKEND_PORT"
+mobile/scripts/live-preview-control.sh:243:      FLASK_ENV=production \
+mobile/scripts/live-preview-control.sh:251:start_proxy() {
+mobile/scripts/live-preview-control.sh:255:    remember_pid proxy "$existing"
+mobile/scripts/live-preview-control.sh:262:    command="cd $mobile; export RACELENS_PREVIEW_PORT=$PROXY_PORT; export RACELENS_UPSTREAM_API=$BACKEND_URL; exec node scripts/preview-proxy-server.cjs"
+mobile/scripts/live-preview-control.sh:263:    start_launch_agent proxy "$command"
+mobile/scripts/live-preview-control.sh:272:      node scripts/preview-proxy-server.cjs \
+mobile/scripts/live-preview-control.sh:273:      >"$(log_file proxy)" 2>&1 &
+mobile/scripts/live-preview-control.sh:274:    remember_pid proxy "$!"
+mobile/scripts/live-preview-control.sh:306:    command="cd $mobile; exec npx --yes cloudflared tunnel --protocol http2 --url $PROXY_URL"
+mobile/scripts/live-preview-control.sh:311:    nohup npx --yes cloudflared tunnel --protocol http2 --url "$PROXY_URL" \
+mobile/scripts/live-preview-control.sh:348:  start_proxy
+mobile/scripts/live-preview-control.sh:355:    stop_pid_file proxy
+mobile/scripts/live-preview-control.sh:357:    start_proxy
+mobile/scripts/live-preview-control.sh:389:import subprocess
+mobile/scripts/live-preview-control.sh:419:        dig = subprocess.run(
+mobile/scripts/live-preview-control.sh:439:        result = subprocess.run(command, check=True, capture_output=True, text=True)
+mobile/scripts/live-preview-control.sh:472:  start_proxy
+mobile/scripts/live-preview-control.sh:482:  stop_pid_file proxy
+mobile/scripts/live-preview-control.sh:488:    local backend proxy tunnel watchdog
+mobile/scripts/live-preview-control.sh:490:    proxy="$(launch_pid proxy || true)"
+mobile/scripts/live-preview-control.sh:494:    [[ -n "$proxy" ]] && remember_pid proxy "$proxy"
+mobile/scripts/live-preview-control.sh:499:  printf 'proxy_pid=%s proxy_url=%s\n' "$(read_pid proxy || true)" "$PROXY_URL"
+mobile/scripts/qa-release-readiness.mjs:6:const distRoot = resolve(process.env.RACELENS_QA_DIST ?? 'dist');
+mobile/scripts/qa-release-readiness.mjs:142:      name: '320-pro-dark-safety',
+mobile/scripts/qa-api-live.mjs:1:import { spawnSync } from 'node:child_process';
+mobile/scripts/qa-api-live.mjs:28:    ...process.env,
+mobile/scripts/qa-api-live.mjs:34:if (exportResult.status !== 0) process.exit(exportResult.status ?? 1);
+mobile/scripts/qa-api-live.mjs:39:  process.exit(1);
+mobile/scripts/qa-api-live.mjs:126:      { code: 'TOP1', label: '1착 후보', selection: '2', probability: 0.37, grade: '강' },
+mobile/scripts/qa-api-live.mjs:127:      { code: 'QNL', label: '복승 후보', selection: '2-4', probability: 0.24, grade: '중' },
+mobile/scripts/qa-api-live.mjs:128:      { code: 'TRI', label: '삼쌍 순서', selection: '2-4-5', probability: 0.09, grade: '중' }
+mobile/scripts/qa-api-live.mjs:208:    throw new Error('Lab tab should not be rendered in the production app shell');
+mobile/scripts/qa-mobile.mjs:1:import { spawnSync } from 'node:child_process';
+mobile/scripts/qa-mobile.mjs:28:        appPort: process.env.RACELENS_QA_PORT ?? '8064',
+mobile/scripts/qa-mobile.mjs:39:      ...process.env,
+mobile/scripts/qa-mobile.mjs:46:  if (result.status !== 0) process.exit(result.status ?? 1);
+mobile/README.md:9:- No betting links, purchase prompts, stake sizing, guaranteed-return language, or real-money gambling flow.
+mobile/README.md:40:The app sends only anonymous product events: app open, screen view, tab selection, race context changes, analysis request/result/error, latency, market state, and coarse confidence percentages. It does not send participant names, horse/rider names, user IDs, device IDs, betting selections, or meet names. Keep the endpoint server-side so beta retention, session length, analysis-start rate, detail-view rate, and Pro-screen drop-off can be measured without adding third-party tracking.
+mobile/README.md:48:npx eas build --platform android --profile production
+mobile/README.md:49:npx eas build --platform ios --profile production
+mobile/README.md:63:- curated.design, godly.website, awwwards.com, landing.love, saaspo.com, onepagelove.com: product, landing, and high-polish visual benchmarks.
+mobile/README.md:81:Run `npm run qa:store-readiness` only with the real submission environment loaded. It blocks submission unless production API, privacy policy, terms, account deletion, support contact, and billing mode are explicitly configured and reachable over HTTPS.
+mobile/scripts/check-design-tokens.mjs:36:  process.exit(1);
+mobile/scripts/check-design-contrast.mjs:63:  process.exit(1);
+mobile/scripts/qa-live-preview.mjs:8:const stateDir = process.env.RACELENS_PREVIEW_STATE_DIR || join(repoDir, '.runtime', 'racelens-preview');
+mobile/scripts/qa-live-preview.mjs:11:const configuredUrl = process.env.RACELENS_PREVIEW_URL?.trim();
+mobile/scripts/qa-live-preview.mjs:13:const expectHistorical = process.env.RACELENS_EXPECT_HISTORICAL !== '0';
+mobile/scripts/qa-live-preview.mjs:17:  process.exit(1);
+mobile/scripts/check-design-resources.mjs:42:  process.exit(1);
+mobile/scripts/check-design-resources.mjs:49:  process.exit(1);
+mobile/scripts/check-store-release-env.mjs:33:  const value = process.env[name]?.trim() ?? '';
+mobile/scripts/check-store-release-env.mjs:40:    if (parsed.protocol !== 'https:') failures.push(`${name} must use https`);
+mobile/scripts/check-store-release-env.mjs:41:    if (isPlaceholderHost(parsed.hostname)) failures.push(`${name} must point to a real production domain, not ${parsed.hostname}`);
+mobile/scripts/check-store-release-env.mjs:52:const supportEmail = process.env.RACELENS_SUPPORT_EMAIL?.trim() ?? '';
+mobile/scripts/check-store-release-env.mjs:62:const billingMode = process.env.RACELENS_BILLING_MODE?.trim() ?? '';
+mobile/scripts/check-store-release-env.mjs:77:  failures.push('app.json must not hard-code the production API URL; inject it from release env');
+mobile/scripts/check-store-release-env.mjs:80:  failures.push('app.json must not hard-code the production analytics URL; inject it from release env');
+mobile/scripts/check-store-release-env.mjs:127:  process.exit(1);
+mobile/DESIGN_RESOURCES.md:9:| curated.design | Broad product/site category scan, especially apps, finance, AI, and data tools. |
+mobile/DESIGN_RESOURCES.md:42:- Before a new app screen is considered complete, check at least one source from product inspiration, one from component/conversion patterns, and one from brand/assets/tokens.
+mobile/DESIGN_RESOURCES.md:45:- Native mobile verification must include at least one mobile viewport screenshot or equivalent device/simulator proof.
+mobile/package-lock.json:202:    "node_modules/@babel/helper-define-polyfill-provider": {
+mobile/package-lock.json:204:      "resolved": "https://registry.npmjs.org/@babel/helper-define-polyfill-provider/-/helper-define-polyfill-provider-0.6.8.tgz",
+mobile/package-lock.json:407:    "node_modules/@babel/plugin-proposal-decorators": {
+mobile/package-lock.json:409:      "resolved": "https://registry.npmjs.org/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.29.7.tgz",
+mobile/package-lock.json:424:    "node_modules/@babel/plugin-proposal-export-default-from": {
+mobile/package-lock.json:426:      "resolved": "https://registry.npmjs.org/@babel/plugin-proposal-export-default-from/-/plugin-proposal-export-default-from-7.29.7.tgz",
+mobile/package-lock.json:599:    "node_modules/@babel/plugin-transform-class-properties": {
+mobile/package-lock.json:601:      "resolved": "https://registry.npmjs.org/@babel/plugin-transform-class-properties/-/plugin-transform-class-properties-7.29.7.tgz",
+mobile/package-lock.json:857:    "node_modules/@babel/plugin-transform-private-property-in-object": {
+mobile/package-lock.json:859:      "resolved": "https://registry.npmjs.org/@babel/plugin-transform-private-property-in-object/-/plugin-transform-private-property-in-object-7.29.7.tgz",
+mobile/package-lock.json:1206:        "@expo/sudo-prompt": "^9.3.1",
+mobile/package-lock.json:1607:    "node_modules/@expo/local-build-cache-provider": {
+mobile/package-lock.json:1609:      "resolved": "https://registry.npmjs.org/@expo/local-build-cache-provider/-/local-build-cache-provider-57.0.1.tgz",
+mobile/package-lock.json:1617:    "node_modules/@expo/local-build-cache-provider/node_modules/ansi-styles": {
+mobile/package-lock.json:1632:    "node_modules/@expo/local-build-cache-provider/node_modules/chalk": {
+mobile/package-lock.json:1648:    "node_modules/@expo/local-build-cache-provider/node_modules/color-convert": {
+mobile/package-lock.json:1660:    "node_modules/@expo/local-build-cache-provider/node_modules/color-name": {
+mobile/package-lock.json:1666:    "node_modules/@expo/local-build-cache-provider/node_modules/has-flag": {
+mobile/package-lock.json:1675:    "node_modules/@expo/local-build-cache-provider/node_modules/supports-color": {
+mobile/package-lock.json:2044:    "node_modules/@expo/sudo-prompt": {
+mobile/package-lock.json:2046:      "resolved": "https://registry.npmjs.org/@expo/sudo-prompt/-/sudo-prompt-9.3.2.tgz",
+mobile/package-lock.json:2693:        "@babel/helper-define-polyfill-provider": "^0.6.8",
+mobile/package-lock.json:2715:        "@babel/helper-define-polyfill-provider": "^0.6.5",
+mobile/package-lock.json:2728:        "@babel/helper-define-polyfill-provider": "^0.6.8"
+mobile/package-lock.json:2775:        "@babel/plugin-proposal-decorators": "^7.12.9",
+mobile/package-lock.json:2776:        "@babel/plugin-proposal-export-default-from": "^7.24.7",
+mobile/package-lock.json:2784:        "@babel/plugin-transform-class-properties": "^7.25.4",
+mobile/package-lock.json:2800:        "@babel/plugin-transform-private-property-in-object": "^7.24.7",
+mobile/package-lock.json:3625:        "@expo/local-build-cache-provider": "^57.0.1",
+mobile/package-lock.json:3922:        "progress": "^2.0.3",
+mobile/package-lock.json:3923:        "prompts": "^2.3.2",
+mobile/package-lock.json:4172:        "promise": "^7.1.1",
+mobile/package-lock.json:4183:    "node_modules/fbjs/node_modules/promise": {
+mobile/package-lock.json:4185:      "resolved": "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz",
+mobile/package-lock.json:4406:        "setprototypeof": "~1.2.0",
+mobile/package-lock.json:4427:    "node_modules/https-proxy-agent": {
+mobile/package-lock.json:4429:      "resolved": "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz",
+mobile/package-lock.json:5310:        "https-proxy-agent": "^7.0.5",
+mobile/package-lock.json:5744:        "proc-log": "^4.0.0",
+mobile/package-lock.json:6081:    "node_modules/proc-log": {
+mobile/package-lock.json:6083:      "resolved": "https://registry.npmjs.org/proc-log/-/proc-log-4.2.0.tgz",
+mobile/package-lock.json:6090:    "node_modules/progress": {
+mobile/package-lock.json:6092:      "resolved": "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz",
+mobile/package-lock.json:6099:    "node_modules/promise": {
+mobile/package-lock.json:6101:      "resolved": "https://registry.npmjs.org/promise/-/promise-8.3.0.tgz",
+mobile/package-lock.json:6108:    "node_modules/prompts": {
+mobile/package-lock.json:6110:      "resolved": "https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz",
+mobile/package-lock.json:6203:        "promise": "^8.3.0",
+mobile/package-lock.json:6339:    "node_modules/regenerate-unicode-properties": {
+mobile/package-lock.json:6341:      "resolved": "https://registry.npmjs.org/regenerate-unicode-properties/-/regenerate-unicode-properties-10.2.2.tgz",
+mobile/package-lock.json:6364:        "regenerate-unicode-properties": "^10.2.2",
+mobile/package-lock.json:6367:        "unicode-match-property-ecmascript": "^2.0.0",
+mobile/package-lock.json:6368:        "unicode-match-property-value-ecmascript": "^2.2.1"
+mobile/package-lock.json:6605:    "node_modules/setprototypeof": {
+mobile/package-lock.json:6607:      "resolved": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
+mobile/package-lock.json:7030:    "node_modules/unicode-canonical-property-names-ecmascript": {
+mobile/package-lock.json:7032:      "resolved": "https://registry.npmjs.org/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-2.0.1.tgz",
+mobile/package-lock.json:7039:    "node_modules/unicode-match-property-ecmascript": {
+mobile/package-lock.json:7041:      "resolved": "https://registry.npmjs.org/unicode-match-property-ecmascript/-/unicode-match-property-ecmascript-2.0.0.tgz",
+mobile/package-lock.json:7045:        "unicode-canonical-property-names-ecmascript": "^2.0.0",
+mobile/package-lock.json:7046:        "unicode-property-aliases-ecmascript": "^2.0.0"
+mobile/package-lock.json:7052:    "node_modules/unicode-match-property-value-ecmascript": {
+mobile/package-lock.json:7054:      "resolved": "https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-2.2.1.tgz",
+mobile/package-lock.json:7061:    "node_modules/unicode-property-aliases-ecmascript": {
+mobile/package-lock.json:7063:      "resolved": "https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-2.2.0.tgz",
+mobile/scripts/qa-full-functional-audit.mjs:9:const baseUrl = (process.env.RACELENS_QA_URL || (existsSync(publicUrlFile) ? readFileSync(publicUrlFile, 'utf8') : '')).trim();
+mobile/scripts/qa-full-functional-audit.mjs:13:  process.exit(1);
+mobile/scripts/qa-full-functional-audit.mjs:197:  if (liveDecision.body.app_session?.entitlement === 'pro') {
+mobile/scripts/qa-full-functional-audit.mjs:198:    results.push(await runCase(browser, 'pro-unlimited-390-light', async (page) => {
+mobile/scripts/qa-full-functional-audit.mjs:205:      assert(await page.getByRole('button', { name: 'Pro에서 무제한 사용' }).count() === 0, 'pro flow rendered exhausted free quota button');
+mobile/scripts/qa-full-functional-audit.mjs:221:  results.push(await runCase(browser, 'pro-surface-768-light', async (page) => {
+mobile/scripts/preview-proxy-server.cjs:7:const port = Number(process.env.RACELENS_PREVIEW_PORT || 4173);
+mobile/scripts/preview-proxy-server.cjs:8:const upstreamBase = (process.env.RACELENS_UPSTREAM_API || process.env.ORACLE_BASE_URL || '').replace(/\/$/, '');
+mobile/scripts/preview-proxy-server.cjs:9:const upstreamTimeoutMs = Number(process.env.RACELENS_UPSTREAM_TIMEOUT_MS || 12000);
+mobile/scripts/preview-proxy-server.cjs:69:      storage: 'proxy_fallback',
+mobile/scripts/preview-proxy-server.cjs:123:async function proxyApi(req, res, pathname, search) {
+mobile/scripts/preview-proxy-server.cjs:225:      void proxyApi(req, res, parsed.pathname, parsed.search);
+mobile/scripts/preview-proxy-server.cjs:230:    sendJson(res, 500, { error: 'proxy_server_error' });
+mobile/scripts/preview-proxy-server.cjs:235:  console.log(`RaceLens preview proxy listening on ${port}, upstream=${upstreamBase || 'UNCONFIGURED_ORACLE_API'}`);
+mobile/scripts/check-security-surface.mjs:4:const root = process.cwd();
+mobile/scripts/check-security-surface.mjs:63:  process.exit(1);
+mobile/scripts/qa-release-visual.mjs:1:import { spawnSync } from 'node:child_process';
+mobile/scripts/qa-release-visual.mjs:10:    ...process.env,
+mobile/scripts/qa-release-visual.mjs:17:if (exportResult.status !== 0) process.exit(exportResult.status ?? 1);
+mobile/scripts/qa-release-visual.mjs:21:    ...process.env,
+mobile/scripts/qa-release-visual.mjs:27:process.exit(qaResult.status ?? 1);
+mobile/scripts/qa-analytics.mjs:1:import { spawnSync } from 'node:child_process';
+mobile/scripts/qa-analytics.mjs:29:    ...process.env,
+mobile/scripts/qa-analytics.mjs:35:if (exportResult.status !== 0) process.exit(exportResult.status ?? 1);
+
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+2026-07-06T22:26:39.263468Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:39.264154Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:39.265901Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:26:39.269880Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:39.280982Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:39.281002Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:39.281337Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:39.281347Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:39.281708Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:39.281713Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:39.282057Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:39.282061Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:39.282405Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:39.282414Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:39.283108Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:39.283112Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+테스트 경로는 mobile 내부였습니다. 구현 파일과 해당 단언만 좁혀 읽습니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,260p' mobile/src/screens/ProScreen.tsx" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+exec
+/bin/zsh -lc "sed -n '285,330p' mobile/tests/mobile-web.spec.js" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+  await expect(page.getByText('예측 순서 5-3-1')).toHaveCount(0);
+  await expect(page.getByText('5번 골든포커스')).toHaveCount(0);
+  await expect(page.getByText('3번 스톰레이크')).toHaveCount(0);
+  await expect(page.getByText('1번 새벽질주')).toHaveCount(0);
+  await expect(page.getByText('경마 판단 근거')).toHaveCount(0);
+  await expect(page.getByText('배당 자료', { exact: true })).toHaveCount(0);
+  await expect(page.getByText('출전 정보 대기 중')).toHaveCount(0);
+  await expect(page.getByText('표본 0')).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
+test('all bottom tabs render their primary workflows', async ({ page }) => {
+  const errors = collectErrors(page);
+  await page.goto('/');
+
+  await expect(page.getByRole('tab')).toHaveCount(3);
+  await expect(page.getByRole('tab', { name: /랩/ })).toHaveCount(0);
+  for (const item of tabChecks) {
+    await page.getByRole('tab', { name: new RegExp(item.label) }).click();
+    await expect(page.getByText(item.text, { exact: item.text === 'RaceLens' })).toBeVisible();
+  }
+  expect(errors).toEqual([]);
+});
+
+test('store safety and pro surfaces avoid betting actions', async ({ page }) => {
+  const errors = collectErrors(page);
+  await page.goto('/');
+
+  await expect(page.getByText('정보 분석 도구')).toBeVisible();
+  await page.getByRole('tab', { name: /Pro/ }).click();
+  await expect(page.getByText('무료 플랜', { exact: true })).toBeVisible();
+  await expect(page.getByText('Pro 플랜', { exact: true })).toBeVisible();
+  await expect(page.getByText('월 5,000원', { exact: true })).toBeVisible();
+  await expect(page.getByText('현재 적용 상태', { exact: true })).toBeVisible();
+  await expect(page.getByText('무료 경험', { exact: true })).toBeVisible();
+  await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+  await expect(page.getByText('3회', { exact: true })).toBeVisible();
+  await expect(page.getByText('심사 전 비활성', { exact: true })).toBeVisible();
+  await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+  await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+  await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+  await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+  await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
+  expect(errors).toEqual([]);
+
+ succeeded in 0ms:
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
+import { LensCard } from '../components/LensCard';
+import { StatusPill } from '../components/StatusPill';
+import { StoreSafeNotice } from '../components/StoreSafeNotice';
+import { isMonetizationEnabled, purchasePro, restorePurchases } from '../services/monetization';
+import { palette, radius, space, typography } from '../theme/tokens';
+import type { ThemeMode } from '../theme/tokens';
+import type { RaceDecision } from '../types/race';
+
+type ProScreenProps = {
+  mode: ThemeMode;
+  decision: RaceDecision;
+  freeAnalysisLimit: number;
+  freeAnalysisUsed: number;
+};
+
+const freeFeatures = [
+  '기본 예측 순서와 후보 신뢰도',
+  '선수·말 기본 정보와 배당 자료',
+  '무료 분석 한도 적용',
+  '고급 복기와 검증 로그는 잠금'
+];
+
+const proFeatures = [
+  '광고 제거 및 무제한 조회',
+  '고확신 필터와 마감 직전 갱신',
+  '과거 유사 경주와 복기 리포트',
+  '모델 후보의 검증 로그'
+];
+
+const lockedFeatures = [
+  '고확신 후보만 모아보기',
+  '마감 직전 배당 변화 알림',
+  '유사 경주 비교 리포트',
+  '모델 검증 로그 전체 열람'
+];
+
+const proExperience = [
+  ['분석 횟수', '무제한'],
+  ['광고', '표시 안 함'],
+  ['고급 신호', '필터·배당·유사 경주 열림'],
+  ['복기 로그', '전체 열람']
+];
+
+export function ProScreen({ mode, decision, freeAnalysisLimit, freeAnalysisUsed }: ProScreenProps) {
+  const colors = palette(mode);
+  const proActive = decision.appSession.entitlement === 'pro';
+  const monetizationEnabled = isMonetizationEnabled();
+  const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+  const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+  const freeExperience = [
+    ['분석 횟수', `오늘 ${safeUsed}/${freeAnalysisLimit} 사용`],
+    ['남은 횟수', `${freeRemaining}회`],
+    ['광고', monetizationEnabled ? '분석 중간 광고 슬롯 표시' : '심사 전 비활성'],
+    ['고급 신호', '값은 가리고 잠금 카드 노출']
+  ];
+  return (
+    <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+      <View style={styles.header}>
+        <StatusPill mode={mode} level={proActive ? 'verified' : 'neutral'} label={proActive ? 'PRO ACTIVE' : 'FREE PLAN'} />
+        <Text style={[styles.title, { color: colors.textPrimary }]}>RaceLens Pro</Text>
+        <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
+          Pro 차이는 분석 화면에서 바로 체감되도록 광고, 조회 한도, 고급 신호 잠금을 실제 상태로 나눕니다.
+        </Text>
+      </View>
+
+      <LensCard mode={mode} variant={proActive ? 'pro' : 'caution'}>
+        <View style={styles.planHeader}>
+          <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>현재 적용 상태</Text>
+          <StatusPill mode={mode} level={proActive ? 'pro' : 'neutral'} label={proActive ? 'Pro 경험' : '무료 경험'} />
+        </View>
+        <View style={styles.experienceGrid}>
+          {(proActive ? proExperience : freeExperience).map(([label, value]) => (
+            <View key={label} style={[styles.experienceCell, { borderColor: colors.borderSubtle, backgroundColor: colors.surfaceInset }]}>
+              <Text style={[styles.experienceLabel, { color: colors.textMuted }]}>{label}</Text>
+              <Text style={[styles.experienceValue, { color: colors.textPrimary }]}>{value}</Text>
+            </View>
+          ))}
+        </View>
+      </LensCard>
+
+      <View style={styles.planGrid}>
+        <LensCard mode={mode} variant={proActive ? 'neutral' : 'verified'}>
+          <View style={styles.planHeader}>
+            <Text style={[styles.planName, { color: colors.textPrimary }]}>무료 플랜</Text>
+            {!proActive ? <StatusPill mode={mode} level="verified" label="현재 이용 중" /> : null}
+          </View>
+          <Text style={[styles.price, { color: colors.textSecondary }]}>0원</Text>
+          <Text style={[styles.caption, { color: colors.textSecondary }]}>기본 분석과 광고 기반 이용</Text>
+          <View style={styles.benefits}>
+            {freeFeatures.map((feature) => (
+              <FeatureRow key={feature} mode={mode} label={feature} locked={feature.includes('잠금')} />
+            ))}
+          </View>
+        </LensCard>
+
+        <LensCard mode={mode} variant="pro">
+          <View style={styles.planHeader}>
+            <Text style={[styles.planName, { color: colors.textPrimary }]}>Pro 플랜</Text>
+            {proActive ? <StatusPill mode={mode} level="pro" label="활성" /> : <StatusPill mode={mode} level="pro" label="월 구독" />}
+          </View>
+          <Text style={[styles.price, { color: colors.textSecondary }]}>월 5,000원</Text>
+          <Text style={[styles.caption, { color: colors.textSecondary }]}>광고 제거와 고급 분석 잠금 해제</Text>
+          <View style={styles.benefits}>
+            {proFeatures.map((feature) => (
+              <FeatureRow key={feature} mode={mode} label={feature} locked={false} />
+            ))}
+          </View>
+          <View style={styles.ctaGroup}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
+              onPress={() => {
+                if (monetizationEnabled && !proActive) void purchasePro();
+              }}
+              style={({ pressed }) => [
+                styles.ctaButton,
+                {
+                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
+                  opacity: pressed ? 0.88 : 1
+                }
+              ]}
+            >
+              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
+                {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+              </Text>
+            </Pressable>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ disabled: !monetizationEnabled }}
+              onPress={() => {
+                if (monetizationEnabled) void restorePurchases();
+              }}
+              style={styles.restoreButton}
+            >
+              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
+            </Pressable>
+          </View>
+        </LensCard>
+      </View>
+
+      {monetizationEnabled ? (
+        <LensCard mode={mode}>
+        <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>광고 슬롯</Text>
+        <Text style={[styles.caption, { color: colors.textSecondary }]}>
+          무료 플랜에는 정책 안전 광고만 배치하고, Pro는 광고 제거 상태로 둡니다. 도박성 광고, 베팅 사이트 광고, 구매 유도 광고는 차단 대상입니다.
+        </Text>
+        </LensCard>
+      ) : null}
+
+      <LensCard mode={mode} variant={proActive ? 'verified' : 'caution'}>
+        <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Pro 전용 잠금</Text>
+        <Text style={[styles.caption, { color: colors.textSecondary }]}>
+          무료 상태에서는 아래 기능을 미리 보여주되 실행은 막고, 구독 권한이 확인된 계정에서만 열도록 설계합니다.
+        </Text>
+        <View style={styles.lockedList}>
+          {lockedFeatures.map((feature) => (
+            <FeatureRow key={feature} mode={mode} label={proActive ? `${feature} 사용 가능` : `${feature} 잠금`} locked={!proActive} />
+          ))}
+        </View>
+      </LensCard>
+
+      <LensCard mode={mode} variant={decision.appSession.entitlement === 'pro' ? 'verified' : 'neutral'}>
+        <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>계정 DB 상태</Text>
+        <Text style={[styles.caption, { color: colors.textSecondary }]}>
+          현재 기기 ID는 서버의 user_account.devices에 연결되고, 구독 권한은 billing.subscriptions에서 판단합니다.
+        </Text>
+        <Text style={[styles.mono, { color: colors.textMuted }]}>
+          {decision.appSession.entitlement.toUpperCase()} · {decision.dataLayer.ready ? decision.dataLayer.storage : 'demo'}
+        </Text>
+      </LensCard>
+
+      <StoreSafeNotice mode={mode} />
+    </ScrollView>
+  );
+}
+
+function FeatureRow({ mode, label, locked }: { mode: ThemeMode; label: string; locked: boolean }) {
+  const colors = palette(mode);
+  return (
+    <View style={styles.benefitRow}>
+      <Ionicons
+        accessibilityElementsHidden
+        accessible={false}
+        importantForAccessibility="no-hide-descendants"
+        name={locked ? 'lock-closed-outline' : 'checkmark-circle-outline'}
+        size={20}
+        color={locked ? colors.textMuted : colors.accentTeal}
+      />
+      <Text style={[styles.benefit, { color: locked ? colors.textSecondary : colors.textPrimary }]}>{label}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  content: {
+    gap: space.space5,
+    padding: space.space5,
+    paddingBottom: 120
+  },
+  header: {
+    gap: space.space3,
+    paddingTop: space.space4
+  },
+  title: {
+    ...typography.h1
+  },
+  subtitle: {
+    ...typography.body
+  },
+  planGrid: {
+    gap: space.space4
+  },
+  planHeader: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: space.space3
+  },
+  planName: {
+    ...typography.h3
+  },
+  price: {
+    ...typography.h2,
+    marginTop: space.space2
+  },
+  caption: {
+    ...typography.bodySm,
+    marginTop: space.space2
+  },
+  benefits: {
+    gap: space.space3,
+    marginTop: space.space5
+  },
+  ctaGroup: {
+    gap: space.space2,
+    marginTop: space.space5
+  },
+  ctaButton: {
+    alignItems: 'center',
+    borderRadius: radius.pill,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 48,
+    paddingHorizontal: space.space4
+  },
+  ctaText: {
+    ...typography.bodyStrong
+  },
+  restoreButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 44
+  },
+  restoreText: {
+    ...typography.bodyStrong
+  },
+
+hook: PostToolUse
+hook: PostToolUse
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/tttksj/.codex/plugins/cache/sisyphuslabs/omo/4.15.1/skills/programming/references/typescript/README.md" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+
+# TypeScript Programmer
+
+Modern TypeScript. Type-strict, stack-first, async-correct.
+
+## Philosophy
+
+The compiler is your proof system. Make illegal states unrepresentable. Parse at boundaries. Every function has a contract; the type system enforces it.
+
+## Hard rules
+
+These are deliberate project choices. Violations are always wrong, not "style preferences".
+
+### Tooling
+
+| Category | Use | Never |
+|---|---|---|
+| Runtime | Bun (native TS, single binary) | ts-node, tsx |
+| Package manager | `pnpm` | npm, yarn (unless workspace requires it) |
+| Linter + formatter | Biome | ESLint, Prettier |
+| Type checker | `tsc --noEmit` with strict config | skip type checking |
+| Web framework | Hono | Express |
+| Validation | Zod | joi, yup, class-validator |
+| Testing | `bun test` or vitest | jest |
+| ORM | Drizzle | TypeORM, Prisma (unless already in project) |
+
+### The iron list
+
+1. **Readonly by default** — all `type`/`interface` properties are `readonly`. Arrays are `readonly T[]`. Mutable only when mutation is the documented purpose.
+2. **Branded types for distinct IDs** — `type UserId = Brand<string, "UserId">`. Never pass raw `string` where a branded type exists.
+3. **Exhaustive switch** — every `switch` on a discriminated union ends with `default: assertNever(x)`. No fall-through.
+4. **No any** — `any` is banned in annotations, returns, and parameters. Use `unknown` and narrow.
+5. **No type assertions** — `as any`, `as unknown` banned. `as const` and `satisfies` are fine.
+6. **No non-null assertion** — `x!` is banned. Use narrowing or optional chaining (`x?.y`).
+7. **No @ts-ignore / @ts-expect-error** — fix the type.
+8. **No enum** — use `as const` objects + literal union types.
+9. **Zod at boundaries** — external input (API, user, file) → Zod schema. Internal → plain types.
+10. **Typed errors** — Error subclasses with typed fields. No `throw new Error("bare string")` for domain errors. Use Result for expected failures within 1-2 call levels; throw for propagation across many layers.
+11. **as const for constants** — module-level constant objects and arrays use `as const`.
+12. **import type** — type-only imports use `import type`. Enforced by `verbatimModuleSyntax`.
+13. **Named exports only** — no `export default`. Exception: framework requirement (Next.js pages, etc.).
+14. **No empty catch, no catch-and-swallow** — every `catch` block must either (a) narrow the error with `instanceof` and handle each case, or (b) re-throw. Empty catch blocks and `catch (e) { console.error(e) }` without narrowing or re-throw are banned — they hide bugs. At top-level boundaries (CLI entry, HTTP handler), opt out with `// no-excuse-ok: catch`.
+
+### Data modeling — which construct, when
+
+| Situation | Use |
+|---|---|
+| User input, API request/response | Zod schema + `z.infer` |
+| Internal value object | `type` with `readonly` properties |
+| Function with multiple outcomes | Discriminated union (`kind` field) |
+| Contract for implementations | `interface` |
+| Fixed constants | `as const` + literal union |
+| Distinct primitive (UserId vs OrderId) | Branded type |
+| Key-value map | `Record<K, V>` or index signature |
+
+**The one rule**: data crosses trust boundary → Zod. Everything else → plain `type` with `readonly`.
+
+Load `data-modeling.md` for the full decision flowchart and comparison.
+
+### When readonly does not apply
+
+- **Framework state** (React `useState`, signals) — managed by framework.
+- **Builder / accumulator** — object exists to be mutated (buffer, cache). Document why.
+- **ORM mutations** — Drizzle insert/update objects.
+
+### Why empty/unhandled catch is banned
+
+In TypeScript, every `catch` receives `unknown`. The language gives you no type safety in catch blocks — you must earn it with `instanceof`. A bare `catch (e) { console.error(e) }` swallows `TypeError`, `RangeError`, and your domain errors identically. When a new error type appears, nothing warns you.
+
+```typescript
+// BANNED — empty catch
+try { await fetchData() } catch {}
+try { await fetchData() } catch (e) { /* will fix later */ }
+
+// BANNED — catch-and-swallow (no narrowing, no rethrow)
+try {
+  const data = await api.get("/users")
+} catch (e) {
+  console.error("failed", e)
+}
+
+// GOOD — narrow with instanceof
+try {
+  const data = await api.get("/users")
+} catch (e) {
+  if (e instanceof HttpError) {
+    logger.warn(`API ${e.status}: ${e.message}`)
+    return fallback
+  }
+  throw e  // unknown errors propagate
+}
+
+// GOOD — top-level boundary (only place catch-all is acceptable)
+async function main(): Promise<void> {  // no-excuse-ok: catch
+  try {
+    await run()
+  } catch (e) {
+    console.error("unhandled:", e)
+    process.exit(1)
+  }
+}
+```
+
+### Libraries
+
+| Domain | Library | Why |
+|---|---|---|
+| HTTP framework | Hono | Lightweight, multi-runtime, middleware, OpenAPI |
+| Validation | Zod | Runtime validation + type inference |
+| ORM | Drizzle | Type-safe SQL, no codegen |
+| HTTP client | `ky` | Thin fetch wrapper (5KB); auto-throw on non-2xx, retry, timeout, hooks, prefixUrl. Browser + Node + Bun + Deno |
+| HTTP client (perf) | `undici` (direct API) | When a Node backend needs connection pooling, HTTP/2, or pipelining |
+
+> **HTTP client rule** - production code must not use bare `fetch()`. It has no retry, timeout, or error-handling policy and causes silent failures during incidents. Install **`ky`** by default, and use the **`undici`** direct API when a Node backend needs high-volume requests, connection pooling, HTTP/2, or pipelining. ~~`axios`~~ is forbidden after the supply-chain compromise (2026-03). `node-fetch` is unnecessary because Node 18+ includes built-in fetch.
+| Testing | `bun test` / vitest | Fast, ESM-native |
+| Logging | `pino` | Structured JSON, fast |
+| CLI | `@clack/prompts` + `commander` | Interactive + parsing |
+
+## tsconfig — the one true config
+
+Scaffold a new project with all strict defaults pre-configured:
+
+```bash
+bun run ../../scripts/typescript/new-project.ts my-api
+bun run ../../scripts/typescript/new-project.ts my-api --path ./projects
+```
+
+Creates: `package.json` (Hono + Zod + Biome), `tsconfig.json` (ultra-strict), `biome.json`, `src/index.ts`, `.gitignore`. Works on macOS, Linux, Windows.
+
+For manual setup: `bunx tsc --init`, then load `tsconfig-strict.md` for the full strict config.
+
+Key flags beyond `"strict": true`:
+
+| Flag | What it catches |
+|---|---|
+| `noUncheckedIndexedAccess` | `arr[0]` is `T \| undefined`, forces check |
+| `exactOptionalPropertyTypes` | `{ x?: string }` ≠ `{ x: string \| undefined }` |
+| `verbatimModuleSyntax` | Forces `import type` for type-only imports |
+| `noFallthroughCasesInSwitch` | Forgotten `break` / `return` |
+| `noPropertyAccessFromIndexSignature` | `.key` on index sig → bracket notation |
+
+## Reference loading
+
+Load on demand — not all at once.
+
+| Need | Load |
+|---|---|
+| Strict tsconfig + Biome config | `tsconfig-strict.md` |
+| Type patterns (branded, as const, satisfies, narrowing, assertNever) | `type-patterns.md` |
+| Data modeling (type vs interface vs Zod, readonly, parse-don't-validate) | `data-modeling.md` |
+| Error handling (Result, typed errors, union vs throw) | `error-handling.md` |
+| Bootstrapping a new project (Bun, pnpm, Hono, Vite) | `bootstrap.md` |
+| Hono backend stack (hono-openapi, Scalar, Swagger) | `backend-hono.md` |
+
+## No-excuse audit
+
+Violations caught by `../../scripts/typescript/check-no-excuse-rules.ts`. Run after every edit session.
+
+| Rule ID | Catches | Opt-out |
+|---|---|---|
+| `no-any-assertion` | `as any` | None — redesign types |
+| `no-unknown-assertion` | `as unknown` | None — redesign types |
+| `no-ts-ignore` | `@ts-ignore` | None — fix the type |
+| `no-ts-expect-error` | `@ts-expect-error` | None — fix the type |
+| `no-enum` | `enum` declarations | None — use `as const` |
+| `no-non-null-assertion` | `x!` postfix | None — narrow or `?.` |
+| `no-throw-literal` | `throw "string"` / `throw 123` | None — throw Error subclass |
+| `no-mutable-export` | `export let` / `export var` | None — use `export const` |
+| `no-any-annotation` | `: any` in parameter/return/variable types | `// no-excuse-ok: any` |
+| `no-explicit-any-return` | `(): any` or `(): Promise<any>` return types | `// no-excuse-ok: any` |
+| `empty-catch` | `catch { }` or `catch (e) { }` with empty body | `// no-excuse-ok: catch` |
+| `catch-without-narrowing` | `catch (e)` used without `instanceof` or re-throw | `// no-excuse-ok: catch` |
+
+Biome enforces additional rules (noExplicitAny, noNonNullAssertion, noDefaultExport, useImportType). The script catches what Biome cannot.
+
+## In tests
+
+Tests are strict too, with these exceptions (configure in `biome.jsonc` overrides):
+
+| In tests you may | Why |
+|---|---|
+| Use `expect()` assertions | That's how testing works |
+| Use magic numbers | Test data |
+| Access private members via bracket notation | Testing internals |
+| Skip readonly on test fixtures | Mutable setup/teardown |
+
+Tests still follow the iron list — branded types, typed errors, exhaustive switch.
+
+## Existing codebases
+
+When editing an existing file that doesn't follow these rules: **write new code in strict style, don't refactor existing code in the same change.**
+
+## Activation
+
+This skill activates whenever you are writing or modifying any `.ts` or `.tsx` file. Even one-off scripts get the strict treatment.
+
+hook: PostToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "rg -n \"purchasePro|restorePurchases|Pro에서|무제한|Pressable|accessibilityState|disabled|testID\" mobile/src/screens/ProScreen.tsx mobile/src -g '"'!node_modules'"'" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+mobile/src/screens/ProScreen.tsx:1:import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+mobile/src/screens/ProScreen.tsx:7:import { isMonetizationEnabled, purchasePro, restorePurchases } from '../services/monetization';
+mobile/src/screens/ProScreen.tsx:27:  '광고 제거 및 무제한 조회',
+mobile/src/screens/ProScreen.tsx:41:  ['분석 횟수', '무제한'],
+mobile/src/screens/ProScreen.tsx:112:            <Pressable
+mobile/src/screens/ProScreen.tsx:114:              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
+mobile/src/screens/ProScreen.tsx:116:                if (monetizationEnabled && !proActive) void purchasePro();
+mobile/src/screens/ProScreen.tsx:130:            </Pressable>
+mobile/src/screens/ProScreen.tsx:131:            <Pressable
+mobile/src/screens/ProScreen.tsx:133:              accessibilityState={{ disabled: !monetizationEnabled }}
+mobile/src/screens/ProScreen.tsx:135:                if (monetizationEnabled) void restorePurchases();
+mobile/src/screens/ProScreen.tsx:140:            </Pressable>
+mobile/src/services/racePayload.ts:296:    level === 'kcycle_disabled' ||
+mobile/src/services/monetization.ts:25:export async function purchasePro(): Promise<PurchaseResult> {
+mobile/src/services/monetization.ts:32:export async function restorePurchases(): Promise<PurchaseResult> {
+mobile/src/services/raceApi.ts:531:        rawRiskLevel === 'kcycle_disabled' ? '배당 비활성' :
+mobile/src/components/BottomTabs.tsx:1:import { Pressable, StyleSheet, Text, View } from 'react-native';
+mobile/src/components/BottomTabs.tsx:31:          <Pressable
+mobile/src/components/BottomTabs.tsx:34:            accessibilityState={{ selected }}
+mobile/src/components/BottomTabs.tsx:48:          </Pressable>
+mobile/src/components/ParticipantBoard.tsx:2:import { Pressable, StyleSheet, Text, View } from 'react-native';
+mobile/src/components/ParticipantBoard.tsx:105:          Pro에서 모델확률·배당반영·누적학습 보정 근거를 선수별로 엽니다.
+mobile/src/components/ParticipantBoard.tsx:150:            <Pressable
+mobile/src/components/ParticipantBoard.tsx:153:              accessibilityState={{ expanded }}
+mobile/src/components/ParticipantBoard.tsx:209:            </Pressable>
+mobile/src/components/PredictionSummary.tsx:104:      <View testID="prediction-podium" style={styles.podium}>
+mobile/src/components/LensCard.tsx:3:import { Animated, Pressable, StyleSheet, View } from 'react-native';
+mobile/src/components/LensCard.tsx:48:    <Pressable
+mobile/src/components/LensCard.tsx:55:    </Pressable>
+mobile/src/components/RaceSelector.tsx:1:import { Pressable, StyleSheet, Text, View } from 'react-native';
+mobile/src/components/RaceSelector.tsx:61:            <Pressable
+mobile/src/components/RaceSelector.tsx:64:              accessibilityState={{ selected }}
+mobile/src/components/RaceSelector.tsx:72:            </Pressable>
+mobile/src/components/RaceSelector.tsx:81:            <Pressable
+mobile/src/components/RaceSelector.tsx:84:              accessibilityState={{ disabled: previousDisabled }}
+mobile/src/components/RaceSelector.tsx:85:              disabled={previousDisabled}
+mobile/src/components/RaceSelector.tsx:97:            </Pressable>
+mobile/src/components/RaceSelector.tsx:104:            <Pressable
+mobile/src/components/RaceSelector.tsx:107:              accessibilityState={{ disabled: nextDisabled }}
+mobile/src/components/RaceSelector.tsx:108:              disabled={nextDisabled}
+mobile/src/components/RaceSelector.tsx:120:            </Pressable>
+mobile/src/components/RaceSelector.tsx:126:                <Pressable
+mobile/src/components/RaceSelector.tsx:129:                  accessibilityState={{ selected }}
+mobile/src/components/RaceSelector.tsx:137:                </Pressable>
+mobile/src/components/RaceSelector.tsx:152:              <Pressable
+mobile/src/components/RaceSelector.tsx:155:                accessibilityState={{ selected }}
+mobile/src/components/RaceSelector.tsx:161:              </Pressable>
+mobile/src/components/RaceSelector.tsx:171:            <Pressable
+mobile/src/components/RaceSelector.tsx:174:              accessibilityState={{ selected }}
+mobile/src/components/RaceSelector.tsx:182:            </Pressable>
+mobile/src/components/RaceSelector.tsx:187:      <Pressable
+mobile/src/components/RaceSelector.tsx:188:        accessibilityLabel={freeExhausted ? 'Pro에서 무제한 사용' : '모델 신호 보기'}
+mobile/src/components/RaceSelector.tsx:190:        accessibilityState={{ disabled: freeExhausted }}
+mobile/src/components/RaceSelector.tsx:191:        disabled={freeExhausted}
+mobile/src/components/RaceSelector.tsx:204:          {freeExhausted ? 'Pro에서 무제한 사용' : '모델 신호 보기'}
+mobile/src/components/RaceSelector.tsx:206:      </Pressable>
+mobile/src/components/RaceSelector.tsx:208:        {proActive ? 'Pro 무제한 분석 활성' : `무료 분석 ${Math.min(freeAnalysisUsed, freeAnalysisLimit)}/${freeAnalysisLimit} 사용 · 오늘 ${freeRemaining}회 남음`}
+mobile/src/screens/AnalyzeScreen.tsx:192:      <View testID="analysis-empty-state" style={styles.emptyState}>
+mobile/src/screens/AnalyzeScreen.tsx:394:            {proActive ? '광고 없이 전체 신호와 검증 로그를 바로 확인합니다.' : '핵심 예측은 제공하고, 고급 신호는 Pro에서 열립니다.'}
+mobile/src/screens/AnalyzeScreen.tsx:397:        <StatusPill mode={mode} level={proActive ? 'pro' : 'neutral'} label={proActive ? '무제한' : remaining > 0 ? `오늘 ${remaining}회 남음` : '오늘 한도 종료'} />
+mobile/src/screens/AnalyzeScreen.tsx:422:                {proActive ? row.value : 'Pro에서 실제 값과 복기 내역을 엽니다.'}
+mobile/src/screens/ProScreen.tsx:1:import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+mobile/src/screens/ProScreen.tsx:7:import { isMonetizationEnabled, purchasePro, restorePurchases } from '../services/monetization';
+mobile/src/screens/ProScreen.tsx:27:  '광고 제거 및 무제한 조회',
+mobile/src/screens/ProScreen.tsx:41:  ['분석 횟수', '무제한'],
+mobile/src/screens/ProScreen.tsx:112:            <Pressable
+mobile/src/screens/ProScreen.tsx:114:              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
+mobile/src/screens/ProScreen.tsx:116:                if (monetizationEnabled && !proActive) void purchasePro();
+mobile/src/screens/ProScreen.tsx:130:            </Pressable>
+mobile/src/screens/ProScreen.tsx:131:            <Pressable
+mobile/src/screens/ProScreen.tsx:133:              accessibilityState={{ disabled: !monetizationEnabled }}
+mobile/src/screens/ProScreen.tsx:135:                if (monetizationEnabled) void restorePurchases();
+mobile/src/screens/ProScreen.tsx:140:            </Pressable>
+
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+2026-07-06T22:26:47.490070Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:47.490663Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:47.492422Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:26:47.495755Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:47.504718Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:47.504737Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:47.505013Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:47.505021Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:47.505303Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:47.505308Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:47.505582Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:47.505587Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:47.505864Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:47.505870Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:47.506449Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:47.506457Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+비활성 상태를 단일 boolean으로 모델링하고 DOM disabled까지 내려가게 바꿉니다.
+  ✓ ProScreen CTA 구현과 모바일 테스트 단언 위치 확인
+  → 비활성 Pro CTA disabled 시맨틱과 testID 적용
+  • mobile 타입체크로 검증
+2026-07-06T22:26:58.137153Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:58.137776Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:26:58.139732Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:26:58.143097Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:26:58.152122Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:58.152143Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:58.152415Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:58.152424Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:58.152717Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:58.152724Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:58.153002Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:58.153009Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:58.153283Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:58.153293Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:26:58.153860Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:26:58.153870Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: PreToolUse
+hook: PreToolUse Completed
+apply patch
+patch: completed
+/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/src/screens/ProScreen.tsx
+/Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile/tests/mobile-web.spec.js
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index cee3d02d68c07459032d773fc81c03950e5a8279..a79f6c8ab5c41ae81cde6e866a209bdd4bf9727b
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -111,32 +113,36 @@
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index cd775e4708a05c99fba3acc35316d4c68aaea9df..79bf748c3031c46c3c1378690396a4f8033123d5
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -326,6 +326,7 @@
+   await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+   await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+   await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+-  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index cee3d02d68c07459032d773fc81c03950e5a8279..a79f6c8ab5c41ae81cde6e866a209bdd4bf9727b
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -111,32 +113,36 @@
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index cd775e4708a05c99fba3acc35316d4c68aaea9df..79bf748c3031c46c3c1378690396a4f8033123d5
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -326,6 +326,7 @@
+   await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+   await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+   await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+-  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+2026-07-06T22:27:12.485651Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:12.486284Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:12.488017Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:12.492191Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:12.501553Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:12.501564Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:12.501845Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:12.501855Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:12.502143Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:12.502152Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:12.502443Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:12.502449Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:12.502747Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:12.502756Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:12.503358Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:12.503364Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+구현 반영 완료. 요청대로 브라우저는 건너뛰고 타입체크만 실행합니다.
+  ✓ ProScreen CTA 구현과 모바일 테스트 단언 위치 확인
+  ✓ 비활성 Pro CTA disabled 시맨틱과 testID 적용
+  → mobile 타입체크로 검증
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index cee3d02d68c07459032d773fc81c03950e5a8279..a79f6c8ab5c41ae81cde6e866a209bdd4bf9727b
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -111,32 +113,36 @@
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index cd775e4708a05c99fba3acc35316d4c68aaea9df..79bf748c3031c46c3c1378690396a4f8033123d5
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -326,6 +326,7 @@
+   await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+   await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+   await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+-  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+2026-07-06T22:27:15.299021Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:15.299599Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:15.301116Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:15.304334Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:15.313253Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:15.313269Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:15.313541Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:15.313546Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:15.313814Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:15.313819Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:15.314090Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:15.314100Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:15.314378Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:15.314389Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:15.314978Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:15.314983Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc 'git diff -- mobile/src/screens/ProScreen.tsx mobile/tests/mobile-web.spec.js' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index c701957..a79f6c8 100644
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@ export function ProScreen({ mode, decision, freeAnalysisLimit, freeAnalysisUsed
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -87,7 +89,7 @@ export function ProScreen({ mode, decision, freeAnalysisLimit, freeAnalysisUsed
+             <Text style={[styles.planName, { color: colors.textPrimary }]}>무료 플랜</Text>
+             {!proActive ? <StatusPill mode={mode} level="verified" label="현재 이용 중" /> : null}
+           </View>
+-          <Text style={[styles.price, { color: colors.textPrimary }]}>0원</Text>
++          <Text style={[styles.price, { color: colors.textSecondary }]}>0원</Text>
+           <Text style={[styles.caption, { color: colors.textSecondary }]}>기본 분석과 광고 기반 이용</Text>
+           <View style={styles.benefits}>
+             {freeFeatures.map((feature) => (
+@@ -101,7 +103,7 @@ export function ProScreen({ mode, decision, freeAnalysisLimit, freeAnalysisUsed
+             <Text style={[styles.planName, { color: colors.textPrimary }]}>Pro 플랜</Text>
+             {proActive ? <StatusPill mode={mode} level="pro" label="활성" /> : <StatusPill mode={mode} level="pro" label="월 구독" />}
+           </View>
+-          <Text style={[styles.price, { color: colors.textPrimary }]}>월 5,000원</Text>
++          <Text style={[styles.price, { color: colors.textSecondary }]}>월 5,000원</Text>
+           <Text style={[styles.caption, { color: colors.textSecondary }]}>광고 제거와 고급 분석 잠금 해제</Text>
+           <View style={styles.benefits}>
+             {proFeatures.map((feature) => (
+@@ -111,32 +113,36 @@ export function ProScreen({ mode, decision, freeAnalysisLimit, freeAnalysisUsed
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+@@ -224,7 +230,8 @@ const styles = StyleSheet.create({
+     ...typography.h3
+   },
+   price: {
+-    ...typography.display
++    ...typography.h2,
++    marginTop: space.space2
+   },
+   caption: {
+     ...typography.bodySm,
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index c60ea5d..79bf748 100644
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -1,6 +1,48 @@
++import { existsSync, readFileSync, statSync } from 'node:fs';
++import { extname, join, normalize, sep } from 'node:path';
+ import { expect, test } from '@playwright/test';
+ 
++const qaDist = process.env.RACELENS_QA_DIST ?? 'dist';
++const qaNoServer = process.env.RACELENS_QA_NO_SERVER === '1';
++const mimeTypes = {
++  '.css': 'text/css; charset=utf-8',
++  '.html': 'text/html; charset=utf-8',
++  '.ico': 'image/x-icon',
++  '.js': 'text/javascript; charset=utf-8',
++  '.json': 'application/json; charset=utf-8',
++  '.png': 'image/png',
++  '.svg': 'image/svg+xml',
++  '.ttf': 'font/ttf',
++  '.webp': 'image/webp',
++  '.woff': 'font/woff',
++  '.woff2': 'font/woff2'
++};
++
++function staticFilePath(pathname) {
++  const relativePath = pathname === '/' ? 'index.html' : decodeURIComponent(pathname.replace(/^\/+/, ''));
++  const root = normalize(qaDist);
++  const candidate = normalize(join(root, relativePath));
++  if (candidate !== root && !candidate.startsWith(`${root}${sep}`)) return null;
++  if (!existsSync(candidate)) return null;
++  if (statSync(candidate).isDirectory()) return join(candidate, 'index.html');
++  return candidate;
++}
++
+ test.beforeEach(async ({ page }) => {
++  if (qaNoServer) {
++    await page.route('**/*', async (route) => {
++      const filePath = staticFilePath(new URL(route.request().url()).pathname);
++      if (!filePath || !existsSync(filePath)) {
++        await route.fulfill({ status: 404, body: 'Not found' });
++        return;
++      }
++      await route.fulfill({
++        body: readFileSync(filePath),
++        contentType: mimeTypes[extname(filePath)] ?? 'application/octet-stream',
++        status: 200
++      });
++    });
++  }
+   await page.addInitScript(() => {
+     let fixedNow = new Date('2026-07-03T03:00:00.000Z').valueOf();
+     const RealDate = Date;
+@@ -47,11 +89,10 @@ function rgbChannels(value) {
+ 
+ async function requestFreeAnalysis(page) {
+   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+-  await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+-  await expect(page.getByText('다른 경기 분석 전에 광고를 확인합니다', { exact: true })).toBeVisible();
+-  await expect(page.getByText(/도박성 광고와 베팅 이동은 차단합니다/)).toBeVisible();
+-  await expect(page.getByText('광명 1R 분석')).toHaveCount(0);
+-  await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
++  await page.getByRole('button', { name: '광고 확인 후 분석 보기' })
++    .waitFor({ state: 'visible', timeout: 500 })
++    .then(() => page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click())
++    .catch(() => undefined);
+ }
+ 
+ test('home screen exposes the expected analysis controls', async ({ page }) => {
+@@ -127,16 +168,17 @@ test('analysis does not invent demo racers when the official API is unavailable'
+   await expect(page.getByText('예측 순서 5-1-7')).toHaveCount(0);
+   await requestFreeAnalysis(page);
+   await expect(page.getByText('광명 1R 분석')).toBeVisible();
+-  await expect(page.getByText('원자료 연결 대기')).toBeVisible();
+-  await expect(page.getByText('예측 순서 5-1-7')).toHaveCount(0);
++  await expect(page.getByTestId('analysis-empty-state')).toBeVisible();
++  await expect(page.getByText('데이터를 가져오지 못했습니다 — 잠시 후 다시 시도')).toBeVisible();
++  await expect(page.getByTestId('prediction-podium')).toHaveCount(0);
++  await expect(page.getByText(/^예측 순서 \d/)).toHaveCount(0);
++  await expect(page.getByText(/모델 추정\s*0%/)).toHaveCount(0);
++  await expect(page.locator('body')).not.toContainText(/0번/);
+   await expect(page.getByText('5번 최강우')).toHaveCount(0);
+   await expect(page.getByText('1번 김태훈')).toHaveCount(0);
+   await expect(page.getByText('7번 서지환')).toHaveCount(0);
+-  await expect(page.getByText('무료 분석 1/3 사용', { exact: true })).toBeVisible();
+-  await expect(page.getByText('오늘 2회 남음', { exact: true })).toBeVisible();
+-  await expect(page.getByText('고확신 후보 필터 잠금', { exact: true })).toBeVisible();
+-  await expect(page.getByText('마감 직전 배당 반영 잠금', { exact: true })).toBeVisible();
+-  await expect(page.getByText('무료 광고 슬롯', { exact: true })).toBeVisible();
++  await expect(page.getByText('출전 선수')).toHaveCount(0);
++  await expect(page.getByText('출전 정보 대기 중')).toHaveCount(0);
+   await expect(page.getByText('초반 주도권을 잡으면 버티는 힘이 좋지만')).toHaveCount(0);
+   expect(errors).toEqual([]);
+ });
+@@ -183,8 +225,9 @@ test('free analysis limit becomes a real disabled state', async ({ page }) => {
+ 
+   for (let count = 1; count <= 3; count += 1) {
+     await requestFreeAnalysis(page);
+-    await expect(page.getByText(`무료 분석 ${count}/3 사용`, { exact: true })).toBeVisible();
++    await expect(page.getByTestId('analysis-empty-state')).toBeVisible();
+     await page.getByRole('tab', { name: /홈/ }).click();
++    await expect(page.getByText(`무료 분석 ${count}/3 사용 · 오늘 ${3 - count}회 남음`, { exact: true })).toBeVisible();
+   }
+ 
+   await expect(page.getByRole('button', { name: 'Pro에서 무제한 사용' })).toBeDisabled();
+@@ -219,6 +262,8 @@ test('race selector updates sport, race, and opens analysis', async ({ page }) =
+   await page.goto('/');
+ 
+   await page.getByRole('button', { name: /경마/ }).click();
++  await expect(page.getByRole('button', { name: /경마/ })).toHaveAttribute('aria-selected', 'true');
++  await expect(page.getByRole('button', { name: /경륜/ })).toHaveAttribute('aria-selected', 'false');
+   await page.getByRole('button', { name: '이전 경기일' }).click();
+   await expect(page.getByText('2026-06-28', { exact: true })).toBeVisible();
+   await expect(page.getByRole('button', { name: '서울' })).toBeVisible();
+@@ -231,20 +276,20 @@ test('race selector updates sport, race, and opens analysis', async ({ page }) =
+   await page.getByRole('button', { name: /8R/ }).click();
+   await expect(page.getByRole('button', { name: '8R', exact: true })).toHaveAttribute('aria-selected', 'true');
+   await page.getByRole('button', { name: '모델 신호 보기' }).click();
+-  await expect(page.getByText('무료 플랜 광고', { exact: true })).toBeVisible();
+-  await page.getByRole('button', { name: '광고 확인 후 분석 보기' }).click();
+ 
+   await expect(page.getByText('부경 8R 분석')).toBeVisible();
+   await expect(page.getByText('분석일 2026-06-28')).toBeVisible();
+-  await expect(page.getByText('원자료 연결 대기')).toBeVisible();
++  await expect(page.getByTestId('analysis-empty-state')).toBeVisible();
++  await expect(page.getByText('데이터를 가져오지 못했습니다 — 잠시 후 다시 시도')).toBeVisible();
++  await expect(page.getByTestId('prediction-podium')).toHaveCount(0);
+   await expect(page.getByText('예측 순서 5-3-1')).toHaveCount(0);
+   await expect(page.getByText('5번 골든포커스')).toHaveCount(0);
+   await expect(page.getByText('3번 스톰레이크')).toHaveCount(0);
+   await expect(page.getByText('1번 새벽질주')).toHaveCount(0);
+-  await expect(page.getByText('경마 판단 근거')).toBeVisible();
+-  await expect(page.getByText('배당 자료', { exact: true })).toBeVisible();
+-  await expect(page.getByText('출전 정보 대기 중')).toBeVisible();
+-  await expect(page.getByText('표본 0')).toBeVisible();
++  await expect(page.getByText('경마 판단 근거')).toHaveCount(0);
++  await expect(page.getByText('배당 자료', { exact: true })).toHaveCount(0);
++  await expect(page.getByText('출전 정보 대기 중')).toHaveCount(0);
++  await expect(page.getByText('표본 0')).toHaveCount(0);
+   expect(errors).toEqual([]);
+ });
+ 
+@@ -274,12 +319,14 @@ test('store safety and pro surfaces avoid betting actions', async ({ page }) =>
+   await expect(page.getByText('무료 경험', { exact: true })).toBeVisible();
+   await expect(page.getByText('오늘 0/3 사용', { exact: true })).toBeVisible();
+   await expect(page.getByText('3회', { exact: true })).toBeVisible();
+-  await expect(page.getByText('분석 중간 광고 슬롯 표시', { exact: true })).toBeVisible();
++  await expect(page.getByText('심사 전 비활성', { exact: true })).toBeVisible();
+   await expect(page.getByText('값은 가리고 잠금 카드 노출', { exact: true })).toBeVisible();
+   await expect(page.getByText('Pro 전용 잠금', { exact: true })).toBeVisible();
+   await expect(page.getByText('고확신 후보만 모아보기 잠금', { exact: true })).toBeVisible();
+-  await expect(page.getByText('광고 슬롯', { exact: true })).toBeVisible();
+-  await expect(page.getByText(/도박성 광고/)).toBeVisible();
+-  await expect(page.getByRole('button', { name: /구매|베팅|결제/ })).toHaveCount(0);
++  await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
++  await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
++  await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+hook: PostToolUse
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc 'npx tsc --noEmit' in /Users/tttksj/github-portfolio-docs-work/strategy-arena/mobile
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index cee3d02d68c07459032d773fc81c03950e5a8279..a79f6c8ab5c41ae81cde6e866a209bdd4bf9727b
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -111,32 +113,36 @@
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index cd775e4708a05c99fba3acc35316d4c68aaea9df..79bf748c3031c46c3c1378690396a4f8033123d5
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -326,6 +326,7 @@
+   await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+   await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+   await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+-  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+ succeeded in 847ms:
+2026-07-06T22:27:20.009216Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:20.009828Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:20.011487Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:20.014727Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:20.024100Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:20.024118Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:20.024401Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:20.024406Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:20.024673Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:20.024682Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:20.024948Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:20.024954Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:20.025223Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:20.025232Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:20.025803Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:20.025810Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+  ✓ ProScreen CTA 구현과 모바일 테스트 단언 위치 확인
+  ✓ 비활성 Pro CTA disabled 시맨틱과 testID 적용
+  ✓ mobile 타입체크로 검증
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index cee3d02d68c07459032d773fc81c03950e5a8279..a79f6c8ab5c41ae81cde6e866a209bdd4bf9727b
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -111,32 +113,36 @@
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index cd775e4708a05c99fba3acc35316d4c68aaea9df..79bf748c3031c46c3c1378690396a4f8033123d5
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -326,6 +326,7 @@
+   await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+   await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+   await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+-  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+2026-07-06T22:27:25.330124Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:25.330728Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:25.332236Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:25.335466Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:25.344667Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:25.344677Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:25.344966Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:25.344974Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:25.345261Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:25.345269Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:25.345546Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:25.345553Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:25.345837Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:25.345845Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:25.346463Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:25.346468Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+수정완료 tsc 0
+diff --git a/mobile/src/screens/ProScreen.tsx b/mobile/src/screens/ProScreen.tsx
+index cee3d02d68c07459032d773fc81c03950e5a8279..a79f6c8ab5c41ae81cde6e866a209bdd4bf9727b
+--- a/mobile/src/screens/ProScreen.tsx
++++ b/mobile/src/screens/ProScreen.tsx
+@@ -48,6 +48,8 @@
+   const colors = palette(mode);
+   const proActive = decision.appSession.entitlement === 'pro';
+   const monetizationEnabled = isMonetizationEnabled();
++  const purchaseDisabled = !monetizationEnabled || proActive;
++  const restoreDisabled = !monetizationEnabled;
+   const safeUsed = Math.min(freeAnalysisLimit, freeAnalysisUsed);
+   const freeRemaining = Math.max(0, freeAnalysisLimit - safeUsed);
+   const freeExperience = [
+@@ -111,32 +113,36 @@
+           <View style={styles.ctaGroup}>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled || proActive }}
++              accessibilityState={{ disabled: purchaseDisabled }}
++              disabled={purchaseDisabled}
+               onPress={() => {
+-                if (monetizationEnabled && !proActive) void purchasePro();
++                if (!purchaseDisabled) void purchasePro();
+               }}
+               style={({ pressed }) => [
+                 styles.ctaButton,
+                 {
+-                  backgroundColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.surfaceInset,
+-                  borderColor: monetizationEnabled && !proActive ? colors.accentPrimary : colors.borderSubtle,
++                  backgroundColor: purchaseDisabled ? colors.surfaceInset : colors.accentPrimary,
++                  borderColor: purchaseDisabled ? colors.borderSubtle : colors.accentPrimary,
+                   opacity: pressed ? 0.88 : 1
+                 }
+               ]}
++              testID="pro-purchase-cta"
+             >
+-              <Text style={[styles.ctaText, { color: monetizationEnabled && !proActive ? colors.textOnBoard : colors.textMuted }]}>
++              <Text style={[styles.ctaText, { color: purchaseDisabled ? colors.textMuted : colors.textOnBoard }]}>
+                 {proActive ? 'Pro 이용 중' : monetizationEnabled ? 'Pro 구독 시작' : '스토어 심사 준비 중'}
+               </Text>
+             </Pressable>
+             <Pressable
+               accessibilityRole="button"
+-              accessibilityState={{ disabled: !monetizationEnabled }}
++              accessibilityState={{ disabled: restoreDisabled }}
++              disabled={restoreDisabled}
+               onPress={() => {
+-                if (monetizationEnabled) void restorePurchases();
++                if (!restoreDisabled) void restorePurchases();
+               }}
+               style={styles.restoreButton}
++              testID="pro-restore-cta"
+             >
+-              <Text style={[styles.restoreText, { color: monetizationEnabled ? colors.textSecondary : colors.textMuted }]}>구매 복원</Text>
++              <Text style={[styles.restoreText, { color: restoreDisabled ? colors.textMuted : colors.textSecondary }]}>구매 복원</Text>
+             </Pressable>
+           </View>
+         </LensCard>
+diff --git a/mobile/tests/mobile-web.spec.js b/mobile/tests/mobile-web.spec.js
+index cd775e4708a05c99fba3acc35316d4c68aaea9df..79bf748c3031c46c3c1378690396a4f8033123d5
+--- a/mobile/tests/mobile-web.spec.js
++++ b/mobile/tests/mobile-web.spec.js
+@@ -326,6 +326,7 @@
+   await expect(page.getByText('광고 슬롯', { exact: true })).toHaveCount(0);
+   await expect(page.getByText(/도박성 광고|베팅 사이트 광고/)).toHaveCount(0);
+   await expect(page.getByRole('button', { name: /베팅|결제|Pro 구독 시작/ })).toHaveCount(0);
+-  await expect(page.getByRole('button', { name: '구매 복원' })).toBeDisabled();
++  await expect(page.getByTestId('pro-purchase-cta')).toBeDisabled();
++  await expect(page.getByTestId('pro-restore-cta')).toBeDisabled();
+   expect(errors).toEqual([]);
+ });
+
+hook: Stop
+hook: Stop
+hook: Stop
+hook: Stop Completed
+hook: Stop Completed
+hook: Stop Completed
+2026-07-06T22:27:27.864761Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:27:27.865773Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:27:27.865818Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:27:27.865941Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:27:27.865975Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: Send message error Transport [rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>] error: Auth required, when send initialize request
+tokens used
+109,793
+수정완료 tsc 0

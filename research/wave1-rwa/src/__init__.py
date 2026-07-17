@@ -1,1 +1,0 @@
-"""Bitget RWA research sweep."""

@@ -1,3 +1,0 @@
-N1 day1방향 72h추종 (L3 net): train n=418 mean=+0.28% pos=50% | test n=279 mean=-1.53% pos=50%
-N2 급등fade 숏 (L3 net): train n=33 mean=+24.33% pos=76% | test n=12 mean=+27.89% pos=58%
-d1 분포: mean +4.3% median -1.6% n= 697

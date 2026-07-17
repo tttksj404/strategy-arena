@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-07-12T02:14:00+00:00",
+  "snapshot_races": 13900,
+  "written_races": 12593,
+  "new_rows_written": 12593,
+  "coverage": 0.9059712230215827,
+  "source_used": "local_keirin_db_fallback_after_public_fetch_probe",
+  "public_probe_success": false,
+  "probes": [
+    {
+      "year": "2018",
+      "date": "20180105",
+      "url": "https://www.kcycle.or.kr/race/card/decision/2018/1/1",
+      "fetched": false,
+      "entrant_rows": 0,
+      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "year": "2022",
+      "date": "20220107",
+      "url": "https://www.kcycle.or.kr/race/card/decision/2022/1/1",
+      "fetched": false,
+      "entrant_rows": 0,
+      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "year": "2025",
+      "date": "20250103",
+      "url": "https://www.kcycle.or.kr/race/card/decision/2025/1/1",
+      "fetched": false,
+      "entrant_rows": 0,
+      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>"
+    }
+  ],
+  "year_coverage": {
+    "2018": {
+      "races": 2468,
+      "matched": 2259,
+      "coverage": 0.9153160453808752
+    },
+    "2019": {
+      "races": 1458,
+      "matched": 1387,
+      "coverage": 0.9513031550068587
+    },
+    "2020": {
+      "races": 512,
+      "matched": 321,
+      "coverage": 0.626953125
+    },
+    "2021": {
+      "races": 399,
+      "matched": 209,
+      "coverage": 0.5238095238095238
+    },
+    "2022": {
+      "races": 2492,
+      "matched": 2346,
+      "coverage": 0.9414125200642055
+    },
+    "2023": {
+      "races": 2664,
+      "matched": 2350,
+      "coverage": 0.8821321321321322
+    },
+    "2024": {
+      "races": 770,
+      "matched": 770,
+      "coverage": 1.0
+    },
+    "2025": {
+      "races": 1753,
+      "matched": 1753,
+      "coverage": 1.0
+    },
+    "2026": {
+      "races": 1384,
+      "matched": 1198,
+      "coverage": 0.865606936416185
+    }
+  },
+  "fields": [
+    "racer_grd_cd",
+    "racer_grd_cur_cd",
+    "gear_rate",
+    "rec_200m_scr",
+    "win_rate",
+    "high_rate",
+    "high_3_rate",
+    "trng_plc_nm",
+    "racer_age"
+  ]
+}

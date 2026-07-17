@@ -1,0 +1,335 @@
+
+> racelens-mobile@0.1.0 qa:mobile
+> node scripts/qa-mobile.mjs
+
+Starting Metro Bundler
+
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 2590ms node_modules/expo/AppEntry.js (397 modules)
+
+› Assets (19):
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.3f78af31cca60105799838a1a7a59fbd.ttf (130KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Entypo.31b5ffea3daddc69dd01a1f3d6cf63c5.ttf (66KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/EvilIcons.140c53a7643ea949007aa9a282153849.ttf (13KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.ca4b48e04dc1ce10bfbddb262c8b835f.ttf (56KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.b06871f281fee6b241d60582ae9369b9.ttf (166KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.3b89dd103490708d19a95adcae52210e.ttf (134KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.1f77739ca9ff2188b539c36f30ffa2be.ttf (34KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.605ed7926cf39a2ad5ec2d1f9d391d3d.ttf (203KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Brands.56c8d80832e37783f12c05db7c8849e2.ttf (209KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Regular.370dd5af19f8364907b6e2c41f45dbbf.ttf (68KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Solid.adec7d6f310bc577f05e8fe06a5daccf.ttf (424KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Fontisto.b49ae8ab2dbccb02c4d11caaacf09eab.ttf (314KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Foundation.e20945d7c929279ef7a6f1db184a4470.ttf (57KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf (390KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.6e435534bd35da5fef04168860a9b8fa.ttf (1.3MB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.4e85bc9ebe07e0340c9c4fc2f6c38908.ttf (357KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Octicons.871378c6eab492a3e689a9385dc45a12.ttf (69KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/SimpleLineIcons.d2285965fe34b05465047401b8595dd0.ttf (54KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Zocial.1681f34aaca71b8dfb70756bca331eb2.ttf (26KB)
+
+› web bundles (1):
+_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js (1.1MB)
+
+› Files (3):
+favicon.ico (15KB)
+index.html (1.2KB)
+metadata.json (49B)
+
+Exported: /var/folders/b9/yvr3_kh17ng5bwr9bhfzzg_00000gn/T/racelens-qa-mobile-gtjpxG
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET / HTTP/1.1" 200 -
+
+Running 66 tests using 5 workers
+
+(node:82637) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:82638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:82639) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:82635) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:82636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:00] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓   5 [compact-light-320] › tests/mobile-web.spec.js:98:5 › home screen exposes the expected analysis controls (386ms)
+  ✓   1 [compact-dark-320] › tests/mobile-web.spec.js:98:5 › home screen exposes the expected analysis controls (401ms)
+  ✓   4 [mobile-light-390] › tests/mobile-web.spec.js:98:5 › home screen exposes the expected analysis controls (407ms)
+  ✓   3 [mobile-dark-390] › tests/mobile-web.spec.js:98:5 › home screen exposes the expected analysis controls (423ms)
+  ✓   2 [tablet-light-768] › tests/mobile-web.spec.js:98:5 › home screen exposes the expected analysis controls (422ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓   6 [compact-light-320] › tests/mobile-web.spec.js:127:5 › calendar auto-refreshes to the current race day when the app resumes (296ms)
+  ✓   7 [compact-dark-320] › tests/mobile-web.spec.js:127:5 › calendar auto-refreshes to the current race day when the app resumes (285ms)
+  ✓   8 [mobile-light-390] › tests/mobile-web.spec.js:127:5 › calendar auto-refreshes to the current race day when the app resumes (300ms)
+  ✓  10 [tablet-light-768] › tests/mobile-web.spec.js:127:5 › calendar auto-refreshes to the current race day when the app resumes (321ms)
+  ✓   9 [mobile-dark-390] › tests/mobile-web.spec.js:127:5 › calendar auto-refreshes to the current race day when the app resumes (323ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  11 [compact-light-320] › tests/mobile-web.spec.js:145:5 › calendar refresh keeps a manually selected historical race day stable (335ms)
+  ✓  12 [compact-dark-320] › tests/mobile-web.spec.js:145:5 › calendar refresh keeps a manually selected historical race day stable (363ms)
+  ✓  13 [mobile-light-390] › tests/mobile-web.spec.js:145:5 › calendar refresh keeps a manually selected historical race day stable (376ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  14 [tablet-light-768] › tests/mobile-web.spec.js:145:5 › calendar refresh keeps a manually selected historical race day stable (389ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  15 [mobile-dark-390] › tests/mobile-web.spec.js:145:5 › calendar refresh keeps a manually selected historical race day stable (421ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:01] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  16 [compact-light-320] › tests/mobile-web.spec.js:164:5 › analysis does not invent demo racers when the official API is unavailable (859ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  17 [compact-dark-320] › tests/mobile-web.spec.js:164:5 › analysis does not invent demo racers when the official API is unavailable (894ms)
+  ✓  18 [mobile-light-390] › tests/mobile-web.spec.js:164:5 › analysis does not invent demo racers when the official API is unavailable (885ms)
+  ✓  19 [tablet-light-768] › tests/mobile-web.spec.js:164:5 › analysis does not invent demo racers when the official API is unavailable (866ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  20 [mobile-dark-390] › tests/mobile-web.spec.js:164:5 › analysis does not invent demo racers when the official API is unavailable (894ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  21 [compact-light-320] › tests/mobile-web.spec.js:186:5 › layout keeps the tomato action identity without horizontal overflow (244ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  22 [compact-dark-320] › tests/mobile-web.spec.js:186:5 › layout keeps the tomato action identity without horizontal overflow (296ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:02] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  23 [mobile-light-390] › tests/mobile-web.spec.js:186:5 › layout keeps the tomato action identity without horizontal overflow (304ms)
+  ✓  24 [tablet-light-768] › tests/mobile-web.spec.js:186:5 › layout keeps the tomato action identity without horizontal overflow (296ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  25 [mobile-dark-390] › tests/mobile-web.spec.js:186:5 › layout keeps the tomato action identity without horizontal overflow (300ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  26 [compact-light-320] › tests/mobile-web.spec.js:204:5 › interactive controls keep mobile-friendly tap targets (255ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  27 [compact-dark-320] › tests/mobile-web.spec.js:204:5 › interactive controls keep mobile-friendly tap targets (235ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  28 [mobile-light-390] › tests/mobile-web.spec.js:204:5 › interactive controls keep mobile-friendly tap targets (280ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  29 [tablet-light-768] › tests/mobile-web.spec.js:204:5 › interactive controls keep mobile-friendly tap targets (278ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  30 [mobile-dark-390] › tests/mobile-web.spec.js:204:5 › interactive controls keep mobile-friendly tap targets (300ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:03] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  31 [compact-light-320] › tests/mobile-web.spec.js:222:5 › free analysis limit becomes a real disabled state (2.1s)
+  ✓  32 [compact-dark-320] › tests/mobile-web.spec.js:222:5 › free analysis limit becomes a real disabled state (2.0s)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  33 [mobile-light-390] › tests/mobile-web.spec.js:222:5 › free analysis limit becomes a real disabled state (2.0s)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  34 [tablet-light-768] › tests/mobile-web.spec.js:222:5 › free analysis limit becomes a real disabled state (2.0s)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  35 [mobile-dark-390] › tests/mobile-web.spec.js:222:5 › free analysis limit becomes a real disabled state (2.0s)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  36 [compact-light-320] › tests/mobile-web.spec.js:239:5 › bottom content remains reachable above the tab bar (380ms)
+  ✓  37 [compact-dark-320] › tests/mobile-web.spec.js:239:5 › bottom content remains reachable above the tab bar (369ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  38 [mobile-light-390] › tests/mobile-web.spec.js:239:5 › bottom content remains reachable above the tab bar (422ms)
+  ✓  39 [tablet-light-768] › tests/mobile-web.spec.js:239:5 › bottom content remains reachable above the tab bar (416ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  40 [mobile-dark-390] › tests/mobile-web.spec.js:239:5 › bottom content remains reachable above the tab bar (414ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:05] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  42 [compact-dark-320] › tests/mobile-web.spec.js:260:5 › race selector updates sport, race, and opens analysis (486ms)
+  ✓  41 [compact-light-320] › tests/mobile-web.spec.js:260:5 › race selector updates sport, race, and opens analysis (515ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  43 [mobile-light-390] › tests/mobile-web.spec.js:260:5 › race selector updates sport, race, and opens analysis (584ms)
+  ✓  44 [tablet-light-768] › tests/mobile-web.spec.js:260:5 › race selector updates sport, race, and opens analysis (551ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+  ✓  45 [mobile-dark-390] › tests/mobile-web.spec.js:260:5 › race selector updates sport, race, and opens analysis (540ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  46 [compact-light-320] › tests/mobile-web.spec.js:296:5 › all bottom tabs render their primary workflows (367ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  47 [compact-dark-320] › tests/mobile-web.spec.js:296:5 › all bottom tabs render their primary workflows (378ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  48 [mobile-light-390] › tests/mobile-web.spec.js:296:5 › all bottom tabs render their primary workflows (415ms)
+  ✓  50 [mobile-dark-390] › tests/mobile-web.spec.js:296:5 › all bottom tabs render their primary workflows (387ms)
+  ✓  49 [tablet-light-768] › tests/mobile-web.spec.js:296:5 › all bottom tabs render their primary workflows (441ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+  ✓  51 [compact-light-320] › tests/mobile-web.spec.js:309:5 › store safety and pro surfaces avoid betting actions (388ms)
+  ✓  52 [compact-dark-320] › tests/mobile-web.spec.js:309:5 › store safety and pro surfaces avoid betting actions (371ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:06] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  53 [mobile-light-390] › tests/mobile-web.spec.js:309:5 › store safety and pro surfaces avoid betting actions (368ms)
+  ✓  55 [tablet-light-768] › tests/mobile-web.spec.js:309:5 › store safety and pro surfaces avoid betting actions (384ms)
+  ✓  54 [mobile-dark-390] › tests/mobile-web.spec.js:309:5 › store safety and pro surfaces avoid betting actions (387ms)
+(node:82781) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  56 [tablet-dark-768] › tests/mobile-web.spec.js:98:5 › home screen exposes the expected analysis controls (249ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  57 [tablet-dark-768] › tests/mobile-web.spec.js:127:5 › calendar auto-refreshes to the current race day when the app resumes (203ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:07] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  58 [tablet-dark-768] › tests/mobile-web.spec.js:145:5 › calendar refresh keeps a manually selected historical race day stable (294ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:08] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:08] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:08] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  59 [tablet-dark-768] › tests/mobile-web.spec.js:164:5 › analysis does not invent demo racers when the official API is unavailable (758ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:08] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:08] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:08] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  60 [tablet-dark-768] › tests/mobile-web.spec.js:186:5 › layout keeps the tomato action identity without horizontal overflow (215ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:09] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  61 [tablet-dark-768] › tests/mobile-web.spec.js:204:5 › interactive controls keep mobile-friendly tap targets (196ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:09] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:09] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:09] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  62 [tablet-dark-768] › tests/mobile-web.spec.js:222:5 › free analysis limit becomes a real disabled state (2.0s)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:11] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:11] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:11] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  63 [tablet-dark-768] › tests/mobile-web.spec.js:239:5 › bottom content remains reachable above the tab bar (354ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:11] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:11] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:11] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  64 [tablet-dark-768] › tests/mobile-web.spec.js:260:5 › race selector updates sport, race, and opens analysis (415ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:12] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:12] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:12] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  65 [tablet-dark-768] › tests/mobile-web.spec.js:296:5 › all bottom tabs render their primary workflows (312ms)
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:12] "GET / HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:12] "GET /_expo/static/js/web/AppEntry-924c4bee7cb4b2bbbfbcc579cb695910.js HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [07/Jul/2026 07:28:12] "GET /assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf HTTP/1.1" 200 -
+  ✓  66 [tablet-dark-768] › tests/mobile-web.spec.js:309:5 › store safety and pro surfaces avoid betting actions (294ms)
+
+  66 passed (12.6s)

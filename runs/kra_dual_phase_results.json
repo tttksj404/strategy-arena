@@ -1,0 +1,92 @@
+{
+  "split": {
+    "development_before": "20250101",
+    "validation": "20250101..20260101",
+    "locked_holdout_from": "20260101"
+  },
+  "selected_config": "hgb_d3",
+  "selected_live_market_weight": 1.0,
+  "validation": {
+    "selected_intrinsic": {
+      "races": 2457,
+      "top1": 0.30362230362230364,
+      "top3": 0.6105006105006106,
+      "race_logloss": 2.0054164281631013
+    },
+    "selected_live_blend": {
+      "races": 2457,
+      "top1": 0.3833943833943834,
+      "top3": 0.7073667073667074,
+      "race_logloss": 1.7800838703243191
+    }
+  },
+  "holdout": {
+    "deployed_odds_model_without_odds": {
+      "win_pick": {
+        "races": 1323,
+        "top1": 0.1912320483749055,
+        "top3": 0.4671201814058957,
+        "race_logloss": 2.278143991753192
+      },
+      "displayed_place_leader": {
+        "races": 1323,
+        "top1": 0.23356009070294784,
+        "top3": 0.6016628873771731,
+        "race_logloss": 2.3035103992720494
+      }
+    },
+    "intrinsic_place_leader": {
+      "races": 1323,
+      "top1": 0.28798185941043086,
+      "top3": 0.6235827664399093,
+      "race_logloss": 2.018769006505369
+    },
+    "intrinsic_win_leader": {
+      "races": 1323,
+      "top1": 0.2947845804988662,
+      "top3": 0.6205593348450491,
+      "race_logloss": 1.9637561294786998
+    },
+    "market": {
+      "races": 1323,
+      "top1": 0.382464096749811,
+      "top3": 0.7097505668934241,
+      "race_logloss": 1.7632204888924732
+    },
+    "live_blend": {
+      "races": 1323,
+      "top1": 0.382464096749811,
+      "top3": 0.7097505668934241,
+      "race_logloss": 1.7632204888924732
+    },
+    "intrinsic_win_vs_intrinsic_place_bootstrap": {
+      "mean_pp": 0.6802721088435374,
+      "ci95_low_pp": -0.9826152683295541,
+      "ci95_high_pp": 2.3431594860166287,
+      "probability_positive": 0.77625
+    },
+    "live_blend_vs_market_bootstrap": {
+      "mean_pp": 0.0,
+      "ci95_low_pp": 0.0,
+      "ci95_high_pp": 0.0,
+      "probability_positive": 0.0
+    },
+    "selective_pre_race": {
+      "races": 438,
+      "coverage": 0.3310657596371882,
+      "top1": 0.3698630136986301,
+      "threshold": 0.3001681923364326
+    },
+    "selective_live": {
+      "races": 374,
+      "coverage": 0.28269085411942557,
+      "top1": 0.5294117647058824,
+      "threshold": 0.44148710439586164
+    }
+  },
+  "promotion_gate": {
+    "pre_race_pass": true,
+    "pre_race_gain_pp": 10.355253212396068,
+    "live_pass": true
+  }
+}

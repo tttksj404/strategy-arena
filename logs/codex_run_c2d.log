@@ -1,0 +1,2462 @@
+warning: `--full-auto` is deprecated; use `--sandbox workspace-write` instead.
+2026-07-06T22:27:05.214102Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:05.214222Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:05.214838Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:05.227930Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:05.241175Z ERROR codex_core_skills::loader: failed to read skills symlink dir /Users/tttksj/.codex/skills/develop-web-game/node_modules: Operation not permitted (os error 1)
+2026-07-06T22:27:05.469112Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-verbal-orchestrator/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 74, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:27:05.469148Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-weakness-analyze/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 37, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:27:05.469153Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-reasoning-generate/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 56, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:27:05.469156Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/session-housekeeping/SKILL.md: invalid YAML: did not find expected comment or line break at line 2 column 16, while scanning a block scalar at line 2 column 14
+2026-07-06T22:27:05.469159Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-verbal-validate/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 69, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:27:05.469161Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/session-handoff/SKILL.md: invalid YAML: did not find expected comment or line break at line 2 column 16, while scanning a block scalar at line 2 column 14
+2026-07-06T22:27:05.469164Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-reasoning-orchestrator/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 58, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:27:05.469166Z ERROR codex_core::session::session: failed to load skill /Users/tttksj/.agents/skills/leet-reasoning-validate/SKILL.md: invalid YAML: found unexpected end of stream at line 2 column 95, while scanning a quoted scalar at line 2 column 14
+2026-07-06T22:27:05.511309Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:27:05.537965Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:27:05.565059Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:27:05.570114Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:05.591266Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:05.591852Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:27:05.591878Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:05.621837Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 81458: Operation not permitted (os error 1)
+2026-07-06T22:27:05.625229Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-07-06T22:27:05.631496Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 81459: Operation not permitted (os error 1)
+2026-07-06T22:27:05.634907Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer realm=\"OAuth\", resource_metadata=\"https://mcp.notion.com/.well-known/oauth-protected-resource/mcp\", error=\"invalid_token\", error_description=\"Missing or invalid access token\"" })
+2026-07-06T22:27:05.635434Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 81461: Operation not permitted (os error 1)
+2026-07-06T22:27:05.647432Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 81463: Operation not permitted (os error 1)
+2026-07-06T22:27:05.657842Z ERROR codex_core_skills::loader: failed to read skills symlink dir /Users/tttksj/.codex/skills/develop-web-game/node_modules: Operation not permitted (os error 1)
+2026-07-06T22:27:05.658537Z ERROR codex_core_skills::loader: failed to read skills symlink dir /Users/tttksj/.codex/skills/develop-web-game/node_modules: Operation not permitted (os error 1)
+OpenAI Codex v0.133.0
+--------
+workdir: /Users/tttksj/github-portfolio-docs-work/strategy-arena
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019f398a-cb31-75a3-b448-71b264f1046b
+--------
+user
+roster_guard.py만 수정(mobile/ 금지, 커밋 금지). 결함: _extract_kcycle_names의 racer_pattern (?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기 가 공백 포함 선수명("조 택")을 누락 → 이름 집합이 모자라 false mismatch(정상 경주 차단) 위험. 수정: 이름 패턴을 내부 단일 공백 허용([가-힣](?:\s?[가-힣]){1,3} 유사)으로, 기수는 \d{1,2}기로. 추출 후 이름 정규화(공백 제거)는 verify_roster 비교와 일관 유지. pytest에 "조 택" 케이스(fixture 변형) positive 테스트 추가. 완료: python -m pytest -q 전체 PASS. 보고 20자 이내.
+
+2026-07-06T22:27:05.984270Z  WARN codex_memories_write::phase1: state db prune_stage1_outputs_for_retention failed during memories startup: error returned from database: (code: 1) no such table: stage1_outputs
+2026-07-06T22:27:06.391719Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="browser" marketplace="openai-bundled"
+2026-07-06T22:27:06.391730Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="chrome" marketplace="openai-bundled"
+2026-07-06T22:27:06.395717Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="computer-use" marketplace="openai-bundled"
+2026-07-06T22:27:06.395722Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="documents" marketplace="openai-primary-runtime"
+2026-07-06T22:27:06.395725Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="omo" marketplace="sisyphuslabs"
+2026-07-06T22:27:06.395730Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="pdf" marketplace="openai-primary-runtime"
+2026-07-06T22:27:06.395733Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="presentations" marketplace="openai-primary-runtime"
+2026-07-06T22:27:06.395735Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="spreadsheets" marketplace="openai-primary-runtime"
+2026-07-06T22:27:06.395737Z  WARN codex_core_plugins::loader: configured non-curated plugin no longer exists in discovered marketplaces during cache refresh plugin="template-creator" marketplace="openai-primary-runtime"
+2026-07-06T22:27:06.503877Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:06.504474Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:06.544435Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:06.545009Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:06.549271Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:06.553301Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:06.562712Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:06.562728Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:06.563013Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:06.563022Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:06.563315Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:06.563321Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:06.563606Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:06.563612Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:06.563909Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:06.563913Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:06.564553Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:06.564557Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: UserPromptSubmit
+hook: UserPromptSubmit
+hook: UserPromptSubmit
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+hook: UserPromptSubmit Completed
+hook: UserPromptSubmit Completed
+hook: UserPromptSubmit Completed
+2026-07-06T22:27:07.904452Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:07.905088Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:07.906850Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:07.910907Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:07.920508Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:07.920521Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:07.920802Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:07.920808Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:07.921093Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:07.921098Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:07.921793Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:07.921802Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:07.922087Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:07.922091Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:07.922666Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:07.922670Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+의도는 단일 버그수정입니다. `roster_guard.py`만 읽고 테스트로 고정한 뒤 전체 pytest를 확인하겠습니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+exec
+/bin/zsh -lc "pwd && rg --files -g 'roster_guard.py' -g 'test*.py' -g '*test*.py' | head -c 4000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+/Users/tttksj/github-portfolio-docs-work/strategy-arena
+roster_guard.py
+tests/test_trifecta_snapshot_audit.py
+tests/test_trifecta_archive_import.py
+tests/test_app_data_layer.py
+tests/test_grade_routing_experiment.py
+tests/test_prediction_feedback.py
+tests/test_confidence_display.py
+tests/test_cross_domain_model.py
+tests/test_model_improvement_matrix.py
+tests/test_roster_audit_scripts.py
+tests/test_kcycle_top2_pair_experiment.py
+tests/test_oracle_deploy_artifacts.py
+tests/test_roster_guard.py
+tests/test_trifecta_rule_search.py
+tests/test_live_decision.py
+tests/test_surprise_top2_experiment.py
+
+hook: PostToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+2026-07-06T22:27:24.117308Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.skill.injected] failed: tag value contains invalid characters: omo:programming
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/tttksj/.agents/skills/test-driven-development/SKILL.md | head -c 6000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+---
+name: test-driven-development
+description: Use when implementing any feature or bugfix, before writing implementation code
+---
+
+# Test-Driven Development (TDD)
+
+## Overview
+
+Write the test first. Watch it fail. Write minimal code to pass.
+
+**Core principle:** If you didn't watch the test fail, you don't know if it tests the right thing.
+
+**Violating the letter of the rules is violating the spirit of the rules.**
+
+## When to Use
+
+**Always:**
+- New features
+- Bug fixes
+- Refactoring
+- Behavior changes
+
+**Exceptions (ask your human partner):**
+- Throwaway prototypes
+- Generated code
+- Configuration files
+
+Thinking "skip TDD just this once"? Stop. That's rationalization.
+
+## The Iron Law
+
+```
+NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+```
+
+Write code before the test? Delete it. Start over.
+
+**No exceptions:**
+- Don't keep it as "reference"
+- Don't "adapt" it while writing tests
+- Don't look at it
+- Delete means delete
+
+Implement fresh from tests. Period.
+
+## Red-Green-Refactor
+
+```dot
+digraph tdd_cycle {
+    rankdir=LR;
+    red [label="RED\nWrite failing test", shape=box, style=filled, fillcolor="#ffcccc"];
+    verify_red [label="Verify fails\ncorrectly", shape=diamond];
+    green [label="GREEN\nMinimal code", shape=box, style=filled, fillcolor="#ccffcc"];
+    verify_green [label="Verify passes\nAll green", shape=diamond];
+    refactor [label="REFACTOR\nClean up", shape=box, style=filled, fillcolor="#ccccff"];
+    next [label="Next", shape=ellipse];
+
+    red -> verify_red;
+    verify_red -> green [label="yes"];
+    verify_red -> red [label="wrong\nfailure"];
+    green -> verify_green;
+    verify_green -> refactor [label="yes"];
+    verify_green -> green [label="no"];
+    refactor -> verify_green [label="stay\ngreen"];
+    verify_green -> next;
+    next -> red;
+}
+```
+
+### RED - Write Failing Test
+
+Write one minimal test showing what should happen.
+
+<Good>
+```typescript
+test('retries failed operations 3 times', async () => {
+  let attempts = 0;
+  const operation = () => {
+    attempts++;
+    if (attempts < 3) throw new Error('fail');
+    return 'success';
+  };
+
+  const result = await retryOperation(operation);
+
+  expect(result).toBe('success');
+  expect(attempts).toBe(3);
+});
+```
+Clear name, tests real behavior, one thing
+</Good>
+
+<Bad>
+```typescript
+test('retry works', async () => {
+  const mock = jest.fn()
+    .mockRejectedValueOnce(new Error())
+    .mockRejectedValueOnce(new Error())
+    .mockResolvedValueOnce('success');
+  await retryOperation(mock);
+  expect(mock).toHaveBeenCalledTimes(3);
+});
+```
+Vague name, tests mock not code
+</Bad>
+
+**Requirements:**
+- One behavior
+- Clear name
+- Real code (no mocks unless unavoidable)
+
+### Verify RED - Watch It Fail
+
+**MANDATORY. Never skip.**
+
+```bash
+npm test path/to/test.test.ts
+```
+
+Confirm:
+- Test fails (not errors)
+- Failure message is expected
+- Fails because feature missing (not typos)
+
+**Test passes?** You're testing existing behavior. Fix test.
+
+**Test errors?** Fix error, re-run until it fails correctly.
+
+### GREEN - Minimal Code
+
+Write simplest code to pass the test.
+
+<Good>
+```typescript
+async function retryOperation<T>(fn: () => Promise<T>): Promise<T> {
+  for (let i = 0; i < 3; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      if (i === 2) throw e;
+    }
+  }
+  throw new Error('unreachable');
+}
+```
+Just enough to pass
+</Good>
+
+<Bad>
+```typescript
+async function retryOperation<T>(
+  fn: () => Promise<T>,
+  options?: {
+    maxRetries?: number;
+    backoff?: 'linear' | 'exponential';
+    onRetry?: (attempt: number) => void;
+  }
+): Promise<T> {
+  // YAGNI
+}
+```
+Over-engineered
+</Bad>
+
+Don't add features, refactor other code, or "improve" beyond the test.
+
+### Verify GREEN - Watch It Pass
+
+**MANDATORY.**
+
+```bash
+npm test path/to/test.test.ts
+```
+
+Confirm:
+- Test passes
+- Other tests still pass
+- Output pristine (no errors, warnings)
+
+**Test fails?** Fix code, not test.
+
+**Other tests fail?** Fix now.
+
+### REFACTOR - Clean Up
+
+After green only:
+- Remove duplication
+- Improve names
+- Extract helpers
+
+Keep tests green. Don't add behavior.
+
+### Repeat
+
+Next failing test for next feature.
+
+## Good Tests
+
+| Quality | Good | Bad |
+|---------|------|-----|
+| **Minimal** | One thing. "and" in name? Split it. | `test('validates email and domain and whitespace')` |
+| **Clear** | Name describes behavior | `test('test1')` |
+| **Shows intent** | Demonstrates desired API | Obscures what code should do |
+
+## Why Order Matters
+
+**"I'll write tests after to verify it works"**
+
+Tests written after code pass immediately. Passing immediately proves nothing:
+- Might test wrong thing
+- Might test implementation, not behavior
+- Might miss edge cases you forgot
+- You never saw it catch the bug
+
+Test-first forces you to see the test fail, proving it actually tests something.
+
+**"I already manually tested all the edge cases"**
+
+Manual testing is ad-hoc. You think you tested everything but:
+
+hook: PostToolUse
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/tttksj/.codex/plugins/cache/sisyphuslabs/omo/4.15.1/skills/programming/SKILL.md | head -c 6000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+---
+name: programming
+description: "MUST USE for ANY work on .py .pyi .rs .ts .tsx .mts .cts .go files. One philosophy: strict types, modern stacks (Pydantic v2 / serde+thiserror / Zod / gin+sqlc+pgx+slog), modern toolchains (uv+basedpyright+ruff / cargo+clippy+miri / Bun+Biome+tsc / gofumpt+golangci-lint v2+nilaway+go-race), parse-don't-validate, exhaustive match, typed errors, no any/unwrap/panic, 250 LOC ceiling, TDD. Routes to references/{python,rust,typescript,rust-ub,go}/. Triggers: write/edit Python/Rust/TypeScript/Go code, new project, gin server, bubbletea TUI, CJK IME, connect-go RPC, sqlc pgx, branded ids, exhaustive match, unsafe Rust, miri, oversized file, refactor, TDD, e2e test, arena, allocator, bumpalo, const fn, const generics, comptime, zero-alloc, bitfield, repr, scopeguard, errdefer, Zig-like, zerocopy, packed struct."
+---
+
+# Programming
+
+You are a lazy senior engineer — lazy meaning efficient, never careless. **The best code is the code never written; the code you do write is type-strict, stack-first, async-correct, and architecturally honest about size.**
+
+This skill is an index. The hard per-language rules live under `references/`. Load the language-specific reference **before** writing a single line of code.
+
+---
+
+## PHASE 0 — LANGUAGE GATE (RUN THIS FIRST, EVERY TIME)
+
+**DO NOT WRITE OR EDIT A SINGLE LINE OF CODE BEFORE COMPLETING THIS GATE.**
+
+1. **Identify the language** from the file extension or the user's request.
+2. **STOP** and read the matching reference set:
+
+   | File / Language | MANDATORY reading (load `Read` tool on every file below) |
+   |---|---|
+   | `.py`, `.pyi`, "Python" | `references/python/README.md` + every file under `references/python/` that the README tells you to load on demand |
+   | `.rs`, `Cargo.toml`, "Rust" | `references/rust/README.md` + every file under `references/rust/` that the README tells you to load on demand. **IF the change touches `unsafe`, `*mut`, `*const`, `MaybeUninit`, FFI, `unsafe impl Send/Sync`, or a custom lock-free primitive: ALSO load `references/rust-ub/README.md` plus every file under `references/rust-ub/`.** |
+   | `.ts`, `.tsx`, `.mts`, `.cts`, "TypeScript" | `references/typescript/README.md` + every file under `references/typescript/` that the README tells you to load on demand |
+   | `.go`, `go.mod`, `go.sum`, `.golangci.yml`, `*.proto` next to a Go module, "Go" / "Golang" | `references/go/README.md` + every file under `references/go/` that the README tells you to load on demand |
+
+3. Only after the references are loaded, apply the **shared philosophy** below plus the per-language iron list from the reference.
+
+**No exceptions for "small" or "one-off" code.** The whole point of the modern toolchain (uv + PEP 723, `rust-script`, Bun) is that disposable scripts cost nothing to write with full discipline.
+
+---
+
+## Shared philosophy (all three languages)
+
+These are not style preferences. They are the seven axioms every recipe in `references/` derives from.
+
+0. **The best code is the code never written.** Before writing, stop at the first rung that holds: (1) does this need to exist at all? (YAGNI) (2) does this codebase already have it? — reuse the helper or pattern, do not re-implement. (3) does the standard library do it? (4) does a native platform feature cover it? (5) does an installed dependency solve it? (6) can it be one line? (7) only then, write the minimum that works. Climb the ladder *after* you understand the problem and trace the real flow end to end — the smallest diff in the wrong place is a second bug, not laziness. The ladder is a fast decision, not a written essay: pick the rung and move. **Bug fix = root cause, not symptom.** A ticket names a symptom; grep every caller of the function you touch and fix the shared seam once — one guard at the source is a smaller, more correct diff than one guard per caller, and patching only the path the ticket names leaves a sibling caller broken.
+
+1. **The type system is your proof system.** Make illegal states unrepresentable. The compiler / type checker is the cheapest test you will ever run. If a bug can be expressed as a type error, it is *required* to be expressed as a type error.
+
+2. **Parse, don't validate.** Untrusted input crosses a boundary exactly once - at the boundary it is parsed into a typed value (Pydantic v2 in Python, `serde` + `#[derive]` in Rust, Zod in TypeScript). Inside the boundary, code receives typed values and never re-validates. The boundary owns trust; the interior owns logic.
+
+3. **One name = one concept.** A `UserId` is not a `string`. A `Seconds` is not a `Milliseconds`. Use `NewType` (Python), newtype tuple structs (Rust), or branded types (TypeScript) for every distinct semantic primitive. The compiler refuses to let two semantic units mix.
+
+4. **Exhaustive variant matching, always.** Discriminated unions and enums are matched exhaustively. Python: `match` + `case unreachable: assert_never(unreachable)`. Rust: `match` (the compiler enforces). TypeScript: `switch` + `assertNever`. **`if`/`elif`/`else` is forbidden for discriminating on a tagged variant** - it silently swallows new variants.
+
+5. **Trust framework guarantees. Validate only at boundaries.** No null checks for values the type system already proves non-null. No `try/except` around code that cannot raise. No `unwrap`/`!`/`as` to paper over a contract you should have encoded in types. No defensive layer for a scenario you cannot name.
+
+6. **Test-driven, with the right shape of test.** No production line ships without a failing test that proves it was needed. Behavior is locked by tests, not by hope. See the TDD discipline below.
+
+---
+
+## TDD DISCIPLINE — NON-NEGOTIABLE
+
+**Every change follows the red → green → refactor loop.** The order is mandatory; reverse it and you have written speculative code.
+
+### The order
+
+1. **Red.** Write a failing test that names the behavior in `Given / When / Then`. Run it. *Confirm it fails for the right reason* — 
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+2026-07-06T22:27:24.264906Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:24.265526Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:24.267136Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:24.270380Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:24.279665Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:24.279672Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:24.279993Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:24.279998Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:24.280354Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:24.280364Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:24.280639Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:24.280645Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:24.280939Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:24.280947Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:24.281562Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:24.281566Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+`programming`/TDD 지침을 적용합니다. 이제 현재 함수와 테스트 구조만 좁게 확인합니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/tttksj/.codex/plugins/cache/sisyphuslabs/omo/4.15.1/skills/programming/references/python/README.md | head -c 6000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+
+# Python Programmer
+
+Modern Python. Type-strict, stack-first, async-correct.
+
+## Philosophy
+
+The type checker is your compiler. Make illegal states unrepresentable. Parse at boundaries. Own resources explicitly. Every function has a contract; the type system enforces it.
+
+## Hard rules
+
+These are deliberate project choices. Violations are always wrong, not "style preferences".
+
+### Tooling
+
+| Category | Use | Never |
+|---|---|---|
+| Package manager | `uv` | pip, poetry, conda, pipenv |
+| Type checker | `basedpyright` (`typeCheckingMode = "all"`) | pyright, mypy |
+| Linter + formatter | `ruff` (`select = ["ALL"]`) | flake8, black, isort, autopep8 |
+| Async runtime | `anyio` | `import asyncio` |
+| Data | `polars` + `duckdb` + `numpy` | pandas |
+| Web framework | FastAPI + Pydantic v2 | Flask, Django REST |
+| ORM | SQLAlchemy 2.x async | Django ORM, Tortoise |
+| HTTP client | [`httpx2`](https://github.com/pydantic/httpx2) | requests, aiohttp, httpx |
+| Testing | `pytest` | unittest |
+| CLI | `typer` + `rich` | argparse, click, fire |
+
+### The iron list
+
+1. **Frozen by default** — `@dataclass(frozen=True, slots=True)`. Pydantic: `model_config = ConfigDict(frozen=True)`. Mutable only when mutation is the documented purpose.
+2. **NewType for distinct IDs** — `UserId = NewType("UserId", int)`. Never pass raw `int` where a branded type exists.
+3. **`match` only for variants, `if` only for booleans** — **NEVER** use `if/elif/else` to discriminate on type (`isinstance`), enum value, or literal variant. `match/case` is mandatory for these — non-negotiable. **ALWAYS** end with `case unreachable: assert_never(unreachable)` — bare `case _: pass` and `case _: raise ValueError` are banned (they silently swallow new variants). `if/else` is fine only for boolean expressions, range checks, and predicate calls that aren't variant discrimination. See "Why `if/elif` on variants is banned" below for examples.
+4. **Protocol over ABC** — `typing.Protocol` for interfaces. ABC only when you need shared method implementation.
+5. **No raw dicts in signatures** — params and returns use `TypedDict`, `dataclass`, or Pydantic model. Internal scratch dicts are fine.
+6. **Parse, don't validate** — constructors produce typed objects or raise. Never pass unvalidated data deeper into the call stack.
+7. **Typed errors** — error types are dataclasses or exceptions with typed fields. Never `raise ValueError("something")` with a bare string. Use union returns when the caller is within 1-2 call levels and must handle the outcome (repository → service). Use exceptions when the error should propagate up many layers to a boundary handler (service → HTTP handler).
+8. **Final for constants** — module-level constants use `Final`. Mutable module globals are a code smell.
+9. **Explicit None** — annotate `-> X | None`. Never return `None` from a function whose signature omits it.
+10. **Context managers for resources** — files, DB connections, HTTP clients, locks. No manual `.close()`.
+11. **No Any, no object** — both are banned as type annotations. `object` erases all structural information (zero callable attributes, zero narrowing). Use `Protocol` (structural typing), `TypeVar` (generic pass-through), explicit union (known variants), or `TypedDict` (dict shapes).
+12. **No cast** — `cast()` is banned. Redesign the types.
+13. **No type: ignore** — fix the type error. The checker is right; you are wrong.
+14. **No broad except** — `except Exception` and `except BaseException` are banned. Catch the **specific** exception you expect. A broad catch swallows bugs you need to see — `KeyError`, `AttributeError`, `TypeError` all vanish silently. If you genuinely need a catch-all at a top-level boundary (CLI entry, HTTP handler), use `# noqa: BROAD_EXCEPT_OK` and log + re-raise.
+
+### Typing and safety
+
+- `basedpyright` in `typeCheckingMode = "all"`. Every public function has full annotations. Internal helpers: annotate return type; parameter types may be inferred.
+- `ruff` with `select = ["ALL"]`. Override specific rules per project in `pyproject.toml`, never globally disable the strict baseline.
+- Every new function must have a `docstring` unless its name + signature makes it completely obvious (e.g. `def full_name(first: str, last: str) -> str:`).
+- Use `X | Y` union syntax (PEP 604), never `Union[X, Y]` or `Optional[X]`.
+
+### Why `object` is banned
+
+`object` pretends to be safe ("it's the top type!") but gives **zero** narrowing and **zero** attributes. Even `Any` is more honest — it admits the boundary is untyped.
+
+```python
+# BANNED
+def process(data: object) -> object: ...
+def store(items: list[object]) -> None: ...
+results: dict[str, object] = {}
+
+# GOOD — Protocol for structural typing
+class Serializable(Protocol):
+    def serialize(self) -> bytes: ...
+def process(data: Serializable) -> ProcessResult: ...
+
+# GOOD — TypeVar for generic pass-through
+def identity[T](x: T) -> T: ...
+def first[T](items: Sequence[T]) -> T: ...
+
+# GOOD — explicit union for known variants
+def parse(raw: str | bytes) -> Document: ...
+```
+
+### Why `if/elif` on variants is banned
+
+`if/elif/else` chains on type, enum, or literal values lose compile-time exhaustiveness. When a new variant is added, nothing warns you. `match/case` + `assert_never` does.
+
+```python
+# BANNED — if/elif for type discrimination
+if isinstance(event, Click):
+    handle_click(event.x, event.y)
+elif isinstance(event, Scroll):
+    handle_scroll(event.delta)
+else:
+    raise ValueError(f"Unknown: {event}")  # runtime bomb
+
+# BANNED — if/elif for enum discrimination
+if status == Status.PENDING:
+    start_review()
+elif status == Status.ACTIVE:
+    continue_processing()
+elif status == Status.CLOSED:
+    archive()
+
+# BANNED — non-exhaustive match (swallows new variants)
+match event:
+    case Click(x, y): handle_click(x, y)
+    case _: pass
+
+# GOOD — exhaustive match with assert_never
+match event:
+    case Click(x=x, y=y):
+        handle_click(x, y)
+  
+hook: PostToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,260p' tests/test_roster_guard.py | head -c 14000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+exec
+/bin/zsh -lc "sed -n '1,240p' roster_guard.py | head -c 12000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+#!/usr/bin/env python3
+import os
+import sys
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import app as app_module
+import roster_guard
+
+
+FIXTURE_DIR = Path(__file__).parent / "fixtures"
+EXPECTED_GM_R1_NAMES = ["황종대", "이흥주", "박진홍", "최건묵", "이승주", "박유찬", "김성진"]
+
+
+class RosterGuardTestCase(unittest.TestCase):
+    def setUp(self):
+        app_module.app.config["TESTING"] = True
+        app_module._BASE_PREDICTION_CACHE.clear()
+        roster_guard.clear_cache()
+        self.client = app_module.app.test_client()
+
+    def test_kcycle_options_fixture_maps_date_to_tms_dayord(self):
+        html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+
+        mapping = roster_guard._parse_kcycle_tmsdayord_options(html, 2026)
+
+        self.assertEqual(mapping["2026-07-03"], (27, 1))
+
+    def test_kcycle_card_fixture_extracts_gwangmyeong_race_one_names(self):
+        html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+        names = roster_guard._extract_kcycle_names(html, "광명", "1")
+
+        self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+        self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+
+    def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+        options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+        card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+        fetched_urls: list[str] = []
+
+        def fake_fetch(url: str) -> str:
+            fetched_urls.append(url)
+            if url.endswith("/race/card/decision"):
+                return options_html
+            if url.endswith("/race/card/decision/2026/27/1"):
+                return card_html
+            self.fail(f"unexpected URL: {url}")
+
+        with patch.object(roster_guard, "_fetch_kcycle_html", side_effect=fake_fetch):
+            names = roster_guard._kcycle_official_names("2026-07-03", "광명", "1")
+
+        self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+        self.assertEqual(fetched_urls, [
+            "https://www.kcycle.or.kr/race/card/decision",
+            "https://www.kcycle.or.kr/race/card/decision/2026/27/1",
+        ])
+
+    def test_verify_roster_marks_same_kcycle_starters_as_verified(self):
+        starters = [{"racer_nm": name} for name in EXPECTED_GM_R1_NAMES]
+
+        with patch.object(roster_guard, "_provider_names", return_value=EXPECTED_GM_R1_NAMES):
+            result = roster_guard.verify_roster("keirin", "2026-07-03", "광명", "1", starters)
+
+        self.assertEqual(result["state"], "verified")
+        self.assertEqual(result["official_names"], EXPECTED_GM_R1_NAMES)
+
+    def test_verify_roster_marks_two_name_difference_as_mismatch(self):
+        starters = [{"racer_nm": name} for name in ["방종대", "이흥주", "박진응", "최건묵", "이승주", "박유찬", "김성진"]]
+
+        with patch.object(roster_guard, "_provider_names", return_value=EXPECTED_GM_R1_NAMES):
+            result = roster_guard.verify_roster("keirin", "2026-07-03", "광명", "1", starters)
+
+        self.assertEqual(result["state"], "mismatch")
+        self.assertEqual(result["official_names"], EXPECTED_GM_R1_NAMES)
+
+    def test_provider_failure_is_unverified_not_verified(self):
+        with patch.object(roster_guard, "_provider_names", return_value=None):
+            result = roster_guard.verify_roster("keirin", "2026-07-03", "광명", "1", [{"racer_nm": "김성진"}])
+
+        self.assertEqual(result["state"], "unverified")
+        self.assertEqual(result["official_names"], [])
+
+    def test_live_decision_blocks_mismatched_roster_without_picks_rows_or_top(self):
+        starters = [
+            {"back_no": str(i), "racer_nm": name, "racer_grd_cd": "선발"}
+            for i, name in enumerate(["최건묵", "황종대", "이흥주", "박진홍", "이승주", "박유찬", "김성진"], start=1)
+        ]
+        official = ["방종대", "이홍주", "박진응", "최광목", "이승주", "방효찬", "김성진"]
+
+        with patch.dict(os.environ, {"DATAGOKR_SERVICE_KEY": "dummy", "KCYCLE_ENABLED": "0"}, clear=False), \
+             patch.object(app_module.engine, "fetch_race_card", return_value=(starters, None)), \
+             patch.object(roster_guard, "_provider_names", return_value=official), \
+             patch.object(app_module.engine, "predict", side_effect=AssertionError("prediction should be blocked")):
+            response = self.client.get(
+                "/api/live-decision?sport=keirin&date=2026-07-03&meet=광명&race_no=1",
+                headers={"X-RaceLens-Device-Id": "roster-mismatch-device"},
+            )
+
+        payload = response.get_json()
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(payload["status"], "roster_mismatch")
+        self.assertEqual(payload["message"], "공식 출주표와 일치하지 않아 예측을 중단했습니다")
+        self.assertEqual(payload["rows"], [])
+        self.assertEqual(payload["picks"], [])
+        self.assertIsNone(payload["top"])
+        self.assertEqual(payload["roster_verification"]["state"], "mismatch")
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+ succeeded in 0ms:
+from __future__ import annotations
+
+import datetime as dt
+import json
+import os
+import re
+import time
+import urllib.parse
+import urllib.request
+from html.parser import HTMLParser
+from typing import Final, TypedDict
+
+
+DEFAULT_KRA_URL = "https://apis.data.go.kr/B551015/API214_1/RaceDetailResult_1"
+KCYCLE_BASE_URL: Final = "https://www.kcycle.or.kr"
+KCYCLE_DECISION_PATH: Final = "/race/card/decision"
+KRA_MEET_CODE = {"서울": "1", "제주": "2", "부경": "3"}
+VERIFY_TTL_SEC = 1800
+NEGATIVE_TTL_SEC = 60
+KCYCLE_TMS_CACHE_TTL_SEC = 12 * 60 * 60
+
+
+class RosterVerification(TypedDict):
+    state: str
+    official_names: list[str]
+    checked_at: str
+
+
+class _CellParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.rows: list[list[str]] = []
+        self._in_row = False
+        self._in_cell = False
+        self._row: list[str] = []
+        self._parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "tr":
+            self._in_row = True
+            self._row = []
+        elif tag in {"td", "th"} and self._in_row:
+            self._in_cell = True
+            self._parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self._in_cell:
+            self._parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"td", "th"} and self._in_cell:
+            self._row.append(re.sub(r"\s+", " ", "".join(self._parts)).strip())
+            self._parts = []
+            self._in_cell = False
+        elif tag == "tr" and self._in_row:
+            if any(self._row):
+                self.rows.append(self._row)
+            self._row = []
+            self._in_row = False
+
+
+_CACHE: dict[tuple[str, str, str, str], tuple[RosterVerification, float, int]] = {}
+_KCYCLE_TMS_CACHE: dict[int, tuple[dict[str, tuple[int, int]], float]] = {}
+
+
+def _checked_at() -> str:
+    return dt.datetime.now(dt.UTC).isoformat(timespec="seconds")
+
+
+def _normalize_name(value: str) -> str:
+    return re.sub(r"\s+", "", str(value or ""))
+
+
+def _starter_name(starter: dict, sport: str) -> str:
+    key = "hrName" if sport == "horse" else "racer_nm"
+    return str(starter.get(key) or "").strip()
+
+
+def _candidate_names_from_starters(starters: list[dict], sport: str) -> list[str]:
+    names: list[str] = []
+    for starter in starters:
+        name = _starter_name(starter, sport)
+        if name:
+            names.append(name)
+    return names
+
+
+def _fetch_kcycle_html(url: str) -> str:
+    request = urllib.request.Request(url, headers={"User-Agent": "strategy-arena"})
+    with urllib.request.urlopen(request, timeout=8) as response:
+        return response.read().decode("utf-8", "replace")
+
+
+def _select_block(html: str, select_id: str) -> str:
+    pattern = re.compile(
+        rf"<select\b[^>]*(?:id|name)=[\"']{re.escape(select_id)}[\"'][^>]*>.*?</select>",
+        re.DOTALL,
+    )
+    match = pattern.search(html or "")
+    return match.group(0) if match else ""
+
+
+def _strip_tags(html: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html or "")).strip()
+
+
+def _kcycle_year_options(html: str) -> set[int]:
+    block = _select_block(html, "stndYear")
+    return {int(value) for value in re.findall(r"<option\b[^>]*value=[\"'](\d{4})[\"']", block)}
+
+
+def _selected_kcycle_year(html: str) -> int | None:
+    block = _select_block(html, "stndYear")
+    if not block:
+        return None
+    selected = re.search(r"<option\b[^>]*value=[\"'](\d{4})[\"'][^>]*selected", block)
+    first = selected or re.search(r"<option\b[^>]*value=[\"'](\d{4})[\"']", block)
+    return int(first.group(1)) if first else None
+
+
+def _parse_kcycle_tmsdayord_options(html: str, year: int) -> dict[str, tuple[int, int]]:
+    year_options = _kcycle_year_options(html)
+    if year_options and year not in year_options:
+        return {}
+    block = _select_block(html, "tmsDayOrd") or html
+    mapping: dict[str, tuple[int, int]] = {}
+    option_pattern = re.compile(
+        r"<option\b[^>]*value=[\"'](\d+)-(\d+)[\"'][^>]*>(.*?)</option>",
+        re.DOTALL,
+    )
+    for match in option_pattern.finditer(block):
+        month_day = re.search(r"(\d{2})월\s*(\d{2})일", _strip_tags(match.group(3)))
+        if not month_day:
+            continue
+        month = int(month_day.group(1))
+        day = int(month_day.group(2))
+        try:
+            race_day = dt.date(year, month, day)
+        except ValueError:
+            continue
+        mapping[race_day.isoformat()] = (int(match.group(1)), int(match.group(2)))
+    return mapping
+
+
+def _kcycle_tmsdayord_mapping(year: int) -> dict[str, tuple[int, int]]:
+    cached = _KCYCLE_TMS_CACHE.get(year)
+    now = time.time()
+    if cached and now - cached[1] < KCYCLE_TMS_CACHE_TTL_SEC:
+        return cached[0]
+    base_html = _fetch_kcycle_html(f"{KCYCLE_BASE_URL}{KCYCLE_DECISION_PATH}")
+    selected_year = _selected_kcycle_year(base_html)
+    if selected_year is None or selected_year == year:
+        mapping = _parse_kcycle_tmsdayord_options(base_html, year)
+    elif year in _kcycle_year_options(base_html):
+        try:
+            mapping = _parse_kcycle_tmsdayord_options(
+                _fetch_kcycle_html(f"{KCYCLE_BASE_URL}{KCYCLE_DECISION_PATH}/tmsDayOrd/{year}"),
+                year,
+            )
+        except (OSError, TimeoutError, urllib.error.URLError):
+            mapping = {}
+    else:
+        mapping = {}
+    _KCYCLE_TMS_CACHE[year] = (mapping, now)
+    return mapping
+
+
+def _kcycle_official_names(ymd: str, meet: str, race_no: str) -> list[str] | None:
+    digits = re.sub(r"\D", "", str(ymd or ""))
+    if len(digits) != 8:
+        return None
+    year = int(digits[:4])
+    race_day = f"{digits[:4]}-{digits[4:6]}-{digits[6:8]}"
+    try:
+        tms_day = _kcycle_tmsdayord_mapping(year).get(race_day)
+        if not tms_day:
+            return None
+        html = _fetch_kcycle_html(f"{KCYCLE_BASE_URL}{KCYCLE_DECISION_PATH}/{year}/{tms_day[0]}/{tms_day[1]}")
+    except (OSError, TimeoutError, urllib.error.URLError):
+        return None
+    names = _extract_kcycle_names(html, meet, race_no)
+    if names:
+        return names
+    return None
+
+
+def _extract_kcycle_names(html: str, meet: str, race_no: str) -> list[str]:
+    try:
+        rno = int(str(race_no).strip())
+    except ValueError:
+        return []
+    header = re.compile(rf"{re.escape(str(meet).strip())}\s*{rno:02d}경주")
+    match = header.search(html or "")
+    if not match:
+        return []
+    section_end = (html or "").find('class="cptLinkSection"', match.end())
+    section = (html or "")[match.start(): section_end if section_end > -1 else None]
+    parser = _CellParser()
+    parser.feed(section)
+    ordered: dict[int, str] = {}
+    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
+    for row in parser.rows:
+        row_text = " ".join(row)
+        racer = racer_pattern.search(row_text)
+        if racer:
+            ordered[int(racer.group(1))] = racer.group(2)
+    return [ordered[bno] for bno in sorted(ordered)]
+
+
+def _data_key() -> str | None:
+    for name in ("DATAGOKR_SERVICE_KEY", "datagokr", "DATAGOKR", "DATA_GO_KR_KEY", "SERVICE_KEY"):
+        value = os.environ.get(name)
+        if value and value.strip():
+            return value.strip()
+    return None
+
+
+def _kra_official_names(ymd: str, meet: str, race_no: str) -> list[str] | None:
+    key = _data_key()
+    if not key:
+        return None
+    rc_date = re.sub(r"\D", "", str(ymd or ""))
+    if len(rc_date) != 8:
+        return None
+    rno = str(race_no).strip().lstrip("0") or "0"
+    url = os.environ.get("KRA_CARD_URL", DEFAULT_KRA_URL)
+    candidates = [meet, KRA_MEET_CODE.get(meet, meet)]
+    for meet_value in candidates:
+        query = urllib.parse.urlencode({
+            "serviceKey": key,
+            "_type": "json",
+            "numOfRows": 50,
+            "pageNo": 1,
+            "meet": str(meet_value),
+            "rc_date": rc_date,
+            "rc_no": rno,
+        })
+        request = urllib.request.Request(f"{url}?{query}", headers={"User-Agent": "strategy-arena"})
+        try:
+            with urllib.request.urlopen(request, timeout=6) as response:
+
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+2026-07-06T22:27:32.568824Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:32.569462Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:32.571164Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:32.575164Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:32.584760Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:32.584768Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:32.585062Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:32.585069Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:32.585380Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:32.585385Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:32.585673Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:32.585677Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:32.585977Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:32.585988Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:32.586670Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:32.586674Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+  → 공백 선수명 회귀 테스트 추가 후 실패 확인
+  • roster_guard.py 이름 추출 정규식/정규화 수정
+  • 대상 테스트와 전체 pytest 검증
+2026-07-06T22:27:35.087074Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:35.087669Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:35.089168Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:35.092542Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:35.101804Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:35.101811Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:35.102080Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:35.102087Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:35.102384Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:35.102388Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:35.102665Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:35.102669Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:35.102993Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:35.102999Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:35.103620Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:35.103625Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+현재 테스트 파일에 회귀 케이스를 먼저 추가해 기존 정규식의 실패를 확인한 뒤, production 수정은 `roster_guard.py` 한 곳으로 제한하겠습니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc 'rg -n "def verify_roster|_normalize_name|candidate_names|official_names" roster_guard.py | head -c 6000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+exec
+/bin/zsh -lc "rg -n \"황종대|\\d{2}기|광명\\s*01경주\" tests/fixtures/kcycle_card_20260703_gm_r1.html | head -c 6000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+25:    official_names: list[str]
+70:def _normalize_name(value: str) -> str:
+79:def _candidate_names_from_starters(starters: list[dict], sport: str) -> list[str]:
+168:def _kcycle_official_names(ymd: str, meet: str, race_no: str) -> list[str] | None:
+218:def _kra_official_names(ymd: str, meet: str, race_no: str) -> list[str] | None:
+261:            return _kcycle_official_names(ymd, meet, race_no)
+263:            return _kra_official_names(ymd, meet, race_no)
+268:def verify_roster(
+283:    official_names = _provider_names(sport, ymd, meet, race_no) or []
+284:    if not official_names:
+285:        result: RosterVerification = {"state": "unverified", "official_names": [], "checked_at": _checked_at()}
+289:    official_set = {_normalize_name(name) for name in official_names if _normalize_name(name)}
+290:    starter_set = {_normalize_name(name) for name in _candidate_names_from_starters(starters, sport)}
+293:    result = {"state": state, "official_names": official_names, "checked_at": _checked_at()}
+
+ succeeded in 0ms:
+19:				<h2>광명 01경주 (선발 12:55)</h2>
+28:                    광명 01경주 (선발 12:55) 5주회 선두고정(1691m)
+68:                                        <span class="sign num01">1</span><a href="javascript: void(0)" class="player" onclick="fnRacer.popup(&#39;20020058&#39;, &#39;2026&#39;)">황종대</a>
+70:                                    <div class="other">09기/48세</div>
+144:                                    <div class="other">07기/50세</div>
+218:                                    <div class="other">15기/40세</div>
+292:                                    <div class="other">30기/26세</div>
+366:                                    <div class="other">09기/47세</div>
+440:                                    <div class="other">13기/45세</div>
+514:                                    <div class="other">11기/47세</div>
+
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+2026-07-06T22:27:44.759594Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:44.760192Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:44.761937Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:44.765231Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:44.774288Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:44.774295Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:44.774576Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:44.774582Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:44.774864Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:44.774869Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:44.775155Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:44.775165Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:44.775495Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:44.775500Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:44.776128Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:44.776132Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc "sed -n '250,310p' roster_guard.py | head -c 4000" in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+        if total <= 0 or not items:
+            continue
+        names = [str(item.get("hrName") or "").strip() for item in items if str(item.get("hrName") or "").strip()]
+        if names:
+            return names
+    return None
+
+
+def _provider_names(sport: str, ymd: str, meet: str, race_no: str) -> list[str] | None:
+    match sport:
+        case "keirin":
+            return _kcycle_official_names(ymd, meet, race_no)
+        case "horse":
+            return _kra_official_names(ymd, meet, race_no)
+        case _:
+            return None
+
+
+def verify_roster(
+    sport: str,
+    ymd: str,
+    meet: str,
+    race_no: str,
+    starters: list[dict],
+) -> RosterVerification:
+    key = (str(sport), re.sub(r"\D", "", str(ymd or ""))[:8], str(meet), str(race_no).strip())
+    now = time.time()
+    cached = _CACHE.get(key)
+    if cached:
+        result, cached_at, ttl = cached
+        if now - cached_at < ttl:
+            return result
+
+    official_names = _provider_names(sport, ymd, meet, race_no) or []
+    if not official_names:
+        result: RosterVerification = {"state": "unverified", "official_names": [], "checked_at": _checked_at()}
+        _CACHE[key] = (result, now, NEGATIVE_TTL_SEC)
+        return result
+
+    official_set = {_normalize_name(name) for name in official_names if _normalize_name(name)}
+    starter_set = {_normalize_name(name) for name in _candidate_names_from_starters(starters, sport)}
+    mismatch_count = len(official_set.symmetric_difference(starter_set))
+    state = "mismatch" if mismatch_count >= 2 else "verified"
+    result = {"state": state, "official_names": official_names, "checked_at": _checked_at()}
+    _CACHE[key] = (result, now, VERIFY_TTL_SEC)
+    return result
+
+
+def clear_cache() -> None:
+    _CACHE.clear()
+    _KCYCLE_TMS_CACHE.clear()
+
+hook: PostToolUse
+hook: PostToolUse Completed
+2026-07-06T22:27:47.438582Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:47.439196Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:27:47.440739Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:27:47.443923Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:27:47.452985Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:47.452998Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:47.453291Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:47.453299Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:47.453595Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:47.453603Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:47.453906Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:47.453912Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:47.454231Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:47.454234Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:27:47.454836Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:27:47.454841Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+테스트는 fixture 문자열만 런타임에서 변형해 파일 추가 없이 `조 택`과 `9기`를 동시에 검증하게 넣습니다.
+hook: PreToolUse
+hook: PreToolUse Completed
+apply patch
+patch: completed
+/Users/tttksj/github-portfolio-docs-work/strategy-arena/tests/test_roster_guard.py
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:03.671235Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:03.671978Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:03.674216Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:03.712660Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:03.728336Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:03.728369Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:03.729606Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:03.729620Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:03.729979Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:03.729990Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:03.730331Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:03.730338Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:03.730708Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:03.730715Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:03.731567Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:03.731573Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+회귀 테스트를 넣었고, 지금은 기존 구현에서 같은 테스트가 실제로 실패하는지 확인합니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc 'python -m pytest -q tests/test_roster_guard.py::RosterGuardTestCase::test_kcycle_card_extracts_spaced_name_and_one_digit_generation 2>&1 | tail -c 6000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+ succeeded in 444ms:
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ RosterGuardTestCase.test_kcycle_card_extracts_spaced_name_and_one_digit_generation _
+
+self = <test_roster_guard.RosterGuardTestCase testMethod=test_kcycle_card_extracts_spaced_name_and_one_digit_generation>
+
+    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
+        html = (
+            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
+            .read_text(encoding="utf-8")
+            .replace(">황종대<", ">조 택<", 1)
+            .replace(">09기/48세<", ">9기/48세<", 1)
+        )
+        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
+    
+        names = roster_guard._extract_kcycle_names(html, "광명", "1")
+    
+>       self.assertEqual(names, expected_names)
+E       AssertionError: Lists differ: ['이흥주', '박진홍', '최건묵', '이승주', '박유찬', '김성진'] != ['조택', '이흥주', '박진홍', '최건묵', '이승주', '박유찬', '김성진']
+E       
+E       First differing element 0:
+E       '이흥주'
+E       '조택'
+E       
+E       Second list contains 1 additional elements.
+E       First extra element 6:
+E       '김성진'
+E       
+E       - ['이흥주', '박진홍', '최건묵', '이승주', '박유찬', '김성진']
+E       + ['조택', '이흥주', '박진홍', '최건묵', '이승주', '박유찬', '김성진']
+E       ?  ++++++
+
+tests/test_roster_guard.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_roster_guard.py::RosterGuardTestCase::test_kcycle_card_extracts_spaced_name_and_one_digit_generation
+1 failed in 0.09s
+
+2026-07-06T22:28:09.027255Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:09.027821Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:09.029639Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:09.033722Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:09.043811Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:09.043827Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:09.044417Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:09.044426Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:09.045459Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:09.045471Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:09.045844Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:09.045852Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:09.046193Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:09.046198Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:09.046813Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:09.046818Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+실패가 재현됐습니다. 이제 추출부 정규식만 고쳐 반환 이름을 비교용 형태와 맞춰 공백 제거합니다.
+  ✓ 공백 선수명 회귀 테스트 추가 후 실패 확인
+  → roster_guard.py 이름 추출 정규식/정규화 수정
+  • 대상 테스트와 전체 pytest 검증
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:12.295435Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:12.295975Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:12.297751Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:12.301262Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:12.311705Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:12.311743Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:12.312222Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:12.312239Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:12.312584Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:12.312595Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:12.312942Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:12.312948Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:12.313802Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:12.313809Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:12.314723Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:12.314728Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+`roster_guard.py`에서는 선수명 캡처만 내부 단일 공백 허용으로 바꾸고, 저장 직전에 기존 `_normalize_name`을 재사용합니다.
+hook: PreToolUse
+hook: PreToolUse Completed
+apply patch
+patch: completed
+/Users/tttksj/github-portfolio-docs-work/strategy-arena/roster_guard.py
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:17.569376Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:17.569993Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:17.571664Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:17.575884Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:17.585274Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:17.585286Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:17.585587Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:17.585598Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:17.585891Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:17.585897Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:17.586183Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:17.586191Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:17.586487Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:17.586493Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:17.587125Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:17.587129Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+구현 변경은 끝났습니다. 대상 테스트를 먼저 통과시킨 뒤 전체 pytest로 범위를 넓히겠습니다.
+  ✓ 공백 선수명 회귀 테스트 추가 후 실패 확인
+  ✓ roster_guard.py 이름 추출 정규식/정규화 수정
+  → 대상 테스트와 전체 pytest 검증
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:20.879171Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:20.879757Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:20.881494Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:20.884813Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:20.893883Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:20.893900Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:20.894178Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:20.894185Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:20.894464Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:20.894471Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:20.894733Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:20.894737Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:20.895027Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:20.895033Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:20.895626Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:20.895631Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc 'git diff -- roster_guard.py tests/test_roster_guard.py | head -c 12000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+diff --git a/roster_guard.py b/roster_guard.py
+index 3bc0455..8807122 100644
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -4,20 +4,20 @@ import datetime as dt
+ import json
+ import os
+ import re
+-import ssl
+ import time
+ import urllib.parse
+ import urllib.request
+ from html.parser import HTMLParser
+-from typing import TypedDict
++from typing import Final, TypedDict
+ 
+ 
+ DEFAULT_KRA_URL = "https://apis.data.go.kr/B551015/API214_1/RaceDetailResult_1"
+-KCYCLE_IP = "210.90.29.27"
+-KCYCLE_MEET_CODES = {"광명": "001", "창원": "002", "부산": "003"}
++KCYCLE_BASE_URL: Final = "https://www.kcycle.or.kr"
++KCYCLE_DECISION_PATH: Final = "/race/card/decision"
+ KRA_MEET_CODE = {"서울": "1", "제주": "2", "부경": "3"}
+ VERIFY_TTL_SEC = 1800
+ NEGATIVE_TTL_SEC = 60
++KCYCLE_TMS_CACHE_TTL_SEC = 12 * 60 * 60
+ 
+ 
+ class RosterVerification(TypedDict):
+@@ -60,6 +60,7 @@ class _CellParser(HTMLParser):
+ 
+ 
+ _CACHE: dict[tuple[str, str, str, str], tuple[RosterVerification, float, int]] = {}
++_KCYCLE_TMS_CACHE: dict[int, tuple[dict[str, tuple[int, int]], float]] = {}
+ 
+ 
+ def _checked_at() -> str:
+@@ -84,73 +85,126 @@ def _candidate_names_from_starters(starters: list[dict], sport: str) -> list[str
+     return names
+ 
+ 
+-def _resolve_kcycle_tms(ymd: str) -> tuple[int, int, int] | None:
+-    digits = re.sub(r"\D", "", str(ymd or ""))
+-    if len(digits) < 8:
+-        return None
+-    try:
+-        race_day = dt.date(int(digits[:4]), int(digits[4:6]), int(digits[6:8]))
+-    except ValueError:
+-        return None
+-    jan1 = dt.date(race_day.year, 1, 1)
+-    first_fri = jan1 + dt.timedelta(days=(4 - jan1.weekday()) % 7)
+-    tms = 1 if race_day < first_fri else ((race_day - first_fri).days // 7) + 1
+-    day = {4: 1, 5: 2, 6: 3}.get(race_day.weekday(), 0)
+-    if day == 0:
+-        return None
+-    return race_day.year, int(tms), day
++def _fetch_kcycle_html(url: str) -> str:
++    request = urllib.request.Request(url, headers={"User-Agent": "strategy-arena"})
++    with urllib.request.urlopen(request, timeout=8) as response:
++        return response.read().decode("utf-8", "replace")
+ 
+ 
+-def _kcycle_official_names(ymd: str, meet: str, race_no: str) -> list[str] | None:
+-    tms_day = _resolve_kcycle_tms(ymd)
+-    meet_code = KCYCLE_MEET_CODES.get(str(meet or "").strip())
+-    if tms_day is None or meet_code is None:
++def _select_block(html: str, select_id: str) -> str:
++    pattern = re.compile(
++        rf"<select\b[^>]*(?:id|name)=[\"']{re.escape(select_id)}[\"'][^>]*>.*?</select>",
++        re.DOTALL,
++    )
++    match = pattern.search(html or "")
++    return match.group(0) if match else ""
++
++
++def _strip_tags(html: str) -> str:
++    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html or "")).strip()
++
++
++def _kcycle_year_options(html: str) -> set[int]:
++    block = _select_block(html, "stndYear")
++    return {int(value) for value in re.findall(r"<option\b[^>]*value=[\"'](\d{4})[\"']", block)}
++
++
++def _selected_kcycle_year(html: str) -> int | None:
++    block = _select_block(html, "stndYear")
++    if not block:
+         return None
+-    year, tms, day = tms_day
+-    rno = (str(race_no).strip().lstrip("0") or "0").zfill(2)
+-    context = ssl.create_default_context()
+-    context.check_hostname = False
+-    context.verify_mode = ssl.CERT_NONE
+-    for offset in (0, -1, 1, -2, 2):
+-        url = f"https://{KCYCLE_IP}/race/card/decision/{year}/{tms + offset}/{day}"
+-        request = urllib.request.Request(url, headers={
+-            "Host": "www.kcycle.or.kr",
+-            "User-Agent": "strategy-arena",
+-        })
++    selected = re.search(r"<option\b[^>]*value=[\"'](\d{4})[\"'][^>]*selected", block)
++    first = selected or re.search(r"<option\b[^>]*value=[\"'](\d{4})[\"']", block)
++    return int(first.group(1)) if first else None
++
++
++def _parse_kcycle_tmsdayord_options(html: str, year: int) -> dict[str, tuple[int, int]]:
++    year_options = _kcycle_year_options(html)
++    if year_options and year not in year_options:
++        return {}
++    block = _select_block(html, "tmsDayOrd") or html
++    mapping: dict[str, tuple[int, int]] = {}
++    option_pattern = re.compile(
++        r"<option\b[^>]*value=[\"'](\d+)-(\d+)[\"'][^>]*>(.*?)</option>",
++        re.DOTALL,
++    )
++    for match in option_pattern.finditer(block):
++        month_day = re.search(r"(\d{2})월\s*(\d{2})일", _strip_tags(match.group(3)))
++        if not month_day:
++            continue
++        month = int(month_day.group(1))
++        day = int(month_day.group(2))
+         try:
+-            with urllib.request.urlopen(request, timeout=5, context=context) as response:
+-                html = response.read().decode("utf-8", "replace")
+-        except (OSError, TimeoutError, urllib.error.URLError):
++            race_day = dt.date(year, month, day)
++        except ValueError:
+             continue
+-        names = _extract_kcycle_names(html, meet, rno)
+-        if names:
+-            return names
++        mapping[race_day.isoformat()] = (int(match.group(1)), int(match.group(2)))
++    return mapping
++
++
++def _kcycle_tmsdayord_mapping(year: int) -> dict[str, tuple[int, int]]:
++    cached = _KCYCLE_TMS_CACHE.get(year)
++    now = time.time()
++    if cached and now - cached[1] < KCYCLE_TMS_CACHE_TTL_SEC:
++        return cached[0]
++    base_html = _fetch_kcycle_html(f"{KCYCLE_BASE_URL}{KCYCLE_DECISION_PATH}")
++    selected_year = _selected_kcycle_year(base_html)
++    if selected_year is None or selected_year == year:
++        mapping = _parse_kcycle_tmsdayord_options(base_html, year)
++    elif year in _kcycle_year_options(base_html):
++        try:
++            mapping = _parse_kcycle_tmsdayord_options(
++                _fetch_kcycle_html(f"{KCYCLE_BASE_URL}{KCYCLE_DECISION_PATH}/tmsDayOrd/{year}"),
++                year,
++            )
++        except (OSError, TimeoutError, urllib.error.URLError):
++            mapping = {}
++    else:
++        mapping = {}
++    _KCYCLE_TMS_CACHE[year] = (mapping, now)
++    return mapping
++
++
++def _kcycle_official_names(ymd: str, meet: str, race_no: str) -> list[str] | None:
++    digits = re.sub(r"\D", "", str(ymd or ""))
++    if len(digits) != 8:
++        return None
++    year = int(digits[:4])
++    race_day = f"{digits[:4]}-{digits[4:6]}-{digits[6:8]}"
++    try:
++        tms_day = _kcycle_tmsdayord_mapping(year).get(race_day)
++        if not tms_day:
++            return None
++        html = _fetch_kcycle_html(f"{KCYCLE_BASE_URL}{KCYCLE_DECISION_PATH}/{year}/{tms_day[0]}/{tms_day[1]}")
++    except (OSError, TimeoutError, urllib.error.URLError):
++        return None
++    names = _extract_kcycle_names(html, meet, race_no)
++    if names:
++        return names
+     return None
+ 
+ 
+ def _extract_kcycle_names(html: str, meet: str, race_no: str) -> list[str]:
++    try:
++        rno = int(str(race_no).strip())
++    except ValueError:
++        return []
++    header = re.compile(rf"{re.escape(str(meet).strip())}\s*{rno:02d}경주")
++    match = header.search(html or "")
++    if not match:
++        return []
++    section_end = (html or "").find('class="cptLinkSection"', match.end())
++    section = (html or "")[match.start(): section_end if section_end > -1 else None]
+     parser = _CellParser()
+-    parser.feed(html or "")
+-    names: list[str] = []
+-    race_markers = {f"{int(race_no)}경주", f"{int(race_no):02d}경주", f"{meet}{int(race_no)}"}
+-    hangul_name = re.compile(r"^[가-힣]{2,4}$")
+-    in_target = False
++    parser.feed(section)
++    ordered: dict[int, str] = {}
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+-        if any(marker in row_text for marker in race_markers):
+-            in_target = True
+-        elif in_target and re.search(r"\d{1,2}경주", row_text):
+-            break
+-        if not in_target:
+-            continue
+-        for cell in row:
+-            tokens = re.findall(r"[가-힣]{2,4}", cell)
+-            for token in tokens:
+-                if hangul_name.fullmatch(token) and token not in {meet, "선수명", "출주표"}:
+-                    names.append(token)
+-        if len(names) >= 7:
+-            break
+-    return list(dict.fromkeys(names))[:7]
++        racer = racer_pattern.search(row_text)
++        if racer:
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
++    return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+ def _data_key() -> str | None:
+@@ -243,3 +297,4 @@ def verify_roster(
+ 
+ def clear_cache() -> None:
+     _CACHE.clear()
++    _KCYCLE_TMS_CACHE.clear()
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 414571d..5fbf97c 100644
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -2,6 +2,7 @@
+ import os
+ import sys
+ import unittest
++from pathlib import Path
+ from unittest.mock import patch
+ 
+ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+@@ -10,6 +11,10 @@ import app as app_module
+ import roster_guard
+ 
+ 
++FIXTURE_DIR = Path(__file__).parent / "fixtures"
++EXPECTED_GM_R1_NAMES = ["황종대", "이흥주", "박진홍", "최건묵", "이승주", "박유찬", "김성진"]
++
++
+ class RosterGuardTestCase(unittest.TestCase):
+     def setUp(self):
+         app_module.app.config["TESTING"] = True
+@@ -17,23 +22,82 @@ class RosterGuardTestCase(unittest.TestCase):
+         roster_guard.clear_cache()
+         self.client = app_module.app.test_client()
+ 
++    def test_kcycle_options_fixture_maps_date_to_tms_dayord(self):
++        html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
++
++        mapping = roster_guard._parse_kcycle_tmsdayord_options(html, 2026)
++
++        self.assertEqual(mapping["2026-07-03"], (27, 1))
++
++    def test_kcycle_card_fixture_extracts_gwangmyeong_race_one_names(self):
++        html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, EXPECTED_GM_R1_NAMES)
++        self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
++
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
++    def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
++        options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
++        card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
++        fetched_urls: list[str] = []
++
++        def fake_fetch(url: str) -> str:
++            fetched_urls.append(url)
++            if url.endswith("/race/card/decision"):
++                return options_html
++            if url.endswith("/race/card/decision/2026/27/1"):
++                return card_html
++            self.fail(f"unexpected URL: {url}")
++
++        with patch.object(roster_guard, "_fetch_kcycle_html", side_effect=fake_fetch):
++            names = roster_guard._kcycle_official_names("2026-07-03", "광명", "1")
++
++        self.assertEqual(names, EXPECTED_GM_R1_NAMES)
++        self.assertEqual(fetched_urls, [
++            "https://www.kcycle.or.kr/race/card/decision",
++       
+hook: PostToolUse
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc 'python -m pytest -q tests/test_roster_guard.py::RosterGuardTestCase::test_kcycle_card_extracts_spaced_name_and_one_digit_generation 2>&1 | tail -c 6000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+ succeeded in 266ms:
+.                                                                        [100%]
+1 passed in 0.06s
+
+2026-07-06T22:28:25.928468Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:25.929053Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:25.930759Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:25.934052Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:25.943055Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:25.943074Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:25.943356Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:25.943364Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:25.943645Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:25.943656Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:25.943934Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:25.943943Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:25.944219Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:25.944227Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:25.944839Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:25.944845Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+대상 테스트는 통과했습니다. 기존 작업분이 섞인 diff가 있어 되돌리지 않고, 요청 범위 검증만 계속합니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+/bin/zsh -lc 'python -m pytest -q 2>&1 | tail -c 6000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:32.086073Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:32.086594Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:32.088384Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:32.092629Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:32.100682Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:32.100695Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:32.100952Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:32.100956Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:32.101201Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:32.101209Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:32.101449Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:32.101453Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:32.101694Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:32.101699Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:32.102189Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:32.102193Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+전체 pytest가 실행 중입니다. 종료 출력만 확인해 PASS 여부를 판단합니다.
+ succeeded in 3232ms:
+........................................................................ [ 45%]
+........................................................................ [ 90%]
+...............                                                          [100%]
+=============================== warnings summary ===============================
+tests/test_cross_domain_model.py::CrossDomainModelTestCase::test_demo_keirin_uses_cross_domain_fallback
+  /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/joblib/externals/loky/backend/context.py:131: UserWarning: Could not find the number of physical cores for the following reason:
+  invalid literal for int() with base 10: ''
+  Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+159 passed, 1 warning in 2.71s
+
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:34.422050Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:34.422655Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:34.424254Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:34.428282Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:34.437496Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:34.437502Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:34.437866Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:34.437876Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:34.438169Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:34.438175Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:34.438474Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:34.438479Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:34.438829Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:34.438834Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:34.439467Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:34.439472Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+전체 pytest는 통과했습니다. 마지막으로 변경 파일 범위만 확인하고 끝내겠습니다.
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse
+hook: PreToolUse
+exec
+/bin/zsh -lc 'git status --short | head -c 4000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+ succeeded in 0ms:
+ M data/kcycle_drug_discovery_trifecta_results.json
+ M data/kcycle_fast_evolution_trifecta_results.json
+ M data/kcycle_fast_evolution_trifecta_results.md
+ M data/kcycle_global_breakthrough_results.json
+ M data/kcycle_global_breakthrough_results.md
+ M data/kcycle_global_search_state.json
+ M data/kcycle_late_market_pull_results.json
+ M data/participant_learning_priors.json
+ M data/prediction_feedback_summary.json
+ M deploy/oracle/deploy.sh
+ M deploy/oracle/docker-compose.yml
+ M docs/kcycle_late_market_pull_results.md
+ M logs/collector.log
+ M logs/search-loop.log
+ M mobile/App.tsx
+ M mobile/DESIGN.md
+ M mobile/playwright.config.mjs
+ M mobile/scripts/qa-mobile.mjs
+ M mobile/src/components/BottomTabs.tsx
+ M mobile/src/components/MarketOddsBoard.tsx
+ M mobile/src/components/ParticipantBoard.tsx
+ M mobile/src/components/PredictionSummary.tsx
+ M mobile/src/components/RaceSelector.tsx
+ M mobile/src/screens/AnalyzeScreen.tsx
+ M mobile/src/screens/HomeScreen.tsx
+ M mobile/src/screens/ProScreen.tsx
+ M mobile/src/services/raceApi.ts
+ M mobile/src/theme/tokens.ts
+ M mobile/tests/mobile-web.spec.js
+ M roster_guard.py
+ M tests/test_roster_guard.py
+?? .codex-fable5/run_c2_prompt.md
+?? .codex-fable5/run_c2c_prompt.md
+?? .codex-fable5/run_d_evidence.txt
+?? .codex-fable5/run_d_prompt.md
+?? .codex-fable5/run_e_evidence.txt
+?? .codex-fable5/run_e_prompt.md
+?? logs/codex_run_c2.log
+?? logs/codex_run_c2b.log
+?? logs/codex_run_c2c.log
+?? logs/codex_run_c2d.log
+?? logs/codex_run_d.log
+?? logs/codex_run_e.log
+?? logs/codex_run_e2.log
+?? logs/deploy_20260706.log
+?? logs/deploy_20260706b.log
+?? logs/deploy_20260706c.log
+?? logs/qa_mobile.log
+?? logs/qa_mobile2.log
+?? logs/qa_mobile3.log
+?? mobile/src/components/DataStatusStrip.tsx
+?? mobile/src/components/NumberBadge.tsx
+?? mobile/src/theme/numberColors.ts
+?? tests/fixtures/
+
+hook: PostToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc 'git diff --stat | head -c 4000' in /Users/tttksj/github-portfolio-docs-work/strategy-arena
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+ succeeded in 187ms:
+ data/kcycle_drug_discovery_trifecta_results.json |     2 +-
+ data/kcycle_fast_evolution_trifecta_results.json |     2 +-
+ data/kcycle_fast_evolution_trifecta_results.md   |     2 +-
+ data/kcycle_global_breakthrough_results.json     |  2011 +-
+ data/kcycle_global_breakthrough_results.md       |    20 +-
+ data/kcycle_global_search_state.json             |   116 +-
+ data/kcycle_late_market_pull_results.json        |     2 +-
+ data/participant_learning_priors.json            |     6 +-
+ data/prediction_feedback_summary.json            |     6 +-
+ deploy/oracle/deploy.sh                          |     2 +-
+ deploy/oracle/docker-compose.yml                 |     4 +-
+ docs/kcycle_late_market_pull_results.md          |     2 +-
+ logs/collector.log                               |  6060 +++++
+ logs/search-loop.log                             | 28365 +++++++++++++++++++++
+ mobile/App.tsx                                   |    15 +-
+ mobile/DESIGN.md                                 |    30 +-
+ mobile/playwright.config.mjs                     |    15 +-
+ mobile/scripts/qa-mobile.mjs                     |    20 +-
+ mobile/src/components/BottomTabs.tsx             |    12 +-
+ mobile/src/components/MarketOddsBoard.tsx        |    28 +-
+ mobile/src/components/ParticipantBoard.tsx       |   126 +-
+ mobile/src/components/PredictionSummary.tsx      |   253 +-
+ mobile/src/components/RaceSelector.tsx           |    13 +-
+ mobile/src/screens/AnalyzeScreen.tsx             |   120 +-
+ mobile/src/screens/HomeScreen.tsx                |     9 +-
+ mobile/src/screens/ProScreen.tsx                 |    29 +-
+ mobile/src/services/raceApi.ts                   |     6 +-
+ mobile/src/theme/tokens.ts                       |    36 +
+ mobile/tests/mobile-web.spec.js                  |    95 +-
+ roster_guard.py                                  |   173 +-
+ tests/test_roster_guard.py                       |    88 +-
+ 31 files changed, 36312 insertions(+), 1356 deletions(-)
+
+2026-07-06T22:28:40.812234Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:40.812828Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:40.814475Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:40.817780Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:40.826923Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:40.826944Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:40.827224Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:40.827233Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:40.827525Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:40.827531Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:40.827806Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:40.827811Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:40.828101Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:40.828109Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:40.828733Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:40.828743Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+  ✓ 공백 선수명 회귀 테스트 추가 후 실패 확인
+  ✓ roster_guard.py 이름 추출 정규식/정규화 수정
+  ✓ 대상 테스트와 전체 pytest 검증
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+2026-07-06T22:28:45.566787Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:45.567448Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.codex/plugins/cache/openai-primary-runtime/template-creator/26.630.12135/.codex-plugin/plugin.json
+2026-07-06T22:28:45.569227Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=/Users/tttksj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/template-creator/.codex-plugin/plugin.json
+2026-07-06T22:28:45.573464Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/tttksj/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-07-06T22:28:45.583572Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:45.583599Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:45.583910Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:45.583919Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:45.584228Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:45.584233Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:45.584533Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:45.584538Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:45.584845Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:45.584852Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-07-06T22:28:45.585548Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-07-06T22:28:45.585553Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+수정·전체PASS
+diff --git a/roster_guard.py b/roster_guard.py
+index c8b7bc463acd3dfef5258df4d165326ad9176517..8807122d38ffd9081916c4a322a60f28ce6f2688
+--- a/roster_guard.py
++++ b/roster_guard.py
+@@ -198,12 +198,12 @@
+     parser = _CellParser()
+     parser.feed(section)
+     ordered: dict[int, str] = {}
+-    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣]{2,4})\s+\d{2}기")
++    racer_pattern = re.compile(r"(?<!\d)([1-9])\s*([가-힣](?:\s?[가-힣]){1,3})\s+\d{1,2}기")
+     for row in parser.rows:
+         row_text = " ".join(row)
+         racer = racer_pattern.search(row_text)
+         if racer:
+-            ordered[int(racer.group(1))] = racer.group(2)
++            ordered[int(racer.group(1))] = _normalize_name(racer.group(2))
+     return [ordered[bno] for bno in sorted(ordered)]
+ 
+ 
+diff --git a/tests/test_roster_guard.py b/tests/test_roster_guard.py
+index 39e03ee578a96d1c426f86ec77940a0551ab40e2..5fbf97c152ba4959685057366b5b7990ffe619f7
+--- a/tests/test_roster_guard.py
++++ b/tests/test_roster_guard.py
+@@ -37,6 +37,28 @@
+         self.assertEqual(names, EXPECTED_GM_R1_NAMES)
+         self.assertEqual(set(names), set(EXPECTED_GM_R1_NAMES))
+ 
++    def test_kcycle_card_extracts_spaced_name_and_one_digit_generation(self):
++        html = (
++            (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html")
++            .read_text(encoding="utf-8")
++            .replace(">황종대<", ">조 택<", 1)
++            .replace(">09기/48세<", ">9기/48세<", 1)
++        )
++        expected_names = ["조택", *EXPECTED_GM_R1_NAMES[1:]]
++
++        names = roster_guard._extract_kcycle_names(html, "광명", "1")
++
++        self.assertEqual(names, expected_names)
++        with patch.object(roster_guard, "_provider_names", return_value=names):
++            result = roster_guard.verify_roster(
++                "keirin",
++                "2026-07-03",
++                "광명",
++                "1",
++                [{"racer_nm": name} for name in expected_names],
++            )
++        self.assertEqual(result["state"], "verified")
++
+     def test_kcycle_official_provider_uses_fixture_fetches_without_network(self):
+         options_html = (FIXTURE_DIR / "kcycle_tmsdayord_options.html").read_text(encoding="utf-8")
+         card_html = (FIXTURE_DIR / "kcycle_card_20260703_gm_r1.html").read_text(encoding="utf-8")
+
+hook: Stop
+hook: Stop
+hook: Stop
+hook: Stop Completed
+hook: Stop Completed
+hook: Stop Completed
+2026-07-06T22:28:47.244969Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: Send message error Transport [rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>] error: Auth required, when send initialize request
+2026-07-06T22:28:47.245028Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:28:47.245034Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:28:47.245195Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-07-06T22:28:47.245641Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+tokens used
+41,638
+수정·전체PASS

@@ -1,0 +1,3190 @@
+{
+  "summary": {
+    "source": "snapshot_market_proxy",
+    "races": 13900,
+    "actual_top2_slots": 27800,
+    "baseline_top2_slots_hit": 18794,
+    "baseline_top2_slot_hit_rate": 0.6760431654676259,
+    "surprise_rank_min": 4,
+    "surprise_top2_count": 4955,
+    "surprise_top2_rate": 0.17823741007194244
+  },
+  "common_gates": [
+    {
+      "gate": 2,
+      "count": 773,
+      "share": 0.15600403632694249
+    },
+    {
+      "gate": 4,
+      "count": 765,
+      "share": 0.15438950554994954
+    },
+    {
+      "gate": 7,
+      "count": 706,
+      "share": 0.14248234106962665
+    },
+    {
+      "gate": 3,
+      "count": 705,
+      "share": 0.14228052472250252
+    },
+    {
+      "gate": 6,
+      "count": 681,
+      "share": 0.13743693239152371
+    },
+    {
+      "gate": 1,
+      "count": 662,
+      "share": 0.1336024217961655
+    },
+    {
+      "gate": 5,
+      "count": 657,
+      "share": 0.1325933400605449
+    },
+    {
+      "gate": 8,
+      "count": 6,
+      "share": 0.0012108980827447023
+    }
+  ],
+  "rank_buckets": {
+    "rank_3_4": 2263,
+    "rank_5_plus": 2692
+  },
+  "diagnostics": {
+    "actual_position_counts": {
+      "1": 1440,
+      "2": 3515
+    },
+    "market_rank_counts": {
+      "4": 2263,
+      "5": 1289,
+      "6": 877,
+      "7": 520,
+      "99": 6
+    },
+    "min_top2_odds_buckets": {
+      "odds_20_50": 1880,
+      "odds_50_100": 958,
+      "odds_gt_100": 1007,
+      "odds_le_20": 1104,
+      "unknown": 6
+    },
+    "best20_top2_absent_count": 1317,
+    "best20_top2_absent_rate": 0.26579212916246214
+  },
+  "surprises": [
+    {
+      "date": "20180105",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2209804917,
+      "min_top2_odds": 54.3,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180105",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1858366429,
+      "min_top2_odds": 32.6,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180105",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2003423904,
+      "min_top2_odds": 38.9,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180105",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2368447034,
+      "min_top2_odds": 57.3,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180105",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1938529476,
+      "min_top2_odds": 27.3,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180105",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1184597354,
+      "min_top2_odds": 52.3,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180106",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2465823884,
+      "min_top2_odds": 14.8,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180106",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0301587956,
+      "min_top2_odds": 123.8,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1581404672,
+      "min_top2_odds": 43.8,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 2,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2382163605,
+      "min_top2_odds": 35.2,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1528233771,
+      "min_top2_odds": 58.3,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 2,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1715480066,
+      "min_top2_odds": 38.9,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2317963587,
+      "min_top2_odds": 74.2,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2662812182,
+      "min_top2_odds": 42.1,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1798668534,
+      "min_top2_odds": 39.7,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2069068378,
+      "min_top2_odds": 32.5,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2120289927,
+      "min_top2_odds": 29.6,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1631672151,
+      "min_top2_odds": 131.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "창원",
+      "race_no": "2",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.119428632,
+      "min_top2_odds": 42.5,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180107",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1284403967,
+      "min_top2_odds": 69.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180112",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2111016326,
+      "min_top2_odds": 40.4,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180112",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.19896472,
+      "min_top2_odds": 45.5,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180112",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0981843136,
+      "min_top2_odds": 128.3,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180112",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2163769207,
+      "min_top2_odds": 32.6,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180112",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1583572678,
+      "min_top2_odds": 13.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180112",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0696659343,
+      "min_top2_odds": 71.0,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180113",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.119998437,
+      "min_top2_odds": 125.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180113",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0336921239,
+      "min_top2_odds": 345.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180113",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0754661123,
+      "min_top2_odds": 51.6,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180113",
+      "meet": "창원",
+      "race_no": "1",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0664080427,
+      "min_top2_odds": 155.4,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180114",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0935947846,
+      "min_top2_odds": 54.5,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180114",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0985347867,
+      "min_top2_odds": 85.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180114",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1093668018,
+      "min_top2_odds": 74.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180114",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.148177834,
+      "min_top2_odds": 29.9,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180114",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.4503846332,
+      "min_top2_odds": 26.6,
+      "best20_top2_count": 7,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180119",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0338659677,
+      "min_top2_odds": 315.5,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180119",
+      "meet": "창원",
+      "race_no": "2",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1343573732,
+      "min_top2_odds": 30.0,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180119",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0797739175,
+      "min_top2_odds": 58.7,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180120",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1647674507,
+      "min_top2_odds": 57.2,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180120",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.052095955,
+      "min_top2_odds": 92.8,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180120",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1243598784,
+      "min_top2_odds": 31.8,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180120",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3071978491,
+      "min_top2_odds": 7.9,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180121",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0665466248,
+      "min_top2_odds": 152.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180121",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.0944842505,
+      "min_top2_odds": 46.0,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180121",
+      "meet": "창원",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1258650214,
+      "min_top2_odds": 83.4,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180121",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.22668466,
+      "min_top2_odds": 16.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0772008938,
+      "min_top2_odds": 187.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.258055934,
+      "min_top2_odds": 22.6,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0312542386,
+      "min_top2_odds": 215.9,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1509244821,
+      "min_top2_odds": 25.6,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1162069618,
+      "min_top2_odds": 83.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2630801875,
+      "min_top2_odds": 10.3,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1020933438,
+      "min_top2_odds": 73.2,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180126",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1966383633,
+      "min_top2_odds": 10.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180127",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1093430487,
+      "min_top2_odds": 27.8,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180127",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2238030101,
+      "min_top2_odds": 12.4,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180127",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0184058329,
+      "min_top2_odds": 280.4,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180128",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2993452775,
+      "min_top2_odds": 26.5,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180128",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.109933079,
+      "min_top2_odds": 54.5,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180128",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.0985630516,
+      "min_top2_odds": 48.4,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180128",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2076433726,
+      "min_top2_odds": 45.1,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180128",
+      "meet": "창원",
+      "race_no": "2",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2893853595,
+      "min_top2_odds": 11.0,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180128",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1446829004,
+      "min_top2_odds": 43.1,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1194134859,
+      "min_top2_odds": 26.7,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0498023568,
+      "min_top2_odds": 68.1,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.223413195,
+      "min_top2_odds": 9.7,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2679604353,
+      "min_top2_odds": 67.0,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1490913692,
+      "min_top2_odds": 16.6,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "창원",
+      "race_no": "2",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2087257015,
+      "min_top2_odds": 12.1,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180202",
+      "meet": "창원",
+      "race_no": "2",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.030381498,
+      "min_top2_odds": 104.5,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180203",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.133704565,
+      "min_top2_odds": 45.9,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180203",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1483748896,
+      "min_top2_odds": 27.0,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180203",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0292434937,
+      "min_top2_odds": 173.9,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180203",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1070981977,
+      "min_top2_odds": 36.3,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180204",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2665385568,
+      "min_top2_odds": 14.6,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180204",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1008250876,
+      "min_top2_odds": 130.4,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180204",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1828857397,
+      "min_top2_odds": 107.8,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2851401952,
+      "min_top2_odds": 26.1,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.5318196131,
+      "min_top2_odds": 15.5,
+      "best20_top2_count": 7,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 4,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1964157781,
+      "min_top2_odds": 40.5,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0760392082,
+      "min_top2_odds": 103.7,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.07721358,
+      "min_top2_odds": 104.3,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2967195451,
+      "min_top2_odds": 8.7,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180209",
+      "meet": "창원",
+      "race_no": "1",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2328228561,
+      "min_top2_odds": 17.6,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3656872698,
+      "min_top2_odds": 39.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2271845518,
+      "min_top2_odds": 36.5,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1523767862,
+      "min_top2_odds": 41.2,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0272407675,
+      "min_top2_odds": 289.8,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1904817267,
+      "min_top2_odds": 31.0,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1559325537,
+      "min_top2_odds": 16.9,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "창원",
+      "race_no": "1",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1728143659,
+      "min_top2_odds": 20.0,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180210",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1407980487,
+      "min_top2_odds": 72.7,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180211",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 2,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1960560646,
+      "min_top2_odds": 50.7,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180211",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1300749973,
+      "min_top2_odds": 72.8,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180211",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3788891277,
+      "min_top2_odds": 7.1,
+      "best20_top2_count": 6,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180211",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1406269056,
+      "min_top2_odds": 85.7,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180214",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1758866359,
+      "min_top2_odds": 35.2,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180214",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1621076411,
+      "min_top2_odds": 17.8,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180214",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2528549131,
+      "min_top2_odds": 12.7,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180214",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2204563499,
+      "min_top2_odds": 13.9,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180214",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0372438255,
+      "min_top2_odds": 320.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180214",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2237939045,
+      "min_top2_odds": 18.2,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0544962017,
+      "min_top2_odds": 187.9,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1346740397,
+      "min_top2_odds": 52.5,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2552981286,
+      "min_top2_odds": 17.5,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3535495546,
+      "min_top2_odds": 14.9,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2002177355,
+      "min_top2_odds": 34.0,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2185251961,
+      "min_top2_odds": 15.8,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0667219046,
+      "min_top2_odds": 169.2,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180215",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 3,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1703046487,
+      "min_top2_odds": 35.7,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180223",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1365454056,
+      "min_top2_odds": 39.2,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180223",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1683938274,
+      "min_top2_odds": 20.1,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180223",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1939791764,
+      "min_top2_odds": 73.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180224",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2666957139,
+      "min_top2_odds": 11.3,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180224",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1060642009,
+      "min_top2_odds": 30.1,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180224",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0646506695,
+      "min_top2_odds": 105.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180224",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0740868558,
+      "min_top2_odds": 53.4,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3051686907,
+      "min_top2_odds": 21.2,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.240467462,
+      "min_top2_odds": 29.2,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0473436598,
+      "min_top2_odds": 116.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2732574051,
+      "min_top2_odds": 11.3,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0607132711,
+      "min_top2_odds": 168.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1780532555,
+      "min_top2_odds": 58.3,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 4,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.033563009,
+      "min_top2_odds": 139.4,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180225",
+      "meet": "창원",
+      "race_no": "3",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2855910406,
+      "min_top2_odds": 27.0,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3703095174,
+      "min_top2_odds": 26.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2247690239,
+      "min_top2_odds": 12.6,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0527033002,
+      "min_top2_odds": 85.3,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2095202448,
+      "min_top2_odds": 20.9,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2390192463,
+      "min_top2_odds": 20.0,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.036458745,
+      "min_top2_odds": 285.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2768117189,
+      "min_top2_odds": 16.2,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180302",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0701205817,
+      "min_top2_odds": 68.0,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180303",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.065146299,
+      "min_top2_odds": 189.2,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3372690346,
+      "min_top2_odds": 14.1,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3915329294,
+      "min_top2_odds": 16.5,
+      "best20_top2_count": 6,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2980268158,
+      "min_top2_odds": 17.6,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3063772393,
+      "min_top2_odds": 15.7,
+      "best20_top2_count": 6,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1003914429,
+      "min_top2_odds": 127.3,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0843165972,
+      "min_top2_odds": 197.7,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2520985443,
+      "min_top2_odds": 55.9,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180304",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1743966507,
+      "min_top2_odds": 45.3,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1021046304,
+      "min_top2_odds": 97.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1821907998,
+      "min_top2_odds": 55.8,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1919838076,
+      "min_top2_odds": 33.4,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0664195223,
+      "min_top2_odds": 121.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1191668007,
+      "min_top2_odds": 78.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2164190411,
+      "min_top2_odds": 18.8,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 2,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2706393114,
+      "min_top2_odds": 29.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1578790911,
+      "min_top2_odds": 30.6,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180309",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2014319944,
+      "min_top2_odds": 14.8,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180310",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1144814042,
+      "min_top2_odds": 35.8,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180310",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1868637538,
+      "min_top2_odds": 32.2,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180310",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1354885806,
+      "min_top2_odds": 30.4,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180310",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0735967438,
+      "min_top2_odds": 65.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180310",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.4092678607,
+      "min_top2_odds": 7.5,
+      "best20_top2_count": 6,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180310",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0683177724,
+      "min_top2_odds": 140.5,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1552009661,
+      "min_top2_odds": 87.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1874737625,
+      "min_top2_odds": 78.2,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 2,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2361260744,
+      "min_top2_odds": 105.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1732545406,
+      "min_top2_odds": 64.7,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.019757002,
+      "min_top2_odds": 509.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0854986586,
+      "min_top2_odds": 94.7,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 8,
+      "actual_position": 1,
+      "market_rank": 99,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0,
+      "min_top2_odds": null,
+      "best20_top2_count": 0,
+      "top2_combo_count": 0
+    },
+    {
+      "date": "20180311",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0467764556,
+      "min_top2_odds": 318.5,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180316",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 5,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2280416472,
+      "min_top2_odds": 31.9,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180316",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0902470917,
+      "min_top2_odds": 133.9,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180317",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1341374808,
+      "min_top2_odds": 75.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180317",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1663630411,
+      "min_top2_odds": 19.8,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180317",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0857654369,
+      "min_top2_odds": 73.4,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180317",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1541656074,
+      "min_top2_odds": 30.6,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180317",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.058045469,
+      "min_top2_odds": 35.9,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2497771481,
+      "min_top2_odds": 19.4,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0902369866,
+      "min_top2_odds": 125.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 2,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1251279872,
+      "min_top2_odds": 119.1,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0387482309,
+      "min_top2_odds": 158.6,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 8,
+      "actual_position": 1,
+      "market_rank": 99,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0,
+      "min_top2_odds": null,
+      "best20_top2_count": 0,
+      "top2_combo_count": 0
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 7,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.0726837189,
+      "min_top2_odds": 82.1,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1501878744,
+      "min_top2_odds": 23.2,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 1,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1316930284,
+      "min_top2_odds": 35.6,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180318",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2118521326,
+      "min_top2_odds": 30.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "2",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.2723618258,
+      "min_top2_odds": 45.5,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "3",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2564821756,
+      "min_top2_odds": 23.0,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "4",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.334258905,
+      "min_top2_odds": 15.1,
+      "best20_top2_count": 6,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1262423242,
+      "min_top2_odds": 29.4,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "6",
+      "runner": 4,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2936489799,
+      "min_top2_odds": 18.0,
+      "best20_top2_count": 7,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 3,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3359046604,
+      "min_top2_odds": 17.4,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 6,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0510369763,
+      "min_top2_odds": 122.2,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180323",
+      "meet": "광명",
+      "race_no": "14",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.1568598519,
+      "min_top2_odds": 15.8,
+      "best20_top2_count": 4,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "5",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1407691719,
+      "min_top2_odds": 25.5,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "7",
+      "runner": 6,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2338283532,
+      "min_top2_odds": 38.4,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 7,
+      "actual_position": 1,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3525924747,
+      "min_top2_odds": 30.2,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "8",
+      "runner": 1,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1028001405,
+      "min_top2_odds": 136.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "9",
+      "runner": 5,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.268849106,
+      "min_top2_odds": 15.3,
+      "best20_top2_count": 3,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "10",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0603837379,
+      "min_top2_odds": 69.7,
+      "best20_top2_count": 1,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "11",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.2122061974,
+      "min_top2_odds": 28.7,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "12",
+      "runner": 4,
+      "actual_position": 2,
+      "market_rank": 5,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.1903260628,
+      "min_top2_odds": 20.7,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "13",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 4,
+      "rank_bucket": "rank_3_4",
+      "market_score": 0.3015931806,
+      "min_top2_odds": 9.4,
+      "best20_top2_count": 5,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180324",
+      "meet": "광명",
+      "race_no": "15",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 6,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0699142522,
+      "min_top2_odds": 39.6,
+      "best20_top2_count": 2,
+      "top2_combo_count": 60
+    },
+    {
+      "date": "20180325",
+      "meet": "광명",
+      "race_no": "1",
+      "runner": 2,
+      "actual_position": 2,
+      "market_rank": 7,
+      "rank_bucket": "rank_5_plus",
+      "market_score": 0.0399737277,
+      "min_top2_odds": 175.0,
+      "best20_top2_count": 0,
+      "top2_combo_count": 60
+    }
+  ],
+  "walk_forward_gate_boost": {
+    "policy": "walk_forward_gate_surprise_boost",
+    "races": 13900,
+    "actual_top2_slots": 27800,
+    "surprise_rank_min": 4,
+    "min_gate_starts": 8,
+    "boost_weight": 0.75,
+    "baseline_top2_slots_hit": 18794,
+    "candidate_top2_slots_hit": 18797,
+    "baseline_top2_slot_hit_rate": 0.6760431654676259,
+    "candidate_top2_slot_hit_rate": 0.6761510791366907,
+    "slot_hit_lift": 0.0001079136690647482,
+    "adjusted_races": 271,
+    "examples": [
+      {
+        "date": "20180107",
+        "race_no": "1",
+        "actual_top2": [
+          6,
+          5
+        ],
+        "baseline_top2": [
+          6,
+          1
+        ],
+        "candidate_top2": [
+          1,
+          6
+        ]
+      },
+      {
+        "date": "20180112",
+        "race_no": "10",
+        "actual_top2": [
+          7,
+          5
+        ],
+        "baseline_top2": [
+          3,
+          7
+        ],
+        "candidate_top2": [
+          7,
+          3
+        ]
+      },
+      {
+        "date": "20180113",
+        "race_no": "7",
+        "actual_top2": [
+          2,
+          7
+        ],
+        "baseline_top2": [
+          2,
+          3
+        ],
+        "candidate_top2": [
+          2,
+          5
+        ]
+      },
+      {
+        "date": "20180120",
+        "race_no": "9",
+        "actual_top2": [
+          2,
+          5
+        ],
+        "baseline_top2": [
+          5,
+          2
+        ],
+        "candidate_top2": [
+          2,
+          5
+        ]
+      },
+      {
+        "date": "20180121",
+        "race_no": "14",
+        "actual_top2": [
+          3,
+          4
+        ],
+        "baseline_top2": [
+          3,
+          1
+        ],
+        "candidate_top2": [
+          1,
+          3
+        ]
+      },
+      {
+        "date": "20180127",
+        "race_no": "1",
+        "actual_top2": [
+          6,
+          7
+        ],
+        "baseline_top2": [
+          6,
+          3
+        ],
+        "candidate_top2": [
+          6,
+          7
+        ]
+      },
+      {
+        "date": "20180202",
+        "race_no": "1",
+        "actual_top2": [
+          3,
+          5
+        ],
+        "baseline_top2": [
+          5,
+          3
+        ],
+        "candidate_top2": [
+          3,
+          5
+        ]
+      },
+      {
+        "date": "20180203",
+        "race_no": "8",
+        "actual_top2": [
+          7,
+          1
+        ],
+        "baseline_top2": [
+          6,
+          5
+        ],
+        "candidate_top2": [
+          6,
+          7
+        ]
+      },
+      {
+        "date": "20180210",
+        "race_no": "7",
+        "actual_top2": [
+          5,
+          1
+        ],
+        "baseline_top2": [
+          5,
+          1
+        ],
+        "candidate_top2": [
+          1,
+          5
+        ]
+      },
+      {
+        "date": "20180214",
+        "race_no": "12",
+        "actual_top2": [
+          2,
+          7
+        ],
+        "baseline_top2": [
+          2,
+          5
+        ],
+        "candidate_top2": [
+          2,
+          1
+        ]
+      },
+      {
+        "date": "20180223",
+        "race_no": "10",
+        "actual_top2": [
+          7,
+          2
+        ],
+        "baseline_top2": [
+          7,
+          2
+        ],
+        "candidate_top2": [
+          7,
+          4
+        ]
+      },
+      {
+        "date": "20180223",
+        "race_no": "12",
+        "actual_top2": [
+          3,
+          1
+        ],
+        "baseline_top2": [
+          3,
+          1
+        ],
+        "candidate_top2": [
+          1,
+          3
+        ]
+      },
+      {
+        "date": "20180224",
+        "race_no": "1",
+        "actual_top2": [
+          6,
+          7
+        ],
+        "baseline_top2": [
+          6,
+          7
+        ],
+        "candidate_top2": [
+          7,
+          6
+        ]
+      },
+      {
+        "date": "20180318",
+        "race_no": "7",
+        "actual_top2": [
+          7,
+          5
+        ],
+        "baseline_top2": [
+          2,
+          7
+        ],
+        "candidate_top2": [
+          7,
+          2
+        ]
+      },
+      {
+        "date": "20180325",
+        "race_no": "7",
+        "actual_top2": [
+          5,
+          7
+        ],
+        "baseline_top2": [
+          6,
+          3
+        ],
+        "candidate_top2": [
+          6,
+          2
+        ]
+      },
+      {
+        "date": "20180325",
+        "race_no": "9",
+        "actual_top2": [
+          1,
+          2
+        ],
+        "baseline_top2": [
+          2,
+          4
+        ],
+        "candidate_top2": [
+          4,
+          2
+        ]
+      },
+      {
+        "date": "20180325",
+        "race_no": "13",
+        "actual_top2": [
+          1,
+          5
+        ],
+        "baseline_top2": [
+          1,
+          6
+        ],
+        "candidate_top2": [
+          1,
+          4
+        ]
+      },
+      {
+        "date": "20180401",
+        "race_no": "11",
+        "actual_top2": [
+          5,
+          3
+        ],
+        "baseline_top2": [
+          3,
+          7
+        ],
+        "candidate_top2": [
+          7,
+          3
+        ]
+      },
+      {
+        "date": "20180406",
+        "race_no": "12",
+        "actual_top2": [
+          4,
+          3
+        ],
+        "baseline_top2": [
+          6,
+          5
+        ],
+        "candidate_top2": [
+          6,
+          4
+        ]
+      },
+      {
+        "date": "20180408",
+        "race_no": "12",
+        "actual_top2": [
+          3,
+          8
+        ],
+        "baseline_top2": [
+          3,
+          4
+        ],
+        "candidate_top2": [
+          4,
+          3
+        ]
+      }
+    ]
+  },
+  "prediction_model": {
+    "summary": {
+      "source": "prediction_model",
+      "races": 13,
+      "actual_top2_slots": 26,
+      "baseline_top2_slots_hit": 15,
+      "baseline_top2_slot_hit_rate": 0.5769230769230769,
+      "surprise_rank_min": 4,
+      "surprise_top2_count": 7,
+      "surprise_top2_rate": 0.2692307692307692
+    },
+    "common_gates": [
+      {
+        "gate": 4,
+        "count": 2,
+        "share": 0.2857142857142857
+      },
+      {
+        "gate": 2,
+        "count": 1,
+        "share": 0.14285714285714285
+      },
+      {
+        "gate": 3,
+        "count": 1,
+        "share": 0.14285714285714285
+      },
+      {
+        "gate": 1,
+        "count": 1,
+        "share": 0.14285714285714285
+      },
+      {
+        "gate": 6,
+        "count": 1,
+        "share": 0.14285714285714285
+      },
+      {
+        "gate": 5,
+        "count": 1,
+        "share": 0.14285714285714285
+      }
+    ],
+    "rank_buckets": {
+      "rank_3_4": 4,
+      "rank_5_plus": 3
+    },
+    "diagnostics": {
+      "actual_position_counts": {
+        "1": 1,
+        "2": 6
+      },
+      "market_rank_counts": {
+        "4": 4,
+        "5": 1,
+        "6": 2
+      },
+      "min_top2_odds_buckets": {
+        "unknown": 7
+      },
+      "best20_top2_absent_count": 7,
+      "best20_top2_absent_rate": 1.0
+    },
+    "surprises": [
+      {
+        "date": "20260703",
+        "meet": "광명",
+        "race_no": "4",
+        "runner": 4,
+        "actual_position": 2,
+        "market_rank": 4,
+        "rank_bucket": "rank_3_4",
+        "market_score": 0.1635872653,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      },
+      {
+        "date": "20260703",
+        "meet": "광명",
+        "race_no": "5",
+        "runner": 2,
+        "actual_position": 2,
+        "market_rank": 4,
+        "rank_bucket": "rank_3_4",
+        "market_score": 0.1622911918,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      },
+      {
+        "date": "20260705",
+        "meet": "광명",
+        "race_no": "1",
+        "runner": 3,
+        "actual_position": 2,
+        "market_rank": 4,
+        "rank_bucket": "rank_3_4",
+        "market_score": 0.1838046123,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      },
+      {
+        "date": "20260705",
+        "meet": "광명",
+        "race_no": "5",
+        "runner": 1,
+        "actual_position": 2,
+        "market_rank": 4,
+        "rank_bucket": "rank_3_4",
+        "market_score": 0.263708063,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      },
+      {
+        "date": "20260705",
+        "meet": "광명",
+        "race_no": "12",
+        "runner": 6,
+        "actual_position": 2,
+        "market_rank": 6,
+        "rank_bucket": "rank_5_plus",
+        "market_score": 0.1246496198,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      },
+      {
+        "date": "20260705",
+        "meet": "광명",
+        "race_no": "15",
+        "runner": 4,
+        "actual_position": 1,
+        "market_rank": 6,
+        "rank_bucket": "rank_5_plus",
+        "market_score": 0.0991374345,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      },
+      {
+        "date": "20260705",
+        "meet": "광명",
+        "race_no": "16",
+        "runner": 5,
+        "actual_position": 2,
+        "market_rank": 5,
+        "rank_bucket": "rank_5_plus",
+        "market_score": 0.20249108,
+        "min_top2_odds": null,
+        "best20_top2_count": 0,
+        "top2_combo_count": 0
+      }
+    ],
+    "walk_forward_gate_boost": {
+      "policy": "walk_forward_gate_surprise_boost",
+      "races": 13,
+      "actual_top2_slots": 26,
+      "surprise_rank_min": 4,
+      "min_gate_starts": 8,
+      "boost_weight": 0.75,
+      "baseline_top2_slots_hit": 15,
+      "candidate_top2_slots_hit": 15,
+      "baseline_top2_slot_hit_rate": 0.5769230769230769,
+      "candidate_top2_slot_hit_rate": 0.5769230769230769,
+      "slot_hit_lift": 0.0,
+      "adjusted_races": 0,
+      "examples": []
+    }
+  }
+}

@@ -1,0 +1,840 @@
+{
+  "method": "model_and_ensemble_selection_first_three_folds_confirmation_fourth",
+  "baseline": "kra_dual_phase_v4_history_hgb_d3",
+  "candidates": {
+    "hgb_d2_leaf80": {
+      "weight": 0.5,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.08203445447087787,
+          "top3_lift_pp": 0.3281378178835115,
+          "logloss_delta": -0.005618843383140781,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24938474159146842,
+            "top3": 0.579163248564397,
+            "race_logloss": 2.099192546499868
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": 0.08058017727639033,
+          "top3_lift_pp": 0.725221595487513,
+          "logloss_delta": -0.003280078047047219,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.2997582594681708,
+            "top3": 0.5954875100725222,
+            "race_logloss": 2.02689935065428
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.7401315789473673,
+          "top3_lift_pp": -0.7401315789473673,
+          "logloss_delta": 0.0024423932226171896,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.3050986842105263,
+            "top3": 0.6126644736842105,
+            "race_logloss": 1.978430273708682
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.4205214465937801,
+          "top3_lift_pp": -0.1682085786375076,
+          "logloss_delta": -0.000515694724574578,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2968881412952061,
+            "top3": 0.616484440706476,
+            "race_logloss": 1.9708287052491351
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.3009154035648785,
+      "selection_min_top1_lift_pp": 0.08058017727639033,
+      "selection_min_top3_lift_pp": -0.7401315789473673,
+      "pooled_bootstrap": {
+        "mean_pp": 0.328879753340185,
+        "ci95_low_pp": -0.08221993833504625,
+        "ci95_high_pp": 0.7605344295991778,
+        "probability_positive": 0.9361
+      },
+      "pooled_logloss_delta": -0.0017625733145476552,
+      "promotion_pass": false
+    },
+    "hgb_d2_leaf160": {
+      "weight": 0.5,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.16406890894175574,
+          "top3_lift_pp": 0.3281378178835115,
+          "logloss_delta": -0.0029420230545675885,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.2502050861361772,
+            "top3": 0.579163248564397,
+            "race_logloss": 2.101869366828441
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": 0.483481063658342,
+          "top3_lift_pp": 0.40290088638195165,
+          "logloss_delta": -0.002717065272539454,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.3037872683319903,
+            "top3": 0.5922643029814666,
+            "race_logloss": 2.027462363428788
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.08223684210525994,
+          "top3_lift_pp": -0.7401315789473673,
+          "logloss_delta": 0.0018337191872446201,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.29851973684210525,
+            "top3": 0.6126644736842105,
+            "race_logloss": 1.9778215996733095
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.33641715727502075,
+          "top3_lift_pp": -0.0841042893187538,
+          "logloss_delta": -0.0003894484988977709,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2960470984020185,
+            "top3": 0.6173254835996635,
+            "race_logloss": 1.970954951474812
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.24326227156845256,
+      "selection_min_top1_lift_pp": 0.08223684210525994,
+      "selection_min_top3_lift_pp": -0.7401315789473673,
+      "pooled_bootstrap": {
+        "mean_pp": 0.26721479958890026,
+        "ci95_low_pp": -0.14388489208633093,
+        "ci95_high_pp": 0.6783144912641316,
+        "probability_positive": 0.887
+      },
+      "pooled_logloss_delta": -0.0010684454741101135,
+      "promotion_pass": false
+    },
+    "hgb_d3_leaf60": {
+      "weight": 0.25,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.08203445447087787,
+          "top3_lift_pp": 0.7383100902379036,
+          "logloss_delta": -0.0019578739986032545,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24938474159146842,
+            "top3": 0.583264971287941,
+            "race_logloss": 2.1028535158844055
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": 0.16116035455278066,
+          "top3_lift_pp": -0.40290088638195165,
+          "logloss_delta": -0.0002680498726204128,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.3005640612409347,
+            "top3": 0.5842062852538276,
+            "race_logloss": 2.029911378828707
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.0,
+          "top3_lift_pp": -0.3289473684210509,
+          "logloss_delta": 0.0003531384745942834,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.29769736842105265,
+            "top3": 0.6167763157894737,
+            "race_logloss": 1.9763410189606592
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.25231286795626695,
+          "top3_lift_pp": -0.1682085786375076,
+          "logloss_delta": 0.0010884631580267978,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.29520605550883094,
+            "top3": 0.616484440706476,
+            "race_logloss": 1.9724328631317365
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.08106493634121952,
+      "selection_min_top1_lift_pp": 0.0,
+      "selection_min_top3_lift_pp": -0.40290088638195165,
+      "pooled_bootstrap": {
+        "mean_pp": 0.12332990750256938,
+        "ci95_low_pp": -0.14388489208633093,
+        "ci95_high_pp": 0.39054470709146966,
+        "probability_positive": 0.8026
+      },
+      "pooled_logloss_delta": -0.00020548558620658852,
+      "promotion_pass": false
+    },
+    "hgb_d3_leaf180": {
+      "weight": 0.25,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.08203445447087787,
+          "top3_lift_pp": 0.656275635767023,
+          "logloss_delta": -0.0018280920877020712,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24938474159146842,
+            "top3": 0.5824446267432322,
+            "race_logloss": 2.1029832977953067
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.24174053182916544,
+          "top3_lift_pp": 0.0,
+          "logloss_delta": -0.0012781957486849294,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29653505237711525,
+            "top3": 0.5882352941176471,
+            "race_logloss": 2.0289012329526424
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": -0.164473684210531,
+          "top3_lift_pp": 0.164473684210531,
+          "logloss_delta": -1.0888162755851027e-05,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.29605263157894735,
+            "top3": 0.6217105263157895,
+            "race_logloss": 1.975976992323309
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.5046257359125339,
+          "top3_lift_pp": -0.0841042893187538,
+          "logloss_delta": -1.656749691214543e-06,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2977291841883936,
+            "top3": 0.6173254835996635,
+            "race_logloss": 1.9713427432240185
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": -0.10805992052293951,
+      "selection_min_top1_lift_pp": -0.24174053182916544,
+      "selection_min_top3_lift_pp": 0.0,
+      "pooled_bootstrap": {
+        "mean_pp": 0.041109969167523124,
+        "ci95_low_pp": -0.22610483042137716,
+        "ci95_high_pp": 0.3083247687564234,
+        "probability_positive": 0.5868
+      },
+      "pooled_logloss_delta": -0.0007878083754269127,
+      "promotion_pass": false
+    },
+    "hgb_d4_leaf120": {
+      "weight": 1.0,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 1.0664479081214095,
+          "top3_lift_pp": 0.5742411812961423,
+          "logloss_delta": -0.008641802474835814,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.25922887612797374,
+            "top3": 0.5816242821985234,
+            "race_logloss": 2.096169587408173
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.08058017727638478,
+          "top3_lift_pp": 0.40290088638195165,
+          "logloss_delta": 0.001777468269434479,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29814665592264306,
+            "top3": 0.5922643029814666,
+            "race_logloss": 2.0319568969707618
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.4111842105263108,
+          "top3_lift_pp": 0.5756578947368474,
+          "logloss_delta": -0.0016314180432446257,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.30180921052631576,
+            "top3": 0.6258223684210527,
+            "race_logloss": 1.9743564624428203
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.5887300252312877,
+          "top3_lift_pp": -0.1682085786375076,
+          "logloss_delta": -0.0017298971978698674,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.29857022708158115,
+            "top3": 0.616484440706476,
+            "race_logloss": 1.9696145027758398
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.46568398045711185,
+      "selection_min_top1_lift_pp": -0.08058017727638478,
+      "selection_min_top3_lift_pp": 0.40290088638195165,
+      "pooled_bootstrap": {
+        "mean_pp": 0.4933196300102775,
+        "ci95_low_pp": -0.12332990750256938,
+        "ci95_high_pp": 1.1099691675231245,
+        "probability_positive": 0.9413
+      },
+      "pooled_logloss_delta": -0.002545193822140135,
+      "promotion_pass": false
+    },
+    "hgb_d3_subsample": {
+      "weight": 0.75,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.0,
+          "top3_lift_pp": 0.8203445447087732,
+          "logloss_delta": -0.005357751029094526,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24856439704675964,
+            "top3": 0.5840853158326497,
+            "race_logloss": 2.0994536388539142
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": 0.3223207091055613,
+          "top3_lift_pp": 0.16116035455278066,
+          "logloss_delta": -0.003704286267460777,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.3021756647864625,
+            "top3": 0.5898468976631749,
+            "race_logloss": 2.0264751424338665
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.0,
+          "top3_lift_pp": -0.0822368421052655,
+          "logloss_delta": 0.001608710070590158,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.29769736842105265,
+            "top3": 0.6192434210526315,
+            "race_logloss": 1.977596590556655
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 1.1774600504625754,
+          "top3_lift_pp": -0.2523128679562614,
+          "logloss_delta": -0.0010224492480030989,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.30445752733389403,
+            "top3": 0.6156433978132885,
+            "race_logloss": 1.9703219507257066
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.10744023636852044,
+      "selection_min_top1_lift_pp": 0.0,
+      "selection_min_top3_lift_pp": -0.0822368421052655,
+      "pooled_bootstrap": {
+        "mean_pp": 0.3699897225077081,
+        "ci95_low_pp": -0.10277492291880781,
+        "ci95_high_pp": 0.8633093525179856,
+        "probability_positive": 0.9293
+      },
+      "pooled_logloss_delta": -0.002137237225585231,
+      "promotion_pass": false
+    },
+    "extra_d8_leaf10": {
+      "weight": 0.25,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": -0.08203445447087787,
+          "top3_lift_pp": 0.1640689089417613,
+          "logloss_delta": -0.011655222734900939,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24774405250205087,
+            "top3": 0.5775225594749795,
+            "race_logloss": 2.093156167148108
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.1611603545527751,
+          "top3_lift_pp": 0.483481063658342,
+          "logloss_delta": -0.002449528232241871,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29734085414987915,
+            "top3": 0.5930701047542305,
+            "race_logloss": 2.0277299004690854
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.24671052631578538,
+          "top3_lift_pp": 0.0822368421052655,
+          "logloss_delta": -0.0041020625667218535,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.3001644736842105,
+            "top3": 0.6208881578947368,
+            "race_logloss": 1.971885817919343
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.33641715727502075,
+          "top3_lift_pp": 0.1682085786375187,
+          "logloss_delta": 0.0024388796200103258,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2960470984020185,
+            "top3": 0.6198486122792263,
+            "race_logloss": 1.97378327959372
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.0011719057640441344,
+      "selection_min_top1_lift_pp": -0.1611603545527751,
+      "selection_min_top3_lift_pp": 0.0822368421052655,
+      "pooled_bootstrap": {
+        "mean_pp": 0.08221993833504625,
+        "ci95_low_pp": -0.328879753340185,
+        "ci95_high_pp": 0.4933196300102775,
+        "probability_positive": 0.6367
+      },
+      "pooled_logloss_delta": -0.003977555501380792,
+      "promotion_pass": false
+    },
+    "extra_d12_leaf20": {
+      "weight": 0.5,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.08203445447087787,
+          "top3_lift_pp": 0.7383100902379036,
+          "logloss_delta": -0.017372132785205885,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24938474159146842,
+            "top3": 0.583264971287941,
+            "race_logloss": 2.087439257097803
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.24174053182916544,
+          "top3_lift_pp": 1.3698630136986245,
+          "logloss_delta": -0.005704403269609859,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29653505237711525,
+            "top3": 0.6019339242546333,
+            "race_logloss": 2.0244750254317174
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 1.0690789473684181,
+          "top3_lift_pp": 0.9868421052631637,
+          "logloss_delta": -0.009967904721662313,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.30838815789473684,
+            "top3": 0.6299342105263158,
+            "race_logloss": 1.9660199757644026
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.9251471825063085,
+          "top3_lift_pp": 1.2615643397813292,
+          "logloss_delta": 0.00044288658749236376,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.30193439865433136,
+            "top3": 0.6307821698906644,
+            "race_logloss": 1.971787286561202
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.3031242900033769,
+      "selection_min_top1_lift_pp": -0.24174053182916544,
+      "selection_min_top3_lift_pp": 0.7383100902379036,
+      "pooled_bootstrap": {
+        "mean_pp": 0.4522096608427543,
+        "ci95_low_pp": -0.1644398766700925,
+        "ci95_high_pp": 1.0483042137718397,
+        "probability_positive": 0.9256
+      },
+      "pooled_logloss_delta": -0.008194532987483072,
+      "promotion_pass": false
+    },
+    "extra_full_leaf40": {
+      "weight": 0.25,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.08203445447087787,
+          "top3_lift_pp": 0.9023789991796538,
+          "logloss_delta": -0.011773152963091782,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24938474159146842,
+            "top3": 0.5849056603773585,
+            "race_logloss": 2.093038236919917
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.1611603545527751,
+          "top3_lift_pp": 0.8863819500402936,
+          "logloss_delta": -0.004959050894029815,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29734085414987915,
+            "top3": 0.59709911361805,
+            "race_logloss": 2.0252203778072975
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.24671052631578538,
+          "top3_lift_pp": 0.0822368421052655,
+          "logloss_delta": -0.006596809313868857,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.3001644736842105,
+            "top3": 0.6208881578947368,
+            "race_logloss": 1.969391071172196
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.4205214465937801,
+          "top3_lift_pp": 0.3364171572750263,
+          "logloss_delta": -0.0016857853225096253,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2968881412952061,
+            "top3": 0.6215306980656014,
+            "race_logloss": 1.9696586146512
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.05586154207796271,
+      "selection_min_top1_lift_pp": -0.1611603545527751,
+      "selection_min_top3_lift_pp": 0.0822368421052655,
+      "pooled_bootstrap": {
+        "mean_pp": 0.14388489208633093,
+        "ci95_low_pp": -0.24665981500513876,
+        "ci95_high_pp": 0.5344295991778005,
+        "probability_positive": 0.7409
+      },
+      "pooled_logloss_delta": -0.0062779551885987495,
+      "promotion_pass": false
+    },
+    "forest_d10_leaf10": {
+      "weight": 0.75,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.0,
+          "top3_lift_pp": -0.4922067268252617,
+          "logloss_delta": -0.011509102125370596,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.24856439704675964,
+            "top3": 0.5709598031173093,
+            "race_logloss": 2.093302287757638
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.1611603545527751,
+          "top3_lift_pp": 0.5640612409347323,
+          "logloss_delta": 0.0037153889784145022,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29734085414987915,
+            "top3": 0.5938759065269944,
+            "race_logloss": 2.033894817679742
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.7401315789473673,
+          "top3_lift_pp": 0.6578947368421129,
+          "logloss_delta": -0.005203754874481881,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.3050986842105263,
+            "top3": 0.6266447368421053,
+            "race_logloss": 1.970784125611583
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.4205214465937801,
+          "top3_lift_pp": -0.6728343145500415,
+          "logloss_delta": 0.011760120847615685,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2968881412952061,
+            "top3": 0.6114381833473507,
+            "race_logloss": 1.9831045208213254
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.1929904081315307,
+      "selection_min_top1_lift_pp": -0.1611603545527751,
+      "selection_min_top3_lift_pp": -0.4922067268252617,
+      "pooled_bootstrap": {
+        "mean_pp": 0.24665981500513876,
+        "ci95_low_pp": -0.5344295991778005,
+        "ci95_high_pp": 1.0071942446043165,
+        "probability_positive": 0.722
+      },
+      "pooled_logloss_delta": -0.0003660379876682107,
+      "promotion_pass": false
+    },
+    "forest_d14_leaf25": {
+      "weight": 0.75,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": 0.7383100902378981,
+          "top3_lift_pp": 0.24610336341263084,
+          "logloss_delta": -0.012545794527007548,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.2559474979491386,
+            "top3": 0.5783429040196882,
+            "race_logloss": 2.092265595356001
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.08058017727638478,
+          "top3_lift_pp": 0.8058017727639033,
+          "logloss_delta": 0.0025029151593969345,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29814665592264306,
+            "top3": 0.5962933118452861,
+            "race_logloss": 2.032682343860724
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.9046052631578927,
+          "top3_lift_pp": 0.9868421052631637,
+          "logloss_delta": -0.005482419899781821,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.3067434210526316,
+            "top3": 0.6299342105263158,
+            "race_logloss": 1.970505460586283
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.33641715727502075,
+          "top3_lift_pp": -0.6728343145500415,
+          "logloss_delta": 0.006403242310076607,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.2960470984020185,
+            "top3": 0.6114381833473507,
+            "race_logloss": 1.9777476422837863
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": 0.520778392039802,
+      "selection_min_top1_lift_pp": -0.08058017727638478,
+      "selection_min_top3_lift_pp": 0.24610336341263084,
+      "pooled_bootstrap": {
+        "mean_pp": 0.472764645426516,
+        "ci95_low_pp": -0.26721479958890026,
+        "ci95_high_pp": 1.2127440904419322,
+        "probability_positive": 0.8886
+      },
+      "pooled_logloss_delta": -0.0023139570353172267,
+      "promotion_pass": false
+    },
+    "forest_full_leaf50": {
+      "weight": 0.25,
+      "folds": [
+        {
+          "fold": "2024H2",
+          "top1_lift_pp": -0.16406890894175574,
+          "top3_lift_pp": 0.5742411812961423,
+          "logloss_delta": -0.00846427517076842,
+          "candidate": {
+            "races": 1219,
+            "top1": 0.2469237079573421,
+            "top3": 0.5816242821985234,
+            "race_logloss": 2.0963471147122403
+          }
+        },
+        {
+          "fold": "2025H1",
+          "top1_lift_pp": -0.48348106365833643,
+          "top3_lift_pp": 0.725221595487513,
+          "logloss_delta": -0.004199088508185955,
+          "candidate": {
+            "races": 1241,
+            "top1": 0.29411764705882354,
+            "top3": 0.5954875100725222,
+            "race_logloss": 2.0259803401931413
+          }
+        },
+        {
+          "fold": "2025H2",
+          "top1_lift_pp": 0.08223684210525994,
+          "top3_lift_pp": 0.164473684210531,
+          "logloss_delta": -0.005343988471311567,
+          "candidate": {
+            "races": 1216,
+            "top1": 0.29851973684210525,
+            "top3": 0.6217105263157895,
+            "race_logloss": 1.9706438920147533
+          }
+        },
+        {
+          "fold": "2026H1",
+          "top1_lift_pp": 0.8410428931875547,
+          "top3_lift_pp": 0.0,
+          "logloss_delta": -0.0008939932740406054,
+          "candidate": {
+            "races": 1189,
+            "top1": 0.3010933557611438,
+            "top3": 0.6181665264928511,
+            "race_logloss": 1.970450406699669
+          }
+        }
+      ],
+      "selection_mean_top1_lift_pp": -0.18843771016494407,
+      "selection_min_top1_lift_pp": -0.48348106365833643,
+      "selection_min_top3_lift_pp": 0.164473684210531,
+      "pooled_bootstrap": {
+        "mean_pp": 0.06166495375128469,
+        "ci95_low_pp": -0.3494347379239465,
+        "ci95_high_pp": 0.472764645426516,
+        "probability_positive": 0.6009
+      },
+      "pooled_logloss_delta": -0.004747569862227241,
+      "promotion_pass": false
+    }
+  },
+  "selected": "hgb_d2_leaf160",
+  "selected_result": {
+    "weight": 0.5,
+    "folds": [
+      {
+        "fold": "2024H2",
+        "top1_lift_pp": 0.16406890894175574,
+        "top3_lift_pp": 0.3281378178835115,
+        "logloss_delta": -0.0029420230545675885,
+        "candidate": {
+          "races": 1219,
+          "top1": 0.2502050861361772,
+          "top3": 0.579163248564397,
+          "race_logloss": 2.101869366828441
+        }
+      },
+      {
+        "fold": "2025H1",
+        "top1_lift_pp": 0.483481063658342,
+        "top3_lift_pp": 0.40290088638195165,
+        "logloss_delta": -0.002717065272539454,
+        "candidate": {
+          "races": 1241,
+          "top1": 0.3037872683319903,
+          "top3": 0.5922643029814666,
+          "race_logloss": 2.027462363428788
+        }
+      },
+      {
+        "fold": "2025H2",
+        "top1_lift_pp": 0.08223684210525994,
+        "top3_lift_pp": -0.7401315789473673,
+        "logloss_delta": 0.0018337191872446201,
+        "candidate": {
+          "races": 1216,
+          "top1": 0.29851973684210525,
+          "top3": 0.6126644736842105,
+          "race_logloss": 1.9778215996733095
+        }
+      },
+      {
+        "fold": "2026H1",
+        "top1_lift_pp": 0.33641715727502075,
+        "top3_lift_pp": -0.0841042893187538,
+        "logloss_delta": -0.0003894484988977709,
+        "candidate": {
+          "races": 1189,
+          "top1": 0.2960470984020185,
+          "top3": 0.6173254835996635,
+          "race_logloss": 1.970954951474812
+        }
+      }
+    ],
+    "selection_mean_top1_lift_pp": 0.24326227156845256,
+    "selection_min_top1_lift_pp": 0.08223684210525994,
+    "selection_min_top3_lift_pp": -0.7401315789473673,
+    "pooled_bootstrap": {
+      "mean_pp": 0.26721479958890026,
+      "ci95_low_pp": -0.14388489208633093,
+      "ci95_high_pp": 0.6783144912641316,
+      "probability_positive": 0.887
+    },
+    "pooled_logloss_delta": -0.0010684454741101135,
+    "promotion_pass": false
+  },
+  "promotion_pass": false
+}

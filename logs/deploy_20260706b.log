@@ -1,0 +1,3 @@
+rsync: [Receiver] mkdir "/opt/strategy-arena" failed: Permission denied (13)
+rsync error: error in file IO (code 11) at main.c(800) [Receiver=3.2.7]
+rsync(62905): error: unexpected end of file

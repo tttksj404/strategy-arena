@@ -1,0 +1,125 @@
+services:
+  app:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      PORT: "8000"
+      DATABASE_URL: postgresql://strategy:${POSTGRES_PASSWORD}@postgres:5432/strategy_arena
+      KCYCLE_ENABLED: "1"
+      KCYCLE_TRIFECTA_ENABLED: "1"
+      RACELENS_ENV: "${RACELENS_ENV:-production}"
+      RACELENS_FORCE_PRO: "${RACELENS_FORCE_PRO:-0}"
+      RACELENS_ADMIN_TOKEN: "${RACELENS_ADMIN_TOKEN:-}"
+      RACELENS_SUPPORT_EMAIL: "${RACELENS_SUPPORT_EMAIL:-tttksj@gmail.com}"
+      RACELENS_LIVE_DECISION_IP_PER_MIN_CAP: "${RACELENS_LIVE_DECISION_IP_PER_MIN_CAP:-60}"
+      RACELENS_FREE_DAILY_ANALYSIS_LIMIT: "${RACELENS_FREE_DAILY_ANALYSIS_LIMIT:-3}"
+      RACELENS_REWARDED_ADS_ENABLED: "${RACELENS_REWARDED_ADS_ENABLED:-0}"
+      RACELENS_ADMOB_REWARDED_AD_UNIT_ID: "${RACELENS_ADMOB_REWARDED_AD_UNIT_ID:-}"
+      KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl
+      KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC: "${KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC:-10}"
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+      - strategy_backups:/app/backups
+    expose:
+      - "8000"
+
+  caddy:
+    image: caddy:2.9-alpine
+    depends_on:
+      - app
+      - mobile-web
+    env_file:
+      - .env.oracle
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  mobile-web:
+    build:
+      context: ../..
+      dockerfile: deploy/oracle/mobile.Dockerfile
+    env_file:
+      - .env.oracle
+    environment:
+      RACELENS_PREVIEW_PORT: "4173"
+      RACELENS_UPSTREAM_API: http://app:8000
+      RACELENS_UPSTREAM_TIMEOUT_MS: "12000"
+      RACELENS_ENV: "${RACELENS_ENV:-production}"
+      RACELENS_FORCE_PRO: "${RACELENS_FORCE_PRO:-0}"
+    restart: unless-stopped
+    depends_on:
+      - app
+    expose:
+      - "4173"
+
+  postgres:
+    image: postgres:16-alpine
+    env_file:
+      - .env.oracle
+    environment:
+      POSTGRES_DB: strategy_arena
+      POSTGRES_USER: strategy
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  collector:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      DATABASE_URL: postgresql://strategy:${POSTGRES_PASSWORD}@postgres:5432/strategy_arena
+      KCYCLE_ENABLED: "1"
+      KCYCLE_TRIFECTA_ENABLED: "1"
+      KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl
+      KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC: "${KCYCLE_TRIFECTA_SNAPSHOT_MIN_INTERVAL_SEC:-10}"
+      KCYCLE_COLLECTOR_INTERVAL_SEC: "${KCYCLE_COLLECTOR_INTERVAL_SEC:-15}"
+    restart: unless-stopped
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+    depends_on:
+      - postgres
+    healthcheck:
+      disable: true
+    command: ["sh", "-c", "while true; do scripts/run_kcycle_trifecta_collector_if_race_window.sh >> /app/logs/collector.log 2>&1 || true; sleep $${KCYCLE_COLLECTOR_INTERVAL_SEC:-15}; done"]
+
+  search-loop:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      DATABASE_URL: postgresql://strategy:${POSTGRES_PASSWORD}@postgres:5432/strategy_arena
+      KCYCLE_TRIFECTA_SNAPSHOT_PATH: /app/data/kcycle_trifecta_snapshots.jsonl
+      SEARCH_LOOP_INTERVAL_SEC: "${SEARCH_LOOP_INTERVAL_SEC:-30}"
+    restart: unless-stopped
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+    depends_on:
+      - postgres
+    healthcheck:
+      disable: true
+    command: ["sh", "-c", "while true; do scripts/run_prediction_search_loop.sh >> /app/logs/search-loop.log 2>&1 || true; sleep $${SEARCH_LOOP_INTERVAL_SEC:-30}; done"]
+
+volumes:
+  strategy_data:
+  strategy_logs:
+  strategy_backups:
+  caddy_data:
+  caddy_config:
+  postgres_data:

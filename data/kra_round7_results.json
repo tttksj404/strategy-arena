@@ -1,0 +1,108 @@
+{
+  "generated_at": "2026-07-12T07:47:20+00:00",
+  "inputs": {
+    "db": "/Users/tttksj/kra/data/kra.db",
+    "corpus": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kra_market_corpus.jsonl",
+    "model": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/static/models/kra_model.joblib",
+    "races": 6249,
+    "fresh_from": "20260622"
+  },
+  "current_policy_gate": "`predict_kra` calls `_kra_prediction_phase`; that returns `live_odds` only when `meta['odds_snapshot_fresh'] is True` and `_kra_market_probabilities(starters)` finds a complete positive win-odds board. `score_kra(..., use_market=True)` is therefore used only for fresh official pre-start odds; missing, partial, stale, post-result, or unproven odds stay on the model path.",
+  "policy_simulation": {
+    "all": {
+      "P0_v4_always": {
+        "races": 6249,
+        "top1": 0.31845095215234437,
+        "top3": 0.6332213154104657,
+        "market_source_rate": 0.0
+      },
+      "P1_current_gate": {
+        "races": 6249,
+        "top1": 0.31845095215234437,
+        "top3": 0.6332213154104657,
+        "market_source_rate": 0.0
+      },
+      "P2_market_if_odds": {
+        "races": 6249,
+        "top1": 0.36741878700592095,
+        "top3": 0.6916306609057449,
+        "market_source_rate": 1.0
+      },
+      "P3_market_except_weak_disagree": {
+        "races": 6249,
+        "top1": 0.3690190430468875,
+        "top3": 0.6890702512401984,
+        "market_source_rate": 0.9260681709073452
+      }
+    },
+    "fresh_from_20260622": {
+      "P0_v4_always": {
+        "races": 134,
+        "top1": 0.3283582089552239,
+        "top3": 0.664179104477612,
+        "market_source_rate": 0.0
+      },
+      "P1_current_gate": {
+        "races": 134,
+        "top1": 0.3283582089552239,
+        "top3": 0.664179104477612,
+        "market_source_rate": 0.0
+      },
+      "P2_market_if_odds": {
+        "races": 134,
+        "top1": 0.39552238805970147,
+        "top3": 0.7089552238805971,
+        "market_source_rate": 1.0
+      },
+      "P3_market_except_weak_disagree": {
+        "races": 134,
+        "top1": 0.39552238805970147,
+        "top3": 0.7089552238805971,
+        "market_source_rate": 0.9552238805970149
+      }
+    }
+  },
+  "policy_decision": {
+    "winner": "market_if_odds",
+    "winner_policy": "P2_market_if_odds",
+    "fresh_lift_vs_p1_pp": 6.716417910447758,
+    "supported": true
+  },
+  "history_extension": {
+    "status": "blocked_dns_resolution_failed",
+    "requested_range": "20190101..20231231",
+    "requested_meets": [
+      "서울",
+      "제주",
+      "부경"
+    ],
+    "available_start": "20240105",
+    "local_db_race_result_year_counts": {
+      "2019": 0,
+      "2020": 0,
+      "2021": 0,
+      "2022": 0,
+      "2023": 0,
+      "2024": 2470,
+      "2025": 2465,
+      "2026": 1343
+    },
+    "probe": {
+      "date": "20190104",
+      "meet_code": "1",
+      "endpoint": "RaceDetailResult_1",
+      "result": "ERR:<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    "note": "data.go.kr DNS resolution failed in this execution surface before API availability could be tested; no historical rows were collected."
+  },
+  "training_extension": {
+    "status": "not_run_history_extension_blocked",
+    "enabled": false,
+    "fresh_holdout_used": false,
+    "fresh_holdout_range": "20260622..20260711",
+    "fresh_holdout_races": 134,
+    "covid_ablation": "not_run_no_2019_2023_rows",
+    "promotion_executed": false,
+    "note": "No 2019-2023 rows were available, so v4 architecture retraining and COVID-year ablation were skipped without consuming the final fresh holdout evaluation."
+  }
+}

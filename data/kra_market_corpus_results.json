@@ -1,0 +1,1162 @@
+{
+  "generated_at": "2026-07-12T03:49:29+00:00",
+  "source_db": "/Users/tttksj/kra/data/kra.db",
+  "corpus_path": "/Users/tttksj/github-portfolio-docs-work/strategy-arena/data/kra_market_corpus.jsonl",
+  "date_range": {
+    "start": "20240101",
+    "end": "20260731"
+  },
+  "corpus_stats": {
+    "races": 6249,
+    "entries": 64548,
+    "races_with_dividend": 3535
+  },
+  "model_stats": {
+    "model_scored_races": 6249,
+    "model_score_errors": 0
+  },
+  "win_market": {
+    "tiers": {
+      "all": {
+        "races": 6249,
+        "coverage": 1.0,
+        "top1": 0.36741878700592095,
+        "top3": 0.6916306609057449
+      },
+      "very_strong_pull": {
+        "races": 1597,
+        "coverage": 0.2555608897423588,
+        "top1": 0.5422667501565435,
+        "top3": 0.7726988102692548
+      },
+      "strong_pull": {
+        "races": 3478,
+        "coverage": 0.5565690510481677,
+        "top1": 0.44508338125359403,
+        "top3": 0.7363427257044278
+      },
+      "price_short": {
+        "races": 2230,
+        "coverage": 0.3568570971355417,
+        "top1": 0.5067264573991032,
+        "top3": 0.7623318385650224
+      },
+      "gap_wide": {
+        "races": 3729,
+        "coverage": 0.5967354776764282,
+        "top1": 0.4239742558326629,
+        "top3": 0.7138643067846607
+      },
+      "weak_or_open": {
+        "races": 735,
+        "coverage": 0.11761881901104176,
+        "top1": 0.24353741496598638,
+        "top3": 0.6136054421768707
+      }
+    },
+    "by_field_size": {
+      "field_le_7": {
+        "all": {
+          "races": 73,
+          "coverage": 1.0,
+          "top1": 0.3287671232876712,
+          "top3": 0.7123287671232876
+        },
+        "very_strong_pull": {
+          "races": 24,
+          "coverage": 0.3287671232876712,
+          "top1": 0.4583333333333333,
+          "top3": 0.7083333333333334
+        },
+        "strong_pull": {
+          "races": 46,
+          "coverage": 0.6301369863013698,
+          "top1": 0.3695652173913043,
+          "top3": 0.6956521739130435
+        },
+        "price_short": {
+          "races": 34,
+          "coverage": 0.4657534246575342,
+          "top1": 0.4411764705882353,
+          "top3": 0.6470588235294118
+        },
+        "gap_wide": {
+          "races": 44,
+          "coverage": 0.6027397260273972,
+          "top1": 0.38636363636363635,
+          "top3": 0.7272727272727273
+        },
+        "weak_or_open": {
+          "races": 8,
+          "coverage": 0.1095890410958904,
+          "top1": 0.125,
+          "top3": 0.5
+        }
+      },
+      "field_8_10": {
+        "all": {
+          "races": 3429,
+          "coverage": 1.0,
+          "top1": 0.38232720909886264,
+          "top3": 0.7080781568970546
+        },
+        "very_strong_pull": {
+          "races": 933,
+          "coverage": 0.27209098862642167,
+          "top1": 0.5734190782422294,
+          "top3": 0.789924973204716
+        },
+        "strong_pull": {
+          "races": 1974,
+          "coverage": 0.5756780402449694,
+          "top1": 0.46656534954407297,
+          "top3": 0.7578520770010132
+        },
+        "price_short": {
+          "races": 1291,
+          "coverage": 0.3764946048410615,
+          "top1": 0.5360185902401239,
+          "top3": 0.7792408985282726
+        },
+        "gap_wide": {
+          "races": 2069,
+          "coverage": 0.6033829104695246,
+          "top1": 0.44804253262445626,
+          "top3": 0.7322377960367327
+        },
+        "weak_or_open": {
+          "races": 396,
+          "coverage": 0.11548556430446194,
+          "top1": 0.22727272727272727,
+          "top3": 0.6338383838383839
+        }
+      },
+      "field_11_plus": {
+        "all": {
+          "races": 2747,
+          "coverage": 1.0,
+          "top1": 0.34983618492901347,
+          "top3": 0.6705496905715326
+        },
+        "very_strong_pull": {
+          "races": 640,
+          "coverage": 0.23298143429195486,
+          "top1": 0.5,
+          "top3": 0.75
+        },
+        "strong_pull": {
+          "races": 1458,
+          "coverage": 0.5307608299963597,
+          "top1": 0.41838134430727025,
+          "top3": 0.7085048010973937
+        },
+        "price_short": {
+          "races": 905,
+          "coverage": 0.3294503094284674,
+          "top1": 0.46740331491712706,
+          "top3": 0.7425414364640884
+        },
+        "gap_wide": {
+          "races": 1616,
+          "coverage": 0.5882781215871861,
+          "top1": 0.3941831683168317,
+          "top3": 0.6899752475247525
+        },
+        "weak_or_open": {
+          "races": 331,
+          "coverage": 0.1204950855478704,
+          "top1": 0.26586102719033233,
+          "top3": 0.5921450151057401
+        }
+      }
+    },
+    "calibration": [
+      {
+        "probability_bin": "[0.00,0.10)",
+        "races": 0,
+        "mean_market_probability": null,
+        "observed_top1": null
+      },
+      {
+        "probability_bin": "[0.10,0.15)",
+        "races": 3,
+        "mean_market_probability": 0.14552670433857468,
+        "observed_top1": 0.6666666666666666
+      },
+      {
+        "probability_bin": "[0.15,0.20)",
+        "races": 176,
+        "mean_market_probability": 0.18656816085324213,
+        "observed_top1": 0.19318181818181818
+      },
+      {
+        "probability_bin": "[0.20,0.25)",
+        "races": 776,
+        "mean_market_probability": 0.22810007547067193,
+        "observed_top1": 0.22809278350515463
+      },
+      {
+        "probability_bin": "[0.25,0.30)",
+        "races": 1246,
+        "mean_market_probability": 0.27657173167274157,
+        "observed_top1": 0.2897271268057785
+      },
+      {
+        "probability_bin": "[0.30,0.40)",
+        "races": 1963,
+        "mean_market_probability": 0.3471566301712308,
+        "observed_top1": 0.33520122261844115
+      },
+      {
+        "probability_bin": "[0.40,0.55)",
+        "races": 1582,
+        "mean_market_probability": 0.46509171029196555,
+        "observed_top1": 0.4690265486725664
+      },
+      {
+        "probability_bin": "[0.55,1.01)",
+        "races": 503,
+        "mean_market_probability": 0.6150738765921355,
+        "observed_top1": 0.6401590457256461
+      }
+    ]
+  },
+  "exotic_market": {
+    "단승식": {
+      "tiers": {
+        "all": {
+          "races": 3519,
+          "coverage": 1.0,
+          "top1": 0.3742540494458653,
+          "top3": 0.7024722932651322
+        },
+        "very_strong_pull": {
+          "races": 2168,
+          "coverage": 0.6160841148053424,
+          "top1": 0.4257380073800738,
+          "top3": 0.7227859778597786
+        },
+        "strong_pull": {
+          "races": 2586,
+          "coverage": 0.7348678601875532,
+          "top1": 0.41299303944315546,
+          "top3": 0.7192575406032483
+        },
+        "gap_wide": {
+          "races": 2168,
+          "coverage": 0.6160841148053424,
+          "top1": 0.4257380073800738,
+          "top3": 0.7227859778597786
+        },
+        "weak_or_open": {
+          "races": 333,
+          "coverage": 0.09462915601023018,
+          "top1": 0.25825825825825827,
+          "top3": 0.6426426426426426
+        }
+      },
+      "by_field_size": {
+        "field_le_7": {
+          "all": {
+            "races": 53,
+            "coverage": 1.0,
+            "top1": 0.2641509433962264,
+            "top3": 0.6981132075471698
+          },
+          "very_strong_pull": {
+            "races": 32,
+            "coverage": 0.6037735849056604,
+            "top1": 0.34375,
+            "top3": 0.71875
+          },
+          "strong_pull": {
+            "races": 39,
+            "coverage": 0.7358490566037735,
+            "top1": 0.3076923076923077,
+            "top3": 0.717948717948718
+          },
+          "gap_wide": {
+            "races": 32,
+            "coverage": 0.6037735849056604,
+            "top1": 0.34375,
+            "top3": 0.71875
+          },
+          "weak_or_open": {
+            "races": 4,
+            "coverage": 0.07547169811320754,
+            "top1": 0.25,
+            "top3": 0.5
+          }
+        },
+        "field_8_10": {
+          "all": {
+            "races": 1848,
+            "coverage": 1.0,
+            "top1": 0.3841991341991342,
+            "top3": 0.7180735930735931
+          },
+          "very_strong_pull": {
+            "races": 1167,
+            "coverage": 0.6314935064935064,
+            "top1": 0.44301628106255353,
+            "top3": 0.7472150814053128
+          },
+          "strong_pull": {
+            "races": 1372,
+            "coverage": 0.7424242424242424,
+            "top1": 0.42784256559766765,
+            "top3": 0.7376093294460642
+          },
+          "gap_wide": {
+            "races": 1167,
+            "coverage": 0.6314935064935064,
+            "top1": 0.44301628106255353,
+            "top3": 0.7472150814053128
+          },
+          "weak_or_open": {
+            "races": 174,
+            "coverage": 0.09415584415584416,
+            "top1": 0.22413793103448276,
+            "top3": 0.6264367816091954
+          }
+        },
+        "field_11_plus": {
+          "all": {
+            "races": 1618,
+            "coverage": 1.0,
+            "top1": 0.3665018541409147,
+            "top3": 0.6847960444993819
+          },
+          "very_strong_pull": {
+            "races": 969,
+            "coverage": 0.5988875154511742,
+            "top1": 0.40763673890608876,
+            "top3": 0.6934984520123839
+          },
+          "strong_pull": {
+            "races": 1175,
+            "coverage": 0.7262051915945612,
+            "top1": 0.39914893617021274,
+            "top3": 0.6978723404255319
+          },
+          "gap_wide": {
+            "races": 969,
+            "coverage": 0.5988875154511742,
+            "top1": 0.40763673890608876,
+            "top3": 0.6934984520123839
+          },
+          "weak_or_open": {
+            "races": 155,
+            "coverage": 0.0957972805933251,
+            "top1": 0.2967741935483871,
+            "top3": 0.6645161290322581
+          }
+        }
+      },
+      "calibration": [
+        {
+          "probability_bin": "[0.000,0.001)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.001,0.003)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.003,0.006)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.006,0.010)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.010,0.020)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.020,0.040)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.040,0.080)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.080,1.010)",
+          "races": 3519,
+          "mean_market_probability": 0.36971830175853476,
+          "observed_top1": 0.3742540494458653
+        }
+      ]
+    },
+    "복승식": {
+      "tiers": {
+        "all": {
+          "races": 3519,
+          "coverage": 1.0,
+          "top1": 0.1801648195510088,
+          "top3": 0.39215686274509803
+        },
+        "very_strong_pull": {
+          "races": 1180,
+          "coverage": 0.33532253481102586,
+          "top1": 0.23389830508474577,
+          "top3": 0.4457627118644068
+        },
+        "strong_pull": {
+          "races": 1826,
+          "coverage": 0.518897414038079,
+          "top1": 0.21358159912376778,
+          "top3": 0.4184008762322015
+        },
+        "gap_wide": {
+          "races": 1221,
+          "coverage": 0.34697357203751067,
+          "top1": 0.23013923013923013,
+          "top3": 0.4398034398034398
+        },
+        "weak_or_open": {
+          "races": 590,
+          "coverage": 0.16766126740551293,
+          "top1": 0.13389830508474576,
+          "top3": 0.3593220338983051
+        }
+      },
+      "by_field_size": {
+        "field_le_7": {
+          "all": {
+            "races": 53,
+            "coverage": 1.0,
+            "top1": 0.20754716981132076,
+            "top3": 0.5849056603773585
+          },
+          "very_strong_pull": {
+            "races": 26,
+            "coverage": 0.49056603773584906,
+            "top1": 0.3076923076923077,
+            "top3": 0.6538461538461539
+          },
+          "strong_pull": {
+            "races": 37,
+            "coverage": 0.6981132075471698,
+            "top1": 0.24324324324324326,
+            "top3": 0.5945945945945946
+          },
+          "gap_wide": {
+            "races": 26,
+            "coverage": 0.49056603773584906,
+            "top1": 0.3076923076923077,
+            "top3": 0.6538461538461539
+          },
+          "weak_or_open": {
+            "races": 7,
+            "coverage": 0.1320754716981132,
+            "top1": 0.0,
+            "top3": 0.5714285714285714
+          }
+        },
+        "field_8_10": {
+          "all": {
+            "races": 1848,
+            "coverage": 1.0,
+            "top1": 0.19155844155844157,
+            "top3": 0.4096320346320346
+          },
+          "very_strong_pull": {
+            "races": 661,
+            "coverage": 0.35768398268398266,
+            "top1": 0.25416036308623297,
+            "top3": 0.4659606656580938
+          },
+          "strong_pull": {
+            "races": 988,
+            "coverage": 0.5346320346320347,
+            "top1": 0.23076923076923078,
+            "top3": 0.4392712550607287
+          },
+          "gap_wide": {
+            "races": 677,
+            "coverage": 0.36634199134199136,
+            "top1": 0.2481536189069424,
+            "top3": 0.45937961595273263
+          },
+          "weak_or_open": {
+            "races": 302,
+            "coverage": 0.1634199134199134,
+            "top1": 0.1456953642384106,
+            "top3": 0.38079470198675497
+          }
+        },
+        "field_11_plus": {
+          "all": {
+            "races": 1618,
+            "coverage": 1.0,
+            "top1": 0.16625463535228677,
+            "top3": 0.3658838071693449
+          },
+          "very_strong_pull": {
+            "races": 493,
+            "coverage": 0.3046971569839308,
+            "top1": 0.2028397565922921,
+            "top3": 0.4077079107505071
+          },
+          "strong_pull": {
+            "races": 801,
+            "coverage": 0.49505562422744126,
+            "top1": 0.19101123595505617,
+            "top3": 0.38451935081148564
+          },
+          "gap_wide": {
+            "races": 518,
+            "coverage": 0.32014833127317677,
+            "top1": 0.20270270270270271,
+            "top3": 0.4034749034749035
+          },
+          "weak_or_open": {
+            "races": 281,
+            "coverage": 0.17367119901112485,
+            "top1": 0.12455516014234876,
+            "top3": 0.3309608540925267
+          }
+        }
+      },
+      "calibration": [
+        {
+          "probability_bin": "[0.000,0.001)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.001,0.003)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.003,0.006)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.006,0.010)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.010,0.020)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.020,0.040)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.040,0.080)",
+          "races": 118,
+          "mean_market_probability": 0.0712893107031478,
+          "observed_top1": 0.05084745762711865
+        },
+        {
+          "probability_bin": "[0.080,1.010)",
+          "races": 3401,
+          "mean_market_probability": 0.17358360586154117,
+          "observed_top1": 0.18465157306674507
+        }
+      ]
+    },
+    "삼복승식": {
+      "tiers": {
+        "all": {
+          "races": 3534,
+          "coverage": 1.0,
+          "top1": 0.11007357102433503,
+          "top3": 0.24929258630447085
+        },
+        "very_strong_pull": {
+          "races": 667,
+          "coverage": 0.188737973967176,
+          "top1": 0.20389805097451275,
+          "top3": 0.37631184407796103
+        },
+        "strong_pull": {
+          "races": 1684,
+          "coverage": 0.47651386530843237,
+          "top1": 0.14014251781472684,
+          "top3": 0.2749406175771972
+        },
+        "gap_wide": {
+          "races": 1120,
+          "coverage": 0.31692133559705715,
+          "top1": 0.1625,
+          "top3": 0.3
+        },
+        "weak_or_open": {
+          "races": 725,
+          "coverage": 0.20514997170345217,
+          "top1": 0.07862068965517241,
+          "top3": 0.22482758620689655
+        }
+      },
+      "by_field_size": {
+        "field_le_7": {
+          "all": {
+            "races": 53,
+            "coverage": 1.0,
+            "top1": 0.18867924528301888,
+            "top3": 0.49056603773584906
+          },
+          "very_strong_pull": {
+            "races": 24,
+            "coverage": 0.4528301886792453,
+            "top1": 0.2916666666666667,
+            "top3": 0.5
+          },
+          "strong_pull": {
+            "races": 30,
+            "coverage": 0.5660377358490566,
+            "top1": 0.23333333333333334,
+            "top3": 0.5
+          },
+          "gap_wide": {
+            "races": 24,
+            "coverage": 0.4528301886792453,
+            "top1": 0.2916666666666667,
+            "top3": 0.5
+          },
+          "weak_or_open": {
+            "races": 6,
+            "coverage": 0.11320754716981132,
+            "top1": 0.3333333333333333,
+            "top3": 0.5
+          }
+        },
+        "field_8_10": {
+          "all": {
+            "races": 1855,
+            "coverage": 1.0,
+            "top1": 0.12075471698113208,
+            "top3": 0.27008086253369273
+          },
+          "very_strong_pull": {
+            "races": 413,
+            "coverage": 0.22264150943396227,
+            "top1": 0.21307506053268765,
+            "top3": 0.4019370460048426
+          },
+          "strong_pull": {
+            "races": 935,
+            "coverage": 0.5040431266846361,
+            "top1": 0.14759358288770053,
+            "top3": 0.2983957219251337
+          },
+          "gap_wide": {
+            "races": 616,
+            "coverage": 0.3320754716981132,
+            "top1": 0.17532467532467533,
+            "top3": 0.3344155844155844
+          },
+          "weak_or_open": {
+            "races": 360,
+            "coverage": 0.1940700808625337,
+            "top1": 0.07777777777777778,
+            "top3": 0.24444444444444444
+          }
+        },
+        "field_11_plus": {
+          "all": {
+            "races": 1626,
+            "coverage": 1.0,
+            "top1": 0.0953259532595326,
+            "top3": 0.2177121771217712
+          },
+          "very_strong_pull": {
+            "races": 230,
+            "coverage": 0.14145141451414514,
+            "top1": 0.1782608695652174,
+            "top3": 0.3173913043478261
+          },
+          "strong_pull": {
+            "races": 719,
+            "coverage": 0.44218942189421895,
+            "top1": 0.12656467315716272,
+            "top3": 0.23504867872044508
+          },
+          "gap_wide": {
+            "races": 480,
+            "coverage": 0.2952029520295203,
+            "top1": 0.13958333333333334,
+            "top3": 0.24583333333333332
+          },
+          "weak_or_open": {
+            "races": 359,
+            "coverage": 0.22078720787207873,
+            "top1": 0.07520891364902507,
+            "top3": 0.20055710306406685
+          }
+        }
+      },
+      "calibration": [
+        {
+          "probability_bin": "[0.000,0.001)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.001,0.003)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.003,0.006)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.006,0.010)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.010,0.020)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.020,0.040)",
+          "races": 23,
+          "mean_market_probability": 0.03623889805129123,
+          "observed_top1": 0.0
+        },
+        {
+          "probability_bin": "[0.040,0.080)",
+          "races": 1068,
+          "mean_market_probability": 0.0641965902818742,
+          "observed_top1": 0.0552434456928839
+        },
+        {
+          "probability_bin": "[0.080,1.010)",
+          "races": 2443,
+          "mean_market_probability": 0.12680293845026316,
+          "observed_top1": 0.13507981989357348
+        }
+      ]
+    },
+    "삼쌍승식": {
+      "tiers": {
+        "all": {
+          "races": 3534,
+          "coverage": 1.0,
+          "top1": 0.029145444255800793,
+          "top3": 0.08064516129032258
+        },
+        "very_strong_pull": {
+          "races": 12,
+          "coverage": 0.003395585738539898,
+          "top1": 0.08333333333333333,
+          "top3": 0.3333333333333333
+        },
+        "strong_pull": {
+          "races": 144,
+          "coverage": 0.04074702886247878,
+          "top1": 0.05555555555555555,
+          "top3": 0.14583333333333334
+        },
+        "gap_wide": {
+          "races": 92,
+          "coverage": 0.02603282399547255,
+          "top1": 0.07608695652173914,
+          "top3": 0.14130434782608695
+        },
+        "weak_or_open": {
+          "races": 1686,
+          "coverage": 0.4770797962648557,
+          "top1": 0.018386714116251483,
+          "top3": 0.0711743772241993
+        }
+      },
+      "by_field_size": {
+        "field_le_7": {
+          "all": {
+            "races": 53,
+            "coverage": 1.0,
+            "top1": 0.018867924528301886,
+            "top3": 0.1320754716981132
+          },
+          "very_strong_pull": {
+            "races": 1,
+            "coverage": 0.018867924528301886,
+            "top1": 0.0,
+            "top3": 0.0
+          },
+          "strong_pull": {
+            "races": 7,
+            "coverage": 0.1320754716981132,
+            "top1": 0.0,
+            "top3": 0.0
+          },
+          "gap_wide": {
+            "races": 2,
+            "coverage": 0.03773584905660377,
+            "top1": 0.0,
+            "top3": 0.0
+          },
+          "weak_or_open": {
+            "races": 26,
+            "coverage": 0.49056603773584906,
+            "top1": 0.0,
+            "top3": 0.15384615384615385
+          }
+        },
+        "field_8_10": {
+          "all": {
+            "races": 1855,
+            "coverage": 1.0,
+            "top1": 0.03504043126684636,
+            "top3": 0.09326145552560647
+          },
+          "very_strong_pull": {
+            "races": 10,
+            "coverage": 0.005390835579514825,
+            "top1": 0.1,
+            "top3": 0.4
+          },
+          "strong_pull": {
+            "races": 100,
+            "coverage": 0.05390835579514825,
+            "top1": 0.06,
+            "top3": 0.16
+          },
+          "gap_wide": {
+            "races": 64,
+            "coverage": 0.03450134770889488,
+            "top1": 0.078125,
+            "top3": 0.15625
+          },
+          "weak_or_open": {
+            "races": 844,
+            "coverage": 0.45498652291105124,
+            "top1": 0.026066350710900472,
+            "top3": 0.08767772511848342
+          }
+        },
+        "field_11_plus": {
+          "all": {
+            "races": 1626,
+            "coverage": 1.0,
+            "top1": 0.022755227552275523,
+            "top3": 0.06457564575645756
+          },
+          "very_strong_pull": {
+            "races": 1,
+            "coverage": 0.0006150061500615006,
+            "top1": 0.0,
+            "top3": 0.0
+          },
+          "strong_pull": {
+            "races": 37,
+            "coverage": 0.022755227552275523,
+            "top1": 0.05405405405405406,
+            "top3": 0.13513513513513514
+          },
+          "gap_wide": {
+            "races": 26,
+            "coverage": 0.015990159901599015,
+            "top1": 0.07692307692307693,
+            "top3": 0.11538461538461539
+          },
+          "weak_or_open": {
+            "races": 816,
+            "coverage": 0.5018450184501845,
+            "top1": 0.011029411764705883,
+            "top3": 0.051470588235294115
+          }
+        }
+      },
+      "calibration": [
+        {
+          "probability_bin": "[0.000,0.001)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.001,0.003)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.003,0.006)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.006,0.010)",
+          "races": 7,
+          "mean_market_probability": 0.009192145761070608,
+          "observed_top1": 0.0
+        },
+        {
+          "probability_bin": "[0.010,0.020)",
+          "races": 539,
+          "mean_market_probability": 0.01654428799522731,
+          "observed_top1": 0.0055658627087198514
+        },
+        {
+          "probability_bin": "[0.020,0.040)",
+          "races": 1894,
+          "mean_market_probability": 0.029144482048107004,
+          "observed_top1": 0.02587117212249208
+        },
+        {
+          "probability_bin": "[0.040,0.080)",
+          "races": 1000,
+          "mean_market_probability": 0.05302291193996045,
+          "observed_top1": 0.043
+        },
+        {
+          "probability_bin": "[0.080,1.010)",
+          "races": 94,
+          "mean_market_probability": 0.10010204736260957,
+          "observed_top1": 0.0851063829787234
+        }
+      ]
+    },
+    "쌍승식": {
+      "tiers": {
+        "all": {
+          "races": 3519,
+          "coverage": 1.0,
+          "top1": 0.10741687979539642,
+          "top3": 0.26285876669508385
+        },
+        "very_strong_pull": {
+          "races": 406,
+          "coverage": 0.11537368570616652,
+          "top1": 0.21182266009852216,
+          "top3": 0.37438423645320196
+        },
+        "strong_pull": {
+          "races": 1011,
+          "coverage": 0.2872975277067349,
+          "top1": 0.14737883283877348,
+          "top3": 0.3076162215628091
+        },
+        "gap_wide": {
+          "races": 456,
+          "coverage": 0.12958226768968456,
+          "top1": 0.19517543859649122,
+          "top3": 0.3530701754385965
+        },
+        "weak_or_open": {
+          "races": 998,
+          "coverage": 0.28360329639102017,
+          "top1": 0.08316633266533066,
+          "top3": 0.23246492985971945
+        }
+      },
+      "by_field_size": {
+        "field_le_7": {
+          "all": {
+            "races": 53,
+            "coverage": 1.0,
+            "top1": 0.07547169811320754,
+            "top3": 0.2830188679245283
+          },
+          "very_strong_pull": {
+            "races": 9,
+            "coverage": 0.16981132075471697,
+            "top1": 0.3333333333333333,
+            "top3": 0.4444444444444444
+          },
+          "strong_pull": {
+            "races": 19,
+            "coverage": 0.3584905660377358,
+            "top1": 0.15789473684210525,
+            "top3": 0.3157894736842105
+          },
+          "gap_wide": {
+            "races": 9,
+            "coverage": 0.16981132075471697,
+            "top1": 0.3333333333333333,
+            "top3": 0.4444444444444444
+          },
+          "weak_or_open": {
+            "races": 14,
+            "coverage": 0.2641509433962264,
+            "top1": 0.07142857142857142,
+            "top3": 0.35714285714285715
+          }
+        },
+        "field_8_10": {
+          "all": {
+            "races": 1848,
+            "coverage": 1.0,
+            "top1": 0.11742424242424243,
+            "top3": 0.2775974025974026
+          },
+          "very_strong_pull": {
+            "races": 237,
+            "coverage": 0.12824675324675325,
+            "top1": 0.23628691983122363,
+            "top3": 0.3881856540084388
+          },
+          "strong_pull": {
+            "races": 560,
+            "coverage": 0.30303030303030304,
+            "top1": 0.15714285714285714,
+            "top3": 0.325
+          },
+          "gap_wide": {
+            "races": 255,
+            "coverage": 0.137987012987013,
+            "top1": 0.2196078431372549,
+            "top3": 0.3764705882352941
+          },
+          "weak_or_open": {
+            "races": 515,
+            "coverage": 0.2786796536796537,
+            "top1": 0.0912621359223301,
+            "top3": 0.24854368932038834
+          }
+        },
+        "field_11_plus": {
+          "all": {
+            "races": 1618,
+            "coverage": 1.0,
+            "top1": 0.09703337453646477,
+            "top3": 0.2453646477132262
+          },
+          "very_strong_pull": {
+            "races": 160,
+            "coverage": 0.09888751545117429,
+            "top1": 0.16875,
+            "top3": 0.35
+          },
+          "strong_pull": {
+            "races": 432,
+            "coverage": 0.2669962917181706,
+            "top1": 0.13425925925925927,
+            "top3": 0.2847222222222222
+          },
+          "gap_wide": {
+            "races": 192,
+            "coverage": 0.11866501854140915,
+            "top1": 0.15625,
+            "top3": 0.3177083333333333
+          },
+          "weak_or_open": {
+            "races": 469,
+            "coverage": 0.28986402966625463,
+            "top1": 0.07462686567164178,
+            "top3": 0.21108742004264391
+          }
+        }
+      },
+      "calibration": [
+        {
+          "probability_bin": "[0.000,0.001)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.001,0.003)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.003,0.006)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.006,0.010)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.010,0.020)",
+          "races": 0,
+          "mean_market_probability": null,
+          "observed_top1": null
+        },
+        {
+          "probability_bin": "[0.020,0.040)",
+          "races": 36,
+          "mean_market_probability": 0.03697262553080319,
+          "observed_top1": 0.027777777777777776
+        },
+        {
+          "probability_bin": "[0.040,0.080)",
+          "races": 1128,
+          "mean_market_probability": 0.06367630741159779,
+          "observed_top1": 0.06382978723404255
+        },
+        {
+          "probability_bin": "[0.080,1.010)",
+          "races": 2355,
+          "mean_market_probability": 0.13332905034776063,
+          "observed_top1": 0.12951167728237792
+        }
+      ]
+    }
+  },
+  "model_market_disagreement": {
+    "all": {
+      "races": 2859,
+      "coverage_of_scored": 0.457513202112338,
+      "model_top1": 0.19272472892619796,
+      "market_top1": 0.29975515914655476
+    },
+    "2026": {
+      "races": 562,
+      "coverage_of_scored": 0.42479213907785335,
+      "model_top1": 0.2206405693950178,
+      "market_top1": 0.3185053380782918
+    },
+    "fresh_from_20260622": {
+      "races": 59,
+      "coverage_of_scored": 0.44029850746268656,
+      "model_top1": 0.1694915254237288,
+      "market_top1": 0.3220338983050847
+    }
+  },
+  "notes": [
+    "학습/선택 개입 없는 순수 측정.",
+    "RaceDetailResult_1 winOdds/plcOdds covers all local races.",
+    "API160_1 local dividend table covers 2025-01-03..2026-06-21; 2024 exotic board rows are absent.",
+    "Production artifact pairwise.enabled=false; disagreement metrics are descriptive only."
+  ]
+}

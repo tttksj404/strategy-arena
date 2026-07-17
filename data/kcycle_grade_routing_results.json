@@ -1,0 +1,2080 @@
+{
+  "deployable": false,
+  "grade_counts": {
+    "선발": 5372,
+    "우수": 4091,
+    "특선": 4437
+  },
+  "records": 13900,
+  "routed_metrics": [
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.17061943360352247,
+      "exact_lift_pp": 0.24016811768237667,
+      "name": "grade_route_train_best",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "train",
+      "top1": 0.609026318422896,
+      "top1_lift_pp": 0.23016111277894824
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14942528735632185,
+      "exact_lift_pp": -0.07927070947284787,
+      "name": "grade_route_train_best",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "val",
+      "top1": 0.6389219183511693,
+      "top1_lift_pp": -0.039635354736422546
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17052023121387283,
+      "exact_lift_pp": -0.14450867052023253,
+      "name": "grade_route_train_best",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "test",
+      "top1": 0.6315028901734104,
+      "top1_lift_pp": -0.28901734104045396
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16676258992805756,
+      "exact_lift_pp": 0.14388489208633226,
+      "name": "grade_route_train_best",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "all",
+      "top1": 0.6166906474820144,
+      "top1_lift_pp": 0.1294964028777046
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16881817272090463,
+      "exact_lift_pp": 0.06004202942059278,
+      "name": "grade_route_train_top1_best",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "train",
+      "top1": 0.6119283498448914,
+      "top1_lift_pp": 0.5203642549784893
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.1482362267142291,
+      "exact_lift_pp": -0.19817677368212383,
+      "name": "grade_route_train_top1_best",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "val",
+      "top1": 0.6420927467300832,
+      "top1_lift_pp": 0.2774474831549689
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17630057803468208,
+      "exact_lift_pp": 0.43352601156069204,
+      "name": "grade_route_train_top1_best",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "test",
+      "top1": 0.6358381502890174,
+      "top1_lift_pp": 0.14450867052023808
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1658273381294964,
+      "exact_lift_pp": 0.05035971223021629,
+      "name": "grade_route_train_top1_best",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "all",
+      "top1": 0.6197841726618705,
+      "top1_lift_pp": 0.4388489208633106
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16941859301511059,
+      "exact_lift_pp": 0.12008405884118833,
+      "name": "grade_route_val_oracle",
+      "races": 9993,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "train",
+      "top1": 0.6086260382267588,
+      "top1_lift_pp": 0.19013309316522342
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.1514070550931431,
+      "exact_lift_pp": 0.11890606420927596,
+      "name": "grade_route_val_oracle",
+      "races": 2523,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "val",
+      "top1": 0.6393182718985335,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17052023121387283,
+      "exact_lift_pp": -0.14450867052023253,
+      "name": "grade_route_val_oracle",
+      "races": 1384,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "test",
+      "top1": 0.6329479768786127,
+      "top1_lift_pp": -0.14450867052022698
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1662589928057554,
+      "exact_lift_pp": 0.09352517985611597,
+      "name": "grade_route_val_oracle",
+      "races": 13900,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "all",
+      "top1": 0.6166187050359713,
+      "top1_lift_pp": 0.12230215827339075
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.1691183828680076,
+      "exact_lift_pp": 0.09006304413088917,
+      "name": "grade_route_val_top1_oracle",
+      "races": 9993,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "train",
+      "top1": 0.6105273691584109,
+      "top1_lift_pp": 0.38026618633043574
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.1482362267142291,
+      "exact_lift_pp": -0.19817677368212383,
+      "name": "grade_route_val_top1_oracle",
+      "races": 2523,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "val",
+      "top1": 0.643281807372176,
+      "top1_lift_pp": 0.39635354736424766
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17413294797687862,
+      "exact_lift_pp": 0.21676300578034602,
+      "name": "grade_route_val_top1_oracle",
+      "races": 1384,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "test",
+      "top1": 0.638728323699422,
+      "top1_lift_pp": 0.43352601156070314
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1658273381294964,
+      "exact_lift_pp": 0.05035971223021629,
+      "name": "grade_route_val_top1_oracle",
+      "races": 13900,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "all",
+      "top1": 0.6192805755395684,
+      "top1_lift_pp": 0.38848920863310266
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.1682177524266987,
+      "exact_lift_pp": 0.0,
+      "name": "single_board_min",
+      "races": 9993,
+      "route": {
+        "선발": "board_min",
+        "우수": "board_min",
+        "특선": "board_min"
+      },
+      "split": "train",
+      "top1": 0.6067247072951065,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.15021799445105033,
+      "exact_lift_pp": 0.0,
+      "name": "single_board_min",
+      "races": 2523,
+      "route": {
+        "선발": "board_min",
+        "우수": "board_min",
+        "특선": "board_min"
+      },
+      "split": "val",
+      "top1": 0.6393182718985335,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_board_min",
+      "races": 1384,
+      "route": {
+        "선발": "board_min",
+        "우수": "board_min",
+        "특선": "board_min"
+      },
+      "split": "test",
+      "top1": 0.634393063583815,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16532374100719424,
+      "exact_lift_pp": 0.0,
+      "name": "single_board_min",
+      "races": 13900,
+      "route": {
+        "선발": "board_min",
+        "우수": "board_min",
+        "특선": "board_min"
+      },
+      "split": "all",
+      "top1": 0.6153956834532374,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16771740218152706,
+      "exact_lift_pp": -0.05003502451716435,
+      "name": "single_pair_mass",
+      "races": 9993,
+      "route": {
+        "선발": "pair_mass",
+        "우수": "pair_mass",
+        "특선": "pair_mass"
+      },
+      "split": "train",
+      "top1": 0.6094265986190334,
+      "top1_lift_pp": 0.27018913239268416
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14704716607213636,
+      "exact_lift_pp": -0.317082837891397,
+      "name": "single_pair_mass",
+      "races": 2523,
+      "route": {
+        "선발": "pair_mass",
+        "우수": "pair_mass",
+        "특선": "pair_mass"
+      },
+      "split": "val",
+      "top1": 0.6413000396353548,
+      "top1_lift_pp": 0.19817677368212383
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17413294797687862,
+      "exact_lift_pp": 0.21676300578034602,
+      "name": "single_pair_mass",
+      "races": 1384,
+      "route": {
+        "선발": "pair_mass",
+        "우수": "pair_mass",
+        "특선": "pair_mass"
+      },
+      "split": "test",
+      "top1": 0.6322254335260116,
+      "top1_lift_pp": -0.21676300578034047
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16460431654676258,
+      "exact_lift_pp": -0.07194244604316613,
+      "name": "single_pair_mass",
+      "races": 13900,
+      "route": {
+        "선발": "pair_mass",
+        "우수": "pair_mass",
+        "특선": "pair_mass"
+      },
+      "split": "all",
+      "top1": 0.6174820143884892,
+      "top1_lift_pp": 0.208633093525179
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16801761232863005,
+      "exact_lift_pp": -0.020014009806865185,
+      "name": "single_first_pair_chain",
+      "races": 9993,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "train",
+      "top1": 0.6116281396977884,
+      "top1_lift_pp": 0.4903432402681873
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14783987316686484,
+      "exact_lift_pp": -0.23781212841854915,
+      "name": "single_first_pair_chain",
+      "races": 2523,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "val",
+      "top1": 0.6424891002774474,
+      "top1_lift_pp": 0.31708283789139147
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17341040462427745,
+      "exact_lift_pp": 0.14450867052022975,
+      "name": "single_first_pair_chain",
+      "races": 1384,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "test",
+      "top1": 0.6394508670520231,
+      "top1_lift_pp": 0.5057803468208166
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16489208633093524,
+      "exact_lift_pp": -0.04316546762589968,
+      "name": "single_first_pair_chain",
+      "races": 13900,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "all",
+      "top1": 0.62,
+      "top1_lift_pp": 0.46043165467626324
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16831782247573301,
+      "exact_lift_pp": 0.010007004903431205,
+      "name": "single_energy_pair",
+      "races": 9993,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "energy_pair",
+        "특선": "energy_pair"
+      },
+      "split": "train",
+      "top1": 0.6081256879815871,
+      "top1_lift_pp": 0.14009806864805352
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.1490289338089576,
+      "exact_lift_pp": -0.11890606420927319,
+      "name": "single_energy_pair",
+      "races": 2523,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "energy_pair",
+        "특선": "energy_pair"
+      },
+      "split": "val",
+      "top1": 0.6397146254458977,
+      "top1_lift_pp": 0.039635354736422546
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_energy_pair",
+      "races": 1384,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "energy_pair",
+        "특선": "energy_pair"
+      },
+      "split": "test",
+      "top1": 0.6351156069364162,
+      "top1_lift_pp": 0.07225433526012459
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1651798561151079,
+      "exact_lift_pp": -0.014388489208633226,
+      "name": "single_energy_pair",
+      "races": 13900,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "energy_pair",
+        "특선": "energy_pair"
+      },
+      "split": "all",
+      "top1": 0.616546762589928,
+      "top1_lift_pp": 0.11510791366906581
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16841789252476733,
+      "exact_lift_pp": 0.02001400980686241,
+      "name": "single_energy_first_pair",
+      "races": 9993,
+      "route": {
+        "선발": "energy_first_pair",
+        "우수": "energy_first_pair",
+        "특선": "energy_first_pair"
+      },
+      "split": "train",
+      "top1": 0.609326528569999,
+      "top1_lift_pp": 0.2601821274892502
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14863258026159334,
+      "exact_lift_pp": -0.1585414189456985,
+      "name": "single_energy_first_pair",
+      "races": 2523,
+      "route": {
+        "선발": "energy_first_pair",
+        "우수": "energy_first_pair",
+        "특선": "energy_first_pair"
+      },
+      "split": "val",
+      "top1": 0.640110978993262,
+      "top1_lift_pp": 0.07927070947284509
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_energy_first_pair",
+      "races": 1384,
+      "route": {
+        "선발": "energy_first_pair",
+        "우수": "energy_first_pair",
+        "특선": "energy_first_pair"
+      },
+      "split": "test",
+      "top1": 0.6351156069364162,
+      "top1_lift_pp": 0.07225433526012459
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1651798561151079,
+      "exact_lift_pp": -0.014388489208633226,
+      "name": "single_energy_first_pair",
+      "races": 13900,
+      "route": {
+        "선발": "energy_first_pair",
+        "우수": "energy_first_pair",
+        "특선": "energy_first_pair"
+      },
+      "split": "all",
+      "top1": 0.6174820143884892,
+      "top1_lift_pp": 0.208633093525179
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16871810267187032,
+      "exact_lift_pp": 0.050035024517161575,
+      "name": "single_energy_position",
+      "races": 9993,
+      "route": {
+        "선발": "energy_position",
+        "우수": "energy_position",
+        "특선": "energy_position"
+      },
+      "split": "train",
+      "top1": 0.6083258280796557,
+      "top1_lift_pp": 0.16011207845492148
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14942528735632185,
+      "exact_lift_pp": -0.07927070947284787,
+      "name": "single_energy_position",
+      "races": 2523,
+      "route": {
+        "선발": "energy_position",
+        "우수": "energy_position",
+        "특선": "energy_position"
+      },
+      "split": "val",
+      "top1": 0.640110978993262,
+      "top1_lift_pp": 0.07927070947284509
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_energy_position",
+      "races": 1384,
+      "route": {
+        "선발": "energy_position",
+        "우수": "energy_position",
+        "특선": "energy_position"
+      },
+      "split": "test",
+      "top1": 0.634393063583815,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1656115107913669,
+      "exact_lift_pp": 0.028776978417266452,
+      "name": "single_energy_position",
+      "races": 13900,
+      "route": {
+        "선발": "energy_position",
+        "우수": "energy_position",
+        "특선": "energy_position"
+      },
+      "split": "all",
+      "top1": 0.6166906474820144,
+      "top1_lift_pp": 0.1294964028777046
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.1682177524266987,
+      "exact_lift_pp": 0.0,
+      "name": "single_xdom_annealing_escape",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_annealing_escape",
+        "우수": "xdom_annealing_escape",
+        "특선": "xdom_annealing_escape"
+      },
+      "split": "train",
+      "top1": 0.6082257580306214,
+      "top1_lift_pp": 0.1501050735514875
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.1490289338089576,
+      "exact_lift_pp": -0.11890606420927319,
+      "name": "single_xdom_annealing_escape",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_annealing_escape",
+        "우수": "xdom_annealing_escape",
+        "특선": "xdom_annealing_escape"
+      },
+      "split": "val",
+      "top1": 0.6413000396353548,
+      "top1_lift_pp": 0.19817677368212383
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_xdom_annealing_escape",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_annealing_escape",
+        "우수": "xdom_annealing_escape",
+        "특선": "xdom_annealing_escape"
+      },
+      "split": "test",
+      "top1": 0.634393063583815,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16510791366906474,
+      "exact_lift_pp": -0.02158273381294984,
+      "name": "single_xdom_annealing_escape",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_annealing_escape",
+        "우수": "xdom_annealing_escape",
+        "특선": "xdom_annealing_escape"
+      },
+      "split": "all",
+      "top1": 0.6168345323741007,
+      "top1_lift_pp": 0.14388489208633226
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16841789252476733,
+      "exact_lift_pp": 0.02001400980686241,
+      "name": "single_xdom_drug_scaffold_hop",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "xdom_drug_scaffold_hop",
+        "특선": "xdom_drug_scaffold_hop"
+      },
+      "split": "train",
+      "top1": 0.6094265986190334,
+      "top1_lift_pp": 0.27018913239268416
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14744351961950058,
+      "exact_lift_pp": -0.2774474831549745,
+      "name": "single_xdom_drug_scaffold_hop",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "xdom_drug_scaffold_hop",
+        "특선": "xdom_drug_scaffold_hop"
+      },
+      "split": "val",
+      "top1": 0.6413000396353548,
+      "top1_lift_pp": 0.19817677368212383
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1755780346820809,
+      "exact_lift_pp": 0.3612716763005758,
+      "name": "single_xdom_drug_scaffold_hop",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "xdom_drug_scaffold_hop",
+        "특선": "xdom_drug_scaffold_hop"
+      },
+      "split": "test",
+      "top1": 0.6322254335260116,
+      "top1_lift_pp": -0.21676300578034047
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16532374100719424,
+      "exact_lift_pp": 0.0,
+      "name": "single_xdom_drug_scaffold_hop",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "xdom_drug_scaffold_hop",
+        "특선": "xdom_drug_scaffold_hop"
+      },
+      "split": "all",
+      "top1": 0.6174820143884892,
+      "top1_lift_pp": 0.208633093525179
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16861803262283598,
+      "exact_lift_pp": 0.040028019613727595,
+      "name": "single_xdom_drug_multi_objective_funnel",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_drug_multi_objective_funnel",
+        "우수": "xdom_drug_multi_objective_funnel",
+        "특선": "xdom_drug_multi_objective_funnel"
+      },
+      "split": "train",
+      "top1": 0.6085259681777244,
+      "top1_lift_pp": 0.18012608826178944
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14863258026159334,
+      "exact_lift_pp": -0.1585414189456985,
+      "name": "single_xdom_drug_multi_objective_funnel",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_drug_multi_objective_funnel",
+        "우수": "xdom_drug_multi_objective_funnel",
+        "특선": "xdom_drug_multi_objective_funnel"
+      },
+      "split": "val",
+      "top1": 0.6409036860879905,
+      "top1_lift_pp": 0.15854141894570128
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_xdom_drug_multi_objective_funnel",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_drug_multi_objective_funnel",
+        "우수": "xdom_drug_multi_objective_funnel",
+        "특선": "xdom_drug_multi_objective_funnel"
+      },
+      "split": "test",
+      "top1": 0.6358381502890174,
+      "top1_lift_pp": 0.14450867052023808
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1653956834532374,
+      "exact_lift_pp": 0.007194244604316613,
+      "name": "single_xdom_drug_multi_objective_funnel",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_drug_multi_objective_funnel",
+        "우수": "xdom_drug_multi_objective_funnel",
+        "특선": "xdom_drug_multi_objective_funnel"
+      },
+      "split": "all",
+      "top1": 0.6171223021582734,
+      "top1_lift_pp": 0.1726618705035987
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16871810267187032,
+      "exact_lift_pp": 0.050035024517161575,
+      "name": "single_xdom_clonal_selection_amplify",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "xdom_clonal_selection_amplify",
+        "특선": "xdom_clonal_selection_amplify"
+      },
+      "split": "train",
+      "top1": 0.6101270889622736,
+      "top1_lift_pp": 0.3402381667167109
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14863258026159334,
+      "exact_lift_pp": -0.1585414189456985,
+      "name": "single_xdom_clonal_selection_amplify",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "xdom_clonal_selection_amplify",
+        "특선": "xdom_clonal_selection_amplify"
+      },
+      "split": "val",
+      "top1": 0.6409036860879905,
+      "top1_lift_pp": 0.15854141894570128
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17485549132947978,
+      "exact_lift_pp": 0.2890173410404623,
+      "name": "single_xdom_clonal_selection_amplify",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "xdom_clonal_selection_amplify",
+        "특선": "xdom_clonal_selection_amplify"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16568345323741007,
+      "exact_lift_pp": 0.035971223021583065,
+      "name": "single_xdom_clonal_selection_amplify",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "xdom_clonal_selection_amplify",
+        "특선": "xdom_clonal_selection_amplify"
+      },
+      "split": "all",
+      "top1": 0.6183453237410071,
+      "top1_lift_pp": 0.29496402877697836
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16891824276993897,
+      "exact_lift_pp": 0.07004903432402676,
+      "name": "single_xdom_ecology_predator_prey",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_ecology_predator_prey",
+        "우수": "xdom_ecology_predator_prey",
+        "특선": "xdom_ecology_predator_prey"
+      },
+      "split": "train",
+      "top1": 0.6096267387171019,
+      "top1_lift_pp": 0.290203142199541
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.1482362267142291,
+      "exact_lift_pp": -0.19817677368212383,
+      "name": "single_xdom_ecology_predator_prey",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_ecology_predator_prey",
+        "우수": "xdom_ecology_predator_prey",
+        "특선": "xdom_ecology_predator_prey"
+      },
+      "split": "val",
+      "top1": 0.6405073325406262,
+      "top1_lift_pp": 0.11890606420926764
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1755780346820809,
+      "exact_lift_pp": 0.3612716763005758,
+      "name": "single_xdom_ecology_predator_prey",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_ecology_predator_prey",
+        "우수": "xdom_ecology_predator_prey",
+        "특선": "xdom_ecology_predator_prey"
+      },
+      "split": "test",
+      "top1": 0.6394508670520231,
+      "top1_lift_pp": 0.5057803468208166
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1658273381294964,
+      "exact_lift_pp": 0.05035971223021629,
+      "name": "single_xdom_ecology_predator_prey",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_ecology_predator_prey",
+        "우수": "xdom_ecology_predator_prey",
+        "특선": "xdom_ecology_predator_prey"
+      },
+      "split": "all",
+      "top1": 0.6182014388489209,
+      "top1_lift_pp": 0.2805755395683507
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.1679175422795957,
+      "exact_lift_pp": -0.030021014710299165,
+      "name": "single_xdom_bandit_explore_exploit",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_bandit_explore_exploit",
+        "우수": "xdom_bandit_explore_exploit",
+        "특선": "xdom_bandit_explore_exploit"
+      },
+      "split": "train",
+      "top1": 0.6085259681777244,
+      "top1_lift_pp": 0.18012608826178944
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14942528735632185,
+      "exact_lift_pp": -0.07927070947284787,
+      "name": "single_xdom_bandit_explore_exploit",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_bandit_explore_exploit",
+        "우수": "xdom_bandit_explore_exploit",
+        "특선": "xdom_bandit_explore_exploit"
+      },
+      "split": "val",
+      "top1": 0.6413000396353548,
+      "top1_lift_pp": 0.19817677368212383
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17341040462427745,
+      "exact_lift_pp": 0.14450867052022975,
+      "name": "single_xdom_bandit_explore_exploit",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_bandit_explore_exploit",
+        "우수": "xdom_bandit_explore_exploit",
+        "특선": "xdom_bandit_explore_exploit"
+      },
+      "split": "test",
+      "top1": 0.6358381502890174,
+      "top1_lift_pp": 0.14450867052023808
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16510791366906474,
+      "exact_lift_pp": -0.02158273381294984,
+      "name": "single_xdom_bandit_explore_exploit",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_bandit_explore_exploit",
+        "우수": "xdom_bandit_explore_exploit",
+        "특선": "xdom_bandit_explore_exploit"
+      },
+      "split": "all",
+      "top1": 0.6171942446043166,
+      "top1_lift_pp": 0.17985611510792365
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.1691183828680076,
+      "exact_lift_pp": 0.09006304413088917,
+      "name": "single_xdom_bayesian_surrogate_focus",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_bayesian_surrogate_focus",
+        "우수": "xdom_bayesian_surrogate_focus",
+        "특선": "xdom_bayesian_surrogate_focus"
+      },
+      "split": "train",
+      "top1": 0.6096267387171019,
+      "top1_lift_pp": 0.290203142199541
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14783987316686484,
+      "exact_lift_pp": -0.23781212841854915,
+      "name": "single_xdom_bayesian_surrogate_focus",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_bayesian_surrogate_focus",
+        "우수": "xdom_bayesian_surrogate_focus",
+        "특선": "xdom_bayesian_surrogate_focus"
+      },
+      "split": "val",
+      "top1": 0.6397146254458977,
+      "top1_lift_pp": 0.039635354736422546
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1755780346820809,
+      "exact_lift_pp": 0.3612716763005758,
+      "name": "single_xdom_bayesian_surrogate_focus",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_bayesian_surrogate_focus",
+        "우수": "xdom_bayesian_surrogate_focus",
+        "특선": "xdom_bayesian_surrogate_focus"
+      },
+      "split": "test",
+      "top1": 0.6372832369942196,
+      "top1_lift_pp": 0.28901734104046506
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16589928057553957,
+      "exact_lift_pp": 0.057553956834532904,
+      "name": "single_xdom_bayesian_surrogate_focus",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_bayesian_surrogate_focus",
+        "우수": "xdom_bayesian_surrogate_focus",
+        "특선": "xdom_bayesian_surrogate_focus"
+      },
+      "split": "all",
+      "top1": 0.6178417266187051,
+      "top1_lift_pp": 0.2446043165467704
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.1691183828680076,
+      "exact_lift_pp": 0.09006304413088917,
+      "name": "single_xdom_bradley_terry_position",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_bradley_terry_position",
+        "우수": "xdom_bradley_terry_position",
+        "특선": "xdom_bradley_terry_position"
+      },
+      "split": "train",
+      "top1": 0.6098268788151706,
+      "top1_lift_pp": 0.310217152006409
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14704716607213636,
+      "exact_lift_pp": -0.317082837891397,
+      "name": "single_xdom_bradley_terry_position",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_bradley_terry_position",
+        "우수": "xdom_bradley_terry_position",
+        "특선": "xdom_bradley_terry_position"
+      },
+      "split": "val",
+      "top1": 0.6389219183511693,
+      "top1_lift_pp": -0.039635354736422546
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17485549132947978,
+      "exact_lift_pp": 0.2890173410404623,
+      "name": "single_xdom_bradley_terry_position",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_bradley_terry_position",
+        "우수": "xdom_bradley_terry_position",
+        "특선": "xdom_bradley_terry_position"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16568345323741007,
+      "exact_lift_pp": 0.035971223021583065,
+      "name": "single_xdom_bradley_terry_position",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_bradley_terry_position",
+        "우수": "xdom_bradley_terry_position",
+        "특선": "xdom_bradley_terry_position"
+      },
+      "split": "all",
+      "top1": 0.6177697841726618,
+      "top1_lift_pp": 0.23741007194244546
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16811768237766436,
+      "exact_lift_pp": -0.01000700490343398,
+      "name": "single_xdom_harville_order_flow",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_harville_order_flow",
+        "우수": "xdom_harville_order_flow",
+        "특선": "xdom_harville_order_flow"
+      },
+      "split": "train",
+      "top1": 0.6095266686680676,
+      "top1_lift_pp": 0.28019613729610704
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14704716607213636,
+      "exact_lift_pp": -0.317082837891397,
+      "name": "single_xdom_harville_order_flow",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_harville_order_flow",
+        "우수": "xdom_harville_order_flow",
+        "특선": "xdom_harville_order_flow"
+      },
+      "split": "val",
+      "top1": 0.6389219183511693,
+      "top1_lift_pp": -0.039635354736422546
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_xdom_harville_order_flow",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_harville_order_flow",
+        "우수": "xdom_harville_order_flow",
+        "특선": "xdom_harville_order_flow"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1647482014388489,
+      "exact_lift_pp": -0.057553956834532904,
+      "name": "single_xdom_harville_order_flow",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_harville_order_flow",
+        "우수": "xdom_harville_order_flow",
+        "특선": "xdom_harville_order_flow"
+      },
+      "split": "all",
+      "top1": 0.6175539568345324,
+      "top1_lift_pp": 0.21582733812950394
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16851796257380167,
+      "exact_lift_pp": 0.03002101471029639,
+      "name": "single_xdom_information_bottleneck",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_information_bottleneck",
+        "우수": "xdom_information_bottleneck",
+        "특선": "xdom_information_bottleneck"
+      },
+      "split": "train",
+      "top1": 0.6091263884719303,
+      "top1_lift_pp": 0.24016811768238222
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14783987316686484,
+      "exact_lift_pp": -0.23781212841854915,
+      "name": "single_xdom_information_bottleneck",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_information_bottleneck",
+        "우수": "xdom_information_bottleneck",
+        "특선": "xdom_information_bottleneck"
+      },
+      "split": "val",
+      "top1": 0.6393182718985335,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17341040462427745,
+      "exact_lift_pp": 0.14450867052022975,
+      "name": "single_xdom_information_bottleneck",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_information_bottleneck",
+        "우수": "xdom_information_bottleneck",
+        "특선": "xdom_information_bottleneck"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.16525179856115108,
+      "exact_lift_pp": -0.007194244604316613,
+      "name": "single_xdom_information_bottleneck",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_information_bottleneck",
+        "우수": "xdom_information_bottleneck",
+        "특선": "xdom_information_bottleneck"
+      },
+      "split": "all",
+      "top1": 0.6173381294964029,
+      "top1_lift_pp": 0.19424460431655133
+    },
+    {
+      "board_exact": 0.1682177524266987,
+      "board_top1": 0.6067247072951065,
+      "exact": 0.16871810267187032,
+      "exact_lift_pp": 0.050035024517161575,
+      "name": "single_xdom_particle_filter_resample",
+      "races": 9993,
+      "route": {
+        "선발": "xdom_particle_filter_resample",
+        "우수": "xdom_particle_filter_resample",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "train",
+      "top1": 0.6080256179325528,
+      "top1_lift_pp": 0.13009106374463064
+    },
+    {
+      "board_exact": 0.15021799445105033,
+      "board_top1": 0.6393182718985335,
+      "exact": 0.14942528735632185,
+      "exact_lift_pp": -0.07927070947284787,
+      "name": "single_xdom_particle_filter_resample",
+      "races": 2523,
+      "route": {
+        "선발": "xdom_particle_filter_resample",
+        "우수": "xdom_particle_filter_resample",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "val",
+      "top1": 0.6413000396353548,
+      "top1_lift_pp": 0.19817677368212383
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_xdom_particle_filter_resample",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_particle_filter_resample",
+        "우수": "xdom_particle_filter_resample",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "test",
+      "top1": 0.6372832369942196,
+      "top1_lift_pp": 0.28901734104046506
+    },
+    {
+      "board_exact": 0.16532374100719424,
+      "board_top1": 0.6153956834532374,
+      "exact": 0.1656115107913669,
+      "exact_lift_pp": 0.028776978417266452,
+      "name": "single_xdom_particle_filter_resample",
+      "races": 13900,
+      "route": {
+        "선발": "xdom_particle_filter_resample",
+        "우수": "xdom_particle_filter_resample",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "all",
+      "top1": 0.6169784172661871,
+      "top1_lift_pp": 0.15827338129497104
+    }
+  ],
+  "selected_policy": "baseline",
+  "selected_top1_policy": "grade_route_train_top1_best",
+  "test_leaderboard": [
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17630057803468208,
+      "exact_lift_pp": 0.43352601156069204,
+      "name": "grade_route_train_top1_best",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "test",
+      "top1": 0.6358381502890174,
+      "top1_lift_pp": 0.14450867052023808
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1755780346820809,
+      "exact_lift_pp": 0.3612716763005758,
+      "name": "single_xdom_ecology_predator_prey",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_ecology_predator_prey",
+        "우수": "xdom_ecology_predator_prey",
+        "특선": "xdom_ecology_predator_prey"
+      },
+      "split": "test",
+      "top1": 0.6394508670520231,
+      "top1_lift_pp": 0.5057803468208166
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1755780346820809,
+      "exact_lift_pp": 0.3612716763005758,
+      "name": "single_xdom_bayesian_surrogate_focus",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_bayesian_surrogate_focus",
+        "우수": "xdom_bayesian_surrogate_focus",
+        "특선": "xdom_bayesian_surrogate_focus"
+      },
+      "split": "test",
+      "top1": 0.6372832369942196,
+      "top1_lift_pp": 0.28901734104046506
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1755780346820809,
+      "exact_lift_pp": 0.3612716763005758,
+      "name": "single_xdom_drug_scaffold_hop",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_drug_scaffold_hop",
+        "우수": "xdom_drug_scaffold_hop",
+        "특선": "xdom_drug_scaffold_hop"
+      },
+      "split": "test",
+      "top1": 0.6322254335260116,
+      "top1_lift_pp": -0.21676300578034047
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17485549132947978,
+      "exact_lift_pp": 0.2890173410404623,
+      "name": "single_xdom_clonal_selection_amplify",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_clonal_selection_amplify",
+        "우수": "xdom_clonal_selection_amplify",
+        "특선": "xdom_clonal_selection_amplify"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17485549132947978,
+      "exact_lift_pp": 0.2890173410404623,
+      "name": "single_xdom_bradley_terry_position",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_bradley_terry_position",
+        "우수": "xdom_bradley_terry_position",
+        "특선": "xdom_bradley_terry_position"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17413294797687862,
+      "exact_lift_pp": 0.21676300578034602,
+      "name": "grade_route_val_top1_oracle",
+      "races": 1384,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "test",
+      "top1": 0.638728323699422,
+      "top1_lift_pp": 0.43352601156070314
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17413294797687862,
+      "exact_lift_pp": 0.21676300578034602,
+      "name": "single_pair_mass",
+      "races": 1384,
+      "route": {
+        "선발": "pair_mass",
+        "우수": "pair_mass",
+        "특선": "pair_mass"
+      },
+      "split": "test",
+      "top1": 0.6322254335260116,
+      "top1_lift_pp": -0.21676300578034047
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17341040462427745,
+      "exact_lift_pp": 0.14450867052022975,
+      "name": "single_first_pair_chain",
+      "races": 1384,
+      "route": {
+        "선발": "first_pair_chain",
+        "우수": "first_pair_chain",
+        "특선": "first_pair_chain"
+      },
+      "split": "test",
+      "top1": 0.6394508670520231,
+      "top1_lift_pp": 0.5057803468208166
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17341040462427745,
+      "exact_lift_pp": 0.14450867052022975,
+      "name": "single_xdom_information_bottleneck",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_information_bottleneck",
+        "우수": "xdom_information_bottleneck",
+        "특선": "xdom_information_bottleneck"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17341040462427745,
+      "exact_lift_pp": 0.14450867052022975,
+      "name": "single_xdom_bandit_explore_exploit",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_bandit_explore_exploit",
+        "우수": "xdom_bandit_explore_exploit",
+        "특선": "xdom_bandit_explore_exploit"
+      },
+      "split": "test",
+      "top1": 0.6358381502890174,
+      "top1_lift_pp": 0.14450867052023808
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_xdom_particle_filter_resample",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_particle_filter_resample",
+        "우수": "xdom_particle_filter_resample",
+        "특선": "xdom_particle_filter_resample"
+      },
+      "split": "test",
+      "top1": 0.6372832369942196,
+      "top1_lift_pp": 0.28901734104046506
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_xdom_harville_order_flow",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_harville_order_flow",
+        "우수": "xdom_harville_order_flow",
+        "특선": "xdom_harville_order_flow"
+      },
+      "split": "test",
+      "top1": 0.6365606936416185,
+      "top1_lift_pp": 0.21676300578035157
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_xdom_drug_multi_objective_funnel",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_drug_multi_objective_funnel",
+        "우수": "xdom_drug_multi_objective_funnel",
+        "특선": "xdom_drug_multi_objective_funnel"
+      },
+      "split": "test",
+      "top1": 0.6358381502890174,
+      "top1_lift_pp": 0.14450867052023808
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.1726878612716763,
+      "exact_lift_pp": 0.07225433526011349,
+      "name": "single_energy_position",
+      "races": 1384,
+      "route": {
+        "선발": "energy_position",
+        "우수": "energy_position",
+        "특선": "energy_position"
+      },
+      "split": "test",
+      "top1": 0.634393063583815,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_energy_pair",
+      "races": 1384,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "energy_pair",
+        "특선": "energy_pair"
+      },
+      "split": "test",
+      "top1": 0.6351156069364162,
+      "top1_lift_pp": 0.07225433526012459
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_energy_first_pair",
+      "races": 1384,
+      "route": {
+        "선발": "energy_first_pair",
+        "우수": "energy_first_pair",
+        "특선": "energy_first_pair"
+      },
+      "split": "test",
+      "top1": 0.6351156069364162,
+      "top1_lift_pp": 0.07225433526012459
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_board_min",
+      "races": 1384,
+      "route": {
+        "선발": "board_min",
+        "우수": "board_min",
+        "특선": "board_min"
+      },
+      "split": "test",
+      "top1": 0.634393063583815,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17196531791907516,
+      "exact_lift_pp": 0.0,
+      "name": "single_xdom_annealing_escape",
+      "races": 1384,
+      "route": {
+        "선발": "xdom_annealing_escape",
+        "우수": "xdom_annealing_escape",
+        "특선": "xdom_annealing_escape"
+      },
+      "split": "test",
+      "top1": 0.634393063583815,
+      "top1_lift_pp": 0.0
+    },
+    {
+      "board_exact": 0.17196531791907516,
+      "board_top1": 0.634393063583815,
+      "exact": 0.17052023121387283,
+      "exact_lift_pp": -0.14450867052023253,
+      "name": "grade_route_val_oracle",
+      "races": 1384,
+      "route": {
+        "선발": "energy_pair",
+        "우수": "board_min",
+        "특선": "energy_position"
+      },
+      "split": "test",
+      "top1": 0.6329479768786127,
+      "top1_lift_pp": -0.14450867052022698
+    }
+  ],
+  "top1_candidate": true,
+  "top_grade_methods": {
+    "test:선발": [
+      {
+        "exact": 0.20959147424511546,
+        "grade": "선발",
+        "method": "xdom_ecology_predator_prey",
+        "races": 563,
+        "split": "test",
+        "top1": 0.6607460035523979
+      },
+      {
+        "exact": 0.20959147424511546,
+        "grade": "선발",
+        "method": "xdom_bradley_terry_position",
+        "races": 563,
+        "split": "test",
+        "top1": 0.6589698046181173
+      },
+      {
+        "exact": 0.20781527531083482,
+        "grade": "선발",
+        "method": "xdom_clonal_selection_amplify",
+        "races": 563,
+        "split": "test",
+        "top1": 0.655417406749556
+      },
+      {
+        "exact": 0.20781527531083482,
+        "grade": "선발",
+        "method": "xdom_bayesian_surrogate_focus",
+        "races": 563,
+        "split": "test",
+        "top1": 0.6536412078152753
+      },
+      {
+        "exact": 0.20603907637655416,
+        "grade": "선발",
+        "method": "energy_position",
+        "races": 563,
+        "split": "test",
+        "top1": 0.655417406749556
+      }
+    ],
+    "test:우수": [
+      {
+        "exact": 0.17287234042553193,
+        "grade": "우수",
+        "method": "xdom_drug_scaffold_hop",
+        "races": 376,
+        "split": "test",
+        "top1": 0.5718085106382979
+      },
+      {
+        "exact": 0.1702127659574468,
+        "grade": "우수",
+        "method": "pair_mass",
+        "races": 376,
+        "split": "test",
+        "top1": 0.5718085106382979
+      },
+      {
+        "exact": 0.16489361702127658,
+        "grade": "우수",
+        "method": "first_pair_chain",
+        "races": 376,
+        "split": "test",
+        "top1": 0.5691489361702128
+      },
+      {
+        "exact": 0.1595744680851064,
+        "grade": "우수",
+        "method": "xdom_bayesian_surrogate_focus",
+        "races": 376,
+        "split": "test",
+        "top1": 0.5771276595744681
+      },
+      {
+        "exact": 0.15691489361702127,
+        "grade": "우수",
+        "method": "energy_pair",
+        "races": 376,
+        "split": "test",
+        "top1": 0.574468085106383
+      }
+    ],
+    "test:특선": [
+      {
+        "exact": 0.15056179775280898,
+        "grade": "특선",
+        "method": "xdom_bandit_explore_exploit",
+        "races": 445,
+        "split": "test",
+        "top1": 0.6651685393258427
+      },
+      {
+        "exact": 0.15056179775280898,
+        "grade": "특선",
+        "method": "xdom_information_bottleneck",
+        "races": 445,
+        "split": "test",
+        "top1": 0.6651685393258427
+      },
+      {
+        "exact": 0.15056179775280898,
+        "grade": "특선",
+        "method": "board_min",
+        "races": 445,
+        "split": "test",
+        "top1": 0.6629213483146067
+      },
+      {
+        "exact": 0.14831460674157304,
+        "grade": "특선",
+        "method": "xdom_clonal_selection_amplify",
+        "races": 445,
+        "split": "test",
+        "top1": 0.6674157303370787
+      },
+      {
+        "exact": 0.14831460674157304,
+        "grade": "특선",
+        "method": "xdom_ecology_predator_prey",
+        "races": 445,
+        "split": "test",
+        "top1": 0.6674157303370787
+      }
+    ],
+    "train:선발": [
+      {
+        "exact": 0.1422087745839637,
+        "grade": "선발",
+        "method": "xdom_drug_scaffold_hop",
+        "races": 3966,
+        "split": "train",
+        "top1": 0.5307614725163893
+      },
+      {
+        "exact": 0.14170448814926878,
+        "grade": "선발",
+        "method": "xdom_bayesian_surrogate_focus",
+        "races": 3966,
+        "split": "train",
+        "top1": 0.5310136157337367
+      },
+      {
+        "exact": 0.14120020171457387,
+        "grade": "선발",
+        "method": "xdom_clonal_selection_amplify",
+        "races": 3966,
+        "split": "train",
+        "top1": 0.5317700453857791
+      },
+      {
+        "exact": 0.14094805849722641,
+        "grade": "선발",
+        "method": "xdom_bradley_terry_position",
+        "races": 3966,
+        "split": "train",
+        "top1": 0.5315179021684316
+      },
+      {
+        "exact": 0.14019162884518407,
+        "grade": "선발",
+        "method": "pair_mass",
+        "races": 3966,
+        "split": "train",
+        "top1": 0.5307614725163893
+      }
+    ],
+    "train:우수": [
+      {
+        "exact": 0.1506086956521739,
+        "grade": "우수",
+        "method": "board_min",
+        "races": 2875,
+        "split": "train",
+        "top1": 0.6006956521739131
+      },
+      {
+        "exact": 0.1502608695652174,
+        "grade": "우수",
+        "method": "xdom_particle_filter_resample",
+        "races": 2875,
+        "split": "train",
+        "top1": 0.6013913043478261
+      },
+      {
+        "exact": 0.14991304347826087,
+        "grade": "우수",
+        "method": "first_pair_chain",
+        "races": 2875,
+        "split": "train",
+        "top1": 0.607304347826087
+      },
+      {
+        "exact": 0.14991304347826087,
+        "grade": "우수",
+        "method": "energy_first_pair",
+        "races": 2875,
+        "split": "train",
+        "top1": 0.6017391304347826
+      },
+      {
+        "exact": 0.14956521739130435,
+        "grade": "우수",
+        "method": "xdom_drug_multi_objective_funnel",
+        "races": 2875,
+        "split": "train",
+        "top1": 0.6003478260869565
+      }
+    ],
+    "train:특선": [
+      {
+        "exact": 0.22461928934010153,
+        "grade": "특선",
+        "method": "energy_position",
+        "races": 3152,
+        "split": "train",
+        "top1": 0.7151015228426396
+      },
+      {
+        "exact": 0.2243020304568528,
+        "grade": "특선",
+        "method": "xdom_drug_multi_objective_funnel",
+        "races": 3152,
+        "split": "train",
+        "top1": 0.7147842639593909
+      },
+      {
+        "exact": 0.2243020304568528,
+        "grade": "특선",
+        "method": "xdom_particle_filter_resample",
+        "races": 3152,
+        "split": "train",
+        "top1": 0.7135152284263959
+      },
+      {
+        "exact": 0.22398477157360405,
+        "grade": "특선",
+        "method": "xdom_ecology_predator_prey",
+        "races": 3152,
+        "split": "train",
+        "top1": 0.7160532994923858
+      },
+      {
+        "exact": 0.22398477157360405,
+        "grade": "특선",
+        "method": "xdom_bradley_terry_position",
+        "races": 3152,
+        "split": "train",
+        "top1": 0.7154187817258884
+      }
+    ],
+    "val:선발": [
+      {
+        "exact": 0.17319098457888493,
+        "grade": "선발",
+        "method": "energy_pair",
+        "races": 843,
+        "split": "val",
+        "top1": 0.66073546856465
+      },
+      {
+        "exact": 0.17319098457888493,
+        "grade": "선발",
+        "method": "board_min",
+        "races": 843,
+        "split": "val",
+        "top1": 0.6595492289442467
+      },
+      {
+        "exact": 0.17319098457888493,
+        "grade": "선발",
+        "method": "energy_first_pair",
+        "races": 843,
+        "split": "val",
+        "top1": 0.6595492289442467
+      },
+      {
+        "exact": 0.17200474495848161,
+        "grade": "선발",
+        "method": "xdom_bandit_explore_exploit",
+        "races": 843,
+        "split": "val",
+        "top1": 0.66073546856465
+      },
+      {
+        "exact": 0.1708185053380783,
+        "grade": "선발",
+        "method": "energy_position",
+        "races": 843,
+        "split": "val",
+        "top1": 0.66073546856465
+      }
+    ],
+    "val:우수": [
+      {
+        "exact": 0.1261904761904762,
+        "grade": "우수",
+        "method": "board_min",
+        "races": 840,
+        "split": "val",
+        "top1": 0.5845238095238096
+      },
+      {
+        "exact": 0.12380952380952381,
+        "grade": "우수",
+        "method": "xdom_annealing_escape",
+        "races": 840,
+        "split": "val",
+        "top1": 0.5892857142857143
+      },
+      {
+        "exact": 0.12380952380952381,
+        "grade": "우수",
+        "method": "xdom_drug_multi_objective_funnel",
+        "races": 840,
+        "split": "val",
+        "top1": 0.5880952380952381
+      },
+      {
+        "exact": 0.12380952380952381,
+        "grade": "우수",
+        "method": "xdom_bandit_explore_exploit",
+        "races": 840,
+        "split": "val",
+        "top1": 0.5880952380952381
+      },
+      {
+        "exact": 0.12380952380952381,
+        "grade": "우수",
+        "method": "xdom_particle_filter_resample",
+        "races": 840,
+        "split": "val",
+        "top1": 0.5880952380952381
+      }
+    ],
+    "val:특선": [
+      {
+        "exact": 0.15476190476190477,
+        "grade": "특선",
+        "method": "energy_position",
+        "races": 840,
+        "split": "val",
+        "top1": 0.6726190476190477
+      },
+      {
+        "exact": 0.15357142857142858,
+        "grade": "특선",
+        "method": "xdom_particle_filter_resample",
+        "races": 840,
+        "split": "val",
+        "top1": 0.6761904761904762
+      },
+      {
+        "exact": 0.15357142857142858,
+        "grade": "특선",
+        "method": "xdom_drug_scaffold_hop",
+        "races": 840,
+        "split": "val",
+        "top1": 0.675
+      },
+      {
+        "exact": 0.15357142857142858,
+        "grade": "특선",
+        "method": "xdom_clonal_selection_amplify",
+        "races": 840,
+        "split": "val",
+        "top1": 0.6738095238095239
+      },
+      {
+        "exact": 0.15357142857142858,
+        "grade": "특선",
+        "method": "xdom_ecology_predator_prey",
+        "races": 840,
+        "split": "val",
+        "top1": 0.6738095238095239
+      }
+    ]
+  },
+  "train_route": {
+    "선발": "xdom_drug_scaffold_hop",
+    "우수": "board_min",
+    "특선": "energy_position"
+  },
+  "train_top1_route": {
+    "선발": "xdom_clonal_selection_amplify",
+    "우수": "first_pair_chain",
+    "특선": "first_pair_chain"
+  },
+  "val_oracle_route": {
+    "선발": "energy_pair",
+    "우수": "board_min",
+    "특선": "energy_position"
+  },
+  "val_top1_oracle_route": {
+    "선발": "first_pair_chain",
+    "우수": "first_pair_chain",
+    "특선": "xdom_particle_filter_resample"
+  }
+}

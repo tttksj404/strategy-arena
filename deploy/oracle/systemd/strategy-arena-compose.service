@@ -1,0 +1,16 @@
+[Unit]
+Description=Strategy Arena Oracle Docker Compose stack
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/strategy-arena
+RemainAfterExit=yes
+ExecStart=/usr/bin/docker compose -f deploy/oracle/docker-compose.yml --env-file deploy/oracle/.env.oracle up -d --build
+ExecStop=/usr/bin/docker compose -f deploy/oracle/docker-compose.yml --env-file deploy/oracle/.env.oracle down
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target

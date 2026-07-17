@@ -1,49 +1,49 @@
-# Strategy Arena
+# RaceLens Backend and Models
 
-Crypto-quant strategy builder and backtester for Binance public-market-data experiments.
+RaceLens는 경륜·경마 공식 데이터, 모델 산출물, 앱 세션 데이터를 제공하는 Flask 백엔드와 모바일 앱 저장소입니다. 사용자에게 표시되는 표현은 "예측 픽"이 아니라 경주 데이터 기반의 적중률 예측 분석입니다.
 
-This repository is organized as a portfolio project for finance-domain data analysis, backtesting, and risk-aware validation. It is not positioned as a live trading system. The main goal is to show how a strategy idea can be represented, tested, compared, and explained before any real capital decision.
+## 안전 고지
 
-## Portfolio Positioning
+RaceLens의 적중률 예측 분석은 수익을 보장하지 않습니다. 경륜·경마 OOS 검증에서 마감 배당 시장은 공제율 영향으로 평균 -EV가 확인됩니다. RaceLens는 정보 제공 및 검증 가능한 분석 보조 도구이며, 만 19세 이상 이용과 책임 있는 이용 원칙을 전제로 합니다.
 
-Strategy Arena maps well to requirements seen in financial IT, digital banking, data analysis, and AI/quant-adjacent roles:
+## 구성
 
-- **Python data workflow**: strategy rules, simulation logic, and result calculations.
-- **Financial domain understanding**: signals, positions, returns, and backtest interpretation.
-- **Risk-aware validation**: separates experiment results from real trading claims.
-- **User-facing product design**: exposes strategy composition and results through a simple web interface.
+- `app.py`: RaceLens API 서버와 legal 웹 루트
+- `engine.py`: 경륜·경마 모델 분석 로직
+- `datastore.py`: 앱 세션, 무료 분석 quota, 영수증 검증 결과, 익명 UX 이벤트 저장
+- `mobile/`: Play Store/App Store 제출용 Expo 앱
+- `templates/`: 심사자가 도메인 루트에서 확인하는 웹 UI
+- `tests/`: 서버 데이터 계층 및 정책 회귀 테스트
 
-## Core Components
-
-| File | Role |
-| --- | --- |
-| `app.py` | Web app entrypoint and route layer |
-| `engine.py` | Strategy construction, simulation, and backtest logic |
-| `templates/` | Browser-facing UI templates |
-| `START_HERE.txt` | Local usage guide |
-
-For a project-specific interaction map that follows a strategy idea from UI input through the simulation engine, metrics, and risk-aware interpretation, see [docs/LEARNING_GUIDE.md](docs/LEARNING_GUIDE.md). The current research contract is in [docs/RESEARCH_GUARDRAILS.md](docs/RESEARCH_GUARDRAILS.md).
-
-## Why This Matters for Hiring
-
-Companies hiring for digital finance and data roles usually look for more than model usage. They expect candidates to understand data quality, reproducible evaluation, system boundaries, and business risk. This project is meant to demonstrate that habit:
-
-1. Define a strategy idea as data and rules.
-2. Run a reproducible simulation.
-3. Compare outcomes with clear assumptions.
-4. Treat results as evidence for review, not as investment advice.
-
-## Run
+## 실행
 
 ```bash
-python -m pip install -r requirements.txt
-python app.py
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe app.py
 ```
 
-Then open the local URL printed by the app.
+실시간 공식 데이터가 필요한 환경에서는 `DATAGOKR_SERVICE_KEY`를 환경변수로 주입합니다. 키가 없거나 API가 실패하면 앱은 검증 전 데이터를 표시하지 않고 안전한 대기 상태를 반환합니다.
 
-## Limitations
+## 배포
 
-- Backtest output is for experiment and education only.
-- It does not execute live orders.
-- Real deployment would require market-data quality controls, transaction-cost modeling, compliance review, monitoring, and strict capital-risk guardrails.
+Oracle Korea 리전 배포를 기본 경로로 사용합니다.
+
+```bash
+cp deploy/oracle/.env.oracle.example deploy/oracle/.env.oracle
+# deploy/oracle/.env.oracle에 DATAGOKR_SERVICE_KEY 설정
+docker compose -f deploy/oracle/docker-compose.yml --env-file deploy/oracle/.env.oracle up -d --build
+```
+
+상세 이전 절차는 `docs/oracle_migration_runbook.md`를 참고합니다. Render는 실시간 배당 운영 경로로 사용하지 않습니다.
+
+## 검증
+
+```bash
+.venv\Scripts\python.exe -m pytest tests/test_app_data_layer.py -q
+cd mobile
+npm run typecheck
+npm run qa:mobile
+```
+
+스토어 제출 전에는 모바일 `release.env.example`을 기반으로 실제 HTTPS API, 개인정보처리방침, 이용약관, 계정 삭제 URL, 지원 이메일, billing mode를 주입해야 합니다. placeholder 값은 제출 readiness 게이트에서 차단됩니다.

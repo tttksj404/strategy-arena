@@ -1,0 +1,6 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8010
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [03/Jul/2026 15:15:47] "GET /api/live-decision?sport=keirin&date=2026-07-03&meet=광명&race_no=5 HTTP/1.1" 200 -

@@ -1,0 +1,159 @@
+{
+  "method": "official_pre_start_complete_market_board_runtime_gate",
+  "baseline": "kra_dual_phase_v4_history",
+  "minimum_absolute_top1_lift_pp": 5.0,
+  "folds": [
+    {
+      "name": "2024H2",
+      "baseline": {
+        "races": 1219,
+        "top1": 0.24856439704675964,
+        "top3": 0.5758818703855619,
+        "race_logloss": 2.1048113898830088
+      },
+      "market": {
+        "races": 1219,
+        "top1": 0.35192780968006565,
+        "top3": 0.667760459392945,
+        "race_logloss": 1.8400588169376673
+      },
+      "top1_lift_pp": 10.3363412633306,
+      "top3_lift_pp": 9.187858900738311,
+      "logloss_delta": -0.2647525729453415,
+      "bootstrap": {
+        "mean_pp": 10.336341263330599,
+        "ci95_low_pp": 7.793273174733388,
+        "ci95_high_pp": 12.961443806398687,
+        "probability_positive": 1.0
+      }
+    },
+    {
+      "name": "2025H1",
+      "baseline": {
+        "races": 1241,
+        "top1": 0.2989524576954069,
+        "top3": 0.5882352941176471,
+        "race_logloss": 2.0301794287013273
+      },
+      "market": {
+        "races": 1241,
+        "top1": 0.38033843674456086,
+        "top3": 0.6889605157131345,
+        "race_logloss": 1.807876002588104
+      },
+      "top1_lift_pp": 8.138597904915395,
+      "top3_lift_pp": 10.072522159548747,
+      "logloss_delta": -0.2223034261132233,
+      "bootstrap": {
+        "mean_pp": 8.138597904915391,
+        "ci95_low_pp": 5.47945205479452,
+        "ci95_high_pp": 10.797743755036262,
+        "probability_positive": 1.0
+      }
+    },
+    {
+      "name": "2025H2",
+      "baseline": {
+        "races": 1216,
+        "top1": 0.29769736842105265,
+        "top3": 0.6200657894736842,
+        "race_logloss": 1.9759878804860649
+      },
+      "market": {
+        "races": 1216,
+        "top1": 0.38651315789473684,
+        "top3": 0.7261513157894737,
+        "race_logloss": 1.7516979866728126
+      },
+      "top1_lift_pp": 8.881578947368418,
+      "top3_lift_pp": 10.608552631578949,
+      "logloss_delta": -0.22428989381325226,
+      "bootstrap": {
+        "mean_pp": 8.881578947368421,
+        "ci95_low_pp": 6.167763157894736,
+        "ci95_high_pp": 11.597450657894708,
+        "probability_positive": 1.0
+      }
+    },
+    {
+      "name": "2026_PRE_FRESH",
+      "baseline": {
+        "races": 1189,
+        "top1": 0.2926829268292683,
+        "top3": 0.6181665264928511,
+        "race_logloss": 1.9713443999737097
+      },
+      "market": {
+        "races": 1189,
+        "top1": 0.3809924306139613,
+        "top3": 0.7098402018502944,
+        "race_logloss": 1.7702047802583731
+      },
+      "top1_lift_pp": 8.830950378469304,
+      "top3_lift_pp": 9.167367535744331,
+      "logloss_delta": -0.20113961971533656,
+      "bootstrap": {
+        "mean_pp": 8.830950378469302,
+        "ci95_low_pp": 6.055508830950378,
+        "ci95_high_pp": 11.606391925988225,
+        "probability_positive": 1.0
+      }
+    }
+  ],
+  "pooled": {
+    "baseline": {
+      "races": 4865,
+      "top1": 0.28448098663926,
+      "top3": 0.6004110996916753,
+      "race_logloss": 2.0209983156797087
+    },
+    "market": {
+      "races": 4865,
+      "top1": 0.37492291880781087,
+      "top3": 0.6980472764645427,
+      "race_logloss": 1.7927189469430276
+    },
+    "top1_lift_pp": 9.044193216855085,
+    "top3_lift_pp": 9.76361767728674,
+    "logloss_delta": -0.2282793687366811,
+    "bootstrap": {
+      "mean_pp": 9.044193216855087,
+      "ci95_low_pp": 7.7081192189105865,
+      "ci95_high_pp": 10.38026721479959,
+      "probability_positive": 1.0
+    }
+  },
+  "observed_holdout": {
+    "from": "20260622",
+    "baseline": {
+      "races": 134,
+      "top1": 0.31343283582089554,
+      "top3": 0.664179104477612,
+      "race_logloss": 1.913506339445693
+    },
+    "market": {
+      "races": 134,
+      "top1": 0.39552238805970147,
+      "top3": 0.7089552238805971,
+      "race_logloss": 1.7011436902597352
+    },
+    "top1_lift_pp": 8.208955223880594,
+    "top3_lift_pp": 4.477611940298509,
+    "logloss_delta": -0.21236264918595782,
+    "bootstrap": {
+      "mean_pp": 8.208955223880597,
+      "ci95_low_pp": 0.7462686567164178,
+      "ci95_high_pp": 16.417910447761194,
+      "probability_positive": 0.9776
+    }
+  },
+  "runtime_safety_contract": {
+    "official_start_time_required": true,
+    "complete_positive_odds_board_required": true,
+    "race_result_must_be_absent": true,
+    "snapshot_must_precede_start": true
+  },
+  "historical_odds_are_retrospective_closing_values": true,
+  "fresh_timestamped_forward_validation_required": true,
+  "promotion_pass": false
+}
