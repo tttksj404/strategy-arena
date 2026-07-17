@@ -669,7 +669,7 @@ _PREWARM_STARTED = False
 
 _PREDICT_LOCK = threading.Lock()
 _LIVE_DECISION_WORK_LOCK = threading.RLock()
-_LIVE_DECISION_EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix="live-decision")
+_LIVE_DECISION_EXECUTOR = ThreadPoolExecutor(max_workers=3, thread_name_prefix="live-decision")
 _LIVE_DECISION_FUTURES = {}
 _LIVE_DECISION_RESULT_CACHE = {}
 
@@ -848,6 +848,12 @@ def _run_live_decision_with_budget(sport, ymd, meet, race_no, key):
         _LIVE_DECISION_FUTURES[task_key] = future
         future.add_done_callback(lambda completed: _cache_live_decision_result(task_key, completed))
     return None, "pending"
+
+
+def _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, key):
+    """앱 진입 때 모든 경기 판단을 큐에 올려, 선택 시 캐시 응답을 제공한다."""
+    for race_no in race_nos:
+        _run_live_decision_with_budget(sport, ymd, meet, race_no, key)
 
 
 def _live_decision_pending_response(session, data_layer, ymd, pending_reason):
@@ -1485,6 +1491,33 @@ def api_live_decision():
     result["app_session"] = session
     result["data_layer"] = data_layer
     return jsonify(result)
+
+
+@app.route("/api/live-decisions/preload", methods=["POST"])
+def api_live_decisions_preload():
+    """선택 전 전체 경기를 제한된 워커로 예열한다."""
+    f = request.values
+    sport, meet = _request_race_context(f.get("sport") or "keirin", f.get("meet") or "광명")
+    ymd = _norm_day(f.get("date") or "")
+    if not ymd:
+        return jsonify({"ok": False, "message": "유효한 날짜 필요"}), 400
+    try:
+        requested_count = int(f.get("race_count") or _race_count(sport, meet))
+    except ValueError:
+        requested_count = _race_count(sport, meet)
+    race_count = max(1, min(_race_count(sport, meet), requested_count))
+    priority_race_no = str(f.get("priority_race_no") or "").strip()
+    race_nos = tuple(str(number) for number in range(1, race_count + 1))
+    if priority_race_no in race_nos:
+        race_nos = (priority_race_no,) + tuple(number for number in race_nos if number != priority_race_no)
+    _enqueue_live_decision_prewarm(sport, ymd, meet, race_nos, _get_key())
+    return jsonify({
+        "ok": True,
+        "status": "warming",
+        "race_date": ymd,
+        "race_nos": [int(number) for number in race_nos],
+        "poll_delay_ms": 750,
+    }), 202
 
 
 def _compute_base_prediction(sport, ymd, meet, race_no, key, live_decision=False):

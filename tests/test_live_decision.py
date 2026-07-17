@@ -7,7 +7,7 @@ import sys
 import tempfile
 import time
 import unittest
-from unittest.mock import patch
+from unittest.mock import ANY, patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -147,6 +147,18 @@ class LiveDecisionTestCase(unittest.TestCase):
         d = r.get_json()
         self.assertFalse(d["ok"])
         self.assertEqual(d["decision"], "hold")
+
+    def test_preload_endpoint_queues_every_race_before_user_selects_one(self):
+        with patch.object(app_module, "_enqueue_live_decision_prewarm") as enqueue:
+            response = self.client.post(
+                "/api/live-decisions/preload?sport=keirin&date=2026-07-17&meet=광명&race_count=3&priority_race_no=3",
+            )
+
+        payload = response.get_json()
+        self.assertEqual(response.status_code, 202)
+        self.assertTrue(payload["ok"])
+        self.assertEqual(payload["race_nos"], [3, 1, 2])
+        enqueue.assert_called_once_with("keirin", "2026-07-17", "광명", ("3", "1", "2"), ANY)
 
     def test_live_decision_never_uses_demo_racers_without_api_key(self):
         with patch.dict(os.environ, {"DATAGOKR_SERVICE_KEY": ""}, clear=False), \
