@@ -101,7 +101,10 @@ def fetch_result_popup(stnd_yr, ymd, meet, race_no):
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
-    for delta in [0, -1, 1, -2, 2]:
+    # A completed popup from another TMS round is indistinguishable from a
+    # current result once it is stored.  Do not fall back across rounds unless
+    # Kcycle exposes a verified date/round value in the popup response.
+    for delta in [0]:
         url = f"https://{engine.KCYCLE_IP}/race/result/general/popup/{year}/{tms + delta}/{day}/{meet_code}/{rno}"
         try:
             req = urllib.request.Request(

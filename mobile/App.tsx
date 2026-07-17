@@ -8,6 +8,7 @@ import { BottomTabs } from './src/components/BottomTabs';
 import { FadeInUp } from './src/components/FadeInUp';
 import { PressableScale } from './src/components/PressableScale';
 import { fetchAppSession, fetchRaceDates, fetchRaceDecision, hostedPublicPro, preloadRaceDecisions } from './src/services/raceApi';
+import { shouldKeepVisibleDecision } from './src/services/decisionRefresh';
 import { isRewardedAdsEnabled } from './src/services/monetization';
 import { isRewardedAdPreview, showRewardedAd } from './src/services/rewardedAds';
 import { availableRaceDates, defaultRaceCount, defaultRaceVenue, nearestRaceDate, todayInKorea } from './src/services/raceSchedule';
@@ -95,6 +96,10 @@ export default function App() {
     raceNo
   }), [analysisDate, meet, raceNo, sport]);
 
+  function applyDecision(next: RaceDecision) {
+    setDecision((previous) => shouldKeepVisibleDecision(previous, next) ? previous : next);
+  }
+
   function runAnalyze() {
     const scheduledDate = nearestRaceDate(sport, meet, analysisDate, raceSchedule);
     if (scheduledDate !== analysisDate) {
@@ -175,7 +180,7 @@ export default function App() {
     setError('');
     try {
       const next = await fetchRaceDecision(params);
-      setDecision(next);
+      applyDecision(next);
       setAppSession(next.appSession);
       setSessionDataLayer(next.dataLayer);
       if (next.dataLayer.ready) {
@@ -219,7 +224,7 @@ export default function App() {
     const timerId = setTimeout(() => {
       void fetchRaceDecision(params).then((next) => {
         if (cancelled) return;
-        setDecision(next);
+        applyDecision(next);
         setAppSession(next.appSession);
         setSessionDataLayer(next.dataLayer);
         trackUxEvent('live_odds_refresh', {

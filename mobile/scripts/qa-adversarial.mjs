@@ -6,8 +6,10 @@ import { extname, join, resolve } from 'node:path';
 import { chromium } from 'playwright';
 import { exitIfFailed, spawnQa } from './qa-utils.mjs';
 
-const reportPath = resolve('..', 'runs', 'qa_adversarial_report.md');
 const artifactRoot = mkdtempSync(join(tmpdir(), 'racelens-qa-adversarial-'));
+const reportPath = process.env.RACELENS_QA_CASE
+  ? join(artifactRoot, 'qa_adversarial_report.md')
+  : resolve('..', 'runs', 'qa_adversarial_report.md');
 const distRoot = mkdtempSync(join(tmpdir(), 'racelens-qa-adversarial-dist-'));
 
 async function freePort() {
@@ -140,6 +142,24 @@ function readyDecision(overrides = {}) {
   };
 }
 
+function pendingDecision(appSession) {
+  return readyDecision({
+    app_session: appSession,
+    market_odds: [],
+    market_risk: {
+      level: 'caution',
+      message: '공식 출전표를 다시 확인하고 있습니다.',
+      title: '공식 출전표 확인 중'
+    },
+    market_used: false,
+    participants: [],
+    picks: [],
+    rows: [],
+    snapshot_phase: 'pending',
+    status: 'hold'
+  });
+}
+
 function participant(number, name) {
   return {
     number,
@@ -209,6 +229,11 @@ function handleApi(request, response) {
     writeJson(response, 200, activeCase?.appSessionPayload ?? defaultAppSession(3));
     return;
   }
+  if (request.url?.startsWith('/api/live-decisions/preload')) {
+    response.writeHead(204, headers());
+    response.end();
+    return;
+  }
   if (!request.url?.startsWith('/api/live-decision')) {
     writeJson(response, 404, { error: 'not_found' });
     return;
@@ -225,6 +250,10 @@ function handleApi(request, response) {
   }
   if (activeCase.kind === 'timeout') {
     setTimeout(() => writeJson(response, 200, readyDecision()), 15000);
+    return;
+  }
+  if (activeCase.kind === 'pending-after-ready' && activeCase.liveRequests > 1) {
+    writeJson(response, 200, pendingDecision(activeCase.payload.app_session));
     return;
   }
   if (activeCase.kind === 'flap' && activeCase.liveRequests === 1) {
@@ -570,13 +599,50 @@ const cases = [
       await page.getByText('예측 순서 1-2-3').waitFor({ timeout: 8000 });
       if (mock.liveRequests !== 1) throw new Error(`Expected one live-decision request, got ${mock.liveRequests}`);
     }
+  },
+  {
+    name: '13-keep-analysis-during-pending-refresh',
+    viewport: { width: 390, height: 844 },
+    mock: {
+      kind: 'pending-after-ready',
+      payload: readyDecision({
+        app_session: {
+          user_id: 'usr_pro',
+          device_id: 'dev_pro',
+          entitlement: 'pro',
+          free_analysis_limit: 3,
+          free_analysis_used: 0,
+          free_analysis_remaining: 3,
+          rewarded_analysis_credits: 0
+        },
+        poll_delay_ms: 3000
+      })
+    },
+    finding: '자동 갱신의 보류 응답이 기존 분석 카드와 후보 순서를 지우지 않음',
+    fix: '동일 경주의 pending/failed 응답은 이전 완성 분석을 유지',
+    flow: async (page, mock) => {
+      await requestAnalysis(page);
+      await page.getByTestId('prediction-podium').waitFor({ timeout: 8000 }).catch(async () => {
+        throw new Error(`Initial analysis did not render: ${(await page.locator('body').innerText()).slice(0, 800)}`);
+      });
+      await page.waitForTimeout(3600);
+      await page.getByTestId('prediction-podium').waitFor({ timeout: 2000 });
+      if (await page.getByTestId('analysis-pending-state').count() > 0) {
+        throw new Error('Pending refresh replaced the visible analysis');
+      }
+      if (mock.liveRequests < 2) throw new Error('Expected an automatic refresh request');
+    }
   }
 ];
 
 const browser = await chromium.launch();
 const results = [];
+const selectedCases = process.env.RACELENS_QA_CASE
+  ? cases.filter((item) => item.name.startsWith(process.env.RACELENS_QA_CASE))
+  : cases;
+if (selectedCases.length === 0) throw new Error('No adversarial QA case matched RACELENS_QA_CASE');
 try {
-  for (const item of cases) {
+  for (const item of selectedCases) {
     results.push(await runCase(browser, item));
   }
 } finally {
@@ -605,4 +671,4 @@ writeFileSync(reportPath, [
   ''
 ].join('\n'));
 
-console.log(`ADVERSARIAL=12/12 PASS report=${reportPath}`);
+console.log(`ADVERSARIAL=${results.length}/${results.length} PASS report=${reportPath}`);

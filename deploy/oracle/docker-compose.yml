@@ -116,6 +116,22 @@ services:
       disable: true
     command: ["sh", "-c", "while true; do scripts/run_prediction_search_loop.sh >> /app/logs/search-loop.log 2>&1 || true; sleep $${SEARCH_LOOP_INTERVAL_SEC:-30}; done"]
 
+  outcome-collector:
+    build:
+      context: ../..
+    env_file:
+      - .env.oracle
+    environment:
+      KCYCLE_RESULT_COLLECTION_START_HOUR: "${KCYCLE_RESULT_COLLECTION_START_HOUR:-18}"
+      KCYCLE_RESULT_COLLECTION_INTERVAL_SEC: "${KCYCLE_RESULT_COLLECTION_INTERVAL_SEC:-900}"
+    restart: unless-stopped
+    volumes:
+      - strategy_data:/app/data
+      - strategy_logs:/app/logs
+    healthcheck:
+      disable: true
+    command: ["sh", "-ec", "while true; do sh scripts/run_kcycle_result_collector_if_complete_window.sh >> /app/logs/outcome-collector.log 2>&1; sleep $${KCYCLE_RESULT_COLLECTION_INTERVAL_SEC:-900}; done"]
+
 volumes:
   strategy_data:
   strategy_logs:
