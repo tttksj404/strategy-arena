@@ -93,9 +93,11 @@ def test_live_decision_adds_ensemble_payload_when_board_exists():
 
     with patch.dict(os.environ, {"KCYCLE_ENABLED": "1"}, clear=False), \
          patch.object(engine, "fetch_kcycle_odds_with_ts", return_value=(None, "2999-01-01T10:00:00")), \
-         patch.object(engine, "fetch_kcycle_trifecta_board_with_ts", return_value=(board, "2999-01-01T10:00:00")):
+         patch.object(engine, "fetch_kcycle_trifecta_board_with_ts", return_value=(board, "2999-01-01T10:00:00")), \
+         patch.object(engine, "save_kcycle_trifecta_snapshot", return_value=True) as save_snapshot:
         decision = engine.compute_live_decision("keirin", "2999-01-01", "광명", "1", base_model_out=base_model)
 
+    save_snapshot.assert_called_once()
     ensemble = decision["trifecta_ensemble"]
     assert ensemble["source"] == "ensemble_v1"
     assert ensemble["pick"] == engine.kcycle_ensemble_trifecta_rank(board)[0]["combo"]
