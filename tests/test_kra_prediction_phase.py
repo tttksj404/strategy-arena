@@ -283,6 +283,26 @@ class KraPredictionPhaseTestCase(unittest.TestCase):
         self.assertEqual(place_pick["pick"], ["1번 시장연승"])
         self.assertEqual(place_pick["prob"], "plcOdds 최저 기준 픽")
 
+    def test_default_policy_uses_verified_market_if_odds_when_snapshot_is_fresh(self):
+        rows = [
+            {"bno": 2, "name": "모델연승", "grade": "", "pwin": 0.50, "pplc": 0.90},
+            {"bno": 1, "name": "시장연승", "grade": "", "pwin": 0.20, "pplc": 0.40},
+        ]
+        starters = [
+            {"chulNo": "1", "winOdds": "2.0", "plcOdds": "1.1"},
+            {"chulNo": "2", "winOdds": "3.0", "plcOdds": "1.8"},
+        ]
+
+        with patch.dict(os.environ, {}, clear=False), \
+             patch.object(engine, "score_kra", return_value=(rows, None)):
+            os.environ.pop("KRA_PICK_POLICY", None)
+            result = engine.predict_kra(starters, meta={"odds_snapshot_fresh": True})
+
+        place_pick = next(pick for pick in result["picks"] if pick["code"] == "연승")
+        self.assertEqual(engine.KRA_PICK_POLICY_DEFAULT, "market_if_odds")
+        self.assertEqual(result["pick_source"], "market")
+        self.assertEqual(place_pick["pick_source"], "market")
+
     def test_market_if_odds_keeps_model_place_pick_when_place_odds_missing(self):
         rows = [
             {"bno": 2, "name": "모델연승", "grade": "", "pwin": 0.50, "pplc": 0.90},

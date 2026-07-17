@@ -546,6 +546,7 @@ class LiveDecisionTestCase(unittest.TestCase):
             "market_used": True,
             "pick_source": "market",
             "prediction_phase": "live_odds",
+            "algorithm_version": "kra_dual_phase_v4_history_fresh_holdout_guard",
         }
 
         decision = app_module.engine.compute_live_decision(
@@ -560,6 +561,8 @@ class LiveDecisionTestCase(unittest.TestCase):
         self.assertTrue(decision["market_used"])
         self.assertEqual(decision["pick_source"], "market")
         self.assertEqual(decision["snapshot_phase"], "live_odds")
+        self.assertEqual(decision["prediction_phase"], "live_odds")
+        self.assertEqual(decision["algorithm_version"], "kra_dual_phase_v4_history_fresh_holdout_guard")
         self.assertEqual(decision["market_risk"]["level"], "odds_live")
         self.assertEqual(decision["poll_delay_ms"], 3000)
         self.assertEqual(decision["decision"], "hold")
