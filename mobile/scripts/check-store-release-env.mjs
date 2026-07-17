@@ -4,6 +4,22 @@ if (existsSync('release.env')) {
   process.loadEnvFile('release.env');
 }
 
+const failures = [];
+const easConfig = (() => {
+  try {
+    return JSON.parse(readFileSync('eas.json', 'utf8'));
+  } catch (error) {
+    failures.push(`eas.json must be readable JSON: ${error.message}`);
+    return {};
+  }
+})();
+const productionProfileEnv = easConfig?.build?.production?.env;
+if (productionProfileEnv && typeof productionProfileEnv === 'object' && !Array.isArray(productionProfileEnv)) {
+  for (const [name, value] of Object.entries(productionProfileEnv)) {
+    if (!process.env[name] && typeof value === 'string') process.env[name] = value;
+  }
+}
+
 const requiredHttpsVars = [
   'EXPO_PUBLIC_RACELENS_API_BASE_URL',
   'EXPO_PUBLIC_RACELENS_ANALYTICS_URL',
@@ -13,7 +29,6 @@ const requiredHttpsVars = [
   'RACELENS_SUPPORT_URL'
 ];
 
-const failures = [];
 const parsedUrls = new Map();
 const appJson = JSON.parse(readFileSync('app.json', 'utf8'));
 const expo = appJson.expo ?? {};
