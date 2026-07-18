@@ -1,0 +1,3 @@
+2026-07-18T13:45:35+00:00 g053 gate=OPEN pos=0 equity=50.00 mark=50.0
+2026-07-18T13:45:39+00:00 booster regime=ON lev=2.30 equity=150.00 holdings=10
+2026-07-18T13:45:39+00:00 TOTAL mark=200.0 (시작 200.0)
