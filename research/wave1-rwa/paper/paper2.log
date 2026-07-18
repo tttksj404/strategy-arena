@@ -1,0 +1,9 @@
+2026-07-17T23:45:27+00:00 g053 gate=OPEN pos=0 equity=140.00 mark=140.0
+2026-07-17T23:45:31+00:00 booster regime=ON lev=0.72 equity=60.00 holdings=10
+2026-07-17T23:45:31+00:00 TOTAL mark=200.0 (시작 200.0)
+2026-07-17T23:45:47+00:00 g053 gate=OPEN pos=0 equity=140.00 mark=140.0
+2026-07-17T23:45:47+00:00 booster regime=ON lev=0.72 equity=60.00 holdings=10
+2026-07-17T23:45:47+00:00 TOTAL mark=200.0 (시작 200.0)
+2026-07-18T00:02:02+00:00 g053 gate=OPEN pos=0 equity=140.00 mark=140.0
+2026-07-18T00:02:06+00:00 booster regime=ON lev=0.71 equity=65.19 holdings=10
+2026-07-18T00:02:06+00:00 TOTAL mark=205.19 (시작 200.0)

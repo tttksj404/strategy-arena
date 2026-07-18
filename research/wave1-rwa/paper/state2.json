@@ -1,0 +1,30 @@
+{
+  "started": "2026-07-17T23:45:25.169017+00:00",
+  "g053": {
+    "equity": 140.0,
+    "positions": [],
+    "mark": 140.0
+  },
+  "booster": {
+    "equity": 65.19038034217347,
+    "holdings": {
+      "USUSDT": 0.2,
+      "DEXEUSDT": 0.2,
+      "BANKUSDT": 0.2,
+      "UNIUSDT": 0.2,
+      "ZECUSDT": 0.2,
+      "LABUSDT": -0.2,
+      "WLDUSDT": -0.2,
+      "DOGEUSDT": -0.2,
+      "RAVEUSDT": -0.2,
+      "XLMUSDT": -0.2
+    },
+    "lev": 0.7114460514247575,
+    "regime": "ON",
+    "last_rebalance": "2026-07-18",
+    "marked_date": "2026-07-18",
+    "mark": 65.19
+  },
+  "total_mark": 205.19,
+  "updated": "2026-07-18T00:02:06.324679+00:00"
+}
