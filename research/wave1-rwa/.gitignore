@@ -1,0 +1,8 @@
+data/
+out/leaderboard.json
+out/*.log
+__pycache__/
+.pytest_cache/
+out/leaderboard_crypto.json
+out/leaderboard_crypto.csv
+out/rotation_panel.parquet

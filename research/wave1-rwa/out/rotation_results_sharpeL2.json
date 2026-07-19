@@ -1,0 +1,23 @@
+{
+  "pool_combos": 580,
+  "config": {
+    "leverages": [
+      2
+    ],
+    "top_k": [
+      3
+    ],
+    "trailing_days": 56,
+    "score": "sharpe"
+  },
+  "results": [
+    {
+      "name": "rotation_top3",
+      "net": -0.9751,
+      "days": 724.6,
+      "daily": -0.00508,
+      "d2x": null,
+      "mdd": 0.9767
+    }
+  ]
+}

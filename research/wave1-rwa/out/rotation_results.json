@@ -1,0 +1,53 @@
+{
+  "pool_combos": 1740,
+  "results": [
+    {
+      "name": "rotation_top1",
+      "net": -1.0,
+      "days": 724.6,
+      "daily": -0.0232,
+      "d2x": null,
+      "mdd": 1.0
+    },
+    {
+      "name": "rotation_top3",
+      "net": -0.9999,
+      "days": 724.6,
+      "daily": -0.01257,
+      "d2x": null,
+      "mdd": 0.9999
+    },
+    {
+      "name": "rotation_top5",
+      "net": -0.9996,
+      "days": 724.6,
+      "daily": -0.01061,
+      "d2x": null,
+      "mdd": 0.9996
+    },
+    {
+      "name": "static_XAUUSDT|B1_donchian|L5",
+      "net": 0.6332,
+      "days": 747.3,
+      "daily": 0.00066,
+      "d2x": 1056.0,
+      "mdd": 0.7411
+    },
+    {
+      "name": "static_XAUUSDT|B1_donchian|L3",
+      "net": 0.598,
+      "days": 747.3,
+      "daily": 0.00063,
+      "d2x": 1105.0,
+      "mdd": 0.5348
+    },
+    {
+      "name": "static_ETHUSDT|WED_SHORT|L5",
+      "net": 1.2436,
+      "days": 747.3,
+      "daily": 0.00108,
+      "d2x": 641.0,
+      "mdd": 0.498
+    }
+  ]
+}
