@@ -4,6 +4,11 @@ import argparse
 import json
 from pathlib import Path
 
+if __package__ in (None, ""):
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 from research.wave4_leverage.sweep import MC_PATHS, STRUCTURES, VALID_LEVERAGES, run_sweep
 
 
