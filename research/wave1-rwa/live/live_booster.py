@@ -179,11 +179,72 @@ def tick() -> None:
     save_state(state)
 
 
+def _live_confirmed() -> bool:
+    """Second arming gate: real orders require BOTH LIVE_DRY_RUN=0 and LIVE_CONFIRM=I_UNDERSTAND."""
+    return os.environ.get("LIVE_CONFIRM") == "I_UNDERSTAND"
+
+
+def _mid_price(symbol: str) -> float:
+    from urllib.request import urlopen
+    url = f"https://api.bitget.com/api/v2/mix/market/ticker?symbol={symbol}&productType={PRODUCT}"
+    row = json.load(urlopen(url, timeout=15))["data"][0]
+    return (float(row["bidPr"]) + float(row["askPr"])) / 2
+
+
+def _exchange_leverage() -> int:
+    """Integer leverage for the exchange (isolated). Notional is shaped by size; keep a safe cap."""
+    return min(3, int(np.ceil(MAX_LEV)))
+
+
+def _current_positions(client) -> dict:
+    from urllib.request import urlopen
+    data = client.send(client.build_positions_request()) if hasattr(client, "send") else json.load(urlopen(client.build_positions_request(), timeout=15))
+    out = {}
+    for p in (data.get("positions") or data.get("data") or []):
+        size = float(p.get("total", p.get("available", 0)) or 0)
+        if size:
+            out[p.get("symbol")] = {"size": size, "side": (p.get("holdSide") or "").lower()}
+    return out
+
+
+def _place(client, symbol: str, side: str, size: float, reduce_only: bool):
+    from urllib.request import urlopen
+    params = {"symbol": symbol, "productType": PRODUCT, "marginMode": "isolated", "marginCoin": MARGIN,
+              "size": f"{size}", "side": side, "orderType": "market"}
+    if reduce_only:
+        params["reduceOnly"] = "YES"
+    req = client.build_live_order_request(market="futures", order_params=params)
+    resp = client.send(req) if hasattr(client, "send") else json.load(urlopen(req, timeout=15))
+    if str(resp.get("code")) not in ("00000", "0"):
+        raise RuntimeError(f"order rejected {symbol} {side}: {resp.get('msg')}")
+    log(f"    ORDER OK {side} {symbol} size {size} reduce={reduce_only}")
+    return resp
+
+
 def _execute_reconcile(client, target: dict, lev: float, equity: float) -> None:
-    """Live order path — intentionally minimal; expanded only after DRY_RUN parity is confirmed."""
-    raise NotImplementedError(
-        "LIVE order path is gated. Confirm DRY_RUN parity + fund the account, then implement "
-        "reduce-only close of stale legs and market open of target legs here.")
+    """Live order path. Double-gated: LIVE_DRY_RUN=0 AND LIVE_CONFIRM=I_UNDERSTAND required upstream.
+
+    First live run must be a tiny-capital canary (LIVE_CAPITAL_USD small) to verify fills before scaling.
+    """
+    if not _live_confirmed():
+        raise RuntimeError("LIVE order path blocked: set LIVE_CONFIRM=I_UNDERSTAND to arm (after tiny-capital canary).")
+    lev_int = _exchange_leverage()
+    current = _current_positions(client)
+    want_syms = set(target)
+    # 1) close stale legs (reduce-only) not in target or wrong side
+    for sym, pos in current.items():
+        want_side = "long" if target.get(sym, 0) > 0 else "short" if target.get(sym, 0) < 0 else None
+        if sym not in want_syms or want_side != pos["side"]:
+            close_side = "sell" if pos["side"] == "long" else "buy"
+            _place(client, sym, close_side, pos["size"], reduce_only=True)
+    # 2) open/adjust target legs
+    for sym, w in target.items():
+        client.set_futures_leverage(symbol=sym, leverage=lev_int, hold_side="long" if w > 0 else "short")
+        notional = equity * lev * abs(w)
+        size = round(notional / _mid_price(sym), 6)
+        if size <= 0:
+            continue
+        _place(client, sym, "buy" if w > 0 else "sell", size, reduce_only=False)
 
 
 def main() -> None:
