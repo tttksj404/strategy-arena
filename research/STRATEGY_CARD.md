@@ -37,3 +37,6 @@
 ## 운영 보조 도구
 - 일일 신호·가상 성과: `research/paper/STATUS.md` (매일 09:10 자동 갱신)
 - 전종목 기회 스캔: `python research/scanner/scan_bitget.py`
+
+## 레버리지 판정 (wave-4 스윕, 2026-07-16)
+- 24조합(1~10x × 대칭/비대칭) 중 게이트 통과 = **1x뿐**. ASYM 10x: CAGR +5.7%p vs MDD 1.8%→41%(23배). 수익원(평온한 캐리)은 레버리지로 안 커지고 리스크(알트 폭등 청산)만 정비례 — 근거 research/wave4_leverage/LEVERAGE_REPORT.md (1x 대사 오차 0% 재현 후 발행).

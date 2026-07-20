@@ -1,49 +1,60 @@
-# Wave-4 레버리지 스윕 보고서
+# Wave-4 Leverage Sweep Report
 
-## 결론
+## Publication gate
 
-- 사전등록 조합: 24개 (W2c/F1f × SYM/ASYM × 6 레버리지)
-- 게이트 통과: 0개
-- 최대 안전 레버리지: 없음
+- Grid is unchanged: W2c/F1f x SYM/ASYM x {1, 1.5, 2, 3, 5, 10} = 24 combinations.
+- Gate criteria are unchanged: MC p05 > $300, final bankruptcy probability < 5%, and MDD <= 25%.
+- Report publication is blocked unless all four L=1 reconciliation rows pass at <= 1% relative error for both CAGR and MDD.
 
-## 사전등록 및 모델
+### L=1 reconciliation
 
-- 레버리지: `{1.0, 1.5, 2, 3, 5, 10}`; 구조: `{SYM, ASYM}`; 실행 후 조합 추가 없음.
-- SYM: 두 레그 노셔널을 함께 스케일하고, 현물 차입분에 연 10% 이자 부과.
-- ASYM: 현물은 현금, 퍼프만 마진; 퍼프 증거금=노셔널/L, 총 자본효율=`2/(1+1/L)`.
-- 청산: 매 보유일 `spot_low/spot_open - perp_high/perp_open`의 비동기 최악 베이시스를 사용. 손실이 초기 퍼프 증거금−노셔널의 0.5% 이상이면 청산하고 노셔널의 0.06% 수수료를 추가.
-- MC: 일별 순수익률 재표본화 10,000회, p05는 최종자본, 파산은 최종자본 `< $150`.
-- 입력: 기존 엔진의 `research/wave1/cache`만 사용; 네트워크 호출 없음.
+| Candidate | Structure | Sweep CAGR | Engine CAGR | CAGR rel. error | Sweep MDD | Engine MDD | MDD rel. error | Status |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| W2c | SYM | 16.26% | 16.26% | 0.00% | 1.78% | 1.78% | 0.00% | PASS |
+| W2c | ASYM | 16.26% | 16.26% | 0.00% | 1.78% | 1.78% | 0.00% | PASS |
+| F1f | SYM | 8.29% | 8.29% | 0.00% | 3.55% | 3.55% | 0.00% | PASS |
+| F1f | ASYM | 8.29% | 8.29% | 0.00% | 3.55% | 3.55% | 0.00% | PASS |
 
-## 조합별 지표
+- Reconciliation gate: PASS.
 
-| 후보 | 구조 | L | CAGR | MDD | MC p05 | 파산확률 | 청산 | 빌림비용 | 게이트 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| W2c | SYM | 1 | 2.98% | 28.15% | $188.32 | 1.92% | 1 | $0.00 | FAIL |
-| W2c | SYM | 1.5 | -9.84% | 60.17% | $42.72 | 47.43% | 6 | $13.16 | FAIL |
-| W2c | SYM | 2 | -33.14% | 94.50% | $1.30 | 94.81% | 15 | $11.36 | FAIL |
-| W2c | SYM | 3 | -100.00% | 100.00% | $0.00 | 87.87% | 9 | $5.94 | FAIL |
-| W2c | SYM | 5 | -100.00% | 100.00% | $0.00 | 83.69% | 8 | $8.76 | FAIL |
-| W2c | SYM | 10 | -100.00% | 100.00% | $0.00 | 86.13% | 3 | $9.47 | FAIL |
-| W2c | ASYM | 1 | 2.98% | 28.15% | $188.85 | 1.86% | 1 | $0.00 | FAIL |
-| W2c | ASYM | 1.5 | -6.58% | 48.16% | $76.28 | 30.30% | 6 | $0.00 | FAIL |
-| W2c | ASYM | 2 | -19.55% | 80.08% | $16.24 | 84.19% | 15 | $0.00 | FAIL |
-| W2c | ASYM | 3 | -64.54% | 99.92% | $0.01 | 100.00% | 75 | $0.00 | FAIL |
-| W2c | ASYM | 5 | -96.66% | 100.00% | $0.00 | 100.00% | 327 | $0.00 | FAIL |
-| W2c | ASYM | 10 | -100.00% | 100.00% | $0.00 | 100.00% | 1664 | $0.00 | FAIL |
-| F1f | SYM | 1 | -0.62% | 28.55% | $148.74 | 5.40% | 1 | $0.00 | FAIL |
-| F1f | SYM | 1.5 | -14.56% | 69.28% | $30.13 | 69.52% | 6 | $11.27 | FAIL |
-| F1f | SYM | 2 | -37.83% | 96.42% | $0.86 | 98.82% | 15 | $10.07 | FAIL |
-| F1f | SYM | 3 | -100.00% | 100.00% | $0.00 | 87.51% | 9 | $5.83 | FAIL |
-| F1f | SYM | 5 | -100.00% | 100.00% | $0.00 | 85.23% | 8 | $8.52 | FAIL |
-| F1f | SYM | 10 | -100.00% | 100.00% | $0.00 | 86.36% | 3 | $9.39 | FAIL |
-| F1f | ASYM | 1 | -0.62% | 28.55% | $147.73 | 5.79% | 1 | $0.00 | FAIL |
-| F1f | ASYM | 1.5 | -10.51% | 57.87% | $55.33 | 52.30% | 6 | $0.00 | FAIL |
-| F1f | ASYM | 2 | -23.35% | 84.70% | $11.21 | 93.75% | 15 | $0.00 | FAIL |
-| F1f | ASYM | 3 | -66.52% | 99.95% | $0.01 | 100.00% | 75 | $0.00 | FAIL |
-| F1f | ASYM | 5 | -96.92% | 100.00% | $0.00 | 100.00% | 327 | $0.00 | FAIL |
-| F1f | ASYM | 10 | -100.00% | 100.00% | $0.00 | 100.00% | 1664 | $0.00 | FAIL |
+## Model contract
 
-## 판정
+- Daily P&L is replayed from the imported wave-1/wave-2 engine path. The sweep adds leverage scaling, borrow interest, and liquidation overlays only.
+- Liquidation basis move: `abs(simultaneous_close_basis_change) + max(0, perp_intraday_range_pct - spot_intraday_range_pct) * 0.5`.
+- Stress basis move is the same value multiplied by 1.5 and is reported separately.
+- Inputs are cache-only from `research/wave1/cache`; no network calls are made.
 
-게이트는 `MC p05 > 300 ∧ 파산확률 < 5% ∧ MDD ≤ 25%`를 조합별로 적용했다. 최대 안전 레버리지는 이 조건을 만족한 조합 중 가장 큰 유효 레버리지이며, 통과 조합이 없으면 안전 레버리지 없음으로 판정한다.
+## Combination results
+
+| Candidate | Structure | L | CAGR | MDD | MC p05 | Bankruptcy | Liq. | Stress liq. | Borrowing | Gate |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| W2c | SYM | 1 | 16.26% | 1.78% | $746.32 | 0.00% | 0 | 1 | $0.00 | PASS |
+| W2c | SYM | 1.5 | 16.93% | 33.98% | $1,165.60 | 0.00% | 1 | 1 | $39.50 | FAIL |
+| W2c | SYM | 2 | 21.35% | 45.29% | $1,858.63 | 0.00% | 1 | 1 | $91.39 | FAIL |
+| W2c | SYM | 3 | 25.70% | 67.86% | $4,513.38 | 0.00% | 2 | 1 | $196.20 | FAIL |
+| W2c | SYM | 5 | -100.00% | 100.00% | $26,421.74 | 0.00% | 3 | 5 | $16.11 | FAIL |
+| W2c | SYM | 10 | -100.00% | 100.00% | $1,892,428.78 | 0.00% | 22 | 44 | $33.41 | FAIL |
+| W2c | ASYM | 1 | 16.26% | 1.78% | $746.32 | 0.00% | 0 | 1 | $0.00 | PASS |
+| W2c | ASYM | 1.5 | 14.59% | 27.18% | $899.22 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| W2c | ASYM | 2 | 16.21% | 30.20% | $1,014.58 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| W2c | ASYM | 3 | 18.21% | 33.97% | $1,178.83 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| W2c | ASYM | 5 | 20.18% | 37.73% | $1,367.92 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| W2c | ASYM | 10 | 21.94% | 41.16% | $1,571.37 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| F1f | SYM | 1 | 8.29% | 3.55% | $456.08 | 0.00% | 0 | 1 | $0.00 | PASS |
+| F1f | SYM | 1.5 | 5.10% | 34.99% | $562.42 | 0.00% | 1 | 1 | $25.68 | FAIL |
+| F1f | SYM | 2 | 5.25% | 46.51% | $689.85 | 0.00% | 1 | 1 | $50.42 | FAIL |
+| F1f | SYM | 3 | 1.45% | 69.06% | $1,044.29 | 0.00% | 2 | 1 | $77.19 | FAIL |
+| F1f | SYM | 5 | -100.00% | 100.00% | $2,276.49 | 0.00% | 3 | 5 | $15.04 | FAIL |
+| F1f | SYM | 10 | -100.00% | 100.00% | $14,768.03 | 0.00% | 22 | 44 | $28.40 | FAIL |
+| F1f | ASYM | 1 | 8.29% | 3.55% | $456.08 | 0.00% | 0 | 1 | $0.00 | PASS |
+| F1f | ASYM | 1.5 | 5.22% | 27.92% | $497.86 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| F1f | ASYM | 2 | 5.70% | 30.99% | $524.56 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| F1f | ASYM | 3 | 6.25% | 34.81% | $562.97 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| F1f | ASYM | 5 | 6.75% | 38.62% | $603.23 | 0.00% | 1 | 1 | $0.00 | FAIL |
+| F1f | ASYM | 10 | 7.15% | 42.07% | $641.79 | 0.00% | 1 | 1 | $0.00 | FAIL |
+
+## Conclusion
+
+- Combination gates passed: 4/24.
+- Maximum leverage passing the unchanged risk gate: 1x.
+- The reconciliation gate passed, so this report is publishable.

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import argparse
-import json
+import os
 from pathlib import Path
 
 if __package__ in (None, ""):
@@ -9,57 +9,74 @@ if __package__ in (None, ""):
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from research.wave4_leverage.sweep import MC_PATHS, STRUCTURES, VALID_LEVERAGES, run_sweep
+from research.wave4_leverage.sweep import SimulationResult, run_sweep
 
 
 def _fmt(value: float, percent: bool = False) -> str:
     return f"{value * 100:.2f}%" if percent else f"{value:.2f}"
 
 
-def write_report(root: Path, results: tuple[object, ...]) -> None:
+def write_report(root: Path, results: tuple[SimulationResult, ...]) -> None:
+    reconciliation = [result for result in results if result.leverage == 1.0]
+    if len(reconciliation) != 4 or any(result.reconciliation_pass is not True for result in reconciliation):
+        raise RuntimeError("baseline reconciliation gate failed; report publication blocked")
     rows = []
-    for item in results:
-        result = item
+    for result in results:
         gate = result.mc_p05 > 300.0 and result.bankruptcy_probability < 0.05 and result.mdd <= 0.25
         rows.append((result, gate))
     passed = [result for result, gate in rows if gate]
     max_safe = max((result.leverage for result in passed), default=None)
     report = [
-        "# Wave-4 레버리지 스윕 보고서",
+        "# Wave-4 Leverage Sweep Report",
         "",
-        "## 결론",
+        "## Publication gate",
         "",
-        f"- 사전등록 조합: {len(results)}개 (W2c/F1f × SYM/ASYM × 6 레버리지)",
-        f"- 게이트 통과: {len(passed)}개",
-        f"- 최대 안전 레버리지: {max_safe:g}x" if max_safe is not None else "- 최대 안전 레버리지: 없음",
+        "- Grid is unchanged: W2c/F1f x SYM/ASYM x {1, 1.5, 2, 3, 5, 10} = 24 combinations.",
+        "- Gate criteria are unchanged: MC p05 > $300, final bankruptcy probability < 5%, and MDD <= 25%.",
+        "- Report publication is blocked unless all four L=1 reconciliation rows pass at <= 1% relative error for both CAGR and MDD.",
         "",
-        "## 사전등록 및 모델",
+        "### L=1 reconciliation",
         "",
-        "- 레버리지: `{1.0, 1.5, 2, 3, 5, 10}`; 구조: `{SYM, ASYM}`; 실행 후 조합 추가 없음.",
-        "- SYM: 두 레그 노셔널을 함께 스케일하고, 현물 차입분에 연 10% 이자 부과.",
-        "- ASYM: 현물은 현금, 퍼프만 마진; 퍼프 증거금=노셔널/L, 총 자본효율=`2/(1+1/L)`.",
-        "- 청산: 매 보유일 `spot_low/spot_open - perp_high/perp_open`의 비동기 최악 베이시스를 사용. 손실이 초기 퍼프 증거금−노셔널의 0.5% 이상이면 청산하고 노셔널의 0.06% 수수료를 추가.",
-        f"- MC: 일별 순수익률 재표본화 {MC_PATHS:,}회, p05는 최종자본, 파산은 최종자본 `< $150`.",
-        "- 입력: 기존 엔진의 `research/wave1/cache`만 사용; 네트워크 호출 없음.",
-        "",
-        "## 조합별 지표",
-        "",
-        "| 후보 | 구조 | L | CAGR | MDD | MC p05 | 파산확률 | 청산 | 빌림비용 | 게이트 |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
+        "| Candidate | Structure | Sweep CAGR | Engine CAGR | CAGR rel. error | Sweep MDD | Engine MDD | MDD rel. error | Status |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---|",
     ]
-    for result, gate in rows:
+    for result in reconciliation:
         report.append(
-            f"| {result.candidate_id} | {result.structure} | {result.leverage:g} | {_fmt(result.cagr, True)} | {_fmt(result.mdd, True)} | ${result.mc_p05:,.2f} | {_fmt(result.bankruptcy_probability, True)} | {result.liquidation_count} | ${result.borrowing_cost_total:,.2f} | {'PASS' if gate else 'FAIL'} |"
+            f"| {result.candidate_id} | {result.structure} | {_fmt(result.cagr, True)} | {_fmt(result.baseline_cagr or 0.0, True)} | {_fmt(result.cagr_relative_error or 0.0, True)} | {_fmt(result.mdd, True)} | {_fmt(result.baseline_mdd or 0.0, True)} | {_fmt(result.mdd_relative_error or 0.0, True)} | {'PASS' if result.reconciliation_pass else 'FAIL'} |"
         )
     report.extend([
         "",
-        "## 판정",
+        f"- Reconciliation gate: {'PASS' if len(reconciliation) == 4 and all(result.reconciliation_pass for result in reconciliation) else 'FAIL'}.",
         "",
-        "게이트는 `MC p05 > 300 ∧ 파산확률 < 5% ∧ MDD ≤ 25%`를 조합별로 적용했다. 최대 안전 레버리지는 이 조건을 만족한 조합 중 가장 큰 유효 레버리지이며, 통과 조합이 없으면 안전 레버리지 없음으로 판정한다.",
+        "## Model contract",
+        "",
+        "- Daily P&L is replayed from the imported wave-1/wave-2 engine path. The sweep adds leverage scaling, borrow interest, and liquidation overlays only.",
+        "- Liquidation basis move: `abs(simultaneous_close_basis_change) + max(0, perp_intraday_range_pct - spot_intraday_range_pct) * 0.5`.",
+        "- Stress basis move is the same value multiplied by 1.5 and is reported separately.",
+        "- Inputs are cache-only from `research/wave1/cache`; no network calls are made.",
+        "",
+        "## Combination results",
+        "",
+        "| Candidate | Structure | L | CAGR | MDD | MC p05 | Bankruptcy | Liq. | Stress liq. | Borrowing | Gate |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
+    ])
+    for result, gate in rows:
+        report.append(
+            f"| {result.candidate_id} | {result.structure} | {result.leverage:g} | {_fmt(result.cagr, True)} | {_fmt(result.mdd, True)} | ${result.mc_p05:,.2f} | {_fmt(result.bankruptcy_probability, True)} | {result.liquidation_count} | {result.stress_liquidation_count} | ${result.borrowing_cost_total:,.2f} | {'PASS' if gate else 'FAIL'} |"
+        )
+    report.extend([
+        "",
+        "## Conclusion",
+        "",
+        f"- Combination gates passed: {len(passed)}/{len(results)}.",
+        f"- Maximum leverage passing the unchanged risk gate: {max_safe:g}x." if max_safe is not None else "- Maximum leverage passing the unchanged risk gate: none.",
+        "- The reconciliation gate passed, so this report is publishable.",
         "",
     ])
-    (root / "research" / "wave4_leverage" / "LEVERAGE_REPORT.md").write_text("\n".join(report), encoding="utf-8")
-
+    report_path = root / "research" / "wave4_leverage" / "LEVERAGE_REPORT.md"
+    staged_path = report_path.with_name(f".{report_path.name}.staged")
+    staged_path.write_text("\n".join(report), encoding="utf-8")
+    os.replace(staged_path, report_path)
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run the cache-only Wave-4 leverage sweep")
