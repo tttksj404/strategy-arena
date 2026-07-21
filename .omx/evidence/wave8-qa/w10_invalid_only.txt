@@ -1,0 +1,6 @@
+﻿COMMAND: python research/wave10_ensemble/run_wave10.py --only DOES_NOT_EXIST
+EXIT_CODE: 2
+ELAPSED_SECONDS: 0.92
+OUTPUT:
+usage: run_wave10.py [-h] [--only {E10a,E10b,E10c,E10d,E10e,E10f}]
+run_wave10.py: error: argument --only: invalid choice: 'DOES_NOT_EXIST' (choose from E10a, E10b, E10c, E10d, E10e, E10f)

@@ -1,0 +1,4 @@
+﻿COMMAND: python research/wave9_methods/validate_wave9.py
+EXIT_CODE: 0
+OUTPUT:
+WAVE9_VALIDATION_PASS candidates=16 eligible=[] selection_independent=false

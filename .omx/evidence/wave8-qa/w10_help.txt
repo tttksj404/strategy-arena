@@ -1,0 +1,11 @@
+﻿COMMAND: python research/wave10_ensemble/run_wave10.py --help
+EXIT_CODE: 0
+ELAPSED_SECONDS: 0.67
+OUTPUT:
+usage: run_wave10.py [-h] [--only {E10a,E10b,E10c,E10d,E10e,E10f}]
+
+Wave-10 ensemble and risk-overlay research runner
+
+options:
+  -h, --help            show this help message and exit
+  --only {E10a,E10b,E10c,E10d,E10e,E10f}

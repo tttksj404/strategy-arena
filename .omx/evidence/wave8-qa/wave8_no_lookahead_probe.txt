@@ -1,0 +1,7 @@
+COMMAND: python .omx/evidence/wave8-qa/wave8_no_lookahead_probe.py
+EXIT_CODE: 0
+OUTPUT:
+probe=2025-03-11T00:00:00+00:00
+base_btc=0.600000000000 mutated_btc=0.600000000000
+row_l1_diff=0.000000000000
+future_mutation_invariant=True

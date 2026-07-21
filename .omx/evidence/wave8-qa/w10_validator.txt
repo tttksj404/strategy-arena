@@ -1,0 +1,5 @@
+﻿COMMAND: python research/wave10_ensemble/validate_wave10.py
+EXIT_CODE: 0
+ELAPSED_SECONDS: 0.64
+OUTPUT:
+WAVE10_VALIDATION_PASS candidates=6 eligible=[] selection_independent=false

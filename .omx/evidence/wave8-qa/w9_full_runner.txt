@@ -1,0 +1,21 @@
+﻿COMMAND: python research/wave9_methods/run_wave9.py
+EXIT_CODE: 0
+ELAPSED_SECONDS: 28.87
+OUTPUT:
+completed T9a: oos=0.1381 gates=9/15
+completed T9b: oos=0.0918 gates=9/15
+completed T9c: oos=-0.2761 gates=6/15
+completed T9d: oos=0.1428 gates=9/15
+completed P9a: oos=0.0307 gates=8/15
+completed P9b: oos=-0.1026 gates=8/15
+completed P9c: oos=-0.0507 gates=5/15
+completed P9d: oos=-0.0064 gates=4/15
+completed H9a: oos=0.0495 gates=8/15
+completed H9b: oos=-0.0469 gates=5/15
+completed H9c: oos=-0.0769 gates=4/15
+completed H9d: oos=-0.1473 gates=4/15
+completed D9a: oos=0.0239 gates=7/15
+completed D9b: oos=0.1634 gates=11/15
+completed D9c: oos=0.1669 gates=9/15
+completed D9d: oos=-0.0837 gates=7/15
+WAVE9_DONE eligible=[]

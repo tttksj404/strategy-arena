@@ -1,0 +1,42 @@
+﻿COMMAND: python -m pytest -q
+EXIT_CODE: 2
+ELAPSED_SECONDS: 1.59
+OUTPUT:
+
+=================================== ERRORS ====================================
+__________ ERROR collecting research/wave1-rwa/tests/test_engine.py ___________
+ImportError while importing test module 'C:\Users\SSAFY\Desktop\2�б�\strategy-arena-crypto\research\wave1-rwa\tests\test_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\wave1-rwa\tests\test_engine.py:5: in <module>
+    from src.engine import Costs, run_backtest
+E   ModuleNotFoundError: No module named 'src'
+___________ ERROR collecting research/wave1-rwa/tests/test_gates.py ___________
+ImportError while importing test module 'C:\Users\SSAFY\Desktop\2�б�\strategy-arena-crypto\research\wave1-rwa\tests\test_gates.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\wave1-rwa\tests\test_gates.py:5: in <module>
+    from src.engine import BacktestResult
+E   ModuleNotFoundError: No module named 'src'
+_________ ERROR collecting research/wave1-rwa/tests/test_lookahead.py _________
+ImportError while importing test module 'C:\Users\SSAFY\Desktop\2�б�\strategy-arena-crypto\research\wave1-rwa\tests\test_lookahead.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\wave1-rwa\tests\test_lookahead.py:5: in <module>
+    from src.engine import Costs, run_backtest
+E   ModuleNotFoundError: No module named 'src'
+=========================== short test summary info ===========================
+ERROR research/wave1-rwa/tests/test_engine.py
+ERROR research/wave1-rwa/tests/test_gates.py
+ERROR research/wave1-rwa/tests/test_lookahead.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!
+3 errors in 1.02s

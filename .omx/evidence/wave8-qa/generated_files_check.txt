@@ -1,0 +1,4 @@
+﻿COMMAND: verify latest generated aggregates/manifests after final full runners
+wave8: count=16/16 ids_ok=True result_ids_ok=True data_invalid=0 gross_over_cap=0 all_gates_pass=0 oos_independent_pass=0 individual=16 report_bytes=2367 report_hash_ok=True results_hash_ok=True spec_hash_ok=True runner_hash_ok=True
+wave9: count=16/16 ids_ok=True result_ids_ok=True data_invalid=0 gross_over_cap=0 all_gates_pass=0 selection_independent_pass=0 individual=16 report_bytes=4041 report_hash_ok=True results_hash_ok=True spec_hash_ok=True runner_hash_ok=True
+wave10: count=6/6 ids_ok=True result_ids_ok=True data_invalid=0 gross_over_cap=0 all_gates_pass=0 selection_independent_pass=0 individual=6 report_bytes=1272 report_hash_ok=True results_hash_ok=True spec_hash_ok=True runner_hash_ok=True

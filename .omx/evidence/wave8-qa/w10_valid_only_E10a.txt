@@ -1,0 +1,5 @@
+﻿COMMAND: python research/wave10_ensemble/run_wave10.py --only E10a
+EXIT_CODE: 0
+ELAPSED_SECONDS: 7.69
+OUTPUT:
+completed E10a: oos=0.1020 gates=13/15

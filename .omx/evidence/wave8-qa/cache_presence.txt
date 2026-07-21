@@ -1,0 +1,4 @@
+﻿COMMAND: Test-Path research/wave1/cache; Test-Path research/wave3/cache; Get-ChildItem research/wave3/cache -File | Measure-Object
+wave1_cache_exists=False
+wave3_cache_exists=True
+wave3_cache_file_count=1043

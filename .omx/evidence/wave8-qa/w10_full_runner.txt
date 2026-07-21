@@ -1,0 +1,11 @@
+﻿COMMAND: python research/wave10_ensemble/run_wave10.py
+EXIT_CODE: 0
+ELAPSED_SECONDS: 15.46
+OUTPUT:
+completed E10a: oos=0.1020 gates=13/15
+completed E10b: oos=0.0880 gates=10/15
+completed E10c: oos=0.0242 gates=13/15
+completed E10d: oos=0.0821 gates=13/15
+completed E10e: oos=0.0811 gates=12/15
+completed E10f: oos=0.0692 gates=11/15
+WAVE10_DONE eligible=[]

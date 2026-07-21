@@ -1,0 +1,21 @@
+﻿COMMAND: python research/wave8_alternative/run_wave8.py
+EXIT_CODE: 0
+ELAPSED_SECONDS: 33.18
+OUTPUT:
+completed R8a: oos=-0.1179 gates=3/14
+completed R8b: oos=-0.2242 gates=3/14
+completed R8c: oos=-0.1374 gates=3/14
+completed R8d: oos=-0.2242 gates=3/14
+completed V8a: oos=-0.0311 gates=7/14
+completed V8b: oos=0.0048 gates=8/14
+completed V8c: oos=-0.1225 gates=7/14
+completed V8d: oos=0.2559 gates=9/14
+completed Q8a: oos=-0.1839 gates=5/14
+completed Q8b: oos=0.0311 gates=6/14
+completed Q8c: oos=-0.1213 gates=5/14
+completed Q8d: oos=-0.1564 gates=3/14
+completed F8a: oos=0.0069 gates=10/14
+completed F8b: oos=-0.1610 gates=6/14
+completed F8c: oos=0.0213 gates=7/14
+completed F8d: oos=0.0412 gates=10/14
+WAVE8_DONE eligible=[]

@@ -1,0 +1,5 @@
+﻿COMMAND: python -m pytest -q research/wave10_ensemble/tests
+EXIT_CODE: 0
+OUTPUT:
+..                                                                       [100%]
+2 passed in 0.52s

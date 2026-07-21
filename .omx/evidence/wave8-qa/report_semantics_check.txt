@@ -1,0 +1,11 @@
+﻿COMMAND: Select-String report verdict/selection markers after latest full runners
+--- research/wave8_alternative/report/wave8_report.md
+This report is generated from the fixed-universe cache and the preregistered SPEC.md. It is simulation evidence only; prior waves were inspected before this expansion, so selection-independent is false and no live-capital recommendation is made.
+Eligible candidates: none.
+--- research/wave9_methods/report/wave9_report.md
+This report is exploratory simulation evidence. The historical split is not selection-independent because prior waves were inspected before this expansion; no live-capital recommendation is made.
+Eligible candidates: none.
+Selection-independent: false. Any positive result is a candidate for a fresh prospective paper window only after new unseen data exists.
+--- research/wave10_ensemble/report/wave10_report.md
+Exploratory evidence only. Component selection was informed by Wave-8/9 results, so selection-independent is false and no live capital is approved.
+Eligible candidates: none.

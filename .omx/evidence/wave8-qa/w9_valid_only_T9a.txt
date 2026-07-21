@@ -1,0 +1,5 @@
+﻿COMMAND: python research/wave9_methods/run_wave9.py --only T9a
+EXIT_CODE: 0
+ELAPSED_SECONDS: 3.12
+OUTPUT:
+completed T9a: oos=0.1381 gates=9/15

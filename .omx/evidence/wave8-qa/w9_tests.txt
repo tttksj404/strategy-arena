@@ -1,0 +1,5 @@
+﻿COMMAND: python -m pytest -q research/wave9_methods/tests
+EXIT_CODE: 0
+OUTPUT:
+....                                                                     [100%]
+4 passed in 0.53s

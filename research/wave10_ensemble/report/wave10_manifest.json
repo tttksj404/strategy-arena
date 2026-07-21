@@ -1,0 +1,16 @@
+{
+  "report_sha256": "bea5f4d6231bc436c36cbb27c1e33500e98089eedcc0a685f6f39cb194eb8886",
+  "results_sha256": "9a7cb61f41d45d258e570a9cfda3169d05298b96c0ee52a7a02527016b8886b4",
+  "spec_sha256": "2c69c59586d72235429dd2757bea95a4b44e91d0816be2ad7332eaa8848ea306",
+  "runner_sha256": "0371d5bf9ecb113bf4ea9a74b8b657b2e69e658d5f32b312254db2c9d57ef82f",
+  "result_ids": [
+    "E10a",
+    "E10b",
+    "E10c",
+    "E10d",
+    "E10e",
+    "E10f"
+  ],
+  "eligible": [],
+  "selection_independent": false
+}

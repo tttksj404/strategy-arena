@@ -1,0 +1,7 @@
+﻿COMMAND: python research/wave9_methods/run_wave9.py --only DOES_NOT_EXIST
+EXIT_CODE: 2
+ELAPSED_SECONDS: 0.67
+OUTPUT:
+usage: run_wave9.py [-h]
+                    [--only {T9a,T9b,T9c,T9d,P9a,P9b,P9c,P9d,H9a,H9b,H9c,H9d,D9a,D9b,D9c,D9d}]
+run_wave9.py: error: argument --only: invalid choice: 'DOES_NOT_EXIST' (choose from T9a, T9b, T9c, T9d, P9a, P9b, P9c, P9d, H9a, H9b, H9c, H9d, D9a, D9b, D9c, D9d)
