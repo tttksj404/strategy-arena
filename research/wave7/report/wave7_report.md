@@ -1,0 +1,64 @@
+# Wave-7 리포트 -- 캐리+모멘텀 결합 포트폴리오
+
+사전등록: research/wave7/SPEC.md. 구성요소는 W2c(캐리, research/wave2/results/W2c.json)와 W3c(모멘텀, research/wave3/results/W3c.json)의 일수익 시리즈만 사용, 신규 신호 탐색 없음.
+
+## 구성 개요 + 결합 자산곡선 지표
+
+| Candidate | Definition | Total Ret | CAGR | Sharpe | MDD | Calmar |
+|---|---|---:|---:|---:|---:|---:|
+| W7a | 정적 70/30 (캐리/모멘텀), 일 리밸런스 | 129.94% | 12.92% | 2.3983 | 6.68% | 1.9355 |
+| W7b | 정적 60/40 (캐리/모멘텀), 일 리밸런스 | 114.23% | 11.76% | 1.7833 | 9.41% | 1.2500 |
+| W7c | 레짐 스위치: BTC/ETH 7d 펀딩 APR(평균)>15% -> 캐리100/모멘텀0, 아니면 캐리60/모멘텀40 | 202.53% | 17.53% | 2.8303 | 7.42% | 2.3619 |
+| W7d | W7c + 모멘텀 크래시가드: BTC<MA200(시프트) 시 모멘텀 슬리브 현금(0) | 177.52% | 16.06% | 3.4271 | 3.89% | 4.1281 |
+
+## 심층검증 배터리 (MC 1e4 / 블록셔플 90일 1e3 / 휴면기 OOS / Sharpe 비교 / W2c 상관)
+
+| Candidate | MC p05 | Ruin P(<150) | Block MDD p95 | Dormant OOS | Sharpe (combined vs carry-alone) | Corr w/ W2c | Gates | Overall |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| W7a | $554.85 | 0.00% | 9.63% | 10.23% | 2.3983 vs 4.2719 | 0.4781 | 4/5 | FAIL |
+| W7b | $489.59 | 0.00% | 13.78% | 13.59% | 1.7833 vs 4.2719 | 0.3279 | 4/5 | FAIL |
+| W7c | $713.32 | 0.00% | 8.64% | 13.59% | 2.8303 vs 4.2719 | 0.5893 | 4/5 | FAIL |
+| W7d | $694.94 | 0.00% | 4.48% | 3.22% | 3.4271 vs 4.2719 | 0.7775 | 4/5 | FAIL |
+
+### 게이트별 상세
+
+| Candidate | Gate | Status | Value |
+|---|---|---|---|
+| W7a | mc_bootstrap_p05 | PASS | p05=554.85 (>300) |
+| W7a | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
+| W7a | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0963 (<=0.25) |
+| W7a | dormant_oos_return | PASS | oos=0.1023 (> carry_alone=0.0064) |
+| W7a | sharpe_vs_carry_alone | FAIL | sharpe=2.3983 (> carry_alone=4.2719) |
+| W7b | mc_bootstrap_p05 | PASS | p05=489.59 (>300) |
+| W7b | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
+| W7b | block_shuffle_mdd_p95 | PASS | mdd_p95=0.1378 (<=0.25) |
+| W7b | dormant_oos_return | PASS | oos=0.1359 (> carry_alone=0.0064) |
+| W7b | sharpe_vs_carry_alone | FAIL | sharpe=1.7833 (> carry_alone=4.2719) |
+| W7c | mc_bootstrap_p05 | PASS | p05=713.32 (>300) |
+| W7c | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
+| W7c | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0864 (<=0.25) |
+| W7c | dormant_oos_return | PASS | oos=0.1359 (> carry_alone=0.0064) |
+| W7c | sharpe_vs_carry_alone | FAIL | sharpe=2.8303 (> carry_alone=4.2719) |
+| W7d | mc_bootstrap_p05 | PASS | p05=694.94 (>300) |
+| W7d | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
+| W7d | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0448 (<=0.25) |
+| W7d | dormant_oos_return | PASS | oos=0.0322 (> carry_alone=0.0064) |
+| W7d | sharpe_vs_carry_alone | FAIL | sharpe=3.4271 (> carry_alone=4.2719) |
+
+## 자본 현실성 ($300 x 0.9 = $270 동시마진 버퍼, 최소주문 5 USDT)
+
+| Candidate | Max combined weight | Buffer<=90% | Carry min leg | Momentum min leg | Status |
+|---|---:|---|---:|---:|---|
+| W7a | 1.00 | False | $52.50 | $0.25 | FAIL |
+| W7b | 1.00 | False | $45.00 | $0.34 | FAIL |
+| W7c | 1.00 | False | $45.00 | $0.34 | FAIL |
+| W7d | 1.00 | False | $45.00 | $0.34 | FAIL |
+
+## 판정
+
+**전멸: 4개 구성 모두 심층검증 게이트 미달 -> 캐리 단독(W2c)이 최적.**
+
+개별 구성 수치는 위 표에 사실대로 기록. 상세 사유는 게이트별 상세표 참조.
+
+모멘텀 슬리브 주의: W3c는 게이트 2(overfit_sensitivity)·게이트 3 계열(IS 일관성) 개별 FAIL, 전체 후보군 자체 딥밸리데이션에서 MC p05 $227.99(UNDETERMINED, trade_returns가 daily-active 시맨틱), 블록셔플 MDD p95 42.71%로 기록된 저확신 슬리브다. 위 결합 결과가 통과하더라도 모멘텀은 보조 비중으로만 취급해야 한다 (SPEC.md 핵심 규율).
+
