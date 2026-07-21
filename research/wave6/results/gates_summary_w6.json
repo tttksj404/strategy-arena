@@ -1,0 +1,29 @@
+{
+  "standard_verdicts": {
+    "W6a": "FAIL",
+    "W6b": "UNTESTED_IN_OOS",
+    "W6c": "FAIL",
+    "W6d": "FAIL"
+  },
+  "survivors": [],
+  "combination": null,
+  "exploratory": {
+    "W6e": {
+      "candidate_id": "W6e",
+      "verdict": "EFFECT_NEGATIVE_OR_ZERO_COST_AFTER",
+      "sample_size": 1336,
+      "direction": "negative",
+      "t_stat": -2.871703085976776,
+      "cost_after_mean": -0.0004213966895514435,
+      "deployment_claim": false
+    },
+    "W6f": {
+      "candidate_id": "W6f",
+      "verdict": "UNDETERMINED",
+      "sample_size": 0,
+      "reason": "Bitget contracts payload has no populated launchTime for any of the 702 listed usdt-futures symbols (checked against research/wave3/cache/bitget_contracts.json and a live /api/v2/mix/market/contracts refetch); the pre-registered listing-effect test cannot be evaluated.",
+      "deployment_claim": false
+    }
+  },
+  "no_edge_next_axis": "order_book_depth_forward_collection"
+}
