@@ -1,0 +1,4 @@
+﻿COMMAND: python research/wave8_alternative/validate_wave8.py
+EXIT_CODE: 0
+OUTPUT:
+WAVE8_VALIDATION_PASS candidates=16 eligible=[]

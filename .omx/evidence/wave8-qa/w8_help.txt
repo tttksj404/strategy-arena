@@ -1,0 +1,12 @@
+﻿COMMAND: python research/wave8_alternative/run_wave8.py --help
+EXIT_CODE: 0
+ELAPSED_SECONDS: 0.73
+OUTPUT:
+usage: run_wave8.py [-h]
+                    [--only {R8a,R8b,R8c,R8d,V8a,V8b,V8c,V8d,Q8a,Q8b,Q8c,Q8d,F8a,F8b,F8c,F8d}]
+
+Wave-8 alternative crypto research runner
+
+options:
+  -h, --help            show this help message and exit
+  --only {R8a,R8b,R8c,R8d,V8a,V8b,V8c,V8d,Q8a,Q8b,Q8c,Q8d,F8a,F8b,F8c,F8d}

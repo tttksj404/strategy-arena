@@ -1,0 +1,12 @@
+﻿COMMAND: python research/wave9_methods/run_wave9.py --help
+EXIT_CODE: 0
+ELAPSED_SECONDS: 0.68
+OUTPUT:
+usage: run_wave9.py [-h]
+                    [--only {T9a,T9b,T9c,T9d,P9a,P9b,P9c,P9d,H9a,H9b,H9c,H9d,D9a,D9b,D9c,D9d}]
+
+Wave-9 method expansion crypto research runner
+
+options:
+  -h, --help            show this help message and exit
+  --only {T9a,T9b,T9c,T9d,P9a,P9b,P9c,P9d,H9a,H9b,H9c,H9d,D9a,D9b,D9c,D9d}

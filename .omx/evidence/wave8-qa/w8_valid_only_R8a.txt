@@ -1,0 +1,5 @@
+﻿COMMAND: python research/wave8_alternative/run_wave8.py --only R8a
+EXIT_CODE: 0
+ELAPSED_SECONDS: 3.75
+OUTPUT:
+completed R8a: oos=-0.1179 gates=3/14

@@ -1,0 +1,26 @@
+{
+  "report_sha256": "0eecdcf05957f139963c64cee76eb84b0fb4083845522f5c81f7f2a2c101634f",
+  "results_sha256": "30730da9a7fade13739790b3ebb51dff3ea18c0167efb71ed51f6b42420c5450",
+  "spec_sha256": "9e029df2e9ead41a6e5684d39d7c537cf206041a1dc361929ef89e3364f00c3a",
+  "runner_sha256": "7d04e4b4a9656384005c7f4d85729db18f2b32efe79ae8102194c2d446df4691",
+  "result_ids": [
+    "T9a",
+    "T9b",
+    "T9c",
+    "T9d",
+    "P9a",
+    "P9b",
+    "P9c",
+    "P9d",
+    "H9a",
+    "H9b",
+    "H9c",
+    "H9d",
+    "D9a",
+    "D9b",
+    "D9c",
+    "D9d"
+  ],
+  "eligible": [],
+  "selection_independent": false
+}

@@ -1,0 +1,13 @@
+﻿COMMAND: parse wave8 aggregate oos_independent gates + report/spec markers after latest full runner
+result_count=16
+oos_independent_pass_count=0
+oos_independent_statuses=FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL,FAIL
+REPORT_MARKERS:
+This report is generated from the fixed-universe cache and the preregistered SPEC.md. It is simulation evidence only; prior waves were inspected before this expansion, so selection-independent is false and no live-capital recommendation is made.
+Data: 2020-09-23T00:00:00+00:00 to 2026-07-14T00:00:00+00:00 (2121 common daily rows); OOS begins 2025-10-01.
+Eligible candidates: none.
+SPEC_MARKERS:
+# Wave-8 alternative alpha preregistration
+Status: preregistered 2026-07-21; research only; no live order path.
+- OOS split is 2025-09-30 23:59:59 UTC; OOS begins 2025-10-01.
+All of the following must pass: data validation; fixed-universe contract; the selection-independent flag; gross cap and minimum order; at least 90 active OOS days; positive after-cost OOS return; OOS Sharpe >= 1.0; at least two positive OOS calendar blocks; positive doubled-slippage OOS return; Monte Carlo p05 final capital > $100; ruin probability < 5%; historical MDD <= 25%; 90-day block-shuffle MDD p95 <= 25%; and deflated-Sharpe probability >= 95% using 16 registered trials.

@@ -1,0 +1,91 @@
+﻿COMMAND: python -m pytest -q --ignore research/wave1-rwa
+EXIT_CODE: 1
+ELAPSED_SECONDS: 9.06
+OUTPUT:
+...................................FF................................... [ 80%]
+..s...............                                                       [100%]
+================================== FAILURES ===================================
+__________ test_l1_reconciles_with_wave_engine_cagr_and_mdd[W2c-SYM] __________
+
+candidate_id = 'W2c', structure = 'SYM'
+
+    @pytest.mark.parametrize(
+        ("candidate_id", "structure"),
+        (("W2c", "SYM"), ("F1f", "ASYM")),
+    )
+    def test_l1_reconciles_with_wave_engine_cagr_and_mdd(
+        candidate_id: str,
+        structure: Literal["SYM", "ASYM"],
+    ) -> None:
+        root = Path(__file__).resolve().parents[3]
+        cache_dir = root / "research" / "wave1" / "cache"
+>       symbols = tuple(str(symbol) for symbol in json.loads((cache_dir / "universe.json").read_text(encoding="utf-8"))["symbols"])
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research\wave4_leverage\tests\test_leverage.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/SSAFY/Desktop/2�б�/strategy-arena-crypto/research/wave1/cache/universe.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\SSAFY\\Desktop\\2�б�\\strategy-arena-crypto\\research\\wave1\\cache\\universe.json'
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_________ test_l1_reconciles_with_wave_engine_cagr_and_mdd[F1f-ASYM] __________
+
+candidate_id = 'F1f', structure = 'ASYM'
+
+    @pytest.mark.parametrize(
+        ("candidate_id", "structure"),
+        (("W2c", "SYM"), ("F1f", "ASYM")),
+    )
+    def test_l1_reconciles_with_wave_engine_cagr_and_mdd(
+        candidate_id: str,
+        structure: Literal["SYM", "ASYM"],
+    ) -> None:
+        root = Path(__file__).resolve().parents[3]
+        cache_dir = root / "research" / "wave1" / "cache"
+>       symbols = tuple(str(symbol) for symbol in json.loads((cache_dir / "universe.json").read_text(encoding="utf-8"))["symbols"])
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research\wave4_leverage\tests\test_leverage.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/SSAFY/Desktop/2�б�/strategy-arena-crypto/research/wave1/cache/universe.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\SSAFY\\Desktop\\2�б�\\strategy-arena-crypto\\research\\wave1\\cache\\universe.json'
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ===========================
+FAILED research/wave4_leverage/tests/test_leverage.py::test_l1_reconciles_with_wave_engine_cagr_and_mdd[W2c-SYM]
+FAILED research/wave4_leverage/tests/test_leverage.py::test_l1_reconciles_with_wave_engine_cagr_and_mdd[F1f-ASYM]
+2 failed, 87 passed, 1 skipped in 8.57s
