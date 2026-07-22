@@ -1,0 +1,511 @@
+{
+  "candidate_id": "W9b",
+  "family": "F9",
+  "definition": "W9a + 2x 레버리지",
+  "candidate_config": {
+    "mode": "momentum_top1_long",
+    "lookback_days": 30,
+    "hold_days": 7,
+    "leverage": 2.0,
+    "funding_threshold_apr": 0.3
+  },
+  "equity": [
+    {
+      "timestamp": "2019-09-08T00:00:00+00:00",
+      "value": 100.0
+    },
+    {
+      "timestamp": "2019-11-16T00:00:00+00:00",
+      "value": 93.22715853173798
+    },
+    {
+      "timestamp": "2019-11-24T00:00:00+00:00",
+      "value": 69.43799578140371
+    },
+    {
+      "timestamp": "2019-12-02T00:00:00+00:00",
+      "value": 78.12148181303037
+    },
+    {
+      "timestamp": "2019-12-10T00:00:00+00:00",
+      "value": 78.67216041277929
+    },
+    {
+      "timestamp": "2019-12-18T00:00:00+00:00",
+      "value": 66.7507788381401
+    },
+    {
+      "timestamp": "2019-12-26T00:00:00+00:00",
+      "value": 65.12354477198426
+    },
+    {
+      "timestamp": "2020-01-03T00:00:00+00:00",
+      "value": 61.24763613443957
+    },
+    {
+      "timestamp": "2020-01-11T00:00:00+00:00",
+      "value": 73.87117129915174
+    },
+    {
+      "timestamp": "2020-01-19T00:00:00+00:00",
+      "value": 88.1197105004089
+    },
+    {
+      "timestamp": "2020-01-27T00:00:00+00:00",
+      "value": 85.5648035611884
+    },
+    {
+      "timestamp": "2020-02-04T00:00:00+00:00",
+      "value": 101.28472897834313
+    },
+    {
+      "timestamp": "2020-02-12T00:00:00+00:00",
+      "value": 144.1609518364411
+    },
+    {
+      "timestamp": "2020-02-20T00:00:00+00:00",
+      "value": 131.32192621029665
+    },
+    {
+      "timestamp": "2020-02-28T00:00:00+00:00",
+      "value": 101.77975419032227
+    },
+    {
+      "timestamp": "2020-03-07T00:00:00+00:00",
+      "value": 114.96702440500265
+    },
+    {
+      "timestamp": "2020-03-15T00:00:00+00:00",
+      "value": 0.0
+    }
+  ],
+  "trade_returns": [
+    {
+      "timestamp": "2019-11-16T00:00:00+00:00",
+      "value": -0.06772841468262022
+    },
+    {
+      "timestamp": "2019-11-24T00:00:00+00:00",
+      "value": -0.25517416946946364
+    },
+    {
+      "timestamp": "2019-12-02T00:00:00+00:00",
+      "value": 0.12505381144586833
+    },
+    {
+      "timestamp": "2019-12-10T00:00:00+00:00",
+      "value": 0.0070490035131037425
+    },
+    {
+      "timestamp": "2019-12-18T00:00:00+00:00",
+      "value": -0.15153240373837132
+    },
+    {
+      "timestamp": "2019-12-26T00:00:00+00:00",
+      "value": -0.02437775400496276
+    },
+    {
+      "timestamp": "2020-01-03T00:00:00+00:00",
+      "value": -0.05951624180034015
+    },
+    {
+      "timestamp": "2020-01-11T00:00:00+00:00",
+      "value": 0.20610648771820853
+    },
+    {
+      "timestamp": "2020-01-19T00:00:00+00:00",
+      "value": 0.19288362362031183
+    },
+    {
+      "timestamp": "2020-01-27T00:00:00+00:00",
+      "value": -0.028993592065973073
+    },
+    {
+      "timestamp": "2020-02-04T00:00:00+00:00",
+      "value": 0.1837195290925108
+    },
+    {
+      "timestamp": "2020-02-12T00:00:00+00:00",
+      "value": 0.4233236667619048
+    },
+    {
+      "timestamp": "2020-02-20T00:00:00+00:00",
+      "value": -0.0890603555442049
+    },
+    {
+      "timestamp": "2020-02-28T00:00:00+00:00",
+      "value": -0.22495993527132754
+    },
+    {
+      "timestamp": "2020-03-07T00:00:00+00:00",
+      "value": 0.12956673279069772
+    },
+    {
+      "timestamp": "2020-03-15T00:00:00+00:00",
+      "value": -1.0887303986147625
+    }
+  ],
+  "trades": [
+    {
+      "entry_day": "2019-11-09T00:00:00+00:00",
+      "exit_day": "2019-11-16T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -6.772841468262023,
+      "gross_pnl_dollars": -6.520841468262023,
+      "fee_dollars": 0.252,
+      "equity_before": 100.0,
+      "equity_after": 93.22715853173798,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2019-11-17T00:00:00+00:00",
+      "exit_day": "2019-11-24T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -23.789162750334263,
+      "gross_pnl_dollars": -23.554230310834285,
+      "fee_dollars": 0.23493243949997974,
+      "equity_before": 93.22715853173798,
+      "equity_after": 69.43799578140371,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2019-11-25T00:00:00+00:00",
+      "exit_day": "2019-12-02T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 8.68348603162666,
+      "gross_pnl_dollars": 8.858469780995797,
+      "fee_dollars": 0.17498374936913735,
+      "equity_before": 69.43799578140371,
+      "equity_after": 78.12148181303037,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2019-12-03T00:00:00+00:00",
+      "exit_day": "2019-12-10T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 0.5506785997489212,
+      "gross_pnl_dollars": 0.7475447339177578,
+      "fee_dollars": 0.19686613416883655,
+      "equity_before": 78.12148181303037,
+      "equity_after": 78.67216041277929,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2019-12-11T00:00:00+00:00",
+      "exit_day": "2019-12-18T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -11.921381574639184,
+      "gross_pnl_dollars": -11.72312773039898,
+      "fee_dollars": 0.1982538442402038,
+      "equity_before": 78.67216041277929,
+      "equity_after": 66.7507788381401,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2019-12-19T00:00:00+00:00",
+      "exit_day": "2019-12-26T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -1.6272340661558535,
+      "gross_pnl_dollars": -1.4590221034837405,
+      "fee_dollars": 0.16821196267211305,
+      "equity_before": 66.7507788381401,
+      "equity_after": 65.12354477198426,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2019-12-27T00:00:00+00:00",
+      "exit_day": "2020-01-03T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -3.875908637544693,
+      "gross_pnl_dollars": -3.7117973047192927,
+      "fee_dollars": 0.16411133282540033,
+      "equity_before": 65.12354477198426,
+      "equity_after": 61.24763613443957,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-01-04T00:00:00+00:00",
+      "exit_day": "2020-01-11T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 12.623535164712173,
+      "gross_pnl_dollars": 12.777879207770962,
+      "fee_dollars": 0.1543440430587877,
+      "equity_before": 61.24763613443957,
+      "equity_after": 73.87117129915174,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-01-12T00:00:00+00:00",
+      "exit_day": "2020-01-19T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 14.248539201257167,
+      "gross_pnl_dollars": 14.43469455293103,
+      "fee_dollars": 0.1861553516738624,
+      "equity_before": 73.87117129915174,
+      "equity_after": 88.1197105004089,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-01-20T00:00:00+00:00",
+      "exit_day": "2020-01-27T00:00:00+00:00",
+      "legs": [
+        "BTCUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -2.5549069392204995,
+      "gross_pnl_dollars": -2.332845268759469,
+      "fee_dollars": 0.22206167046103045,
+      "equity_before": 88.1197105004089,
+      "equity_after": 85.5648035611884,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-01-28T00:00:00+00:00",
+      "exit_day": "2020-02-04T00:00:00+00:00",
+      "legs": [
+        "ETHUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 15.719925417154723,
+      "gross_pnl_dollars": 15.935548722128917,
+      "fee_dollars": 0.21562330497419477,
+      "equity_before": 85.5648035611884,
+      "equity_after": 101.28472897834313,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-02-05T00:00:00+00:00",
+      "exit_day": "2020-02-12T00:00:00+00:00",
+      "legs": [
+        "ETHUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 42.87622285809797,
+      "gross_pnl_dollars": 43.131460375123396,
+      "fee_dollars": 0.2552375170254247,
+      "equity_before": 101.28472897834313,
+      "equity_after": 144.1609518364411,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-02-13T00:00:00+00:00",
+      "exit_day": "2020-02-20T00:00:00+00:00",
+      "legs": [
+        "ETHUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -12.83902562614444,
+      "gross_pnl_dollars": -12.47574002751661,
+      "fee_dollars": 0.36328559862783155,
+      "equity_before": 144.1609518364411,
+      "equity_after": 131.32192621029665,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-02-21T00:00:00+00:00",
+      "exit_day": "2020-02-28T00:00:00+00:00",
+      "legs": [
+        "ETHUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -29.542172019974387,
+      "gross_pnl_dollars": -29.21124076592444,
+      "fee_dollars": 0.33093125404994755,
+      "equity_before": 131.32192621029665,
+      "equity_after": 101.77975419032227,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-02-29T00:00:00+00:00",
+      "exit_day": "2020-03-07T00:00:00+00:00",
+      "legs": [
+        "ETHUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": 13.187270214680382,
+      "gross_pnl_dollars": 13.443755195239994,
+      "fee_dollars": 0.2564849805596121,
+      "equity_before": 101.77975419032227,
+      "equity_after": 114.96702440500265,
+      "liquidated_legs": []
+    },
+    {
+      "entry_day": "2020-03-08T00:00:00+00:00",
+      "exit_day": "2020-03-15T00:00:00+00:00",
+      "legs": [
+        "ETHUSDT"
+      ],
+      "directions": [
+        1.0
+      ],
+      "pnl_dollars": -125.16809430801166,
+      "gross_pnl_dollars": -124.89907147090395,
+      "fee_dollars": 0.2690228371077062,
+      "equity_before": 114.96702440500265,
+      "equity_after": 0.0,
+      "liquidated_legs": [
+        "ETHUSDT"
+      ]
+    }
+  ],
+  "metadata": {
+    "mode": "momentum_top1_long",
+    "lookback_days": 30,
+    "hold_days": 7,
+    "leverage": 2.0,
+    "num_concurrent_positions": 1,
+    "single_leg": true,
+    "min_notional_at_start": 180.0,
+    "gross_fraction_at_start": 1.8,
+    "min_order_usdt": 5.0,
+    "trades_executed": 16,
+    "no_signal_days": 61,
+    "infeasible_cycles": 0,
+    "liquidation_events": 1,
+    "final_equity": 0.0,
+    "universe_size_crypto": 332,
+    "funding_applied": true,
+    "atr_window": null,
+    "atr_breakout_multiplier": null,
+    "funding_threshold_apr": null,
+    "cost_model": {
+      "taker_fee_rate": 0.0006,
+      "slippage_major_bp": 1.0,
+      "slippage_alt_bp": 3.0,
+      "maker_assumed": false
+    },
+    "liquidation_model": {
+      "maintenance_rate": 0.005,
+      "liquidation_fee_rate": 0.0006,
+      "source": "research.wave4_leverage.sweep.liquidation_loss (unmodified import)"
+    },
+    "execution_timing": "signal confirmed at close(t) using data through t only; entry/exit fills at open(t+1); liquidation checked once per held day using the cumulative adverse move from the fixed entry price to that day's own low/high (worst point reached within the bar, measured against entry -- not that day's own open, so a gradual multi-day adverse move is still caught)",
+    "equity_curve_granularity": "trade_boundary (entry/exit marks only); liquidation itself is still checked daily within each hold",
+    "cost_conservatism_note": "every cycle pays a fresh entry+exit fee even if the same symbol re-qualifies next cycle (no position carry-through optimization)",
+    "data_source": "research/wave3/cache (Binance USDT-M perp OHLC + funding), crypto-only (AssetType.CRYPTO; tokenized stocks excluded). SPEC.md's 'Bitget USDT-M' describes the intended live venue's perpetual contract type, not this backtest's cached data source -- no Bitget crypto-perp OHLC cache exists in this repo."
+  },
+  "validation": {
+    "candidate_id": "W9b",
+    "mc_bootstrap": {
+      "median": 0.00014073565134073036,
+      "p05": 1.3182700534742947e-16,
+      "p_bankrupt": 0.6512,
+      "paths": 10000,
+      "trade_count": 16
+    },
+    "block_shuffle": {
+      "block_days": 90,
+      "block_count": 2,
+      "paths": 1000,
+      "mdd_p05": 0.9999992025092582,
+      "mdd_median": 0.9999995115557723,
+      "mdd_p95": 0.9999995115557723,
+      "low_confidence": true
+    },
+    "gates": [
+      {
+        "gate_id": "H1",
+        "name": "bankruptcy_probability",
+        "status": "FAIL",
+        "detail": "P(final<$30)=0.6512 (must be <0.20); n_trades=16"
+      },
+      {
+        "gate_id": "H2",
+        "name": "mc_p05_floor",
+        "status": "FAIL",
+        "detail": "p05=$0.00 (must be >$50)"
+      },
+      {
+        "gate_id": "H3",
+        "name": "oos_return_positive",
+        "status": "UNDETERMINED",
+        "detail": "no OOS trades (entry after 2025-10-01)"
+      },
+      {
+        "gate_id": "H4",
+        "name": "capital_feasibility",
+        "status": "PASS",
+        "detail": "min_notional=$180.00 (>=$5); gross=1.800x equity (<= active*leverage=1.800x); single_leg=True; leverage=2x (<=3x); infeasible_cycles_during_run=0"
+      },
+      {
+        "gate_id": "H5",
+        "name": "block_shuffle_mdd_p95",
+        "status": "FAIL",
+        "detail": "mdd_p95=1.0000 (must be <=0.50); blocks=2; paths=1000"
+      }
+    ],
+    "reference_metrics": {
+      "sharpe_trade_level": -0.9877682268828242,
+      "dsr": {
+        "score": -6.352198285547402,
+        "probability": 1.0612971612644628e-10,
+        "trials": 58,
+        "observed_sharpe": -2.4283096778303186
+      },
+      "total_trials_disclosed": 58
+    },
+    "overall": {
+      "status": "FAIL",
+      "hard_gates_status": "FAIL",
+      "passed": 1,
+      "total": 5
+    }
+  }
+}
