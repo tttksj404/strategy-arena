@@ -61,6 +61,11 @@ def fetch_klines(request: BinanceKlineRequest, session: requests.Session | None 
     client = session or requests.Session()
     endpoint = "/fapi/v1/klines" if request.market == "fapi" else "/api/v3/klines"
     base = FAPI_BASE if request.market == "fapi" else SPOT_BASE
+    # Binance's real per-request cap differs by endpoint: fapi (perp) klines allow up to
+    # 1500 rows, but spot klines (/api/v3/klines) cap at 1000. Using 1500 for spot silently
+    # truncates the response to 1000 rows; len(page) < limit then reads as "no more data",
+    # so pagination stopped after a single page instead of walking to end_ms.
+    limit = 1500 if request.market == "fapi" else 1000
     cursor = request.start_ms
     collected: list[list[JsonValue]] = []
     try:
@@ -68,7 +73,7 @@ def fetch_klines(request: BinanceKlineRequest, session: requests.Session | None 
             params: dict[str, str | int] = {
                 "symbol": request.symbol,
                 "interval": request.interval,
-                "limit": 1500,
+                "limit": limit,
                 "startTime": cursor,
             }
             if request.end_ms is not None:
@@ -78,7 +83,7 @@ def fetch_klines(request: BinanceKlineRequest, session: requests.Session | None 
                 break
             collected.extend(page)
             next_cursor = int(page[-1][0]) + 1
-            if next_cursor <= cursor or len(page) < 1500:
+            if next_cursor <= cursor or len(page) < limit:
                 break
             cursor = next_cursor
     finally:

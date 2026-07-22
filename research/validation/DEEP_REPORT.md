@@ -6,7 +6,7 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 
 | Candidate | MC 10k | Leave-one-year-out | DSR (28 trials) | Bitget native | 90d block shuffle | Overall |
 |---|---|---|---|---|---|---|
-| W2c | PASS p05=746.32; ruin=0.00% | PASS years=8 | PASS score=1.819 | FAIL sign=76.42%; entry=100.00%; coverage=82d | PASS blocks=18; MDD p95=1.49% | FAIL |
+| W2c | PASS p05=720.68; ruin=0.00% | PASS years=8 | PASS score=1.820 | FAIL sign=76.42%; entry=100.00%; coverage=82d | PASS blocks=18; MDD p95=1.48% | FAIL |
 | F1e | PASS p05=397.44; ruin=0.00% | PASS years=8 | PASS score=7.585 | FAIL sign=76.42%; entry=92.14%; coverage=82d | PASS blocks=10; MDD p95=0.83% | FAIL |
 | F1f | PASS p05=458.66; ruin=0.00% | PASS years=8 | PASS score=1.931 | N/A | PASS blocks=18; MDD p95=3.83% | PASS |
 | W3c | UNDETERMINED p05=227.99; ruin=0.31% | PASS years=8 | PASS score=7.708 | N/A | PASS blocks=28; MDD p95=42.71% | FAIL |
@@ -16,14 +16,14 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 
 | Candidate | Year | Held-out return | Held-out Sharpe | Remaining return | Remaining Sharpe |
 |---|---:|---:|---:|---:|---:|
-| W2c | 2019 | 0.0104 | 5.379 | 1.7864 | 4.335 |
-| W2c | 2020 | 0.3224 | 9.244 | 1.1290 | 3.578 |
-| W2c | 2021 | 0.6202 | 12.036 | 0.7377 | 2.807 |
-| W2c | 2022 | 0.0087 | 2.785 | 1.7910 | 4.596 |
-| W2c | 2023 | 0.0675 | 6.768 | 1.6374 | 4.354 |
-| W2c | 2024 | 0.2079 | 2.792 | 1.3308 | 5.555 |
-| W2c | 2025 | 0.0004 | 0.028 | 1.8142 | 4.864 |
-| W2c | 2026 | -0.0005 | -1.368 | 1.8169 | 4.454 |
+| W2c | 2019 | 0.0104 | 5.379 | 1.7383 | 4.258 |
+| W2c | 2020 | 0.3224 | 9.244 | 1.0923 | 3.493 |
+| W2c | 2021 | 0.6202 | 12.036 | 0.7078 | 2.718 |
+| W2c | 2022 | 0.0087 | 2.785 | 1.7429 | 4.514 |
+| W2c | 2023 | 0.0649 | 7.038 | 1.5982 | 4.280 |
+| W2c | 2024 | 0.1972 | 2.657 | 1.3110 | 5.502 |
+| W2c | 2025 | -0.0057 | -0.186 | 1.7827 | 4.809 |
+| W2c | 2026 | -0.0005 | -1.368 | 1.7683 | 4.375 |
 | F1e | 2019 | 0.0137 | 0.957 | 0.6657 | 5.094 |
 | F1e | 2020 | 0.2214 | 8.073 | 0.3825 | 3.444 |
 | F1e | 2021 | 0.3724 | 12.694 | 0.2304 | 2.321 |
@@ -74,12 +74,3 @@ Cache-only full-history validation for W2c, F1e, W3c, and W3d.
 - The wave2 cache manifest recheck is FAIL; every consumed funding file must have a matching byte count and SHA-256 before native evidence can be accepted.
 - Funding rows are normalized to UTC 8-hour buckets and a 7-day score is emitted only for 21 contiguous buckets; gaps reset the rolling window.
 - Final candidate status is the intersection of the stated gates; insufficient cache coverage is never interpreted as a PASS.
-
-## 최종 판정 — 백데이터 검증 완결 (Fable5, 2026-07-16)
-
-교차검증(`CROSS_VENUE_REPORT.md`)으로 마지막 차단기 해제:
-- **거래소 재현성 PASS**: Binance↔Bybit 919일 겹침에서 전략이 실제 작동하는 고펀딩(|7d APR|>15%) 구간 부호 일치율 **98.9%**(N=4399, 기준 90%). OKX 보조 91.7%. 이전에 Bitget이 76.4%로 미달했던 것은 저펀딩 노이즈였음이 입증됨 — Binance↔Bybit도 저펀딩 구간에선 75.2%로 똑같이 떨어진다(격차 +23.7%p). 펀딩은 거래소 고유가 아니라 시장 공통 현상.
-- **체결률 PASS(최악가정)**: F1f(동일 룰, 전량 테이커 체결 가정)가 MC p05 $459·파산 0%·DSR 1.93·8년 LOO·블록셔플 전부 통과. 메이커 체결은 순수 개선분.
-
-**결론: 캐리 패밀리(W2c 메이커 / F1f 테이커)는 히스토리 데이터로 도달 가능한 모든 게이트를 통과했다.**
-백데이터가 원리적으로 보증할 수 없는 잔여 리스크(명시): ①미래 펀딩 레짐의 비정상성 ②거래소 운영·커스터디 리스크 ③극단 이벤트에서 현물-퍼프 베이시스 폭주. 이 3개는 어떤 백테스트로도 제거 불가 — 사이징 상한과 회로차단기로만 관리 가능.

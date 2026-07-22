@@ -39916,5 +39916,178 @@
     "btc_beta_window": 60,
     "btc_beta_cap": 2.0,
     "btc_beta_neutral": true
-  }
+  },
+  "metrics": {
+    "is": {
+      "total_ret": 0.9167873610557971,
+      "cagr": 0.11323059649879119,
+      "sharpe": 0.4624518784909156,
+      "sortino": 0.6477259268458929,
+      "calmar": 0.2016430146693813,
+      "recovery_factor": 1.6326308701910883,
+      "mdd": 0.5615398911013445,
+      "profit_factor": 1.0775927036655375,
+      "win_rate": 0.5088207985143919,
+      "turnover": 287.5969230423143,
+      "exposure": 0.9724604966139955,
+      "n_trades": 2154.0
+    },
+    "oos": {
+      "total_ret": -0.6647130421749587,
+      "cagr": -0.7508643814717504,
+      "sharpe": -3.7246207883601414,
+      "sortino": -4.482208850124112,
+      "calmar": -1.1160564846961774,
+      "recovery_factor": -0.9880043846631672,
+      "mdd": 0.6727834941760651,
+      "profit_factor": 0.5707687666768947,
+      "win_rate": 0.445993031358885,
+      "turnover": 47.35921521074589,
+      "exposure": 1.0,
+      "n_trades": 287.0
+    }
+  },
+  "validation": {
+    "neighbor_is_sharpes": [
+      0.27583710630184816,
+      0.27583710630184816
+    ],
+    "yearly_is_returns": {
+      "2019": -0.16225418551774673,
+      "2020": 0.32801011821492,
+      "2021": 0.41352668839236495,
+      "2022": -0.02168955728259303,
+      "2023": 0.10020779543600766,
+      "2024": 0.0626449917662113,
+      "2025": 0.06565509787494306
+    },
+    "regime_returns": {
+      "2022_bear": -0.040410362460003846,
+      "2024_bull": 0.043953524400211386,
+      "2025_sideways": -0.2947529265962786
+    },
+    "oos_trade_count": 287,
+    "gate4_is_after_cost": {
+      "status": "PASS",
+      "value": 0.9167873610557971
+    },
+    "oos_label": "OOS_CONTAMINATED_IS_ONLY",
+    "decision_scope": "IS_consistency_only"
+  },
+  "gates": [
+    {
+      "gate": 1,
+      "name": "data_validation",
+      "status": "PASS",
+      "value": "True"
+    },
+    {
+      "gate": 2,
+      "name": "overfit_sensitivity",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "dispersion=9.054"
+    },
+    {
+      "gate": 3,
+      "name": "walk_forward",
+      "status": "PASS",
+      "value": "positive_years=71.4%"
+    },
+    {
+      "gate": 4,
+      "name": "oos_after_cost",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "return=-0.6647"
+    },
+    {
+      "gate": 5,
+      "name": "trade_bootstrap",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "p05=60.09"
+    },
+    {
+      "gate": 6,
+      "name": "crash_stress",
+      "status": "PASS",
+      "value": "return=-0.0404"
+    },
+    {
+      "gate": 7,
+      "name": "trading_costs",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "measured=True; double_slippage=-0.6407"
+    },
+    {
+      "gate": 8,
+      "name": "capacity_and_sizing",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "quarter_kelly=0.0000; leverage=0.0000; concurrent=6; notional=0.00-0.00"
+    },
+    {
+      "gate": 9,
+      "name": "kelly",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "f=-10.4848; quarter=-2.6212"
+    },
+    {
+      "gate": 10,
+      "name": "mdd_limit",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "mdd=0.6728"
+    },
+    {
+      "gate": 11,
+      "name": "sharpe",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "sharpe=-3.7246"
+    },
+    {
+      "gate": 12,
+      "name": "sortino",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "sortino=-4.4822"
+    },
+    {
+      "gate": 13,
+      "name": "calmar",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "calmar=-1.1161"
+    },
+    {
+      "gate": 14,
+      "name": "profit_factor",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "pf=0.5708"
+    },
+    {
+      "gate": 15,
+      "name": "recovery_factor",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "recovery=-0.9880"
+    },
+    {
+      "gate": 16,
+      "name": "bankruptcy",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "p=0.8971"
+    },
+    {
+      "gate": 17,
+      "name": "regime",
+      "status": "FAIL",
+      "value": "{'2022_bear': -0.040410362460003846, '2024_bull': 0.043953524400211386, '2025_sideways': -0.2947529265962786}"
+    },
+    {
+      "gate": 18,
+      "name": "btc_correlation",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "corr=-0.0870"
+    },
+    {
+      "gate": 19,
+      "name": "factor_exposure",
+      "status": "OOS_CONTAMINATED_IS_ONLY",
+      "value": "True"
+    }
+  ]
 }

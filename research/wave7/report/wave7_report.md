@@ -6,44 +6,44 @@
 
 | Candidate | Definition | Total Ret | CAGR | Sharpe | MDD | Calmar |
 |---|---|---:|---:|---:|---:|---:|
-| W7a | 정적 70/30 (캐리/모멘텀), 일 리밸런스 | 129.94% | 12.92% | 2.3983 | 6.68% | 1.9355 |
-| W7b | 정적 60/40 (캐리/모멘텀), 일 리밸런스 | 114.23% | 11.76% | 1.7833 | 9.41% | 1.2500 |
-| W7c | 레짐 스위치: BTC/ETH 7d 펀딩 APR(평균)>15% -> 캐리100/모멘텀0, 아니면 캐리60/모멘텀40 | 202.53% | 17.53% | 2.8303 | 7.42% | 2.3619 |
-| W7d | W7c + 모멘텀 크래시가드: BTC<MA200(시프트) 시 모멘텀 슬리브 현금(0) | 177.52% | 16.06% | 3.4271 | 3.89% | 4.1281 |
+| W7a | 정적 70/30 (캐리/모멘텀), 일 리밸런스 | 127.16% | 12.72% | 2.3637 | 6.68% | 1.9055 |
+| W7b | 정적 60/40 (캐리/모멘텀), 일 리밸런스 | 112.01% | 11.59% | 1.7594 | 9.41% | 1.2319 |
+| W7c | 레짐 스위치: BTC/ETH 7d 펀딩 APR(평균)>15% -> 캐리100/모멘텀0, 아니면 캐리60/모멘텀40 | 198.59% | 17.31% | 2.7973 | 7.42% | 2.3316 |
+| W7d | W7c + 모멘텀 크래시가드: BTC<MA200(시프트) 시 모멘텀 슬리브 현금(0) | 173.90% | 15.84% | 3.3841 | 3.89% | 4.0710 |
 
 ## 심층검증 배터리 (MC 1e4 / 블록셔플 90일 1e3 / 휴면기 OOS / Sharpe 비교 / W2c 상관)
 
 | Candidate | MC p05 | Ruin P(<150) | Block MDD p95 | Dormant OOS | Sharpe (combined vs carry-alone) | Corr w/ W2c | Gates | Overall |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| W7a | $554.85 | 0.00% | 9.63% | 10.23% | 2.3983 vs 4.2719 | 0.4781 | 4/5 | FAIL |
-| W7b | $489.59 | 0.00% | 13.78% | 13.59% | 1.7833 vs 4.2719 | 0.3279 | 4/5 | FAIL |
-| W7c | $713.32 | 0.00% | 8.64% | 13.59% | 2.8303 vs 4.2719 | 0.5893 | 4/5 | FAIL |
-| W7d | $694.94 | 0.00% | 4.48% | 3.22% | 3.4271 vs 4.2719 | 0.7775 | 4/5 | FAIL |
+| W7a | $547.93 | 0.00% | 9.69% | 10.23% | 2.3637 vs 4.1969 | 0.4781 | 4/5 | FAIL |
+| W7b | $484.11 | 0.00% | 13.75% | 13.59% | 1.7594 vs 4.1969 | 0.3276 | 4/5 | FAIL |
+| W7c | $703.66 | 0.00% | 8.64% | 13.59% | 2.7973 vs 4.1969 | 0.5888 | 4/5 | FAIL |
+| W7d | $686.28 | 0.00% | 4.63% | 3.22% | 3.3841 vs 4.1969 | 0.7769 | 4/5 | FAIL |
 
 ### 게이트별 상세
 
 | Candidate | Gate | Status | Value |
 |---|---|---|---|
-| W7a | mc_bootstrap_p05 | PASS | p05=554.85 (>300) |
+| W7a | mc_bootstrap_p05 | PASS | p05=547.93 (>300) |
 | W7a | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
-| W7a | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0963 (<=0.25) |
+| W7a | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0969 (<=0.25) |
 | W7a | dormant_oos_return | PASS | oos=0.1023 (> carry_alone=0.0064) |
-| W7a | sharpe_vs_carry_alone | FAIL | sharpe=2.3983 (> carry_alone=4.2719) |
-| W7b | mc_bootstrap_p05 | PASS | p05=489.59 (>300) |
+| W7a | sharpe_vs_carry_alone | FAIL | sharpe=2.3637 (> carry_alone=4.1969) |
+| W7b | mc_bootstrap_p05 | PASS | p05=484.11 (>300) |
 | W7b | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
-| W7b | block_shuffle_mdd_p95 | PASS | mdd_p95=0.1378 (<=0.25) |
+| W7b | block_shuffle_mdd_p95 | PASS | mdd_p95=0.1375 (<=0.25) |
 | W7b | dormant_oos_return | PASS | oos=0.1359 (> carry_alone=0.0064) |
-| W7b | sharpe_vs_carry_alone | FAIL | sharpe=1.7833 (> carry_alone=4.2719) |
-| W7c | mc_bootstrap_p05 | PASS | p05=713.32 (>300) |
+| W7b | sharpe_vs_carry_alone | FAIL | sharpe=1.7594 (> carry_alone=4.1969) |
+| W7c | mc_bootstrap_p05 | PASS | p05=703.66 (>300) |
 | W7c | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
 | W7c | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0864 (<=0.25) |
 | W7c | dormant_oos_return | PASS | oos=0.1359 (> carry_alone=0.0064) |
-| W7c | sharpe_vs_carry_alone | FAIL | sharpe=2.8303 (> carry_alone=4.2719) |
-| W7d | mc_bootstrap_p05 | PASS | p05=694.94 (>300) |
+| W7c | sharpe_vs_carry_alone | FAIL | sharpe=2.7973 (> carry_alone=4.1969) |
+| W7d | mc_bootstrap_p05 | PASS | p05=686.28 (>300) |
 | W7d | bankruptcy_probability | PASS | ruin=0.0000 (<0.05) |
-| W7d | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0448 (<=0.25) |
+| W7d | block_shuffle_mdd_p95 | PASS | mdd_p95=0.0463 (<=0.25) |
 | W7d | dormant_oos_return | PASS | oos=0.0322 (> carry_alone=0.0064) |
-| W7d | sharpe_vs_carry_alone | FAIL | sharpe=3.4271 (> carry_alone=4.2719) |
+| W7d | sharpe_vs_carry_alone | FAIL | sharpe=3.3841 (> carry_alone=4.1969) |
 
 ## 자본 현실성 ($300 x 0.9 = $270 동시마진 버퍼, 최소주문 5 USDT)
 

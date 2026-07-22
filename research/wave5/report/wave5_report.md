@@ -2,14 +2,14 @@
 
 Wave-5 uses only the frozen wave-1 cache. No fetch stage or network call is part of this pipeline.
 
-Single-candidate tie-break selection: **W5b**.
+Single-candidate tie-break selection: **W5a**.
 
 | Candidate | Family | Verdict | OOS label |
 |---|---|---|---|
 | W2c | F1 | FAIL |  |
 | W5a | F5 | FAIL |  |
 | W5b | F5 | FAIL |  |
-| W5c | F5 | UNTESTED_IN_OOS | UNTESTED_IN_OOS |
+| W5c | F5 | FAIL |  |
 | W5d | F5 | FAIL |  |
 | W5e | F5 | FAIL |  |
 | W5f | F4 | OOS_CONTAMINATED_IS_ONLY | OOS_CONTAMINATED_IS_ONLY |
@@ -17,11 +17,11 @@ Single-candidate tie-break selection: **W5b**.
 
 ## W5g combination decision
 
-- Selected candidate: `W5b`
-- Correlation: `-0.07317259940757943`; pass=`True`
-- MDD: `0.3398239532670849` vs baseline `0.016125151123011827`; pass=`False`
-- CAGR: `-0.04217891895459336` vs baseline `0.18419143534537863`; pass=`False`
-- OOS return: `0.0351141548059144` vs baseline `0.00639488356683704`; pass=`True`
+- Selected candidate: `W5a`
+- Correlation: `-0.037937513327918254`; pass=`True`
+- MDD: `0.35039989651410697` vs baseline `0.017222042019532036`; pass=`False`
+- CAGR: `-0.04158357592602513` vs baseline `0.18081147700275957`; pass=`False`
+- OOS return: `0.01103224288571858` vs baseline `0.006394883566836818`; pass=`True`
 - Final verdict: **FAIL**
 
 A missing OOS interval remains untested; it is not converted into a performance win.
