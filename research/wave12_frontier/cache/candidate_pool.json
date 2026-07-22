@@ -1,0 +1,2549 @@
+{
+  "frozen_end": "2026-07-14",
+  "candidate_count": 364,
+  "valid_count": 358,
+  "history_cutoffs_iso": {
+    "12.0": "2025-07-15T00:00:00+00:00",
+    "6.0": "2026-01-15T00:00:00+00:00",
+    "3.0": "2026-04-15T00:00:00+00:00"
+  },
+  "reference_volume_window_days": 30,
+  "symbols": {
+    "BTCUSDT": {
+      "ok": true,
+      "history_start": "2019-09-10T08:00:00+00:00",
+      "months_history": 82.07170267570835,
+      "reference_volume_30d_usdt": 10277911061.829111,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ETHUSDT": {
+      "ok": true,
+      "history_start": "2019-11-27T08:00:00+00:00",
+      "months_history": 79.50901540240761,
+      "reference_volume_30d_usdt": 7396175166.896992,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BANKUSDT": {
+      "ok": true,
+      "history_start": "2025-04-18T20:00:00+00:00",
+      "months_history": 14.817589234085053,
+      "reference_volume_30d_usdt": 3526691.432631666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SOLUSDT": {
+      "ok": true,
+      "history_start": "2020-09-13T16:00:00.004000+00:00",
+      "months_history": 69.9482205750933,
+      "reference_volume_30d_usdt": 1680439115.2632535,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DEXEUSDT": {
+      "ok": true,
+      "history_start": "2024-12-24T12:00:00+00:00",
+      "months_history": 18.59591021395153,
+      "reference_volume_30d_usdt": 58645233.84626367,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XRPUSDT": {
+      "ok": true,
+      "history_start": "2020-01-06T08:00:00+00:00",
+      "months_history": 78.19481680071492,
+      "reference_volume_30d_usdt": 492163848.05214375,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZECUSDT": {
+      "ok": true,
+      "history_start": "2020-02-04T08:00:00.001000+00:00",
+      "months_history": 77.24202281448773,
+      "reference_volume_30d_usdt": 668114247.9910607,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ERAUSDT": {
+      "ok": true,
+      "history_start": "2025-07-17T12:00:00+00:00",
+      "months_history": 11.860642380276508,
+      "reference_volume_30d_usdt": 1129820.4787090002,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DOGEUSDT": {
+      "ok": true,
+      "history_start": "2020-07-10T08:00:00.001000+00:00",
+      "months_history": 72.08379330284392,
+      "reference_volume_30d_usdt": 280793453.81357664,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BNBUSDT": {
+      "ok": true,
+      "history_start": "2020-02-10T08:00:00+00:00",
+      "months_history": 77.04489302423382,
+      "reference_volume_30d_usdt": 273086407.04594,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ONDOUSDT": {
+      "ok": true,
+      "history_start": "2024-01-20T16:00:00+00:00",
+      "months_history": 29.73374336329706,
+      "reference_volume_30d_usdt": 53505624.01039498,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NEARUSDT": {
+      "ok": true,
+      "history_start": "2020-10-14T16:00:00.001000+00:00",
+      "months_history": 68.92971665878147,
+      "reference_volume_30d_usdt": 163256753.43640003,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ONEUSDT": {
+      "ok": true,
+      "history_start": "2021-03-18T08:00:00+00:00",
+      "months_history": 63.83719707722231,
+      "reference_volume_30d_usdt": 1024193.5950910399,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ADAUSDT": {
+      "ok": true,
+      "history_start": "2020-01-19T16:00:00+00:00",
+      "months_history": 77.76770225516479,
+      "reference_volume_30d_usdt": 163880205.29379335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SUIUSDT": {
+      "ok": true,
+      "history_start": "2023-05-03T16:00:00.011000+00:00",
+      "months_history": 38.34174420438416,
+      "reference_volume_30d_usdt": 127125949.428971,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AAVEUSDT": {
+      "ok": true,
+      "history_start": "2020-10-16T08:00:00.003000+00:00",
+      "months_history": 68.86400672869684,
+      "reference_volume_30d_usdt": 112338439.72793332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WLDUSDT": {
+      "ok": true,
+      "history_start": "2023-07-24T16:00:00+00:00",
+      "months_history": 35.64763707091416,
+      "reference_volume_30d_usdt": 292245293.33448994,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PUMPUSDT": {
+      "ok": true,
+      "history_start": "2025-04-12T16:00:00+00:00",
+      "months_history": 15.014719024338957,
+      "reference_volume_30d_usdt": 56425306.764819115,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RIFUSDT": {
+      "ok": true,
+      "history_start": "2023-05-09T08:00:00+00:00",
+      "months_history": 38.14461441413026,
+      "reference_volume_30d_usdt": 29661949.278248005,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ENAUSDT": {
+      "ok": true,
+      "history_start": "2024-04-02T16:00:00+00:00",
+      "months_history": 27.335330915207905,
+      "reference_volume_30d_usdt": 102613596.76831199,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LAUSDT": {
+      "ok": true,
+      "history_start": "2025-06-05T08:00:00+00:00",
+      "months_history": 13.240550912053829,
+      "reference_volume_30d_usdt": 3613551.2458008663,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PAXGUSDT": {
+      "ok": true,
+      "history_start": "2025-03-27T08:00:00.001000+00:00",
+      "months_history": 15.540398465016033,
+      "reference_volume_30d_usdt": 57184777.43952867,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NIGHTUSDT": {
+      "ok": true,
+      "history_start": "2025-12-10T12:00:00+00:00",
+      "months_history": 7.063817484098196,
+      "reference_volume_30d_usdt": 4315968.235269333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XLMUSDT": {
+      "ok": true,
+      "history_start": "2020-01-19T16:00:00+00:00",
+      "months_history": 77.76770225516479,
+      "reference_volume_30d_usdt": 113024905.15667465,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TAOUSDT": {
+      "ok": true,
+      "history_start": "2024-04-11T16:00:00+00:00",
+      "months_history": 27.03963622982705,
+      "reference_volume_30d_usdt": 105939691.35453433,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LTCUSDT": {
+      "ok": true,
+      "history_start": "2020-01-09T08:00:00+00:00",
+      "months_history": 78.09625190558796,
+      "reference_volume_30d_usdt": 51133680.79562566,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LINKUSDT": {
+      "ok": true,
+      "history_start": "2020-01-17T08:00:00+00:00",
+      "months_history": 77.83341218524943,
+      "reference_volume_30d_usdt": 81284601.53259566,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "REUSDT": {
+      "ok": false,
+      "reason": "insufficient_history",
+      "history_start": "2026-06-18T16:00:00.001000+00:00"
+    },
+    "ACEUSDT": {
+      "ok": true,
+      "history_start": "2023-12-18T12:00:00+00:00",
+      "months_history": 30.817957209693528,
+      "reference_volume_30d_usdt": 3038503.9276889977,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FILUSDT": {
+      "ok": true,
+      "history_start": "2020-10-16T08:00:00.003000+00:00",
+      "months_history": 68.86400672869684,
+      "reference_volume_30d_usdt": 64604939.725542866,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AVAXUSDT": {
+      "ok": true,
+      "history_start": "2020-09-22T16:00:00.004000+00:00",
+      "months_history": 69.65252588971245,
+      "reference_volume_30d_usdt": 92637277.80620003,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GRAMUSDT": {
+      "ok": false,
+      "reason": "insufficient_history",
+      "history_start": "2026-07-02T08:00:00+00:00"
+    },
+    "DOTUSDT": {
+      "ok": true,
+      "history_start": "2020-08-20T08:00:00+00:00",
+      "months_history": 70.73673973610892,
+      "reference_volume_30d_usdt": 51162914.22909,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "UNIUSDT": {
+      "ok": true,
+      "history_start": "2020-09-17T08:00:00.012000+00:00",
+      "months_history": 69.81680071492404,
+      "reference_volume_30d_usdt": 94410109.62049998,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BCHUSDT": {
+      "ok": true,
+      "history_start": "2019-12-19T16:00:00+00:00",
+      "months_history": 78.78620617147664,
+      "reference_volume_30d_usdt": 81061934.14335868,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LITUSDT": {
+      "ok": true,
+      "history_start": "2025-12-23T20:00:00.005000+00:00",
+      "months_history": 6.636702938548073,
+      "reference_volume_30d_usdt": 62936473.88210534,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "EPICUSDT": {
+      "ok": true,
+      "history_start": "2025-03-13T08:00:00+00:00",
+      "months_history": 16.000367975608473,
+      "reference_volume_30d_usdt": 26871556.517209668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XMRUSDT": {
+      "ok": true,
+      "history_start": "2020-01-19T16:00:00+00:00",
+      "months_history": 77.76770225516479,
+      "reference_volume_30d_usdt": 31199870.083032,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HEMIUSDT": {
+      "ok": true,
+      "history_start": "2025-08-28T20:00:00.003000+00:00",
+      "months_history": 10.480733848499185,
+      "reference_volume_30d_usdt": 2831348.126256533,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KAITOUSDT": {
+      "ok": true,
+      "history_start": "2025-02-20T16:00:00+00:00",
+      "months_history": 16.690322241497135,
+      "reference_volume_30d_usdt": 18918328.94471,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TRXUSDT": {
+      "ok": true,
+      "history_start": "2020-01-15T08:00:00+00:00",
+      "months_history": 77.89912211533407,
+      "reference_volume_30d_usdt": 40898864.101867,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MIRAUSDT": {
+      "ok": true,
+      "history_start": "2025-09-26T12:00:00+00:00",
+      "months_history": 9.527939862271985,
+      "reference_volume_30d_usdt": 8561498.649354335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "USDCUSDT": {
+      "ok": true,
+      "history_start": "2023-03-13T00:00:00.010000+00:00",
+      "months_history": 40.01734742154234,
+      "reference_volume_30d_usdt": 3409073.790085766,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HBARUSDT": {
+      "ok": true,
+      "history_start": "2021-03-17T08:00:00+00:00",
+      "months_history": 63.870052042264625,
+      "reference_volume_30d_usdt": 24641607.06061733,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PROMUSDT": {
+      "ok": true,
+      "history_start": "2025-01-15T16:00:00+00:00",
+      "months_history": 17.873100983020553,
+      "reference_volume_30d_usdt": 1476081.5843266665,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ALLOUSDT": {
+      "ok": true,
+      "history_start": "2025-11-11T12:00:00.002000+00:00",
+      "months_history": 8.016611470325396,
+      "reference_volume_30d_usdt": 66402291.036337,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "INJUSDT": {
+      "ok": true,
+      "history_start": "2022-08-16T16:00:00+00:00",
+      "months_history": 46.88403511538664,
+      "reference_volume_30d_usdt": 38139958.88772,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XAUTUSDT": {
+      "ok": true,
+      "history_start": "2026-03-26T16:00:00+00:00",
+      "months_history": 3.581191189612574,
+      "reference_volume_30d_usdt": 23872960.293416668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TLMUSDT": {
+      "ok": true,
+      "history_start": "2021-07-16T08:00:00+00:00",
+      "months_history": 59.89460127214424,
+      "reference_volume_30d_usdt": 75359879.56863476,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "VIRTUALUSDT": {
+      "ok": true,
+      "history_start": "2024-12-10T16:00:00+00:00",
+      "months_history": 19.05587972454397,
+      "reference_volume_30d_usdt": 22441350.854361337,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LDOUSDT": {
+      "ok": true,
+      "history_start": "2022-09-22T08:00:00+00:00",
+      "months_history": 45.6684014088209,
+      "reference_volume_30d_usdt": 19585129.063046668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "JTOUSDT": {
+      "ok": true,
+      "history_start": "2023-12-08T12:00:00+00:00",
+      "months_history": 31.1465068601167,
+      "reference_volume_30d_usdt": 64470615.073683344,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HOMEUSDT": {
+      "ok": true,
+      "history_start": "2025-06-10T12:00:00.005000+00:00",
+      "months_history": 13.076276086842244,
+      "reference_volume_30d_usdt": 18833480.177680433,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "OPNUSDT": {
+      "ok": true,
+      "history_start": "2026-02-21T16:00:00.005000+00:00",
+      "months_history": 4.665405036009042,
+      "reference_volume_30d_usdt": 12683778.266734002,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ARBUSDT": {
+      "ok": true,
+      "history_start": "2023-03-23T08:00:00.001000+00:00",
+      "months_history": 39.68879777111917,
+      "reference_volume_30d_usdt": 34709723.9963291,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TRUMPUSDT": {
+      "ok": true,
+      "history_start": "2025-01-18T16:00:00+00:00",
+      "months_history": 17.7745360878936,
+      "reference_volume_30d_usdt": 50893903.43621766,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PENGUUSDT": {
+      "ok": true,
+      "history_start": "2024-12-17T16:00:00+00:00",
+      "months_history": 18.825894969247752,
+      "reference_volume_30d_usdt": 28600114.65562393,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ASTERUSDT": {
+      "ok": true,
+      "history_start": "2025-09-19T12:00:00+00:00",
+      "months_history": 9.757924617568206,
+      "reference_volume_30d_usdt": 58342417.95204,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SYNUSDT": {
+      "ok": true,
+      "history_start": "2024-08-16T16:00:00+00:00",
+      "months_history": 22.867055669452768,
+      "reference_volume_30d_usdt": 200601892.62550536,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XPLUSDT": {
+      "ok": true,
+      "history_start": "2025-08-22T12:00:00.001000+00:00",
+      "months_history": 10.677863638753088,
+      "reference_volume_30d_usdt": 58541981.75176867,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "OPUSDT": {
+      "ok": true,
+      "history_start": "2022-06-01T08:00:00.011000+00:00",
+      "months_history": 49.38101245860274,
+      "reference_volume_30d_usdt": 21677696.569100004,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WLFIUSDT": {
+      "ok": true,
+      "history_start": "2025-08-23T12:00:00+00:00",
+      "months_history": 10.645008673710771,
+      "reference_volume_30d_usdt": 21050890.286079,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DASHUSDT": {
+      "ok": true,
+      "history_start": "2020-02-04T08:00:00.001000+00:00",
+      "months_history": 77.24202281448773,
+      "reference_volume_30d_usdt": 18564280.035815667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TIAUSDT": {
+      "ok": true,
+      "history_start": "2023-10-31T20:00:00+00:00",
+      "months_history": 32.39499553172475,
+      "reference_volume_30d_usdt": 27014192.473936662,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ETCUSDT": {
+      "ok": true,
+      "history_start": "2020-01-16T08:00:00+00:00",
+      "months_history": 77.86626715029175,
+      "reference_volume_30d_usdt": 19045816.534401663,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AEROUSDT": {
+      "ok": true,
+      "history_start": "2024-12-04T16:00:00+00:00",
+      "months_history": 19.253009514797874,
+      "reference_volume_30d_usdt": 18331015.108777337,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZAMAUSDT": {
+      "ok": true,
+      "history_start": "2026-01-09T12:00:00+00:00",
+      "months_history": 6.0781685328286805,
+      "reference_volume_30d_usdt": 4944983.527030334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FETUSDT": {
+      "ok": true,
+      "history_start": "2023-01-16T08:00:00.007000+00:00",
+      "months_history": 41.8572254639121,
+      "reference_volume_30d_usdt": 30589250.723813333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "VANRYUSDT": {
+      "ok": true,
+      "history_start": "2024-03-13T16:00:00+00:00",
+      "months_history": 27.99243021605425,
+      "reference_volume_30d_usdt": 78078523.32260412,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZBTUSDT": {
+      "ok": true,
+      "history_start": "2025-10-17T12:00:00+00:00",
+      "months_history": 8.837985596383325,
+      "reference_volume_30d_usdt": 13326174.003293669,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "APTUSDT": {
+      "ok": true,
+      "history_start": "2022-10-18T16:00:00+00:00",
+      "months_history": 44.814172317720654,
+      "reference_volume_30d_usdt": 23748605.57356167,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TREEUSDT": {
+      "ok": true,
+      "history_start": "2025-07-29T12:00:00.001000+00:00",
+      "months_history": 11.4663827997687,
+      "reference_volume_30d_usdt": 1574966.2221173332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "EIGENUSDT": {
+      "ok": true,
+      "history_start": "2024-10-01T08:00:00+00:00",
+      "months_history": 21.355727277506176,
+      "reference_volume_30d_usdt": 23005238.959820997,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ICPUSDT": {
+      "ok": true,
+      "history_start": "2021-05-11T08:00:00+00:00",
+      "months_history": 62.063028964937175,
+      "reference_volume_30d_usdt": 21679410.04166667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZROUSDT": {
+      "ok": true,
+      "history_start": "2024-06-20T16:00:00+00:00",
+      "months_history": 24.739788676864848,
+      "reference_volume_30d_usdt": 14497286.374777334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PENDLEUSDT": {
+      "ok": true,
+      "history_start": "2023-07-25T16:00:00+00:00",
+      "months_history": 35.61478210587184,
+      "reference_volume_30d_usdt": 15069865.881583333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ETHFIUSDT": {
+      "ok": true,
+      "history_start": "2024-03-18T16:00:00.001000+00:00",
+      "months_history": 27.828155390842664,
+      "reference_volume_30d_usdt": 17134155.282683,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AERGOUSDT": {
+      "ok": true,
+      "history_start": "2024-09-10T16:00:00+00:00",
+      "months_history": 22.045681543394835,
+      "reference_volume_30d_usdt": 5625963.986038998,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CRVUSDT": {
+      "ok": true,
+      "history_start": "2020-09-01T08:00:00+00:00",
+      "months_history": 70.34248015560111,
+      "reference_volume_30d_usdt": 15343545.861499734,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WIFUSDT": {
+      "ok": true,
+      "history_start": "2024-01-18T16:00:00+00:00",
+      "months_history": 29.799453293381696,
+      "reference_volume_30d_usdt": 23556705.225387666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "METUSDT": {
+      "ok": true,
+      "history_start": "2025-10-11T12:00:00.003000+00:00",
+      "months_history": 9.035115386637228,
+      "reference_volume_30d_usdt": 10689933.186516669,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BIOUSDT": {
+      "ok": true,
+      "history_start": "2025-01-03T16:00:00+00:00",
+      "months_history": 18.26736056352836,
+      "reference_volume_30d_usdt": 11551379.836158335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HMSTRUSDT": {
+      "ok": true,
+      "history_start": "2024-09-26T16:00:00+00:00",
+      "months_history": 21.52000210271776,
+      "reference_volume_30d_usdt": 35090938.47494268,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ATOMUSDT": {
+      "ok": true,
+      "history_start": "2020-02-06T16:00:00+00:00",
+      "months_history": 77.17631288440309,
+      "reference_volume_30d_usdt": 11964563.13841967,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "JUPUSDT": {
+      "ok": true,
+      "history_start": "2024-02-01T04:00:00+00:00",
+      "months_history": 29.339483782789255,
+      "reference_volume_30d_usdt": 19702589.96608,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "0GUSDT": {
+      "ok": true,
+      "history_start": "2025-09-17T16:00:00.003000+00:00",
+      "months_history": 9.82363454765284,
+      "reference_volume_30d_usdt": 5383705.513000001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GENIUSUSDT": {
+      "ok": false,
+      "reason": "insufficient_history",
+      "history_start": "2026-04-16T04:00:00.008000+00:00"
+    },
+    "1INCHUSDT": {
+      "ok": true,
+      "history_start": "2020-12-25T16:00:00+00:00",
+      "months_history": 66.56415917573463,
+      "reference_volume_30d_usdt": 1423632.9255466664,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KITEUSDT": {
+      "ok": true,
+      "history_start": "2025-10-29T12:00:00.011000+00:00",
+      "months_history": 8.44372601587552,
+      "reference_volume_30d_usdt": 10084082.064538667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RENDERUSDT": {
+      "ok": true,
+      "history_start": "2024-07-26T12:00:00+00:00",
+      "months_history": 23.557009935341426,
+      "reference_volume_30d_usdt": 14779488.70410333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ORDIUSDT": {
+      "ok": true,
+      "history_start": "2023-11-07T16:00:00+00:00",
+      "months_history": 32.16501077642853,
+      "reference_volume_30d_usdt": 21900952.36563667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HEIUSDT": {
+      "ok": true,
+      "history_start": "2025-02-13T12:00:00+00:00",
+      "months_history": 16.920306996793354,
+      "reference_volume_30d_usdt": 45963662.01846997,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "YGGUSDT": {
+      "ok": true,
+      "history_start": "2023-08-04T16:00:00+00:00",
+      "months_history": 35.28623245544867,
+      "reference_volume_30d_usdt": 2131994.286704666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KERNELUSDT": {
+      "ok": true,
+      "history_start": "2025-04-14T16:00:00+00:00",
+      "months_history": 14.949009094254324,
+      "reference_volume_30d_usdt": 2354336.2704649996,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MEUSDT": {
+      "ok": true,
+      "history_start": "2024-12-10T16:00:00+00:00",
+      "months_history": 19.05587972454397,
+      "reference_volume_30d_usdt": 5243015.912916932,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MITOUSDT": {
+      "ok": true,
+      "history_start": "2025-08-28T12:00:00+00:00",
+      "months_history": 10.480733848499185,
+      "reference_volume_30d_usdt": 4867047.128221666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MORPHOUSDT": {
+      "ok": true,
+      "history_start": "2024-11-27T16:00:00.001000+00:00",
+      "months_history": 19.482994270094096,
+      "reference_volume_30d_usdt": 10695324.295842001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GALAUSDT": {
+      "ok": true,
+      "history_start": "2021-09-17T16:00:00.013000+00:00",
+      "months_history": 57.82473847447826,
+      "reference_volume_30d_usdt": 9216253.581993751,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ALGOUSDT": {
+      "ok": true,
+      "history_start": "2020-05-26T16:00:00+00:00",
+      "months_history": 73.5622667297482,
+      "reference_volume_30d_usdt": 14794155.256525334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SEIUSDT": {
+      "ok": true,
+      "history_start": "2023-08-16T16:00:00+00:00",
+      "months_history": 34.89197287494086,
+      "reference_volume_30d_usdt": 13645334.404980669,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BERAUSDT": {
+      "ok": true,
+      "history_start": "2025-02-06T16:00:00+00:00",
+      "months_history": 17.150291752089576,
+      "reference_volume_30d_usdt": 6513247.540757667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "POLUSDT": {
+      "ok": true,
+      "history_start": "2024-09-13T16:00:00.001000+00:00",
+      "months_history": 21.947116648267887,
+      "reference_volume_30d_usdt": 9461525.652277669,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GIGGLEUSDT": {
+      "ok": true,
+      "history_start": "2025-10-09T12:00:00.002000+00:00",
+      "months_history": 9.100825316721863,
+      "reference_volume_30d_usdt": 7881833.595866667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SAGAUSDT": {
+      "ok": true,
+      "history_start": "2024-04-09T00:00:00+00:00",
+      "months_history": 27.138201124954,
+      "reference_volume_30d_usdt": 6119846.038104568,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ENSUSDT": {
+      "ok": true,
+      "history_start": "2021-11-29T16:00:00+00:00",
+      "months_history": 55.426326026389106,
+      "reference_volume_30d_usdt": 5055415.576969999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CHZUSDT": {
+      "ok": true,
+      "history_start": "2020-12-28T08:00:00.019000+00:00",
+      "months_history": 66.46559428060768,
+      "reference_volume_30d_usdt": 15952021.257218001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TOWNSUSDT": {
+      "ok": true,
+      "history_start": "2025-08-05T16:00:00+00:00",
+      "months_history": 11.23639804447248,
+      "reference_volume_30d_usdt": 2352749.4717787667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AIGENSYNUSDT": {
+      "ok": false,
+      "reason": "insufficient_history",
+      "history_start": "2026-04-29T16:00:00.003000+00:00"
+    },
+    "PYTHUSDT": {
+      "ok": true,
+      "history_start": "2023-11-22T16:00:00+00:00",
+      "months_history": 31.672186300793776,
+      "reference_volume_30d_usdt": 12071452.261929665,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TUSDT": {
+      "ok": true,
+      "history_start": "2023-01-31T16:00:00.007000+00:00",
+      "months_history": 41.364400988277346,
+      "reference_volume_30d_usdt": 37540678.21233823,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "APEUSDT": {
+      "ok": true,
+      "history_start": "2022-03-17T16:00:00.004000+00:00",
+      "months_history": 51.87798980181885,
+      "reference_volume_30d_usdt": 10060348.274366667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CFGUSDT": {
+      "ok": true,
+      "history_start": "2026-03-16T16:00:00+00:00",
+      "months_history": 3.909740840035746,
+      "reference_volume_30d_usdt": 3572691.285603333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "POLYXUSDT": {
+      "ok": true,
+      "history_start": "2023-10-24T16:00:00+00:00",
+      "months_history": 32.624980287020975,
+      "reference_volume_30d_usdt": 1418920.2676696663,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SXTUSDT": {
+      "ok": true,
+      "history_start": "2025-05-02T08:00:00+00:00",
+      "months_history": 14.357619723492613,
+      "reference_volume_30d_usdt": 21097267.559272967,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ARKMUSDT": {
+      "ok": true,
+      "history_start": "2023-07-27T16:00:00.001000+00:00",
+      "months_history": 35.5490721757872,
+      "reference_volume_30d_usdt": 3160172.224663333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MOVEUSDT": {
+      "ok": true,
+      "history_start": "2024-12-09T16:00:00.001000+00:00",
+      "months_history": 19.08873468958629,
+      "reference_volume_30d_usdt": 4677833.461214667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HOLOUSDT": {
+      "ok": true,
+      "history_start": "2025-09-11T08:00:00+00:00",
+      "months_history": 10.020764337906744,
+      "reference_volume_30d_usdt": 3583224.282982667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DYDXUSDT": {
+      "ok": true,
+      "history_start": "2021-09-09T16:00:00.002000+00:00",
+      "months_history": 58.0875781948168,
+      "reference_volume_30d_usdt": 24852651.231504675,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ALICEUSDT": {
+      "ok": true,
+      "history_start": "2021-03-15T16:00:00.030000+00:00",
+      "months_history": 63.935761972349255,
+      "reference_volume_30d_usdt": 16640386.006292991,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SKYUSDT": {
+      "ok": true,
+      "history_start": "2025-09-09T08:00:00+00:00",
+      "months_history": 10.086474267991377,
+      "reference_volume_30d_usdt": 5266783.0970893325,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PLUMEUSDT": {
+      "ok": true,
+      "history_start": "2025-03-21T16:00:00+00:00",
+      "months_history": 15.737528255269936,
+      "reference_volume_30d_usdt": 3314778.4987569996,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AXSUSDT": {
+      "ok": true,
+      "history_start": "2020-11-20T08:00:00.005000+00:00",
+      "months_history": 67.71408295221573,
+      "reference_volume_30d_usdt": 16363336.035366666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "JASMYUSDT": {
+      "ok": true,
+      "history_start": "2022-04-19T08:00:00.031000+00:00",
+      "months_history": 50.79377595542238,
+      "reference_volume_30d_usdt": 3413110.7191025326,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MMTUSDT": {
+      "ok": true,
+      "history_start": "2025-11-04T12:00:00+00:00",
+      "months_history": 8.246596225621616,
+      "reference_volume_30d_usdt": 15276617.670713335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SKLUSDT": {
+      "ok": true,
+      "history_start": "2020-12-08T08:00:00.003000+00:00",
+      "months_history": 67.12269358145403,
+      "reference_volume_30d_usdt": 26769727.259576164,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TUTUSDT": {
+      "ok": true,
+      "history_start": "2025-03-20T12:00:00+00:00",
+      "months_history": 15.770383220312253,
+      "reference_volume_30d_usdt": 2051087.8594570004,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CHIPUSDT": {
+      "ok": false,
+      "reason": "insufficient_history",
+      "history_start": "2026-04-16T08:00:00+00:00"
+    },
+    "SANDUSDT": {
+      "ok": true,
+      "history_start": "2021-01-25T08:00:00.012000+00:00",
+      "months_history": 65.5456552594228,
+      "reference_volume_30d_usdt": 10340437.484087335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZILUSDT": {
+      "ok": true,
+      "history_start": "2020-06-17T08:00:00.007000+00:00",
+      "months_history": 72.83945749881721,
+      "reference_volume_30d_usdt": 1691434.1968065002,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "QNTUSDT": {
+      "ok": true,
+      "history_start": "2022-10-20T08:00:00.013000+00:00",
+      "months_history": 44.74846238763602,
+      "reference_volume_30d_usdt": 3050823.2132333345,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BIGTIMEUSDT": {
+      "ok": true,
+      "history_start": "2023-10-12T16:00:00+00:00",
+      "months_history": 33.01923986752878,
+      "reference_volume_30d_usdt": 1445308.817768533,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SOPHUSDT": {
+      "ok": true,
+      "history_start": "2025-05-28T16:00:00.002000+00:00",
+      "months_history": 13.503390632392366,
+      "reference_volume_30d_usdt": 1331996.765562967,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SNXUSDT": {
+      "ok": true,
+      "history_start": "2020-08-14T08:00:00+00:00",
+      "months_history": 70.93386952636283,
+      "reference_volume_30d_usdt": 5052404.979949666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "VETUSDT": {
+      "ok": true,
+      "history_start": "2020-02-14T08:00:00+00:00",
+      "months_history": 76.91347316406456,
+      "reference_volume_30d_usdt": 3966451.9088632995,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LUMIAUSDT": {
+      "ok": true,
+      "history_start": "2024-12-18T12:00:00+00:00",
+      "months_history": 18.793040004205434,
+      "reference_volume_30d_usdt": 6152865.836835934,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CAKEUSDT": {
+      "ok": true,
+      "history_start": "2023-11-02T16:00:00+00:00",
+      "months_history": 32.329285601640116,
+      "reference_volume_30d_usdt": 5911472.578073334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AGLDUSDT": {
+      "ok": true,
+      "history_start": "2023-07-28T16:00:00+00:00",
+      "months_history": 35.516217210744884,
+      "reference_volume_30d_usdt": 38757722.41945333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "JSTUSDT": {
+      "ok": true,
+      "history_start": "2025-04-28T12:00:00+00:00",
+      "months_history": 14.489039583661881,
+      "reference_volume_30d_usdt": 3326782.6931729666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SENTUSDT": {
+      "ok": true,
+      "history_start": "2025-11-14T16:00:00.001000+00:00",
+      "months_history": 7.918046575198444,
+      "reference_volume_30d_usdt": 11574107.689883335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RESOLVUSDT": {
+      "ok": true,
+      "history_start": "2025-06-10T12:00:00.005000+00:00",
+      "months_history": 13.076276086842244,
+      "reference_volume_30d_usdt": 20889705.440190334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZENUSDT": {
+      "ok": true,
+      "history_start": "2020-11-24T08:00:00+00:00",
+      "months_history": 67.58266309204646,
+      "reference_volume_30d_usdt": 5781836.279946667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SYRUPUSDT": {
+      "ok": true,
+      "history_start": "2025-05-06T16:00:00+00:00",
+      "months_history": 14.226199863323345,
+      "reference_volume_30d_usdt": 6594564.322300667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BANANAUSDT": {
+      "ok": true,
+      "history_start": "2024-08-14T16:00:00+00:00",
+      "months_history": 22.9327655995374,
+      "reference_volume_30d_usdt": 2772790.172580001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NILUSDT": {
+      "ok": true,
+      "history_start": "2025-03-24T08:00:00+00:00",
+      "months_history": 15.638963360142984,
+      "reference_volume_30d_usdt": 3542138.2650719336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "IDUSDT": {
+      "ok": true,
+      "history_start": "2023-03-23T08:00:00.001000+00:00",
+      "months_history": 39.68879777111917,
+      "reference_volume_30d_usdt": 31772678.350607336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "YBUSDT": {
+      "ok": true,
+      "history_start": "2025-10-10T16:00:00.014000+00:00",
+      "months_history": 9.067970351679545,
+      "reference_volume_30d_usdt": 1572820.5345883332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SAHARAUSDT": {
+      "ok": true,
+      "history_start": "2025-06-26T12:00:00.005000+00:00",
+      "months_history": 12.550596646165168,
+      "reference_volume_30d_usdt": 12703865.927279668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DUSKUSDT": {
+      "ok": true,
+      "history_start": "2022-01-06T16:00:00.006000+00:00",
+      "months_history": 54.177837354781055,
+      "reference_volume_30d_usdt": 2019701.3967266667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CFXUSDT": {
+      "ok": true,
+      "history_start": "2023-02-20T08:00:00.008000+00:00",
+      "months_history": 40.707301687431006,
+      "reference_volume_30d_usdt": 3636315.653625333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MEGAUSDT": {
+      "ok": true,
+      "history_start": "2026-01-30T12:00:00.005000+00:00",
+      "months_history": 5.38821426694002,
+      "reference_volume_30d_usdt": 14063456.839229336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "REZUSDT": {
+      "ok": true,
+      "history_start": "2024-04-30T16:00:00+00:00",
+      "months_history": 26.415391894023024,
+      "reference_volume_30d_usdt": 1518166.5438685,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "STRKUSDT": {
+      "ok": true,
+      "history_start": "2024-02-20T16:00:00+00:00",
+      "months_history": 28.715239446985226,
+      "reference_volume_30d_usdt": 6130872.130489734,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NEOUSDT": {
+      "ok": true,
+      "history_start": "2020-02-17T08:00:00+00:00",
+      "months_history": 76.8149082689376,
+      "reference_volume_30d_usdt": 2055389.749936,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "STXUSDT": {
+      "ok": true,
+      "history_start": "2023-02-21T08:00:00.004000+00:00",
+      "months_history": 40.67444672238869,
+      "reference_volume_30d_usdt": 3519266.7928633336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PARTIUSDT": {
+      "ok": true,
+      "history_start": "2025-03-25T16:00:00+00:00",
+      "months_history": 15.606108395100668,
+      "reference_volume_30d_usdt": 7250674.917982667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RUNEUSDT": {
+      "ok": true,
+      "history_start": "2020-09-04T08:00:00+00:00",
+      "months_history": 70.24391526047415,
+      "reference_volume_30d_usdt": 3545074.6931566666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZKCUSDT": {
+      "ok": true,
+      "history_start": "2025-09-15T08:00:00.002000+00:00",
+      "months_history": 9.889344477737476,
+      "reference_volume_30d_usdt": 2886621.3859516666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BLURUSDT": {
+      "ok": true,
+      "history_start": "2023-04-27T16:00:00.005000+00:00",
+      "months_history": 38.53887399463807,
+      "reference_volume_30d_usdt": 18759847.031211667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "YFIUSDT": {
+      "ok": true,
+      "history_start": "2020-08-31T08:00:00.001000+00:00",
+      "months_history": 70.37533512064343,
+      "reference_volume_30d_usdt": 17584318.49496667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ACTUSDT": {
+      "ok": true,
+      "history_start": "2024-11-11T16:00:00+00:00",
+      "months_history": 20.00867371077117,
+      "reference_volume_30d_usdt": 20983098.749324664,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "THEUSDT": {
+      "ok": true,
+      "history_start": "2024-11-27T16:00:00.001000+00:00",
+      "months_history": 19.482994270094096,
+      "reference_volume_30d_usdt": 15324066.580896068,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TSTUSDT": {
+      "ok": true,
+      "history_start": "2025-02-09T16:00:00+00:00",
+      "months_history": 17.051726856962624,
+      "reference_volume_30d_usdt": 3726087.689206367,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ARUSDT": {
+      "ok": true,
+      "history_start": "2021-09-27T08:00:00.001000+00:00",
+      "months_history": 57.49618882405509,
+      "reference_volume_30d_usdt": 4993052.042239999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PHAUSDT": {
+      "ok": true,
+      "history_start": "2024-12-30T12:00:00+00:00",
+      "months_history": 18.398780423697627,
+      "reference_volume_30d_usdt": 2818216.248548,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "IOTAUSDT": {
+      "ok": true,
+      "history_start": "2020-02-12T08:00:00.001000+00:00",
+      "months_history": 76.97918309414918,
+      "reference_volume_30d_usdt": 4243483.200107634,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MANTRAUSDT": {
+      "ok": true,
+      "history_start": "2026-03-04T08:00:00.005000+00:00",
+      "months_history": 4.304000420543552,
+      "reference_volume_30d_usdt": 1923904.6972566333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "OPGUSDT": {
+      "ok": false,
+      "reason": "insufficient_history",
+      "history_start": "2026-04-22T16:00:00+00:00"
+    },
+    "VANAUSDT": {
+      "ok": true,
+      "history_start": "2024-12-16T16:00:00+00:00",
+      "months_history": 18.85874993429007,
+      "reference_volume_30d_usdt": 2205965.4489343334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "EGLDUSDT": {
+      "ok": true,
+      "history_start": "2020-09-13T16:00:00.004000+00:00",
+      "months_history": 69.9482205750933,
+      "reference_volume_30d_usdt": 5977439.512866667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HAEDALUSDT": {
+      "ok": true,
+      "history_start": "2025-04-30T16:00:00.003000+00:00",
+      "months_history": 14.423329653577248,
+      "reference_volume_30d_usdt": 1575243.453352,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GUSDT": {
+      "ok": true,
+      "history_start": "2024-08-15T16:00:00+00:00",
+      "months_history": 22.899910634495082,
+      "reference_volume_30d_usdt": 12503217.500849066,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LAYERUSDT": {
+      "ok": true,
+      "history_start": "2025-02-11T16:00:00+00:00",
+      "months_history": 16.98601692687799,
+      "reference_volume_30d_usdt": 11268899.373729765,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TRBUSDT": {
+      "ok": true,
+      "history_start": "2020-09-03T08:00:00.004000+00:00",
+      "months_history": 70.27677022551647,
+      "reference_volume_30d_usdt": 8298618.604213333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PNUTUSDT": {
+      "ok": true,
+      "history_start": "2024-11-11T16:00:00+00:00",
+      "months_history": 20.00867371077117,
+      "reference_volume_30d_usdt": 3987778.0881416663,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "IMXUSDT": {
+      "ok": true,
+      "history_start": "2022-02-11T08:00:00.009000+00:00",
+      "months_history": 52.99505861325763,
+      "reference_volume_30d_usdt": 3282565.1404033327,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NOTUSDT": {
+      "ok": true,
+      "history_start": "2024-05-16T16:00:00+00:00",
+      "months_history": 25.889712453345947,
+      "reference_volume_30d_usdt": 3098071.033629953,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HUMAUSDT": {
+      "ok": true,
+      "history_start": "2025-05-26T16:00:00.002000+00:00",
+      "months_history": 13.569100562477,
+      "reference_volume_30d_usdt": 3335565.347925733,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PORTALUSDT": {
+      "ok": true,
+      "history_start": "2024-02-29T16:00:00+00:00",
+      "months_history": 28.41954476160437,
+      "reference_volume_30d_usdt": 12578697.199524498,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WALUSDT": {
+      "ok": true,
+      "history_start": "2025-03-27T16:00:00.002000+00:00",
+      "months_history": 15.540398465016033,
+      "reference_volume_30d_usdt": 3826547.057619,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZKUSDT": {
+      "ok": true,
+      "history_start": "2024-06-17T12:00:00+00:00",
+      "months_history": 24.8383535719918,
+      "reference_volume_30d_usdt": 4451038.419993,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "COMPUSDT": {
+      "ok": true,
+      "history_start": "2020-06-30T08:00:00.001000+00:00",
+      "months_history": 72.4123429532671,
+      "reference_volume_30d_usdt": 3279334.4176130006,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NEIROUSDT": {
+      "ok": true,
+      "history_start": "2024-09-16T12:00:00+00:00",
+      "months_history": 21.848551753140935,
+      "reference_volume_30d_usdt": 4313309.963975807,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KAVAUSDT": {
+      "ok": true,
+      "history_start": "2020-07-28T08:00:00.001000+00:00",
+      "months_history": 71.49240393208221,
+      "reference_volume_30d_usdt": 1833804.57249606,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TURBOUSDT": {
+      "ok": true,
+      "history_start": "2024-05-30T16:00:00+00:00",
+      "months_history": 25.429742942753506,
+      "reference_volume_30d_usdt": 4314352.275996209,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AVNTUSDT": {
+      "ok": true,
+      "history_start": "2025-09-09T16:00:00+00:00",
+      "months_history": 10.086474267991377,
+      "reference_volume_30d_usdt": 4681199.063596666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BELUSDT": {
+      "ok": true,
+      "history_start": "2020-11-18T08:00:00.006000+00:00",
+      "months_history": 67.77979288230037,
+      "reference_volume_30d_usdt": 28684115.379184004,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MANAUSDT": {
+      "ok": true,
+      "history_start": "2021-03-15T08:00:00.016000+00:00",
+      "months_history": 63.935761972349255,
+      "reference_volume_30d_usdt": 6849613.697936928,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GMTUSDT": {
+      "ok": true,
+      "history_start": "2022-03-14T16:00:00.002000+00:00",
+      "months_history": 51.9765546969458,
+      "reference_volume_30d_usdt": 2765637.443884666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WUSDT": {
+      "ok": true,
+      "history_start": "2024-04-03T16:00:00+00:00",
+      "months_history": 27.302475950165586,
+      "reference_volume_30d_usdt": 7956949.784800466,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GRTUSDT": {
+      "ok": true,
+      "history_start": "2020-12-19T08:00:00.018000+00:00",
+      "months_history": 66.76128896598854,
+      "reference_volume_30d_usdt": 3421540.819379,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BOMEUSDT": {
+      "ok": true,
+      "history_start": "2024-03-16T00:00:00+00:00",
+      "months_history": 27.926720285969616,
+      "reference_volume_30d_usdt": 3375156.229487459,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CUSDT": {
+      "ok": true,
+      "history_start": "2025-07-15T12:00:00+00:00",
+      "months_history": 11.92635231036114,
+      "reference_volume_30d_usdt": 2210089.7405003333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ARPAUSDT": {
+      "ok": true,
+      "history_start": "2021-10-19T08:00:00+00:00",
+      "months_history": 56.77337959312411,
+      "reference_volume_30d_usdt": 15148621.212887334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BABYUSDT": {
+      "ok": true,
+      "history_start": "2025-04-05T16:00:00+00:00",
+      "months_history": 15.244703779635177,
+      "reference_volume_30d_usdt": 6150545.250493332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ROBOUSDT": {
+      "ok": true,
+      "history_start": "2026-02-27T12:00:00+00:00",
+      "months_history": 4.468275245755138,
+      "reference_volume_30d_usdt": 5283376.602329667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FFUSDT": {
+      "ok": true,
+      "history_start": "2025-09-29T12:00:00+00:00",
+      "months_history": 9.429374967145035,
+      "reference_volume_30d_usdt": 5185840.240459,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NOMUSDT": {
+      "ok": true,
+      "history_start": "2025-10-01T08:00:00+00:00",
+      "months_history": 9.3636650370604,
+      "reference_volume_30d_usdt": 9751869.455392333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZKPUSDT": {
+      "ok": true,
+      "history_start": "2025-12-21T12:00:00+00:00",
+      "months_history": 6.702412868632708,
+      "reference_volume_30d_usdt": 9899300.973920332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MANTAUSDT": {
+      "ok": true,
+      "history_start": "2024-01-18T16:00:00+00:00",
+      "months_history": 29.799453293381696,
+      "reference_volume_30d_usdt": 20141167.56958606,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SUSHIUSDT": {
+      "ok": true,
+      "history_start": "2020-09-04T08:00:00+00:00",
+      "months_history": 70.24391526047415,
+      "reference_volume_30d_usdt": 2970223.282043333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LQTYUSDT": {
+      "ok": true,
+      "history_start": "2023-03-09T16:00:00.002000+00:00",
+      "months_history": 40.14876728171161,
+      "reference_volume_30d_usdt": 915434.7897200001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MUBARAKUSDT": {
+      "ok": true,
+      "history_start": "2025-03-17T16:00:00+00:00",
+      "months_history": 15.868948115439204,
+      "reference_volume_30d_usdt": 1759569.3733549998,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "EDENUSDT": {
+      "ok": true,
+      "history_start": "2025-09-30T08:00:00.005000+00:00",
+      "months_history": 9.396520002102717,
+      "reference_volume_30d_usdt": 7389922.087554667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AIXBTUSDT": {
+      "ok": true,
+      "history_start": "2024-12-20T20:00:00+00:00",
+      "months_history": 18.7273300741208,
+      "reference_volume_30d_usdt": 2269200.7793013332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SUSDT": {
+      "ok": true,
+      "history_start": "2025-01-16T12:00:00+00:00",
+      "months_history": 17.840246017978235,
+      "reference_volume_30d_usdt": 10836840.311153999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BICOUSDT": {
+      "ok": true,
+      "history_start": "2023-09-28T08:00:00+00:00",
+      "months_history": 33.47920937812122,
+      "reference_volume_30d_usdt": 60203872.62870066,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SPELLUSDT": {
+      "ok": true,
+      "history_start": "2022-09-06T16:00:00.028000+00:00",
+      "months_history": 46.19408084949797,
+      "reference_volume_30d_usdt": 7605256.691860725,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KNCUSDT": {
+      "ok": true,
+      "history_start": "2020-06-22T08:00:00+00:00",
+      "months_history": 72.67518267360563,
+      "reference_volume_30d_usdt": 937354.1171799997,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KATUSDT": {
+      "ok": true,
+      "history_start": "2026-03-02T08:00:00.007000+00:00",
+      "months_history": 4.3697103506281865,
+      "reference_volume_30d_usdt": 6609321.231643933,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SOLVUSDT": {
+      "ok": true,
+      "history_start": "2025-01-17T16:00:00.008000+00:00",
+      "months_history": 17.80739105293592,
+      "reference_volume_30d_usdt": 938095.5807662331,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "VICUSDT": {
+      "ok": true,
+      "history_start": "2025-03-12T20:00:00+00:00",
+      "months_history": 16.03322294065079,
+      "reference_volume_30d_usdt": 3802647.885307333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MEMEUSDT": {
+      "ok": true,
+      "history_start": "2023-11-03T16:00:00+00:00",
+      "months_history": 32.2964306365978,
+      "reference_volume_30d_usdt": 4906737.924572517,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "INITUSDT": {
+      "ok": true,
+      "history_start": "2025-04-16T08:00:00+00:00",
+      "months_history": 14.883299164169689,
+      "reference_volume_30d_usdt": 1340517.347465667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XVGUSDT": {
+      "ok": true,
+      "history_start": "2023-07-04T16:00:00+00:00",
+      "months_history": 36.3047363717605,
+      "reference_volume_30d_usdt": 1173378.960646367,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "OPENUSDT": {
+      "ok": true,
+      "history_start": "2025-09-04T16:00:00+00:00",
+      "months_history": 10.250749093202964,
+      "reference_volume_30d_usdt": 4242860.104900001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FUSDT": {
+      "ok": true,
+      "history_start": "2025-06-18T12:00:00.003000+00:00",
+      "months_history": 12.813436366503705,
+      "reference_volume_30d_usdt": 1483939.4506821,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DOGSUSDT": {
+      "ok": true,
+      "history_start": "2024-08-26T16:00:00+00:00",
+      "months_history": 22.538506019029594,
+      "reference_volume_30d_usdt": 4531138.390268455,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AUCTIONUSDT": {
+      "ok": true,
+      "history_start": "2023-12-15T16:00:00+00:00",
+      "months_history": 30.91652210482048,
+      "reference_volume_30d_usdt": 1415736.526296,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ENJUSDT": {
+      "ok": true,
+      "history_start": "2020-09-29T08:00:00+00:00",
+      "months_history": 69.42254113441624,
+      "reference_volume_30d_usdt": 5663145.853577334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TNSRUSDT": {
+      "ok": true,
+      "history_start": "2024-04-08T20:00:00.001000+00:00",
+      "months_history": 27.138201124954,
+      "reference_volume_30d_usdt": 34067346.264845364,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "THETAUSDT": {
+      "ok": true,
+      "history_start": "2020-05-26T16:00:00+00:00",
+      "months_history": 73.5622667297482,
+      "reference_volume_30d_usdt": 3877577.009907999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "QTUMUSDT": {
+      "ok": true,
+      "history_start": "2020-02-19T16:00:00+00:00",
+      "months_history": 76.74919833885296,
+      "reference_volume_30d_usdt": 1114848.7118503333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GUNUSDT": {
+      "ok": true,
+      "history_start": "2025-03-31T16:00:00+00:00",
+      "months_history": 15.408978604846764,
+      "reference_volume_30d_usdt": 4260793.788362667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "STGUSDT": {
+      "ok": true,
+      "history_start": "2022-08-25T16:00:00.004000+00:00",
+      "months_history": 46.58834043000578,
+      "reference_volume_30d_usdt": 16653237.60769,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ROSEUSDT": {
+      "ok": true,
+      "history_start": "2021-12-30T08:00:00.001000+00:00",
+      "months_history": 54.40782211007727,
+      "reference_volume_30d_usdt": 2532826.664056514,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ORCAUSDT": {
+      "ok": true,
+      "history_start": "2024-12-06T16:00:00+00:00",
+      "months_history": 19.18729958471324,
+      "reference_volume_30d_usdt": 5436052.674163332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RPLUSDT": {
+      "ok": true,
+      "history_start": "2024-09-09T16:00:00.001000+00:00",
+      "months_history": 22.078536508437153,
+      "reference_volume_30d_usdt": 8691936.574679999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NEWTUSDT": {
+      "ok": true,
+      "history_start": "2025-06-19T16:00:00+00:00",
+      "months_history": 12.780581401461388,
+      "reference_volume_30d_usdt": 1459266.244719,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "USUALUSDT": {
+      "ok": true,
+      "history_start": "2024-12-18T16:00:00+00:00",
+      "months_history": 18.793040004205434,
+      "reference_volume_30d_usdt": 1647833.3553870001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PROVEUSDT": {
+      "ok": true,
+      "history_start": "2025-08-05T16:00:00+00:00",
+      "months_history": 11.23639804447248,
+      "reference_volume_30d_usdt": 1695561.3316183335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "IOUSDT": {
+      "ok": true,
+      "history_start": "2024-06-11T16:00:00+00:00",
+      "months_history": 25.035483362245703,
+      "reference_volume_30d_usdt": 5956368.551165332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ENSOUSDT": {
+      "ok": true,
+      "history_start": "2025-10-14T08:00:00+00:00",
+      "months_history": 8.936550491510276,
+      "reference_volume_30d_usdt": 5632224.906633002,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BBUSDT": {
+      "ok": true,
+      "history_start": "2024-05-13T16:00:00+00:00",
+      "months_history": 25.9882773484729,
+      "reference_volume_30d_usdt": 1224487.6955983334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KSMUSDT": {
+      "ok": true,
+      "history_start": "2020-10-14T08:00:00+00:00",
+      "months_history": 68.92971665878147,
+      "reference_volume_30d_usdt": 1872998.0996233332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HYPERUSDT": {
+      "ok": true,
+      "history_start": "2025-04-22T16:00:00+00:00",
+      "months_history": 14.686169373915785,
+      "reference_volume_30d_usdt": 4684627.920005334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RSRUSDT": {
+      "ok": true,
+      "history_start": "2020-10-19T08:00:00+00:00",
+      "months_history": 68.76544183356988,
+      "reference_volume_30d_usdt": 1926456.4465288334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PIXELUSDT": {
+      "ok": true,
+      "history_start": "2024-02-19T16:00:00+00:00",
+      "months_history": 28.748094412027545,
+      "reference_volume_30d_usdt": 2657377.4576544333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FORMUSDT": {
+      "ok": true,
+      "history_start": "2025-03-19T08:00:00+00:00",
+      "months_history": 15.80323818535457,
+      "reference_volume_30d_usdt": 2128974.99107,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SHELLUSDT": {
+      "ok": true,
+      "history_start": "2025-02-17T20:00:00.001000+00:00",
+      "months_history": 16.788887136624087,
+      "reference_volume_30d_usdt": 1094280.218706,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PEOPLEUSDT": {
+      "ok": true,
+      "history_start": "2021-12-23T16:00:00+00:00",
+      "months_history": 54.63780686537349,
+      "reference_volume_30d_usdt": 2988113.785794667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TURTLEUSDT": {
+      "ok": true,
+      "history_start": "2025-10-22T12:00:00+00:00",
+      "months_history": 8.67371077117174,
+      "reference_volume_30d_usdt": 756750.6993583333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LINEAUSDT": {
+      "ok": true,
+      "history_start": "2025-09-01T12:00:00.014000+00:00",
+      "months_history": 10.349313988329916,
+      "reference_volume_30d_usdt": 2206315.3171652,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KAIAUSDT": {
+      "ok": true,
+      "history_start": "2024-12-04T16:00:00+00:00",
+      "months_history": 19.253009514797874,
+      "reference_volume_30d_usdt": 1568711.5767833334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SPKUSDT": {
+      "ok": true,
+      "history_start": "2025-06-17T12:00:00.001000+00:00",
+      "months_history": 12.846291331546023,
+      "reference_volume_30d_usdt": 3549068.9998936667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "VELODROMEUSDT": {
+      "ok": true,
+      "history_start": "2024-12-13T16:00:00.001000+00:00",
+      "months_history": 18.95731482941702,
+      "reference_volume_30d_usdt": 2222857.8457473335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AWEUSDT": {
+      "ok": true,
+      "history_start": "2025-05-21T08:00:00.001000+00:00",
+      "months_history": 13.733375387688588,
+      "reference_volume_30d_usdt": 2579816.0978893335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BANANAS31USDT": {
+      "ok": true,
+      "history_start": "2025-03-20T16:00:00+00:00",
+      "months_history": 15.770383220312253,
+      "reference_volume_30d_usdt": 5130510.762674467,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FIDAUSDT": {
+      "ok": true,
+      "history_start": "2024-09-19T16:00:00.001000+00:00",
+      "months_history": 21.749986858013983,
+      "reference_volume_30d_usdt": 5698244.749695668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WOOUSDT": {
+      "ok": true,
+      "history_start": "2022-04-07T16:00:00+00:00",
+      "months_history": 51.18803553593019,
+      "reference_volume_30d_usdt": 955148.6056706667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SAPIENUSDT": {
+      "ok": true,
+      "history_start": "2025-08-20T20:00:00.001000+00:00",
+      "months_history": 10.743573568837721,
+      "reference_volume_30d_usdt": 1683036.0001116663,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XAIUSDT": {
+      "ok": true,
+      "history_start": "2024-01-09T16:00:00+00:00",
+      "months_history": 30.095147978762547,
+      "reference_volume_30d_usdt": 2034499.4612563336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DYMUSDT": {
+      "ok": true,
+      "history_start": "2024-02-07T08:00:00+00:00",
+      "months_history": 29.14235399253535,
+      "reference_volume_30d_usdt": 3283262.3549545663,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RVNUSDT": {
+      "ok": true,
+      "history_start": "2021-02-23T08:00:00.006000+00:00",
+      "months_history": 64.5928612731956,
+      "reference_volume_30d_usdt": 1977727.9694191332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XTZUSDT": {
+      "ok": true,
+      "history_start": "2020-02-04T08:00:00.001000+00:00",
+      "months_history": 77.24202281448773,
+      "reference_volume_30d_usdt": 2968598.7824103734,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NMRUSDT": {
+      "ok": true,
+      "history_start": "2023-06-21T08:00:00+00:00",
+      "months_history": 36.731850917310624,
+      "reference_volume_30d_usdt": 2188243.0577533334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "C98USDT": {
+      "ok": true,
+      "history_start": "2021-08-24T08:00:00.004000+00:00",
+      "months_history": 58.61325763549387,
+      "reference_volume_30d_usdt": 1407507.3972194602,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CELOUSDT": {
+      "ok": true,
+      "history_start": "2021-09-27T08:00:00.001000+00:00",
+      "months_history": 57.49618882405509,
+      "reference_volume_30d_usdt": 4826919.231633766,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "STORJUSDT": {
+      "ok": true,
+      "history_start": "2020-09-15T16:00:00.003000+00:00",
+      "months_history": 69.88251064500867,
+      "reference_volume_30d_usdt": 3417091.367096,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CTSIUSDT": {
+      "ok": true,
+      "history_start": "2021-10-26T08:00:00.016000+00:00",
+      "months_history": 56.54339483782789,
+      "reference_volume_30d_usdt": 971255.8847273332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GASUSDT": {
+      "ok": true,
+      "history_start": "2023-10-24T16:00:00+00:00",
+      "months_history": 32.624980287020975,
+      "reference_volume_30d_usdt": 2402973.8334133336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CATIUSDT": {
+      "ok": true,
+      "history_start": "2024-09-18T16:00:00.004000+00:00",
+      "months_history": 21.782841823056298,
+      "reference_volume_30d_usdt": 2253405.0974886664,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AUSDT": {
+      "ok": true,
+      "history_start": "2025-05-28T08:00:00.003000+00:00",
+      "months_history": 13.503390632392366,
+      "reference_volume_30d_usdt": 2660385.699864333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GPSUSDT": {
+      "ok": true,
+      "history_start": "2025-02-17T20:00:00.001000+00:00",
+      "months_history": 16.788887136624087,
+      "reference_volume_30d_usdt": 4965268.663133968,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BATUSDT": {
+      "ok": true,
+      "history_start": "2020-02-13T08:00:00+00:00",
+      "months_history": 76.94632812910686,
+      "reference_volume_30d_usdt": 1683648.0497440002,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "STOUSDT": {
+      "ok": true,
+      "history_start": "2025-04-12T16:00:00+00:00",
+      "months_history": 15.014719024338957,
+      "reference_volume_30d_usdt": 4747342.377561334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "1MBABYDOGEUSDT": {
+      "ok": true,
+      "history_start": "2024-09-16T12:00:00+00:00",
+      "months_history": 21.848551753140935,
+      "reference_volume_30d_usdt": 2536736.558359564,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ONTUSDT": {
+      "ok": true,
+      "history_start": "2020-02-11T08:00:00+00:00",
+      "months_history": 77.0120380591915,
+      "reference_volume_30d_usdt": 2493177.3222629665,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LPTUSDT": {
+      "ok": true,
+      "history_start": "2021-11-11T08:00:00.012000+00:00",
+      "months_history": 56.017715397150816,
+      "reference_volume_30d_usdt": 2017871.5197233332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BREVUSDT": {
+      "ok": true,
+      "history_start": "2025-12-30T12:00:00+00:00",
+      "months_history": 6.4067181832518525,
+      "reference_volume_30d_usdt": 10401203.904500667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GMXUSDT": {
+      "ok": true,
+      "history_start": "2023-02-17T08:00:00.016000+00:00",
+      "months_history": 40.805866582557954,
+      "reference_volume_30d_usdt": 953719.6464686667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ANKRUSDT": {
+      "ok": true,
+      "history_start": "2021-01-25T16:00:00+00:00",
+      "months_history": 65.5456552594228,
+      "reference_volume_30d_usdt": 2188372.1739756996,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ACHUSDT": {
+      "ok": true,
+      "history_start": "2023-02-22T08:00:00.010000+00:00",
+      "months_history": 40.64159175734637,
+      "reference_volume_30d_usdt": 1531431.8162038666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "TWTUSDT": {
+      "ok": true,
+      "history_start": "2023-11-03T08:00:00+00:00",
+      "months_history": 32.2964306365978,
+      "reference_volume_30d_usdt": 1110591.1642666666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AXLUSDT": {
+      "ok": true,
+      "history_start": "2024-03-01T16:00:00+00:00",
+      "months_history": 28.386689796562056,
+      "reference_volume_30d_usdt": 1583642.3010065337,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FLOWUSDT": {
+      "ok": true,
+      "history_start": "2022-02-09T16:00:00.001000+00:00",
+      "months_history": 53.06076854334227,
+      "reference_volume_30d_usdt": 939988.1417748333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "2ZUSDT": {
+      "ok": true,
+      "history_start": "2025-10-02T12:00:00+00:00",
+      "months_history": 9.330810072018084,
+      "reference_volume_30d_usdt": 3224834.006525001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "1000CHEEMSUSDT": {
+      "ok": true,
+      "history_start": "2024-11-25T12:00:00.008000+00:00",
+      "months_history": 19.54870420017873,
+      "reference_volume_30d_usdt": 663744.96405263,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RONINUSDT": {
+      "ok": true,
+      "history_start": "2024-02-05T16:00:00+00:00",
+      "months_history": 29.208063922619985,
+      "reference_volume_30d_usdt": 1611329.8858484332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SOMIUSDT": {
+      "ok": true,
+      "history_start": "2025-08-25T12:00:00+00:00",
+      "months_history": 10.579298743626136,
+      "reference_volume_30d_usdt": 2204968.7620200007,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "EDUUSDT": {
+      "ok": true,
+      "history_start": "2023-04-28T16:00:00.006000+00:00",
+      "months_history": 38.50601902959575,
+      "reference_volume_30d_usdt": 2781327.1523999996,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ZRXUSDT": {
+      "ok": true,
+      "history_start": "2020-06-24T08:00:00+00:00",
+      "months_history": 72.609472743521,
+      "reference_volume_30d_usdt": 1159597.0551196665,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SUNUSDT": {
+      "ok": true,
+      "history_start": "2024-08-22T16:00:00.008000+00:00",
+      "months_history": 22.669925879198864,
+      "reference_volume_30d_usdt": 1732663.8784308669,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ESPUSDT": {
+      "ok": true,
+      "history_start": "2026-02-10T12:00:00+00:00",
+      "months_history": 5.02680965147453,
+      "reference_volume_30d_usdt": 3466555.975754,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "COWUSDT": {
+      "ok": true,
+      "history_start": "2024-11-06T16:00:00+00:00",
+      "months_history": 20.172948535982755,
+      "reference_volume_30d_usdt": 894810.1608000001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "REDUSDT": {
+      "ok": true,
+      "history_start": "2025-03-06T16:00:00+00:00",
+      "months_history": 16.230352730904695,
+      "reference_volume_30d_usdt": 3117050.501056667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "EULUSDT": {
+      "ok": true,
+      "history_start": "2025-10-13T12:00:00.001000+00:00",
+      "months_history": 8.969405456552593,
+      "reference_volume_30d_usdt": 1349958.6599299996,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "COTIUSDT": {
+      "ok": true,
+      "history_start": "2021-03-10T08:00:00.006000+00:00",
+      "months_history": 64.10003679756085,
+      "reference_volume_30d_usdt": 992467.454396,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CELRUSDT": {
+      "ok": true,
+      "history_start": "2021-03-29T08:00:00+00:00",
+      "months_history": 63.47579246175682,
+      "reference_volume_30d_usdt": 630790.5269865334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "OGNUSDT": {
+      "ok": true,
+      "history_start": "2021-04-01T08:00:00.011000+00:00",
+      "months_history": 63.37722756662986,
+      "reference_volume_30d_usdt": 6793895.381509333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GTCUSDT": {
+      "ok": true,
+      "history_start": "2021-06-11T08:00:00.007000+00:00",
+      "months_history": 61.044525048625346,
+      "reference_volume_30d_usdt": 1310136.3841194767,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "API3USDT": {
+      "ok": true,
+      "history_start": "2022-02-21T16:00:00.005000+00:00",
+      "months_history": 52.66650896283446,
+      "reference_volume_30d_usdt": 2289990.3216403336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MINAUSDT": {
+      "ok": true,
+      "history_start": "2023-02-03T08:00:00+00:00",
+      "months_history": 41.2658360931504,
+      "reference_volume_30d_usdt": 2385907.2867920003,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RLCUSDT": {
+      "ok": true,
+      "history_start": "2020-07-31T08:00:00.001000+00:00",
+      "months_history": 71.39383903695526,
+      "reference_volume_30d_usdt": 904407.7191083335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SSVUSDT": {
+      "ok": true,
+      "history_start": "2023-02-23T08:00:00.005000+00:00",
+      "months_history": 40.60873679230405,
+      "reference_volume_30d_usdt": 1082282.448151,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HFTUSDT": {
+      "ok": true,
+      "history_start": "2023-04-05T16:00:00.004000+00:00",
+      "months_history": 39.261683225569044,
+      "reference_volume_30d_usdt": 2252611.591532667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CYBERUSDT": {
+      "ok": true,
+      "history_start": "2023-08-16T16:00:00+00:00",
+      "months_history": 34.89197287494086,
+      "reference_volume_30d_usdt": 1652788.960907,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AVAUSDT": {
+      "ok": true,
+      "history_start": "2024-12-13T16:00:00.001000+00:00",
+      "months_history": 18.95731482941702,
+      "reference_volume_30d_usdt": 656326.3324826666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FOGOUSDT": {
+      "ok": true,
+      "history_start": "2026-01-10T16:00:00.001000+00:00",
+      "months_history": 6.045313567786364,
+      "reference_volume_30d_usdt": 4976367.183668334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HOTUSDT": {
+      "ok": true,
+      "history_start": "2021-03-30T08:00:00.012000+00:00",
+      "months_history": 63.4429374967145,
+      "reference_volume_30d_usdt": 7519471.502592846,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ATUSDT": {
+      "ok": true,
+      "history_start": "2025-10-29T12:00:00.011000+00:00",
+      "months_history": 8.44372601587552,
+      "reference_volume_30d_usdt": 2715244.424067,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ALTUSDT": {
+      "ok": true,
+      "history_start": "2024-01-25T16:00:00+00:00",
+      "months_history": 29.569468538085474,
+      "reference_volume_30d_usdt": 3130873.1757162674,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SCRTUSDT": {
+      "ok": true,
+      "history_start": "2024-11-21T12:00:00+00:00",
+      "months_history": 19.680124060348,
+      "reference_volume_30d_usdt": 4015176.4240429997,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MASKUSDT": {
+      "ok": true,
+      "history_start": "2021-08-26T08:00:00.016000+00:00",
+      "months_history": 58.54754770540924,
+      "reference_volume_30d_usdt": 2033874.5816733327,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SIGNUSDT": {
+      "ok": true,
+      "history_start": "2025-04-28T12:00:00+00:00",
+      "months_history": 14.489039583661881,
+      "reference_volume_30d_usdt": 2377738.082158567,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "RAREUSDT": {
+      "ok": true,
+      "history_start": "2024-08-15T16:00:00+00:00",
+      "months_history": 22.899910634495082,
+      "reference_volume_30d_usdt": 3840435.870604334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MOVRUSDT": {
+      "ok": true,
+      "history_start": "2023-12-26T16:00:00+00:00",
+      "months_history": 30.55511748935499,
+      "reference_volume_30d_usdt": 3355178.9870973327,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SCRUSDT": {
+      "ok": true,
+      "history_start": "2024-10-22T12:00:00+00:00",
+      "months_history": 20.665773011617514,
+      "reference_volume_30d_usdt": 1040302.9256129999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "AEVOUSDT": {
+      "ok": true,
+      "history_start": "2024-03-13T16:00:00+00:00",
+      "months_history": 27.99243021605425,
+      "reference_volume_30d_usdt": 1633945.7863659668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "1000SATSUSDT": {
+      "ok": true,
+      "history_start": "2023-12-12T16:00:00+00:00",
+      "months_history": 31.01508699994743,
+      "reference_volume_30d_usdt": 2035284.0081991109,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "METISUSDT": {
+      "ok": true,
+      "history_start": "2024-03-11T16:00:00+00:00",
+      "months_history": 28.058140146138882,
+      "reference_volume_30d_usdt": 1224715.329342,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BROCCOLI714USDT": {
+      "ok": true,
+      "history_start": "2025-03-20T16:00:00+00:00",
+      "months_history": 15.770383220312253,
+      "reference_volume_30d_usdt": 1374047.6145063336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SANTOSUSDT": {
+      "ok": true,
+      "history_start": "2024-10-28T16:00:00+00:00",
+      "months_history": 20.46864322136361,
+      "reference_volume_30d_usdt": 1025173.8110633333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "IOTXUSDT": {
+      "ok": true,
+      "history_start": "2021-08-11T16:00:00+00:00",
+      "months_history": 59.040372181044,
+      "reference_volume_30d_usdt": 1344256.2805959333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MAGICUSDT": {
+      "ok": true,
+      "history_start": "2023-01-23T16:00:00.016000+00:00",
+      "months_history": 41.627240708615886,
+      "reference_volume_30d_usdt": 3582941.387151666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CGPTUSDT": {
+      "ok": true,
+      "history_start": "2024-12-20T20:00:00+00:00",
+      "months_history": 18.7273300741208,
+      "reference_volume_30d_usdt": 1078183.1041123334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "COOKIEUSDT": {
+      "ok": true,
+      "history_start": "2025-01-07T12:00:00.001000+00:00",
+      "months_history": 18.13594070335909,
+      "reference_volume_30d_usdt": 3018480.3251189995,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WCTUSDT": {
+      "ok": true,
+      "history_start": "2025-04-15T12:00:00+00:00",
+      "months_history": 14.916154129212005,
+      "reference_volume_30d_usdt": 2475469.8347553336,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ANIMEUSDT": {
+      "ok": true,
+      "history_start": "2025-01-23T20:00:00+00:00",
+      "months_history": 17.610261262682016,
+      "reference_volume_30d_usdt": 2837757.7388506,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "1000CATUSDT": {
+      "ok": true,
+      "history_start": "2024-10-21T16:00:00+00:00",
+      "months_history": 20.698627976659832,
+      "reference_volume_30d_usdt": 739833.6836728667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "OGUSDT": {
+      "ok": true,
+      "history_start": "2023-04-09T08:00:00.024000+00:00",
+      "months_history": 39.13026336539978,
+      "reference_volume_30d_usdt": 1392974.665776667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BARDUSDT": {
+      "ok": true,
+      "history_start": "2025-09-18T08:00:00.002000+00:00",
+      "months_history": 9.790779582610524,
+      "reference_volume_30d_usdt": 2112502.938446667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "GLMUSDT": {
+      "ok": true,
+      "history_start": "2024-02-22T08:00:00.001000+00:00",
+      "months_history": 28.649529516900593,
+      "reference_volume_30d_usdt": 2669419.0919393324,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "POWRUSDT": {
+      "ok": true,
+      "history_start": "2023-10-26T16:00:00+00:00",
+      "months_history": 32.55927035693634,
+      "reference_volume_30d_usdt": 7884164.325257,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DOLOUSDT": {
+      "ok": true,
+      "history_start": "2025-04-30T16:00:00.003000+00:00",
+      "months_history": 14.423329653577248,
+      "reference_volume_30d_usdt": 1159702.741494333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CETUSUSDT": {
+      "ok": true,
+      "history_start": "2024-11-06T16:00:00+00:00",
+      "months_history": 20.172948535982755,
+      "reference_volume_30d_usdt": 643568.5463426667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ICXUSDT": {
+      "ok": true,
+      "history_start": "2020-09-14T16:00:00+00:00",
+      "months_history": 69.91536561005098,
+      "reference_volume_30d_usdt": 775651.8837996667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ALPINEUSDT": {
+      "ok": true,
+      "history_start": "2025-05-06T12:00:00+00:00",
+      "months_history": 14.226199863323345,
+      "reference_volume_30d_usdt": 777958.97096,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "STEEMUSDT": {
+      "ok": true,
+      "history_start": "2023-11-08T16:00:00+00:00",
+      "months_history": 32.13215581138621,
+      "reference_volume_30d_usdt": 994675.9626940001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BNTUSDT": {
+      "ok": true,
+      "history_start": "2020-12-28T08:00:00.019000+00:00",
+      "months_history": 66.46559428060768,
+      "reference_volume_30d_usdt": 716690.4643433333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "IOSTUSDT": {
+      "ok": true,
+      "history_start": "2020-02-21T08:00:00+00:00",
+      "months_history": 76.68348840876833,
+      "reference_volume_30d_usdt": 1045078.1228352567,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "HIVEUSDT": {
+      "ok": true,
+      "history_start": "2024-12-23T12:00:00+00:00",
+      "months_history": 18.62876517899385,
+      "reference_volume_30d_usdt": 1781602.6148543332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CHRUSDT": {
+      "ok": true,
+      "history_start": "2021-03-12T08:00:00.005000+00:00",
+      "months_history": 64.03432686747621,
+      "reference_volume_30d_usdt": 1880036.2521686668,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CVXUSDT": {
+      "ok": true,
+      "history_start": "2022-09-22T08:00:00+00:00",
+      "months_history": 45.6684014088209,
+      "reference_volume_30d_usdt": 1043444.5040800001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "NXPCUSDT": {
+      "ok": true,
+      "history_start": "2025-05-15T08:00:00.003000+00:00",
+      "months_history": 13.93050517794249,
+      "reference_volume_30d_usdt": 1016861.8909266666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ILVUSDT": {
+      "ok": true,
+      "history_start": "2023-11-10T16:00:00+00:00",
+      "months_history": 32.06644588130158,
+      "reference_volume_30d_usdt": 956979.2346766667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "XVSUSDT": {
+      "ok": true,
+      "history_start": "2023-04-12T08:00:00.008000+00:00",
+      "months_history": 39.03169847027282,
+      "reference_volume_30d_usdt": 674810.6648600001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "VTHOUSDT": {
+      "ok": true,
+      "history_start": "2025-01-22T12:00:00+00:00",
+      "months_history": 17.643116227724335,
+      "reference_volume_30d_usdt": 762902.5350103265,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LISTAUSDT": {
+      "ok": true,
+      "history_start": "2024-06-20T16:00:00+00:00",
+      "months_history": 24.739788676864848,
+      "reference_volume_30d_usdt": 1379475.5252653335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ONGUSDT": {
+      "ok": true,
+      "history_start": "2023-11-27T16:00:00+00:00",
+      "months_history": 31.507911475582187,
+      "reference_volume_30d_usdt": 3204174.311216333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MTLUSDT": {
+      "ok": true,
+      "history_start": "2021-03-30T16:00:00.001000+00:00",
+      "months_history": 63.4429374967145,
+      "reference_volume_30d_usdt": 794647.7888333333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "PUNDIXUSDT": {
+      "ok": true,
+      "history_start": "2025-04-30T12:00:00.001000+00:00",
+      "months_history": 14.423329653577248,
+      "reference_volume_30d_usdt": 5772395.756717334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ASRUSDT": {
+      "ok": true,
+      "history_start": "2025-05-06T12:00:00+00:00",
+      "months_history": 14.226199863323345,
+      "reference_volume_30d_usdt": 1768574.167153333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BEAMXUSDT": {
+      "ok": true,
+      "history_start": "2023-11-17T08:00:00.001000+00:00",
+      "months_history": 31.83646112600536,
+      "reference_volume_30d_usdt": 1313949.6442048335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "UMAUSDT": {
+      "ok": true,
+      "history_start": "2023-05-09T08:00:00+00:00",
+      "months_history": 38.14461441413026,
+      "reference_volume_30d_usdt": 1523662.2070066666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SLPUSDT": {
+      "ok": true,
+      "history_start": "2023-10-31T08:00:00+00:00",
+      "months_history": 32.39499553172475,
+      "reference_volume_30d_usdt": 2067178.7875152566,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "MAVUSDT": {
+      "ok": true,
+      "history_start": "2023-06-28T16:00:00+00:00",
+      "months_history": 36.5018661620144,
+      "reference_volume_30d_usdt": 1560794.4457813331,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "WAXPUSDT": {
+      "ok": true,
+      "history_start": "2023-10-18T08:00:00+00:00",
+      "months_history": 32.82211007727488,
+      "reference_volume_30d_usdt": 1119857.6514472999,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FRAXUSDT": {
+      "ok": true,
+      "history_start": "2026-01-15T08:00:00.004000+00:00",
+      "months_history": 5.881038742574778,
+      "reference_volume_30d_usdt": 780320.0137600001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CVCUSDT": {
+      "ok": true,
+      "history_start": "2020-11-11T08:00:00.009000+00:00",
+      "months_history": 68.00977763759659,
+      "reference_volume_30d_usdt": 990582.8306636666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BANDUSDT": {
+      "ok": true,
+      "history_start": "2020-07-29T08:00:00+00:00",
+      "months_history": 71.4595489670399,
+      "reference_volume_30d_usdt": 1142360.646866667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "USTCUSDT": {
+      "ok": true,
+      "history_start": "2023-11-27T08:00:00.001000+00:00",
+      "months_history": 31.507911475582187,
+      "reference_volume_30d_usdt": 1273216.040267833,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ARKUSDT": {
+      "ok": true,
+      "history_start": "2023-09-19T16:00:00+00:00",
+      "months_history": 33.77490406350208,
+      "reference_volume_30d_usdt": 2560351.040713334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "FLUXUSDT": {
+      "ok": true,
+      "history_start": "2024-09-03T08:00:00.001000+00:00",
+      "months_history": 22.275666298691057,
+      "reference_volume_30d_usdt": 666912.4819070001,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "BMTUSDT": {
+      "ok": true,
+      "history_start": "2025-03-17T16:00:00+00:00",
+      "months_history": 15.868948115439204,
+      "reference_volume_30d_usdt": 830924.9095193335,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SUPERUSDT": {
+      "ok": true,
+      "history_start": "2023-11-26T16:00:00+00:00",
+      "months_history": 31.540766440624505,
+      "reference_volume_30d_usdt": 1889290.6587666667,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "LSKUSDT": {
+      "ok": true,
+      "history_start": "2024-01-25T16:00:00+00:00",
+      "months_history": 29.569468538085474,
+      "reference_volume_30d_usdt": 1195665.8135733334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "KMNOUSDT": {
+      "ok": true,
+      "history_start": "2024-12-20T20:00:00+00:00",
+      "months_history": 18.7273300741208,
+      "reference_volume_30d_usdt": 2317789.9292286662,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "JOEUSDT": {
+      "ok": true,
+      "history_start": "2023-03-28T16:00:00.013000+00:00",
+      "months_history": 39.524522945907584,
+      "reference_volume_30d_usdt": 579393.9001353333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ASTRUSDT": {
+      "ok": true,
+      "history_start": "2023-02-13T08:00:00.008000+00:00",
+      "months_history": 40.93728644272722,
+      "reference_volume_30d_usdt": 1221393.8075982337,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "ACXUSDT": {
+      "ok": true,
+      "history_start": "2024-12-06T16:00:00+00:00",
+      "months_history": 19.18729958471324,
+      "reference_volume_30d_usdt": 782735.1823342333,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "SFPUSDT": {
+      "ok": true,
+      "history_start": "2021-02-24T08:00:00.016000+00:00",
+      "months_history": 64.56000630815329,
+      "reference_volume_30d_usdt": 1006494.6281833332,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CKBUSDT": {
+      "ok": true,
+      "history_start": "2023-02-28T08:00:00.018000+00:00",
+      "months_history": 40.444461967092465,
+      "reference_volume_30d_usdt": 947396.4604952334,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "CTKUSDT": {
+      "ok": true,
+      "history_start": "2020-11-19T08:00:00+00:00",
+      "months_history": 67.74693791725805,
+      "reference_volume_30d_usdt": 431051.93790666666,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    },
+    "DIAUSDT": {
+      "ok": true,
+      "history_start": "2024-10-02T16:00:00+00:00",
+      "months_history": 21.322872312463858,
+      "reference_volume_30d_usdt": 663408.48701,
+      "perp_end": "2026-07-14T00:00:00+00:00"
+    }
+  }
+}
