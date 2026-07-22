@@ -7,7 +7,7 @@
   },
   "period": {
     "equity_points": 2509,
-    "trade_count": 489,
+    "trade_count": 601,
     "start": "2019-09-01T00:00:00+00:00",
     "end": "2026-07-14T00:00:00+00:00"
   },
@@ -57,29 +57,29 @@
   },
   "bootstrap_mc": {
     "unit": {
-      "p05": 746.3225248264143,
+      "p05": 720.6789556924524,
       "ruin_probability": 0.0,
-      "mean": 902.8863227778137,
-      "median": 891.2097808664414
+      "mean": 869.9974994381681,
+      "median": 858.4801850412709
     },
     "quarter_kelly": {
-      "p05": 3673388983.5877705,
+      "p05": 1372275189.1447618,
       "ruin_probability": 0.0,
-      "mean": 368534263115.6443,
-      "median": 57753789704.08727
+      "mean": 111893011320.24072,
+      "median": 19255012834.03782
     },
-    "kelly_fraction": 77.52865933027918,
-    "quarter_kelly_fraction": 19.382164832569796,
+    "kelly_fraction": 75.35386096516443,
+    "quarter_kelly_fraction": 18.838465241291107,
     "paths": 10000,
-    "trade_count": 489
+    "trade_count": 601
   },
   "leave_one_year_out": [
     {
       "year": 2019,
       "heldout_return": 0.01041134943242028,
       "heldout_sharpe": 5.379091330677057,
-      "remaining_return": 1.7863619618603122,
-      "remaining_sharpe": 4.33500907092539,
+      "remaining_return": 1.7383187653705363,
+      "remaining_sharpe": 4.258005204774817,
       "heldout_days": 121,
       "remaining_days": 2387
     },
@@ -87,8 +87,8 @@
       "year": 2020,
       "heldout_return": 0.32240774374373093,
       "heldout_sharpe": 9.24381864801269,
-      "remaining_return": 1.128974034831442,
-      "remaining_sharpe": 3.578051039894173,
+      "remaining_return": 1.0922656964041089,
+      "remaining_sharpe": 3.4932762040598293,
       "heldout_days": 366,
       "remaining_days": 2142
     },
@@ -96,8 +96,8 @@
       "year": 2021,
       "heldout_return": 0.6201561624126048,
       "heldout_sharpe": 12.03615396256788,
-      "remaining_return": 0.737716286372061,
-      "remaining_sharpe": 2.8072589073393566,
+      "remaining_return": 0.7077541184511698,
+      "remaining_sharpe": 2.7175597905423605,
       "heldout_days": 365,
       "remaining_days": 2143
     },
@@ -105,35 +105,35 @@
       "year": 2022,
       "heldout_return": 0.008722020185723656,
       "heldout_sharpe": 2.7849208181025,
-      "remaining_return": 1.7910283443322488,
-      "remaining_sharpe": 4.595852977779123,
+      "remaining_return": 1.7429046888306683,
+      "remaining_sharpe": 4.513866037396863,
       "heldout_days": 365,
       "remaining_days": 2143
     },
     {
       "year": 2023,
-      "heldout_return": 0.06748912402104335,
-      "heldout_sharpe": 6.767502883974575,
-      "remaining_return": 1.6373774556928797,
-      "remaining_sharpe": 4.353821336368028,
+      "heldout_return": 0.06492069963013547,
+      "heldout_sharpe": 7.038053981099607,
+      "remaining_return": 1.598154360090033,
+      "remaining_sharpe": 4.2798874834010405,
       "heldout_days": 365,
       "remaining_days": 2143
     },
     {
       "year": 2024,
-      "heldout_return": 0.20791327238647028,
-      "heldout_sharpe": 2.792405653843028,
-      "remaining_return": 1.3307730896342616,
-      "remaining_sharpe": 5.5545297138329355,
+      "heldout_return": 0.19723364826760692,
+      "heldout_sharpe": 2.656824954886686,
+      "remaining_return": 1.3110178726581534,
+      "remaining_sharpe": 5.502119558046395,
       "heldout_days": 366,
       "remaining_days": 2142
     },
     {
       "year": 2025,
-      "heldout_return": 0.000400108715287395,
-      "heldout_sharpe": 0.028258531063520033,
-      "remaining_return": 1.8142457456406516,
-      "remaining_sharpe": 4.864336294626224,
+      "heldout_return": -0.00568674403906666,
+      "heldout_sharpe": -0.18632246131373115,
+      "remaining_return": 1.7826525919341423,
+      "remaining_sharpe": 4.808790057693024,
       "heldout_days": 365,
       "remaining_days": 2143
     },
@@ -141,20 +141,20 @@
       "year": 2026,
       "heldout_return": -0.0005275488069412804,
       "heldout_sharpe": -1.3681355458414457,
-      "remaining_return": 1.8168577798515284,
-      "remaining_sharpe": 4.453542709490511,
+      "remaining_return": 1.7682887663301141,
+      "remaining_sharpe": 4.375052945430737,
       "heldout_days": 195,
       "remaining_days": 2313
     }
   ],
   "deflated_sharpe": {
-    "observed_sharpe": 4.265625593029958,
-    "benchmark_sharpe": 2.257591057893949,
-    "score": 1.8187636082001262,
-    "probability": 0.9655262486576729,
+    "observed_sharpe": 4.190721739745427,
+    "benchmark_sharpe": 2.2173963328560924,
+    "score": 1.819724896209657,
+    "probability": 0.965599545006255,
     "n_days": 2508,
-    "skew": 19.515108291539562,
-    "kurtosis": 690.8780388282613,
+    "skew": 19.517012502823466,
+    "kurtosis": 690.8648410865036,
     "trials": 28
   },
   "bitget_native": {
@@ -177,10 +177,10 @@
     "paths": 1000,
     "mdd_p05": 0.014698898580313369,
     "mdd_median": 0.01469889858031359,
-    "mdd_p95": 0.014947499130550924,
-    "final_p05": 897.6407902366883,
-    "final_median": 897.6407902366899,
-    "final_p95": 897.6407902366916,
+    "mdd_p95": 0.014791460875133592,
+    "final_p05": 864.4704217816377,
+    "final_median": 864.4704217816396,
+    "final_p95": 864.4704217816414,
     "final_capital_invariant": true
   },
   "criteria": {

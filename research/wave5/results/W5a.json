@@ -33591,5 +33591,173 @@
     "entry_z": 2.0,
     "exit_z": 0.5,
     "leverage_cap": 2.0
-  }
+  },
+  "metrics": {
+    "is": {
+      "total_ret": -0.8026316256187866,
+      "cagr": -0.2423579627267648,
+      "sharpe": -0.9917987908963873,
+      "sortino": -0.9541577313450974,
+      "calmar": -0.3004883922634884,
+      "recovery_factor": -0.9951457094641787,
+      "mdd": 0.8065468383026558,
+      "profit_factor": 0.6645864158959404,
+      "win_rate": 0.4198396793587174,
+      "turnover": 170.3932648285768,
+      "exposure": 0.4674473067915691,
+      "n_trades": 998.0
+    },
+    "oos": {
+      "total_ret": 0.005311584036316042,
+      "cagr": 0.006760019911415727,
+      "sharpe": 0.14250658604494815,
+      "sortino": 0.15896797066591287,
+      "calmar": 0.03968483527799758,
+      "recovery_factor": 0.031181762821509022,
+      "mdd": 0.1703426476149109,
+      "profit_factor": 0.8052613202963792,
+      "win_rate": 0.41732283464566927,
+      "turnover": 32.61996579000895,
+      "exposure": 0.4425087108013937,
+      "n_trades": 127.0
+    }
+  },
+  "validation": {
+    "neighbor_is_sharpes": [],
+    "yearly_is_returns": {
+      "2019": -0.007329797559879503,
+      "2020": -0.3085429232968355,
+      "2021": -0.42200588505278036,
+      "2022": -0.41395121079919983,
+      "2023": 0.0018704863667668992,
+      "2024": 0.43429332464217363,
+      "2025": -0.4092542540471801
+    },
+    "regime_returns": {
+      "2022_bear": -0.4084948648890443,
+      "2024_bull": 0.43429332464217363,
+      "2025_sideways": -0.3874043375364047
+    },
+    "oos_trade_count": 127,
+    "gate4_is_after_cost": {
+      "status": "FAIL",
+      "value": -0.8026316256187866
+    }
+  },
+  "gates": [
+    {
+      "gate": 1,
+      "name": "data_validation",
+      "status": "PASS",
+      "value": "True"
+    },
+    {
+      "gate": 2,
+      "name": "overfit_sensitivity",
+      "status": "FAIL",
+      "value": "dispersion=1.144"
+    },
+    {
+      "gate": 3,
+      "name": "walk_forward",
+      "status": "FAIL",
+      "value": "positive_years=28.6%"
+    },
+    {
+      "gate": 4,
+      "name": "oos_after_cost",
+      "status": "PASS",
+      "value": "return=0.0053"
+    },
+    {
+      "gate": 5,
+      "name": "trade_bootstrap",
+      "status": "FAIL",
+      "value": "p05=185.55"
+    },
+    {
+      "gate": 6,
+      "name": "crash_stress",
+      "status": "FAIL",
+      "value": "return=-0.4085"
+    },
+    {
+      "gate": 7,
+      "name": "trading_costs",
+      "status": "FAIL",
+      "value": "measured=True; double_slippage=-0.0012"
+    },
+    {
+      "gate": 8,
+      "name": "capacity_and_sizing",
+      "status": "FAIL",
+      "value": "quarter_kelly=0.0000; leverage=0.0000; concurrent=2; notional=0.00-0.00"
+    },
+    {
+      "gate": 9,
+      "name": "kelly",
+      "status": "FAIL",
+      "value": "f=-4.3652; quarter=-1.0913"
+    },
+    {
+      "gate": 10,
+      "name": "mdd_limit",
+      "status": "PASS",
+      "value": "mdd=0.1703"
+    },
+    {
+      "gate": 11,
+      "name": "sharpe",
+      "status": "FAIL",
+      "value": "sharpe=0.1425"
+    },
+    {
+      "gate": 12,
+      "name": "sortino",
+      "status": "PASS",
+      "value": "sortino=0.1590"
+    },
+    {
+      "gate": 13,
+      "name": "calmar",
+      "status": "FAIL",
+      "value": "calmar=0.0397"
+    },
+    {
+      "gate": 14,
+      "name": "profit_factor",
+      "status": "FAIL",
+      "value": "pf=0.8053"
+    },
+    {
+      "gate": 15,
+      "name": "recovery_factor",
+      "status": "FAIL",
+      "value": "recovery=0.0312"
+    },
+    {
+      "gate": 16,
+      "name": "bankruptcy",
+      "status": "PASS",
+      "value": "p=0.0021"
+    },
+    {
+      "gate": 17,
+      "name": "regime",
+      "status": "FAIL",
+      "value": "{'2022_bear': -0.4084948648890443, '2024_bull': 0.43429332464217363, '2025_sideways': -0.3874043375364047}"
+    },
+    {
+      "gate": 18,
+      "name": "btc_correlation",
+      "status": "PASS",
+      "value": "corr=0.0364"
+    },
+    {
+      "gate": 19,
+      "name": "factor_exposure",
+      "status": "PASS",
+      "value": "True"
+    }
+  ]
 }
