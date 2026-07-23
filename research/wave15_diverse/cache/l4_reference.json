@@ -1,0 +1,66 @@
+{
+  "source": "in-memory recompute of research.wave13_liquidity.engine13.run_candidate(get_config('L4')), read-only",
+  "cost_model": "identical costs_measured mapping wave15's own candidates use (fit fresh from the same cache/measured_spreads.json)",
+  "regime_breakdown": {
+    "high_funding_years": {
+      "2020": {
+        "label": "2020",
+        "start": "2019-12-31T23:59:59+00:00",
+        "end": "2020-12-31T23:59:59+00:00",
+        "days": 365.00001157407405,
+        "start_usdt": 90.4641582295503,
+        "end_usdt": 107.63591449654828,
+        "total_return": 0.18981833914184132,
+        "annualized_return": 0.18981833258453595,
+        "active_capital_annual_profit_usdt": 17.083649932608235,
+        "total100_annual_profit_usdt": 17.083649932608235
+      },
+      "2021": {
+        "label": "2021",
+        "start": "2020-12-31T23:59:59+00:00",
+        "end": "2021-12-31T23:59:59+00:00",
+        "days": 364.00001157407405,
+        "start_usdt": 107.63591449654828,
+        "end_usdt": 140.3088254737926,
+        "total_return": 0.30355027065145723,
+        "annualized_return": 0.30449994639399103,
+        "active_capital_annual_profit_usdt": 27.40499517545919,
+        "total100_annual_profit_usdt": 27.40499517545919
+      },
+      "2024": {
+        "label": "2024",
+        "start": "2023-12-31T23:59:59+00:00",
+        "end": "2024-12-31T23:59:59+00:00",
+        "days": 365.00001157407405,
+        "start_usdt": 143.87496874570886,
+        "end_usdt": 167.77670619787736,
+        "total_return": 0.16612853271519046,
+        "annualized_return": 0.16612852703211423,
+        "active_capital_annual_profit_usdt": 14.95156743289028,
+        "total100_annual_profit_usdt": 14.95156743289028
+      }
+    },
+    "current_low_funding": {
+      "label": "current_low_funding_oos",
+      "start": "2025-09-30T23:59:59+00:00",
+      "end": "2026-07-14T00:00:00+00:00",
+      "days": 286.00001157407405,
+      "start_usdt": 164.44515472906076,
+      "end_usdt": 166.54858396752186,
+      "total_return": 0.012791068498957614,
+      "annualized_return": 0.01635301499288433,
+      "active_capital_annual_profit_usdt": 1.4717713493595896,
+      "total100_annual_profit_usdt": 1.4717713493595896
+    },
+    "high_funding_mean_annualized_return": 0.2201489353368804,
+    "high_funding_mean_annual_profit_usdt_at_100_basis": 19.813404180319235
+  },
+  "high_funding_mean_annualized_return": 0.2201489353368804,
+  "total_cost_usdt": 31.3302954566,
+  "n_trades": 355,
+  "universe_size": 200,
+  "span": {
+    "start": "2019-09-01 00:00:00+00:00",
+    "end": "2026-07-14 00:00:00+00:00"
+  }
+}
