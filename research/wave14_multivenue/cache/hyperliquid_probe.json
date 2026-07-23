@@ -1,0 +1,22 @@
+{
+  "probed_at_utc": "2026-07-23T00:52:44.758757+00:00",
+  "endpoint": "https://api.hyperliquid.xyz/info",
+  "accessible": true,
+  "note": "meta + fundingHistory(BTC) 둘 다 200 OK로 접근 가능 확인.",
+  "perp_universe_count": 232,
+  "funding_history_btc_sample_count": 500,
+  "funding_history_btc_sample_first": {
+    "coin": "BTC",
+    "fundingRate": "0.0000617991",
+    "premium": "0.0009943926",
+    "time": 1704067200151
+  },
+  "funding_history_btc_sample_last": {
+    "coin": "BTC",
+    "fundingRate": "0.0000125",
+    "premium": "-0.0002266308",
+    "time": 1705863600334
+  },
+  "in_scope_for_backtest": false,
+  "scope_note": "SPEC.md의 8개 동결 구성(M0-M7)에는 Hyperliquid가 없다 (Binance/Bitget 단일 또는 +Bybit 뿐) -- 이 프로브는 '접근 가능 여부' 확인용으로, 접근 가능하더라도 이번 wave의 백테스트에는 사용하지 않는다. 향후 wave 후보로만 기록."
+}
