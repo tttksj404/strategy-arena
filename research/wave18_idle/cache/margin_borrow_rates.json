@@ -1,0 +1,29 @@
+{
+  "collected_at_utc": "2026-07-24T01:03:11.778882+00:00",
+  "source": "https://www.okx.com/api/v5/public/interest-rate-loan-quota",
+  "unit_confirmed": false,
+  "unit_note": "OKX 도움말(borrowing-and-repaying-in-multi-currency-and-portfolio-margin-account-modes): 'Interest = Liability exceeding the interest-free quota x (Annualized interest rate / 365 / 24)', 매시 정산. `rate` 필드가 이 '연환산 금리' 원값인지 이미 시간당으로 나뉜 값인지 API 필드 문서 원문으로 확정하지 못했다 -- reading_a(원값을 그대로 연환산으로 해석)와 reading_b(시간당으로 보고 x8760 연환산) 둘 다 병기, 어느 쪽도 확정 아님(UNCONFIRMED).",
+  "n_ccys_in_basic_tier": 169,
+  "sample": {
+    "BTC": {
+      "raw_rate_field": 1.392e-05,
+      "reading_a_raw_as_already_annualized_pct": 0.001392,
+      "reading_b_hourly_times_8760_annualized_pct": 12.19392
+    },
+    "ETH": {
+      "raw_rate_field": 4.128e-05,
+      "reading_a_raw_as_already_annualized_pct": 0.004128,
+      "reading_b_hourly_times_8760_annualized_pct": 36.16128
+    },
+    "SOL": {
+      "raw_rate_field": 0.00013992,
+      "reading_a_raw_as_already_annualized_pct": 0.013992000000000001,
+      "reading_b_hourly_times_8760_annualized_pct": 122.56992
+    },
+    "USDT": {
+      "raw_rate_field": 6.864e-05,
+      "reading_a_raw_as_already_annualized_pct": 0.0068639999999999994,
+      "reading_b_hourly_times_8760_annualized_pct": 60.12863999999999
+    }
+  }
+}

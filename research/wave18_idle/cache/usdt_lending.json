@@ -1,0 +1,62 @@
+{
+  "collected_at_utc": "2026-07-24T01:03:11.509326+00:00",
+  "ccy": "USDT",
+  "source_history": "https://www.okx.com/api/v5/finance/savings/lending-rate-history",
+  "source_summary": "https://www.okx.com/api/v5/finance/savings/lending-rate-summary",
+  "history_limit": 100,
+  "avg_rate_fresh": 0.025,
+  "ratio_lendingrate_median_over_avgrate_fresh": 0.772,
+  "scope_note": "wave17_lending_verified의 타깃 유니버스(112종, base_ccy_matched)는 USDT를 포함하지 않는다(USDT는 대상 페어들의 quote/margin 통화이지 base가 아니므로) -- 이 모듈은 wave18 I1 전용으로 USDT만 별도 수집한다. fetch17.py의 세션/파서 함수를 재사용(임포트)했을 뿐, wave17 캐시는 건드리지 않는다.",
+  "depth_limitation_note": "limit=100, 시간당 1건 -> 약 4일. wave17과 동일한 제약: 과거(4일 이전) lendingRate 시계열은 이 엔드포인트에서 얻을 수 없다 -- I1의 상수 적용은 이 4일 스냅샷 하나에 근거한다.",
+  "n_samples": 100,
+  "span_hours": 99.0,
+  "span_days": 4.125,
+  "earliest_ts_utc": "2026-07-19T22:00:00+00:00",
+  "latest_ts_utc": "2026-07-24T01:00:00+00:00",
+  "rate_median": 0.025,
+  "rate_mean": 0.024999999999999994,
+  "rate_std": 6.973850769498386e-18,
+  "rate_min": 0.025,
+  "rate_max": 0.025,
+  "lending_rate_median": 0.0193,
+  "lending_rate_mean": 0.019267000000000003,
+  "lending_rate_std": 0.00010641542380802973,
+  "lending_rate_min": 0.0191,
+  "lending_rate_max": 0.0196,
+  "lending_rate_range": 0.0005000000000000004,
+  "lending_rate_cv": 0.005523196336120294,
+  "sample_first_3": [
+    {
+      "ts_ms": 1784498400000,
+      "rate": 0.025,
+      "lending_rate": 0.0193
+    },
+    {
+      "ts_ms": 1784502000000,
+      "rate": 0.025,
+      "lending_rate": 0.0193
+    },
+    {
+      "ts_ms": 1784505600000,
+      "rate": 0.025,
+      "lending_rate": 0.0193
+    }
+  ],
+  "sample_last_3": [
+    {
+      "ts_ms": 1784847600000,
+      "rate": 0.025,
+      "lending_rate": 0.0193
+    },
+    {
+      "ts_ms": 1784851200000,
+      "rate": 0.025,
+      "lending_rate": 0.0193
+    },
+    {
+      "ts_ms": 1784854800000,
+      "rate": 0.025,
+      "lending_rate": 0.0193
+    }
+  ]
+}
