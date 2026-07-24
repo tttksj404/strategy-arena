@@ -1,0 +1,262 @@
+{
+  "stage": "signal_test",
+  "spec_ref": "research/wave19_regime/SPEC.md 1단계",
+  "generated_at_utc": "2026-07-24T05:37:52.762442+00:00",
+  "methodology": {
+    "feature_formula": "z(5d 가격수익) + z(3d 펀딩추세) -- 동일가중 합(계수 1.0/1.0), OI 항 제외(사유는 oi_history_check)",
+    "zscore_window_days": 90,
+    "zscore_window_source": "research/wave15_diverse/signals15.py ZSCORE_WINDOW_DAYS 승계",
+    "entry_threshold_z": 1.0,
+    "entry_threshold_note": "이 파일에 사전 고정, 결과를 본 뒤 조정하지 않음. 민감도는 threshold_sensitivity_reference_only(참고용)",
+    "spike_label": "신호 시점 t 이후 [t+3, t+7]일 내 7d 펀딩 APR > 15%",
+    "universe": "research.wave13_liquidity.configs13 L4 (top200 거래대금, 12mo 히스토리 하한) -- wave13/18과 동일 캐시 재사용, 신규 fetch 없음",
+    "hold_days_for_return_test": 7,
+    "cost_model": "research.wave13_liquidity.costs_measured (Bitget 실측, wave13 승계) -- 진입/청산 각 1회(왕복 2회) 부과",
+    "return_comparison_design": "1차 판정 = time-matched paired(같은 날 다른 심볼) 대조. unconditional(전체 모집단) 대조는 참고용 병기."
+  },
+  "oi_history_check": {
+    "checked_at_utc": "2026-07-24T05:35:01.963497+00:00",
+    "endpoint": "https://fapi.binance.com/futures/data/openInterestHist",
+    "per_symbol": {
+      "BTCUSDT": {
+        "n_points": 30,
+        "requested_limit": 500,
+        "period": "1d",
+        "earliest": "2026-06-25T00:00:00+00:00",
+        "latest": "2026-07-24T00:00:00+00:00",
+        "span_days": 29
+      },
+      "ETHUSDT": {
+        "n_points": 30,
+        "requested_limit": 500,
+        "period": "1d",
+        "earliest": "2026-06-25T00:00:00+00:00",
+        "latest": "2026-07-24T00:00:00+00:00",
+        "span_days": 29
+      }
+    },
+    "max_observed_span_days": 29,
+    "sufficient_for_multiyear_backtest": false,
+    "conclusion": "약 30일로 제한 확인됨 -- 2019-2026 7년 백테스트에는 부족. OI 특징을 제외하고 5d가격수익+3d펀딩추세 2특징으로 축소한다(SPEC.md 사전승인 폴백).",
+    "prior_finding_reference": "research/wave15_diverse/signals15.py L48-51 (동일 엔드포인트, 동일 결론의 선행 라이브 확인)"
+  },
+  "oi_supplementary_descriptive_30d": {
+    "note": "30일/심볼 표본 -- 통계적으로 결론 낼 수 없음. 참고용 서술 전용, PASS/FAIL 미반영.",
+    "per_symbol": [
+      {
+        "symbol": "BTCUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.1967634850786136
+      },
+      {
+        "symbol": "ETHUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.22695582431844136
+      },
+      {
+        "symbol": "SOLUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.028414987637463054
+      },
+      {
+        "symbol": "BNBUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.21057033560625746
+      },
+      {
+        "symbol": "XRPUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.00149598598883664
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.32415687864908593
+      },
+      {
+        "symbol": "ADAUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": -0.2644220537481652
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": -0.041153279247927464
+      },
+      {
+        "symbol": "LINKUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.5332400710019538
+      },
+      {
+        "symbol": "LTCUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.5227584096728015
+      },
+      {
+        "symbol": "DOTUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": -0.07495570161419604
+      },
+      {
+        "symbol": "TRXUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.40907553492280785
+      },
+      {
+        "symbol": "SUIUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": -0.1516595911309273
+      },
+      {
+        "symbol": "NEARUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": 0.2859375228307633
+      },
+      {
+        "symbol": "APTUSDT",
+        "n_paired_days": 22,
+        "oi_growth_vs_forward_apr_correlation": -0.26335067721387334
+      }
+    ],
+    "n_symbols_with_data": 15,
+    "mean_correlation_across_symbols": 0.12958851551679568
+  },
+  "population": {
+    "n_symbols": 200,
+    "date_range": [
+      "2019-09-01",
+      "2026-07-14"
+    ],
+    "n_valid_label_population": 240439,
+    "base_rate": 0.13999392777378045
+  },
+  "signal_events": {
+    "n_events_total": 17307,
+    "n_events_known_label": 17273,
+    "n_events_unknown_label_excluded": 34
+  },
+  "precision_recall_leadtime": {
+    "precision": 0.156834365773172,
+    "recall": 0.423348300192431,
+    "recall_hits": 660,
+    "n_spike_onsets": 1559,
+    "lead_time_days": {
+      "n": 660,
+      "mean": 5.387878787878788,
+      "median": 6.0,
+      "p25": 4.0,
+      "p75": 7.0,
+      "min": 3.0,
+      "max": 7.0
+    }
+  },
+  "precision_vs_base_rate_bootstrap": {
+    "precision": 0.156834365773172,
+    "base_rate": 0.13999392777378045,
+    "lift": 1.1202940603724214,
+    "p05": 0.15231864760030106,
+    "p95": 0.16135008394604294,
+    "p_le_base_rate": 0.0,
+    "n": 17273,
+    "paths": 10000
+  },
+  "return_comparison": {
+    "signal_group": {
+      "mean": -0.0015232256108138281,
+      "p05": -0.001738823022705876,
+      "p95": -0.0013149984289717326,
+      "p_le_zero": 1.0,
+      "win_rate": 0.4815923903470143,
+      "n": 17031,
+      "paths": 10000
+    },
+    "unconditional_random_bootstrap": {
+      "mean_a": -0.0015232256108138281,
+      "mean_b": 0.0017708879521595787,
+      "mean_diff": -0.003294113562973407,
+      "p05": -0.00881035738155651,
+      "p95": -8.157928047385794e-05,
+      "p_diff_le_zero": 0.9656,
+      "n_a": 17031,
+      "n_b": 233629,
+      "resample_n": 17031,
+      "paths": 10000
+    },
+    "time_matched_paired_bootstrap": {
+      "mean": -0.003291459350690856,
+      "p05": -0.0069382105914367,
+      "p95": -0.0004226398170399365,
+      "p_le_zero": 0.9964,
+      "win_rate": 0.4940989959485644,
+      "n": 17031,
+      "paths": 10000
+    },
+    "n_events_with_return": 17031,
+    "n_events_dropped_no_return_data": 276,
+    "n_events_dropped_no_paired_control": 0
+  },
+  "threshold_sensitivity_reference_only": [
+    {
+      "theta": 0.5,
+      "n_events": 22119,
+      "n_events_known_label": 22055,
+      "precision": 0.13557016549535253,
+      "base_rate": 0.13999392777378045,
+      "lift": 0.9684003274372273,
+      "recall": 0.5509942270686338,
+      "signal_mean_return": -0.0016198326858613233,
+      "paired_mean_diff": -0.0011109296495360028
+    },
+    {
+      "theta": 1.0,
+      "n_events": 17307,
+      "n_events_known_label": 17273,
+      "precision": 0.156834365773172,
+      "base_rate": 0.13999392777378045,
+      "lift": 1.1202940603724214,
+      "recall": 0.423348300192431,
+      "signal_mean_return": -0.0015232256108138281,
+      "paired_mean_diff": -0.011971367224009027
+    },
+    {
+      "theta": 1.5,
+      "n_events": 12517,
+      "n_events_known_label": 12492,
+      "precision": 0.18051552993916106,
+      "base_rate": 0.13999392777378045,
+      "lift": 1.289452569906178,
+      "recall": 0.2835150737652341,
+      "signal_mean_return": -0.0015049125578773092,
+      "paired_mean_diff": -0.0009047328703703914
+    },
+    {
+      "theta": 2.0,
+      "n_events": 8789,
+      "n_events_known_label": 8768,
+      "precision": 0.20552007299270073,
+      "base_rate": 0.13999392777378045,
+      "lift": 1.4680641957900171,
+      "recall": 0.20076972418216807,
+      "signal_mean_return": -0.001564614737198844,
+      "paired_mean_diff": -0.008620114518073927
+    }
+  ],
+  "pass_fail": {
+    "precision_significant": true,
+    "return_significant_time_matched": false,
+    "stage1_pass": false,
+    "low_power_warning_n_lt_30": false,
+    "reasons_if_fail": [
+      "신호 조건부 수익이 무작위(동일자 타심볼 대조) 대비 유의하게 높지 않음(평균<=0 이거나 p_le_zero>=0.05)"
+    ]
+  },
+  "honesty_notes": [
+    "OI 5d증가율 특징은 뺐다 -- Binance openInterestHist가 라이브로도 ~30일만 반환(2019-2026 7년 백테스트에 미달, oi_history_check 참조). SPEC.md가 사전승인한 2특징(5d가격수익+3d 펀딩추세) 폴백을 썼다.",
+    "funding_trend_3d 특징은 라벨(미래 7d 펀딩 APR)과 같은 펀딩 시계열에서 파생된다 -- 둘 다 '펀딩이 최근 오르는 중이면 계속 오른다'는 자기상관을 일부 공유할 수 있다. 이건 진짜 예측력과 완전히 구별하기 어렵다 -- precision_vs_base_rate와 time_matched_paired_return 검정이 유의하게 나와도, '독립적인 조기경보'라기보다 '이미 시작된 추세의 연장 포착'일 가능성이 있다는 점을 report에 명시한다.",
+    "신호 이벤트 표본 n=17273.",
+    "theta=1.0은 이 파일 작성 시점에 고정한 값이고 결과를 본 뒤 바꾸지 않았다. 0.5/1.5/2.0 민감도 표는 참고용일 뿐 PASS/FAIL 판정에 관여하지 않는다.",
+    "signal_events는 연속 'on' 구간의 첫날만 센다(중복 계수 방지) -- recall의 '탐지' 판정은 이벤트가 아니라 signal_bool 자체를 쓴다(더 관대한 재현율 정의, precision과 의도적으로 비대칭).",
+    "다중검정: 이 wave 자체가 SPEC.md 사전등록상 '누적 116회'에 포함되는 신규 시행이다. 여기서 쓰는 유의성 기준(alpha=0.05)은 이 116회 전체에 대해 보정되지 않은 단일 검정 기준이다 -- 참고용 DSR 보정과 동일하게, wave10-18의 공통 원칙상 이 wave 자신의 승격 판정에는 그 보정을 적용하지 않지만 한계로 명시한다."
+  ]
+}
