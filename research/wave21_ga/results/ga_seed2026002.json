@@ -1,0 +1,399 @@
+{
+  "seed": 2026002,
+  "population_size": 60,
+  "generations": 25,
+  "tournament_k": 3,
+  "mutation_probability": 0.15,
+  "mutation_sigma_fraction": 0.1,
+  "elite_count": 2,
+  "n_evaluations": 1500,
+  "n_backtests_run": 1111,
+  "best_genome": {
+    "entry_threshold_apr": 0.1209749612701344,
+    "exit_threshold_ratio": 0.4180529799254244,
+    "window_days": 14,
+    "top_k_pairs": 3,
+    "leg_fraction": 0.5,
+    "universe_breadth": 100,
+    "idle_mode": "usdt_lend"
+  },
+  "best_fitness": 0.1975368889629549,
+  "history": [
+    {
+      "generation": 0,
+      "best_fitness": 0.11819837345771719,
+      "mean_fitness": 0.03534314149188276,
+      "worst_fitness": -0.13066313064705454,
+      "best_genome": {
+        "entry_threshold_apr": 0.10188161261927153,
+        "exit_threshold_ratio": 0.5720288733601748,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4404302530703852,
+        "universe_breadth": 200,
+        "idle_mode": "tiered"
+      }
+    },
+    {
+      "generation": 1,
+      "best_fitness": 0.1186128811450958,
+      "mean_fitness": 0.04149414626286028,
+      "worst_fitness": -0.19588892212660053,
+      "best_genome": {
+        "entry_threshold_apr": 0.10188161261927153,
+        "exit_threshold_ratio": 0.5720288733601748,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4404302530703852,
+        "universe_breadth": 200,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 2,
+      "best_fitness": 0.1482417494082413,
+      "mean_fitness": 0.0614908310859654,
+      "worst_fitness": -0.13841061955454553,
+      "best_genome": {
+        "entry_threshold_apr": 0.13034788965804156,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.44715010084996154,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 3,
+      "best_fitness": 0.1701033125129597,
+      "mean_fitness": 0.08844409005108946,
+      "worst_fitness": -0.04851188545461711,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.3465418414940282,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4429651031124597,
+        "universe_breadth": 100,
+        "idle_mode": "majors_low_thr"
+      }
+    },
+    {
+      "generation": 4,
+      "best_fitness": 0.1790654596831391,
+      "mean_fitness": 0.10086551461601159,
+      "worst_fitness": -0.08103806122550357,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.3465418414940282,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4615809085567057,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 5,
+      "best_fitness": 0.17996900430559246,
+      "mean_fitness": 0.1227708189185421,
+      "worst_fitness": 0.011606594085336562,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.44601668599131267,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4615809085567057,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 6,
+      "best_fitness": 0.17996900430559246,
+      "mean_fitness": 0.12390679017613572,
+      "worst_fitness": -0.20502252208199323,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.44601668599131267,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4615809085567057,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 7,
+      "best_fitness": 0.17996900430559246,
+      "mean_fitness": 0.13570298695649233,
+      "worst_fitness": 0.02931451178861022,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.44601668599131267,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.4615809085567057,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 8,
+      "best_fitness": 0.1824139200962954,
+      "mean_fitness": 0.13975962361727715,
+      "worst_fitness": -0.19649241936237555,
+      "best_genome": {
+        "entry_threshold_apr": 0.12022145522929605,
+        "exit_threshold_ratio": 0.3465418414940282,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.47696562438155704,
+        "universe_breadth": 100,
+        "idle_mode": "none"
+      }
+    },
+    {
+      "generation": 9,
+      "best_fitness": 0.1863018490815533,
+      "mean_fitness": 0.1484669897903367,
+      "worst_fitness": 0.029228658452088302,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.41071046226535624,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.48543258817034607,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 10,
+      "best_fitness": 0.19316724423892168,
+      "mean_fitness": 0.13919758116576553,
+      "worst_fitness": 0.030642049754197542,
+      "best_genome": {
+        "entry_threshold_apr": 0.11378967051039518,
+        "exit_threshold_ratio": 0.3465418414940282,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 11,
+      "best_fitness": 0.19631475706369914,
+      "mean_fitness": 0.15351466895670746,
+      "worst_fitness": 0.04933677865214879,
+      "best_genome": {
+        "entry_threshold_apr": 0.12022145522929605,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      }
+    },
+    {
+      "generation": 12,
+      "best_fitness": 0.19631475706369914,
+      "mean_fitness": 0.15459175895801042,
+      "worst_fitness": 0.02870592696757246,
+      "best_genome": {
+        "entry_threshold_apr": 0.12022145522929605,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      }
+    },
+    {
+      "generation": 13,
+      "best_fitness": 0.1968388612650609,
+      "mean_fitness": 0.16639614184170845,
+      "worst_fitness": 0.0546270412883999,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      }
+    },
+    {
+      "generation": 14,
+      "best_fitness": 0.1968388612650609,
+      "mean_fitness": 0.15503775183772497,
+      "worst_fitness": -0.027288304385096065,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      }
+    },
+    {
+      "generation": 15,
+      "best_fitness": 0.1968388612650609,
+      "mean_fitness": 0.16106859529173342,
+      "worst_fitness": 0.05856287804829052,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      }
+    },
+    {
+      "generation": 16,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.15700412075126943,
+      "worst_fitness": 0.062018086738648726,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 17,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.16030177517059066,
+      "worst_fitness": 0.014746967401382635,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 18,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.1463819639499654,
+      "worst_fitness": 0.013848580691940088,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 19,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.14904435695397095,
+      "worst_fitness": -0.1409765077885688,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 20,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.16973182276926185,
+      "worst_fitness": 0.045805351970861954,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 21,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.160025990842806,
+      "worst_fitness": 0.05802516498748905,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 22,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.164995469033133,
+      "worst_fitness": 0.017393586061977842,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 23,
+      "best_fitness": 0.19740144063314866,
+      "mean_fitness": 0.16612178981333084,
+      "worst_fitness": 0.046593407150653715,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.3925160440420521,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    },
+    {
+      "generation": 24,
+      "best_fitness": 0.1975368889629549,
+      "mean_fitness": 0.17636694445997725,
+      "worst_fitness": 0.05408850484995484,
+      "best_genome": {
+        "entry_threshold_apr": 0.1209749612701344,
+        "exit_threshold_ratio": 0.4180529799254244,
+        "window_days": 14,
+        "top_k_pairs": 3,
+        "leg_fraction": 0.5,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      }
+    }
+  ],
+  "wall_seconds": 161.617271900177
+}
