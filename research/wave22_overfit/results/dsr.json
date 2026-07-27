@@ -1,0 +1,57 @@
+{
+  "methodology": {
+    "trials_this_wave_only": 7500,
+    "trials_cumulative_formula": "gates21.PRIOR_CUMULATIVE_TRIALS (121, wave1-20 registered candidates, frozen figure) + gates21.GA_TRIALS (7,500, wave-21 GA evaluations)",
+    "trials_cumulative": 7621,
+    "headline_trial_count": "cumulative (7,621) -- per task instruction to reflect accumulated prior trials, not just this wave's own 7,500",
+    "why_wave22_evaluations_excluded_from_trial_count": "wave22 performs no selection search over new candidates; it only audits the single, already-fixed G1 genome (sensitivity neighbors/shuffled genomes/attribution genomes are diagnostic re-evaluations of known points, not competing candidates for promotion)",
+    "engine": "fitness.deflated_sharpe_for_trials (research.validation.deep_stats.deflated_sharpe under the hood) on G1's own full equity curve, computed by THIS wave (not reused from wave21_report.md, which scored the pre-sizing-fix top_k=3 genome)"
+  },
+  "g1_dsr_at_trials_this_wave_only": {
+    "score": -0.7557248351160217,
+    "probability": 0.22490709535036169,
+    "trials": 7500,
+    "observed_sharpe": 1.495057969453364
+  },
+  "g1_dsr_at_trials_cumulative": {
+    "score": -0.7597019333665371,
+    "probability": 0.22371638641898228,
+    "trials": 7621,
+    "observed_sharpe": 1.495057969453364
+  },
+  "g1_dsr_score_cumulative": -0.7597019333665371,
+  "g1_dsr_positive_at_cumulative_trials": false,
+  "wave21_report_reference_ga_final_top_k3": {
+    "trials_this_wave_only": 0.23594,
+    "trials_cumulative_121_plus_7500": 0.23196
+  },
+  "ga_final_top_k3_cross_check_this_wave": {
+    "genome": {
+      "entry_threshold_apr": 0.11818955034178509,
+      "exit_threshold_ratio": 0.3873937165748336,
+      "window_days": 14,
+      "top_k_pairs": 3,
+      "leg_fraction": 0.5,
+      "universe_breadth": 100,
+      "idle_mode": "usdt_lend"
+    },
+    "dsr_at_trials_this_wave_only": {
+      "score": 0.2359390781439184,
+      "probability": 0.5932600279276433,
+      "trials": 7500,
+      "observed_sharpe": 2.9152102780210796
+    },
+    "dsr_at_trials_cumulative": {
+      "score": 0.23196197989340364,
+      "probability": 0.591716227958726,
+      "trials": 7621,
+      "observed_sharpe": 2.9152102780210796
+    },
+    "full_cagr": 0.33290143917273407
+  },
+  "limitations": [
+    "DSR's own trial-count convention is inherently a judgment call (does a 'trial' count every GA individual, every generation's best, or every genome ever backtested); this module follows wave21_ga's own already-disclosed convention (gates21.GA_TRIALS/PRIOR_CUMULATIVE_TRIALS) rather than inventing a new one, for comparability",
+    "the 121 prior-wave figure is a frozen, disclosed constant (gates21.PRIOR_CUMULATIVE_TRIALS), not independently re-derived by this wave -- see gates21.py's own comment for that precedent",
+    "DSR assumes daily returns are the right unit and penalizes skew/kurtosis parametrically; it is a multiple-testing correction, not a guarantee -- a positive score is necessary, not sufficient, evidence of a real edge"
+  ]
+}

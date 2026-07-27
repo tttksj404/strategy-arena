@@ -1,0 +1,140 @@
+{
+  "methodology": {
+    "definition": "one-at-a-time (I5->G1, forward) and leave-one-out (G1->I5, backward) single-axis swaps, task instruction: 'I5에서 G1으로 7축을 하나씩'",
+    "concentration_threshold": 0.6,
+    "spread_min_share": 0.15,
+    "concentration_rule": "concentrated_single_axis = top contributing axis's share of the summed POSITIVE forward contributions > 60%; spread_across_2plus = top share <= 60% AND >=2 axes each hold >= 15% share"
+  },
+  "i5_full_cagr": 0.10272337156407252,
+  "g1_full_cagr": 0.12347827298098579,
+  "total_gap_full_cagr_pp": 2.0754901416913274,
+  "total_gap_oos_cagr_pp": 0.9785547899686886,
+  "changed_axes": [
+    "entry_threshold_apr",
+    "exit_threshold_ratio",
+    "window_days",
+    "universe_breadth",
+    "idle_mode"
+  ],
+  "unchanged_axes": [
+    "top_k_pairs",
+    "leg_fraction"
+  ],
+  "per_axis": {
+    "entry_threshold_apr": {
+      "i5_value": 0.15,
+      "g1_value": 0.11818955034178509,
+      "unchanged": false,
+      "forward_full_cagr": 0.12028316341435108,
+      "forward_contribution_pp": 1.755979185027856,
+      "forward_oos_contribution_pp": 1.4393529661268278,
+      "backward_full_cagr": 0.12757691767727342,
+      "backward_contribution_pp": -0.40986446962876233,
+      "backward_oos_contribution_pp": 0.5892846386085004
+    },
+    "exit_threshold_ratio": {
+      "i5_value": 0.5,
+      "g1_value": 0.3873937165748336,
+      "unchanged": false,
+      "forward_full_cagr": 0.12458002437334614,
+      "forward_contribution_pp": 2.1856652809273625,
+      "forward_oos_contribution_pp": 0.9289018748713573,
+      "backward_full_cagr": 0.12425598659805992,
+      "backward_contribution_pp": -0.07777136170741272,
+      "backward_oos_contribution_pp": 0.994007081518089
+    },
+    "window_days": {
+      "i5_value": 7,
+      "g1_value": 14,
+      "unchanged": false,
+      "forward_full_cagr": 0.1314225522042951,
+      "forward_contribution_pp": 2.869918064022259,
+      "forward_oos_contribution_pp": 0.5149882809790896,
+      "backward_full_cagr": 0.11178034734666742,
+      "backward_contribution_pp": 1.1697925634318374,
+      "backward_oos_contribution_pp": 0.0946656083276487
+    },
+    "top_k_pairs": {
+      "i5_value": 1,
+      "g1_value": 1,
+      "unchanged": true,
+      "forward_full_cagr": 0.10272337156407252,
+      "forward_contribution_pp": 0.0,
+      "forward_oos_contribution_pp": 0.0,
+      "backward_full_cagr": 0.12347827298098579,
+      "backward_contribution_pp": 0.0,
+      "backward_oos_contribution_pp": 0.0
+    },
+    "leg_fraction": {
+      "i5_value": 0.5,
+      "g1_value": 0.5,
+      "unchanged": true,
+      "forward_full_cagr": 0.10272337156407252,
+      "forward_contribution_pp": 0.0,
+      "forward_oos_contribution_pp": 0.0,
+      "backward_full_cagr": 0.12347827298098579,
+      "backward_contribution_pp": 0.0,
+      "backward_oos_contribution_pp": 0.0
+    },
+    "universe_breadth": {
+      "i5_value": 200,
+      "g1_value": 100,
+      "unchanged": false,
+      "forward_full_cagr": 0.09554307756777636,
+      "forward_contribution_pp": -0.7180293996296161,
+      "forward_oos_contribution_pp": -0.5856285972261288,
+      "backward_full_cagr": 0.13014169050575308,
+      "backward_contribution_pp": -0.666341752476729,
+      "backward_oos_contribution_pp": -1.0654600133123582
+    },
+    "idle_mode": {
+      "i5_value": "tiered",
+      "g1_value": "usdt_lend",
+      "unchanged": false,
+      "forward_full_cagr": 0.10243816998498922,
+      "forward_contribution_pp": -0.028520157908329402,
+      "forward_oos_contribution_pp": 0.08845929693586108,
+      "backward_full_cagr": 0.12378753199982895,
+      "backward_contribution_pp": -0.030925901884315543,
+      "backward_oos_contribution_pp": 0.06032764218018016
+    }
+  },
+  "forward_concentration": {
+    "positive_axes": [
+      "window_days",
+      "exit_threshold_ratio",
+      "entry_threshold_apr"
+    ],
+    "shares": {
+      "entry_threshold_apr": 0.2577938875698264,
+      "exit_threshold_ratio": 0.3208757566723225,
+      "window_days": 0.4213303557578511
+    },
+    "top_axis": "window_days",
+    "top_share": 0.4213303557578511,
+    "concentrated_single_axis": false,
+    "spread_across_2plus": true,
+    "n_axes_with_meaningful_share": 3
+  },
+  "backward_concentration": {
+    "positive_axes": [
+      "window_days"
+    ],
+    "shares": {
+      "window_days": 1.0
+    },
+    "top_axis": "window_days",
+    "top_share": 1.0,
+    "concentrated_single_axis": true,
+    "spread_across_2plus": false,
+    "n_axes_with_meaningful_share": 1
+  },
+  "forward_and_backward_agree_on_concentration": false,
+  "sum_of_forward_contributions_pp": 6.065012972439532,
+  "interaction_residual_pp": -3.9895228307482045,
+  "limitations": [
+    "2 of 7 genes (top_k_pairs, leg_fraction) are IDENTICAL between I5 and G1, so only 5 axes can possibly contribute to the gap -- 'spread across >=2 axes' is evaluated against this smaller active set, not all 7",
+    "one-at-a-time attribution ignores higher-order interactions between genes; the interaction_residual_pp figure quantifies how much of the total gap the linear one-at-a-time sum does NOT explain -- a large residual means the genes interact and no single-axis story (concentrated or spread) fully describes the result",
+    "forward and backward decompositions can disagree when interactions are strong; both are reported rather than only the more favorable one"
+  ]
+}

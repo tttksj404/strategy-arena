@@ -1,0 +1,935 @@
+{
+  "methodology": {
+    "perturbation_definition": "continuous genes: +-10%/+-20% of G1's own value, clipped to genome.py bounds; ordered-choice genes: 1/2 steps in the frozen choice tuple; idle_mode: the 3 other categories (unordered, no direction)",
+    "stability_statistic": "neighbor_avg_full_period_cagr / g1_full_period_cagr, per axis",
+    "stable_threshold": 0.8,
+    "primary_aggregate": "min across the 7 per-axis neighbor-avg ratios (conservative: every axis must be stable, not just on average)",
+    "secondary_aggregate": "mean across the 7 per-axis neighbor-avg ratios (reported for context only, never decides the verdict)",
+    "grid_pairs_rationale": "entry/exit thresholds (hysteresis band shape); top_k_pairs/leg_fraction (gross-exposure sizing pair, the exact mechanism behind G1's own top_k_pairs 3->1 adjustment)"
+  },
+  "g1_full_cagr": 0.12347827298098579,
+  "g1_oos_cagr_self_contained": 0.040358570997748755,
+  "per_axis": {
+    "entry_threshold_apr": {
+      "kind": "continuous",
+      "baseline_value": 0.11818955034178509,
+      "points": [
+        {
+          "tier": -2,
+          "tier_label": "-20%",
+          "available": true,
+          "gene_value": 0.09455164027342808,
+          "note": "",
+          "full_cagr": 0.10878975959044923,
+          "oos_cagr": -0.01029335699931877,
+          "full_cagr_ratio": 0.8810437412515607,
+          "oos_cagr_ratio": -0.25504760810022103,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": -1,
+          "tier_label": "-10%",
+          "available": true,
+          "gene_value": 0.10637059530760658,
+          "note": "",
+          "full_cagr": 0.12005148901964069,
+          "oos_cagr": 0.04099127114224821,
+          "full_cagr_ratio": 0.9722478790914675,
+          "oos_cagr_ratio": 1.0156769709347426,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 1,
+          "tier_label": "+10%",
+          "available": true,
+          "gene_value": 0.13000850537596362,
+          "note": "",
+          "full_cagr": 0.1254109371399934,
+          "oos_cagr": 0.03636616970106399,
+          "full_cagr_ratio": 1.0156518560905465,
+          "oos_cagr_ratio": 0.9010767428582279,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 2,
+          "tier_label": "+20%",
+          "available": true,
+          "gene_value": 0.1418274604101421,
+          "note": "",
+          "full_cagr": 0.12772305663734662,
+          "oos_cagr": 0.03446572461166397,
+          "full_cagr_ratio": 1.0343767656761322,
+          "oos_cagr_ratio": 0.8539877344415021,
+          "gross_feasible_1x": true
+        }
+      ],
+      "n_available": 4,
+      "n_total_tiers": 4,
+      "at_range_boundary": false,
+      "neighbor_avg_full_cagr": 0.12049381059685749,
+      "neighbor_avg_full_cagr_ratio": 0.9758300605274267,
+      "neighbor_min_full_cagr_ratio": 0.8810437412515607,
+      "neighbor_avg_oos_cagr_ratio": 0.6289234600335629,
+      "stable_mean_ratio_ge_0_8": true
+    },
+    "exit_threshold_ratio": {
+      "kind": "continuous",
+      "baseline_value": 0.3873937165748336,
+      "points": [
+        {
+          "tier": -2,
+          "tier_label": "-20%",
+          "available": true,
+          "gene_value": 0.30991497325986694,
+          "note": "",
+          "full_cagr": 0.1217592809841539,
+          "oos_cagr": 0.03868264654895048,
+          "full_cagr_ratio": 0.9860785873066381,
+          "oos_cagr_ratio": 0.9584741380240703,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": -1,
+          "tier_label": "-10%",
+          "available": true,
+          "gene_value": 0.34865434491735026,
+          "note": "",
+          "full_cagr": 0.12255969894917196,
+          "oos_cagr": 0.04007203051138575,
+          "full_cagr_ratio": 0.9925608448382228,
+          "oos_cagr_ratio": 0.9929001330007697,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 1,
+          "tier_label": "+10%",
+          "available": true,
+          "gene_value": 0.42613308823231705,
+          "note": "",
+          "full_cagr": 0.14741086640513035,
+          "oos_cagr": 0.041647849121264624,
+          "full_cagr_ratio": 1.1938202798465596,
+          "oos_cagr_ratio": 1.0319455840888863,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 2,
+          "tier_label": "+20%",
+          "available": true,
+          "gene_value": 0.4648724598898003,
+          "note": "",
+          "full_cagr": 0.14781048827944088,
+          "oos_cagr": 0.041711544703048276,
+          "full_cagr_ratio": 1.1970566538633234,
+          "oos_cagr_ratio": 1.0335238258404886,
+          "gross_feasible_1x": true
+        }
+      ],
+      "n_available": 4,
+      "n_total_tiers": 4,
+      "at_range_boundary": false,
+      "neighbor_avg_full_cagr": 0.13488508365447427,
+      "neighbor_avg_full_cagr_ratio": 1.092379091463686,
+      "neighbor_min_full_cagr_ratio": 0.9860785873066381,
+      "neighbor_avg_oos_cagr_ratio": 1.0042109202385536,
+      "stable_mean_ratio_ge_0_8": true
+    },
+    "window_days": {
+      "kind": "ordered_categorical",
+      "baseline_value": 14,
+      "points": [
+        {
+          "tier": -2,
+          "tier_label": "-2step",
+          "available": true,
+          "gene_value": 7,
+          "note": "",
+          "full_cagr": 0.11178034734666742,
+          "oos_cagr": 0.03941191491447227,
+          "full_cagr_ratio": 0.9052632876059117,
+          "oos_cagr_ratio": 0.9765438651599113,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": -1,
+          "tier_label": "-1step",
+          "available": true,
+          "gene_value": 10,
+          "note": "",
+          "full_cagr": 0.11378218936681117,
+          "oos_cagr": 0.04096483014307184,
+          "full_cagr_ratio": 0.921475386883102,
+          "oos_cagr_ratio": 1.0150218189181401,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 1,
+          "tier_label": "+1step",
+          "available": false,
+          "gene_value": null,
+          "note": "index 4+1=5 outside choice range [0, 4] (3, 5, 7, 10, 14) -- G1 is at the range boundary on this axis",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        },
+        {
+          "tier": 2,
+          "tier_label": "+2step",
+          "available": false,
+          "gene_value": null,
+          "note": "index 4+2=6 outside choice range [0, 4] (3, 5, 7, 10, 14) -- G1 is at the range boundary on this axis",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        }
+      ],
+      "n_available": 2,
+      "n_total_tiers": 4,
+      "at_range_boundary": true,
+      "neighbor_avg_full_cagr": 0.1127812683567393,
+      "neighbor_avg_full_cagr_ratio": 0.9133693372445069,
+      "neighbor_min_full_cagr_ratio": 0.9052632876059117,
+      "neighbor_avg_oos_cagr_ratio": 0.9957828420390258,
+      "stable_mean_ratio_ge_0_8": true
+    },
+    "top_k_pairs": {
+      "kind": "ordered_categorical",
+      "baseline_value": 1,
+      "points": [
+        {
+          "tier": -2,
+          "tier_label": "-2step",
+          "available": false,
+          "gene_value": null,
+          "note": "index 0-2=-2 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        },
+        {
+          "tier": -1,
+          "tier_label": "-1step",
+          "available": false,
+          "gene_value": null,
+          "note": "index 0-1=-1 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        },
+        {
+          "tier": 1,
+          "tier_label": "+1step",
+          "available": true,
+          "gene_value": 2,
+          "note": "",
+          "full_cagr": 0.2351074941832465,
+          "oos_cagr": 0.04003098951264117,
+          "full_cagr_ratio": 1.9040393788099894,
+          "oos_cagr_ratio": 0.9918832238850612,
+          "gross_feasible_1x": false
+        },
+        {
+          "tier": 2,
+          "tier_label": "+2step",
+          "available": true,
+          "gene_value": 3,
+          "note": "",
+          "full_cagr": 0.33290143917273407,
+          "oos_cagr": 0.039628063770744903,
+          "full_cagr_ratio": 2.6960325175911475,
+          "oos_cagr_ratio": 0.9818995764977754,
+          "gross_feasible_1x": false
+        }
+      ],
+      "n_available": 2,
+      "n_total_tiers": 4,
+      "at_range_boundary": true,
+      "neighbor_avg_full_cagr": 0.2840044666779903,
+      "neighbor_avg_full_cagr_ratio": 2.3000359482005686,
+      "neighbor_min_full_cagr_ratio": 1.9040393788099894,
+      "neighbor_avg_oos_cagr_ratio": 0.9868914001914183,
+      "stable_mean_ratio_ge_0_8": true
+    },
+    "leg_fraction": {
+      "kind": "continuous",
+      "baseline_value": 0.5,
+      "points": [
+        {
+          "tier": -2,
+          "tier_label": "-20%",
+          "available": true,
+          "gene_value": 0.4,
+          "note": "",
+          "full_cagr": 0.09907210626059393,
+          "oos_cagr": 0.03523595036202498,
+          "full_cagr_ratio": 0.8023444438346645,
+          "oos_cagr_ratio": 0.8730722989173844,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": -1,
+          "tier_label": "-10%",
+          "available": true,
+          "gene_value": 0.45,
+          "note": "",
+          "full_cagr": 0.11123710917190888,
+          "oos_cagr": 0.03779754048298822,
+          "full_cagr_ratio": 0.9008638239460807,
+          "oos_cagr_ratio": 0.9365430823875457,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 1,
+          "tier_label": "+10%",
+          "available": false,
+          "gene_value": null,
+          "note": "+10% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        },
+        {
+          "tier": 2,
+          "tier_label": "+20%",
+          "available": false,
+          "gene_value": null,
+          "note": "+20% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        }
+      ],
+      "n_available": 2,
+      "n_total_tiers": 4,
+      "at_range_boundary": true,
+      "neighbor_avg_full_cagr": 0.1051546077162514,
+      "neighbor_avg_full_cagr_ratio": 0.8516041338903726,
+      "neighbor_min_full_cagr_ratio": 0.8023444438346645,
+      "neighbor_avg_oos_cagr_ratio": 0.904807690652465,
+      "stable_mean_ratio_ge_0_8": true
+    },
+    "universe_breadth": {
+      "kind": "ordered_categorical",
+      "baseline_value": 100,
+      "points": [
+        {
+          "tier": -2,
+          "tier_label": "-2step",
+          "available": false,
+          "gene_value": null,
+          "note": "index 1-2=-1 outside choice range [0, 3] (30, 100, 200, 300) -- G1 is at the range boundary on this axis",
+          "full_cagr": null,
+          "oos_cagr": null,
+          "full_cagr_ratio": null,
+          "oos_cagr_ratio": null,
+          "gross_feasible_1x": null
+        },
+        {
+          "tier": -1,
+          "tier_label": "-1step",
+          "available": true,
+          "gene_value": 30,
+          "note": "",
+          "full_cagr": 0.1041095714756266,
+          "oos_cagr": 0.04002120190016467,
+          "full_cagr_ratio": 0.8431408130534694,
+          "oos_cagr_ratio": 0.991640707556199,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 1,
+          "tier_label": "+1step",
+          "available": true,
+          "gene_value": 200,
+          "note": "",
+          "full_cagr": 0.13014169050575308,
+          "oos_cagr": 0.05101317113087234,
+          "full_cagr_ratio": 1.053964291562398,
+          "oos_cagr_ratio": 1.2639984486496785,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 2,
+          "tier_label": "+2step",
+          "available": true,
+          "gene_value": 300,
+          "note": "",
+          "full_cagr": 0.09629861705288634,
+          "oos_cagr": 0.004540478042166285,
+          "full_cagr_ratio": 0.7798830897781928,
+          "oos_cagr_ratio": 0.11250343929222761,
+          "gross_feasible_1x": true
+        }
+      ],
+      "n_available": 3,
+      "n_total_tiers": 4,
+      "at_range_boundary": true,
+      "neighbor_avg_full_cagr": 0.110183293011422,
+      "neighbor_avg_full_cagr_ratio": 0.8923293981313534,
+      "neighbor_min_full_cagr_ratio": 0.7798830897781928,
+      "neighbor_avg_oos_cagr_ratio": 0.7893808651660351,
+      "stable_mean_ratio_ge_0_8": true
+    },
+    "idle_mode": {
+      "kind": "unordered_categorical",
+      "baseline_value": "usdt_lend",
+      "points": [
+        {
+          "tier": 1,
+          "tier_label": "alt1",
+          "available": true,
+          "gene_value": "none",
+          "note": "",
+          "full_cagr": 0.1185817694366853,
+          "oos_cagr": 0.025259265455247926,
+          "full_cagr_ratio": 0.9603452216645879,
+          "oos_cagr_ratio": 0.6258711552660503,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 2,
+          "tier_label": "alt2",
+          "available": true,
+          "gene_value": "majors_low_thr",
+          "note": "",
+          "full_cagr": 0.12002130564173719,
+          "oos_cagr": 0.025071536056036292,
+          "full_cagr_ratio": 0.9720034362662252,
+          "oos_cagr_ratio": 0.6212196179452144,
+          "gross_feasible_1x": true
+        },
+        {
+          "tier": 3,
+          "tier_label": "alt3",
+          "available": true,
+          "gene_value": "tiered",
+          "note": "",
+          "full_cagr": 0.12378753199982895,
+          "oos_cagr": 0.03975529457594695,
+          "full_cagr_ratio": 1.0025045622308855,
+          "oos_cagr_ratio": 0.9850520866599699,
+          "gross_feasible_1x": true
+        }
+      ],
+      "n_available": 3,
+      "n_total_tiers": 3,
+      "at_range_boundary": false,
+      "neighbor_avg_full_cagr": 0.12079686902608382,
+      "neighbor_avg_full_cagr_ratio": 0.9782844067205663,
+      "neighbor_min_full_cagr_ratio": 0.9603452216645879,
+      "neighbor_avg_oos_cagr_ratio": 0.7440476199570781,
+      "stable_mean_ratio_ge_0_8": true
+    }
+  },
+  "overall": {
+    "stability_ratio_min_of_axis_means": 0.8516041338903726,
+    "stability_ratio_mean_of_axis_means": 1.1434046251683543,
+    "worst_axis": "leg_fraction",
+    "n_axes_below_0_8": 0,
+    "n_axes_below_0_6": 0,
+    "primary_metric": "stability_ratio_min_of_axis_means",
+    "primary_value": 0.8516041338903726,
+    "stable": true,
+    "fail_threshold_0_6_breached": false
+  },
+  "grid": {
+    "pairs": [
+      {
+        "axis_a": "entry_threshold_apr",
+        "axis_b": "exit_threshold_ratio",
+        "tiers": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "cells": [
+          {
+            "tier_a": -2,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.10826403464910905,
+            "full_cagr_ratio": 0.8767861101019808,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -2,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.10814450362466732,
+            "full_cagr_ratio": 0.8758180772525083,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -2,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.10878975959044923,
+            "full_cagr_ratio": 0.8810437412515607,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -2,
+            "tier_b": 1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.10986286704592962,
+            "full_cagr_ratio": 0.8897343993695734,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -2,
+            "tier_b": 2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.10984619552210706,
+            "full_cagr_ratio": 0.8895993835208732,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -1,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.11754344203204292,
+            "full_cagr_ratio": 0.9519362329447484,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -1,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.11795586311156314,
+            "full_cagr_ratio": 0.955276262486494,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -1,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12005148901964069,
+            "full_cagr_ratio": 0.9722478790914675,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -1,
+            "tier_b": 1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12003025029855041,
+            "full_cagr_ratio": 0.972075875381199,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": -1,
+            "tier_b": 2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12201237571663648,
+            "full_cagr_ratio": 0.9881282979672461,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.1217592809841539,
+            "full_cagr_ratio": 0.9860785873066381,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12255969894917196,
+            "full_cagr_ratio": 0.9925608448382228,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12347827298098579,
+            "full_cagr_ratio": 1.0,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": 1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.14741086640513035,
+            "full_cagr_ratio": 1.1938202798465596,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": 2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.14781048827944088,
+            "full_cagr_ratio": 1.1970566538633234,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 1,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12174414544288803,
+            "full_cagr_ratio": 0.9859560107520714,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 1,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12386214198500478,
+            "full_cagr_ratio": 1.003108797967057,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 1,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.1254109371399934,
+            "full_cagr_ratio": 1.0156518560905465,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 1,
+            "tier_b": 1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12596317134248358,
+            "full_cagr_ratio": 1.0201241748973962,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 1,
+            "tier_b": 2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12501830862524455,
+            "full_cagr_ratio": 1.012472118430875,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 2,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.1251387633876715,
+            "full_cagr_ratio": 1.0134476322562544,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 2,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12762502329737102,
+            "full_cagr_ratio": 1.0335828337753297,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 2,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12772305663734662,
+            "full_cagr_ratio": 1.0343767656761322,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 2,
+            "tier_b": 1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12540588751222237,
+            "full_cagr_ratio": 1.015610961221764,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 2,
+            "tier_b": 2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12518922632306717,
+            "full_cagr_ratio": 1.0138563109183172,
+            "gross_feasible_1x": true
+          }
+        ],
+        "n_available_cells": 25,
+        "n_gross_infeasible_cells": 0,
+        "min_full_cagr_ratio": 0.8758180772525083,
+        "mean_full_cagr_ratio": 0.9908140034883256
+      },
+      {
+        "axis_a": "top_k_pairs",
+        "axis_b": "leg_fraction",
+        "tiers": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "cells": [
+          {
+            "tier_a": -2,
+            "tier_b": -2,
+            "available": false,
+            "note": "index 0-2=-2 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -2,
+            "tier_b": -1,
+            "available": false,
+            "note": "index 0-2=-2 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -2,
+            "tier_b": 0,
+            "available": false,
+            "note": "index 0-2=-2 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -2,
+            "tier_b": 1,
+            "available": false,
+            "note": "index 0-2=-2 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis; +10% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -2,
+            "tier_b": 2,
+            "available": false,
+            "note": "index 0-2=-2 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis; +20% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -1,
+            "tier_b": -2,
+            "available": false,
+            "note": "index 0-1=-1 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -1,
+            "tier_b": -1,
+            "available": false,
+            "note": "index 0-1=-1 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -1,
+            "tier_b": 0,
+            "available": false,
+            "note": "index 0-1=-1 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -1,
+            "tier_b": 1,
+            "available": false,
+            "note": "index 0-1=-1 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis; +10% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": -1,
+            "tier_b": 2,
+            "available": false,
+            "note": "index 0-1=-1 outside choice range [0, 2] (1, 2, 3) -- G1 is at the range boundary on this axis; +20% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": 0,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.09907210626059393,
+            "full_cagr_ratio": 0.8023444438346645,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.11123710917190888,
+            "full_cagr_ratio": 0.9008638239460807,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.12347827298098579,
+            "full_cagr_ratio": 1.0,
+            "gross_feasible_1x": true
+          },
+          {
+            "tier_a": 0,
+            "tier_b": 1,
+            "available": false,
+            "note": "+10% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": 0,
+            "tier_b": 2,
+            "available": false,
+            "note": "+20% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": 1,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.18586973317394717,
+            "full_cagr_ratio": 1.5052829027060406,
+            "gross_feasible_1x": false
+          },
+          {
+            "tier_a": 1,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.21028592318178707,
+            "full_cagr_ratio": 1.703019633374437,
+            "gross_feasible_1x": false
+          },
+          {
+            "tier_a": 1,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.2351074941832465,
+            "full_cagr_ratio": 1.9040393788099894,
+            "gross_feasible_1x": false
+          },
+          {
+            "tier_a": 1,
+            "tier_b": 1,
+            "available": false,
+            "note": "+10% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": 1,
+            "tier_b": 2,
+            "available": false,
+            "note": "+20% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": 2,
+            "tier_b": -2,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.26049537091114017,
+            "full_cagr_ratio": 2.109645402566113,
+            "gross_feasible_1x": false
+          },
+          {
+            "tier_a": 2,
+            "tier_b": -1,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.29624942181046565,
+            "full_cagr_ratio": 2.3992028286311116,
+            "gross_feasible_1x": false
+          },
+          {
+            "tier_a": 2,
+            "tier_b": 0,
+            "available": true,
+            "note": "",
+            "full_cagr": 0.33290143917273407,
+            "full_cagr_ratio": 2.6960325175911475,
+            "gross_feasible_1x": false
+          },
+          {
+            "tier_a": 2,
+            "tier_b": 1,
+            "available": false,
+            "note": "+10% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          },
+          {
+            "tier_a": 2,
+            "tier_b": 2,
+            "available": false,
+            "note": "+20% of 0.5 clips to registry bound [0.3, 0.5] and collapses onto baseline -- G1 sits at/near this bound",
+            "full_cagr": null,
+            "full_cagr_ratio": null,
+            "gross_feasible_1x": null
+          }
+        ],
+        "n_available_cells": 9,
+        "n_gross_infeasible_cells": 6,
+        "min_full_cagr_ratio": 0.8023444438346645,
+        "mean_full_cagr_ratio": 1.668936770162176
+      }
+    ]
+  }
+}
