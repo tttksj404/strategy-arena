@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
+from research.paper.candidates import TRACKED_IDS
 from research.paper.ledger import LedgerEntry, Position, latest_entries
 
 
@@ -25,7 +26,7 @@ def render_status(entries: tuple[LedgerEntry, ...], path: Path) -> None:
         "| 후보 | 가상 에쿼티(USDT) | 오픈 포지션 | 누적 펀딩(USDT) | 최근 실행일 |",
         "|---|---:|---|---:|---|",
     ]
-    for candidate_id in ("W2c", "F1e", "W3c", "W3d"):
+    for candidate_id in TRACKED_IDS:
         entry = current.get(candidate_id)
         if entry is None:
             lines.append(f"| {candidate_id} | - | 데이터 없음 | - | - |")
@@ -33,7 +34,7 @@ def render_status(entries: tuple[LedgerEntry, ...], path: Path) -> None:
         positions = "<br>".join(_position_text(position) for position in entry.positions) or "현금"
         lines.append(f"| {candidate_id} | {entry.virtual_equity:.4f} | {positions} | {entry.cumulative_funding:.6f} | {entry.run_date} |")
     lines.extend(("", "## 후보별 신호", ""))
-    for candidate_id in ("W2c", "F1e", "W3c", "W3d"):
+    for candidate_id in TRACKED_IDS:
         entry = current.get(candidate_id)
         if entry is None:
             lines.append(f"- `{candidate_id}`: 미기록")
@@ -56,7 +57,7 @@ def render_failure_status(path: Path, observed_at: str, reason: str) -> None:
         "| 후보 | 가상 에쿼티 | 오픈 포지션 | 누적 펀딩 | 상태 |",
         "|---|---:|---|---:|---|",
     ]
-    for candidate_id in ("W2c", "F1e", "W3c", "W3d"):
+    for candidate_id in TRACKED_IDS:
         lines.append(f"| {candidate_id} | - | - | - | 라이브 데이터 미수집 |")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

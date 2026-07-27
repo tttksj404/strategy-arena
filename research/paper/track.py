@@ -9,7 +9,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 import sys
-from typing import TypeVar
+from typing import Final, TypeVar
 
 import pandas as pd  # noqa: PANDAS_OK
 import requests
@@ -19,6 +19,7 @@ if __package__ in {None, ""}:
     if str(repository_root) not in sys.path:
         sys.path.insert(0, str(repository_root))
 
+from research.paper.candidates import G1_CANDIDATE, TRACKED_IDS
 from research.paper.ledger import LedgerEntry, Position, append_entries, latest_entries, read_entries, settle_entry
 from research.paper.market_data import LiveSnapshot, collect_live_snapshot, current_funding_rates
 from research.paper.status import render_failure_status, render_status
@@ -30,7 +31,6 @@ from research.wave3.engine import CandidateConfig, Target, W3_CANDIDATES, curren
 BASE_DIR = Path(__file__).resolve().parent
 LEDGER_PATH = BASE_DIR / "ledger" / "paper_ledger.jsonl"
 STATUS_PATH = BASE_DIR / "STATUS.md"
-TRACKED_IDS = ("W2c", "F1e", "W3c", "W3d")
 CandidateT = TypeVar("CandidateT")
 
 
@@ -87,8 +87,11 @@ def _momentum_positions(snapshot: LiveSnapshot, candidate: CandidateConfig, equi
 
 
 def _signal_and_positions(snapshot: LiveSnapshot, candidate_id: str, equity: float, observed_at: pd.Timestamp) -> tuple[str, tuple[Position, ...]]:
-    if candidate_id in {"W2c", "F1e"}:
-        candidate = _candidate(W2_FUNDING_CANDIDATES if candidate_id == "W2c" else F1_CANDIDATES, candidate_id)
+    if candidate_id in {"W2c", "F1e", "G1"}:
+        if candidate_id == "G1":
+            candidate = G1_CANDIDATE
+        else:
+            candidate = _candidate(W2_FUNDING_CANDIDATES if candidate_id == "W2c" else F1_CANDIDATES, candidate_id)
         positions = _carry_positions(snapshot, candidate, equity)
         symbols = ", ".join(sorted({position.symbol for position in positions})) or "cash"
         return (f"{candidate_id} carry selected: {symbols}", positions)
