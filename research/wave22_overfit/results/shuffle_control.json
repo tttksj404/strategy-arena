@@ -1,0 +1,520 @@
+{
+  "methodology": {
+    "sampling_distribution": "research.wave21_ga.genome.random_genome (uniform per-gene draw over registered bounds/choices) -- identical to wave21's own GA-generation-0/random-search-control distribution",
+    "n_draws_requested": 30,
+    "n_draws_attempted": 96,
+    "seed": 20260728,
+    "sizing_constraint": "rejection-sampled to gross_usdt <= ACTIVE_CAPITAL (same 1x constraint G1 itself satisfies)",
+    "forced_axis_note": "leg_fraction's own registered floor (0.30) already makes top_k_pairs in {2,3} gross-infeasible at any leg_fraction, so EVERY accepted draw (G1 included) has top_k_pairs=1 -- that gene is effectively forced, not a free draw, under this constraint; the other 6 genes remain free",
+    "primary_ranking_metric": "full-period CAGR (matches G1's own headline metric)",
+    "secondary_ranking_metric": "OOS(self-contained) CAGR -- a genome could rank well on full-period but poorly OOS, which is itself informative",
+    "pass_criterion": "G1 in the top 5% of the pooled (30 random + G1) distribution"
+  },
+  "g1_full_cagr": 0.12347827298098579,
+  "g1_oos_cagr_self_contained": 0.040358570997748755,
+  "draws": [
+    {
+      "index": 0,
+      "genome": {
+        "entry_threshold_apr": 0.2627160673782091,
+        "exit_threshold_ratio": 0.2523772705980928,
+        "window_days": 14,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.48871680440417525,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.12063562438813391,
+      "oos_cagr_self_contained": 0.0190999999999939,
+      "mdd_full": 0.015917829327981137,
+      "gross_usdt": 87.96902479275154
+    },
+    {
+      "index": 1,
+      "genome": {
+        "entry_threshold_apr": 0.10758781730022592,
+        "exit_threshold_ratio": 0.6044753618397836,
+        "window_days": 10,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.3386161768146418,
+        "universe_breadth": 300,
+        "idle_mode": "none"
+      },
+      "full_cagr": 0.048326991620458504,
+      "oos_cagr_self_contained": -0.03943191839787463,
+      "mdd_full": 0.06605583260657033,
+      "gross_usdt": 60.95091182663552
+    },
+    {
+      "index": 2,
+      "genome": {
+        "entry_threshold_apr": 0.24561537704494202,
+        "exit_threshold_ratio": 0.42556680176570405,
+        "window_days": 14,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.44591477660646084,
+        "universe_breadth": 30,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.06567801456404276,
+      "oos_cagr_self_contained": 0.0003196987857763123,
+      "mdd_full": 0.004284758183511372,
+      "gross_usdt": 80.26465978916295
+    },
+    {
+      "index": 3,
+      "genome": {
+        "entry_threshold_apr": 0.29141356621529463,
+        "exit_threshold_ratio": 0.3915947181710116,
+        "window_days": 14,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.40535878003127185,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.08562473172460972,
+      "oos_cagr_self_contained": 0.017981007422664508,
+      "mdd_full": 0.011196120391623654,
+      "gross_usdt": 72.96458040562894
+    },
+    {
+      "index": 4,
+      "genome": {
+        "entry_threshold_apr": 0.3343168749543602,
+        "exit_threshold_ratio": 0.6590633008343159,
+        "window_days": 10,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.42759465669240515,
+        "universe_breadth": 200,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.08709515968245118,
+      "oos_cagr_self_contained": 0.018897227900537272,
+      "mdd_full": 0.013881614289874888,
+      "gross_usdt": 76.96703820463293
+    },
+    {
+      "index": 5,
+      "genome": {
+        "entry_threshold_apr": 0.29085869596002356,
+        "exit_threshold_ratio": 0.3915953762603473,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.3389353549405684,
+        "universe_breadth": 200,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.07316021360292124,
+      "oos_cagr_self_contained": 0.021743281408971082,
+      "mdd_full": 0.009159798550576692,
+      "gross_usdt": 61.008363889302316
+    },
+    {
+      "index": 6,
+      "genome": {
+        "entry_threshold_apr": 0.31831415615325076,
+        "exit_threshold_ratio": 0.7073438974109603,
+        "window_days": 10,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.37556890766262513,
+        "universe_breadth": 200,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.07226685142486544,
+      "oos_cagr_self_contained": 0.0005604013720437173,
+      "mdd_full": 0.014101241379886553,
+      "gross_usdt": 67.60240337927252
+    },
+    {
+      "index": 7,
+      "genome": {
+        "entry_threshold_apr": 0.2720034520516958,
+        "exit_threshold_ratio": 0.7372923221858843,
+        "window_days": 5,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.37972071155025,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.07527976382372614,
+      "oos_cagr_self_contained": 0.018633421029658148,
+      "mdd_full": 0.010122143334030054,
+      "gross_usdt": 68.349728079045
+    },
+    {
+      "index": 8,
+      "genome": {
+        "entry_threshold_apr": 0.11031874340723602,
+        "exit_threshold_ratio": 0.27236227445063355,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4734325553238975,
+        "universe_breadth": 30,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.07654786498215849,
+      "oos_cagr_self_contained": 0.016794428286802887,
+      "mdd_full": 0.02339279548798867,
+      "gross_usdt": 85.21785995830155
+    },
+    {
+      "index": 9,
+      "genome": {
+        "entry_threshold_apr": 0.3345547971636718,
+        "exit_threshold_ratio": 0.49969240898884615,
+        "window_days": 5,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.3706947651601799,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.07467630855284924,
+      "oos_cagr_self_contained": 0.019526121707315935,
+      "mdd_full": 0.006074002220176955,
+      "gross_usdt": 66.72505772883238
+    },
+    {
+      "index": 10,
+      "genome": {
+        "entry_threshold_apr": 0.3328290587505303,
+        "exit_threshold_ratio": 0.32561713555036076,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.49601285043299165,
+        "universe_breadth": 30,
+        "idle_mode": "none"
+      },
+      "full_cagr": 0.05984570466899419,
+      "oos_cagr_self_contained": 0.0,
+      "mdd_full": 0.011283740944108667,
+      "gross_usdt": 89.2823130779385
+    },
+    {
+      "index": 11,
+      "genome": {
+        "entry_threshold_apr": 0.0921315410677929,
+        "exit_threshold_ratio": 0.5148495212577189,
+        "window_days": 5,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4703302099416804,
+        "universe_breadth": 300,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.06187361657244206,
+      "oos_cagr_self_contained": -0.10135959977888209,
+      "mdd_full": 0.09186910313219354,
+      "gross_usdt": 84.65943778950248
+    },
+    {
+      "index": 12,
+      "genome": {
+        "entry_threshold_apr": 0.06822567214126637,
+        "exit_threshold_ratio": 0.28691158007352113,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.444353490386122,
+        "universe_breadth": 300,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.06702454125997415,
+      "oos_cagr_self_contained": -0.09705711283253093,
+      "mdd_full": 0.0868694826585047,
+      "gross_usdt": 79.98362826950196
+    },
+    {
+      "index": 13,
+      "genome": {
+        "entry_threshold_apr": 0.1376364345977577,
+        "exit_threshold_ratio": 0.39301590085915017,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.3305703977180773,
+        "universe_breadth": 30,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.05871351342531694,
+      "oos_cagr_self_contained": 0.016547558903424964,
+      "mdd_full": 0.00970416494894577,
+      "gross_usdt": 59.50267158925391
+    },
+    {
+      "index": 14,
+      "genome": {
+        "entry_threshold_apr": 0.16360337938545294,
+        "exit_threshold_ratio": 0.518783971392541,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.42727019925099763,
+        "universe_breadth": 200,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.08225419269387779,
+      "oos_cagr_self_contained": 0.005021179167332024,
+      "mdd_full": 0.02445707162703048,
+      "gross_usdt": 76.90863586517958
+    },
+    {
+      "index": 15,
+      "genome": {
+        "entry_threshold_apr": 0.30745567056929624,
+        "exit_threshold_ratio": 0.32334736460888075,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.48968125402174556,
+        "universe_breadth": 200,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.09133942896494252,
+      "oos_cagr_self_contained": 0.01134321755739065,
+      "mdd_full": 0.023976243717344414,
+      "gross_usdt": 88.14262572391421
+    },
+    {
+      "index": 16,
+      "genome": {
+        "entry_threshold_apr": 0.28342674841024623,
+        "exit_threshold_ratio": 0.38828307658124894,
+        "window_days": 14,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.39818202279600506,
+        "universe_breadth": 100,
+        "idle_mode": "none"
+      },
+      "full_cagr": 0.06858011713046386,
+      "oos_cagr_self_contained": 0.0,
+      "mdd_full": 0.014649894327548152,
+      "gross_usdt": 71.67276410328091
+    },
+    {
+      "index": 17,
+      "genome": {
+        "entry_threshold_apr": 0.1600086656219289,
+        "exit_threshold_ratio": 0.3500559075837414,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.363280183870585,
+        "universe_breadth": 300,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.06599354698370452,
+      "oos_cagr_self_contained": -0.0076625975443214145,
+      "mdd_full": 0.0319307834462631,
+      "gross_usdt": 65.39043309670531
+    },
+    {
+      "index": 18,
+      "genome": {
+        "entry_threshold_apr": 0.33560551824287504,
+        "exit_threshold_ratio": 0.29392025079207207,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.33763968625368657,
+        "universe_breadth": 30,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.051925943314993006,
+      "oos_cagr_self_contained": 0.0205419206060955,
+      "mdd_full": 0.006859705447358699,
+      "gross_usdt": 60.77514352566358
+    },
+    {
+      "index": 19,
+      "genome": {
+        "entry_threshold_apr": 0.21133493360208966,
+        "exit_threshold_ratio": 0.6095802313066301,
+        "window_days": 10,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4853039974285257,
+        "universe_breadth": 200,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.09948981216257802,
+      "oos_cagr_self_contained": 0.027050324758866484,
+      "mdd_full": 0.02451141860130246,
+      "gross_usdt": 87.35471953713463
+    },
+    {
+      "index": 20,
+      "genome": {
+        "entry_threshold_apr": 0.2696780711037848,
+        "exit_threshold_ratio": 0.4675301071930527,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4547590830126556,
+        "universe_breadth": 200,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.08978957181532832,
+      "oos_cagr_self_contained": 0.005283308202124859,
+      "mdd_full": 0.014794638575845176,
+      "gross_usdt": 81.856634942278
+    },
+    {
+      "index": 21,
+      "genome": {
+        "entry_threshold_apr": 0.32003328935510883,
+        "exit_threshold_ratio": 0.37105207411849184,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.36512698841923485,
+        "universe_breadth": 200,
+        "idle_mode": "none"
+      },
+      "full_cagr": 0.06404769421828638,
+      "oos_cagr_self_contained": 0.0025382569887073547,
+      "mdd_full": 0.015545275573877748,
+      "gross_usdt": 65.72285791546227
+    },
+    {
+      "index": 22,
+      "genome": {
+        "entry_threshold_apr": 0.27913268085173476,
+        "exit_threshold_ratio": 0.2810346942942685,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4168201667809355,
+        "universe_breadth": 200,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.08402617402726631,
+      "oos_cagr_self_contained": 0.02965940952229107,
+      "mdd_full": 0.022529756924234645,
+      "gross_usdt": 75.02763002056838
+    },
+    {
+      "index": 23,
+      "genome": {
+        "entry_threshold_apr": 0.06166113297731831,
+        "exit_threshold_ratio": 0.45023609815183746,
+        "window_days": 7,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4886124727846019,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.08223415104062703,
+      "oos_cagr_self_contained": -0.028410437121547893,
+      "mdd_full": 0.07165777041101773,
+      "gross_usdt": 87.95024510122835
+    },
+    {
+      "index": 24,
+      "genome": {
+        "entry_threshold_apr": 0.16756318636923673,
+        "exit_threshold_ratio": 0.45036500153190745,
+        "window_days": 5,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.4528008337227684,
+        "universe_breadth": 30,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.08545848188074978,
+      "oos_cagr_self_contained": 0.02649189306163846,
+      "mdd_full": 0.010276993503455678,
+      "gross_usdt": 81.50415007009832
+    },
+    {
+      "index": 25,
+      "genome": {
+        "entry_threshold_apr": 0.2615962093864225,
+        "exit_threshold_ratio": 0.40455678934603695,
+        "window_days": 5,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.30697340784050087,
+        "universe_breadth": 100,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.06225875338110698,
+      "oos_cagr_self_contained": 0.019124062723092417,
+      "mdd_full": 0.009184050572143887,
+      "gross_usdt": 55.25521341129016
+    },
+    {
+      "index": 26,
+      "genome": {
+        "entry_threshold_apr": 0.35583668187113654,
+        "exit_threshold_ratio": 0.4289270156829032,
+        "window_days": 5,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.40017718812095565,
+        "universe_breadth": 100,
+        "idle_mode": "tiered"
+      },
+      "full_cagr": 0.08061375254351466,
+      "oos_cagr_self_contained": 0.01845275932762469,
+      "mdd_full": 0.0065940436084623855,
+      "gross_usdt": 72.03189386177202
+    },
+    {
+      "index": 27,
+      "genome": {
+        "entry_threshold_apr": 0.11355692677696248,
+        "exit_threshold_ratio": 0.2872051123800024,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.3958082931718293,
+        "universe_breadth": 300,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.06697893156947043,
+      "oos_cagr_self_contained": -0.05636570206336444,
+      "mdd_full": 0.061432731054342216,
+      "gross_usdt": 71.24549277092927
+    },
+    {
+      "index": 28,
+      "genome": {
+        "entry_threshold_apr": 0.27511584718453963,
+        "exit_threshold_ratio": 0.32477213035874153,
+        "window_days": 3,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.3305965055632214,
+        "universe_breadth": 30,
+        "idle_mode": "majors_low_thr"
+      },
+      "full_cagr": 0.043623483860514733,
+      "oos_cagr_self_contained": 0.006032168797718285,
+      "mdd_full": 0.007752613666736519,
+      "gross_usdt": 59.50737100137985
+    },
+    {
+      "index": 29,
+      "genome": {
+        "entry_threshold_apr": 0.39672622593593115,
+        "exit_threshold_ratio": 0.41260115408416465,
+        "window_days": 10,
+        "top_k_pairs": 1,
+        "leg_fraction": 0.48547228717425794,
+        "universe_breadth": 300,
+        "idle_mode": "usdt_lend"
+      },
+      "full_cagr": 0.09263136757706336,
+      "oos_cagr_self_contained": 0.016170222925150357,
+      "mdd_full": 0.01661640299450373,
+      "gross_usdt": 87.38501169136643
+    }
+  ],
+  "rank_by_full_cagr": {
+    "n_pool": 30,
+    "n_random_below_g1": 30,
+    "g1_beats_pct_of_random_pool": 100.0,
+    "g1_rank_within_pooled_31": 1,
+    "g1_top_pct_of_pooled_31": 3.225806451612903,
+    "g1_in_top_5pct": true
+  },
+  "rank_by_oos_cagr": {
+    "n_pool": 30,
+    "n_random_below_g1": 30,
+    "g1_beats_pct_of_random_pool": 100.0,
+    "g1_rank_within_pooled_31": 1,
+    "g1_top_pct_of_pooled_31": 3.225806451612903,
+    "g1_in_top_5pct": true
+  },
+  "g1_in_top_5pct_full_cagr": true,
+  "g1_in_top_5pct_oos_cagr": true,
+  "limitations": [
+    "n=30 random draws is a small null sample -- percentile estimates have coarse resolution (1 draw = 3.3 percentage points); a 'top 5%' claim from n=30 rests on roughly the single best 1-2 draws' position",
+    "the sizing constraint forces top_k_pairs=1 on every draw (see forced_axis_note) -- this control tests whether G1's OTHER 6 gene choices beat random chance, not whether its sizing choice does (sizing feasibility already settles that separately)",
+    "an unconstrained variant (no gross filter, comparing on a leverage-normalized basis) was not run -- out of this validation's scope as specified"
+  ]
+}

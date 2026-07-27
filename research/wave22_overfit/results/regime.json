@@ -1,0 +1,145 @@
+{
+  "methodology": {
+    "high_funding_years": [
+      2020,
+      2021,
+      2024
+    ],
+    "low_funding_years": [
+      2022,
+      2023,
+      2025,
+      2026
+    ],
+    "per_year_engine": "gates21.yearly_annualized_returns (reused, same anchoring as wave21's own H5 gate)",
+    "note": "2019 and 2026 are partial calendar years in this dataset (data starts 2019-09, ends 2026-07); 2025 straddles OOS_SPLIT (2025-09-30) -- part of 2025 was visible to the wave-21 GA during evolution (IS), part was sealed (OOS). A year label answers 'which funding regime' only, not 'was this IS or OOS'."
+  },
+  "by_year": [
+    {
+      "year": 2019,
+      "bucket": "unclassified",
+      "g1_cagr": 0.02908718549221012,
+      "i5_cagr": 0.03313418676272817,
+      "g1_minus_i5_pp": -0.4047001270518047,
+      "g1_wins": false,
+      "is_partial_year": true,
+      "straddles_oos_split": false
+    },
+    {
+      "year": 2020,
+      "bucket": "high_funding",
+      "g1_cagr": 0.16602649124785773,
+      "i5_cagr": 0.19197105373882373,
+      "g1_minus_i5_pp": -2.5944562490965994,
+      "g1_wins": false,
+      "is_partial_year": false,
+      "straddles_oos_split": false
+    },
+    {
+      "year": 2021,
+      "bucket": "high_funding",
+      "g1_cagr": 0.30928339689310524,
+      "i5_cagr": 0.30449994639399036,
+      "g1_minus_i5_pp": 0.4783450499114883,
+      "g1_wins": true,
+      "is_partial_year": false,
+      "straddles_oos_split": false
+    },
+    {
+      "year": 2022,
+      "bucket": "low_funding",
+      "g1_cagr": 0.03369052224191127,
+      "i5_cagr": 0.017546844070455148,
+      "g1_minus_i5_pp": 1.6143678171456122,
+      "g1_wins": true,
+      "is_partial_year": false,
+      "straddles_oos_split": false
+    },
+    {
+      "year": 2023,
+      "bucket": "low_funding",
+      "g1_cagr": 0.188600099438601,
+      "i5_cagr": 0.029989054883561517,
+      "g1_minus_i5_pp": 15.861104455503948,
+      "g1_wins": true,
+      "is_partial_year": false,
+      "straddles_oos_split": false
+    },
+    {
+      "year": 2024,
+      "bucket": "high_funding",
+      "g1_cagr": 0.17176029342796117,
+      "i5_cagr": 0.17281969031716882,
+      "g1_minus_i5_pp": -0.10593968892076422,
+      "g1_wins": false,
+      "is_partial_year": false,
+      "straddles_oos_split": false
+    },
+    {
+      "year": 2025,
+      "bucket": "low_funding",
+      "g1_cagr": -0.02026595145608212,
+      "i5_cagr": -0.00030282554824878627,
+      "g1_minus_i5_pp": -1.9963125907833335,
+      "g1_wins": false,
+      "is_partial_year": false,
+      "straddles_oos_split": true
+    },
+    {
+      "year": 2026,
+      "bucket": "low_funding",
+      "g1_cagr": 0.047625302863603336,
+      "i5_cagr": 0.02757941152359722,
+      "g1_minus_i5_pp": 2.0045891340006117,
+      "g1_wins": true,
+      "is_partial_year": true,
+      "straddles_oos_split": false
+    }
+  ],
+  "high_funding": {
+    "years_expected": [
+      2020,
+      2021,
+      2024
+    ],
+    "years_present": [
+      2020,
+      2021,
+      2024
+    ],
+    "years_missing": [],
+    "n_years": 3,
+    "mean_g1_minus_i5_pp": -0.7406836293686251,
+    "median_g1_minus_i5_pp": -0.10593968892076422,
+    "g1_win_count": 1,
+    "g1_win_rate": 0.3333333333333333
+  },
+  "low_funding": {
+    "years_expected": [
+      2022,
+      2023,
+      2025,
+      2026
+    ],
+    "years_present": [
+      2022,
+      2023,
+      2025,
+      2026
+    ],
+    "years_missing": [],
+    "n_years": 4,
+    "mean_g1_minus_i5_pp": 4.37093720396671,
+    "median_g1_minus_i5_pp": 1.809478475573112,
+    "g1_win_count": 3,
+    "g1_win_rate": 0.75
+  },
+  "dominant_regime_by_magnitude": "low_funding",
+  "improvement_only_in_one_regime": "low_funding",
+  "improvement_positive_in_both_regimes": false,
+  "limitations": [
+    "only 3 high-funding years and 4 low-funding years exist in the data -- per-bucket means rest on very few (3-4) independent annual observations each",
+    "2019 (partial, Sep-Dec only) is excluded from both buckets by the task's own year lists; 2026 is also partial (through the cache's own last date) and IS included in the low-funding bucket as specified, so its contribution is a part-year annualized figure, not a full year",
+    "2025 straddles OOS_SPLIT -- its bucket membership (low-funding) is a funding-regime statement, independent of validation #2's IS/OOS framing; do not conflate the two axes"
+  ]
+}
