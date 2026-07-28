@@ -1,0 +1,432 @@
+{
+  "seed": 2026103,
+  "population_size": 60,
+  "generations": 25,
+  "tournament_k": 3,
+  "mutation_probability": 0.15,
+  "mutation_sigma_fraction": 0.1,
+  "elite_count": 2,
+  "n_evaluations": 1500,
+  "n_backtests_run": 1112,
+  "best_genome": {
+    "strategy_kind": "momentum",
+    "entry_z": 0.5353365210495277,
+    "holding_days": 5,
+    "position_fraction": 1.0,
+    "stop_loss_pct": null,
+    "take_profit_pct": 0.25,
+    "universe_breadth": 100,
+    "max_concurrent": 1
+  },
+  "best_fitness": 1.9978956596182027,
+  "final_population_kind_counts": {
+    "momentum": 50,
+    "breakout": 5,
+    "funding_spike": 1,
+    "carry": 2,
+    "convex_dual": 2
+  },
+  "history": [
+    {
+      "generation": 0,
+      "best_fitness": 0.8467960577222409,
+      "mean_fitness": 0.1500100602677308,
+      "worst_fitness": -0.6548970598121256,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 2.2714993256897174,
+        "holding_days": 7,
+        "position_fraction": 0.7983354084507049,
+        "stop_loss_pct": null,
+        "take_profit_pct": null,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 1,
+      "best_fitness": 1.1392345332431322,
+      "mean_fitness": 0.29520316475784997,
+      "worst_fitness": -0.3135081190695106,
+      "best_genome": {
+        "strategy_kind": "breakout",
+        "entry_z": 2.250228300098375,
+        "holding_days": 7,
+        "position_fraction": 0.8538450210288804,
+        "stop_loss_pct": null,
+        "take_profit_pct": null,
+        "universe_breadth": 30,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 2,
+      "best_fitness": 1.1392345332431322,
+      "mean_fitness": 0.42661877014181177,
+      "worst_fitness": -0.054794500685726666,
+      "best_genome": {
+        "strategy_kind": "breakout",
+        "entry_z": 2.250228300098375,
+        "holding_days": 7,
+        "position_fraction": 0.8538450210288804,
+        "stop_loss_pct": null,
+        "take_profit_pct": null,
+        "universe_breadth": 30,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 3,
+      "best_fitness": 1.1392345332431322,
+      "mean_fitness": 0.464543339444624,
+      "worst_fitness": -0.25864199595962184,
+      "best_genome": {
+        "strategy_kind": "breakout",
+        "entry_z": 2.250228300098375,
+        "holding_days": 7,
+        "position_fraction": 0.8538450210288804,
+        "stop_loss_pct": null,
+        "take_profit_pct": null,
+        "universe_breadth": 30,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 4,
+      "best_fitness": 1.3411886810815203,
+      "mean_fitness": 0.5006997629987766,
+      "worst_fitness": -0.02089007493864048,
+      "best_genome": {
+        "strategy_kind": "breakout",
+        "entry_z": 2.2004292501234435,
+        "holding_days": 7,
+        "position_fraction": 0.8538450210288804,
+        "stop_loss_pct": null,
+        "take_profit_pct": null,
+        "universe_breadth": 30,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 5,
+      "best_fitness": 1.3411886810815203,
+      "mean_fitness": 0.6245558578892427,
+      "worst_fitness": 0.040627570345901434,
+      "best_genome": {
+        "strategy_kind": "breakout",
+        "entry_z": 2.2004292501234435,
+        "holding_days": 7,
+        "position_fraction": 0.8538450210288804,
+        "stop_loss_pct": null,
+        "take_profit_pct": null,
+        "universe_breadth": 30,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 6,
+      "best_fitness": 1.8400447765351033,
+      "mean_fitness": 0.70468085912256,
+      "worst_fitness": -0.0314611608873534,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 0.9580372365797243,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 7,
+      "best_fitness": 1.8400447765351033,
+      "mean_fitness": 0.711531764982995,
+      "worst_fitness": -0.48859965258527993,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 0.9580372365797243,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 8,
+      "best_fitness": 1.8400447765351033,
+      "mean_fitness": 0.6409846681120652,
+      "worst_fitness": -0.19147731760445852,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 0.9580372365797243,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 9,
+      "best_fitness": 1.8400447765351033,
+      "mean_fitness": 0.7734653188778453,
+      "worst_fitness": -0.5128590415961412,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 0.9580372365797243,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 10,
+      "best_fitness": 1.8400447765351033,
+      "mean_fitness": 0.7046459297733522,
+      "worst_fitness": -0.765035287057031,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 0.9580372365797243,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 11,
+      "best_fitness": 1.8400447765351033,
+      "mean_fitness": 0.8977440401163184,
+      "worst_fitness": 0.07138174001522883,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 0.9580372365797243,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 12,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 0.7249234858994694,
+      "worst_fitness": -0.7913471526586049,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 13,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 0.8265489173519097,
+      "worst_fitness": -0.5385653098967478,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 14,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.0099209616170026,
+      "worst_fitness": -0.9421984114938775,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 15,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.0195525531029008,
+      "worst_fitness": -0.9959254648320122,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 16,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.0280506940055008,
+      "worst_fitness": -0.7986513834242404,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 17,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 0.9743538712498995,
+      "worst_fitness": -0.8534556356943723,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 18,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.0436999098091324,
+      "worst_fitness": -0.7329201924113441,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 19,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.159111502098917,
+      "worst_fitness": -0.765572488839726,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 20,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.2375184761996854,
+      "worst_fitness": 0.07435543864719137,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 21,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.0859355474787609,
+      "worst_fitness": -0.8829989258899495,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 22,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 0.923755807733316,
+      "worst_fitness": -0.8011122314939687,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 23,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.0130423122953716,
+      "worst_fitness": -0.7957906997032416,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    },
+    {
+      "generation": 24,
+      "best_fitness": 1.9978956596182027,
+      "mean_fitness": 1.1265168477212528,
+      "worst_fitness": -0.3468377144105277,
+      "best_genome": {
+        "strategy_kind": "momentum",
+        "entry_z": 0.5353365210495277,
+        "holding_days": 5,
+        "position_fraction": 1.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": 0.25,
+        "universe_breadth": 100,
+        "max_concurrent": 1
+      }
+    }
+  ],
+  "wall_seconds": 194.34089946746826
+}
