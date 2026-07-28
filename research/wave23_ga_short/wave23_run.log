@@ -1,0 +1,172 @@
+ga23: seed=2026101 gen=1/25 best=0.81962 mean=0.17514
+ga23: seed=2026101 gen=2/25 best=1.12166 mean=0.30521
+ga23: seed=2026101 gen=3/25 best=1.12166 mean=0.40920
+ga23: seed=2026101 gen=4/25 best=1.12166 mean=0.43562
+ga23: seed=2026101 gen=5/25 best=1.12166 mean=0.53045
+ga23: seed=2026101 gen=6/25 best=1.12166 mean=0.56969
+ga23: seed=2026101 gen=7/25 best=1.12166 mean=0.58918
+ga23: seed=2026101 gen=8/25 best=1.12708 mean=0.74807
+ga23: seed=2026101 gen=9/25 best=1.12708 mean=0.83485
+ga23: seed=2026101 gen=10/25 best=1.12708 mean=0.75764
+ga23: seed=2026101 gen=11/25 best=1.12708 mean=0.65084
+ga23: seed=2026101 gen=12/25 best=1.12708 mean=0.79115
+ga23: seed=2026101 gen=13/25 best=1.12708 mean=0.82913
+ga23: seed=2026101 gen=14/25 best=1.12708 mean=0.89873
+ga23: seed=2026101 gen=15/25 best=1.12708 mean=0.80677
+ga23: seed=2026101 gen=16/25 best=1.12708 mean=0.82935
+ga23: seed=2026101 gen=17/25 best=1.12708 mean=0.83290
+ga23: seed=2026101 gen=18/25 best=1.12708 mean=0.73085
+ga23: seed=2026101 gen=19/25 best=1.12708 mean=0.70716
+ga23: seed=2026101 gen=20/25 best=1.12708 mean=0.68625
+ga23: seed=2026101 gen=21/25 best=1.12708 mean=0.68230
+ga23: seed=2026101 gen=22/25 best=1.12708 mean=0.67782
+ga23: seed=2026101 gen=23/25 best=1.12708 mean=0.78519
+ga23: seed=2026101 gen=24/25 best=1.12708 mean=0.66675
+ga23: seed=2026101 gen=25/25 best=1.12708 mean=0.70343
+evolve: seed=2026101 done best_fitness=1.12708 backtests_run=1025/1500 (238.3s)
+ga23: seed=2026102 gen=1/25 best=0.57663 mean=0.15856
+ga23: seed=2026102 gen=2/25 best=0.63682 mean=0.22152
+ga23: seed=2026102 gen=3/25 best=0.79773 mean=0.30499
+ga23: seed=2026102 gen=4/25 best=0.90160 mean=0.39757
+ga23: seed=2026102 gen=5/25 best=0.96095 mean=0.42140
+ga23: seed=2026102 gen=6/25 best=0.96095 mean=0.48495
+ga23: seed=2026102 gen=7/25 best=0.96095 mean=0.46331
+ga23: seed=2026102 gen=8/25 best=0.96095 mean=0.44814
+ga23: seed=2026102 gen=9/25 best=0.96095 mean=0.49973
+ga23: seed=2026102 gen=10/25 best=0.96745 mean=0.60636
+ga23: seed=2026102 gen=11/25 best=1.00900 mean=0.67465
+ga23: seed=2026102 gen=12/25 best=1.03093 mean=0.69578
+ga23: seed=2026102 gen=13/25 best=1.03093 mean=0.69426
+ga23: seed=2026102 gen=14/25 best=1.11569 mean=0.68792
+ga23: seed=2026102 gen=15/25 best=1.11569 mean=0.74434
+ga23: seed=2026102 gen=16/25 best=1.11597 mean=0.78855
+ga23: seed=2026102 gen=17/25 best=1.14406 mean=0.77753
+ga23: seed=2026102 gen=18/25 best=1.15134 mean=0.82667
+ga23: seed=2026102 gen=19/25 best=1.15134 mean=0.80705
+ga23: seed=2026102 gen=20/25 best=1.15134 mean=0.76586
+ga23: seed=2026102 gen=21/25 best=1.15134 mean=0.82773
+ga23: seed=2026102 gen=22/25 best=1.15134 mean=0.86787
+ga23: seed=2026102 gen=23/25 best=1.15134 mean=0.77827
+ga23: seed=2026102 gen=24/25 best=1.15614 mean=0.78700
+ga23: seed=2026102 gen=25/25 best=1.15614 mean=0.75506
+evolve: seed=2026102 done best_fitness=1.15614 backtests_run=1268/1500 (265.3s)
+ga23: seed=2026103 gen=1/25 best=0.84680 mean=0.15001
+ga23: seed=2026103 gen=2/25 best=1.13923 mean=0.29520
+ga23: seed=2026103 gen=3/25 best=1.13923 mean=0.42662
+ga23: seed=2026103 gen=4/25 best=1.13923 mean=0.46454
+ga23: seed=2026103 gen=5/25 best=1.34119 mean=0.50070
+ga23: seed=2026103 gen=6/25 best=1.34119 mean=0.62456
+ga23: seed=2026103 gen=7/25 best=1.84004 mean=0.70468
+ga23: seed=2026103 gen=8/25 best=1.84004 mean=0.71153
+ga23: seed=2026103 gen=9/25 best=1.84004 mean=0.64098
+ga23: seed=2026103 gen=10/25 best=1.84004 mean=0.77347
+ga23: seed=2026103 gen=11/25 best=1.84004 mean=0.70465
+ga23: seed=2026103 gen=12/25 best=1.84004 mean=0.89774
+ga23: seed=2026103 gen=13/25 best=1.99790 mean=0.72492
+ga23: seed=2026103 gen=14/25 best=1.99790 mean=0.82655
+ga23: seed=2026103 gen=15/25 best=1.99790 mean=1.00992
+ga23: seed=2026103 gen=16/25 best=1.99790 mean=1.01955
+ga23: seed=2026103 gen=17/25 best=1.99790 mean=1.02805
+ga23: seed=2026103 gen=18/25 best=1.99790 mean=0.97435
+ga23: seed=2026103 gen=19/25 best=1.99790 mean=1.04370
+ga23: seed=2026103 gen=20/25 best=1.99790 mean=1.15911
+ga23: seed=2026103 gen=21/25 best=1.99790 mean=1.23752
+ga23: seed=2026103 gen=22/25 best=1.99790 mean=1.08594
+ga23: seed=2026103 gen=23/25 best=1.99790 mean=0.92376
+ga23: seed=2026103 gen=24/25 best=1.99790 mean=1.01304
+ga23: seed=2026103 gen=25/25 best=1.99790 mean=1.12652
+evolve: seed=2026103 done best_fitness=1.99790 backtests_run=1112/1500 (194.3s)
+ga23: seed=2026104 gen=1/25 best=0.66117 mean=0.15830
+ga23: seed=2026104 gen=2/25 best=0.85158 mean=0.27030
+ga23: seed=2026104 gen=3/25 best=0.98105 mean=0.37705
+ga23: seed=2026104 gen=4/25 best=1.02486 mean=0.43776
+ga23: seed=2026104 gen=5/25 best=1.02486 mean=0.42137
+ga23: seed=2026104 gen=6/25 best=1.04725 mean=0.46394
+ga23: seed=2026104 gen=7/25 best=1.17087 mean=0.60873
+ga23: seed=2026104 gen=8/25 best=1.17087 mean=0.60652
+ga23: seed=2026104 gen=9/25 best=1.85896 mean=0.57735
+ga23: seed=2026104 gen=10/25 best=1.85896 mean=0.59136
+ga23: seed=2026104 gen=11/25 best=1.85896 mean=0.74314
+ga23: seed=2026104 gen=12/25 best=2.09868 mean=0.72700
+ga23: seed=2026104 gen=13/25 best=2.09868 mean=0.81850
+ga23: seed=2026104 gen=14/25 best=2.09868 mean=0.85780
+ga23: seed=2026104 gen=15/25 best=2.19345 mean=0.88598
+ga23: seed=2026104 gen=16/25 best=2.19345 mean=1.00524
+ga23: seed=2026104 gen=17/25 best=2.42756 mean=1.19091
+ga23: seed=2026104 gen=18/25 best=2.42756 mean=1.28562
+ga23: seed=2026104 gen=19/25 best=2.42756 mean=1.39779
+ga23: seed=2026104 gen=20/25 best=2.42756 mean=1.32350
+ga23: seed=2026104 gen=21/25 best=2.42756 mean=1.05363
+ga23: seed=2026104 gen=22/25 best=2.42756 mean=1.22773
+ga23: seed=2026104 gen=23/25 best=2.42756 mean=1.20740
+ga23: seed=2026104 gen=24/25 best=2.42756 mean=1.30326
+ga23: seed=2026104 gen=25/25 best=2.42756 mean=1.26891
+evolve: seed=2026104 done best_fitness=2.42756 backtests_run=1146/1500 (243.6s)
+ga23: seed=2026105 gen=1/25 best=0.66985 mean=0.10771
+ga23: seed=2026105 gen=2/25 best=0.91412 mean=0.21291
+ga23: seed=2026105 gen=3/25 best=0.91412 mean=0.29121
+ga23: seed=2026105 gen=4/25 best=1.38046 mean=0.40941
+ga23: seed=2026105 gen=5/25 best=1.38046 mean=0.45710
+ga23: seed=2026105 gen=6/25 best=1.38046 mean=0.48326
+ga23: seed=2026105 gen=7/25 best=1.38046 mean=0.56499
+ga23: seed=2026105 gen=8/25 best=1.51352 mean=0.58744
+ga23: seed=2026105 gen=9/25 best=1.59848 mean=0.63465
+ga23: seed=2026105 gen=10/25 best=1.59848 mean=0.61172
+ga23: seed=2026105 gen=11/25 best=1.59848 mean=0.67376
+ga23: seed=2026105 gen=12/25 best=1.62462 mean=0.80761
+ga23: seed=2026105 gen=13/25 best=1.62462 mean=0.79528
+ga23: seed=2026105 gen=14/25 best=1.68612 mean=0.93317
+ga23: seed=2026105 gen=15/25 best=1.68612 mean=0.90564
+ga23: seed=2026105 gen=16/25 best=1.68612 mean=1.01173
+ga23: seed=2026105 gen=17/25 best=1.68612 mean=0.97109
+ga23: seed=2026105 gen=18/25 best=1.68612 mean=0.98429
+ga23: seed=2026105 gen=19/25 best=1.74983 mean=0.99929
+ga23: seed=2026105 gen=20/25 best=1.74983 mean=1.06660
+ga23: seed=2026105 gen=21/25 best=1.74983 mean=1.05159
+ga23: seed=2026105 gen=22/25 best=1.74983 mean=1.08238
+ga23: seed=2026105 gen=23/25 best=1.74983 mean=1.05696
+ga23: seed=2026105 gen=24/25 best=1.74983 mean=1.05281
+ga23: seed=2026105 gen=25/25 best=1.74983 mean=0.98288
+evolve: seed=2026105 done best_fitness=1.74983 backtests_run=1161/1500 (226.0s)
+evolve: fitness cache size=5712 (unique genomes ever backtested across all 5 seeds)
+random23: seed=12026101 300/1500 best=0.83862
+random23: seed=12026101 600/1500 best=0.95067
+random23: seed=12026101 900/1500 best=1.13428
+random23: seed=12026101 1200/1500 best=1.13428
+random23: seed=12026101 1500/1500 best=1.13428
+control: seed=12026101 done best_fitness=1.13428 backtests_run=1500/1500 (208.7s)
+random23: seed=12026102 300/1500 best=0.80901
+random23: seed=12026102 600/1500 best=0.95823
+random23: seed=12026102 900/1500 best=1.11935
+random23: seed=12026102 1200/1500 best=1.17097
+random23: seed=12026102 1500/1500 best=1.17097
+control: seed=12026102 done best_fitness=1.17097 backtests_run=1500/1500 (212.2s)
+random23: seed=12026103 300/1500 best=0.92847
+random23: seed=12026103 600/1500 best=0.92847
+random23: seed=12026103 900/1500 best=1.12699
+random23: seed=12026103 1200/1500 best=1.12699
+random23: seed=12026103 1500/1500 best=1.18168
+control: seed=12026103 done best_fitness=1.18168 backtests_run=1500/1500 (207.0s)
+random23: seed=12026104 300/1500 best=1.08372
+random23: seed=12026104 600/1500 best=1.08372
+random23: seed=12026104 900/1500 best=1.08372
+random23: seed=12026104 1200/1500 best=1.12439
+random23: seed=12026104 1500/1500 best=1.12439
+control: seed=12026104 done best_fitness=1.12439 backtests_run=1500/1500 (211.7s)
+random23: seed=12026105 300/1500 best=0.75809
+random23: seed=12026105 600/1500 best=1.42907
+random23: seed=12026105 900/1500 best=1.42907
+random23: seed=12026105 1200/1500 best=1.48178
+random23: seed=12026105 1500/1500 best=1.48178
+control: seed=12026105 done best_fitness=1.48178 backtests_run=1500/1500 (214.7s)
+control: fitness cache size=7500
+gates: K1 (GA vs random, 3/5 seeds) -> FAIL
+gates: final candidate selected from seed=2026105 (median of 5, IS fitness=1.74983) -> {'strategy_kind': 'momentum', 'entry_z': 1.184082269756403, 'holding_days': 5, 'position_fraction': 1.0, 'stop_loss_pct': 0.05, 'take_profit_pct': 0.5, 'universe_breadth': 30, 'max_concurrent': 1}
+gates: K2 (final OOS fitness -0.012508596291006313 vs I5 OOS fitness 0.007779954690001497) -> FAIL
+gates: K3 (DSR trials=22621, score=17.515667725058794) -> PASS
+gates: K4 (ruin defense) -> FAIL
+gates: K5 (executability) -> PASS
+gates: K6 (paper reproducibility) -> FAIL reasons=["research/paper/ledger.py's Position dataclass has no stop_loss/take_profit/entry-day fields, and track.py's _carry_positions/_momentum_positions never check one -- an automatic stop-loss/take-profit/multi-position exit cannot currently be enforced by the live paper tracker as-is"]
+gates: overall=FAIL promoted=False failure_reasons=['K1', 'K2', 'K4', 'K6']
+gates: wrote C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena\research\wave23_ga_short\results\final_candidate.json
+report: wrote C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena\research\wave23_ga_short\report\wave23_report.md and C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena\research\wave23_ga_short\REGISTRY.md
