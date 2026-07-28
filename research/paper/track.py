@@ -19,6 +19,7 @@ if __package__ in {None, ""}:
     if str(repository_root) not in sys.path:
         sys.path.insert(0, str(repository_root))
 
+from research.paper import fidelity
 from research.paper.candidates import G1_CANDIDATE, TRACKED_IDS
 from research.paper.ledger import LedgerEntry, Position, append_entries, latest_entries, read_entries, settle_entry
 from research.paper.market_data import LiveSnapshot, collect_live_snapshot, current_funding_rates
@@ -112,12 +113,22 @@ def run_once() -> int:
     snapshot = collect_live_snapshot()
     entries = read_entries(LEDGER_PATH)
     latest = latest_entries(entries)
+    fidelity_results = fidelity.check_all(snapshot, TRACKED_IDS)
     planned: dict[str, tuple[Position, ...]] = {}
     signals: dict[str, str] = {}
     for candidate_id in TRACKED_IDS:
         previous = latest.get(candidate_id)
         equity = previous.virtual_equity if previous is not None else 300.0
-        signal, positions = _signal_and_positions(snapshot, candidate_id, equity, snapshot.observed_at)
+        result = fidelity_results[candidate_id]
+        if result.ok:
+            signal, positions = _signal_and_positions(snapshot, candidate_id, equity, snapshot.observed_at)
+        else:
+            # Universe-fidelity gate (research/paper/fidelity.py): a candidate whose declared
+            # universe wasn't actually covered this run must not act on a partial ranking --
+            # that silent mismatch is exactly what produced G1's 2026-07-27/07-28 "cash" records
+            # against a broken 61-symbol universe. Forced to cash and clearly labeled instead of
+            # trusting a signal computed from known-incomplete data; see fidelity.check_snapshot.
+            signal, positions = f"{candidate_id}: FIDELITY_FAIL ({result.reason}) — 포지션 보류(데이터 불충분)", ()
         planned[candidate_id] = positions
         signals[candidate_id] = signal
     funding_rates = _update_funding_rates(snapshot, planned)
@@ -127,10 +138,21 @@ def run_once() -> int:
     }
     next_entries: list[LedgerEntry] = []
     for candidate_id in TRACKED_IDS:
-        next_entries.append(settle_entry(latest.get(candidate_id), planned[candidate_id], snapshot.observed_at.isoformat(), funding_rates, candidate_id, signals[candidate_id], snapshot.source_names))
+        next_entries.append(
+            settle_entry(
+                latest.get(candidate_id),
+                planned[candidate_id],
+                snapshot.observed_at.isoformat(),
+                funding_rates,
+                candidate_id,
+                signals[candidate_id],
+                snapshot.source_names,
+                fidelity_ok=fidelity_results[candidate_id].ok,
+            )
+        )
     added = append_entries(LEDGER_PATH, tuple(next_entries))
     final_entries = read_entries(LEDGER_PATH)
-    render_status(final_entries, STATUS_PATH)
+    render_status(final_entries, STATUS_PATH, fidelity_results=fidelity_results, snapshot=snapshot)
     print(f"paper: appended {added} daily records; status={STATUS_PATH}")
     return 0
 

@@ -40,6 +40,15 @@ class LedgerEntry:
     positions: tuple[Position, ...]
     signal: str
     source_names: tuple[str, ...]
+    # Universe-fidelity flag (research/paper/fidelity.py). True unless the run that produced this
+    # entry is KNOWN to have collected an incomplete universe for this candidate -- e.g. G1's
+    # 2026-07-27/07-28 records, written back when collect_live_snapshot() only covered ~61
+    # symbols against G1's declared top100 requirement. Defaults to True so every pre-existing
+    # ledger line (written before this field existed) parses unchanged; only entries explicitly
+    # known to be contaminated carry `false`. Never deleted -- flagged so downstream reporting
+    # can exclude them, per the "don't erase history, mark it" convention this ledger already
+    # uses for idempotent per-day records.
+    fidelity_ok: bool = True
 
 
 def position_payload(position: Position) -> JsonValue:
@@ -69,6 +78,7 @@ def entry_payload(entry: LedgerEntry) -> JsonValue:
         "positions": [position_payload(position) for position in entry.positions],
         "signal": entry.signal,
         "source_names": list(entry.source_names),
+        "fidelity_ok": entry.fidelity_ok,
     }
 
 
@@ -100,6 +110,13 @@ def _parse_position(value: JsonValue) -> Position:
     )
 
 
+def _bool_default(value: JsonValue, default: bool) -> bool:
+    # Permissive-by-design: `fidelity_ok` postdates every ledger line written before this field
+    # existed, so a missing/malformed value must default rather than raise (unlike _text/_number,
+    # which enforce that REQUIRED fields are well-formed).
+    return value if isinstance(value, bool) else default
+
+
 def _parse_entry(value: JsonValue) -> LedgerEntry:
     if not isinstance(value, dict) or not isinstance(value.get("positions"), list):
         raise PipelineError("paper ledger entry is invalid")
@@ -118,6 +135,7 @@ def _parse_entry(value: JsonValue) -> LedgerEntry:
         tuple(_parse_position(item) for item in value["positions"]),
         _text(value.get("signal"), "signal"),
         tuple(raw_sources),
+        _bool_default(value.get("fidelity_ok"), True),
     )
 
 
@@ -166,6 +184,7 @@ def settle_entry(
     signal: str,
     source_names: tuple[str, ...],
     maker_fee_rate: float = MAKER_FEE_RATE,
+    fidelity_ok: bool = True,
 ) -> LedgerEntry:
     previous_positions = { _position_key(item): item for item in previous.positions } if previous is not None else {}
     settled: list[Position] = []
@@ -213,6 +232,7 @@ def settle_entry(
         tuple(settled),
         signal,
         source_names,
+        fidelity_ok,
     )
 
 
