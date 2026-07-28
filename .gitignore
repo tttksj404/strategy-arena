@@ -3,4 +3,5 @@ __pycache__/
 .DS_Store
 
 research/wave1/cache/
+research/paper/cache/
 __pycache__/
