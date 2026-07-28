@@ -1,0 +1,505 @@
+{
+  "seed": 2026205,
+  "population_size": 200,
+  "generations": 30,
+  "tournament_k": 3,
+  "crossover_probability": 0.7,
+  "subtree_mutation_probability": 0.2,
+  "point_mutation_probability": 0.1,
+  "elite_count": 2,
+  "n_evaluations": 6000,
+  "n_backtests_run": 628,
+  "best_tree": {
+    "tree": {
+      "op": "funding_14d",
+      "value": null,
+      "children": []
+    },
+    "formula": "funding_14d",
+    "node_count": 1
+  },
+  "best_fitness": 0.02797893220808301,
+  "history": [
+    {
+      "generation": 0,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -1.5222119078375036,
+      "worst_fitness": -5.169940874448984,
+      "mean_node_count": 8.005,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 1,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.6868298844773945,
+      "worst_fitness": -5.090590990790683,
+      "mean_node_count": 5.045,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 2,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.36530584634810576,
+      "worst_fitness": -4.958237660787106,
+      "mean_node_count": 2.525,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 3,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3645194365227602,
+      "worst_fitness": -5.165880358685559,
+      "mean_node_count": 1.815,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 4,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3619006953980993,
+      "worst_fitness": -5.252096606952775,
+      "mean_node_count": 1.415,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 5,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.20332963407681207,
+      "worst_fitness": -4.6982494733451725,
+      "mean_node_count": 1.465,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 6,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.2377913226031864,
+      "worst_fitness": -4.723990669779964,
+      "mean_node_count": 1.45,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 7,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.29180156127132656,
+      "worst_fitness": -5.187415400676117,
+      "mean_node_count": 1.545,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 8,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.2562777905600592,
+      "worst_fitness": -4.723990669779964,
+      "mean_node_count": 1.32,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 9,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.31586175208567446,
+      "worst_fitness": -4.749819435702478,
+      "mean_node_count": 1.585,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 10,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3787881479097932,
+      "worst_fitness": -4.723990669779964,
+      "mean_node_count": 1.39,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 11,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.35203703474787873,
+      "worst_fitness": -4.897317331407091,
+      "mean_node_count": 1.35,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 12,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.20214256555649346,
+      "worst_fitness": -5.1558323702600175,
+      "mean_node_count": 1.36,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 13,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.43470965823710744,
+      "worst_fitness": -5.323041685223147,
+      "mean_node_count": 1.575,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 14,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.28813292326106826,
+      "worst_fitness": -5.164972006971741,
+      "mean_node_count": 1.5,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 15,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.273086361963876,
+      "worst_fitness": -4.8240259949792454,
+      "mean_node_count": 1.215,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 16,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.27996372199639147,
+      "worst_fitness": -4.8240259949792454,
+      "mean_node_count": 1.365,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 17,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3099223700533702,
+      "worst_fitness": -5.300362733200303,
+      "mean_node_count": 1.64,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 18,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.40507455058656155,
+      "worst_fitness": -5.032320625433584,
+      "mean_node_count": 1.53,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 19,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3477405987219141,
+      "worst_fitness": -5.014122346259869,
+      "mean_node_count": 1.325,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 20,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.20104033240174524,
+      "worst_fitness": -4.406614725126188,
+      "mean_node_count": 1.555,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 21,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.34289195272145384,
+      "worst_fitness": -4.7275938056207805,
+      "mean_node_count": 1.535,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 22,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.26689047810328864,
+      "worst_fitness": -4.739157024591213,
+      "mean_node_count": 1.51,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 23,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.269338000450569,
+      "worst_fitness": -4.8240259949792454,
+      "mean_node_count": 1.46,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 24,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.28078639583663656,
+      "worst_fitness": -5.055890251650641,
+      "mean_node_count": 1.25,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 25,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3041938734232618,
+      "worst_fitness": -4.8524319676234,
+      "mean_node_count": 1.495,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 26,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3356261320816934,
+      "worst_fitness": -4.739157024591213,
+      "mean_node_count": 1.51,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 27,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.3230255040662097,
+      "worst_fitness": -4.723990669779964,
+      "mean_node_count": 1.435,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 28,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.28573881140085833,
+      "worst_fitness": -4.723990669779964,
+      "mean_node_count": 1.33,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    },
+    {
+      "generation": 29,
+      "best_fitness": 0.02797893220808301,
+      "mean_fitness": -0.4499254871401949,
+      "worst_fitness": -5.034378239139322,
+      "mean_node_count": 1.39,
+      "best_tree": {
+        "tree": {
+          "op": "funding_14d",
+          "value": null,
+          "children": []
+        },
+        "formula": "funding_14d",
+        "node_count": 1
+      }
+    }
+  ],
+  "wall_seconds": 135.56269025802612
+}

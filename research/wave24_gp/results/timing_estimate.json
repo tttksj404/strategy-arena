@@ -1,0 +1,10 @@
+{
+  "population_size": 200,
+  "one_generation_seconds": 50.042232036590576,
+  "seconds_per_evaluation": 0.25021116018295286,
+  "estimated_evolve_seconds_5_seeds": 7506.334805488586,
+  "estimated_control_seconds_5_seeds": 7506.334805488586,
+  "estimated_total_seconds": 15012.669610977173,
+  "estimated_total_minutes": 250.21116018295288,
+  "note": "Generous upper bound: ignores fitness-cache hits (elites/duplicate structures), which only ever REDUCE actual wall-clock below this estimate."
+}
