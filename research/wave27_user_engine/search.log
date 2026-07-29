@@ -1,0 +1,31 @@
+loaded 3 symbols
+  seed 2027101: 100/400 best=0.0771
+  seed 2027101: 200/400 best=0.0771
+  seed 2027101: 300/400 best=0.0771
+  seed 2027101: 400/400 best=0.0771
+seed 2027101 done: fitness=0.0771 final=1.342
+  seed 2027102: 100/400 best=0.0275
+  seed 2027102: 200/400 best=0.0275
+  seed 2027102: 300/400 best=0.0421
+  seed 2027102: 400/400 best=0.0424
+seed 2027102 done: fitness=0.0424 final=2.695
+  seed 2027103: 100/400 best=0.0614
+  seed 2027103: 200/400 best=0.0614
+  seed 2027103: 300/400 best=0.0614
+  seed 2027103: 400/400 best=0.0614
+seed 2027103 done: fitness=0.0614 final=4.063
+  seed 2027104: 100/400 best=0.0430
+  seed 2027104: 200/400 best=0.0430
+  seed 2027104: 300/400 best=0.0430
+  seed 2027104: 400/400 best=0.0430
+seed 2027104 done: fitness=0.0430 final=0.755
+  seed 2027105: 100/400 best=0.0768
+  seed 2027105: 200/400 best=0.0768
+  seed 2027105: 300/400 best=0.0768
+  seed 2027105: 400/400 best=0.0768
+seed 2027105 done: fitness=0.0768 final=2.551
+
+FINAL (median seed):
+  components: ['ema_cross', 'price_breakout', 'atr_stop', 'fixed_risk', 'direction']
+  IS  fitness=0.0614 final=4.063 trades=430
+  OOS fitness=0.0831 final=1.171 trades=45
