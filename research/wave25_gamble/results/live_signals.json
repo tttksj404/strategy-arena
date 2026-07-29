@@ -1,0 +1,130 @@
+{
+  "generated_at_utc": "2026-07-29 04:35:28.185641+00:00",
+  "network_used": true,
+  "candidates": {
+    "B0": {
+      "BTCUSDT": {
+        "status": "HOLDING",
+        "direction": -1.0,
+        "entry_price": 63453.1,
+        "entry_time": "2026-07-28 01:00:00+00:00",
+        "current_price": 63789.5,
+        "unrealized_pct": -0.005301553430801631
+      }
+    },
+    "B1": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63789.5
+      },
+      "ETHUSDT": {
+        "status": "FRESH_SHORT_SIGNAL",
+        "current_price": 1895.63,
+        "note": "fires at the next available bar's open (t->t+1 fill discipline)"
+      },
+      "SOLUSDT": {
+        "status": "FRESH_SHORT_SIGNAL",
+        "current_price": 73.16,
+        "note": "fires at the next available bar's open (t->t+1 fill discipline)"
+      }
+    },
+    "B2": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63789.5
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1895.63
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.16
+      }
+    },
+    "B3": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63789.5
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1895.63
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.16
+      }
+    },
+    "B4": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63789.5
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1895.63
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.16
+      }
+    },
+    "B5": {
+      "BTCUSDT": {
+        "status": "HOLDING",
+        "direction": 1.0,
+        "entry_price": 63955.0,
+        "entry_time": "2026-07-29 03:00:00+00:00",
+        "current_price": 63789.5,
+        "unrealized_pct": -0.00258775701665237
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1895.63
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.16
+      }
+    },
+    "B6": {
+      "BTCUSDT": {
+        "status": "HOLDING",
+        "direction": -1.0,
+        "entry_price": 63727.0,
+        "entry_time": "2026-07-29 04:00:00+00:00",
+        "current_price": 63789.5,
+        "unrealized_pct": -0.0009807459946333807
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1895.63
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.16
+      }
+    },
+    "B7": {
+      "BTCUSDT": {
+        "status": "HOLDING",
+        "direction": 1.0,
+        "entry_price": 63955.0,
+        "entry_time": "2026-07-29 03:00:00+00:00",
+        "current_price": 63789.5,
+        "unrealized_pct": -0.00258775701665237
+      },
+      "ETHUSDT": {
+        "status": "FRESH_SHORT_SIGNAL",
+        "current_price": 1895.63,
+        "note": "fires at the next available bar's open (t->t+1 fill discipline)"
+      },
+      "SOLUSDT": {
+        "status": "FRESH_SHORT_SIGNAL",
+        "current_price": 73.16,
+        "note": "fires at the next available bar's open (t->t+1 fill discipline)"
+      }
+    }
+  }
+}
