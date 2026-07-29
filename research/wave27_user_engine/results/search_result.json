@@ -1,0 +1,341 @@
+{
+  "per_seed": [
+    {
+      "seed": 2027101,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 10
+          }
+        },
+        {
+          "id": "stoch_rsi_cross",
+          "category": "signals",
+          "params": {
+            "rsi_period": 14,
+            "stoch_period": 14
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 5.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 5.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "both"
+          }
+        }
+      ],
+      "is": {
+        "fitness": 0.07708756406532245,
+        "final": 1.3423131765767076,
+        "trades": 1297,
+        "mdd": 69.68562875273734,
+        "windows": 1814,
+        "top_quartile": 0.1353565828084316,
+        "p_ruin": 0.0016538037486218302,
+        "skew": 1.1832287198936866
+      }
+    },
+    {
+      "seed": 2027102,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 55
+          }
+        },
+        {
+          "id": "macd_cross",
+          "category": "signals",
+          "params": {
+            "fast": 12,
+            "slow": 26,
+            "signal": 9
+          }
+        },
+        {
+          "id": "trend_filter",
+          "category": "filters",
+          "params": {
+            "period": 50
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 5.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 5.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "long"
+          }
+        }
+      ],
+      "is": {
+        "fitness": 0.042428221238133584,
+        "final": 2.6953805228385534,
+        "trades": 339,
+        "mdd": 35.54791687483678,
+        "windows": 1813,
+        "top_quartile": 0.10242822123813358,
+        "p_ruin": 0.0,
+        "skew": 1.8517041325992178
+      }
+    },
+    {
+      "seed": 2027103,
+      "components": [
+        {
+          "id": "ema_cross",
+          "category": "signals",
+          "params": {
+            "fast": 9,
+            "slow": 21
+          }
+        },
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 55
+          }
+        },
+        {
+          "id": "atr_stop",
+          "category": "risk",
+          "params": {
+            "period": 14,
+            "multiplier": 1.5
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 5.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "both"
+          }
+        }
+      ],
+      "is": {
+        "fitness": 0.06144475900632415,
+        "final": 4.062787903069767,
+        "trades": 430,
+        "mdd": 38.05749314105527,
+        "windows": 1813,
+        "top_quartile": 0.11144475900632415,
+        "p_ruin": 0.0,
+        "skew": 2.133790814344715
+      },
+      "oos": {
+        "fitness": 0.08313722948334505,
+        "final": 1.1713316101765274,
+        "trades": 45,
+        "mdd": 20.73465225230736,
+        "windows": 258,
+        "top_quartile": 0.13313722948334505,
+        "p_ruin": 0.0,
+        "skew": 4.0239073627845485
+      }
+    },
+    {
+      "seed": 2027104,
+      "components": [
+        {
+          "id": "boll_breakout",
+          "category": "signals",
+          "params": {
+            "period": 14,
+            "std": 1.5
+          }
+        },
+        {
+          "id": "stoch_rsi_cross",
+          "category": "signals",
+          "params": {
+            "rsi_period": 14,
+            "stoch_period": 14
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 5.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 5.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "short"
+          }
+        }
+      ],
+      "is": {
+        "fitness": 0.04295585039565862,
+        "final": 0.7549497544934513,
+        "trades": 575,
+        "mdd": 68.6013370699683,
+        "windows": 1813,
+        "top_quartile": 0.09295585039565862,
+        "p_ruin": 0.0,
+        "skew": 1.311505839777297
+      }
+    },
+    {
+      "seed": 2027105,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 20
+          }
+        },
+        {
+          "id": "cci_signal",
+          "category": "signals",
+          "params": {
+            "period": 20,
+            "threshold": 100
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 5.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 5.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "both"
+          }
+        }
+      ],
+      "is": {
+        "fitness": 0.07675195976736386,
+        "final": 2.5509908649136044,
+        "trades": 698,
+        "mdd": 67.56004337270211,
+        "windows": 1813,
+        "top_quartile": 0.12675195976736386,
+        "p_ruin": 0.0,
+        "skew": 1.6703015017903826
+      }
+    }
+  ],
+  "final": {
+    "seed": 2027103,
+    "components": [
+      {
+        "id": "ema_cross",
+        "category": "signals",
+        "params": {
+          "fast": 9,
+          "slow": 21
+        }
+      },
+      {
+        "id": "price_breakout",
+        "category": "signals",
+        "params": {
+          "period": 55
+        }
+      },
+      {
+        "id": "atr_stop",
+        "category": "risk",
+        "params": {
+          "period": 14,
+          "multiplier": 1.5
+        }
+      },
+      {
+        "id": "fixed_risk",
+        "category": "sizing",
+        "params": {
+          "risk_pct": 5.0
+        }
+      },
+      {
+        "id": "direction",
+        "category": "sizing",
+        "params": {
+          "direction": "both"
+        }
+      }
+    ],
+    "is": {
+      "fitness": 0.06144475900632415,
+      "final": 4.062787903069767,
+      "trades": 430,
+      "mdd": 38.05749314105527,
+      "windows": 1813,
+      "top_quartile": 0.11144475900632415,
+      "p_ruin": 0.0,
+      "skew": 2.133790814344715
+    },
+    "oos": {
+      "fitness": 0.08313722948334505,
+      "final": 1.1713316101765274,
+      "trades": 45,
+      "mdd": 20.73465225230736,
+      "windows": 258,
+      "top_quartile": 0.13313722948334505,
+      "p_ruin": 0.0,
+      "skew": 4.0239073627845485
+    }
+  }
+}
