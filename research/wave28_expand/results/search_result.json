@@ -1,0 +1,363 @@
+{
+  "per_seed": [
+    {
+      "seed": 2028101,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 15
+          }
+        },
+        {
+          "id": "volume_breakout",
+          "category": "signals",
+          "params": {
+            "period": 10,
+            "multiplier": 2.0
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 8.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 10.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "both"
+          }
+        }
+      ],
+      "overlay": {
+        "confirm_bars": 1,
+        "pullback_pct": 0.0,
+        "pyramid": true
+      },
+      "is": {
+        "fitness": 0.22502848486600363,
+        "final": 24.16776119690206,
+        "trades": 1640,
+        "mdd": 79.75336306869423,
+        "windows": 1804,
+        "top_quartile": 0.39420808575292154,
+        "p_ruin": 0.02383592017738359,
+        "skew": 3.306295789244577
+      }
+    },
+    {
+      "seed": 2028102,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 120
+          }
+        },
+        {
+          "id": "volume_breakout",
+          "category": "signals",
+          "params": {
+            "period": 10,
+            "multiplier": 2.0
+          }
+        },
+        {
+          "id": "atr_stop",
+          "category": "risk",
+          "params": {
+            "period": 14,
+            "multiplier": 1.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 10.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "both"
+          }
+        }
+      ],
+      "overlay": {
+        "confirm_bars": 0,
+        "pullback_pct": 1.0,
+        "pyramid": true
+      },
+      "is": {
+        "fitness": 0.22213657367166434,
+        "final": 12.552187292845788,
+        "trades": 1743,
+        "mdd": 77.37878394327869,
+        "windows": 1804,
+        "top_quartile": 0.27490819229694147,
+        "p_ruin": 0.0005543237250554324,
+        "skew": 3.1518300525124427
+      },
+      "oos": {
+        "fitness": 0.12342048641486279,
+        "final": 1.0379685246020798,
+        "trades": 160,
+        "mdd": 27.844220120308627,
+        "windows": 257,
+        "top_quartile": 0.1734204864148628,
+        "p_ruin": 0.0,
+        "skew": 3.3774686869233914
+      }
+    },
+    {
+      "seed": 2028103,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 30
+          }
+        },
+        {
+          "id": "boll_breakout",
+          "category": "signals",
+          "params": {
+            "period": 30,
+            "std": 2.5
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 8.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 10.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "both"
+          }
+        }
+      ],
+      "overlay": {
+        "confirm_bars": 2,
+        "pullback_pct": 2.0,
+        "pyramid": true
+      },
+      "is": {
+        "fitness": 0.20189201755718716,
+        "final": 9.638966846865776,
+        "trades": 1195,
+        "mdd": 69.70992095359931,
+        "windows": 1804,
+        "top_quartile": 0.25189201755718715,
+        "p_ruin": 0.0,
+        "skew": 3.5490984262029674
+      }
+    },
+    {
+      "seed": 2028104,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 20
+          }
+        },
+        {
+          "id": "volume_breakout",
+          "category": "signals",
+          "params": {
+            "period": 20,
+            "multiplier": 2.0
+          }
+        },
+        {
+          "id": "atr_stop",
+          "category": "risk",
+          "params": {
+            "period": 14,
+            "multiplier": 1.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 10.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "long"
+          }
+        }
+      ],
+      "overlay": {
+        "confirm_bars": 3,
+        "pullback_pct": 0.0,
+        "pyramid": true
+      },
+      "is": {
+        "fitness": 0.19648704096899644,
+        "final": 11.391515826802074,
+        "trades": 1045,
+        "mdd": 65.07451469514741,
+        "windows": 1804,
+        "top_quartile": 0.24648704096899646,
+        "p_ruin": 0.0,
+        "skew": 3.7827105716204974
+      }
+    },
+    {
+      "seed": 2028105,
+      "components": [
+        {
+          "id": "price_breakout",
+          "category": "signals",
+          "params": {
+            "period": 5
+          }
+        },
+        {
+          "id": "volume_breakout",
+          "category": "signals",
+          "params": {
+            "period": 10,
+            "multiplier": 1.5
+          }
+        },
+        {
+          "id": "fixed_stop",
+          "category": "risk",
+          "params": {
+            "stop_pct": 8.0
+          }
+        },
+        {
+          "id": "fixed_risk",
+          "category": "sizing",
+          "params": {
+            "risk_pct": 10.0
+          }
+        },
+        {
+          "id": "direction",
+          "category": "sizing",
+          "params": {
+            "direction": "long"
+          }
+        }
+      ],
+      "overlay": {
+        "confirm_bars": 0,
+        "pullback_pct": 1.0,
+        "pyramid": true
+      },
+      "is": {
+        "fitness": 0.27056423596001594,
+        "final": 22.906385937135685,
+        "trades": 904,
+        "mdd": 66.20215319081133,
+        "windows": 1804,
+        "top_quartile": 0.32056423596001593,
+        "p_ruin": 0.0,
+        "skew": 4.495755853129125
+      }
+    }
+  ],
+  "final": {
+    "seed": 2028102,
+    "components": [
+      {
+        "id": "price_breakout",
+        "category": "signals",
+        "params": {
+          "period": 120
+        }
+      },
+      {
+        "id": "volume_breakout",
+        "category": "signals",
+        "params": {
+          "period": 10,
+          "multiplier": 2.0
+        }
+      },
+      {
+        "id": "atr_stop",
+        "category": "risk",
+        "params": {
+          "period": 14,
+          "multiplier": 1.0
+        }
+      },
+      {
+        "id": "fixed_risk",
+        "category": "sizing",
+        "params": {
+          "risk_pct": 10.0
+        }
+      },
+      {
+        "id": "direction",
+        "category": "sizing",
+        "params": {
+          "direction": "both"
+        }
+      }
+    ],
+    "overlay": {
+      "confirm_bars": 0,
+      "pullback_pct": 1.0,
+      "pyramid": true
+    },
+    "is": {
+      "fitness": 0.22213657367166434,
+      "final": 12.552187292845788,
+      "trades": 1743,
+      "mdd": 77.37878394327869,
+      "windows": 1804,
+      "top_quartile": 0.27490819229694147,
+      "p_ruin": 0.0005543237250554324,
+      "skew": 3.1518300525124427
+    },
+    "oos": {
+      "fitness": 0.12342048641486279,
+      "final": 1.0379685246020798,
+      "trades": 160,
+      "mdd": 27.844220120308627,
+      "windows": 257,
+      "top_quartile": 0.1734204864148628,
+      "p_ruin": 0.0,
+      "skew": 3.3774686869233914
+    }
+  }
+}
