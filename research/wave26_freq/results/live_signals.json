@@ -1,0 +1,112 @@
+{
+  "generated_at_utc": "2026-07-29 05:12:01.141573+00:00",
+  "network_used": true,
+  "candidates": {
+    "C0": {
+      "BTCUSDT": {
+        "status": "HOLDING",
+        "direction": -1.0,
+        "entry_price": 63453.1,
+        "entry_time": "2026-07-28 01:00:00+00:00",
+        "current_price": 63996.0,
+        "unrealized_pct": -0.00855592555761664
+      }
+    },
+    "C1": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63996.0
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1908.31
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.57
+      }
+    },
+    "C2": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63996.0
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1908.31
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.57
+      }
+    },
+    "C3": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63996.0
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1908.31
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.57
+      }
+    },
+    "C4": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63996.0
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1908.31
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.57
+      }
+    },
+    "C5": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63996.0
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1908.31
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.57
+      }
+    },
+    "C6": {
+      "BTCUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 63996.0
+      },
+      "ETHUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 1908.31
+      },
+      "SOLUSDT": {
+        "status": "FLAT_NO_SIGNAL",
+        "current_price": 73.57
+      }
+    },
+    "C7": {
+      "BTCUSDT": {
+        "status": "FLAT_ARMED",
+        "anchor": 65538.9,
+        "current_price": 63996.0,
+        "atr_now": 1448.8071428571436,
+        "threshold": 2897.6142857142872,
+        "distance_to_long_trigger": 4440.514285714278,
+        "distance_to_short_trigger": 1354.7142857142899,
+        "admission_if_triggered": "admissible now"
+      }
+    }
+  }
+}
