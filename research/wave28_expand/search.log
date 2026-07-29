@@ -1,0 +1,32 @@
+loaded 10 symbols
+  seed 2028101: 500/2000 best=0.1450
+  seed 2028101: 1000/2000 best=0.1674
+  seed 2028101: 1500/2000 best=0.1674
+  seed 2028101: 2000/2000 best=0.2250
+seed 2028101 done: fit=0.2250 final=24.168
+  seed 2028102: 500/2000 best=0.1506
+  seed 2028102: 1000/2000 best=0.2221
+  seed 2028102: 1500/2000 best=0.2221
+  seed 2028102: 2000/2000 best=0.2221
+seed 2028102 done: fit=0.2221 final=12.552
+  seed 2028103: 500/2000 best=0.1659
+  seed 2028103: 1000/2000 best=0.1674
+  seed 2028103: 1500/2000 best=0.2019
+  seed 2028103: 2000/2000 best=0.2019
+seed 2028103 done: fit=0.2019 final=9.639
+  seed 2028104: 500/2000 best=0.1690
+  seed 2028104: 1000/2000 best=0.1965
+  seed 2028104: 1500/2000 best=0.1965
+  seed 2028104: 2000/2000 best=0.1965
+seed 2028104 done: fit=0.1965 final=11.392
+  seed 2028105: 500/2000 best=0.2706
+  seed 2028105: 1000/2000 best=0.2706
+  seed 2028105: 1500/2000 best=0.2706
+  seed 2028105: 2000/2000 best=0.2706
+seed 2028105 done: fit=0.2706 final=22.906
+
+FINAL (median seed):
+  components: ['price_breakout', 'volume_breakout', 'atr_stop', 'fixed_risk', 'direction'] overlay: {'confirm_bars': 0, 'pullback_pct': 1.0, 'pyramid': True}
+  IS  fit=0.2221 final=12.552 trades=1743 skew=3.15
+  OOS fit=0.1234 final=1.038 trades=160 skew=3.38
+  full-period multiple = 13.029x  (V1 = 5.539x)
