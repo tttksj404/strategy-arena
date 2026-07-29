@@ -1,0 +1,67 @@
+[
+  {
+    "leverage": 1,
+    "final": 138.47873442651783,
+    "multiple": 5.539149377060713,
+    "trades_taken": 153,
+    "liquidations": 0,
+    "mdd": -0.5099536309955651,
+    "wiped": false,
+    "mc_p05": 13.667275382851363,
+    "mc_median": 135.05007037006723,
+    "mc_ruin_prob": 0.0,
+    "mc_wipe_prob": 0.0
+  },
+  {
+    "leverage": 2,
+    "final": 137.27699593399228,
+    "multiple": 5.491079837359691,
+    "trades_taken": 153,
+    "liquidations": 0,
+    "mdd": -0.7965520834691138,
+    "wiped": false,
+    "mc_p05": 1.8552567332189431,
+    "mc_median": 130.95793443794017,
+    "mc_ruin_prob": 0.0,
+    "mc_wipe_prob": 0.0
+  },
+  {
+    "leverage": 3,
+    "final": 33.430527596351354,
+    "multiple": 1.3372211038540542,
+    "trades_taken": 153,
+    "liquidations": 0,
+    "mdd": -0.9362628327105922,
+    "wiped": false,
+    "mc_p05": 0.06836975640159033,
+    "mc_median": 31.935231667723244,
+    "mc_ruin_prob": 0.0,
+    "mc_wipe_prob": 0.0148
+  },
+  {
+    "leverage": 5,
+    "final": 0.0,
+    "multiple": 0.0,
+    "trades_taken": 8,
+    "liquidations": 1,
+    "mdd": -1.0,
+    "wiped": true,
+    "mc_p05": 0.0,
+    "mc_median": 0.0,
+    "mc_ruin_prob": 0.0,
+    "mc_wipe_prob": 0.6589
+  },
+  {
+    "leverage": 10,
+    "final": 0.0,
+    "multiple": 0.0,
+    "trades_taken": 2,
+    "liquidations": 1,
+    "mdd": -1.0,
+    "wiped": true,
+    "mc_p05": 0.0,
+    "mc_median": 0.0,
+    "mc_ruin_prob": 0.0,
+    "mc_wipe_prob": 1.0
+  }
+]
