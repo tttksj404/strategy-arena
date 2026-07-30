@@ -59,6 +59,30 @@ SLEEVE_DEAD_THRESHOLD: Final = 0.005  # below half a cent the sleeve is dead, st
 
 
 @dataclass(frozen=True)
+class SizingMode:
+    """How much capital each position risks.
+
+    `compounding` (the default, and what wave30/31/32 all used) sizes every position off the
+    CURRENT sleeve equity, so results are a growth multiple.
+
+    `fixed_base=True` sizes every position off the STARTING sleeve forever. wave33 needs this
+    for two independent reasons:
+      1. The question "how many dollars does one entry make" has no answer under compounding --
+         trade #900's dollars are not comparable to trade #1's. Fixing the base makes per-trade
+         P&L a single common unit, which is the only way to test a "$10 per entry" requirement.
+      2. It removes the capacity fiction that inflated wave30 (notional reached $1.9M against a
+         cost model fitted at $45). A fixed $100 base keeps every order the same small size.
+    Equity is still tracked and still floors at zero: a fixed-size loser can drain the account,
+    and when it does, trading stops. So this is not a way to hide ruin -- it exposes it.
+    """
+
+    fixed_base: bool = False
+
+
+COMPOUNDING: Final = SizingMode()
+
+
+@dataclass(frozen=True)
 class ExecutionStress:
     """Optional adverse-execution overlay. Defaults are a strict no-op.
 
@@ -289,7 +313,11 @@ def _funding_paid_fraction(arrays: SymbolArrays, direction: float, entry_bar: in
 
 
 def run_genome(
-    cache: MarketCache, genome: Genome, mode: str = "is", stress: ExecutionStress = NO_STRESS
+    cache: MarketCache,
+    genome: Genome,
+    mode: str = "is",
+    stress: ExecutionStress = NO_STRESS,
+    sizing: SizingMode = COMPOUNDING,
 ) -> Wave30Result:
     """Simulate `genome`. mode='is' evaluates bars up to OOS_SPLIT only; mode='full' uses the
     whole span. Any mode other than these two raises -- and 'oos'/'full' must never be reached
@@ -395,8 +423,14 @@ def run_genome(
             continue
         exit_bar, exit_price, reason, mae, liquidated = resolved
 
-        base = sleeve_equity / genome.max_concurrent
+        base = (sleeve_start if sizing.fixed_base else sleeve_equity) / genome.max_concurrent
         notional = base * leverage
+        if sizing.fixed_base and sleeve_equity <= base:
+            # Fixed sizing cannot fund another full-size position out of what is left. This is
+            # the fixed-size analogue of ruin and must stop the run, not silently shrink the
+            # bet (shrinking would quietly turn it back into compounding).
+            dead = True
+            break
         if base <= SLEEVE_DEAD_THRESHOLD:
             # A sleeve that can no longer fund even one slot is finished. This must terminate
             # the run rather than `continue`: otherwise a sleeve sitting just above the dead

@@ -1,0 +1,13 @@
+
+candidate source: best_feasible | seed 2026334
+IS  진입당 중앙값 $-0.006 | 평균 $-0.001 | 1.03회/활동일 | 2286거래 | P(≥+$10) 0.0% | P(≤−$10) 0.0%
+OOS 진입당 중앙값 $-0.012 | 평균 $-0.017 | 135거래
+진입당 기대값 $10에 필요한 자본: 도달 불가 (기대값 ≤ 0 — 자본을 키워도 손실만 커진다)
+[PASS] F1_method_validity
+[PASS] F2_frequency_and_survival
+[FAIL] F3_per_entry_target
+[FAIL] F4_oos_per_entry
+[PASS] F5_ruin
+[PASS] F6_executability
+
+OVERALL FAIL | failures ['F3_per_entry_target', 'F4_oos_per_entry']
