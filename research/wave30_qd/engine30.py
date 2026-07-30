@@ -59,6 +59,30 @@ SLEEVE_DEAD_THRESHOLD: Final = 0.005  # below half a cent the sleeve is dead, st
 
 
 @dataclass(frozen=True)
+class ExecutionStress:
+    """Optional adverse-execution overlay. Defaults are a strict no-op.
+
+    Added for wave32, whose deployment candidate has a 1.46% stop -- at 3.08x leverage the
+    round-trip taker cost alone is 25% of that stop distance, so the honest question is not
+    "what if slippage doubles" but "what if the STOP itself fills worse than its trigger".
+    `stop_slippage` therefore worsens the fill on MARKET exits only (stop and forced max-hold
+    close); a take-profit is a resting limit order and does not suffer adverse slippage, so it
+    is deliberately excluded. A worsened stop fill also feeds the liquidation test, because a
+    bad fill really can push the realised loss past the maintenance band.
+
+    With cost_multiplier=1.0 and stop_slippage=0.0 every arithmetic operation is a
+    multiplication by exactly 1.0, so pre-existing wave30/wave31 results are reproduced
+    bit-for-bit (pinned by tests and by verify31.py's trade-for-trade check).
+    """
+
+    cost_multiplier: float = 1.0
+    stop_slippage: float = 0.0
+
+
+NO_STRESS: Final = ExecutionStress()
+
+
+@dataclass(frozen=True)
 class Wave30Trade:
     symbol: str
     direction: float
@@ -161,6 +185,7 @@ def _resolve_trade(
     genome: Genome,
     liq_band: float,
     n_bars: int,
+    stress: ExecutionStress = NO_STRESS,
 ) -> tuple[int, float, str, float, bool] | None:
     """Walk bar entry_bar..entry_bar+max_hold and return
     (exit_bar, exit_price, exit_reason, mae, liquidated), or None if unfillable.
@@ -238,6 +263,11 @@ def _resolve_trade(
         reason = "max_hold"
         exit_price = close[offset]
 
+    if reason != "target" and stress.stop_slippage:
+        # Market exits fill worse than their trigger under stress; a resting take-profit limit
+        # does not (see ExecutionStress docstring).
+        exit_price = exit_price * (1.0 - direction * stress.stop_slippage)
+
     mae = float(max(0.0, adverse[offset]))
     realised = direction * (exit_price / entry_price - 1.0)
     liquidated = bool(realised <= -liq_band)
@@ -258,10 +288,16 @@ def _funding_paid_fraction(arrays: SymbolArrays, direction: float, entry_bar: in
 # ---------------------------------------------------------------------------------------
 
 
-def run_genome(cache: MarketCache, genome: Genome, mode: str = "is") -> Wave30Result:
+def run_genome(
+    cache: MarketCache, genome: Genome, mode: str = "is", stress: ExecutionStress = NO_STRESS
+) -> Wave30Result:
     """Simulate `genome`. mode='is' evaluates bars up to OOS_SPLIT only; mode='full' uses the
     whole span. Any mode other than these two raises -- and 'oos'/'full' must never be reached
-    from inside the search loop (search30 passes mode='is' unconditionally)."""
+    from inside the search loop (search30 passes mode='is' unconditionally).
+
+    `stress` defaults to a no-op; wave32 uses it to re-price the chosen candidate under adverse
+    execution. It is NOT reachable from the search loop, so no genome can be selected for
+    looking good under a stress setting the search itself chose."""
     if mode not in {"is", "full"}:
         raise OOSLeakageError(f"unsupported evaluation mode {mode!r}")
     genome.validate()
@@ -354,7 +390,7 @@ def run_genome(cache: MarketCache, genome: Genome, mode: str = "is") -> Wave30Re
 
         pointer[symbol] = index + 1
         arrays = cache.arrays[symbol]
-        resolved = _resolve_trade(arrays, entry_bar, direction, genome, liq_band, horizon)
+        resolved = _resolve_trade(arrays, entry_bar, direction, genome, liq_band, horizon, stress)
         if resolved is None:
             continue
         exit_bar, exit_price, reason, mae, liquidated = resolved
@@ -373,7 +409,7 @@ def run_genome(cache: MarketCache, genome: Genome, mode: str = "is") -> Wave30Re
         entry_price = float(arrays.open[entry_bar])
         gross = direction * (exit_price / entry_price - 1.0)
         funding_fraction = _funding_paid_fraction(arrays, direction, entry_bar, exit_bar)
-        cost_fraction = 2.0 * arrays.cost_rate
+        cost_fraction = 2.0 * arrays.cost_rate * stress.cost_multiplier
         if liquidated:
             net = -1.0
         else:
