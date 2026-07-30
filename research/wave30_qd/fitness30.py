@@ -62,7 +62,15 @@ class Evaluation:
 
     @property
     def objectives(self) -> tuple[float, float, float]:
-        """NSGA-II objective vector, all three expressed as MINIMISATION."""
+        """NSGA-II objective vector, all three expressed as MINIMISATION.
+
+        A wave that defines a different objective set (wave31's sprint risk axis) writes its own
+        vector into extras["objective_vector"] rather than subclassing, so search30's NSGA-II
+        stays objective-agnostic and there is exactly one place where the vector is chosen.
+        """
+        override = self.extras.get("objective_vector")
+        if override is not None:
+            return tuple(float(x) for x in override)  # type: ignore[return-value]
         return (-self.fitness, self.sleeve_mdd, self.wipe_probability)
 
 
