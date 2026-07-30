@@ -1,0 +1,10 @@
+[is] engine trades 51 | naive trades 51
+        max |net return| disagreement = 0.000e+00
+        wins 30/51 (58.8%) | sleeve $75.00 -> $230,458.64
+        exit reasons {'stop': 35, 'target': 16} | max MAE 6.20% vs liquidation band 11.59%
+[full] engine trades 63 | naive trades 63
+        max |net return| disagreement = 0.000e+00
+        wins 33/63 (52.4%) | sleeve $75.00 -> $19,152.78
+        exit reasons {'stop': 47, 'target': 16} | max MAE 6.20% vs liquidation band 11.59%
+
+Independent naive re-simulation agrees with engine30 trade-for-trade.

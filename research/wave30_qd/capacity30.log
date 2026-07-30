@@ -1,0 +1,13 @@
+sleeve $75.00 | trades IS 51 / full 63
+
+                            IS sleeve    full sleeve   IS total$100  full total$100
+compounding (as run)   $   230,458.64 $    19,152.78 $   230,504.15 $     19,199.32
+fixed notional         $     1,180.03 $     1,024.31 $     1,225.54 $      1,070.85
+
+fixed-notional CAGR  IS +51.15%   full +41.23%
+I5 baseline CAGR     IS +10.38%   full  +9.47%
+
+sum of trade returns: IS +14.734  OOS -2.076  full +12.657
+mean per trade:       IS +0.2889  OOS -0.1730
+win rate:             IS 58.8%  OOS 25.0%
+OOS trades: 12 -> -13%, -12%, -29%, -39%, -21%, -29%, +0%, -39%, +14%, -21%, +1%, -17%

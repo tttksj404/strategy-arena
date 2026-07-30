@@ -1,0 +1,145 @@
+{
+  "wave": "wave30_qd",
+  "method": "MAP-Elites (quality-diversity) + NSGA-II (multi-objective Pareto)",
+  "selection_rule": "median-seed archive best (SPEC.md frozen)",
+  "chosen_seed": 2026304,
+  "candidate": {
+    "genome": {
+      "signal_family": "funding_breakout",
+      "lookback_bars": 72,
+      "entry_threshold": 1.134774,
+      "stop_pct": 0.04834237,
+      "target_r": 2.679868,
+      "trail_enabled": true,
+      "risk_frac": 0.4,
+      "max_hold_bars": 720,
+      "allow_short": false,
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "max_concurrent": 1,
+      "cooldown_bars_after_loss": 6,
+      "sleeve_fraction": 0.75,
+      "derived_leverage": 8.274316,
+      "derived_liquidation_band": 0.115856
+    },
+    "fitness": 1.4115241397965472,
+    "fold_cagrs": [
+      2.3700715506085688,
+      0.6399981239356078,
+      5.182614700129112,
+      3.832881022996
+    ],
+    "is_total_cagr": 2.584019735900612,
+    "is_total_final_usdt": 230504.37463962167,
+    "sleeve_mdd": 0.6624109393177239,
+    "total_mdd": 0.6548745123914449,
+    "trades_per_year": 8.407859078590786,
+    "n_trades": 51,
+    "n_liquidations": 0,
+    "wipe_probability": 0.0,
+    "descriptor": [
+      3,
+      4,
+      0
+    ],
+    "mean_leverage": 8.27431550617956,
+    "min_notional_usdt": 240.82015229142607,
+    "sleeve_survived": true
+  },
+  "baseline_reference_i5": {
+    "is_fitness": 0.036142872907965015,
+    "is_fold_cagrs": [
+      0.20602338850874435,
+      0.09750203444623073,
+      0.12136667992621186,
+      0.00029338008418799966
+    ],
+    "is_cagr": 0.10379538131051258,
+    "is_final_usdt": 182.0420703593051,
+    "full_cagr": 0.0946874734619465,
+    "full_final_usdt": 186.15914528897682,
+    "is_mdd": 0.01884640803015245
+  },
+  "final_evaluation": {
+    "genome": {
+      "signal_family": "funding_breakout",
+      "lookback_bars": 72,
+      "entry_threshold": 1.134774,
+      "stop_pct": 0.04834237,
+      "target_r": 2.679868,
+      "trail_enabled": true,
+      "risk_frac": 0.4,
+      "max_hold_bars": 720,
+      "allow_short": false,
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "max_concurrent": 1,
+      "cooldown_bars_after_loss": 6,
+      "sleeve_fraction": 0.75,
+      "derived_leverage": 8.274315,
+      "derived_liquidation_band": 0.115856
+    },
+    "is": {
+      "start_usdt": 100.00116632449986,
+      "end_usdt": 230504.14729981383,
+      "days": 2214.0,
+      "annualized": 2.5840191531508085,
+      "mdd": 0.6548745201914481
+    },
+    "oos": {
+      "start_usdt": 230504.14952933474,
+      "end_usdt": 19199.31642561044,
+      "days": 292.0,
+      "annualized": -0.9552535307249256,
+      "mdd": 0.9234216002611197
+    },
+    "full": {
+      "start_usdt": 100.00116632449986,
+      "end_usdt": 19199.31642561044,
+      "days": 2507.0,
+      "annualized": 1.1499491263202346,
+      "mdd": 0.9234216002611197
+    },
+    "baseline_is": {
+      "start_usdt": 100.00466529799945,
+      "end_usdt": 182.0420703593051,
+      "days": 2214.0,
+      "annualized": 0.10379538131051258,
+      "mdd": 0.01884640803015245
+    },
+    "baseline_oos": {
+      "start_usdt": 182.0509884429347,
+      "end_usdt": 186.15914528897682,
+      "days": 292.0,
+      "annualized": 0.028286582044810604,
+      "mdd": 0.009030327840745462
+    },
+    "baseline_full": {
+      "start_usdt": 100.00466529799945,
+      "end_usdt": 186.15914528897682,
+      "days": 2507.0,
+      "annualized": 0.0946874734619465,
+      "mdd": 0.01884640803015245
+    },
+    "sleeve_mdd_full": 0.9236041853712778,
+    "n_trades_full": 63,
+    "n_liquidations_full": 0,
+    "mean_leverage": 8.274315057370998,
+    "min_notional_usdt": 240.82013823622344,
+    "sleeve_survived": true,
+    "trades_per_year": 9.172317510969286,
+    "oos_start_day": "2025-10-01 00:00:00+00:00"
+  },
+  "gates": {
+    "P1_method_validity": {
+      "status": "FAIL",
+      "seeds": 5,
+      "fitness_wins": 2,
+      "coverage_wins": 5,
+      "required_wins": 4,
+      "per_seed": [
+        {
+          "seed": 2026301,
+          "evo
