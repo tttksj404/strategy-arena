@@ -1,0 +1,29 @@
+=== Gate 0 (fidelity) — must PASS before any leverage number is reported ===
+  trades ref=99 sim=99 | final |err|=6.395e-14 | equity |err|=7.105e-14
+  GATE 0: PASS
+  funding-convention gap at L=1 (fixed vs rebalanced): +2.9627%  ($211.31 vs $205.23)
+  L=1    final=$    211.31  trades= 99 liq= 0  MDD=  -71.7%  worst=  -25.67$  wipe=  0.00%
+  L=1.5  final=$    170.82  trades= 99 liq= 0  MDD=  -87.6%  worst=  -38.50$  wipe=  0.00%
+  L=2    final=$     97.17  trades= 99 liq= 0  MDD=  -95.8%  worst=  -51.32$  wipe=  0.00%
+  L=2.5  final=$      0.00  trades= 71 liq= 1  MDD= -100.0%  worst= -100.00$  wipe= 63.86%
+  L=3    final=$      0.00  trades= 25 liq= 1  MDD= -100.0%  worst= -100.00$  wipe= 64.06%
+  L=4    final=$      0.00  trades= 25 liq= 1  MDD= -100.0%  worst= -100.00$  wipe= 64.06%
+  L=5    final=$      0.00  trades= 14 liq= 1  MDD= -100.0%  worst= -100.00$  wipe= 63.67%
+
+=== sweep table (자본 $100 전액, fixed-notional, 장중 청산 검사) ===
+   L        최종$      배수     CAGR    거래   청산      MDD     승률    중위일      평균$       최고$       최악$  ≥30%     전멸%  R1  R2  R3
+   1     211.31   2.11x    11.5%    99    0   -71.7%  45.5%   2.00     1.79    104.46    -25.67     5   0.00%   O   O   X
+ 1.5     170.82   1.71x     8.1%    99    0   -87.6%  45.5%   2.00     2.69    156.68    -38.50     7   0.00%   O   O   X
+   2      97.17   0.97x    -0.4%    99    0   -95.8%  45.5%   2.00     3.58    208.88    -51.32    10   0.00%   O   X   X
+ 2.5       0.00   0.00x  -100.0%    71    1  -100.0%  45.1%   2.00    -0.04    117.61   -100.00     6  63.86%   X   X   X
+   3       0.00   0.00x  -100.0%    25    1  -100.0%  60.0%   2.00     1.99     80.55   -100.00     2  64.06%   X   X   X
+   4       0.00   0.00x  -100.0%    25    1  -100.0%  60.0%   2.00     3.97    107.29   -100.00     3  64.06%   X   X   X
+   5       0.00   0.00x  -100.0%    14    1  -100.0%  71.4%   2.00     4.72     85.79   -100.00     3  63.67%   X   X   X
+
+=== 판정 ===
+  R1+R2 통과 최고 레버리지 = 1.5x (CAGR 8.1%, 청산 0회, 전멸확률 0.00%, 최악 -38.50$)
+  R3(1x CAGR 11.5% 초과) 동시 통과: 아니오 — 즉 레버리지를 올려서 얻은 게 없다
+
+  집중도 점검: L=1 최고 1회가 전체 ROI 합의 58.9%, +30% 이상 진입은 5회 / 99회
+
+  -> C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena\research\wave32_v2lev\results\sweep.json
