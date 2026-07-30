@@ -1,0 +1,19 @@
+L1 genome verified against SPEC.md: breakout lev 3.083455x band 0.319312 symbols ('BTCUSDT', 'ETHUSDT')
+
+            scenario   full ret   full ann      MDD    OOS ann  OOS 30d p50  trades  liq   win%  mean/trade
+         S0_baseline    1825.5%     53.82%    40.4%     -2.06%       -7.05%    1019    0  29.5%     +1.085%
+          S1_cost_x3      57.5%      6.83%    54.8%    -31.74%       -9.15%    1019    0  29.2%     +0.343%
+   S2_stop_slip_10bp     695.8%     35.26%    43.2%    -14.55%       -7.83%    1019    0  29.4%     +0.827%
+   S3_combined_worst     -71.6%    -16.75%    86.7%    -48.12%      -11.23%    1016    0  28.5%     -0.156%
+
+[FAIL] D1_oos_beats_i5
+[FAIL] D2_oos_consistency
+[PASS] D3_ruin
+[PASS] D4_sprint_survival
+[PASS] D5_deflated_sharpe
+[PASS] D6_executability
+[PASS] D7_worst_year
+[FAIL] D8_stress_durability
+
+OVERALL FAIL | failures ['D1_oos_beats_i5', 'D2_oos_consistency', 'D8_stress_durability']
+paper 전진검증 승인: False
