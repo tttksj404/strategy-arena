@@ -1,0 +1,28 @@
+{
+  "leverage": 2.5,
+  "model": "fixed",
+  "final_usd": 0.0,
+  "multiple": 0.0,
+  "cagr": -1.0,
+  "trades": 71,
+  "liquidations": 1,
+  "mdd": -1.0,
+  "win_rate": 0.4507042253521127,
+  "median_hold_days": 2.0,
+  "avg_usd_per_trade": -0.043108721578682875,
+  "best_usd": 117.60799058984884,
+  "worst_usd": -100.0,
+  "worst_roi": -1.0,
+  "n_ge_30pct": 6,
+  "hold_of_big": 3.5,
+  "wipe_prob": 0.6386,
+  "top1_roi_share_of_sum": NaN,
+  "n_roi_le_m50pct": 2,
+  "gates": {
+    "R1": false,
+    "R2": false,
+    "R3": false,
+    "R1R2": false,
+    "all": false
+  }
+}

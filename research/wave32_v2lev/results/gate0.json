@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "ref_trades": 99,
+  "sim_trades": 99,
+  "trade_diff": 0,
+  "ref_final": 51.308530324693784,
+  "sim_final": 51.30853032469385,
+  "final_abs_err": 6.394884621840902e-14,
+  "equity_max_abs_err": 7.105427357601002e-14,
+  "trade_roi_max_abs_err": 1.0269562977782698e-15,
+  "scale_invariance_err": 0.0,
+  "fixed_L1_final_per_100": 211.31458431445347,
+  "rebalanced_L1_final_per_100": 205.2341212987754,
+  "fixed_vs_rebalanced_L1_rel_gap": 0.029626959577673105,
+  "fixed_L1_trades": 99,
+  "fixed_L1_liquidations": 0
+}
