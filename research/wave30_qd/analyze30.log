@@ -1,0 +1,53 @@
+============================================================================================================
+1. ILLUMINATED MAP -- best IS result reachable in each leverage band (union of 5 seeds)
+   I5 baseline IS walk-forward fitness = 0.0361 (IS CAGR 10.38%, IS MDD 1.88%)
+============================================================================================================
+ lev band  cells  genomes  best fit    IS CAGR  sleeveMDD   wipeP  trades  sleeve%            family
+------------------------------------------------------------------------------------------------------------
+     1-2x     27      124    0.4469     59.76%      77.7%   0.000     210      25%  funding_breakout
+     2-4x     23      102    0.6492     96.55%      46.9%   0.000      46     100%  funding_breakout
+     4-7x     19       86    0.9330    129.36%      87.1%   0.000      96     100%  funding_breakout
+    7-11x     16       71    1.7705    101.52%      98.6%   0.001     101      50%  funding_breakout
+   11-15x     15       62    0.7276    154.50%      86.0%   0.043     114     100%  funding_breakout
+   15-20x     12       58    0.8011    102.37%      93.3%   0.088     120      25%  funding_breakout
+
+============================================================================================================
+2. IS-ONLY PLAUSIBILITY SCREEN -- how many archive entries clear the two risk ceilings
+   that can be tested without unsealing OOS: sleeve MDD <= 35% AND wipe prob < 5% AND IS fitness > I5's 0.0361
+============================================================================================================
+ lev band  entries   MDD ok  wipe ok  beats I5   ALL THREE  best surviving fit
+------------------------------------------------------------------------------------------------------------
+     1-2x      124       53      114       117          52              0.4161
+     2-4x      102       38       90        96          36              0.5789
+     4-7x       86       28       67        83          28              0.5254
+    7-11x       71       23       56        68          22              0.2331
+   11-15x       62       17       45        60          16              0.1358
+   15-20x       58       13       41        50          10              0.2461
+------------------------------------------------------------------------------------------------------------
+   total entries clearing all three IS screens: 164 of 503
+
+============================================================================================================
+3. CAPACITY REALITY CHECK on the judged candidate
+============================================================================================================
+   trades 63 | wins 33 (52.4%) | liquidations 0
+   notional per trade: min $241  median $16,205  max $1,906,887
+   the measured slippage mapping was fitted to $45 Bitget order-book walks and is
+   applied UNCHANGED at every one of these sizes -- the largest is 42,375x the fitted order size.
+   top 5 trade returns: +107.9%, +106.5%, +106.4%, +106.2%, +106.2%
+   those 5 trades supply 65.5% of the total log-growth (63 trades in 6.9 years)
+   worst 5: -38.2%, -38.5%, -39.3%, -41.0%, -41.1%
+
+============================================================================================================
+4. WHAT THE PARETO FRONTS CHOSE (union across seeds, IS only)
+============================================================================================================
+   front members: 600 | family mix: reversion 382, funding_breakout 213, momentum 5
+   front members clearing both IS risk ceilings: 567
+   best such member: fitness 0.5789 | IS CAGR 76.75% | lev 2.35x | sleeve 50% | MDD 30.5% | funding_breakout
+
+   leverage distribution of all archive entries (union, 503 genomes):
+      p5     1.00x
+      p25    2.10x
+      p50    4.51x
+      p75   10.45x
+      p95   19.67x
+      p100  20.00x
