@@ -1,0 +1,31 @@
+low-risk alternative (L1) genome:
+   signal_family = breakout
+   lookback_bars = 168
+   entry_threshold = 1.390576
+   stop_pct = 0.01461576
+   target_r = 4.838777
+   trail_enabled = False
+   risk_frac = 0.04506704
+   max_hold_bars = 48
+   allow_short = True
+   symbols = ['BTCUSDT', 'ETHUSDT']
+   max_concurrent = 3
+   cooldown_bars_after_loss = 24
+   sleeve_fraction = 1.0
+   derived_leverage = 3.083455
+   derived_liquidation_band = 0.319312
+
+연도별 30일창 수익 중앙값 (양수창 비율)   [IS 경계 = 2025-09-30]
+  year              판정후보(C)            저위험대안 L1(IS만)               I5
+  2019      +10.60% (  77%)           +3.68% (  77%)   +0.20% ( 100%)
+  2020       +4.39% (  54%)           +5.53% (  71%)   +1.30% (  97%)
+  2021       +7.79% (  53%)           +0.62% (  52%)   +0.91% (  99%)
+  2022       -0.37% (  50%)           +3.42% (  62%)   +0.15% (  92%)
+  2023      +15.97% (  68%)           +1.70% (  57%)   +0.15% (  81%)
+  2024       +8.76% (  66%)           +3.51% (  58%)   +0.15% (  73%)
+  2025      -14.08% (  37%)           +4.85% (  77%)   +0.12% (  63%)
+  2026      +13.20% (  57%)                (OOS 미개봉)   +0.15% (  94%)
+
+음수 연도수: 판정후보 2/8 | L1(IS) 0/7
+L1 IS: $100 -> $1,875.86, 거래 901건, 청산 0건, 최대MAE 11.61% vs 청산선 31.93%
+L1 거래통계: 승률 29.7% 평균 +1.193% 최고 +21.9% 최악 -7.0%

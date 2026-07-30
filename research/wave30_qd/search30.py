@@ -51,18 +51,22 @@ class Evaluator:
     """Shared, memoised genome -> Evaluation. Counts only DISTINCT evaluations against the
     budget so a cache hit cannot let one algorithm quietly buy extra search."""
 
-    def __init__(self, cache: MarketCache, seed: int) -> None:
+    def __init__(self, cache: MarketCache, seed: int, evaluate_fn=None) -> None:
         self.cache = cache
         self.rng = np.random.default_rng(seed)
         self._memo: dict[tuple, Evaluation] = {}
         self.n_evaluations = 0
+        # wave31 swaps in its own sprint objective here. The search algorithms themselves are
+        # objective-agnostic -- they only read .fitness / .descriptor / .objectives -- so the
+        # injection point is deliberately this one function and nothing else.
+        self._evaluate_fn = evaluate_fn if evaluate_fn is not None else evaluate
 
     def __call__(self, genome: Genome) -> Evaluation:
         key = genome.key()
         hit = self._memo.get(key)
         if hit is not None:
             return hit
-        result = evaluate(self.cache, genome, self.rng)
+        result = self._evaluate_fn(self.cache, genome, self.rng)
         self._memo[key] = result
         self.n_evaluations += 1
         return result

@@ -184,13 +184,17 @@ def gate_p4_block_shuffle(total_curve: np.ndarray, seed: int) -> GateOutcome:
     )
 
 
-def gate_p5_deflated_sharpe(total_curve: np.ndarray, daily_index: pd.DatetimeIndex) -> GateOutcome:
+def gate_p5_deflated_sharpe(
+    total_curve: np.ndarray, daily_index: pd.DatetimeIndex, trials: int = P5_CUMULATIVE_TRIALS
+) -> GateOutcome:
+    """`trials` is the CUMULATIVE search count across every wave to date; a later wave passes
+    its own larger figure rather than relabelling this one's output."""
     series = [
         TimedValue(timestamp=daily_index[i].to_pydatetime(), value=float(total_curve[i]))
         for i in range(len(total_curve))
     ]
     try:
-        result = deflated_sharpe(series, trials=P5_CUMULATIVE_TRIALS)
+        result = deflated_sharpe(series, trials=trials)
     except Exception as error:  # deep_stats raises DeepValidationError on degenerate input
         return GateOutcome("P5_deflated_sharpe", "FAIL", {"reason": f"{type(error).__name__}: {error}"})
     return GateOutcome(
@@ -202,7 +206,7 @@ def gate_p5_deflated_sharpe(total_curve: np.ndarray, daily_index: pd.DatetimeInd
             "observed_sharpe": result.observed_sharpe,
             "benchmark_sharpe": result.benchmark_sharpe,
             "n_days": result.n_days,
-            "trials": P5_CUMULATIVE_TRIALS,
+            "trials": trials,
             "skew": result.skew,
             "kurtosis": result.kurtosis,
         },
