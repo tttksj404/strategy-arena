@@ -1,0 +1,81 @@
+{
+  "windows": [
+    {
+      "year": 2021,
+      "picked_leverage": 1.0,
+      "picked_stop": null,
+      "train_multiple": -1.0,
+      "fwd_multiple": 1.7268730631081146,
+      "fixed_multiple": 1.7268730631081146,
+      "wf_equity": 43.171826577702866,
+      "fixed_equity": 43.171826577702866,
+      "trades": 16
+    },
+    {
+      "year": 2022,
+      "picked_leverage": 8.0,
+      "picked_stop": 0.04,
+      "train_multiple": 12.325078541385704,
+      "fwd_multiple": 0.05246108451919195,
+      "fixed_multiple": 1.4286706117487606,
+      "wf_equity": 2.2648408429407674,
+      "fixed_equity": 61.67831988707815,
+      "trades": 23
+    },
+    {
+      "year": 2023,
+      "picked_leverage": 3.0,
+      "picked_stop": null,
+      "train_multiple": 4.8784209907314935,
+      "fwd_multiple": 2.9961374532661953,
+      "fixed_multiple": 1.7920972430037678,
+      "wf_equity": 6.785774475221814,
+      "fixed_equity": 110.53354702273722,
+      "trades": 25
+    },
+    {
+      "year": 2024,
+      "picked_leverage": 3.0,
+      "picked_stop": null,
+      "train_multiple": 4.764277549207131,
+      "fwd_multiple": 1.2313700160989498,
+      "fixed_multiple": 1.2846475661286,
+      "wf_equity": 8.355799224797728,
+      "fixed_equity": 141.99665215832056,
+      "trades": 24
+    },
+    {
+      "year": 2025,
+      "picked_leverage": 3.0,
+      "picked_stop": 0.08,
+      "train_multiple": 4.559241661579498,
+      "fwd_multiple": 0.39992095699024316,
+      "fixed_multiple": 0.8280396739266497,
+      "wf_equity": 3.3416592223994392,
+      "fixed_equity": 117.57886155185165,
+      "trades": 27
+    },
+    {
+      "year": 2026,
+      "picked_leverage": 1.0,
+      "picked_stop": 0.08,
+      "train_multiple": 1.2327948805962998,
+      "fwd_multiple": 1.0730905542455909,
+      "fixed_multiple": 0.9588061152670114,
+      "wf_equity": 3.5859029470645045,
+      "fixed_equity": 112.73533148204865,
+      "trades": 10
+    }
+  ],
+  "walkforward_final": 3.5859029470645045,
+  "walkforward_multiple": 0.14343611788258018,
+  "fixed1x_final": 112.73533148204865,
+  "fixed1x_multiple": 4.509413259281946,
+  "wf_trades": 125,
+  "fixed_trades": 140,
+  "wf_n_ge_30pct": 16,
+  "fixed_n_ge_30pct": 4,
+  "wf_worst_trade": -0.36286961850867716,
+  "fixed_worst_trade": -0.12095653950289234,
+  "years_wf_beat_fixed": 2
+}
