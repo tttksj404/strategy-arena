@@ -202,6 +202,9 @@ def _last_known_funding(arrays: SymbolArrays) -> np.ndarray:
 # ---------------------------------------------------------------------------------------
 
 
+_WINDOW_LADDER: Final = (24, 96, 336)
+
+
 def _resolve_trade(
     arrays: SymbolArrays,
     entry_bar: int,
@@ -211,10 +214,20 @@ def _resolve_trade(
     n_bars: int,
     stress: ExecutionStress = NO_STRESS,
 ) -> tuple[int, float, str, float, bool] | None:
-    """Walk bar entry_bar..entry_bar+max_hold and return
-    (exit_bar, exit_price, exit_reason, mae, liquidated), or None if unfillable.
+    """Resolve one trade, growing the examined window instead of always scanning max_hold.
 
-    entry_bar is the bar we FILL on (at its open); the signal fired on entry_bar-1's close.
+    Most trades exit within a day or two, but max_hold_bars can be 720, so scanning the full
+    window every time did ~30x more array work than necessary -- which dominated total runtime
+    (measured: 355 ms per evaluation for genomes that actually survive and trade thousands of
+    times, versus 17 ms for genomes that die immediately).
+
+    The ladder is exact, not approximate: a stop or target hit inside the first 24 bars IS the
+    global first hit, so resolving there is identical to resolving over the full window. Only when
+    no hit occurs does the window grow, and a max_hold exit is emitted only at the TRUE final bar.
+    Worst case (no exit until forced close) examines 24+96+336+full instead of full, about 1.6x --
+    paid rarely, while the common case saves an order of magnitude. `verify31.py` re-checks all
+    945 trades of the wave31 candidate trade-for-trade against an independent implementation, and
+    tests/test_wave30.py pins the tie, gap, trailing and liquidation semantics.
     """
     if entry_bar >= n_bars or not arrays.tradable[entry_bar]:
         return None
@@ -222,7 +235,38 @@ def _resolve_trade(
     if not np.isfinite(entry_price) or entry_price <= 0.0:
         return None
 
-    last_bar = min(n_bars - 1, entry_bar + genome.max_hold_bars)
+    final_bar = min(n_bars - 1, entry_bar + genome.max_hold_bars)
+    for reach in _WINDOW_LADDER:
+        probe_last = min(final_bar, entry_bar + reach)
+        resolved = _resolve_within(
+            arrays, entry_bar, probe_last, direction, genome, liq_band, stress, allow_max_hold=probe_last >= final_bar
+        )
+        if resolved is not None:
+            return resolved
+        if probe_last >= final_bar:
+            break
+    return _resolve_within(
+        arrays, entry_bar, final_bar, direction, genome, liq_band, stress, allow_max_hold=True
+    )
+
+
+def _resolve_within(
+    arrays: SymbolArrays,
+    entry_bar: int,
+    last_bar: int,
+    direction: float,
+    genome: Genome,
+    liq_band: float,
+    stress: ExecutionStress,
+    allow_max_hold: bool,
+) -> tuple[int, float, str, float, bool] | None:
+    """Resolve inside bars [entry_bar, last_bar].
+
+    Returns None when no stop/target fired AND `allow_max_hold` is False, which is the caller's
+    signal to widen the window. With `allow_max_hold` True the position is force-closed at
+    last_bar's close.
+    """
+    entry_price = arrays.open[entry_bar]
     high = arrays.high[entry_bar : last_bar + 1]
     low = arrays.low[entry_bar : last_bar + 1]
     open_ = arrays.open[entry_bar : last_bar + 1]
@@ -282,6 +326,8 @@ def _resolve_trade(
             exit_price = open_[offset]  # gapped through the target in our favour
         elif direction < 0 and open_[offset] < target_level:
             exit_price = open_[offset]
+    elif not allow_max_hold:
+        return None  # nothing fired yet; caller widens the window
     else:
         offset = span - 1
         reason = "max_hold"
