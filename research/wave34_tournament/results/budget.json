@@ -1,0 +1,16 @@
+{
+  "wall_clock_minutes": 90.0,
+  "drift_factor": 2.0,
+  "workers": 18,
+  "n_pairs": 18,
+  "concurrent_pairs": 18,
+  "waves": 1,
+  "n_seeds": 3,
+  "sum_seconds_per_eval": 0.9923641905784607,
+  "slowest_seconds_per_eval": 0.2776467328071594,
+  "budget_bound_slowest_chain": 9724.58768990916,
+  "budget_bound_throughput": 16324.65193101822,
+  "chosen_budget": 6000,
+  "predicted_wall_clock_seconds": 5386.346616458893,
+  "override_reason": "operator-chosen, written to SPEC.md before the run"
+}
