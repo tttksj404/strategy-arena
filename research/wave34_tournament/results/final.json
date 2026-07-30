@@ -1,0 +1,364 @@
+{
+  "wave": "wave34_tournament",
+  "request": "$100 fixed, >=1 entry per day, maximise profit",
+  "objective": "log(IS final total capital / 100) with a -100 penalty for violating frequency/survival",
+  "winner_method": "simulated_annealing",
+  "method_medians": {
+    "random": 0.5166618557788079,
+    "cmaes": -Infinity,
+    "pso": 1.3192280440270665,
+    "simulated_annealing": 1.8145025273700712,
+    "tpe_bayesian": 0.4979540872800417,
+    "mcts": -Infinity
+  },
+  "chosen_seed": 2026343,
+  "candidate": {
+    "genome": {
+      "signal_family": "momentum",
+      "lookback_bars": 48,
+      "entry_threshold": 0.620537,
+      "stop_pct": 0.03538716,
+      "target_r": 4.09401,
+      "trail_enabled": true,
+      "risk_frac": 0.10251224,
+      "max_hold_bars": 96,
+      "allow_short": false,
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT"
+      ],
+      "max_concurrent": 3,
+      "cooldown_bars_after_loss": 6,
+      "sleeve_fraction": 0.5,
+      "derived_leverage": 2.896877,
+      "derived_liquidation_band": 0.340199
+    },
+    "vector": [
+      0.3641815660188973,
+      0.4701747692418529,
+      0.20684565169534452,
+      0.551469489919495,
+      0.44200141637267654,
+      0.8469961070718902,
+      0.23721087489119425,
+      0.5034414762118623,
+      0.4809451649053998,
+      0.944559052681614,
+      0.9766215981252143,
+      0.4637420639616475,
+      0.4179302772681483
+    ],
+    "fitness": 1.8145025273700712,
+    "log_growth": 1.8145025273700712,
+    "is_total_final_usdt": 613.802191989611,
+    "account_mdd": 0.8260289220772101,
+    "n_trades": 2717,
+    "n_liquidations": 0,
+    "mean_leverage": 2.896876526223689,
+    "min_notional_usdt": 37.42768580906536,
+    "max_notional_usdt": 536.0508264426196,
+    "infeasible_reasons": [],
+    "entry_profile": {
+      "n_trades": 2717,
+      "active_days": 2211.0,
+      "trades_per_active_day": 1.228855721393035,
+      "survived_full_span": true,
+      "median_usdt": -1.3583410499345607,
+      "mean_usdt": 0.16570080486224142,
+      "p05_usdt": -8.993003976209987,
+      "p95_usdt": 14.803137453956076,
+      "best_usdt": 59.73612375258337,
+      "worst_usdt": -18.882698092068782,
+      "win_share": 0.38571954361428046,
+      "share_ge_target": 0.09569377990430622,
+      "share_le_negative_target": 0.033860875966139126,
+      "total_usdt": 450.20908681070995,
+      "account_final_usdt": 522.7811568099584,
+      "account_mdd": 0.8260289220772101,
+      "capital_for_target_ev": 1005.8289505909656
+    }
+  },
+  "equity_windows": {
+    "is": {
+      "start_usdt": 100.00233264899973,
+      "end_usdt": 591.3050250901234,
+      "days": 2214.0,
+      "total_return": 4.912912323411067,
+      "annualized": 0.3404146671416506,
+      "mdd": 0.6797856255489956
+    },
+    "oos": {
+      "start_usdt": 661.4862669954284,
+      "end_usdt": 281.25840252472307,
+      "days": 292.0,
+      "total_return": -0.5748084025958065,
+      "annualized": -0.6566549094799274,
+      "mdd": 0.6369404640353673
+    },
+    "full": {
+      "start_usdt": 100.00233264899973,
+      "end_usdt": 281.25840252472307,
+      "days": 2507.0,
+      "total_return": 1.8125184190644612,
+      "annualized": 0.16247828010219068,
+      "mdd": 0.6797856255489956
+    },
+    "baseline_oos": {
+      "start_usdt": 182.0509884429347,
+      "end_usdt": 186.15914528897682,
+      "days": 292.0,
+      "total_return": 0.022565968365120037,
+      "annualized": 0.028286582044810604,
+      "mdd": 0.009030327840745462
+    },
+    "baseline_full": {
+      "start_usdt": 100.00466529799945,
+      "end_usdt": 186.15914528897682,
+      "days": 2507.0,
+      "total_return": 0.8615046081525244,
+      "annualized": 0.0946874734619465,
+      "mdd": 0.01884640803015245
+    }
+  },
+  "full_span_entry_profile": {
+    "n_trades": 2955,
+    "active_days": 2504.0,
+    "trades_per_active_day": 1.180111821086262,
+    "survived_full_span": true,
+    "median_usdt": -1.4806226968796834,
+    "mean_usdt": 0.044437720628016895,
+    "p05_usdt": -9.694018052002532,
+    "p95_usdt": 15.502553952379754,
+    "best_usdt": 64.82110401936016,
+    "worst_usdt": -19.591142273764675,
+    "win_share": 0.3820642978003384,
+    "share_ge_target": 0.09847715736040609,
+    "share_le_negative_target": 0.046023688663282575,
+    "total_usdt": 131.31346445578993,
+    "account_final_usdt": 188.17882988023464,
+    "account_mdd": 0.8260287184715851,
+    "capital_for_target_ev": 3750.567407851865
+  },
+  "max_notional_usdt": 584.9614176165147,
+  "cumulative_trials": 385081,
+  "oos_note": "fourth use of the 2025-10-01~ window (wave31 C, wave32 L1, wave33 freq, wave34 this)",
+  "gates": {
+    "G1_method_superiority": {
+      "status": "PASS",
+      "per_method": {
+        "cmaes": {
+          "seed_wins_over_random": 1,
+          "required": 4,
+          "beats_random": false,
+          "median_best_feasible": -Infinity
+        },
+        "pso": {
+          "seed_wins_over_random": 3,
+          "required": 4,
+          "beats_random": false,
+          "median_best_feasible": 1.3192280440270665
+        },
+        "simulated_annealing": {
+          "seed_wins_over_random": 5,
+          "required": 4,
+          "beats_random": true,
+          "median_best_feasible": 1.8145025273700712
+        },
+        "tpe_bayesian": {
+          "seed_wins_over_random": 0,
+          "required": 4,
+          "beats_random": false,
+          "median_best_feasible": 0.4979540872800417
+        },
+        "mcts": {
+          "seed_wins_over_random": 1,
+          "required": 4,
+          "beats_random": false,
+          "median_best_feasible": -Infinity
+        }
+      },
+      "random_median_best_feasible": 0.5166618557788079
+    },
+    "G2_frequency_and_survival": {
+      "status": "PASS",
+      "trades_per_active_day": 1.228855721393035,
+      "n_trades": 2717,
+      "active_days": 2211.0,
+      "survived_full_span": true,
+      "reasons": []
+    },
+    "G3_oos": {
+      "status": "FAIL",
+      "candidate_oos": {
+        "start_usdt": 661.4862669954284,
+        "end_usdt": 281.25840252472307,
+        "days": 292.0,
+        "total_return": -0.5748084025958065,
+        "annualized": -0.6566549094799274,
+        "mdd": 0.6369404640353673
+      },
+      "baseline_oos": {
+        "start_usdt": 182.0509884429347,
+        "end_usdt": 186.15914528897682,
+        "days": 292.0,
+        "total_return": 0.022565968365120037,
+        "annualized": 0.028286582044810604,
+        "mdd": 0.009030327840745462
+      },
+      "reasons": [
+        "OOS total return -0.5748 <= 0",
+        "OOS annualised -0.6567 <= I5 baseline +0.0283"
+      ]
+    },
+    "G4_ruin": {
+      "status": "FAIL",
+      "paths": 10000,
+      "ruin_probability": 0.1634,
+      "max_ruin_probability": 0.05,
+      "p05_usdt": 16.270850865279517,
+      "median_usdt": 279.5253456043366
+    },
+    "G5_executability": {
+      "status": "PASS",
+      "min_notional_usdt": 37.42769111807733,
+      "min_order_usdt": 5.0,
+      "leverage": 2.896876720256726,
+      "leverage_cap": 20.0,
+      "stop_pct": 0.03538716,
+      "liquidation_band": 0.3401993635101525,
+      "stop_band_limit": 0.30617942715913726,
+      "n_trades": 2955,
+      "reasons": []
+    },
+    "G6_capacity": {
+      "status": "PASS",
+      "max_notional_usdt": 584.9614176165147,
+      "limit_usdt": 50000.0,
+      "cost_model_fitted_order_usdt": 45.0,
+      "extrapolation_multiple": 12.999142613700327
+    }
+  },
+  "overall": "FAIL",
+  "failure_reasons": [
+    "G3_oos",
+    "G4_ruin"
+  ],
+  "promoted": false,
+  "method_table": [
+    {
+      "method": "random",
+      "median_best_feasible": 0.5166618557788079,
+      "per_seed_best_feasible": [
+        0.5166618557788079,
+        0.5144023821283739,
+        0.5365077811342616,
+        0.8238410805969502,
+        0.5117927921774318
+      ],
+      "per_seed_feasible_count": [
+        79,
+        75,
+        67,
+        61,
+        69
+      ],
+      "mean_runtime_seconds": 198.38396034240722
+    },
+    {
+      "method": "cmaes",
+      "median_best_feasible": -Infinity,
+      "per_seed_best_feasible": [
+        -Infinity,
+        -Infinity,
+        0.31230832783488477,
+        -Infinity,
+        0.7146439563507555
+      ],
+      "per_seed_feasible_count": [
+        0,
+        0,
+        1,
+        0,
+        2688
+      ],
+      "mean_runtime_seconds": 163.85576510429382
+    },
+    {
+      "method": "pso",
+      "median_best_feasible": 1.3192280440270665,
+      "per_seed_best_feasible": [
+        3.014611902803741,
+        -Infinity,
+        -Infinity,
+        1.3192280440270665,
+        4.947708744130571
+      ],
+      "per_seed_feasible_count": [
+        1943,
+        0,
+        0,
+        2354,
+        2201
+      ],
+      "mean_runtime_seconds": 456.4015865325928
+    },
+    {
+      "method": "simulated_annealing",
+      "median_best_feasible": 1.8145025273700712,
+      "per_seed_best_feasible": [
+        0.8344363556203658,
+        2.128991049097794,
+        1.8145025273700712,
+        2.352453125645856,
+        1.168520590936875
+      ],
+      "per_seed_feasible_count": [
+        1138,
+        1467,
+        1485,
+        1268,
+        1327
+      ],
+      "mean_runtime_seconds": 799.4265567302704
+    },
+    {
+      "method": "tpe_bayesian",
+      "median_best_feasible": 0.4979540872800417,
+      "per_seed_best_feasible": [
+        0.5097132065395988,
+        0.4979540872800417,
+        -0.0241151976409336,
+        -1.6252188400203713,
+        0.5117927921774318
+      ],
+      "per_seed_feasible_count": [
+        2,
+        4,
+        5,
+        1,
+        7
+      ],
+      "mean_runtime_seconds": 165.46404824256896
+    },
+    {
+      "method": "mcts",
+      "median_best_feasible": -Infinity,
+      "per_seed_best_feasible": [
+        -Infinity,
+        -Infinity,
+        0.5607995887891303,
+        -Infinity,
+        -Infinity
+      ],
+      "per_seed_feasible_count": [
+        0,
+        0,
+        1821,
+        0,
+        0
+      ],
+      "mean_runtime_seconds": 164.25160703659057
+    }
+  ]
+}
