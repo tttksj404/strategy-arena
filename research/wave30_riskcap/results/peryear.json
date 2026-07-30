@@ -1,0 +1,330 @@
+{
+  "1x/\uc5c6\uc74c": {
+    "per_year": [
+      {
+        "year": 2019,
+        "multiple": 1.0,
+        "equity": 25.0,
+        "trades": 0,
+        "n_ge_30pct": 0,
+        "worst": 0.0,
+        "liquidations": 0
+      },
+      {
+        "year": 2020,
+        "multiple": 1.6119632326522617,
+        "equity": 40.29908081630654,
+        "trades": 5,
+        "n_ge_30pct": 2,
+        "worst": -0.1338670238420785,
+        "liquidations": 0
+      },
+      {
+        "year": 2021,
+        "multiple": 1.7268730631081148,
+        "equity": 69.59139712969674,
+        "trades": 16,
+        "n_ge_30pct": 1,
+        "worst": -0.1138639439147067,
+        "liquidations": 0
+      },
+      {
+        "year": 2022,
+        "multiple": 1.4286706117487578,
+        "equity": 99.42318390973459,
+        "trades": 27,
+        "n_ge_30pct": 1,
+        "worst": -0.1203685087811274,
+        "liquidations": 0
+      },
+      {
+        "year": 2023,
+        "multiple": 1.8061991093786869,
+        "equity": 179.578066229356,
+        "trades": 25,
+        "n_ge_30pct": 2,
+        "worst": -0.07521454222455895,
+        "liquidations": 0
+      },
+      {
+        "year": 2024,
+        "multiple": 1.2846475661285994,
+        "equity": 230.69452571162262,
+        "trades": 24,
+        "n_ge_30pct": 0,
+        "worst": -0.12095653950289235,
+        "liquidations": 0
+      },
+      {
+        "year": 2025,
+        "multiple": 0.8280396739266496,
+        "equity": 191.02421984691506,
+        "trades": 33,
+        "n_ge_30pct": 0,
+        "worst": -0.09631202921964069,
+        "liquidations": 0
+      },
+      {
+        "year": 2026,
+        "multiple": 0.9588061152670113,
+        "equity": 183.15519015333214,
+        "trades": 15,
+        "n_ge_30pct": 0,
+        "worst": -0.10817621898020466,
+        "liquidations": 0
+      }
+    ],
+    "final": 183.15519015333214,
+    "multiple": 7.326207606133286,
+    "losing_years": 2,
+    "worst_year": 0.8280396739266496,
+    "total_ge_30pct": 6,
+    "worst_trade": -0.1338670238420785
+  },
+  "2x/\uc5c6\uc74c": {
+    "per_year": [
+      {
+        "year": 2019,
+        "multiple": 1.0,
+        "equity": 25.0,
+        "trades": 0,
+        "n_ge_30pct": 0,
+        "worst": 0.0,
+        "liquidations": 0
+      },
+      {
+        "year": 2020,
+        "multiple": 1.9850353429569163,
+        "equity": 49.625883573922906,
+        "trades": 5,
+        "n_ge_30pct": 2,
+        "worst": -0.2677340476841574,
+        "liquidations": 0
+      },
+      {
+        "year": 2021,
+        "multiple": 2.298453515501147,
+        "equity": 114.06278656033373,
+        "trades": 16,
+        "n_ge_30pct": 4,
+        "worst": -0.22772788782941325,
+        "liquidations": 0
+      },
+      {
+        "year": 2022,
+        "multiple": 1.6701010212904472,
+        "equity": 190.49637632564767,
+        "trades": 27,
+        "n_ge_30pct": 2,
+        "worst": -0.2407370175622548,
+        "liquidations": 0
+      },
+      {
+        "year": 2023,
+        "multiple": 2.5606539273900357,
+        "equity": 487.79529419183996,
+        "trades": 25,
+        "n_ge_30pct": 3,
+        "worst": -0.15042908444911793,
+        "liquidations": 0
+      },
+      {
+        "year": 2024,
+        "multiple": 1.3731082689709857,
+        "equity": 669.7957520199501,
+        "trades": 24,
+        "n_ge_30pct": 2,
+        "worst": -0.24191307900578476,
+        "liquidations": 0
+      },
+      {
+        "year": 2025,
+        "multiple": 0.5925044777957811,
+        "equity": 396.85698228041304,
+        "trades": 33,
+        "n_ge_30pct": 2,
+        "worst": -0.19262405843928135,
+        "liquidations": 0
+      },
+      {
+        "year": 2026,
+        "multiple": 0.8180069698113247,
+        "equity": 324.63177752366727,
+        "trades": 15,
+        "n_ge_30pct": 2,
+        "worst": -0.21635243796040904,
+        "liquidations": 0
+      }
+    ],
+    "final": 324.63177752366727,
+    "multiple": 12.98527110094669,
+    "losing_years": 2,
+    "worst_year": 0.5925044777957811,
+    "total_ge_30pct": 17,
+    "worst_trade": -0.2677340476841574
+  },
+  "2x/15%": {
+    "per_year": [
+      {
+        "year": 2019,
+        "multiple": 1.0,
+        "equity": 25.0,
+        "trades": 0,
+        "n_ge_30pct": 0,
+        "worst": 0.0,
+        "liquidations": 0
+      },
+      {
+        "year": 2020,
+        "multiple": 1.9850353429569163,
+        "equity": 49.625883573922906,
+        "trades": 5,
+        "n_ge_30pct": 2,
+        "worst": -0.2677340476841574,
+        "liquidations": 0
+      },
+      {
+        "year": 2021,
+        "multiple": 2.298453515501147,
+        "equity": 114.06278656033373,
+        "trades": 16,
+        "n_ge_30pct": 4,
+        "worst": -0.22772788782941325,
+        "liquidations": 0
+      },
+      {
+        "year": 2022,
+        "multiple": 1.6701010212904472,
+        "equity": 190.49637632564767,
+        "trades": 27,
+        "n_ge_30pct": 2,
+        "worst": -0.2407370175622548,
+        "liquidations": 0
+      },
+      {
+        "year": 2023,
+        "multiple": 2.5606539273900357,
+        "equity": 487.79529419183996,
+        "trades": 25,
+        "n_ge_30pct": 3,
+        "worst": -0.15042908444911793,
+        "liquidations": 0
+      },
+      {
+        "year": 2024,
+        "multiple": 1.3731082689709857,
+        "equity": 669.7957520199501,
+        "trades": 24,
+        "n_ge_30pct": 2,
+        "worst": -0.24191307900578476,
+        "liquidations": 0
+      },
+      {
+        "year": 2025,
+        "multiple": 0.5925044777957811,
+        "equity": 396.85698228041304,
+        "trades": 33,
+        "n_ge_30pct": 2,
+        "worst": -0.19262405843928135,
+        "liquidations": 0
+      },
+      {
+        "year": 2026,
+        "multiple": 0.8180069698113247,
+        "equity": 324.63177752366727,
+        "trades": 15,
+        "n_ge_30pct": 2,
+        "worst": -0.21635243796040904,
+        "liquidations": 0
+      }
+    ],
+    "final": 324.63177752366727,
+    "multiple": 12.98527110094669,
+    "losing_years": 2,
+    "worst_year": 0.5925044777957811,
+    "total_ge_30pct": 17,
+    "worst_trade": -0.2677340476841574
+  },
+  "3x/10%": {
+    "per_year": [
+      {
+        "year": 2019,
+        "multiple": 1.0,
+        "equity": 25.0,
+        "trades": 0,
+        "n_ge_30pct": 0,
+        "worst": 0.0,
+        "liquidations": 0
+      },
+      {
+        "year": 2020,
+        "multiple": 1.7072551606071986,
+        "equity": 42.681379015179964,
+        "trades": 2,
+        "n_ge_30pct": 1,
+        "worst": -0.3019855644917668,
+        "liquidations": 0
+      },
+      {
+        "year": 2021,
+        "multiple": 2.129658940002512,
+        "equity": 90.89678039131361,
+        "trades": 11,
+        "n_ge_30pct": 3,
+        "worst": -0.30162455276599065,
+        "liquidations": 0
+      },
+      {
+        "year": 2022,
+        "multiple": 1.7646559846837953,
+        "equity": 160.40154750602022,
+        "trades": 25,
+        "n_ge_30pct": 2,
+        "worst": -0.3019855644917668,
+        "liquidations": 0
+      },
+      {
+        "year": 2023,
+        "multiple": 2.091785630695772,
+        "equity": 335.5256522144583,
+        "trades": 25,
+        "n_ge_30pct": 5,
+        "worst": -0.30198556449176694,
+        "liquidations": 0
+      },
+      {
+        "year": 2024,
+        "multiple": 1.8296020108417064,
+        "equity": 613.878407980548,
+        "trades": 19,
+        "n_ge_30pct": 3,
+        "worst": -0.3019855644917668,
+        "liquidations": 0
+      },
+      {
+        "year": 2025,
+        "multiple": 0.3721258023081875,
+        "equity": 228.43999508943426,
+        "trades": 33,
+        "n_ge_30pct": 3,
+        "worst": -0.2889360876589222,
+        "liquidations": 0
+      },
+      {
+        "year": 2026,
+        "multiple": 0.9129871524914794,
+        "equity": 208.56278063187014,
+        "trades": 10,
+        "n_ge_30pct": 2,
+        "worst": -0.30198556449176667,
+        "liquidations": 0
+      }
+    ],
+    "final": 208.56278063187014,
+    "multiple": 8.342511225274805,
+    "losing_years": 2,
+    "worst_year": 0.3721258023081875,
+    "total_ge_30pct": 19,
+    "worst_trade": -0.30198556449176694
+  }
+}
