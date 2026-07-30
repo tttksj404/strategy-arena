@@ -1,0 +1,72 @@
+{
+  "probe_budget_per_method": 500,
+  "workers": 6,
+  "rows": [
+    {
+      "method": "tpe_bayesian",
+      "evaluations": 500,
+      "seconds": 138.8233664035797,
+      "seconds_per_eval": 0.2776467328071594,
+      "best_fitness": 1.8301088006379154,
+      "best_feasible_fitness": 1.8301088006379154,
+      "feasible_found": true
+    },
+    {
+      "method": "pso",
+      "evaluations": 500,
+      "seconds": 122.6332368850708,
+      "seconds_per_eval": 0.2452664737701416,
+      "best_fitness": 2.6919545580821134,
+      "best_feasible_fitness": 2.6919545580821134,
+      "feasible_found": true
+    },
+    {
+      "method": "cmaes",
+      "evaluations": 500,
+      "seconds": 106.3592894077301,
+      "seconds_per_eval": 0.21271857881546022,
+      "best_fitness": 0.4178992944248345,
+      "best_feasible_fitness": 0.4178992944248345,
+      "feasible_found": true
+    },
+    {
+      "method": "simulated_annealing",
+      "evaluations": 500,
+      "seconds": 78.59123420715332,
+      "seconds_per_eval": 0.15718246841430664,
+      "best_fitness": -0.6718629469282874,
+      "best_feasible_fitness": -0.6718629469282874,
+      "feasible_found": true
+    },
+    {
+      "method": "random",
+      "evaluations": 500,
+      "seconds": 25.249910354614258,
+      "seconds_per_eval": 0.05049982070922852,
+      "best_fitness": -52.10938857082863,
+      "best_feasible_fitness": null,
+      "feasible_found": false
+    },
+    {
+      "method": "mcts",
+      "evaluations": 500,
+      "seconds": 24.525058031082153,
+      "seconds_per_eval": 0.049050116062164306,
+      "best_fitness": -51.48916475540227,
+      "best_feasible_fitness": null,
+      "feasible_found": false
+    }
+  ],
+  "slowest_method": "tpe_bayesian",
+  "slowest_seconds_per_eval": 0.2776467328071594,
+  "sum_seconds_per_eval": 0.9923641905784607,
+  "encoding_feasibility": {
+    "n": 50000,
+    "failures": 0,
+    "feasible_rate": 1.0,
+    "first_failure": null,
+    "leverage_min": 1.0001970563845992,
+    "leverage_median": 6.1195339666061,
+    "leverage_max": 19.996646232812044
+  }
+}

@@ -1,0 +1,12 @@
+[run] 18 pair(s) outstanding, budget=6000, workers=18
+[done]                 mcts seed=2026341 best_feasible=None evals=None 0s
+[done]                 mcts seed=2026342 best_feasible=None evals=None 0s
+[done]                 mcts seed=2026343 best_feasible=None evals=None 0s
+_feasible=2.635263375029465 evals=6000 803s
+[done]                 mcts seed=2026343 best_feasible=1.3959972920051258 evals=6000 816s
+[done]               random seed=2026343 best_feasible=1.4544933870410537 evals=6000 820s
+[done]               random seed=2026342 best_feasible=1.8420545937407111 evals=6000 821s
+[done]         tpe_bayesian seed=2026341 best_feasible=3.2658160794450137 evals=6000 2652s
+[done]         tpe_bayesian seed=2026342 best_feasible=3.270922102018146 evals=6000 2867s
+[done]  simulated_annealing seed=2026343 best_feasible=3.2417332316785545 evals=6000 2961s
+[done]  simulated_annealing seed=2026341 best_feasible=3.947588512027085 evals=6000 3298s

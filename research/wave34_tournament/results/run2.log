@@ -1,0 +1,9 @@
+[run] 8 pair(s) outstanding, budget=6000, workers=10
+[done]                  pso seed=2026343 best_feasible=2.67749180084292 evals=6000 2136s
+[done]  simulated_annealing seed=2026342 best_feasible=3.658325479882078 evals=6000 2192s
+[done]         tpe_bayesian seed=2026343 best_feasible=4.091399349039136 evals=6000 2564s
+[done]                  pso seed=2026342 best_feasible=4.345020706391653 evals=6000 2872s
+[done]                cmaes seed=2026342 best_feasible=2.089678435635687 evals=6000 3123s
+[done]                cmaes seed=2026343 best_feasible=3.7313928904519753 evals=6000 3167s
+[done]                  pso seed=2026341 best_feasible=3.2846346045548493 evals=6000 3225s
+[done]                cmaes seed=2026341 best_feasible=3.7314683191714972 evals=6000 3294s
