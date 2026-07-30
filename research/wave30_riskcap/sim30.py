@@ -95,7 +95,8 @@ def v1_inputs() -> dict:
 
 def simulate(inp: dict, leverage: float = 1.0, stop: float | None = None, model: str = "fixed",
              start_at: pd.Timestamp | None = None, end_at: pd.Timestamp | None = None,
-             starting_equity: float = GAMBLE_CAPITAL) -> R30:
+             starting_equity: float = GAMBLE_CAPITAL, max_hold_bars: int | None = None,
+             atr_multiplier: float | None = None) -> R30:
     idx = inp["index"]
     sel = np.ones(len(idx), dtype=bool)
     if start_at is not None:
@@ -106,9 +107,11 @@ def simulate(inp: dict, leverage: float = 1.0, stop: float | None = None, model:
     index = idx[keep]
     op, hi, lo, cl = inp["open"][keep], inp["high"][keep], inp["low"][keep], inp["close"][keep]
     atr_a, cost_a, arm_a = inp["atr"][keep], inp["cost"][keep], inp["armable"][keep]
-    worst, mult = inp["worst_cost"], inp["atr_multiplier"]
+    worst = inp["worst_cost"]
+    mult = inp["atr_multiplier"] if atr_multiplier is None else atr_multiplier
     n = len(index)
     linear = model == "fixed"
+    entry_idx = -1
 
     liq_dist = max(0.0, 1.0 / leverage - MAINT_MARGIN)
     # A stop only helps if it fires BEFORE liquidation; otherwise the cell is just wave-29 again.
@@ -173,6 +176,7 @@ def simulate(inp: dict, leverage: float = 1.0, stop: float | None = None, model:
                 else:
                     direction, entry_price, extreme = new_dir, fill, fill
                     entry_time, entry_equity, anchor = index[i], sleeve, float("nan")
+                    entry_idx = i
 
         # --- B: intrabar stop / liquidation, then mark to this bar's close. ---
         if direction != 0.0 and not dead:
@@ -190,6 +194,11 @@ def simulate(inp: dict, leverage: float = 1.0, stop: float | None = None, model:
                 extreme = max(extreme, cl[i]) if direction > 0.0 else min(extreme, cl[i])
                 if sleeve <= 0.0:
                     wipe(i)
+
+        # --- max_hold_bars: force the position closed at this bar's close (engine20's V3 rule).
+        # Step B already marked to cl[i], so this is exit-cost-only, like the end-of-data close. ---
+        if direction != 0.0 and not dead and max_hold_bars is not None and (i - entry_idx) >= max_hold_bars:
+            close_at(i, float(cl[i]), float(cl[i]), sleeve, "max_hold", taker=False)
 
         equity_out[i] = sleeve
 
