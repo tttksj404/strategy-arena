@@ -1,0 +1,81 @@
+{
+  "wave": "wave48_bold",
+  "objective": "maximise P(reach target) rather than expected value",
+  "capital": 100.0,
+  "target_usd": 30.0,
+  "round_trip_cost": 0.0012,
+  "liquidation_safety": 0.9,
+  "ladder": [
+    {
+      "leverage": 5.0,
+      "notional": 500.0,
+      "target_move": 0.06,
+      "liquidation_move": 0.18,
+      "fair_win_probability": 0.75,
+      "cost_usd": 0.6,
+      "win_usd": 29.4,
+      "loss_usd": 100.0,
+      "ev_usd": -2.950000000000003,
+      "wins": 20221,
+      "losses": 5828,
+      "unresolved": 2232,
+      "win_probability": 0.776267802986679,
+      "measured_ev_usd": 0.4490537064762563
+    },
+    {
+      "leverage": 10.0,
+      "notional": 1000.0,
+      "target_move": 0.03,
+      "liquidation_move": 0.09,
+      "fair_win_probability": 0.75,
+      "cost_usd": 1.2,
+      "win_usd": 28.8,
+      "loss_usd": 100.0,
+      "ev_usd": -3.3999999999999986,
+      "wins": 21233,
+      "losses": 6863,
+      "unresolved": 185,
+      "win_probability": 0.7557303530751709,
+      "measured_ev_usd": -2.661930523917988
+    },
+    {
+      "leverage": 20.0,
+      "notional": 2000.0,
+      "target_move": 0.015,
+      "liquidation_move": 0.045,
+      "fair_win_probability": 0.75,
+      "cost_usd": 2.4,
+      "win_usd": 27.6,
+      "loss_usd": 100.0,
+      "ev_usd": -4.299999999999997,
+      "wins": 21042,
+      "losses": 7230,
+      "unresolved": 9,
+      "win_probability": 0.7442699490662139,
+      "measured_ev_usd": -5.0311544991511035
+    }
+  ],
+  "best_single_bet": {
+    "leverage": 5.0,
+    "notional": 500.0,
+    "target_move": 0.06,
+    "liquidation_move": 0.18,
+    "fair_win_probability": 0.75,
+    "cost_usd": 0.6,
+    "win_usd": 29.4,
+    "loss_usd": 100.0,
+    "ev_usd": -2.950000000000003,
+    "wins": 20221,
+    "losses": 5828,
+    "unresolved": 2232,
+    "win_probability": 0.776267802986679,
+    "measured_ev_usd": 0.4490537064762563
+  },
+  "wave31_reference": {
+    "ruin_probability": 0.2252,
+    "median_usdt": 1287.9729144111825,
+    "p05_usdt": 0.8842572696246828,
+    "leverage": 3.012186530160882,
+    "n_trades": 945
+  }
+}
