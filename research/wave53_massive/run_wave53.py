@@ -75,17 +75,23 @@ def permute_signal(panel, rng: np.random.Generator):
     return dataclasses.replace(panel, raw_apr=permuted, ranking_apr=shifted)
 
 
-def sweep(panel, thresholds, top_ks, leg_values, cap_values) -> dict:
-    """Exhaustive sweep. Returns the best annualised return and how many configurations were evaluated."""
+def sweep(panel, thresholds, top_ks, leg_values, cap_values, start_day: int = 1) -> dict:
+    """Exhaustive sweep over [start_day, end). Returns the best annualised return and evaluation count.
+
+    The daily series are always built over the WHOLE panel even when only a later slice is evaluated, so
+    the hysteresis state entering `start_day` is the state a live book would actually have carried in.
+    Rebuilding the series from start_day would hand the evaluation a flat book on its first day, which is a
+    different and easier problem.
+    """
     n_days = len(panel.days)
-    years = n_days / 365.0
+    years = (n_days - start_day) / 365.0
     best = {"annualised": -np.inf}
     evaluated = 0
     for threshold in thresholds:
         variant = with_threshold(panel, threshold)
         for top_k in top_ks:
             series = build_daily_series(variant, top_k)
-            grid = evaluate_grid(series, leg_values, cap_values, 1, n_days)
+            grid = evaluate_grid(series, leg_values, cap_values, start_day, n_days)
             final = grid["final"]
             feasible = grid["min_leg"] >= MIN_LEG_FLOOR
             annualised = np.where(
@@ -114,6 +120,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--stage", choices=("real", "null", "judge"), required=True)
     parser.add_argument("--replications", type=int, default=20)
     parser.add_argument("--seed-base", type=int, default=0)
+    parser.add_argument("--from-year", type=int,
+                        help="evaluate only from this calendar year onward; the full-period test is "
+                             "dominated by 2021, so significance in the recent regime is a separate claim")
     args = parser.parse_args(sys.argv[1:] if argv is None else argv)
 
     started = time.time()
@@ -122,12 +131,28 @@ def main(argv: list[str] | None = None) -> int:
     payload = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"null_best": []}
     panel = build_panel()
 
+    # A separate results file per period, so the full-period verdict is never overwritten by the
+    # recent-regime one and both stay auditable side by side.
+    start_day = 1
+    period = "full"
+    if args.from_year:
+        period = f"from{args.from_year}"
+        matching = [i for i, day in enumerate(panel.days) if day.year >= args.from_year]
+        if not matching:
+            print(f"{args.from_year}년 이후 데이터가 없다")
+            return 1
+        start_day = matching[0]
+        path = RESULTS_DIR / f"final_{period}.json"
+        payload = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"null_best": []}
+        print(f"[구간 제한] {panel.days[start_day].date()} ~ {panel.days[-1].date()} "
+              f"({len(panel.days)-start_day}일, {(len(panel.days)-start_day)/365.0:.2f}년)\n")
+
     if args.stage == "real":
         total = len(THRESHOLDS) * len(TOP_KS) * len(LEG_VALUES) * len(CAP_VALUES)
         print(f"=== wave53 실제 신호 전수 탐색 ===")
         print(f"임계 {len(THRESHOLDS)} x top_k {len(TOP_KS)} x leg {len(LEG_VALUES)} x cap {len(CAP_VALUES)} "
               f"= {total:,}조합")
-        best = sweep(panel, THRESHOLDS, TOP_KS, LEG_VALUES, CAP_VALUES)
+        best = sweep(panel, THRESHOLDS, TOP_KS, LEG_VALUES, CAP_VALUES, start_day)
         payload["real_full"] = best
         path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
         print(f"\n  최고 연환산 {best['annualised']:+.2%} (${best['final']:,.2f}) · MDD {best['mdd']:.2%}")
@@ -135,7 +160,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  최소레그 ${best['min_leg']:.2f} · 평가 {best['evaluated']:,}조합 · {time.time()-started:.0f}s")
 
         print(f"\n=== 귀무 탐색과 동일 조건의 실제 신호 (비교 기준) ===")
-        reduced = sweep(panel, NULL_THRESHOLDS, NULL_TOP_KS, LEG_VALUES, CAP_VALUES)
+        reduced = sweep(panel, NULL_THRESHOLDS, NULL_TOP_KS, LEG_VALUES, CAP_VALUES, start_day)
         payload["real_reduced"] = reduced
         path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
         print(f"  최고 연환산 {reduced['annualised']:+.2%} · 평가 {reduced['evaluated']:,}조합")
@@ -152,7 +177,7 @@ def main(argv: list[str] | None = None) -> int:
         for index in range(args.replications):
             rng = np.random.default_rng(20260731 + args.seed_base + index)
             shuffled = permute_signal(panel, rng)
-            best = sweep(shuffled, NULL_THRESHOLDS, NULL_TOP_KS, LEG_VALUES, CAP_VALUES)
+            best = sweep(shuffled, NULL_THRESHOLDS, NULL_TOP_KS, LEG_VALUES, CAP_VALUES, start_day)
             payload["null_best"].append(best["annualised"])
             path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
             print(f"  복제 {args.seed_base+index:3d}: 최고 {best['annualised']:+.2%} "
