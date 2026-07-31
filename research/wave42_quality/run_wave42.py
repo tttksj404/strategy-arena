@@ -45,7 +45,10 @@ RESULTS_DIR: Final = Path(__file__).resolve().parent / "results"
 TRAIN_DAYS: Final = 365
 APPLY_DAYS: Final = 90
 I5_CAGR: Final = 0.1027  # W3 bar
-L4_RECENT: Final = 0.0362  # W4 bar: plain L4's own 2023+ mean, measured in wave38
+# W4 bar: plain L4's own 2023+ mean on the SAME panel. Re-measured at +0.32% after wave44's data
+# correction removed listing-misalignment basis; the pre-correction value was +3.62%, inflated because a
+# late-listing spot leg's first-day price discovery was being booked as capturable basis.
+L4_RECENT: Final = 0.0032
 MDD_LIMIT: Final = 0.25
 MIN_RESELECTIONS: Final = 20
 PORTFOLIO_MARGIN: Final = (0.70, 0.01)  # wave39's worst measured haircut / mmr
