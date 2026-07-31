@@ -1,0 +1,51 @@
+{
+  "wave": "wave37_capital_probe",
+  "question": "is the $100 mandate the binding constraint, or does the signal lack edge?",
+  "min_leg_usdt": 5.0,
+  "ladder": [
+    {
+      "capital": 100.0,
+      "final": 41.781849050964595,
+      "multiple": 0.417818490509646,
+      "annualised": -0.22321117756208075,
+      "mdd": 0.676285007600426,
+      "blocked_days": 608,
+      "margin_calls": 0,
+      "funding_usdt": 54.703741748423745,
+      "price_pnl_usdt": -105.57123836988126,
+      "cost_usdt": 7.350654327577886,
+      "min_leg": 5.008329151263049,
+      "max_leg": 40.39365956842904
+    },
+    {
+      "capital": 1000.0,
+      "final": 275.4724701106036,
+      "multiple": 0.2754724701106036,
+      "annualised": -0.3115115514783381,
+      "mdd": 0.7865710336098993,
+      "blocked_days": 180,
+      "margin_calls": 0,
+      "funding_usdt": 737.4950843898782,
+      "price_pnl_usdt": -1366.1916243208498,
+      "cost_usdt": 95.83098995842624,
+      "min_leg": 7.148597773102731,
+      "max_leg": 420.7136248553627
+    },
+    {
+      "capital": 10000.0,
+      "final": 2842.222613999076,
+      "multiple": 0.28422226139990764,
+      "annualised": -0.3052468663959723,
+      "mdd": 0.7797919209448277,
+      "blocked_days": 0,
+      "margin_calls": 0,
+      "funding_usdt": 7954.7505838566285,
+      "price_pnl_usdt": -14130.485363385105,
+      "cost_usdt": 982.0426064724448,
+      "min_leg": 39.969227743159585,
+      "max_leg": 4207.1362485536265
+    }
+  ],
+  "any_profitable": false,
+  "conclusion": "signal has no edge at any capital; the minimum-order block was a symptom"
+}
