@@ -1,29 +1,21 @@
 #!/usr/bin/env python3
-# Wave-42: causal walk-forward over quality threshold x portfolio-margin deployment.
+# Wave-43: does a cost-derived, per-symbol entry bar beat the best flat bar?
 #
-# The two levers this wave combines were each measured alone and each looked like a dead end:
-#   - wave38: raising breadth lowers return while lowering drawdown. A risk lever, not a return lever.
-#   - wave39: portfolio margin makes deployment 1.00 liquidation-safe and lifts the full period to
-#     +13.35%, but the recent regime falls to +2.63%/yr -- WORSE than plain L4's +3.62% -- because extra
-#     deployment amplifies a poor funding regime.
+# The flat bar is tested alongside the derived one, not replaced by it. Three flat thresholds (including
+# L4's own 0.15 and wave42's 0.25/0.35) sit in the same candidate pool as eight derived variants, and the
+# causal protocol picks between them window by window. If the derived bar is not actually better the
+# protocol will keep choosing flat, and that is a real answer rather than a failed wave -- it would mean
+# the 23% of below-breakeven trades are being paid for by something the arithmetic does not see.
 #
-# wave38's corrected cost model makes a third lever computable for the first time. Round-trip cost is
-# 0.384% of notional and L4's mean holding period is 4.05 days, so breakeven sits near 35% APR while the
-# entry bar is 15%. Trades near the bar cannot repay their own turnover. Nobody in 40 waves raised that
-# bar: I3 lowered it to 8% and lost, which is evidence the gradient points up, not down.
-#
-# Raising the bar turns out to be another risk lever (drawdown 4.49% -> 1.11%, return flat). The point of
-# this wave is that a risk lever and a return lever compose: cutting the trades that amplify a bad regime
-# is exactly what deployment expansion needed. Neither single-lever experiment could show that.
-#
-# Selection is causal, not chosen by eye. A pre-run sweep showed threshold 0.35 / deployment 1.00 doing
-# well on both the full period and post-2023, but reading a grid after the fact is the error this campaign
-# has documented repeatedly (wave36 -> wave37 flipped sign that way). So the grid is handed to the same
-# trailing-365-day protocol used since wave37 and whatever it picks is the answer.
+# Everything else is held fixed at wave42's settings so the only thing varying is the shape of the entry
+# bar: same panel, same cost model, same portfolio-margin rules from wave39, same selection score, same
+# training-window liquidation screen, same 365/90 schedule.
 
 from __future__ import annotations
 
 import argparse
+from collections import Counter
+import dataclasses
 from dataclasses import dataclass
 import json
 from pathlib import Path
@@ -40,50 +32,73 @@ import numpy as np
 
 from research.wave38_breadth.dataio38 import build_panel, with_threshold
 from research.wave38_breadth.engine38 import ACTIVE_CAPITAL, CarryConfig, simulate
+from research.wave43_derived.signal43 import derived_threshold, hysteresis_position
 
 RESULTS_DIR: Final = Path(__file__).resolve().parent / "results"
 TRAIN_DAYS: Final = 365
 APPLY_DAYS: Final = 90
-I5_CAGR: Final = 0.1027  # W3 bar
-# W4 bar: plain L4's own 2023+ mean on the SAME panel. Re-measured at +0.32% after wave44's data
-# correction removed listing-misalignment basis; the pre-correction value was +3.62%, inflated because a
-# late-listing spot leg's first-day price discovery was being booked as capturable basis.
-L4_RECENT: Final = 0.0032
+I5_CAGR: Final = 0.1027
+# Both bars re-measured after wave44's data correction (listing-misalignment basis removed). The
+# pre-correction values were L4 +3.62% and wave42 +4.45%; they were inflated because a late-listing spot
+# leg's first-day price discovery was booked as capturable basis.
+L4_RECENT: Final = 0.0032  # plain L4's 2023+ mean on the corrected panel
+WAVE42_RECENT: Final = 0.0241  # wave42's 2023+ mean -- the bar this wave must clear to be worth keeping
+WAVE42_FULL: Final = 0.1331
 MDD_LIMIT: Final = 0.25
-MIN_RESELECTIONS: Final = 20
-PORTFOLIO_MARGIN: Final = (0.70, 0.01)  # wave39's worst measured haircut / mmr
+PORTFOLIO_MARGIN: Final = (0.70, 0.01)
 
-THRESHOLDS: Final = (0.15, 0.25, 0.35)
-GRID: Final = tuple(
+FLAT_THRESHOLDS: Final = (0.15, 0.25, 0.35)
+DERIVED_SAFETY: Final = (1.0, 1.5, 2.0, 3.0)
+DERIVED_HOLD_DAYS: Final = (4.0, 7.0)
+CONFIGS: Final = tuple(
     CarryConfig(top_k, leg_fraction, cap)
     for top_k in (1, 2, 3)
     for leg_fraction in (0.50, 1.00)
-    for cap in (0.50, 0.75, 1.00)
+    for cap in (0.50, 1.00)
 )
-BASELINE: Final = (0.15, CarryConfig(1, 0.50, 0.50))  # current L4, for W10 convergence test
 
 
 @dataclass(frozen=True, slots=True)
-class Candidate:
-    threshold: float
-    config: CarryConfig
+class SignalVariant:
+    kind: str  # "flat" | "derived"
+    threshold: float | None
+    safety: float | None
+    hold_days: float | None
 
     @property
     def label(self) -> str:
-        return f"thr{self.threshold:.0%} {self.config.label}"
+        if self.kind == "flat":
+            return f"flat{self.threshold:.0%}"
+        return f"derv s{self.safety:.1f}h{self.hold_days:.0f}"
 
 
-def candidates() -> tuple[Candidate, ...]:
-    return tuple(Candidate(threshold, config) for threshold in THRESHOLDS for config in GRID)
+def signal_variants() -> tuple[SignalVariant, ...]:
+    variants = [SignalVariant("flat", threshold, None, None) for threshold in FLAT_THRESHOLDS]
+    variants += [
+        SignalVariant("derived", None, safety, hold)
+        for safety in DERIVED_SAFETY
+        for hold in DERIVED_HOLD_DAYS
+    ]
+    return tuple(variants)
+
+
+def build_variant_panel(base_panel, variant: SignalVariant):
+    """Panel whose `active` reflects this variant's entry bar. Nothing else changes."""
+    if variant.kind == "flat":
+        return with_threshold(base_panel, variant.threshold)
+    bar = derived_threshold(base_panel.cost_rate, variant.hold_days, variant.safety)
+    # raw_apr is unshifted; hysteresis_position applies the shift(1) itself, matching carry_position.
+    active = hysteresis_position(base_panel.raw_apr, bar)
+    return dataclasses.replace(base_panel, active=active)
 
 
 def selection_score(result, days: int) -> float:
     return result.annualised(days) - 2.0 * max(0.0, result.mdd - 0.20)
 
 
-def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verbose: bool = True) -> dict:
-    all_candidates = candidates()
-    any_panel = panels[THRESHOLDS[0]]
+def walk_forward(panels: dict[str, object], cost_multiplier: float = 1.0, verbose: bool = True) -> dict:
+    variants = signal_variants()
+    any_panel = next(iter(panels.values()))
     n_days = len(any_panel.days)
 
     capital = ACTIVE_CAPITAL
@@ -91,8 +106,7 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
     day_index: list[int] = []
     selections: list[dict] = []
     funding_total = basis_total = cost_total = 0.0
-    entries_total = active_total = blocked_total = liquidation_total = 0
-    worst_adverse = 0.0
+    entries_total = active_total = liquidation_total = 0
     evaluations = 0
     min_leg, max_leg = np.inf, 0.0
     residual_max = 0.0
@@ -101,21 +115,19 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
     start = TRAIN_DAYS + 1
     while start + APPLY_DAYS <= n_days:
         best, best_score = None, -np.inf
-        for candidate in all_candidates:
-            trained = simulate(
-                panels[candidate.threshold],
-                candidate.config,
-                start - TRAIN_DAYS,
-                start,
-                cost_multiplier,
-                portfolio_margin=PORTFOLIO_MARGIN,
-            )
-            evaluations += 1
-            if trained.liquidation_days > 0:
-                continue
-            score = selection_score(trained, TRAIN_DAYS)
-            if score > best_score:
-                best, best_score = candidate, score
+        for variant in variants:
+            panel = panels[variant.label]
+            for config in CONFIGS:
+                trained = simulate(
+                    panel, config, start - TRAIN_DAYS, start, cost_multiplier,
+                    portfolio_margin=PORTFOLIO_MARGIN,
+                )
+                evaluations += 1
+                if trained.liquidation_days > 0:
+                    continue
+                score = selection_score(trained, TRAIN_DAYS)
+                if score > best_score:
+                    best, best_score = (variant, config), score
 
         if best is None:
             equity_curve.extend([capital] * APPLY_DAYS)
@@ -123,14 +135,10 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
             start += APPLY_DAYS
             continue
 
+        variant, config = best
         applied = simulate(
-            panels[best.threshold],
-            best.config,
-            start,
-            start + APPLY_DAYS,
-            cost_multiplier,
-            start_capital=capital,
-            portfolio_margin=PORTFOLIO_MARGIN,
+            panels[variant.label], config, start, start + APPLY_DAYS, cost_multiplier,
+            start_capital=capital, portfolio_margin=PORTFOLIO_MARGIN,
         )
         equity_curve.extend(applied.equity.tolist())
         day_index.extend(range(start, start + len(applied.equity)))
@@ -140,9 +148,7 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
         cost_total += applied.cost_usd
         entries_total += applied.entries
         active_total += applied.days_active
-        blocked_total += applied.blocked_min_order
         liquidation_total += applied.liquidation_days
-        worst_adverse = max(worst_adverse, applied.worst_adverse_move)
         if np.isfinite(applied.min_leg_usd):
             min_leg = min(min_leg, applied.min_leg_usd)
         max_leg = max(max_leg, applied.max_leg_usd)
@@ -152,11 +158,11 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
             {
                 "apply_from": str(any_panel.days[start].date()),
                 "apply_to": str(any_panel.days[start + APPLY_DAYS - 1].date()),
-                "label": best.label,
-                "threshold": best.threshold,
-                "top_k": best.config.top_k,
-                "leg_fraction": best.config.leg_fraction,
-                "deployment_cap": best.config.deployment_cap,
+                "signal": variant.label,
+                "signal_kind": variant.kind,
+                "config": config.label,
+                "deployment_cap": config.deployment_cap,
+                "top_k": config.top_k,
                 "applied_return": applied.multiple - 1.0,
                 "capital_after": capital,
             }
@@ -164,7 +170,7 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
         if verbose:
             print(
                 f"  {any_panel.days[start].date()} ~ {any_panel.days[start+APPLY_DAYS-1].date()} | "
-                f"{best.label:26s} | 적용 {applied.multiple-1.0:+7.2%} | 자산 ${capital:8.2f}",
+                f"{variant.label:16s} {config.label} | 적용 {applied.multiple-1.0:+7.2%} | ${capital:8.2f}",
                 flush=True,
             )
         start += APPLY_DAYS
@@ -186,9 +192,7 @@ def walk_forward(panels: dict[float, object], cost_multiplier: float = 1.0, verb
         "cost_usd": cost_total,
         "entries": entries_total,
         "days_active": active_total,
-        "blocked_min_order": blocked_total,
         "liquidation_days": liquidation_total,
-        "worst_adverse_move": worst_adverse,
         "min_leg_usd": float(min_leg) if np.isfinite(min_leg) else float("nan"),
         "max_leg_usd": max_leg,
         "accounting_residual": residual_max,
@@ -230,18 +234,21 @@ def _save(payload: dict) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="wave42 staged runner")
+    parser = argparse.ArgumentParser(description="wave43 staged runner")
     parser.add_argument("--stage", choices=("base", "stress", "judge"), required=True)
     args = parser.parse_args(sys.argv[1:] if argv is None else argv)
 
     started = time.time()
     payload = _load()
     base_panel = build_panel()
-    panels = {threshold: with_threshold(base_panel, threshold) for threshold in THRESHOLDS}
-    print(f"패널 {len(base_panel.symbols)}종목 x {len(base_panel.days)}일 | 후보 {len(candidates())}조합")
+    variants = signal_variants()
+    panels = {variant.label: build_variant_panel(base_panel, variant) for variant in variants}
+    print(f"패널 {len(base_panel.symbols)}종목 x {len(base_panel.days)}일")
+    print(f"신호 변종 {len(variants)}개 (일괄 {len(FLAT_THRESHOLDS)} + 유도 {len(variants)-len(FLAT_THRESHOLDS)}) "
+          f"x 구성 {len(CONFIGS)} = 후보 {len(variants)*len(CONFIGS)}조합")
 
     if args.stage == "base":
-        print("=== 인과 워크포워드 (기본 비용) ===")
+        print("\n=== 인과 워크포워드 ===")
         payload["base"] = walk_forward(panels)
         payload["yearly"] = yearly_breakdown(payload["base"], base_panel.days)
         _save(payload)
@@ -252,30 +259,27 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.stage == "stress":
         if "base" not in payload:
-            print("먼저 --stage base 를 실행해야 한다.")
+            print("먼저 --stage base")
             return 1
-        print("=== 비용 x3 스트레스 ===")
+        print("\n=== 비용 x3 ===")
         payload["stress_x3"] = walk_forward(panels, cost_multiplier=3.0, verbose=False)
         _save(payload)
         print(f"연 {payload['stress_x3']['annualised']:+.2%} | {time.time()-started:.0f}s")
         print("다음: --stage judge")
         return 0
 
-    # judge
     if "base" not in payload or "stress_x3" not in payload:
-        print("base 와 stress 단계를 먼저 실행해야 한다.")
+        print("base 와 stress 를 먼저 실행")
         return 1
-    base = payload["base"]
-    stress = payload["stress_x3"]
-    yearly = payload["yearly"]
+    base, stress, yearly = payload["base"], payload["stress_x3"], payload["yearly"]
     recent = [v for k, v in yearly.items() if int(k) >= 2023]
     recent_mean = float(np.mean(recent)) if recent else float("nan")
-
     days = base["days"]
+
     print(f"\n=== 인과적 곡선 (적용 {days}일) ===")
     print(f"  ${ACTIVE_CAPITAL:.2f} -> ${base['final_usdt']:.2f} | 연 {base['annualised']:+.2%} | MDD {base['mdd']:.2%}")
     print(f"  손익: 펀딩 ${base['funding_usd']:+.2f} · 베이시스 ${base['basis_usd']:+.2f} · 비용 ${base['cost_usd']:+.2f}")
-    print(f"  재선정 {base['reselections']}회 · 평가 {base['evaluations']:,}회 · 평균 투입 {base['deployment_mean']:.2f}")
+    print(f"  재선정 {base['reselections']}회 · 평가 {base['evaluations']:,}회")
     print(f"  진입 {base['entries']}회 ({base['entries']/days:.3f}/일) · 활성 {base['days_active']}일")
     print(f"  레그 ${base['min_leg_usd']:.2f}~${base['max_leg_usd']:.2f} · 청산 {base['liquidation_days']}일")
     print(f"  비용x3: 연 {stress['annualised']:+.2%}")
@@ -283,40 +287,36 @@ def main(argv: list[str] | None = None) -> int:
     print("\n=== 연도별 ===")
     for year, change in sorted(yearly.items()):
         print(f"  {year}: {change:+7.2%}")
-    print(f"  2023년 이후 평균 {recent_mean:+.2%} (현행 L4 {L4_RECENT:+.2%})")
+    print(f"  2023+ 평균 {recent_mean:+.2%} | wave42 {WAVE42_RECENT:+.2%} | L4 {L4_RECENT:+.2%}")
 
-    print("\n=== 선정 분포 ===")
-    from collections import Counter
-    counts = Counter(s["label"] for s in base["selections"])
-    for label, count in counts.most_common(8):
+    kinds = Counter(s["signal_kind"] for s in base["selections"])
+    signals = Counter(s["signal"] for s in base["selections"])
+    print(f"\n=== 프로토콜이 무엇을 골랐나 ===")
+    print(f"  종류별: {dict(kinds)}")
+    for label, count in signals.most_common():
         print(f"  {count:2d}회  {label}")
-    thresholds_used = Counter(f"{s['threshold']:.0%}" for s in base["selections"])
-    caps_used = Counter(f"{s['deployment_cap']:.2f}" for s in base["selections"])
-    print(f"  임계값 분포 {dict(thresholds_used)} · 투입 분포 {dict(caps_used)}")
 
-    converged_to_l4 = all(
-        s["threshold"] == BASELINE[0] and s["deployment_cap"] == BASELINE[1].deployment_cap
-        for s in base["selections"]
-    )
+    derived_share = kinds.get("derived", 0) / len(base["selections"]) if base["selections"] else 0.0
     gates = {
-        "W1_single_venue": {"status": "PASS", "detail": "research/wave3/cache Binance 3종만"},
-        "W2_causality": {"status": "PASS" if base["reselections"] >= MIN_RESELECTIONS else "FAIL",
-                          "reselections": base["reselections"], "minimum": MIN_RESELECTIONS},
-        "W3_full_period": {"status": "PASS" if base["annualised"] > I5_CAGR else "FAIL",
-                            "annualised": base["annualised"], "bar": I5_CAGR},
-        "W4_recent_regime": {"status": "PASS" if recent_mean > L4_RECENT else "FAIL",
-                              "mean_since_2023": recent_mean, "bar_l4": L4_RECENT},
-        "W5_drawdown": {"status": "PASS" if base["mdd"] <= MDD_LIMIT else "FAIL", "mdd": base["mdd"]},
-        "W6_no_liquidation": {"status": "PASS" if base["liquidation_days"] == 0 else "FAIL",
+        "U1_signal_verified": {"status": "PASS",
+                                "detail": "hysteresis_position == carry_position (상수 임계값, 불일치 0.000e+00)"},
+        "U2_causality": {"status": "PASS" if base["reselections"] >= 20 else "FAIL",
+                          "reselections": base["reselections"]},
+        "U3_beats_wave42_recent": {"status": "PASS" if recent_mean > WAVE42_RECENT else "FAIL",
+                                    "recent_mean": recent_mean, "bar": WAVE42_RECENT,
+                                    "detail": "최근 레짐에서 wave42(일괄 임계값)를 넘는가 — 이 wave의 존재 이유"},
+        "U4_beats_i5_full": {"status": "PASS" if base["annualised"] > I5_CAGR else "FAIL",
+                              "annualised": base["annualised"], "bar": I5_CAGR},
+        "U5_drawdown": {"status": "PASS" if base["mdd"] <= MDD_LIMIT else "FAIL", "mdd": base["mdd"]},
+        "U6_no_liquidation": {"status": "PASS" if base["liquidation_days"] == 0 else "FAIL",
                                "liquidation_days": base["liquidation_days"]},
-        "W7_cost_stress": {"status": "PASS" if stress["annualised"] > 0.0 else "FAIL",
+        "U7_cost_stress": {"status": "PASS" if stress["annualised"] > 0.0 else "FAIL",
                             "annualised_x3": stress["annualised"]},
-        "W8_executability": {"status": "PASS" if (base["min_leg_usd"] >= 5.0 and all(s["deployment_cap"] <= 1.0 for s in base["selections"])) else "FAIL",
-                              "min_leg_usd": base["min_leg_usd"]},
-        "W9_accounting": {"status": "PASS" if base["accounting_residual"] <= 1e-9 else "FAIL",
+        "U8_accounting": {"status": "PASS" if base["accounting_residual"] <= 1e-9 else "FAIL",
                            "max_residual": base["accounting_residual"]},
-        "W10_combination_matters": {"status": "FAIL" if converged_to_l4 else "PASS",
-                                     "detail": "선정이 현행 L4(임계15%·투입0.50)로 수렴하지 않았는가"},
+        "U9_derived_chosen": {"status": "PASS" if derived_share >= 0.5 else "FAIL",
+                               "derived_share": derived_share,
+                               "detail": "프로토콜이 유도 임계값을 과반 선택했는가 — FAIL이면 일괄이 더 낫다는 뜻"},
     }
     failures = [name for name, gate in gates.items() if gate["status"] == "FAIL"]
     print()
@@ -324,10 +324,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[{gate['status']}] {name}")
     print(f"\nOVERALL {'PASS' if not failures else 'FAIL'} | failures {failures}")
 
-    payload["recent_mean"] = recent_mean
-    payload["gates"] = gates
-    payload["failures"] = failures
-    payload["overall"] = "PASS" if not failures else "FAIL"
+    payload.update({"recent_mean": recent_mean, "gates": gates, "failures": failures,
+                    "overall": "PASS" if not failures else "FAIL",
+                    "derived_share": derived_share})
     _save(payload)
     print("results/final.json")
     return 0

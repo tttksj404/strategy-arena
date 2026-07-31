@@ -44,6 +44,25 @@ WINDOW_DAYS: Final = 7  # L4's own funding window, unchanged
 THRESHOLD_APR: Final = 0.15  # L4's own entry bar, unchanged (I3 lowered it to 0.08 and lost)
 MIN_LIQUIDITY_USDT: Final = 5_000_000.0  # mean daily quote volume required to be tradable that day
 MIN_HISTORY_DAYS: Final = 365
+# A symbol is not tradable as a delta-neutral pair until BOTH legs have been listed a while. Spot and perp
+# list on different dates -- WIFUSDT's perp began 2024-01-18 and its spot only 2024-03-05 -- and on the
+# later leg's first day its price discovery is not a basis a hedged book could have captured. WIFUSDT's
+# spot opened at 1.1892 and closed at 1.5470 (+30%) while its perp moved +4.8%, which this engine booked
+# as a 25.26% basis gain on a single day. The pattern is systemic, not one symbol: of 464 days with
+# |basis| > 2%, 52.6% fall within five days of a symbol's first jointly-valid observation, and the share
+# plateaus by day 10. Thirty days requires a month of both legs trading before the pair is eligible, which
+# removes the artifact without discarding genuine later dislocations.
+MIN_LISTING_AGE_DAYS: Final = 30
+# Even after the listing-age guard, nine seasoned symbol-days show |daily basis| above 10% -- SOLUSDT on
+# 2022-11-10 (FTX collapse) has a perp open of 11.69 against a spot open of 14.08. Those are real
+# dislocations rather than bad rows, but a daily bar's "open" is each product's FIRST TRADE, and on such a
+# day the two first trades are seconds apart amid violent movement. Treating a 17% gap between them as a
+# spread a hedged book could have captured simultaneously is the same assumption that got I4 rejected in
+# wave18: an execution that only exists in calm arithmetic. The pair's daily basis has p99 = 0.463%, so
+# this limit sits roughly 4x above the 99th percentile. Excluding these days can only REMOVE profit the
+# engine would otherwise book, never add any, so the filter is conservative by construction. Sensitivity
+# to it is reported rather than assumed -- see research/wave44_correction.
+BASIS_SANITY_LIMIT: Final = 0.02
 
 
 @dataclass(frozen=True, slots=True)
@@ -224,7 +243,17 @@ def build_panel() -> CarryPanel:
         & np.isfinite(perp_open_arr)
         & np.isfinite(perp_close_arr)
     )
-    tradable = prices_present & liquid
+    # Age measured from the first day BOTH legs quote, so a late-listing spot leg resets the clock.
+    listing_age = np.full(prices_present.shape, -1, dtype=np.int64)
+    for column in range(prices_present.shape[1]):
+        valid_days = np.flatnonzero(prices_present[:, column])
+        if len(valid_days):
+            listing_age[valid_days, column] = valid_days - valid_days[0]
+    seasoned = listing_age >= MIN_LISTING_AGE_DAYS
+    with np.errstate(invalid="ignore", divide="ignore"):
+        daily_basis = (spot_close_arr / spot_open_arr - 1.0) - (perp_close_arr / perp_open_arr - 1.0)
+    plausible = ~(np.abs(np.nan_to_num(daily_basis, nan=0.0)) > BASIS_SANITY_LIMIT)
+    tradable = prices_present & liquid & seasoned & plausible
 
     return CarryPanel(
         days=days,

@@ -1,0 +1,74 @@
+{
+  "wave": "wave44_correction",
+  "wifusdt": {
+    "spot_first_day": "2024-03-05",
+    "spot_move": 0.30087453750420434,
+    "perp_move": 0.04827025929185558,
+    "booked_basis": 0.25260427821234877
+  },
+  "listing_lag": {
+    "symbols": 332,
+    "spot_later": 64,
+    "ge_30d": 25,
+    "ge_90d": 14,
+    "max_lag_days": 547
+  },
+  "verification_fields": [
+    "gap_days",
+    "perp_end",
+    "source",
+    "spot_end",
+    "truncated_after_check"
+  ],
+  "sensitivity": [
+    {
+      "min_listing_age_days": 0,
+      "basis_limit": 10.0,
+      "annualised": 0.08695592167889177,
+      "recent_mean": 0.03620422082878147,
+      "basis_usd": 19.287794882805084,
+      "funding_usd": 81.83524610004963
+    },
+    {
+      "min_listing_age_days": 0,
+      "basis_limit": 0.02,
+      "annualised": 0.06827920706966917,
+      "recent_mean": 0.0038567926891469595,
+      "basis_usd": 1.2180721138877524,
+      "funding_usd": 80.67527695760842
+    },
+    {
+      "min_listing_age_days": 30,
+      "basis_limit": 10.0,
+      "annualised": 0.06787111670452095,
+      "recent_mean": 0.003186197262560614,
+      "basis_usd": 1.2234293974541726,
+      "funding_usd": 80.14512035753343
+    },
+    {
+      "min_listing_age_days": 30,
+      "basis_limit": 0.01,
+      "annualised": 0.06787111670452095,
+      "recent_mean": 0.003186197262560614,
+      "basis_usd": 1.2234293974541726,
+      "funding_usd": 80.14512035753343
+    },
+    {
+      "min_listing_age_days": 30,
+      "basis_limit": 0.02,
+      "annualised": 0.06787111670452095,
+      "recent_mean": 0.003186197262560614,
+      "basis_usd": 1.2234293974541726,
+      "funding_usd": 80.14512035753343
+    },
+    {
+      "min_listing_age_days": 30,
+      "basis_limit": 0.05,
+      "annualised": 0.06787111670452095,
+      "recent_mean": 0.003186197262560614,
+      "basis_usd": 1.2234293974541726,
+      "funding_usd": 80.14512035753343
+    }
+  ],
+  "limit_sensitivity_spread": 0.0
+}
