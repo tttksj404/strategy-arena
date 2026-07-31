@@ -48,7 +48,17 @@ LEDGER_PATH: Final = BASE_DIR / "ledger" / "forward_series.jsonl"
 CURRENCIES: Final = (
     "BTC", "ETH", "SOL", "DOGE", "ADA", "XRP", "LINK", "AVAX",
     "NEAR", "ARB", "OP", "SUI", "APT", "LTC", "BCH", "FIL",
+    # Traditional-asset perpetuals, added after wave55 found them and could not settle them. Their
+    # funding history reaches back only 92 days, far under the 455 a causal walk-forward needs, so the
+    # rejection there is provisional and only a growing sample can make it final. The specific question
+    # they are collected to answer: gold's funding had a median of 0.00% and was positive on 31.2% of
+    # stamps against BTC's +3.24% and 75.4% -- is that the 92-day window or the market's structure?
+    "XAU", "XAG", "MSTR", "AAPL", "META", "SPY", "QQQ", "TSLA", "NVDA",
 )
+# Spot legs for the gold pair. wave55 measured XAUT tracking the XAU perp at 0.9981 daily-return
+# correlation with 1.7% annualised residual, so the delta-neutral construction is sound even though the
+# carry is not there yet; capturing both legs keeps that verifiable as the sample grows.
+SPOT_INSTRUMENTS: Final = ("XAUT-USDT", "PAXG-USDT")
 REQUEST_PAUSE_SECONDS: Final = 0.15
 
 
@@ -199,10 +209,26 @@ def main(argv: list[str] | None = None) -> int:
         )
         time.sleep(REQUEST_PAUSE_SECONDS)
 
+    spot_observations = []
+    for instrument in SPOT_INSTRUMENTS:
+        price = None
+        error = None
+        try:
+            rows = _get(f"https://www.okx.com/api/v5/market/ticker?instId={instrument}")["data"]
+            if rows:
+                price = float(rows[0]["last"])
+        except (urllib.error.URLError, urllib.error.HTTPError, KeyError, ValueError, IndexError) as exc:
+            error = f"px:{type(exc).__name__}"
+        spot_observations.append({"instrument": instrument, "last": price, "error": error})
+        print(f"  {'!' if error else ' '}{instrument:12s} last={price if price is not None else float('nan')}"
+              + (f"  [{error}]" if error else ""))
+        time.sleep(REQUEST_PAUSE_SECONDS)
+
     record = {
         "utc_date": today,
         "collected_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "venue": "OKX",
+        "spot": spot_observations,
         "endpoints": [
             "rubik/stat/contracts/open-interest-volume",
             "rubik/stat/contracts/long-short-account-ratio",
