@@ -1,0 +1,150 @@
+{
+  "wave": "wave47_per_entry",
+  "capital": 100.0,
+  "target_usd": 30.0,
+  "round_trip_cost": 0.0012,
+  "structure": [
+    {
+      "leverage": 5.0,
+      "notional": 500.0,
+      "target_move": 0.06,
+      "stop_ratio": 0.25,
+      "stop_usd": 7.5,
+      "cost_usd": 0.6,
+      "breakeven_win_rate": 0.216,
+      "fair_probability": 0.2,
+      "required_edge": 0.015999999999999986
+    },
+    {
+      "leverage": 5.0,
+      "notional": 500.0,
+      "target_move": 0.06,
+      "stop_ratio": 0.5,
+      "stop_usd": 15.0,
+      "cost_usd": 0.6,
+      "breakeven_win_rate": 0.3466666666666667,
+      "fair_probability": 0.3333333333333333,
+      "required_edge": 0.013333333333333364
+    },
+    {
+      "leverage": 5.0,
+      "notional": 500.0,
+      "target_move": 0.06,
+      "stop_ratio": 1.0,
+      "stop_usd": 30.0,
+      "cost_usd": 0.6,
+      "breakeven_win_rate": 0.51,
+      "fair_probability": 0.5,
+      "required_edge": 0.010000000000000009
+    },
+    {
+      "leverage": 10.0,
+      "notional": 1000.0,
+      "target_move": 0.03,
+      "stop_ratio": 0.25,
+      "stop_usd": 7.5,
+      "cost_usd": 1.2,
+      "breakeven_win_rate": 0.23199999999999998,
+      "fair_probability": 0.2,
+      "required_edge": 0.03199999999999997
+    },
+    {
+      "leverage": 10.0,
+      "notional": 1000.0,
+      "target_move": 0.03,
+      "stop_ratio": 0.5,
+      "stop_usd": 15.0,
+      "cost_usd": 1.2,
+      "breakeven_win_rate": 0.36,
+      "fair_probability": 0.3333333333333333,
+      "required_edge": 0.026666666666666672
+    },
+    {
+      "leverage": 10.0,
+      "notional": 1000.0,
+      "target_move": 0.03,
+      "stop_ratio": 1.0,
+      "stop_usd": 30.0,
+      "cost_usd": 1.2,
+      "breakeven_win_rate": 0.52,
+      "fair_probability": 0.5,
+      "required_edge": 0.020000000000000018
+    },
+    {
+      "leverage": 20.0,
+      "notional": 2000.0,
+      "target_move": 0.015,
+      "stop_ratio": 0.25,
+      "stop_usd": 7.5,
+      "cost_usd": 2.4,
+      "breakeven_win_rate": 0.264,
+      "fair_probability": 0.2,
+      "required_edge": 0.064
+    },
+    {
+      "leverage": 20.0,
+      "notional": 2000.0,
+      "target_move": 0.015,
+      "stop_ratio": 0.5,
+      "stop_usd": 15.0,
+      "cost_usd": 2.4,
+      "breakeven_win_rate": 0.38666666666666666,
+      "fair_probability": 0.3333333333333333,
+      "required_edge": 0.053333333333333344
+    },
+    {
+      "leverage": 20.0,
+      "notional": 2000.0,
+      "target_move": 0.015,
+      "stop_ratio": 1.0,
+      "stop_usd": 30.0,
+      "cost_usd": 2.4,
+      "breakeven_win_rate": 0.5399999999999999,
+      "fair_probability": 0.5,
+      "required_edge": 0.039999999999999925
+    }
+  ],
+  "measured": [
+    {
+      "resolved": 28281,
+      "hit_rate_optimistic": 0.2278207984158976,
+      "hit_rate_pessimistic": 0.17842367667338496,
+      "ambiguous_share": 0.049397121742512644,
+      "leverage": 20.0,
+      "stop_ratio": 0.25,
+      "breakeven": 0.264,
+      "optimistic_gap": -0.0361792015841024
+    },
+    {
+      "resolved": 28280,
+      "hit_rate_optimistic": 0.3475954738330976,
+      "hit_rate_pessimistic": 0.31637199434229135,
+      "ambiguous_share": 0.031223479490806224,
+      "leverage": 20.0,
+      "stop_ratio": 0.5,
+      "breakeven": 0.38666666666666666,
+      "optimistic_gap": -0.03907119283356908
+    },
+    {
+      "resolved": 28275,
+      "hit_rate_optimistic": 0.20749778956675508,
+      "hit_rate_pessimistic": 0.19939876215738284,
+      "ambiguous_share": 0.008099027409372237,
+      "leverage": 10.0,
+      "stop_ratio": 0.25,
+      "breakeven": 0.23199999999999998,
+      "optimistic_gap": -0.02450221043324491
+    },
+    {
+      "resolved": 28264,
+      "hit_rate_optimistic": 0.3403622983300311,
+      "hit_rate_pessimistic": 0.33601047268610246,
+      "ambiguous_share": 0.004351825643928673,
+      "leverage": 10.0,
+      "stop_ratio": 0.5,
+      "breakeven": 0.36,
+      "optimistic_gap": -0.019637701669968866
+    }
+  ],
+  "best_optimistic_gap": -0.019637701669968866
+}
