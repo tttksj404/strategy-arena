@@ -1,39 +1,52 @@
 # 오늘의 신호 — 검증된 캐리 전략 (L4/I5 계열)
 
-관측 시각: `2026-07-30T03:26:15.253650+00:00` · 데이터원: **Bitget 공개 REST (읽기 전용)**
+관측 시각: `2026-07-31T05:03:08.062027+00:00` · 데이터원: **Bitget 공개 REST (읽기 전용)**
 
 > **실주문 금지.** 이 파일은 사람이 손으로 집행하기 위한 계획서이고, 이 도구는 주문·계정·출금 엔드포인트를 참조하지 않는다(`docs/RESEARCH_GUARDRAILS.md` 운영계약).
 
 ## 판정
 
-- **행동: `HOLD_CASH`**
+- **행동: `OPEN_CARRY`**
 - 충실도 게이트: **PASS**
-- 진입 임계 15.0% APR 초과 종목 수: **0**
+- 진입 임계 15.0% APR 초과 종목 수: **1**
 - 원장 기록: 추가됨
 
-## 집행 계획: 없음 — 현금 대기
+## 집행 계획 ($100 기준)
 
-진입 임계(15.0% APR)를 넘는 종목이 없다. **대기는 이 전략의 정상 동작이며 손실이 아니다** — L4/I5는 전기간 2,509일 중 1,029일(41%)을 현금으로 보냈고, 수익은 고펀딩 레짐에 집중 발생한다.
+### GWEIUSDT — 현재 펀딩 **19.60% APR**
+
+| 레그 | 방향 | 상품 | 노셔널 | 참조가 | 수량(약) | 주문 |
+|---|---|---|---|---|---|---|
+| 현물 | BUY | spot | $45.00 | 0.015054 | 2989.23874053 | limit (maker) at or inside best bid |
+| 퍼프 | SELL/SHORT | perp 1x (isolated) | $45.00 | 0.015 | 3000.0 | limit (maker) at or inside best ask |
+
+이 페어의 연 환산 기대 수취: 약 **$8.82** (펀딩이 현 수준을 유지할 경우에 한함)
+
+**주의사항**
+
+- gross exposure $90.00 on $90.00 active capital = 1.00x (delta-neutral, must stay 1.0x)
+- $10.00 stays in reserve, untouched
+- both legs must be filled before the position is considered open; a one-legged position is a naked directional bet and violates the strategy's core assumption
 
 ## 현재 펀딩 상위 10종목 (참고)
 
 | 순위 | 심볼 | 7일 평균 펀딩 APR | 임계 초과 | 24h 거래대금 |
 |---:|---|---:|:---:|---:|
-| 1 | SOONUSDT | 14.66% | — | $8M |
-| 2 | PEOPLEUSDT | 10.95% | — | $3M |
-| 3 | LABUSDT | 9.64% | — | $5M |
-| 4 | ARBUSDT | 9.51% | — | $2M |
-| 5 | BNBUSDT | 9.29% | — | $6M |
-| 6 | NEARUSDT | 8.55% | — | $16M |
-| 7 | ZECUSDT | 8.35% | — | $35M |
-| 8 | DOTUSDT | 8.18% | — | $3M |
-| 9 | USUSDT | 7.48% | — | $2M |
-| 10 | DOGEUSDT | 7.31% | — | $30M |
+| 1 | GWEIUSDT | 19.60% | ✅ | $1M |
+| 2 | SOONUSDT | 11.41% | — | $3M |
+| 3 | PEOPLEUSDT | 10.95% | — | $2M |
+| 4 | CFXUSDT | 10.95% | — | $2M |
+| 5 | ARBUSDT | 9.19% | — | $1M |
+| 6 | BNBUSDT | 8.94% | — | $12M |
+| 7 | COTIUSDT | 8.65% | — | $41M |
+| 8 | DOGEUSDT | 8.32% | — | $17M |
+| 9 | LABUSDT | 8.15% | — | $3M |
+| 10 | NEARUSDT | 7.80% | — | $10M |
 
 ## 데이터 커버리지
 
-- 퍼프 심볼 731 · 현물 심볼 1211
-- 퍼프∧현물 동시 존재(상위 200): 104
+- 퍼프 심볼 732 · 현물 심볼 1213
+- 퍼프∧현물 동시 존재(상위 200): 100
 - 펀딩 이력 스캔: 80종목 → 7일 완전창 확보 79종목 (이력부족 1)
 
 ## 회로차단기 (위반 시 전량 청산 후 재검증)
