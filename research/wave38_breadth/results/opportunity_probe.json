@@ -1,0 +1,22 @@
+{
+  "wave": "wave38_breadth_probe",
+  "question": "does top_k>1 have anything to pull on at the unchanged 15% APR bar?",
+  "symbols": 330,
+  "days_counted": 2362,
+  "threshold_apr": 0.15,
+  "count_above_threshold": {
+    "median": 1.0,
+    "mean": 16.34419983065199,
+    "max": 200.0,
+    "share_zero": 0.4419983065198984,
+    "share_ge_1": 0.5580016934801016,
+    "share_ge_2": 0.42929720575783237,
+    "share_ge_3": 0.3590177815410669,
+    "share_ge_5": 0.2993226079593565
+  },
+  "best_apr": {
+    "median": 0.18376237857142846,
+    "share_below_threshold": 0.4419983065198984
+  },
+  "lever_is_real": true
+}
