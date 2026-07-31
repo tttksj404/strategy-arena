@@ -1,0 +1,46 @@
+{
+  "wave": "wave56_crossasset",
+  "common_days": 93,
+  "instruments": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "ADA",
+    "LINK",
+    "AVAX",
+    "XAU",
+    "XAG",
+    "MSTR",
+    "AAPL",
+    "META",
+    "TSLA",
+    "NVDA",
+    "SPY",
+    "QQQ"
+  ],
+  "within_crypto": {
+    "n": 28,
+    "median": 0.3085858767614791,
+    "mean": 0.30985326915493927,
+    "min": -0.004289573080580536,
+    "max": 0.5524052968517595
+  },
+  "within_tradfi": {
+    "n": 36,
+    "median": 0.08872244958304842,
+    "mean": 0.1491303417307999,
+    "min": -0.1429044549403357,
+    "max": 0.6942586170738443
+  },
+  "across": {
+    "n": 72,
+    "median": -0.0005830923216466992,
+    "mean": -0.006825955625551932,
+    "min": -0.48606416092461635,
+    "max": 0.32812844823268617
+  },
+  "wave52_window_return_corr_for_context_only": 0.96,
+  "decorrelated": true
+}
