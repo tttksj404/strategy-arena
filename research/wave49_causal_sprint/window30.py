@@ -60,9 +60,18 @@ def window_cache(cache: MarketCache, start_bar: int, end_bar: int) -> MarketCach
     if not (0 <= start_bar < end_bar <= cache.n_bars):
         raise ValueError(f"bad window [{start_bar}, {end_bar}) for {cache.n_bars} bars")
 
+    from research.wave30_qd.dataio30 import stable_value_per_dollar
+
     day_of_bar = cache.day_of_bar[start_bar:end_bar]
     first_day = int(day_of_bar[0])
     last_day = int(day_of_bar[-1])
+    sliced_factor = cache.stable_daily_factor[first_day : last_day + 1]
+    # stable_per_dollar is CUMULATIVE from the start of the whole series (0.9*cumprod(factor)+0.1), and
+    # engine30 multiplies the stable allocation by it directly. Slicing it without rebasing therefore hands
+    # a mid-series window an instant windfall: the first observed equity of a window with
+    # sleeve_fraction=0.75 came out at $103.65 instead of $100, and that error compounds once per window.
+    # Recomputing from the sliced daily factors with the validated helper rebases it correctly -- 90%
+    # compounding from THIS window's start, 10% flat -- which is what a fresh deployment here would see.
     return dataclasses.replace(
         cache,
         index=cache.index[start_bar:end_bar],
@@ -70,8 +79,8 @@ def window_cache(cache: MarketCache, start_bar: int, end_bar: int) -> MarketCach
         is_mask=cache.is_mask[start_bar:end_bar],
         day_of_bar=day_of_bar - first_day,
         daily_index=cache.daily_index[first_day : last_day + 1],
-        stable_daily_factor=cache.stable_daily_factor[first_day : last_day + 1],
-        stable_per_dollar=cache.stable_per_dollar[first_day : last_day + 1],
+        stable_daily_factor=sliced_factor,
+        stable_per_dollar=stable_value_per_dollar(sliced_factor),
         n_bars=end_bar - start_bar,
     )
 
