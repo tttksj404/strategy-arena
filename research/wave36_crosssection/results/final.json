@@ -1,0 +1,143 @@
+{
+  "wave": "wave36_crosssection",
+  "premise": "cross-sectional funding dispersion, dollar-neutral, no directional prediction",
+  "grid_combinations": 9720,
+  "feasible_combinations": 6299,
+  "cumulative_trials": 424801,
+  "selected": {
+    "config": {
+      "lookback_days": 7,
+      "k": 2,
+      "hold_band": 0.25,
+      "leverage": 3.0,
+      "rebalance_every_stamps": 1,
+      "min_dispersion_apr": 0.0,
+      "sleeve_fraction": 1.0
+    },
+    "fitness": 0.7064287212024828,
+    "raw_fitness": 0.7064287212024828,
+    "fold_returns": [
+      0.8873156003310974,
+      0.7066651018552925,
+      0.7928206381537051,
+      0.75303268125539
+    ],
+    "is_annualised": 0.7811405940686231,
+    "is_final_usdt": 868.8803990016509,
+    "is_mdd": 0.6797755339706916,
+    "funding_usdt": 331.1852870094783,
+    "price_pnl_usdt": 618.1684601435902,
+    "cost_usdt": 180.47334815141733,
+    "rotations": 16828,
+    "margin_call": false,
+    "min_leg_notional": 68.93307812333727,
+    "max_leg_notional": 671.0850973094498,
+    "infeasible_reasons": []
+  },
+  "config": {
+    "lookback_days": 7,
+    "k": 2,
+    "hold_band": 0.25,
+    "leverage": 3.0,
+    "rebalance_every_stamps": 1,
+    "min_dispersion_apr": 0.0,
+    "sleeve_fraction": 1.0
+  },
+  "windows": {
+    "is": {
+      "start_usdt": 100.0,
+      "end_usdt": 868.8803990016509,
+      "annualised": 0.7811405940686231,
+      "mdd": 0.6797755339706916
+    },
+    "oos": {
+      "start_usdt": 868.8803990016509,
+      "end_usdt": 1089.0926720478897,
+      "annualised": 0.33441059017939945,
+      "mdd": 0.37844258505673356
+    },
+    "full": {
+      "start_usdt": 100.0,
+      "end_usdt": 1089.0926720478897,
+      "annualised": 0.6938497445549612,
+      "mdd": 0.6797755339706916
+    },
+    "baseline_oos": {
+      "start_usdt": 119.56786054006983,
+      "end_usdt": 122.18988834283435,
+      "annualised": 0.028090381762088112,
+      "mdd": 0.008762444939299775
+    },
+    "baseline_full": {
+      "start_usdt": 99.97920290304117,
+      "end_usdt": 122.18988834283435,
+      "annualised": 0.0452692442371565,
+      "mdd": 0.018280497864919254
+    }
+  },
+  "pnl_decomposition": {
+    "funding_usdt": 573.2727178333977,
+    "price_pnl_usdt": 752.0185116804287,
+    "cost_usdt": 336.198557465937,
+    "rotations": 20322,
+    "stamps_in_market": 4993
+  },
+  "gates": {
+    "X1_probe_reproduction": {
+      "status": "PASS",
+      "funding_usdt": 573.2727178333977,
+      "price_pnl_usdt": 752.0185116804287,
+      "cost_usdt": 336.198557465937,
+      "funding_share_of_gross_pnl": 0.43256357928490835,
+      "note": "\ud504\ub85c\ube0c\ub294 \ud380\ub529\ub9cc \uacc4\uc0b0\ud588\ub2e4. \uc5d4\uc9c4\uc758 \ud380\ub529 \ubd80\ud638\uac00 \uc591\uc218\uc5ec\uc57c \ud504\ub85c\ube0c\uc640 \uc815\ud569."
+    },
+    "X2_market_neutrality": {
+      "status": "PASS",
+      "correlation_with_btc": -0.1878684826706369,
+      "beta_to_btc": -0.3089219749483027,
+      "max_abs_correlation": 0.3
+    },
+    "X3_oos": {
+      "status": "PASS",
+      "candidate_oos_annualised": 0.33441059017939945,
+      "baseline_oos_annualised": 0.028090381762088112,
+      "oos_start_usdt": 868.8803990016509,
+      "oos_end_usdt": 1089.0926720478897
+    },
+    "X4_ruin": {
+      "status": "PASS",
+      "ruin_probability": 0.0376,
+      "max_ruin_probability": 0.05,
+      "margin_call": false,
+      "p05_usdt": 61.99616481023429,
+      "median_usdt": 1064.8321325097768
+    },
+    "X5_drawdown": {
+      "status": "FAIL",
+      "full_mdd": 0.6797755339706916,
+      "max_mdd": 0.25,
+      "is_mdd": 0.6797755339706916,
+      "oos_mdd": 0.37844258505673356
+    },
+    "X6_executability": {
+      "status": "PASS",
+      "min_leg_notional": 68.93307812333727,
+      "max_leg_notional": 1168.7762512308252,
+      "gross_leverage": 3.0,
+      "reasons": []
+    },
+    "X7_cost_stress": {
+      "status": "FAIL",
+      "stress_full_annualised": 0.2735466353775504,
+      "stress_oos_annualised": -0.03820594089696494,
+      "stress_margin_call": false,
+      "stress_cost_usdt": 445.3182591610189
+    }
+  },
+  "overall": "FAIL",
+  "failure_reasons": [
+    "X5_drawdown",
+    "X7_cost_stress"
+  ],
+  "promoted": false
+}
