@@ -48,7 +48,7 @@ RESULTS_DIR: Final = Path(__file__).resolve().parent / "results"
 BARS_PER_DAY: Final = 24
 TRAIN_DAYS: Final = 365
 APPLY_DAYS: Final = 90
-SEARCH_BUDGET: Final = 400
+SEARCH_BUDGET = 400  # overridable via --budget; wave50's seed test showed 400 cannot select stably
 START_CAPITAL: Final = 100.0
 I5_CORRECTED_CAGR: Final = 0.0828
 RUIN_FLOOR: Final = 50.0
@@ -212,7 +212,50 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--only", type=float, help="single leverage cap")
     parser.add_argument("--seed-test", type=float,
                         help="re-run one cap under several seed offsets to separate signal from search luck")
+    parser.add_argument("--budget", type=int, help="evaluations per reselection (default 400)")
+    parser.add_argument("--seed-offset", type=int, default=0,
+                        help="single seed offset, for running one budget-heavy seed per invocation")
     args = parser.parse_args(sys.argv[1:] if argv is None else argv)
+
+    global SEARCH_BUDGET
+    if args.budget:
+        SEARCH_BUDGET = args.budget
+
+    if args.budget and args.seed_test:
+        # Does more search remove the seed dependence? If 400 evaluations cannot select stably but 2000
+        # can, the instability was undersampling and the family is still open. If the spread survives a
+        # 5x budget, the training window genuinely does not predict the applied one and the family closes.
+        # One seed per invocation, because a heavier budget puts a full sweep past the shell timeout.
+        cache_local = build_market_cache()
+        path_budget = RESULTS_DIR / f"budget_{args.budget}_cap_{args.seed_test:.1f}.json"
+        store = json.loads(path_budget.read_text(encoding="utf-8")) if path_budget.exists() else {"rows": {}}
+        offset = args.seed_offset
+        print(f"=== 예산 {args.budget}회 · 상한 {args.seed_test:.1f}x · 시드오프셋 {offset} ===")
+        row = walk_forward_seeded(cache_local, args.seed_test, MDD_WEIGHT, offset)
+        g = gates_for(row)
+        store["rows"][str(offset)] = {k: v for k, v in row.items()
+                                      if k not in ("equity", "equity_days", "window_returns")}
+        path_budget.write_text(json.dumps(store, indent=2, default=str), encoding="utf-8")
+        print(f"  연 {row['annualised']:+8.2%} | MDD {row['mdd']:6.2%} | 최저 ${row['min_equity']:,.2f} "
+              f"| 창중앙 {row['window_median']:+7.2%} | 상위3제거 {row['trimmed_multiple_3']:.2f}x "
+              f"| 게이트 {sum(g.values())}/5")
+        done = sorted(store["rows"], key=lambda k: int(k))
+        print(f"\n  누적 시드 {done}")
+        if len(done) >= 3:
+            annualised = [store["rows"][k]["annualised"] for k in done]
+            medians = [store["rows"][k]["window_median"] for k in done]
+            passes = [sum(gates_for(store["rows"][k]).values()) for k in done]
+            spread = max(annualised) - min(annualised)
+            print(f"  연환산 {min(annualised):+.2%} ~ {max(annualised):+.2%} (폭 {spread:.2%}p)")
+            print(f"  창중앙 {min(medians):+.2%} ~ {max(medians):+.2%} · 5/5 통과 {sum(1 for p in passes if p==5)}/{len(done)}")
+            print(f"  예산 400 기준: 폭 67.59%p · 5/5 통과 0/5")
+            if spread < 0.30 and sum(1 for p in passes if p == 5) >= len(done) - 1:
+                print("  => 예산 증가가 시드 의존을 제거했다. 계열이 다시 열린다.")
+            else:
+                print("  => 예산을 5배로 올려도 시드 의존이 남는다. 훈련창이 적용창을 예측하지 못한다 -> 계열 닫힘.")
+        else:
+            print(f"  (판정에는 시드 3개 이상 필요 — --seed-offset 으로 이어서 실행)")
+        return 0
 
     if args.seed_test:
         # Caps 2.0x and 3.0x produced wildly different outcomes (+225.82% at 5/5 gates versus +24.34% at

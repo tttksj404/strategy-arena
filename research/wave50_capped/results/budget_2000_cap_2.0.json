@@ -1,0 +1,97 @@
+{
+  "rows": {
+    "0": {
+      "leverage_cap": 2.0,
+      "mdd_weight": 3.0,
+      "final_usdt": 2.4918948882535243,
+      "annualised": -0.4747458500791053,
+      "mdd": 0.9969568739707255,
+      "min_equity": 1.2827830473441542,
+      "share_below_floor": 0.8179646440516005,
+      "days": 2093,
+      "windows": 23,
+      "window_median": -0.012536635847686606,
+      "window_positive_share": 0.4782608695652174,
+      "full_multiple": 0.024918948882535243,
+      "trimmed_multiple_3": 0.010372426246817583,
+      "trimmed": {
+        "1": 0.014467797976075345,
+        "2": 0.012182517751915504,
+        "3": 0.010372426246817583
+      },
+      "n_trades": 839,
+      "n_liquidations": 0,
+      "realised_leverage_median": 1.8949249918436901,
+      "realised_leverage_max": 1.988096323093772,
+      "families": {
+        "breakout": 6,
+        "funding_breakout": 5,
+        "momentum": 10,
+        "reversion": 2
+      },
+      "share_entries_over_30usd": 0.023837902264600714
+    },
+    "1000": {
+      "leverage_cap": 2.0,
+      "mdd_weight": 3.0,
+      "final_usdt": 379.2561279234856,
+      "annualised": 0.26171287797747667,
+      "mdd": 0.8795554276439802,
+      "min_equity": 71.76605325306856,
+      "share_below_floor": 0.0,
+      "days": 2093,
+      "windows": 23,
+      "window_median": 0.05055878420369764,
+      "window_positive_share": 0.6086956521739131,
+      "full_multiple": 3.7925612792348553,
+      "trimmed_multiple_3": 0.34799735803698373,
+      "trimmed": {
+        "1": 1.366734695539866,
+        "2": 0.6362621524617355,
+        "3": 0.34799735803698373
+      },
+      "n_trades": 690,
+      "n_liquidations": 0,
+      "realised_leverage_median": 1.8830951422650053,
+      "realised_leverage_max": 1.9995788972937139,
+      "families": {
+        "breakout": 9,
+        "funding_breakout": 5,
+        "momentum": 4,
+        "reversion": 5
+      },
+      "share_entries_over_30usd": 0.03768115942028986
+    },
+    "2000": {
+      "leverage_cap": 2.0,
+      "mdd_weight": 3.0,
+      "final_usdt": 22.489230100686633,
+      "annualised": -0.2291137262713432,
+      "mdd": 0.8995918804069452,
+      "min_equity": 17.27434413537719,
+      "share_below_floor": 0.3119923554706163,
+      "days": 2093,
+      "windows": 23,
+      "window_median": -0.025045877770553893,
+      "window_positive_share": 0.391304347826087,
+      "full_multiple": 0.2248923010068662,
+      "trimmed_multiple_3": 0.05395892367923481,
+      "trimmed": {
+        "1": 0.12254833596552821,
+        "2": 0.08008787502720513,
+        "3": 0.05395892367923481
+      },
+      "n_trades": 437,
+      "n_liquidations": 0,
+      "realised_leverage_median": 1.8729956837363493,
+      "realised_leverage_max": 1.9988943043047596,
+      "families": {
+        "breakout": 7,
+        "funding_breakout": 9,
+        "momentum": 3,
+        "reversion": 4
+      },
+      "share_entries_over_30usd": 0.041189931350114416
+    }
+  }
+}
