@@ -1,0 +1,56 @@
+{
+  "wave": "wave39_margin",
+  "worst_observed_adverse_move": 0.836,
+  "measured": {
+    "OKX": {
+      "error": "AttributeError: 'MarginRules' object has no attribute '__dict__'"
+    },
+    "Bitget": {
+      "error": "AttributeError: 'MarginRules' object has no attribute '__dict__'"
+    }
+  },
+  "ladder": [
+    {
+      "deployment": 0.5,
+      "isolated_perp_leverage": 1.0,
+      "isolated_threshold": 1.0,
+      "portfolio": {
+        "OKX": 5.451612903225805,
+        "Bitget": 5.451612903225805
+      }
+    },
+    {
+      "deployment": 0.75,
+      "isolated_perp_leverage": 3.0,
+      "isolated_threshold": 0.3333333333333333,
+      "portfolio": {
+        "OKX": 3.301075268817203,
+        "Bitget": 3.301075268817203
+      }
+    },
+    {
+      "deployment": 0.95,
+      "isolated_perp_leverage": 18.999999999999982,
+      "isolated_threshold": 0.052631578947368474,
+      "portfolio": {
+        "OKX": 2.3955857385398973,
+        "Bitget": 2.3955857385398973
+      }
+    },
+    {
+      "deployment": 1.0,
+      "isolated_perp_leverage": Infinity,
+      "isolated_threshold": 0.0,
+      "portfolio": {
+        "OKX": 2.2258064516129026,
+        "Bitget": 2.2258064516129026
+      }
+    }
+  ],
+  "portfolio_unlocks": [
+    0.75,
+    0.95,
+    1.0
+  ],
+  "binance": "unmeasurable from this environment (HTTP 451)"
+}

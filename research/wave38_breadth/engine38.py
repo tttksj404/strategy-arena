@@ -115,6 +115,22 @@ class CarryResult:
         return float(np.max(1.0 - self.equity / peak))
 
 
+def _portfolio_liquidating_move(deployment: float, haircut: float, maintenance_rate: float) -> float:
+    """Adverse move that liquidates a delta-neutral book held in a unified/portfolio-margin account.
+
+    Derivation and the reason a haircut leaves a finite (if distant) threshold are documented in
+    research/wave39_margin/probe_margin.py::liquidating_move; this is the same arithmetic applied per
+    day to the deployment actually in force.
+    """
+    if deployment <= 0.0:
+        return float("inf")
+    denominator = deployment * (1.0 - haircut + maintenance_rate)
+    if denominator <= 0.0:
+        return float("inf")
+    numerator = (1.0 - deployment) + deployment * (haircut - maintenance_rate)
+    return numerator / denominator
+
+
 def _select(panel: CarryPanel, day: int, config: CarryConfig) -> np.ndarray:
     """Indices of symbols to hold, highest funding APR first, at most top_k.
 
@@ -137,6 +153,7 @@ def simulate(
     end: int,
     cost_multiplier: float = 1.0,
     start_capital: float = ACTIVE_CAPITAL,
+    portfolio_margin: tuple[float, float] | None = None,
 ) -> CarryResult:
     """Run the carry book over panel days [start, end).
 
@@ -148,6 +165,12 @@ def simulate(
     absolute dollar floor, so a walk-forward chain must carry real capital into each applied window
     rather than restarting at $90 and multiplying returns afterwards. wave37 learned this the hard way
     when unenforced minimums let legs shrink to $0.40.
+
+    `portfolio_margin` is an optional (haircut, maintenance_rate) pair. Left as None the liquidation test
+    is wave38's isolated-margin one -- the short perp dies once an adverse move exhausts the free cash
+    backing it -- and results are unchanged from wave38. Supplied, the spot leg is treated as collateral
+    at `haircut` and liquidation is tested against total account equity, which is how a unified account
+    actually behaves. wave39 measured both venues' published rates rather than assuming either regime.
     """
     n_symbols = len(panel.symbols)
     capital = start_capital
@@ -224,13 +247,23 @@ def simulate(
         # rise. Daily moves of that size are ordinary in crypto, so this has to be measured rather than
         # waved away -- I4 was rejected in wave18 for exactly this class of unmodeled execution
         # constraint, and it would be inconsistent to hold this wave to a lower standard.
-        if weights.any() and np.isfinite(config.implied_perp_leverage):
+        if weights.any():
+            deployment_now = float(np.abs(weights).sum())
+            if portfolio_margin is not None:
+                haircut, maintenance_rate = portfolio_margin
+                threshold = _portfolio_liquidating_move(deployment_now, haircut, maintenance_rate)
+            else:
+                threshold = (
+                    1.0 / config.implied_perp_leverage
+                    if np.isfinite(config.implied_perp_leverage) and config.implied_perp_leverage > 0.0
+                    else 0.0
+                )
             held_idx = np.flatnonzero(weights > 0.0)
             adverse = panel.perp_high[day][held_idx] / panel.perp_open[day][held_idx] - 1.0
             adverse = np.nan_to_num(adverse, nan=0.0, posinf=0.0, neginf=0.0)
             if len(adverse):
                 worst_adverse_move = max(worst_adverse_move, float(np.max(adverse)))
-                if float(np.max(adverse)) >= 1.0 / config.implied_perp_leverage:
+                if float(np.max(adverse)) >= threshold:
                     liquidation_days += 1
 
         # --- hold: intraday basis move plus funding -------------------------------------------
