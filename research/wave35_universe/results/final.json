@@ -1,0 +1,231 @@
+{
+  "wave": "wave35_universe",
+  "universe": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "ADAUSDT",
+    "LINKUSDT",
+    "AVAXUSDT",
+    "LTCUSDT",
+    "NEARUSDT"
+  ],
+  "universe_available": 20,
+  "span": "2022-01-01 ~ 2026-07-14",
+  "chosen_seed": 2026352,
+  "candidate": {
+    "genome": {
+      "signal_family": "breakout",
+      "lookback_bars": 168,
+      "entry_threshold": 0.832768,
+      "stop_pct": 0.04734499,
+      "target_r": 2.300657,
+      "trail_enabled": true,
+      "risk_frac": 0.20859275,
+      "max_hold_bars": 96,
+      "allow_short": true,
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT",
+        "XRPUSDT",
+        "DOGEUSDT",
+        "ADAUSDT",
+        "LINKUSDT",
+        "AVAXUSDT",
+        "LTCUSDT",
+        "NEARUSDT"
+      ],
+      "universe_breadth": 10,
+      "max_concurrent": 3,
+      "cooldown_bars_after_loss": 6,
+      "sleeve_fraction": 0.25,
+      "derived_leverage": 4.405804,
+      "derived_liquidation_band": 0.221973
+    },
+    "vector": [
+      0.14486401997575854,
+      0.7865870310679272,
+      0.2775894077001744,
+      0.7447060870316579,
+      0.18580816027472097,
+      0.7056600823674724,
+      0.5092121773161163,
+      0.5886477057755081,
+      0.7723866226783965,
+      0.6596918635524425,
+      0.9272952390886047,
+      0.4814226017699701,
+      0.27391310933942586
+    ],
+    "fitness": 1.7347560149580485,
+    "is_total_final_usdt": 566.754483893518,
+    "account_mdd": 0.9271112277860107,
+    "n_trades": 1647,
+    "n_liquidations": 0,
+    "mean_leverage": 4.405804229230989,
+    "min_notional_usdt": 23.285886694972664,
+    "max_notional_usdt": 926.62897062932,
+    "infeasible_reasons": [],
+    "entry_profile": {
+      "n_trades": 1647,
+      "active_days": 1362.0,
+      "trades_per_active_day": 1.2092511013215859,
+      "survived_full_span": true,
+      "median_usdt": -1.0720409639986328,
+      "mean_usdt": 0.2799570111463891,
+      "p05_usdt": -12.715928994698277,
+      "p95_usdt": 18.989717779062392,
+      "best_usdt": 85.88176021632172,
+      "worst_usdt": -43.13761639671188,
+      "win_share": 0.40922890103217974,
+      "share_ge_target": 0.09775349119611415,
+      "share_le_negative_target": 0.07407407407407407,
+      "total_usdt": 461.0891973581028,
+      "account_final_usdt": 477.0785884884656,
+      "account_mdd": 0.9271112277860107,
+      "capital_for_target_ev": 297.6647485701241
+    }
+  },
+  "equity_windows": {
+    "is": {
+      "start_usdt": 99.98440217728088,
+      "end_usdt": 575.8460112682878,
+      "days": 1368.0,
+      "total_return": 4.7593584472032315,
+      "annualized": 0.5954294146304797,
+      "mdd": 0.6510008104613051
+    },
+    "oos": {
+      "start_usdt": 614.6488644525023,
+      "end_usdt": 566.1421383193393,
+      "days": 286.0,
+      "total_return": -0.07891778369487468,
+      "annualized": -0.09959734738892412,
+      "mdd": 0.7632212817916773
+    },
+    "full": {
+      "start_usdt": 99.98440217728088,
+      "end_usdt": 566.1421383193393,
+      "days": 1655.0,
+      "total_return": 4.662304579423508,
+      "annualized": 0.46577730321317357,
+      "mdd": 0.7632212817916773
+    },
+    "baseline_oos": {
+      "start_usdt": 119.57354017029849,
+      "end_usdt": 122.18988834283435,
+      "days": 286.0,
+      "total_return": 0.021880661631408005,
+      "annualized": 0.02800856692148801,
+      "mdd": 0.008762444939299775
+    },
+    "baseline_full": {
+      "start_usdt": 99.97920290304117,
+      "end_usdt": 122.18988834283435,
+      "days": 1655.0,
+      "total_return": 0.2221530557843403,
+      "annualized": 0.04523756862164796,
+      "mdd": 0.018280497864919254
+    }
+  },
+  "full_span_entry_profile": {
+    "n_trades": 1908,
+    "active_days": 1649.0,
+    "trades_per_active_day": 1.1570648878107945,
+    "survived_full_span": true,
+    "median_usdt": -1.2243716849465947,
+    "mean_usdt": 0.22581116222652253,
+    "p05_usdt": -25.46622440177608,
+    "p95_usdt": 26.870481909329005,
+    "best_usdt": 190.01765866220353,
+    "worst_usdt": -88.87658067130278,
+    "win_share": 0.4061844863731656,
+    "share_ge_target": 0.1278825995807128,
+    "share_le_negative_target": 0.13050314465408805,
+    "total_usdt": 430.847697528205,
+    "account_final_usdt": 474.49972206221355,
+    "account_mdd": 0.9271112754851673,
+    "capital_for_target_ev": 369.03992039922935
+  },
+  "max_notional_usdt": 2171.057087318745,
+  "arm_scores": {
+    "simulated_annealing": [
+      1.5846081168804345,
+      1.7347560149580485,
+      2.0988632510061516,
+      0.6359396219009794,
+      2.021449770533553
+    ],
+    "random": [
+      1.2810361161302959,
+      1.6355119106655394,
+      0.965975475163928,
+      0.7149133702639274,
+      0.6271092765006474
+    ]
+  },
+  "sa_wins_over_random": 4,
+  "cumulative_trials": 415081,
+  "gates": {
+    "W1_method_validity": {
+      "status": "PASS",
+      "sa_wins_over_random": 4,
+      "required": 4,
+      "sa_median": 1.7347560149580485,
+      "random_median": 0.965975475163928
+    },
+    "W2_frequency_and_survival": {
+      "status": "PASS",
+      "trades_per_active_day": 1.1570648878107945,
+      "n_trades": 1908,
+      "survived_full_span": true
+    },
+    "W3_oos": {
+      "status": "FAIL",
+      "candidate_oos": {
+        "start_usdt": 614.6488644525023,
+        "end_usdt": 566.1421383193393,
+        "days": 286.0,
+        "total_return": -0.07891778369487468,
+        "annualized": -0.09959734738892412,
+        "mdd": 0.7632212817916773
+      },
+      "baseline_oos": {
+        "start_usdt": 119.57354017029849,
+        "end_usdt": 122.18988834283435,
+        "days": 286.0,
+        "total_return": 0.021880661631408005,
+        "annualized": 0.02800856692148801,
+        "mdd": 0.008762444939299775
+      }
+    },
+    "W4_ruin": {
+      "status": "FAIL",
+      "ruin_probability": 0.1455,
+      "max_ruin_probability": 0.05,
+      "p05_usdt": 13.677003984953128,
+      "median_usdt": 528.349538948097
+    },
+    "W5_executability": {
+      "status": "PASS",
+      "min_notional_usdt": 23.285885406783684,
+      "leverage": 4.405804077685938,
+      "n_liquidations": 0,
+      "reasons": []
+    },
+    "W6_capacity": {
+      "status": "PASS",
+      "max_notional_usdt": 2171.057087318745,
+      "limit_usdt": 50000.0
+    }
+  },
+  "overall": "FAIL",
+  "failure_reasons": [
+    "W3_oos",
+    "W4_ruin"
+  ],
+  "promoted": false
+}
