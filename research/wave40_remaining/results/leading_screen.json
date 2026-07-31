@@ -1,0 +1,141 @@
+{
+  "axis": "leading indicators (open interest, long/short ratio)",
+  "note": "screen only -- 180 day history is too short to backtest",
+  "history_days_available": 180,
+  "interesting_threshold": 0.2,
+  "per_currency": [
+    {
+      "currency": "BTC",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.03615273068497727,
+      "rho_lsr_level_vs_next_return": 0.022021876120430373,
+      "rho_lsr_change_vs_next_return": 0.11175844132907911
+    },
+    {
+      "currency": "ETH",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.10382379945719304,
+      "rho_lsr_level_vs_next_return": -0.023075147165371002,
+      "rho_lsr_change_vs_next_return": 0.1047685516672004
+    },
+    {
+      "currency": "SOL",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.08151998714796543,
+      "rho_lsr_level_vs_next_return": -0.0454449219036757,
+      "rho_lsr_change_vs_next_return": 0.06488256027848913
+    },
+    {
+      "currency": "DOGE",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.09685518799824241,
+      "rho_lsr_level_vs_next_return": -0.09433797659184896,
+      "rho_lsr_change_vs_next_return": 0.07896021933571579
+    },
+    {
+      "currency": "ADA",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.1530360271892877,
+      "rho_lsr_level_vs_next_return": 0.0016692750197089355,
+      "rho_lsr_change_vs_next_return": 0.06407824420780718
+    },
+    {
+      "currency": "XRP",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.08437764980120839,
+      "rho_lsr_level_vs_next_return": -0.031094901848969445,
+      "rho_lsr_change_vs_next_return": -0.01914719090484494
+    },
+    {
+      "currency": "LINK",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.11802699991169546,
+      "rho_lsr_level_vs_next_return": 0.02196655279281733,
+      "rho_lsr_change_vs_next_return": 0.05161560075282282
+    },
+    {
+      "currency": "AVAX",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.07236184860771398,
+      "rho_lsr_level_vs_next_return": -0.07709199311862917,
+      "rho_lsr_change_vs_next_return": 0.06599753811192122
+    },
+    {
+      "currency": "NEAR",
+      "days": 178,
+      "rho_oi_change_vs_next_return": 0.02639241900186078,
+      "rho_lsr_level_vs_next_return": 0.02383690683019675,
+      "rho_lsr_change_vs_next_return": -0.06288240920324834
+    },
+    {
+      "currency": "ARB",
+      "days": 178,
+      "rho_oi_change_vs_next_return": 0.05149644281642549,
+      "rho_lsr_level_vs_next_return": -0.004173719504345541,
+      "rho_lsr_change_vs_next_return": -0.08280306278452947
+    },
+    {
+      "currency": "OP",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.03598888852243095,
+      "rho_lsr_level_vs_next_return": 0.03310143638508866,
+      "rho_lsr_change_vs_next_return": -0.004620561765835505
+    },
+    {
+      "currency": "SUI",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.020445161283458645,
+      "rho_lsr_level_vs_next_return": -0.05341786454083234,
+      "rho_lsr_change_vs_next_return": 0.04706419314650362
+    },
+    {
+      "currency": "APT",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.07604297771427417,
+      "rho_lsr_level_vs_next_return": 0.05567760969179587,
+      "rho_lsr_change_vs_next_return": -0.07209587107111282
+    },
+    {
+      "currency": "LTC",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.05862889643792244,
+      "rho_lsr_level_vs_next_return": -0.05010272052463537,
+      "rho_lsr_change_vs_next_return": 0.053707248100654414
+    },
+    {
+      "currency": "BCH",
+      "days": 178,
+      "rho_oi_change_vs_next_return": -0.06179296521332994,
+      "rho_lsr_level_vs_next_return": 0.012519030692743814,
+      "rho_lsr_change_vs_next_return": 0.08403294291377328
+    },
+    {
+      "currency": "FIL",
+      "days": 178,
+      "rho_oi_change_vs_next_return": 0.004043922466484171,
+      "rho_lsr_level_vs_next_return": 0.11623111958456436,
+      "rho_lsr_change_vs_next_return": -0.018445010208217854
+    }
+  ],
+  "summary": {
+    "rho_oi_change_vs_next_return": {
+      "median": -0.06707740691052197,
+      "mean": -0.057320020980308084,
+      "share_abs_ge_threshold": 0.0,
+      "sign_consistency": 0.8125
+    },
+    "rho_lsr_level_vs_next_return": {
+      "median": -0.001252222242318303,
+      "mean": -0.00573221488006009,
+      "share_abs_ge_threshold": 0.0,
+      "sign_consistency": 0.5
+    },
+    "rho_lsr_change_vs_next_return": {
+      "median": 0.052661424426738615,
+      "mean": 0.029179464619136126,
+      "share_abs_ge_threshold": 0.0,
+      "sign_consistency": 0.625
+    }
+  },
+  "worth_forward_collecting": false
+}
