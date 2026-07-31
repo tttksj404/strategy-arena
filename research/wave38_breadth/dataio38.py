@@ -63,6 +63,8 @@ class CarryPanel:
     perp_high: np.ndarray  # needed to test whether a levered short perp leg would be liquidated intraday
     funding_daily: np.ndarray  # summed 8h funding rates for the day (income to a short perp when > 0)
     ranking_apr: np.ndarray  # shift(1)'d 7d funding APR -- the causal ranking metric
+    raw_apr: np.ndarray  # unshifted 7d funding APR, kept so a different entry threshold can be applied
+                         # without re-reading 271 symbols from disk (carry_position does its own shift)
     active: np.ndarray  # carry_position hysteresis output, already shift(1)'d internally
     tradable: np.ndarray  # bool: all four prices present AND liquidity floor met
     cost_rate: np.ndarray  # per-symbol round-trip-leg cost rate for the day
@@ -154,6 +156,7 @@ def build_panel() -> CarryPanel:
     perp_high_cols: dict[str, pd.Series] = {}
     funding_cols: dict[str, pd.Series] = {}
     apr_cols: dict[str, pd.Series] = {}
+    raw_apr_cols: dict[str, pd.Series] = {}
     active_cols: dict[str, pd.Series] = {}
     volume_cols: dict[str, pd.Series] = {}
 
@@ -178,6 +181,7 @@ def build_panel() -> CarryPanel:
         perp_high_cols[symbol] = perp["high"] if "high" in perp.columns else perp["close"]
         funding_cols[symbol] = funding.resample("1D").sum()
         apr_cols[symbol] = raw_apr.shift(1)  # ranking must use yesterday's known score
+        raw_apr_cols[symbol] = raw_apr
         active_cols[symbol] = active
         volume_cols[symbol] = (
             perp["quote_volume"] if "quote_volume" in perp.columns else pd.Series(dtype=float)
@@ -200,6 +204,7 @@ def build_panel() -> CarryPanel:
     perp_high_arr = align(perp_high_cols)
     funding_arr = align(funding_cols, fill=0.0)
     apr_arr = align(apr_cols)
+    raw_apr_arr = align(raw_apr_cols)
     active_arr = align(active_cols, fill=0.0)
     volume_frame = pd.DataFrame(volume_cols).reindex(index=days, columns=list(symbols))
     cost_arr, liquid = build_cost_and_liquidity(volume_frame, symbols)
@@ -231,11 +236,30 @@ def build_panel() -> CarryPanel:
         perp_high=perp_high_arr,
         funding_daily=funding_arr,
         ranking_apr=apr_arr,
+        raw_apr=raw_apr_arr,
         active=active_arr,
         tradable=tradable,
         cost_rate=cost_arr,
         quote_volume=volume_arr,
     )
+
+
+def with_threshold(panel: CarryPanel, threshold_apr: float) -> CarryPanel:
+    """Same panel with the carry entry threshold changed, without touching the disk.
+
+    Only `active` depends on the threshold, and it is derived from `raw_apr` by fam_funding.carry_position
+    -- the identical function and hysteresis rule L4 uses, so a threshold of 0.15 here reproduces L4's own
+    signal exactly. Reading 271 symbols takes ~30s, so a threshold sweep recomputes from the cached panel
+    instead of rebuilding it. carry_position applies its own shift(1), which is why the UNSHIFTED raw_apr
+    is the correct input; passing the pre-shifted ranking_apr would lag the signal twice.
+    """
+    import dataclasses
+
+    raw = pd.DataFrame(panel.raw_apr, index=panel.days, columns=list(panel.symbols))
+    active = np.column_stack(
+        [carry_position(raw[symbol], _ThresholdCandidate(threshold_apr)).to_numpy() for symbol in panel.symbols]
+    )
+    return dataclasses.replace(panel, active=np.nan_to_num(active, nan=0.0))
 
 
 @dataclass(frozen=True, slots=True)
