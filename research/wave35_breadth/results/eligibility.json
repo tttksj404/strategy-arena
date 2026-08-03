@@ -1,0 +1,47 @@
+{
+  "by_year": {
+    "2019": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "2020": {
+      "min": 0,
+      "median": 0,
+      "max": 2
+    },
+    "2021": {
+      "min": 2,
+      "median": 24,
+      "max": 52
+    },
+    "2022": {
+      "min": 52,
+      "median": 70,
+      "max": 80
+    },
+    "2023": {
+      "min": 80,
+      "median": 89,
+      "max": 97
+    },
+    "2024": {
+      "min": 97,
+      "median": 119,
+      "max": 147
+    },
+    "2025": {
+      "min": 147,
+      "median": 176,
+      "max": 202
+    },
+    "2026": {
+      "min": 199,
+      "median": 228,
+      "max": 259
+    }
+  },
+  "first_date_with_any": "2020-10-11 00:00:00+00:00",
+  "n_symbols_ever_eligible": 271,
+  "n_symbols_loaded": 271
+}

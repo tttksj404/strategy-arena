@@ -1,0 +1,30 @@
+{
+  "reference_hourly_multiple": 8.49,
+  "daily_from_1h_cache": {
+    "multiple": 1.1625157475181336,
+    "final_on_25": 29.062893687953338,
+    "n_trades": 103,
+    "first": "2019-09-08 00:00:00+00:00",
+    "last": "2026-07-20 00:00:00+00:00",
+    "bars": 2508
+  },
+  "daily_wave3_cache": {
+    "multiple": 1.159892680939359,
+    "final_on_25": 28.997317023483976,
+    "n_trades": 103,
+    "first": "2019-09-08 00:00:00+00:00",
+    "last": "2026-07-14 00:00:00+00:00",
+    "bars": 2502
+  },
+  "btc_fixed_notional_control": {
+    "final_on_100": 221.99034974591655,
+    "n_trades": 103,
+    "trades_per_day": 0.041167066346922465,
+    "mean_per_entry": 1.1843723276302576
+  },
+  "gap_daily_vs_hourly": {
+    "daily_multiple": 1.159892680939359,
+    "hourly_multiple": 8.49,
+    "ratio_daily_over_hourly": 0.1366186903344357
+  }
+}
