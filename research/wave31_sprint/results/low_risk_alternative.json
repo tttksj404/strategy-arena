@@ -1,0 +1,35 @@
+{
+  "L1_genome": {
+    "signal_family": "breakout",
+    "lookback_bars": 168,
+    "entry_threshold": 1.390576,
+    "stop_pct": 0.01461576,
+    "target_r": 4.838777,
+    "trail_enabled": false,
+    "risk_frac": 0.04506704,
+    "max_hold_bars": 48,
+    "allow_short": true,
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "max_concurrent": 3,
+    "cooldown_bars_after_loss": 24,
+    "sleeve_fraction": 1.0,
+    "derived_leverage": 3.083455,
+    "derived_liquidation_band": 0.319312
+  },
+  "L1_is_final": 1875.861782564792,
+  "L1_is_ruin": null,
+  "L1_p50_30d": 0.033686990053326316,
+  "L1_p95_30d": 0.2831221951553269,
+  "L1_yearly_median": {
+    "2019": 0.03675017301514316,
+    "2020": 0.05534019988956529,
+    "2021": 0.006174911532430105,
+    "2022": 0.03423292635230735,
+    "2023": 0.017046107027152813,
+    "2024": 0.035137527461618356,
+    "2025": 0.04845452307970599
+  }
+}

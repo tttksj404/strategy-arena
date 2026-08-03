@@ -1,0 +1,570 @@
+{
+  "seeds": [
+    2026341,
+    2026342,
+    2026343
+  ],
+  "budget": {
+    "wall_clock_minutes": 90.0,
+    "drift_factor": 2.0,
+    "workers": 18,
+    "n_pairs": 18,
+    "concurrent_pairs": 18,
+    "waves": 1,
+    "n_seeds": 3,
+    "sum_seconds_per_eval": 0.9923641905784607,
+    "slowest_seconds_per_eval": 0.2776467328071594,
+    "budget_bound_slowest_chain": 9724.58768990916,
+    "budget_bound_throughput": 16324.65193101822,
+    "chosen_budget": 6000,
+    "predicted_wall_clock_seconds": 5386.346616458893,
+    "override_reason": "operator-chosen, written to SPEC.md before the run"
+  },
+  "probe": {
+    "probe_budget_per_method": 500,
+    "workers": 6,
+    "rows": [
+      {
+        "method": "tpe_bayesian",
+        "evaluations": 500,
+        "seconds": 138.8233664035797,
+        "seconds_per_eval": 0.2776467328071594,
+        "best_fitness": 1.8301088006379154,
+        "best_feasible_fitness": 1.8301088006379154,
+        "feasible_found": true
+      },
+      {
+        "method": "pso",
+        "evaluations": 500,
+        "seconds": 122.6332368850708,
+        "seconds_per_eval": 0.2452664737701416,
+        "best_fitness": 2.6919545580821134,
+        "best_feasible_fitness": 2.6919545580821134,
+        "feasible_found": true
+      },
+      {
+        "method": "cmaes",
+        "evaluations": 500,
+        "seconds": 106.3592894077301,
+        "seconds_per_eval": 0.21271857881546022,
+        "best_fitness": 0.4178992944248345,
+        "best_feasible_fitness": 0.4178992944248345,
+        "feasible_found": true
+      },
+      {
+        "method": "simulated_annealing",
+        "evaluations": 500,
+        "seconds": 78.59123420715332,
+        "seconds_per_eval": 0.15718246841430664,
+        "best_fitness": -0.6718629469282874,
+        "best_feasible_fitness": -0.6718629469282874,
+        "feasible_found": true
+      },
+      {
+        "method": "random",
+        "evaluations": 500,
+        "seconds": 25.249910354614258,
+        "seconds_per_eval": 0.05049982070922852,
+        "best_fitness": -52.10938857082863,
+        "best_feasible_fitness": null,
+        "feasible_found": false
+      },
+      {
+        "method": "mcts",
+        "evaluations": 500,
+        "seconds": 24.525058031082153,
+        "seconds_per_eval": 0.049050116062164306,
+        "best_fitness": -51.48916475540227,
+        "best_feasible_fitness": null,
+        "feasible_found": false
+      }
+    ],
+    "slowest_method": "tpe_bayesian",
+    "slowest_seconds_per_eval": 0.2776467328071594,
+    "sum_seconds_per_eval": 0.9923641905784607,
+    "encoding_feasibility": {
+      "n": 50000,
+      "failures": 0,
+      "feasible_rate": 1.0,
+      "first_failure": null,
+      "leverage_min": 1.0001970563845992,
+      "leverage_median": 6.1195339666061,
+      "leverage_max": 19.996646232812044
+    }
+  },
+  "missing_pairs": [],
+  "summary": [
+    {
+      "method": "random",
+      "seeds": [
+        2026341,
+        2026342,
+        2026343
+      ],
+      "per_seed_best_feasible": [
+        1.93810093797992,
+        1.8420545937407111,
+        1.4544933870410537
+      ],
+      "median_best_feasible": 1.8420545937407111,
+      "min_best_feasible": 1.4544933870410537,
+      "max_best_feasible": 1.93810093797992,
+      "median_seed": 2026342,
+      "n_feasible_seeds": 3,
+      "mean_seconds_per_eval": 0.1353253004948298,
+      "total_runtime_seconds": 2435.8554089069366,
+      "evaluations": 18000,
+      "any_truncated": false,
+      "distinct_feasible_found": 44,
+      "median_seed_final_usdt": 630.9488388195431,
+      "per_seed_best_penalised": [
+        1.93810093797992,
+        1.8420545937407111,
+        1.4544933870410537
+      ],
+      "median_best_penalised": 1.8420545937407111,
+      "min_best_penalised": 1.4544933870410537,
+      "max_best_penalised": 1.93810093797992
+    },
+    {
+      "method": "cmaes",
+      "seeds": [
+        2026341,
+        2026342,
+        2026343
+      ],
+      "per_seed_best_feasible": [
+        3.7314683191714972,
+        2.089678435635687,
+        3.7313928904519753
+      ],
+      "median_best_feasible": 3.7313928904519753,
+      "min_best_feasible": 2.089678435635687,
+      "max_best_feasible": 3.7314683191714972,
+      "median_seed": 2026343,
+      "n_feasible_seeds": 3,
+      "mean_seconds_per_eval": 0.5324439872238371,
+      "total_runtime_seconds": 9583.991770029068,
+      "evaluations": 18000,
+      "any_truncated": false,
+      "distinct_feasible_found": 11961,
+      "median_seed_final_usdt": 4173.720304634856,
+      "per_seed_best_penalised": [
+        3.7314683191714972,
+        2.089678435635687,
+        3.7313928904519753
+      ],
+      "median_best_penalised": 3.7313928904519753,
+      "min_best_penalised": 2.089678435635687,
+      "max_best_penalised": 3.7314683191714972
+    },
+    {
+      "method": "pso",
+      "seeds": [
+        2026341,
+        2026342,
+        2026343
+      ],
+      "per_seed_best_feasible": [
+        3.2846346045548493,
+        4.345020706391653,
+        2.67749180084292
+      ],
+      "median_best_feasible": 3.2846346045548493,
+      "min_best_feasible": 2.67749180084292,
+      "max_best_feasible": 4.345020706391653,
+      "median_seed": 2026341,
+      "n_feasible_seeds": 3,
+      "mean_seconds_per_eval": 0.45737335791852746,
+      "total_runtime_seconds": 8232.720442533493,
+      "evaluations": 18000,
+      "any_truncated": false,
+      "distinct_feasible_found": 10664,
+      "median_seed_final_usdt": 2669.922675646578,
+      "per_seed_best_penalised": [
+        3.2846346045548493,
+        4.345020706391653,
+        2.67749180084292
+      ],
+      "median_best_penalised": 3.2846346045548493,
+      "min_best_penalised": 2.67749180084292,
+      "max_best_penalised": 4.345020706391653
+    },
+    {
+      "method": "simulated_annealing",
+      "seeds": [
+        2026341,
+        2026342,
+        2026343
+      ],
+      "per_seed_best_feasible": [
+        3.947588512027085,
+        3.658325479882078,
+        3.2417332316785545
+      ],
+      "median_best_feasible": 3.658325479882078,
+      "min_best_feasible": 3.2417332316785545,
+      "max_best_feasible": 3.947588512027085,
+      "median_seed": 2026342,
+      "n_feasible_seeds": 3,
+      "mean_seconds_per_eval": 0.4694991276661555,
+      "total_runtime_seconds": 8450.984297990799,
+      "evaluations": 18000,
+      "any_truncated": false,
+      "distinct_feasible_found": 4468,
+      "median_seed_final_usdt": 3879.632322443137,
+      "per_seed_best_penalised": [
+        3.947588512027085,
+        3.658325479882078,
+        3.2417332316785545
+      ],
+      "median_best_penalised": 3.658325479882078,
+      "min_best_penalised": 3.2417332316785545,
+      "max_best_penalised": 3.947588512027085
+    },
+    {
+      "method": "tpe_bayesian",
+      "seeds": [
+        2026341,
+        2026342,
+        2026343
+      ],
+      "per_seed_best_feasible": [
+        3.2658160794450137,
+        3.270922102018146,
+        4.091399349039136
+      ],
+      "median_best_feasible": 3.270922102018146,
+      "min_best_feasible": 3.2658160794450137,
+      "max_best_feasible": 4.091399349039136,
+      "median_seed": 2026342,
+      "n_feasible_seeds": 3,
+      "mean_seconds_per_eval": 0.4490302440457874,
+      "total_runtime_seconds": 8082.544392824173,
+      "evaluations": 18000,
+      "any_truncated": false,
+      "distinct_feasible_found": 5014,
+      "median_seed_final_usdt": 2633.561227171272,
+      "per_seed_best_penalised": [
+        3.2658160794450137,
+        3.270922102018146,
+        4.091399349039136
+      ],
+      "median_best_penalised": 3.270922102018146,
+      "min_best_penalised": 3.2658160794450137,
+      "max_best_penalised": 4.091399349039136
+    },
+    {
+      "method": "mcts",
+      "seeds": [
+        2026341,
+        2026342,
+        2026343
+      ],
+      "per_seed_best_feasible": [
+        2.0472648541800416,
+        2.635263375029465,
+        1.3959972920051258
+      ],
+      "median_best_feasible": 2.0472648541800416,
+      "min_best_feasible": 1.3959972920051258,
+      "max_best_feasible": 2.635263375029465,
+      "median_seed": 2026341,
+      "n_feasible_seeds": 3,
+      "mean_seconds_per_eval": 0.1349215442339579,
+      "total_runtime_seconds": 2428.5877962112427,
+      "evaluations": 18000,
+      "any_truncated": false,
+      "distinct_feasible_found": 52,
+      "median_seed_final_usdt": 774.6683793515468,
+      "per_seed_best_penalised": [
+        2.0472648541800416,
+        2.635263375029465,
+        1.3959972920051258
+      ],
+      "median_best_penalised": 2.0472648541800416,
+      "min_best_penalised": 1.3959972920051258,
+      "max_best_penalised": 2.635263375029465
+    }
+  ],
+  "ranked": [
+    "cmaes",
+    "simulated_annealing",
+    "pso",
+    "tpe_bayesian",
+    "mcts",
+    "random"
+  ],
+  "gates": [
+    {
+      "gate": "G1_method_validity",
+      "scale": "best_feasible_fitness",
+      "random_median": 1.8420545937407111,
+      "random_seed_range": [
+        1.4544933870410537,
+        1.93810093797992
+      ],
+      "per_method_median": {
+        "cmaes": 3.7313928904519753,
+        "simulated_annealing": 3.658325479882078,
+        "pso": 3.2846346045548493,
+        "tpe_bayesian": 3.270922102018146,
+        "mcts": 2.0472648541800416,
+        "random": 1.8420545937407111
+      },
+      "methods_above_random_seed_range": [
+        "cmaes",
+        "simulated_annealing",
+        "pso",
+        "tpe_bayesian",
+        "mcts"
+      ],
+      "verdict": "PASS",
+      "interpretation": "cmaes, simulated_annealing, pso, tpe_bayesian, mcts clears the random control's seed-to-seed range"
+    },
+    {
+      "gate": "G2_frequency_and_survival",
+      "verdict": "PASS",
+      "trades_per_active_day": 1.0207862629914144,
+      "survived_is": true,
+      "n_trades": 2259
+    },
+    {
+      "gate": "G3_profit_is",
+      "verdict": "PASS",
+      "final_usdt_is": 4173.720304634856
+    },
+    {
+      "gate": "G4_oos",
+      "verdict": "FAIL",
+      "oos": {
+        "n_trades": 260,
+        "active_days": 293.0,
+        "trades_per_active_day": 0.8873720136518771,
+        "median_usdt": -14.139061612834974,
+        "mean_usdt": -2.480342840302988,
+        "p05_usdt": -14.468572612834974,
+        "p95_usdt": 80.63704838716504,
+        "win_share": 0.12692307692307692,
+        "share_ge_target": 0.12307692307692308,
+        "share_le_negative_target": 0.8692307692307693,
+        "total_usdt": -644.8891384787769,
+        "capital_for_target_ev": Infinity
+      },
+      "threshold": "OOS total P&L > $0 with at least one OOS trade (preregistered)"
+    },
+    {
+      "gate": "G5_ruin",
+      "verdict": "FAIL",
+      "paths": 10000,
+      "ruin_probability": 0.8778,
+      "p05_final_usdt": 545.7897190621892,
+      "median_final_usdt": 3444.8914936576884,
+      "base_usdt": 33.333333333333336,
+      "max_ruin_probability": 0.05
+    }
+  ],
+  "candidate": {
+    "method": "cmaes",
+    "seed": 2026343,
+    "genome": {
+      "signal_family": "breakout",
+      "lookback_bars": 48,
+      "entry_threshold": 0.0,
+      "stop_pct": 0.02,
+      "target_r": 6.104759,
+      "trail_enabled": false,
+      "risk_frac": 0.4,
+      "max_hold_bars": 720,
+      "allow_short": true,
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT"
+      ],
+      "max_concurrent": 3,
+      "cooldown_bars_after_loss": 0,
+      "sleeve_fraction": 1.0,
+      "derived_leverage": 20.0,
+      "derived_liquidation_band": 0.045
+    },
+    "is": {
+      "final_usdt": 4173.720304634856,
+      "cagr": 0.7226283902361412,
+      "years": 6.861054072553046,
+      "trades_per_active_day": 1.0207862629914144,
+      "n_trades": 2259,
+      "account_mdd": 0.5144559204191599,
+      "mean_usdt": 1.786323290819588,
+      "median_usdt": -14.135581612834974,
+      "share_ge_target": 0.1708720672864099,
+      "leverage": 20.0,
+      "is_partition": {
+        "n_trades": 2256,
+        "active_days": 2208.0,
+        "trades_per_active_day": 1.0217391304347827,
+        "median_usdt": -14.135581612834974,
+        "mean_usdt": 1.7716700122070272,
+        "p05_usdt": -15.220869946168305,
+        "p95_usdt": 80.6612050538317,
+        "win_share": 0.17154255319148937,
+        "share_ge_target": 0.17065602836879432,
+        "share_le_negative_target": 0.8266843971631206,
+        "total_usdt": 3996.8875475390532,
+        "capital_for_target_ev": 188.14639918078714
+      }
+    },
+    "oos": {
+      "n_trades": 260,
+      "active_days": 293.0,
+      "trades_per_active_day": 0.8873720136518771,
+      "median_usdt": -14.139061612834974,
+      "mean_usdt": -2.480342840302988,
+      "p05_usdt": -14.468572612834974,
+      "p95_usdt": 80.63704838716504,
+      "win_share": 0.12692307692307692,
+      "share_ge_target": 0.12307692307692308,
+      "share_le_negative_target": 0.8692307692307693,
+      "total_usdt": -644.8891384787769,
+      "capital_for_target_ev": Infinity
+    },
+    "full_span": {
+      "n_trades": 2516,
+      "active_days": 2506.0,
+      "trades_per_active_day": 1.0039904229848364,
+      "survived_full_span": true,
+      "median_usdt": -14.135581612834974,
+      "mean_usdt": 1.3322728175915248,
+      "p05_usdt": -15.158939946168307,
+      "p95_usdt": 80.6612050538317,
+      "best_usdt": 86.99295838716503,
+      "worst_usdt": -33.333333333333336,
+      "win_share": 0.1669316375198728,
+      "share_ge_target": 0.16573926868044514,
+      "share_le_negative_target": 0.831081081081081,
+      "total_usdt": 3351.9984090602766,
+      "account_final_usdt": 3516.6705317467568,
+      "account_mdd": 0.5144559204191599,
+      "capital_for_target_ev": 250.1990049875306
+    },
+    "meta": {
+      "n_liquidations": 0,
+      "min_notional_usdt": 666.6666666666667,
+      "max_notional_usdt": 666.6666666666667,
+      "mean_leverage": 20.0,
+      "base_usdt": 33.333333333333336,
+      "account_curve_final": 3516.6705317467568
+    },
+    "ruin": {
+      "paths": 10000,
+      "ruin_probability": 0.8778,
+      "p05_final_usdt": 545.7897190621892,
+      "median_final_usdt": 3444.8914936576884,
+      "base_usdt": 33.333333333333336
+    },
+    "concentration": {
+      "is": {
+        "n_trades": 2256,
+        "total_usdt": 3996.8875475390532,
+        "top1_usdt": 86.99295838716503,
+        "top10_usdt": 837.427390538317,
+        "top10_share_of_total": 0.20951987779939776,
+        "n_trades_for_half_of_profit": 25,
+        "n_trades_carrying_all_profit": 49,
+        "share_of_trades_carrying_all_profit": 0.02171985815602837,
+        "losing_trade_share": 0.8284574468085106
+      },
+      "oos": {
+        "n_trades": 260,
+        "total_usdt": -644.8891384787769,
+        "top1_usdt": 82.43974505383169,
+        "top10_usdt": 816.0894505383171,
+        "top10_share_of_total": null,
+        "n_trades_for_half_of_profit": -1,
+        "n_trades_carrying_all_profit": -1,
+        "share_of_trades_carrying_all_profit": null,
+        "losing_trade_share": 0.8730769230769231
+      },
+      "full": {
+        "n_trades": 2516,
+        "total_usdt": 3351.9984090602766,
+        "top1_usdt": 86.99295838716503,
+        "top10_usdt": 837.427390538317,
+        "top10_share_of_total": 0.2498292923632644,
+        "n_trades_for_half_of_profit": 21,
+        "n_trades_carrying_all_profit": 41,
+        "share_of_trades_carrying_all_profit": 0.01629570747217806,
+        "losing_trade_share": 0.8330683624801272
+      }
+    }
+  },
+  "rl_arm": [
+    {
+      "method": "rl_qlearning",
+      "seed": 2026341,
+      "episodes": 25,
+      "runtime_seconds": 10.205040454864502,
+      "leverage": 5.0,
+      "symbol": "BTCUSDT",
+      "n_states": 180,
+      "q_nonzero_states": 180,
+      "final_usdt": 22.889849892977608,
+      "n_position_changes": 506,
+      "trades_per_active_day": 0.2310502283105023,
+      "active_days": 2190.0,
+      "survived": true,
+      "mdd": 0.7902178379870266,
+      "action_mix_flat_long_short": [
+        0.9899843741175142,
+        0.007587024869627426,
+        0.002428601012858407
+      ],
+      "mean_usdt_per_change": -0.15239160100202054
+    },
+    {
+      "method": "rl_qlearning",
+      "seed": 2026342,
+      "episodes": 25,
+      "runtime_seconds": 11.093011140823364,
+      "leverage": 5.0,
+      "symbol": "BTCUSDT",
+      "n_states": 180,
+      "q_nonzero_states": 180,
+      "final_usdt": 43.11858954137607,
+      "n_position_changes": 482,
+      "trades_per_active_day": 0.2190909090909091,
+      "active_days": 2200.0,
+      "survived": true,
+      "mdd": 0.5688141045862394,
+      "action_mix_flat_long_short": [
+        0.9951992770676055,
+        0.003275787412692735,
+        0.0015249355197017903
+      ],
+      "mean_usdt_per_change": -0.11801122501789198
+    },
+    {
+      "method": "rl_qlearning",
+      "seed": 2026343,
+      "episodes": 25,
+      "runtime_seconds": 11.190304517745972,
+      "leverage": 5.0,
+      "symbol": "BTCUSDT",
+      "n_states": 180,
+      "q_nonzero_states": 180,
+      "final_usdt": 0.005445248849133557,
+      "n_position_changes": 2881,
+      "trades_per_active_day": 1.3024412296564196,
+      "active_days": 2212.0,
+      "survived": false,
+      "mdd": 0.9999475405219386,
+      "action_mix_flat_long_short": [
+        0.9235649603705028,
+        0.0012801927819718734,
+        0.07515484684752527
+      ],
+      "mean_usdt_per_change": -0.034708280024696586
+    }
+  ],
+  "overall": "FAIL"
+}

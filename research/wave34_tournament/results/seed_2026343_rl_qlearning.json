@@ -1,0 +1,22 @@
+{
+  "method": "rl_qlearning",
+  "seed": 2026343,
+  "episodes": 25,
+  "runtime_seconds": 11.190304517745972,
+  "leverage": 5.0,
+  "symbol": "BTCUSDT",
+  "n_states": 180,
+  "q_nonzero_states": 180,
+  "final_usdt": 0.005445248849133557,
+  "n_position_changes": 2881,
+  "trades_per_active_day": 1.3024412296564196,
+  "active_days": 2212.0,
+  "survived": false,
+  "mdd": 0.9999475405219386,
+  "action_mix_flat_long_short": [
+    0.9235649603705028,
+    0.0012801927819718734,
+    0.07515484684752527
+  ],
+  "mean_usdt_per_change": -0.034708280024696586
+}
