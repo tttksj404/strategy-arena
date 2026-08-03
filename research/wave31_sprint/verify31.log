@@ -1,0 +1,17 @@
+candidate: momentum lev 3.0122x symbols ('BTCUSDT', 'ETHUSDT', 'SOLUSDT') concurrent 1
+
+[is] engine 847 trades | naive 847 trades
+        max |net return| disagreement = 0.000e+00
+        wins 364/847 (43.0%) | mean +1.383% | best +55.6% | worst -13.9%
+        realised sleeve $100.00 -> $980.27 (peak $5,283.37, lowest $10.92)
+        exits {'max_hold': 488, 'stop': 334, 'target': 25} | per symbol {'BTCUSDT': 328, 'ETHUSDT': 238, 'SOLUSDT': 281}
+        max MAE 14.64% vs band 32.70%
+
+[full] engine 945 trades | naive 945 trades
+        max |net return| disagreement = 0.000e+00
+        wins 413/945 (43.7%) | mean +1.344% | best +55.6% | worst -13.9%
+        realised sleeve $100.00 -> $1,337.86 (peak $5,283.37, lowest $10.92)
+        exits {'max_hold': 559, 'stop': 360, 'target': 26} | per symbol {'BTCUSDT': 373, 'ETHUSDT': 268, 'SOLUSDT': 304}
+        max MAE 14.64% vs band 32.70%
+
+Independent naive re-simulation agrees with engine30 trade-for-trade (3 symbols, single slot).
