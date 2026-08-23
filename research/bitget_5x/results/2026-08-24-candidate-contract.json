@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "objective": "Find a read-only Bitget intraday long research candidate that maximizes conservative post-cost margin return under a fixed 5x leverage cap.",
+  "primary_metric": "post_cost_margin_return_lower_bound_pct; higher_is_better",
+  "secondary_metrics": [
+    "post_cost_expected_margin_return_pct",
+    "target_first_rate_pct",
+    "worst_margin_loss_at_stop_pct",
+    "settled_signal_count"
+  ],
+  "data_policy": {
+    "train_validation": "Chronological first 80 percent of each frozen candidate's completed-candle replay trades.",
+    "held_out": "Later 20 percent of exactly one validation-selected candidate; never read for candidate selection.",
+    "leakage_checks": [
+      "Only completed 15m, 5m, and where relevant 1m candles are passed to a decision.",
+      "All candidates share the same 5x fee/slippage model and exit geometry.",
+      "Prior technical-score and Bollinger filters are entry filters only; they never alter the shared return calculation.",
+      "Historical fee use remains research-only and cannot authorize a live strategy."
+    ]
+  },
+  "candidates": [
+    {
+      "name": "breakout-volume-1.0",
+      "class": "algorithm",
+      "source": "research/bitget_5x/intraday_long_forecast.py",
+      "configuration": {"entry_filter": "breakout", "minimum_volume_ratio": 1.0, "max_leverage": 5},
+      "risk": "baseline reference; no live promotion from historical data"
+    },
+    {
+      "name": "breakout-volume-1.25",
+      "class": "algorithm",
+      "source": "research/bitget_5x/intraday_long_forecast.py",
+      "configuration": {"entry_filter": "breakout", "minimum_volume_ratio": 1.25, "max_leverage": 5},
+      "risk": "fixed precommitted volume filter"
+    },
+    {
+      "name": "breakout-volume-1.5",
+      "class": "algorithm",
+      "source": "research/bitget_5x/intraday_long_forecast.py",
+      "configuration": {"entry_filter": "breakout", "minimum_volume_ratio": 1.5, "max_leverage": 5},
+      "risk": "fixed precommitted volume filter"
+    },
+    {
+      "name": "breakout-volume-2.0",
+      "class": "algorithm",
+      "source": "research/bitget_5x/intraday_long_forecast.py",
+      "configuration": {"entry_filter": "breakout", "minimum_volume_ratio": 2.0, "max_leverage": 5},
+      "risk": "fixed precommitted volume filter"
+    },
+    {
+      "name": "breakout-technical-score-v1-volume-1.0",
+      "class": "algorithm",
+      "source": "research/bitget_5x/trend_continuation_features.py",
+      "configuration": {"entry_filter": "technical_score_v1", "minimum_volume_ratio": 1.0, "max_leverage": 5},
+      "risk": "research-only reuse of the existing causal score; never a live instruction"
+    },
+    {
+      "name": "breakout-bollinger-squeeze-v1-volume-1.0",
+      "class": "algorithm",
+      "source": "research/bitget_5x/intraday_replay_engine.py",
+      "configuration": {"entry_filter": "bollinger_squeeze_v1", "minimum_volume_ratio": 1.0, "max_leverage": 5},
+      "risk": "source-backed hypothesis only; must earn selection on this evaluator"
+    }
+  ],
+  "budget": {
+    "max_parallel": 2,
+    "max_trials": 6,
+    "max_seconds_per_candidate": 300,
+    "max_total_seconds": 1800
+  },
+  "acceptance": {
+    "minimum_primary_metric_gain": 0.0,
+    "max_regression_secondary_metric": 0.0,
+    "required_seeds_or_folds": 1,
+    "no_test_tuning": true,
+    "validation": "At least 80 settled signals, positive conservative post-cost return, and worst modeled all-in 5x stop loss no greater than 8 percent.",
+    "held_out": "At least 20 later settled signals and the same gates."
+  },
+  "human_gates": [
+    "No private Bitget account, position, leverage-setting, or order endpoint is permitted.",
+    "Any demo or real order requires a user-created credential and explicit user authorization.",
+    "Forward evidence is required before any live-promotion decision."
+  ]
+}

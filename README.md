@@ -24,6 +24,10 @@ Strategy Arena maps well to requirements seen in financial IT, digital banking, 
 
 For a project-specific interaction map that follows a strategy idea from UI input through the simulation engine, metrics, and risk-aware interpretation, see [docs/LEARNING_GUIDE.md](docs/LEARNING_GUIDE.md). The current research contract is in [docs/RESEARCH_GUARDRAILS.md](docs/RESEARCH_GUARDRAILS.md).
 
+## StockPulse Bitget 5x Research
+
+The reusable StockPulse Bitget strategy core is now separated into [research/bitget_5x](research/bitget_5x). It uses public market data only, keeps leverage fixed at 5x for research, models cost and stop-loss limits, and promotes no candidate without chronological validation plus an untouched holdout. It cannot place orders, change leverage, or read an account. The included replay artifact concludes `NO_RELIABLE_WINNER`, not a buy signal. The code-workspace selection boundary is documented in [docs/COIN_SOURCE_INVENTORY_2026-08-24.md](docs/COIN_SOURCE_INVENTORY_2026-08-24.md).
+
 ## Why This Matters for Hiring
 
 Companies hiring for digital finance and data roles usually look for more than model usage. They expect candidates to understand data quality, reproducible evaluation, system boundaries, and business risk. This project is meant to demonstrate that habit:
@@ -34,6 +38,8 @@ Companies hiring for digital finance and data roles usually look for more than m
 4. Treat results as evidence for review, not as investment advice.
 
 ## Run
+
+Use Python 3.11 or later. The StockPulse Bitget 5x research package enforces this minimum because it uses modern standard-library enums and pattern matching.
 
 ```bash
 python -m pip install -r requirements.txt
