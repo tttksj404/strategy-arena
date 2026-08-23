@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "mode": "historical_research_only",
+  "execution": "disabled",
+  "as_of": "2026-08-23T22:11:00+00:00",
+  "risk_policy": {
+    "fixed_leverage": 5,
+    "max_margin_loss_at_stop_pct": 8.0,
+    "min_net_margin_gain_at_target_pct": 0.75
+  },
+  "replay": {
+    "range_days": 30,
+    "contracts": ["AALUSDT", "AAOIUSDT", "AAPLUSDT", "AAPUUSDT"],
+    "selection_uses_validation_only": true,
+    "candidates": {
+      "breakout-volume-1.0": {
+        "minimum_volume_ratio": 1.0,
+        "trade_count": 257,
+        "validation": {
+          "settled_signal_count": 205,
+          "target_first_rate_pct": 18.05,
+          "wilson_lower_bound_pct": 13.39,
+          "post_cost_expected_margin_return_pct": -0.84,
+          "post_cost_margin_return_lower_bound_pct": -1.47,
+          "worst_margin_loss_at_stop_pct": 7.51
+        }
+      },
+      "breakout-volume-1.25": {
+        "minimum_volume_ratio": 1.25,
+        "trade_count": 231,
+        "validation": {
+          "settled_signal_count": 184,
+          "target_first_rate_pct": 17.93,
+          "wilson_lower_bound_pct": 13.07,
+          "post_cost_expected_margin_return_pct": -0.82,
+          "post_cost_margin_return_lower_bound_pct": -1.5,
+          "worst_margin_loss_at_stop_pct": 7.51
+        }
+      },
+      "breakout-volume-1.5": {
+        "minimum_volume_ratio": 1.5,
+        "trade_count": 209,
+        "validation": {
+          "settled_signal_count": 167,
+          "target_first_rate_pct": 18.56,
+          "wilson_lower_bound_pct": 13.4,
+          "post_cost_expected_margin_return_pct": -0.66,
+          "post_cost_margin_return_lower_bound_pct": -1.4,
+          "worst_margin_loss_at_stop_pct": 7.51
+        }
+      },
+      "breakout-volume-2.0": {
+        "minimum_volume_ratio": 2.0,
+        "trade_count": 165,
+        "validation": {
+          "settled_signal_count": 132,
+          "target_first_rate_pct": 18.94,
+          "wilson_lower_bound_pct": 13.17,
+          "post_cost_expected_margin_return_pct": -0.54,
+          "post_cost_margin_return_lower_bound_pct": -1.42,
+          "worst_margin_loss_at_stop_pct": 7.51
+        }
+      }
+    },
+    "selected_on_validation_only": null,
+    "historical_verdict": "NO_RELIABLE_WINNER"
+  },
+  "current_screens": {
+    "live_intraday": {
+      "as_of": "2026-08-23T22:13:51.792338+00:00",
+      "eligible_contract_count": 220,
+      "enter_now_count": 0,
+      "five_x_eligible_candidate_count": 0,
+      "execution": "disabled"
+    },
+    "legacy_trend_atr": {
+      "as_of": "2026-08-23T22:14:43.683305+00:00",
+      "eligible_contract_count": 220,
+      "candidate_count": 0,
+      "rejection": "no_reliable_winner"
+    }
+  },
+  "conclusion": "NO_RELIABLE_WINNER"
+}
