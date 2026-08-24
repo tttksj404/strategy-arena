@@ -1,0 +1,11 @@
+{
+  "_comment": "이 JSON 은 STRATEGY_OVERRIDE_PATH 로 settings.py 의 기본 config 를 부분 덮어씀. 키 구조는 config.example.json 과 동일. 빈 {} 이면 기본값 사용 (= 베이스라인).",
+  "_strategy_id": "TEMPLATE",
+  "_parent_id": null,
+  "_changed_keys_vs_parent": [],
+
+  "scoring": {},
+  "execution": {},
+  "risk": {},
+  "universe": {}
+}

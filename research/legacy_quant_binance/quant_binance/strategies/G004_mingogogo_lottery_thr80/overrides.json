@@ -1,0 +1,19 @@
+{
+  "_strategy_id": "G004",
+  "_parent_id": "G002",
+  "_playbook": "PB001",
+  "_setup": "G002 + threshold 70 → 80 (lottery whale-hunting)",
+  "_changed_keys_vs_parent": ["entry_threshold"],
+  "score_engine": {"$ref": "G002"},
+  "entry_threshold": 80,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": [
+    "DOGEUSDT", "PEPEUSDT", "WIFUSDT", "ARBUSDT", "OPUSDT",
+    "AVAXUSDT", "SUIUSDT", "ADAUSDT"
+  ],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "leverage_warning": "G003 와 병행 시 자본 30~40% 배분. 2~3x 가능하나 표본 40건 작음 → 보수적.",
+  "_combined_with": "G003 (production main, 60~70% capacity)"
+}

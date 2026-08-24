@@ -1,0 +1,538 @@
+{
+  "results": {
+    "G400": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            121.05
+          ],
+          [
+            "OOS22-23_H2",
+            307.44
+          ],
+          [
+            "OOS24-Q1_H1",
+            332.32
+          ],
+          [
+            "OOS24-Q1_H2",
+            653.04
+          ],
+          [
+            "IS25-26_H1",
+            128.31
+          ],
+          [
+            "IS25-26_H2",
+            90.22
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 337.79,
+        "win_rate": 0.875,
+        "n": 64,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 2.94,
+        "max_dd_usd": 46.23,
+        "passes": true,
+        "n_trades": 64
+      },
+      "concentration": {
+        "dropped": [
+          "SOLUSDT",
+          "PEPEUSDT",
+          "ARBUSDT"
+        ],
+        "dropped_pnl_total": 477.95,
+        "remaining_annual_pnl_usd": 287.28,
+        "remaining_wr": 0.8868,
+        "remaining_n": 53,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            343.84
+          ],
+          [
+            "OOS24-Q1",
+            771.89
+          ],
+          [
+            "IS25-26",
+            112.09
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    },
+    "G401": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            145.26
+          ],
+          [
+            "OOS22-23_H2",
+            368.93
+          ],
+          [
+            "OOS24-Q1_H1",
+            398.78
+          ],
+          [
+            "OOS24-Q1_H2",
+            783.64
+          ],
+          [
+            "IS25-26_H1",
+            153.98
+          ],
+          [
+            "IS25-26_H2",
+            108.26
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 405.34,
+        "win_rate": 0.875,
+        "n": 64,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 3.17,
+        "max_dd_usd": 59.22,
+        "passes": true,
+        "n_trades": 64
+      },
+      "concentration": {
+        "dropped": [
+          "SOLUSDT",
+          "PEPEUSDT",
+          "ARBUSDT"
+        ],
+        "dropped_pnl_total": 573.54,
+        "remaining_annual_pnl_usd": 344.74,
+        "remaining_wr": 0.8868,
+        "remaining_n": 53,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            412.61
+          ],
+          [
+            "OOS24-Q1",
+            926.27
+          ],
+          [
+            "IS25-26",
+            134.51
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    },
+    "G402": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            181.57
+          ],
+          [
+            "OOS22-23_H2",
+            461.16
+          ],
+          [
+            "OOS24-Q1_H1",
+            498.48
+          ],
+          [
+            "OOS24-Q1_H2",
+            979.55
+          ],
+          [
+            "IS25-26_H1",
+            192.47
+          ],
+          [
+            "IS25-26_H2",
+            137.75
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 507.41,
+        "win_rate": 0.875,
+        "n": 64,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 3.44,
+        "max_dd_usd": 79.6,
+        "passes": true,
+        "n_trades": 64
+      },
+      "concentration": {
+        "dropped": [
+          "SOLUSDT",
+          "PEPEUSDT",
+          "ARBUSDT"
+        ],
+        "dropped_pnl_total": 716.93,
+        "remaining_annual_pnl_usd": 431.49,
+        "remaining_wr": 0.8868,
+        "remaining_n": 53,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            515.76
+          ],
+          [
+            "OOS24-Q1",
+            1157.84
+          ],
+          [
+            "IS25-26",
+            170.56
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    },
+    "G403": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            242.1
+          ],
+          [
+            "OOS22-23_H2",
+            614.88
+          ],
+          [
+            "OOS24-Q1_H1",
+            664.63
+          ],
+          [
+            "OOS24-Q1_H2",
+            1306.07
+          ],
+          [
+            "IS25-26_H1",
+            256.63
+          ],
+          [
+            "IS25-26_H2",
+            189.66
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 678.18,
+        "win_rate": 0.875,
+        "n": 64,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 3.76,
+        "max_dd_usd": 115.05,
+        "passes": true,
+        "n_trades": 64
+      },
+      "concentration": {
+        "dropped": [
+          "SOLUSDT",
+          "PEPEUSDT",
+          "ARBUSDT"
+        ],
+        "dropped_pnl_total": 955.9,
+        "remaining_annual_pnl_usd": 576.72,
+        "remaining_wr": 0.8868,
+        "remaining_n": 53,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            687.68
+          ],
+          [
+            "OOS24-Q1",
+            1543.79
+          ],
+          [
+            "IS25-26",
+            233.41
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    },
+    "G405": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            242.1
+          ],
+          [
+            "OOS22-23_H2",
+            614.88
+          ],
+          [
+            "OOS24-Q1_H1",
+            328.25
+          ],
+          [
+            "OOS24-Q1_H2",
+            1460.33
+          ],
+          [
+            "IS25-26_H1",
+            256.63
+          ],
+          [
+            "IS25-26_H2",
+            189.66
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 643.28,
+        "win_rate": 0.875,
+        "n": 64,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 3.76,
+        "max_dd_usd": 109.44,
+        "passes": true,
+        "n_trades": 64
+      },
+      "concentration": {
+        "dropped": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "LINKUSDT"
+        ],
+        "dropped_pnl_total": 1005.67,
+        "remaining_annual_pnl_usd": 570.29,
+        "remaining_wr": 0.8704,
+        "remaining_n": 54,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            630.94
+          ],
+          [
+            "OOS24-Q1",
+            1612.59
+          ],
+          [
+            "IS25-26",
+            193.89
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    },
+    "G406": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            224.06
+          ],
+          [
+            "OOS22-23_H2",
+            347.83
+          ],
+          [
+            "OOS24-Q1_H1",
+            501.73
+          ],
+          [
+            "OOS24-Q1_H2",
+            900.97
+          ],
+          [
+            "IS25-26_H1",
+            200.73
+          ],
+          [
+            "IS25-26_H2",
+            103.31
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 492.87,
+        "win_rate": 0.9012,
+        "n": 81,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 2.29,
+        "max_dd_usd": 51.41,
+        "passes": true,
+        "n_trades": 81
+      },
+      "concentration": {
+        "dropped": [
+          "ARBUSDT",
+          "DOGEUSDT",
+          "UNIUSDT"
+        ],
+        "dropped_pnl_total": 641.23,
+        "remaining_annual_pnl_usd": 414.12,
+        "remaining_wr": 0.9077,
+        "remaining_n": 65,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            449.53
+          ],
+          [
+            "OOS24-Q1",
+            1173.93
+          ],
+          [
+            "IS25-26",
+            146.49
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    },
+    "G408": {
+      "sub_period": {
+        "sub_results": [
+          [
+            "OOS22-23_H1",
+            199.16
+          ],
+          [
+            "OOS22-23_H2",
+            309.18
+          ],
+          [
+            "OOS24-Q1_H1",
+            445.98
+          ],
+          [
+            "OOS24-Q1_H2",
+            800.87
+          ],
+          [
+            "IS25-26_H1",
+            178.43
+          ],
+          [
+            "IS25-26_H2",
+            90.22
+          ]
+        ],
+        "all_positive": true,
+        "n_positive": 6,
+        "n_total": 6
+      },
+      "high_cost": {
+        "annual_pnl_usd": 437.62,
+        "win_rate": 0.9012,
+        "n": 81,
+        "all_periods_positive": true,
+        "passes_basic": true
+      },
+      "drawdown": {
+        "max_dd_pct": 2.22,
+        "max_dd_usd": 44.66,
+        "passes": true,
+        "n_trades": 81
+      },
+      "concentration": {
+        "dropped": [
+          "ARBUSDT",
+          "DOGEUSDT",
+          "UNIUSDT"
+        ],
+        "dropped_pnl_total": 569.98,
+        "remaining_annual_pnl_usd": 367.73,
+        "remaining_wr": 0.9077,
+        "remaining_n": 65,
+        "all_periods_positive": true,
+        "period_pnls": [
+          [
+            "OOS22-23",
+            399.58
+          ],
+          [
+            "OOS24-Q1",
+            1043.49
+          ],
+          [
+            "IS25-26",
+            128.6
+          ]
+        ],
+        "passes_basic": true
+      },
+      "all_pass": true,
+      "verdict": "ROBUST_PASS"
+    }
+  },
+  "survivors": [
+    "G400",
+    "G401",
+    "G402",
+    "G403",
+    "G405",
+    "G406",
+    "G408"
+  ]
+}

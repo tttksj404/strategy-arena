@@ -1,0 +1,46 @@
+{
+  "_strategy_id": "G186",
+  "_parent_id": "G185",
+  "_playbook": "PB001",
+  "_setup": "G185 + size_pct_per_trade change",
+  "_changed_keys_vs_parent": [
+    "size_pct_per_trade"
+  ],
+  "_capital_context_usd": 100,
+  "score_engine": {
+    "$ref": "G004"
+  },
+  "entry_threshold": 80,
+  "holding_period_bars": 24,
+  "timeframe": "1h",
+  "universe": [
+    "DOGEUSDT",
+    "PEPEUSDT",
+    "WIFUSDT",
+    "ARBUSDT",
+    "OPUSDT",
+    "AVAXUSDT",
+    "SUIUSDT",
+    "ADAUSDT",
+    "APTUSDT",
+    "BNBUSDT",
+    "DOTUSDT",
+    "LINKUSDT",
+    "LTCUSDT",
+    "NEARUSDT",
+    "SOLUSDT",
+    "UNIUSDT",
+    "XRPUSDT",
+    "BTCUSDT"
+  ],
+  "side": "long",
+  "leverage": 5.0,
+  "size_pct_per_trade": 0.45,
+  "max_concurrent": 5,
+  "cost_bps_round_trip": 16.0,
+  "atr_volatility_guard": {
+    "enabled": true,
+    "max_atr_pct": 8.0,
+    "rule": "atr_pct(14) > 8.0% skip"
+  }
+}

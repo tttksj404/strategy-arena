@@ -1,0 +1,50 @@
+{
+  "strategy_id": "S001",
+  "mode": "replay",
+  "run_at": "2026-04-27T06:02:52Z",
+  "fixture": "quant_binance/examples/replay_fixture.sample.json",
+  "window": "2026-03-08T12:05:00Z ~ 2026-03-08T12:10:00Z (단일 5분, 2 snapshots)",
+  "equity_usd": 50,
+  "capacity_usd": 50,
+  "metrics": {
+    "decision_count": 2,
+    "trade_count": 1,
+    "closed_trade_count": 0,
+    "hit_rate": null,
+    "avg_R": null,
+    "total_pnl_usd": null,
+    "total_return_pct": null,
+    "max_drawdown_pct": null,
+    "sharpe": null,
+    "order_count": 1,
+    "modes": ["futures", "cash"]
+  },
+  "decisions": [
+    {
+      "symbol": "BTCUSDT",
+      "final_mode": "futures",
+      "side": "long",
+      "order_intent_notional_usd": 50.0,
+      "planned_leverage": 2,
+      "gross_expected_edge_bps": 33.18,
+      "net_expected_edge_bps": 23.18,
+      "stop_distance_bps": 45,
+      "macro_regime": "neutral",
+      "rejection_reasons": []
+    },
+    {
+      "symbol": "ETHUSDT",
+      "final_mode": "cash",
+      "side": "flat",
+      "order_intent_notional_usd": 0.0,
+      "planned_leverage": 0,
+      "gross_expected_edge_bps": 43.785,
+      "net_expected_edge_bps": 33.785,
+      "stop_distance_bps": 0.0,
+      "macro_regime": "neutral",
+      "rejection_reasons": ["FUTURES_OVERHEAT", "SUPPORT_NOT_CONFIRMED"]
+    }
+  ],
+  "raw_summary_path": "quant_runtime/output/replay/replay_2026-04-27_S001/summary.json",
+  "notes": "Sample fixture only (2 snapshots, 5분 윈도우). 실 데이터 fixture(klines 기반) 미구축 상태 — quant_binance/backtest/historical_fixture_builder.py 로 생성 필요. replay 모드는 snapshot별 진입 의사결정만 평가하며 trade lifecycle 시뮬레이션을 하지 않음 → realized PnL/win-rate/MDD/Sharpe 산출 불가. closed-trade 메트릭이 필요하면 quant_binance.backtest.batch_backtest (klines 기반) 또는 paper-live 모드를 사용해야 함. S001 베이스라인 overrides 는 빈 객체 = config.example.json 기본값 그대로."
+}

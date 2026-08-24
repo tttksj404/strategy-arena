@@ -1,0 +1,1042 @@
+{
+  "config_version": "2026-03-10.v1",
+  "snapshot_schema_version": "1.0.0",
+  "universe": [
+    "ETHUSDT",
+    "SOLUSDT",
+    "BNBUSDT"
+  ],
+  "klines": [
+    "1m",
+    "5m",
+    "15m",
+    "1h",
+    "4h"
+  ],
+  "decision_engine": {
+    "decision_interval_minutes": 5
+  },
+  "normalization": {
+    "method": "percentile_rank",
+    "rolling_window_days": 90
+  },
+  "weights": {
+    "trend_strength": 0.35,
+    "volume_confirmation": 0.2,
+    "liquidity_score": 0.2,
+    "regime_alignment": 0.1,
+    "inverse_volatility_penalty": 0.1,
+    "inverse_overheat_penalty": 0.05
+  },
+  "mode_thresholds": {
+    "futures_score_min": 75,
+    "spot_score_min": 55,
+    "futures_trend_strength_min": 0.7,
+    "spot_trend_strength_min": 0.5,
+    "futures_liquidity_min": 0.7,
+    "spot_liquidity_min": 0.6,
+    "futures_volatility_penalty_max": 0.45,
+    "spot_volatility_penalty_max": 0.6,
+    "futures_overheat_penalty_max": 0.35
+  },
+  "feature_thresholds": {
+    "liquidity_probe_notional_usd": 1000,
+    "min_expected_edge_observations": 200,
+    "spread_bps_ceiling": 12,
+    "slippage_bps_ceiling": 18,
+    "depth_usd_target": 250000,
+    "order_book_imbalance_std_ceiling": 0.35,
+    "vol_shock_ceiling": 2.0,
+    "pretrade_slippage_budget_bps": 12,
+    "oi_ema_hours": 24
+  },
+  "cost_gate": {
+    "edge_to_cost_multiple_min": 1.5
+  },
+  "fees": {
+    "account_tier": "base",
+    "spot_maker_fee_bps": 10,
+    "spot_taker_fee_bps": 10,
+    "futures_maker_fee_bps": 2,
+    "futures_taker_fee_bps": 4
+  },
+  "expected_edge": {
+    "futures_horizon_minutes": 240,
+    "spot_horizon_minutes": 720
+  },
+  "mode_behavior": {
+    "spot_require_positive_trend": true,
+    "spot_allow_bottoming_reversal": false
+  },
+  "spot_support": {
+    "support_alignment_min": 0.34,
+    "resistance_penalty_max": 0.5,
+    "sentiment_support_min": 0.25,
+    "liquidity_relaxation": 0.0,
+    "breakout_resistance_override_min": 1.0,
+    "bottoming_support_override_min": 1.0,
+    "priority_symbols": [],
+    "priority_support_alignment_min": 0.0,
+    "priority_resistance_penalty_max": 1.0,
+    "priority_sentiment_support_min": 0.0,
+    "priority_liquidity_relaxation": 0.0,
+    "priority_edge_relaxation_bps": 0.0
+  },
+  "macro_gates": {
+    "futures_block_penalty": 0.65,
+    "spot_block_penalty": 0.85
+  },
+  "futures_exposure": {
+    "soft_liquidity_floor": 0.7,
+    "soft_volatility_penalty_max": 0.45,
+    "soft_overheat_penalty_max": 0.35,
+    "reduced_size_multiplier": 1.0,
+    "min_entry_net_edge_bps": 8.0,
+    "reduced_entry_net_edge_bps": 10.0,
+    "strong_score_buffer": 4.0,
+    "strong_trend_strength_min": 0.82,
+    "strong_volume_confirmation_min": 0.74,
+    "strong_liquidity_min": 0.8,
+    "strong_volatility_penalty_max": 0.32,
+    "strong_overheat_penalty_max": 0.24,
+    "strong_edge_to_cost_multiple_min": 2.0,
+    "strong_size_multiplier": 1.0,
+    "macro_support_min": 0.72,
+    "macro_score_relaxation": 0.0,
+    "macro_liquidity_relaxation": 0.0,
+    "macro_overheat_relaxation": 0.0,
+    "macro_volatility_relaxation": 0.0,
+    "macro_min_entry_net_edge_bps": 6.0,
+    "macro_edge_to_cost_multiple_min": 1.0,
+    "macro_allow_caution": false,
+    "priority_symbols": [],
+    "priority_score_relaxation": 0.0,
+    "priority_min_entry_net_edge_bps": 0.0,
+    "priority_edge_to_cost_multiple_min": 1.0,
+    "priority_volatility_relaxation": 0.0,
+    "priority_allow_caution": false,
+    "major_symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT"
+    ],
+    "major_size_boost_multiplier": 1.1,
+    "alt_score_penalty_without_macro": 2.0,
+    "alt_liquidity_penalty_without_macro": 0.04,
+    "alt_min_entry_net_edge_bps_without_macro": 1.0,
+    "alt_reduced_size_multiplier": 0.8,
+    "major_reallocation_score_advantage_relaxation": 1.0,
+    "major_reallocation_edge_advantage_relaxation_bps": 0.5,
+    "major_reallocation_incremental_pnl_relaxation_usd": 0.25,
+    "major_min_meaningful_notional_usd": 0.0,
+    "pyramid_enabled": false,
+    "pyramid_major_only": true,
+    "pyramid_min_roe_percent": 0.75,
+    "pyramid_min_predictability_score": 60.0,
+    "pyramid_min_net_edge_bps": 6.0,
+    "pyramid_min_trend_strength": 0.55,
+    "pyramid_min_volume_confirmation": 0.45,
+    "pyramid_max_adds_per_symbol": 1,
+    "pyramid_size_multiplier": 0.5
+  },
+  "cash_reserve": {
+    "when_futures_enabled": 0.15,
+    "when_futures_disabled": 0.3
+  },
+  "altcoin_overlays": {
+    "breadth_floor": 0.4,
+    "liquidity_floor": 0.4,
+    "smart_money_floor": 0.35,
+    "rotation_block_penalty": 0.8
+  },
+  "symbol_eligibility": {
+    "observe_only_liquidity_max": 0.38,
+    "observe_only_alt_liquidity_max": 0.45,
+    "observe_only_cost_bps_min": 45
+  },
+  "live_position_risk": {
+    "enabled": true,
+    "take_profit_roe_percent": 10.0,
+    "stop_loss_roe_percent": -20.0,
+    "margin_ratio_emergency": 0.8,
+    "disable_standard_stop_loss_exits": false,
+    "portfolio_full_exit_only": false,
+    "portfolio_full_exit_profit_ratio": 0.0,
+    "turnaround_grace_enabled": true,
+    "soft_stop_roe_percent": -10.0,
+    "turnaround_abort_roe_percent": -14.0,
+    "turnaround_recovery_roe_points": 2.0,
+    "turnaround_predictability_min": 55.0,
+    "turnaround_net_edge_min_bps": 2.0,
+    "turnaround_volume_confirmation_min": 0.4,
+    "turnaround_trend_strength_min": 0.55,
+    "turnaround_liquidity_min": 0.45,
+    "turnaround_signal_max_age_minutes": 20,
+    "major_drawdown_grace_enabled": false,
+    "major_drawdown_grace_minutes": 0,
+    "major_drawdown_abort_roe_percent": -12.0,
+    "major_drawdown_predictability_min": 58.0,
+    "major_drawdown_net_edge_min_bps": 4.0,
+    "major_drawdown_liquidity_min": 0.45,
+    "major_drawdown_signal_max_age_minutes": 30,
+    "profit_flip_fast_take_profit_roe_percent": 2.0,
+    "profit_flip_take_profit_fraction": 0.25,
+    "position_unrealized_profit_arm_usd": 8.0,
+    "position_unrealized_profit_retrace_usd": 3.0,
+    "position_unrealized_take_profit_fraction": 0.25,
+    "portfolio_unrealized_profit_arm_ratio": 0.015,
+    "portfolio_unrealized_profit_retrace_ratio": 0.005,
+    "portfolio_profit_lock_take_profit_fraction": 0.25,
+    "partial_exit_min_expected_after_fee_usd": 0.0,
+    "partial_exit_min_interval_minutes": 0,
+    "major_partial_exit_fraction": 0.25,
+    "major_profit_protection_arm_roe_percent": 12.0,
+    "major_profit_protection_retrace_roe_percent": 4.5,
+    "major_low_signal_max_holding_minutes": 0,
+    "major_low_signal_min_unrealized_usd": 0.0,
+    "major_low_signal_min_roe_percent": 0.0,
+    "major_reentry_cooldown_minutes": 0,
+    "major_reversal_confirmation_cycles": 0,
+    "major_reversal_min_holding_minutes": 0,
+    "major_loss_reentry_cooldown_minutes": 0,
+    "major_loss_reentry_trigger_usd": 0.0,
+    "major_missing_on_exchange_threshold": 0,
+    "non_core_soft_stop_roe_percent": -2.5,
+    "non_core_take_profit_roe_percent": 1.0,
+    "non_core_take_profit_fraction": 1.0,
+    "non_core_take_profit_min_usd": 1.0
+  },
+  "loss_combo_downgrade": {
+    "enabled": false,
+    "lookback_hours": 24,
+    "time_bucket_minutes": 240,
+    "prune_loss_usd": 25.0,
+    "observe_only_loss_usd": 40.0,
+    "cooldown_loss_usd": 60.0,
+    "cooldown_minutes": 180
+  },
+  "portfolio_focus": {
+    "enabled": false,
+    "spot_top_n": 3,
+    "futures_top_n": 2,
+    "min_score_advantage_to_replace": 4.0,
+    "min_net_edge_advantage_bps": 2.0,
+    "min_incremental_pnl_usd": 1.0
+  },
+  "housekeeping": {
+    "enabled": true,
+    "max_log_bytes_per_stream": 524288,
+    "keep_recent_runs": 3
+  },
+  "risk": {
+    "per_trade_equity_risk": 0.0035,
+    "max_symbol_notional_fraction": 0.2,
+    "max_total_notional_fraction": 0.5,
+    "max_futures_leverage": 2.0,
+    "target_futures_leverage": 1.5,
+    "min_meaningful_futures_notional_usd": 0.0,
+    "min_meaningful_spot_notional_usd": 0.0,
+    "min_expected_profit_usd_per_trade": 0.0,
+    "daily_realized_loss_limit": 0.02,
+    "weekly_realized_loss_limit": 0.05,
+    "intraday_drawdown_limit": 0.025
+  },
+  "sizing": {
+    "atr_multiple_for_stop": 3.0,
+    "stop_floor_bps": 45
+  },
+  "exit_rules": {
+    "partial_take_profit_r": 0.5,
+    "futures_profit_protection_arm_roe_percent": 6.0,
+    "futures_profit_protection_retrace_roe_percent": 2.5,
+    "futures_proactive_take_profit_roe_thresholds_percent": [
+      6.0,
+      10.0,
+      14.0
+    ],
+    "futures_proactive_take_profit_fraction": 0.5,
+    "post_tp_stop_mode": "breakeven",
+    "futures_max_holding_minutes": 1440,
+    "spot_max_holding_minutes": 4320,
+    "score_drop_exit_buffer": 5,
+    "liquidity_drop_exit_buffer": 0.1,
+    "confirmation_cycles_for_exit": 2
+  },
+  "operational_limits": {
+    "max_concurrent_futures_symbols": 2,
+    "max_concurrent_spot_symbols": 3,
+    "stale_data_seconds": 10,
+    "stale_data_alarm_sla_seconds": 12,
+    "max_order_retries": 3
+  },
+  "validation": {
+    "paper_mode_switches_per_symbol_per_day_max": 6,
+    "paper_direction_flips_per_symbol_per_hour_max": 2,
+    "order_reject_rate_max": 0.01,
+    "order_retry_rate_max": 0.02,
+    "reconciliation_mismatch_rate_max": 0.001,
+    "avg_slippage_error_abs_bps_max": 5
+  },
+  "strategy_profiles": {
+    "conservative": {},
+    "balanced": {
+      "mode_thresholds": {
+        "futures_score_min": 73,
+        "futures_trend_strength_min": 0.66,
+        "futures_liquidity_min": 0.68,
+        "futures_volatility_penalty_max": 0.47,
+        "futures_overheat_penalty_max": 0.38,
+        "spot_score_min": 50,
+        "spot_liquidity_min": 0.55,
+        "spot_volatility_penalty_max": 0.68
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 1.1
+      },
+      "spot_support": {
+        "support_alignment_min": 0.2,
+        "resistance_penalty_max": 0.65,
+        "sentiment_support_min": 0.15,
+        "liquidity_relaxation": 0.05,
+        "breakout_resistance_override_min": 0.95,
+        "bottoming_support_override_min": 0.34,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT"
+        ],
+        "priority_support_alignment_min": 0.1,
+        "priority_resistance_penalty_max": 0.82,
+        "priority_sentiment_support_min": 0.0,
+        "priority_liquidity_relaxation": 0.08,
+        "priority_edge_relaxation_bps": 1.0
+      },
+      "macro_gates": {
+        "spot_block_penalty": 0.92
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.62,
+        "soft_volatility_penalty_max": 0.55,
+        "soft_overheat_penalty_max": 0.5,
+        "reduced_size_multiplier": 0.65,
+        "min_entry_net_edge_bps": 8.0,
+        "reduced_entry_net_edge_bps": 10.0,
+        "strong_size_multiplier": 1.2,
+        "macro_support_min": 0.65,
+        "macro_score_relaxation": 2.0,
+        "macro_liquidity_relaxation": 0.03,
+        "macro_overheat_relaxation": 0.05,
+        "macro_volatility_relaxation": 0.04,
+        "macro_min_entry_net_edge_bps": 5.0,
+        "macro_edge_to_cost_multiple_min": 0.95,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT"
+        ],
+        "priority_score_relaxation": 2.0,
+        "priority_min_entry_net_edge_bps": 4.0,
+        "priority_edge_to_cost_multiple_min": 0.9,
+        "priority_volatility_relaxation": 0.04,
+        "priority_allow_caution": true
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 2,
+        "futures_top_n": 1,
+        "min_score_advantage_to_replace": 5.0,
+        "min_net_edge_advantage_bps": 2.0,
+        "min_incremental_pnl_usd": 1.0
+      },
+      "housekeeping": {
+        "enabled": true,
+        "max_log_bytes_per_stream": 1048576,
+        "keep_recent_runs": 4
+      }
+    },
+    "active": {
+      "mode_thresholds": {
+        "futures_score_min": 60,
+        "spot_score_min": 48,
+        "futures_trend_strength_min": 0.58,
+        "spot_trend_strength_min": 0.45,
+        "futures_liquidity_min": 0.58,
+        "spot_liquidity_min": 0.5,
+        "futures_volatility_penalty_max": 0.58,
+        "spot_volatility_penalty_max": 0.72,
+        "futures_overheat_penalty_max": 0.48
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 1.05
+      },
+      "risk": {
+        "per_trade_equity_risk": 0.0042,
+        "max_symbol_notional_fraction": 0.24,
+        "max_total_notional_fraction": 0.6,
+        "max_futures_leverage": 10.0,
+        "target_futures_leverage": 5.0
+      },
+      "mode_behavior": {
+        "spot_require_positive_trend": false,
+        "spot_allow_bottoming_reversal": true
+      },
+      "spot_support": {
+        "support_alignment_min": 0.12,
+        "resistance_penalty_max": 0.82,
+        "sentiment_support_min": 0.05,
+        "liquidity_relaxation": 0.1,
+        "breakout_resistance_override_min": 0.82,
+        "bottoming_support_override_min": 0.16,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "ADAUSDT",
+          "FLOWUSDT",
+          "WLDUSDT"
+        ],
+        "priority_support_alignment_min": 0.0,
+        "priority_resistance_penalty_max": 0.95,
+        "priority_sentiment_support_min": 0.0,
+        "priority_liquidity_relaxation": 0.16,
+        "priority_edge_relaxation_bps": 3.0
+      },
+      "macro_gates": {
+        "futures_block_penalty": 0.72,
+        "spot_block_penalty": 0.95
+      },
+      "cash_reserve": {
+        "when_futures_enabled": 0.12,
+        "when_futures_disabled": 0.25
+      },
+      "altcoin_overlays": {
+        "breadth_floor": 0.32,
+        "liquidity_floor": 0.32,
+        "smart_money_floor": 0.28,
+        "rotation_block_penalty": 0.88
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.56,
+        "soft_volatility_penalty_max": 0.72,
+        "soft_overheat_penalty_max": 0.5,
+        "reduced_size_multiplier": 0.5,
+        "min_entry_net_edge_bps": 8.0,
+        "reduced_entry_net_edge_bps": 6.0,
+        "strong_score_buffer": 3.0,
+        "strong_trend_strength_min": 0.8,
+        "strong_volume_confirmation_min": 0.72,
+        "strong_liquidity_min": 0.76,
+        "strong_volatility_penalty_max": 0.3,
+        "strong_overheat_penalty_max": 0.22,
+        "strong_edge_to_cost_multiple_min": 2.0,
+        "strong_size_multiplier": 1.35,
+        "macro_support_min": 0.55,
+        "macro_score_relaxation": 5.0,
+        "macro_liquidity_relaxation": 0.08,
+        "macro_overheat_relaxation": 0.12,
+        "macro_volatility_relaxation": 0.08,
+        "macro_min_entry_net_edge_bps": 2.0,
+        "macro_edge_to_cost_multiple_min": 0.82,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "TRXUSDT",
+          "FLOWUSDT",
+          "ADAUSDT",
+          "WLDUSDT"
+        ],
+        "priority_score_relaxation": 5.0,
+        "priority_min_entry_net_edge_bps": 0.5,
+        "priority_edge_to_cost_multiple_min": 0.68,
+        "priority_volatility_relaxation": 0.12,
+        "priority_allow_caution": true
+      },
+      "symbol_eligibility": {
+        "observe_only_liquidity_max": 0.28,
+        "observe_only_alt_liquidity_max": 0.35,
+        "observe_only_cost_bps_min": 55
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 1,
+        "futures_top_n": 2,
+        "min_score_advantage_to_replace": 3.0,
+        "min_net_edge_advantage_bps": 1.5,
+        "min_incremental_pnl_usd": 0.75
+      },
+      "housekeeping": {
+        "enabled": true,
+        "max_log_bytes_per_stream": 524288,
+        "keep_recent_runs": 3
+      }
+    },
+    "live-aggressive": {
+      "mode_thresholds": {
+        "futures_score_min": 50,
+        "spot_score_min": 46,
+        "futures_trend_strength_min": 0.46,
+        "spot_trend_strength_min": 0.42,
+        "futures_liquidity_min": 0.46,
+        "spot_liquidity_min": 0.48,
+        "futures_volatility_penalty_max": 0.72,
+        "spot_volatility_penalty_max": 0.74,
+        "futures_overheat_penalty_max": 0.58
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 0.82
+      },
+      "risk": {
+        "per_trade_equity_risk": 0.0045,
+        "max_symbol_notional_fraction": 0.28,
+        "max_total_notional_fraction": 0.7,
+        "max_futures_leverage": 12.0,
+        "target_futures_leverage": 6.0
+      },
+      "mode_behavior": {
+        "spot_require_positive_trend": false,
+        "spot_allow_bottoming_reversal": true
+      },
+      "macro_gates": {
+        "futures_block_penalty": 0.78,
+        "spot_block_penalty": 0.96
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.42,
+        "soft_volatility_penalty_max": 0.9,
+        "soft_overheat_penalty_max": 0.62,
+        "reduced_size_multiplier": 0.6,
+        "min_entry_net_edge_bps": 2.5,
+        "reduced_entry_net_edge_bps": 1.5,
+        "strong_score_buffer": 2.0,
+        "strong_trend_strength_min": 0.72,
+        "strong_volume_confirmation_min": 0.64,
+        "strong_liquidity_min": 0.62,
+        "strong_volatility_penalty_max": 0.34,
+        "strong_overheat_penalty_max": 0.26,
+        "strong_edge_to_cost_multiple_min": 1.4,
+        "strong_size_multiplier": 1.8,
+        "macro_support_min": 0.48,
+        "macro_score_relaxation": 8.0,
+        "macro_liquidity_relaxation": 0.15,
+        "macro_overheat_relaxation": 0.16,
+        "macro_volatility_relaxation": 0.12,
+        "macro_min_entry_net_edge_bps": 1.0,
+        "macro_edge_to_cost_multiple_min": 0.65,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "BTCUSDT",
+          "ETHUSDT",
+          "SOLUSDT",
+          "DOGEUSDT",
+          "TRXUSDT",
+          "ADAUSDT",
+          "WLDUSDT"
+        ],
+        "priority_score_relaxation": 9.0,
+        "priority_min_entry_net_edge_bps": 0.0,
+        "priority_edge_to_cost_multiple_min": 0.55,
+        "priority_volatility_relaxation": 0.16,
+        "priority_allow_caution": true
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 1,
+        "futures_top_n": 4,
+        "min_score_advantage_to_replace": 1.0,
+        "min_net_edge_advantage_bps": 0.5,
+        "min_incremental_pnl_usd": 0.25
+      }
+    },
+    "live-ultra-aggressive": {
+      "mode_thresholds": {
+        "futures_score_min": 42,
+        "spot_score_min": 44,
+        "futures_trend_strength_min": 0.34,
+        "spot_trend_strength_min": 0.4,
+        "futures_liquidity_min": 0.32,
+        "spot_liquidity_min": 0.48,
+        "futures_volatility_penalty_max": 0.9,
+        "spot_volatility_penalty_max": 0.78,
+        "futures_overheat_penalty_max": 0.78
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 0.65
+      },
+      "risk": {
+        "per_trade_equity_risk": 0.0055,
+        "max_symbol_notional_fraction": 0.34,
+        "max_total_notional_fraction": 0.9,
+        "max_futures_leverage": 15.0,
+        "target_futures_leverage": 8.0,
+        "min_meaningful_futures_notional_usd": 40.0,
+        "min_meaningful_spot_notional_usd": 8.0,
+        "min_expected_profit_usd_per_trade": 6.0
+      },
+      "mode_behavior": {
+        "spot_require_positive_trend": false,
+        "spot_allow_bottoming_reversal": true
+      },
+      "macro_gates": {
+        "futures_block_penalty": 0.95,
+        "spot_block_penalty": 0.98
+      },
+      "cash_reserve": {
+        "when_futures_enabled": 0.08,
+        "when_futures_disabled": 0.2
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.24,
+        "soft_volatility_penalty_max": 1.1,
+        "soft_overheat_penalty_max": 0.9,
+        "reduced_size_multiplier": 0.75,
+        "min_entry_net_edge_bps": 0.5,
+        "reduced_entry_net_edge_bps": -1.0,
+        "strong_score_buffer": 0.5,
+        "strong_trend_strength_min": 0.6,
+        "strong_volume_confirmation_min": 0.5,
+        "strong_liquidity_min": 0.42,
+        "strong_volatility_penalty_max": 0.55,
+        "strong_overheat_penalty_max": 0.45,
+        "strong_edge_to_cost_multiple_min": 1.0,
+        "strong_size_multiplier": 2.8,
+        "macro_support_min": 0.42,
+        "macro_score_relaxation": 14.0,
+        "macro_liquidity_relaxation": 0.28,
+        "macro_overheat_relaxation": 0.28,
+        "macro_volatility_relaxation": 0.24,
+        "macro_min_entry_net_edge_bps": -2.0,
+        "macro_edge_to_cost_multiple_min": 0.35,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "BTCUSDT",
+          "ETHUSDT",
+          "SOLUSDT",
+          "DOGEUSDT",
+          "TRXUSDT",
+          "ADAUSDT",
+          "WLDUSDT",
+          "BCHUSDT"
+        ],
+        "priority_score_relaxation": 16.0,
+        "priority_min_entry_net_edge_bps": -3.0,
+        "priority_edge_to_cost_multiple_min": 0.25,
+        "priority_volatility_relaxation": 0.32,
+        "priority_allow_caution": true,
+        "major_symbols": [
+          "BTCUSDT",
+          "ETHUSDT",
+          "SOLUSDT"
+        ],
+        "major_size_boost_multiplier": 1.35,
+        "major_medium_size_boost_multiplier": 1.15,
+        "alt_score_penalty_without_macro": 4.0,
+        "alt_liquidity_penalty_without_macro": 0.08,
+        "alt_min_entry_net_edge_bps_without_macro": 2.0,
+        "alt_reduced_size_multiplier": 0.55,
+        "major_reallocation_score_advantage_relaxation": 2.5,
+        "major_reallocation_edge_advantage_relaxation_bps": 1.0,
+        "major_reallocation_incremental_pnl_relaxation_usd": 0.75,
+        "major_min_meaningful_notional_usd": 120.0,
+        "major_medium_min_entry_notional_usd": 140.0,
+        "major_medium_total_notional_fraction_relaxation": 0.08,
+        "major_medium_safety_cap_fraction": 0.7,
+        "major_strong_min_entry_notional_usd": 180.0,
+        "major_strong_total_notional_fraction_relaxation": 0.22,
+        "major_strong_safety_cap_fraction": 0.92,
+        "pyramid_enabled": true,
+        "pyramid_major_only": true,
+        "pyramid_min_roe_percent": 0.5,
+        "pyramid_min_predictability_score": 58.0,
+        "pyramid_min_net_edge_bps": 6.0,
+        "pyramid_min_trend_strength": 0.5,
+        "pyramid_min_volume_confirmation": 0.4,
+        "pyramid_max_adds_per_symbol": 1,
+        "pyramid_size_multiplier": 0.4,
+        "demoted_symbols": [
+          "BTCUSDT"
+        ],
+        "demoted_symbol_size_cap": 0.45
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 2,
+        "futures_top_n": 6,
+        "min_score_advantage_to_replace": 0.0,
+        "min_net_edge_advantage_bps": 0.0,
+        "min_incremental_pnl_usd": 0.0
+      },
+      "operational_limits": {
+        "max_concurrent_futures_symbols": 6
+      },
+      "live_position_risk": {
+        "major_low_signal_max_holding_minutes": 180,
+        "major_low_signal_min_unrealized_usd": 1.5,
+        "major_low_signal_min_roe_percent": 2.5,
+        "major_reentry_cooldown_minutes": 90,
+        "major_reversal_confirmation_cycles": 3,
+        "major_reversal_min_holding_minutes": 45,
+        "major_loss_reentry_cooldown_minutes": 180,
+        "major_loss_reentry_trigger_usd": 1.0,
+        "major_missing_on_exchange_threshold": 10,
+        "major_drawdown_grace_enabled": true,
+        "major_drawdown_grace_minutes": 120,
+        "major_drawdown_abort_roe_percent": -12.0,
+        "major_drawdown_predictability_min": 58.0,
+        "major_drawdown_net_edge_min_bps": 4.0,
+        "major_drawdown_liquidity_min": 0.45,
+        "major_drawdown_signal_max_age_minutes": 30,
+        "partial_exit_min_expected_after_fee_usd": 1.0,
+        "partial_exit_min_interval_minutes": 60,
+        "major_partial_exit_fraction": 0.75
+      },
+      "disable_position_adoption": true
+    },
+    "autoresearch-futures-active": {
+      "mode_thresholds": {
+        "futures_score_min": 56,
+        "spot_score_min": 48,
+        "futures_trend_strength_min": 0.52,
+        "spot_trend_strength_min": 0.45,
+        "futures_liquidity_min": 0.52,
+        "spot_liquidity_min": 0.5,
+        "futures_volatility_penalty_max": 0.58,
+        "spot_volatility_penalty_max": 0.72,
+        "futures_overheat_penalty_max": 0.48
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 0.95
+      },
+      "risk": {
+        "per_trade_equity_risk": 0.0042,
+        "max_symbol_notional_fraction": 0.24,
+        "max_total_notional_fraction": 0.6,
+        "max_futures_leverage": 10.0,
+        "target_futures_leverage": 5.0
+      },
+      "mode_behavior": {
+        "spot_require_positive_trend": false,
+        "spot_allow_bottoming_reversal": true
+      },
+      "spot_support": {
+        "support_alignment_min": 0.12,
+        "resistance_penalty_max": 0.82,
+        "sentiment_support_min": 0.05,
+        "liquidity_relaxation": 0.1,
+        "breakout_resistance_override_min": 0.82,
+        "bottoming_support_override_min": 0.16,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "ADAUSDT",
+          "FLOWUSDT",
+          "WLDUSDT"
+        ],
+        "priority_support_alignment_min": 0.0,
+        "priority_resistance_penalty_max": 0.95,
+        "priority_sentiment_support_min": 0.0,
+        "priority_liquidity_relaxation": 0.16,
+        "priority_edge_relaxation_bps": 3.0
+      },
+      "macro_gates": {
+        "futures_block_penalty": 0.72,
+        "spot_block_penalty": 0.95
+      },
+      "cash_reserve": {
+        "when_futures_enabled": 0.12,
+        "when_futures_disabled": 0.25
+      },
+      "altcoin_overlays": {
+        "breadth_floor": 0.32,
+        "liquidity_floor": 0.32,
+        "smart_money_floor": 0.28,
+        "rotation_block_penalty": 0.88
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.56,
+        "soft_volatility_penalty_max": 0.72,
+        "soft_overheat_penalty_max": 0.5,
+        "reduced_size_multiplier": 0.5,
+        "min_entry_net_edge_bps": 5.0,
+        "reduced_entry_net_edge_bps": 4.0,
+        "strong_score_buffer": 3.0,
+        "strong_trend_strength_min": 0.8,
+        "strong_volume_confirmation_min": 0.72,
+        "strong_liquidity_min": 0.76,
+        "strong_volatility_penalty_max": 0.3,
+        "strong_overheat_penalty_max": 0.22,
+        "strong_edge_to_cost_multiple_min": 2.0,
+        "strong_size_multiplier": 1.35,
+        "macro_support_min": 0.55,
+        "macro_score_relaxation": 5.0,
+        "macro_liquidity_relaxation": 0.08,
+        "macro_overheat_relaxation": 0.12,
+        "macro_volatility_relaxation": 0.08,
+        "macro_min_entry_net_edge_bps": 2.0,
+        "macro_edge_to_cost_multiple_min": 0.82,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "TRXUSDT",
+          "FLOWUSDT",
+          "ADAUSDT",
+          "WLDUSDT"
+        ],
+        "priority_score_relaxation": 5.0,
+        "priority_min_entry_net_edge_bps": 0.5,
+        "priority_edge_to_cost_multiple_min": 0.68,
+        "priority_volatility_relaxation": 0.12,
+        "priority_allow_caution": true
+      },
+      "symbol_eligibility": {
+        "observe_only_liquidity_max": 0.28,
+        "observe_only_alt_liquidity_max": 0.35,
+        "observe_only_cost_bps_min": 55
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 1,
+        "futures_top_n": 2,
+        "min_score_advantage_to_replace": 3.0,
+        "min_net_edge_advantage_bps": 1.5,
+        "min_incremental_pnl_usd": 0.75
+      },
+      "housekeeping": {
+        "enabled": true,
+        "max_log_bytes_per_stream": 524288,
+        "keep_recent_runs": 3
+      }
+    },
+    "autoresearch-bearish-short-bias": {
+      "mode_thresholds": {
+        "futures_score_min": 58,
+        "spot_score_min": 48,
+        "futures_trend_strength_min": 0.54,
+        "spot_trend_strength_min": 0.45,
+        "futures_liquidity_min": 0.58,
+        "spot_liquidity_min": 0.5,
+        "futures_volatility_penalty_max": 0.58,
+        "spot_volatility_penalty_max": 0.72,
+        "futures_overheat_penalty_max": 0.48
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 1.05
+      },
+      "risk": {
+        "per_trade_equity_risk": 0.0042,
+        "max_symbol_notional_fraction": 0.24,
+        "max_total_notional_fraction": 0.6,
+        "max_futures_leverage": 10.0,
+        "target_futures_leverage": 5.0
+      },
+      "mode_behavior": {
+        "spot_require_positive_trend": false,
+        "spot_allow_bottoming_reversal": true
+      },
+      "spot_support": {
+        "support_alignment_min": 0.12,
+        "resistance_penalty_max": 0.82,
+        "sentiment_support_min": 0.05,
+        "liquidity_relaxation": 0.1,
+        "breakout_resistance_override_min": 0.82,
+        "bottoming_support_override_min": 0.16,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "ADAUSDT",
+          "FLOWUSDT",
+          "WLDUSDT"
+        ],
+        "priority_support_alignment_min": 0.0,
+        "priority_resistance_penalty_max": 0.95,
+        "priority_sentiment_support_min": 0.0,
+        "priority_liquidity_relaxation": 0.16,
+        "priority_edge_relaxation_bps": 3.0
+      },
+      "macro_gates": {
+        "futures_block_penalty": 0.82,
+        "spot_block_penalty": 0.95
+      },
+      "cash_reserve": {
+        "when_futures_enabled": 0.12,
+        "when_futures_disabled": 0.25
+      },
+      "altcoin_overlays": {
+        "breadth_floor": 0.32,
+        "liquidity_floor": 0.32,
+        "smart_money_floor": 0.28,
+        "rotation_block_penalty": 0.88
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.56,
+        "soft_volatility_penalty_max": 0.72,
+        "soft_overheat_penalty_max": 0.5,
+        "reduced_size_multiplier": 0.5,
+        "min_entry_net_edge_bps": 5.5,
+        "reduced_entry_net_edge_bps": 4.5,
+        "strong_score_buffer": 3.0,
+        "strong_trend_strength_min": 0.8,
+        "strong_volume_confirmation_min": 0.72,
+        "strong_liquidity_min": 0.76,
+        "strong_volatility_penalty_max": 0.3,
+        "strong_overheat_penalty_max": 0.22,
+        "strong_edge_to_cost_multiple_min": 2.0,
+        "strong_size_multiplier": 1.35,
+        "macro_support_min": 0.55,
+        "macro_score_relaxation": 5.0,
+        "macro_liquidity_relaxation": 0.08,
+        "macro_overheat_relaxation": 0.12,
+        "macro_volatility_relaxation": 0.08,
+        "macro_min_entry_net_edge_bps": 2.0,
+        "macro_edge_to_cost_multiple_min": 0.82,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "TRXUSDT",
+          "FLOWUSDT",
+          "ADAUSDT",
+          "WLDUSDT"
+        ],
+        "priority_score_relaxation": 5.0,
+        "priority_min_entry_net_edge_bps": 0.5,
+        "priority_edge_to_cost_multiple_min": 0.68,
+        "priority_volatility_relaxation": 0.12,
+        "priority_allow_caution": true
+      },
+      "symbol_eligibility": {
+        "observe_only_liquidity_max": 0.28,
+        "observe_only_alt_liquidity_max": 0.35,
+        "observe_only_cost_bps_min": 55
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 1,
+        "futures_top_n": 2,
+        "min_score_advantage_to_replace": 3.0,
+        "min_net_edge_advantage_bps": 1.5,
+        "min_incremental_pnl_usd": 0.75
+      },
+      "housekeeping": {
+        "enabled": true,
+        "max_log_bytes_per_stream": 524288,
+        "keep_recent_runs": 3
+      }
+    },
+    "autoresearch-leverage-strong": {
+      "mode_thresholds": {
+        "futures_score_min": 60,
+        "spot_score_min": 48,
+        "futures_trend_strength_min": 0.58,
+        "spot_trend_strength_min": 0.45,
+        "futures_liquidity_min": 0.58,
+        "spot_liquidity_min": 0.5,
+        "futures_volatility_penalty_max": 0.58,
+        "spot_volatility_penalty_max": 0.72,
+        "futures_overheat_penalty_max": 0.48
+      },
+      "cost_gate": {
+        "edge_to_cost_multiple_min": 1.05
+      },
+      "risk": {
+        "per_trade_equity_risk": 0.0042,
+        "max_symbol_notional_fraction": 0.24,
+        "max_total_notional_fraction": 0.6,
+        "max_futures_leverage": 10.0,
+        "target_futures_leverage": 6.0
+      },
+      "mode_behavior": {
+        "spot_require_positive_trend": false,
+        "spot_allow_bottoming_reversal": true
+      },
+      "spot_support": {
+        "support_alignment_min": 0.12,
+        "resistance_penalty_max": 0.82,
+        "sentiment_support_min": 0.05,
+        "liquidity_relaxation": 0.1,
+        "breakout_resistance_override_min": 0.82,
+        "bottoming_support_override_min": 0.16,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "ADAUSDT",
+          "FLOWUSDT",
+          "WLDUSDT"
+        ],
+        "priority_support_alignment_min": 0.0,
+        "priority_resistance_penalty_max": 0.95,
+        "priority_sentiment_support_min": 0.0,
+        "priority_liquidity_relaxation": 0.16,
+        "priority_edge_relaxation_bps": 3.0
+      },
+      "macro_gates": {
+        "futures_block_penalty": 0.72,
+        "spot_block_penalty": 0.95
+      },
+      "cash_reserve": {
+        "when_futures_enabled": 0.12,
+        "when_futures_disabled": 0.25
+      },
+      "altcoin_overlays": {
+        "breadth_floor": 0.32,
+        "liquidity_floor": 0.32,
+        "smart_money_floor": 0.28,
+        "rotation_block_penalty": 0.88
+      },
+      "futures_exposure": {
+        "soft_liquidity_floor": 0.56,
+        "soft_volatility_penalty_max": 0.72,
+        "soft_overheat_penalty_max": 0.5,
+        "reduced_size_multiplier": 0.5,
+        "min_entry_net_edge_bps": 8.0,
+        "reduced_entry_net_edge_bps": 5.0,
+        "strong_score_buffer": 3.0,
+        "strong_trend_strength_min": 0.8,
+        "strong_volume_confirmation_min": 0.72,
+        "strong_liquidity_min": 0.76,
+        "strong_volatility_penalty_max": 0.3,
+        "strong_overheat_penalty_max": 0.22,
+        "strong_edge_to_cost_multiple_min": 2.0,
+        "strong_size_multiplier": 1.6,
+        "macro_support_min": 0.55,
+        "macro_score_relaxation": 5.0,
+        "macro_liquidity_relaxation": 0.08,
+        "macro_overheat_relaxation": 0.12,
+        "macro_volatility_relaxation": 0.08,
+        "macro_min_entry_net_edge_bps": 2.0,
+        "macro_edge_to_cost_multiple_min": 0.82,
+        "macro_allow_caution": true,
+        "priority_symbols": [
+          "DOGEUSDT",
+          "SOLUSDT",
+          "TRXUSDT",
+          "FLOWUSDT",
+          "ADAUSDT",
+          "WLDUSDT"
+        ],
+        "priority_score_relaxation": 5.0,
+        "priority_min_entry_net_edge_bps": 0.5,
+        "priority_edge_to_cost_multiple_min": 0.68,
+        "priority_volatility_relaxation": 0.12,
+        "priority_allow_caution": true
+      },
+      "symbol_eligibility": {
+        "observe_only_liquidity_max": 0.28,
+        "observe_only_alt_liquidity_max": 0.35,
+        "observe_only_cost_bps_min": 55
+      },
+      "portfolio_focus": {
+        "enabled": true,
+        "spot_top_n": 1,
+        "futures_top_n": 2,
+        "min_score_advantage_to_replace": 3.0,
+        "min_net_edge_advantage_bps": 1.5,
+        "min_incremental_pnl_usd": 0.75
+      },
+      "housekeeping": {
+        "enabled": true,
+        "max_log_bytes_per_stream": 524288,
+        "keep_recent_runs": 3
+      }
+    }
+  }
+}

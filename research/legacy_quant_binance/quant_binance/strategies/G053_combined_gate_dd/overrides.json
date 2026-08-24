@@ -1,0 +1,36 @@
+{
+  "_strategy_id": "G053",
+  "_parent_id": "G050",
+  "_playbook": "PB001",
+  "_setup": "G050 + DD safety net (combined gate14d + DD trigger)",
+  "_changed_keys_vs_parent": ["dd_safety_net"],
+  "score_engine": {"$ref": "G050"},
+  "entry_threshold": 70,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT","PEPEUSDT","WIFUSDT","ARBUSDT","OPUSDT","AVAXUSDT","SUIUSDT","ADAUSDT","APTUSDT","BNBUSDT","DOTUSDT","LINKUSDT","LTCUSDT","NEARUSDT","SOLUSDT","UNIUSDT","XRPUSDT","BTCUSDT"],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "deployment_gate": {
+    "type": "combined_walk_forward_dd",
+    "gate_lookback_days": 14,
+    "gate_rule": "직전 14일 모든 CH1≥70 candidate net 합 > 0",
+    "dd_window_days": 7,
+    "dd_threshold_bps": -3000,
+    "dd_pause_days": 14,
+    "warmup_days": 14,
+    "validation": {
+      "in_sample_2025_2026": {"n": 1652, "mean_bps": 202, "wr": 0.625},
+      "out_of_sample_2022_2023": {"n": 1616, "mean_bps": 213, "wr": 0.600},
+      "oos_is_gap_bps": 11
+    }
+  },
+  "portfolio_recommendation": {
+    "max_concurrent": 3,
+    "size_pct_per_trade": 0.30,
+    "leverage": 1.0,
+    "capital_usd": 55,
+    "expected_trades_per_year": "~33 (양 시기 평균)",
+    "expected_avg_net_bps": 207
+  }
+}

@@ -33,4 +33,11 @@ research/wave1/cache/
 research/paper/cache/
 research/**/out/
 research/**/cache*/
+
+# The legacy source archive contains only code-only public data adapters and
+# static, sanitized research results. Runtime data remains ignored above.
+!research/legacy_quant_binance/quant_binance/data/
+!research/legacy_quant_binance/quant_binance/data/*.py
+!research/legacy_quant_binance/quant_binance/strategies/**/runs/
+!research/legacy_quant_binance/quant_binance/strategies/**/runs/*.json
 __pycache__/

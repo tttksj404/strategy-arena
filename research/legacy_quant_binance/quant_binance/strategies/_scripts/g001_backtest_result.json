@@ -1,0 +1,88 @@
+{
+  "rules": {
+    "lookback_1h_high": 12,
+    "vol_multiplier": 1.5,
+    "vol_lookback": 20,
+    "atr_filter_mult": 0.7,
+    "sl_atr_mult": 1.5,
+    "tp1_r": 1.5,
+    "tp2_r": 3.0,
+    "hold_bars_5m": 48,
+    "cost_bps_rt": 16.0
+  },
+  "summary": {
+    "trade_count": 5,
+    "wins": 2,
+    "losses": 3,
+    "total_r_gross": 0.0,
+    "total_r_net": -1.9193956129472116,
+    "avg_r_net": -0.38387912258944235
+  },
+  "trades": [
+    {
+      "entry_time": 1775433600000,
+      "exit_time": 1775437200000,
+      "entry_price": 69313.1,
+      "sl": 68951.225,
+      "tp1": 69855.9125,
+      "tp2": 70398.725,
+      "outcome_r_gross": -1.0,
+      "cost_r": 0.3064620656303973,
+      "net_r": -1.3064620656303974,
+      "tp1_done": false,
+      "bars_held": 12
+    },
+    {
+      "entry_time": 1775592000000,
+      "exit_time": 1775596200000,
+      "entry_price": 69328.5,
+      "sl": 69033.31071428572,
+      "tp1": 69771.28392857143,
+      "tp2": 70214.06785714286,
+      "outcome_r_gross": 2.25,
+      "cost_r": 0.3757778665021292,
+      "net_r": 1.8742221334978708,
+      "tp1_done": true,
+      "bars_held": 14
+    },
+    {
+      "entry_time": 1775754000000,
+      "exit_time": 1775755800000,
+      "entry_price": 72431.8,
+      "sl": 72074.62857142858,
+      "tp1": 72967.55714285714,
+      "tp2": 73503.3142857143,
+      "outcome_r_gross": -1.0,
+      "cost_r": 0.3244685065194807,
+      "net_r": -1.3244685065194808,
+      "tp1_done": false,
+      "bars_held": 6
+    },
+    {
+      "entry_time": 1776708000000,
+      "exit_time": 1776719400000,
+      "entry_price": 76023.9,
+      "sl": 75748.12499999999,
+      "tp1": 76437.5625,
+      "tp2": 76851.225,
+      "outcome_r_gross": 0.75,
+      "cost_r": 0.4410778351917184,
+      "net_r": 0.3089221648082816,
+      "tp1_done": true,
+      "bars_held": 38
+    },
+    {
+      "entry_time": 1776866400000,
+      "exit_time": 1776868200000,
+      "entry_price": 78813.5,
+      "sl": 78546.11428571428,
+      "tp1": 79214.57857142857,
+      "tp2": 79615.65714285715,
+      "outcome_r_gross": -1.0,
+      "cost_r": 0.4716093391034859,
+      "net_r": -1.471609339103486,
+      "tp1_done": false,
+      "bars_held": 6
+    }
+  ]
+}

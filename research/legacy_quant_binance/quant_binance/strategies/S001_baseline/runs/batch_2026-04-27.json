@@ -1,0 +1,75 @@
+{
+  "strategy_id": "S001",
+  "mode": "batch_backtest",
+  "run_at": "2026-04-27T15:25:00Z",
+  "fixture": "quant_runtime/historical/{BTCUSDT,ETHUSDT,SOLUSDT}/{1m,5m,1h,4h}.json",
+  "window": "2026-03-28 ~ 2026-04-27 (30 days)",
+  "equity_usd": 50,
+  "capacity_usd": 125,
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT"
+  ],
+  "cost_bps_round_trip": 16.0,
+  "holding_period": "4h",
+  "metrics": {
+    "decision_count": 1788,
+    "cash_decision_count": 530,
+    "trade_count": 1258,
+    "entry_rate": 0.7036,
+    "win_count": 452,
+    "loss_count": 806,
+    "hit_rate": 0.359,
+    "hit_rate_after_cost": 0.2806,
+    "gross_pnl_bps": -1455,
+    "net_pnl_bps": -21583,
+    "avg_gross_bps_per_trade": -1.16,
+    "avg_net_bps_per_trade": -17.16,
+    "expectancy_bps_per_trade": -17.16,
+    "estimated_equity_pnl_usd": -107.92,
+    "estimated_equity_pnl_pct": -215.83,
+    "note_on_equity_pnl": "estimated_equity_pnl_pct(-215.83)는 단순 sum(net_bps)/100 (% 환산). 실제 $50 자본 + $125 capacity 라면 첫 수십 거래 안에 청산. 통계적 평가이며 시퀀셜 포트폴리오 시뮬은 아님."
+  },
+  "per_symbol": {
+    "BTCUSDT": {
+      "trade_count": 455,
+      "mean_net_bps": -12.83,
+      "mean_gross_bps": 3.17,
+      "win_rate_net": 0.3626
+    },
+    "ETHUSDT": {
+      "trade_count": 407,
+      "mean_net_bps": -16.0,
+      "mean_gross_bps": 0.0,
+      "win_rate_net": 0.3538
+    },
+    "SOLUSDT": {
+      "trade_count": 396,
+      "mean_net_bps": -23.31,
+      "mean_gross_bps": -7.31,
+      "win_rate_net": 0.3611
+    }
+  },
+  "diagnostics": {
+    "learning_active": true,
+    "min_observations_threshold": 5,
+    "pooled_buckets": 12,
+    "pooled_buckets_qualified": 11,
+    "symbol_buckets": 32,
+    "symbol_buckets_qualified": 23,
+    "total_observations": 1258
+  },
+  "raw_summary_path": "quant_runtime/output/paper-live-shell/bootstrap/edge_table.json",
+  "notes": "실데이터 30일 백테스트 (S001 베이스라인). 사용자 $50 자본 기준. 4h holding, 16bps round-trip cost. Forward-return 시뮬레이션이라 lookahead bias 있음(살아있는 라이브 평가는 페이퍼라이브 필요).",
+  "diagnosis": {
+    "win_rate_net": 0.359,
+    "avg_net_bps": -17.16,
+    "avg_gross_bps": -1.16,
+    "cost_drag_bps": 16.0,
+    "verdict": "베이스라인은 손실 전략. Gross 거의 0(-1.16 bps) 인데 cost 16 bps 가 모든 expectancy 를 까먹음. 진입 selectivity 가 이미 70%로 높은데 승률이 36% → cost 못 이김.",
+    "critical_finding_1": "Gross 는 거의 zero — 즉 신호가 random 보다 조금 나은 정도. 진입 게이트 완화로는 해결 안 됨 (Gross 가 늘지 않음).",
+    "critical_finding_2": "Cost 가 expectancy 의 14배 — Cost 줄이는 변수가 가장 큰 영향. 지정가 진입, holding 늘림, slippage 최적화.",
+    "critical_finding_3": "사용자 호소 \"진입 안 들어감\" 과 백테스트의 70% 진입률이 모순 — 라이브 환경 추가 게이트 (소액 자본 사이즈 거절, 매크로/지지 라이브 게이트) 의심."
+  }
+}

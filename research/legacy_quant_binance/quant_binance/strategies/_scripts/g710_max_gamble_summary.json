@@ -1,0 +1,977 @@
+{
+  "candidates": {
+    "G710": {
+      "id": "G710",
+      "desc": "meme + lev20 size1.0 conc1",
+      "lev": 20,
+      "univ": "meme",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 120.33,
+                "annual_pnl_usd": 60.17,
+                "monthly_pnl_usd": 5.01,
+                "max_single_win_usd": 120.33,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 969.27,
+                "annual_pnl_usd": 775.84,
+                "monthly_pnl_usd": 64.62,
+                "max_single_win_usd": 262.41,
+                "max_single_loss_usd": -11.08,
+                "big_wins_30pct": 6,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 128.39,
+                "annual_pnl_usd": 125.3,
+                "monthly_pnl_usd": 10.44,
+                "max_single_win_usd": 128.39,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 1217.99,
+              "annual_pnl_usd": 284.98,
+              "monthly_pnl_usd": 23.75,
+              "all_periods_positive": true,
+              "liquidations": 0,
+              "liquidation_rate": 0.0,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 262.41,
+              "max_single_loss_usd": -11.08
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 119.53,
+                "annual_pnl_usd": 59.77,
+                "monthly_pnl_usd": 4.98,
+                "max_single_win_usd": 119.53,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 962.87,
+                "annual_pnl_usd": 770.72,
+                "monthly_pnl_usd": 64.19,
+                "max_single_win_usd": 261.61,
+                "max_single_loss_usd": -11.88,
+                "big_wins_30pct": 6,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 127.59,
+                "annual_pnl_usd": 124.51,
+                "monthly_pnl_usd": 10.37,
+                "max_single_win_usd": 127.59,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 1209.99,
+              "annual_pnl_usd": 283.11,
+              "monthly_pnl_usd": 23.59,
+              "all_periods_positive": true,
+              "liquidations": 0,
+              "liquidation_rate": 0.0,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 261.61,
+              "max_single_loss_usd": -11.88
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G711": {
+      "id": "G711",
+      "desc": "meme + lev30 size1.0 conc1",
+      "lev": 30,
+      "univ": "meme",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 180.5,
+                "annual_pnl_usd": 90.25,
+                "monthly_pnl_usd": 7.52,
+                "max_single_win_usd": 180.5,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 1453.9,
+                "annual_pnl_usd": 1163.76,
+                "monthly_pnl_usd": 96.93,
+                "max_single_win_usd": 393.62,
+                "max_single_loss_usd": -16.63,
+                "big_wins_30pct": 6,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 192.58,
+                "annual_pnl_usd": 187.94,
+                "monthly_pnl_usd": 15.65,
+                "max_single_win_usd": 192.58,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 1826.98,
+              "annual_pnl_usd": 427.47,
+              "monthly_pnl_usd": 35.62,
+              "all_periods_positive": true,
+              "liquidations": 0,
+              "liquidation_rate": 0.0,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 393.62,
+              "max_single_loss_usd": -16.63
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 179.3,
+                "annual_pnl_usd": 89.65,
+                "monthly_pnl_usd": 7.47,
+                "max_single_win_usd": 179.3,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 1444.3,
+                "annual_pnl_usd": 1156.07,
+                "monthly_pnl_usd": 96.29,
+                "max_single_win_usd": 392.42,
+                "max_single_loss_usd": -17.83,
+                "big_wins_30pct": 6,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 191.38,
+                "annual_pnl_usd": 186.77,
+                "monthly_pnl_usd": 15.56,
+                "max_single_win_usd": 191.38,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 1814.98,
+              "annual_pnl_usd": 424.66,
+              "monthly_pnl_usd": 35.39,
+              "all_periods_positive": true,
+              "liquidations": 0,
+              "liquidation_rate": 0.0,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 392.42,
+              "max_single_loss_usd": -17.83
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G712": {
+      "id": "G712",
+      "desc": "meme + lev50 size1.0 conc1",
+      "lev": 50,
+      "univ": "meme",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 300.83,
+                "annual_pnl_usd": 150.41,
+                "monthly_pnl_usd": 12.53,
+                "max_single_win_usd": 300.83,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 2423.16,
+                "annual_pnl_usd": 1939.59,
+                "monthly_pnl_usd": 161.54,
+                "max_single_win_usd": 656.03,
+                "max_single_loss_usd": -27.71,
+                "big_wins_30pct": 6,
+                "liquidations": 1,
+                "liquidation_rate": 0.125,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 320.96,
+                "annual_pnl_usd": 313.24,
+                "monthly_pnl_usd": 26.09,
+                "max_single_win_usd": 320.96,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 3044.95,
+              "annual_pnl_usd": 712.44,
+              "monthly_pnl_usd": 59.37,
+              "all_periods_positive": true,
+              "liquidations": 1,
+              "liquidation_rate": 0.1,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 656.03,
+              "max_single_loss_usd": -27.71
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 298.83,
+                "annual_pnl_usd": 149.41,
+                "monthly_pnl_usd": 12.44,
+                "max_single_win_usd": 298.83,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 2407.16,
+                "annual_pnl_usd": 1926.79,
+                "monthly_pnl_usd": 160.48,
+                "max_single_win_usd": 654.03,
+                "max_single_loss_usd": -29.71,
+                "big_wins_30pct": 6,
+                "liquidations": 1,
+                "liquidation_rate": 0.125,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 318.96,
+                "annual_pnl_usd": 311.29,
+                "monthly_pnl_usd": 25.93,
+                "max_single_win_usd": 318.96,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 3024.95,
+              "annual_pnl_usd": 707.76,
+              "monthly_pnl_usd": 58.98,
+              "all_periods_positive": true,
+              "liquidations": 1,
+              "liquidation_rate": 0.1,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 654.03,
+              "max_single_loss_usd": -29.71
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G713": {
+      "id": "G713",
+      "desc": "meme + lev75 size1.0 conc1",
+      "lev": 75,
+      "univ": "meme",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 451.24,
+                "annual_pnl_usd": 225.62,
+                "monthly_pnl_usd": 18.79,
+                "max_single_win_usd": 451.24,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 3634.75,
+                "annual_pnl_usd": 2909.39,
+                "monthly_pnl_usd": 242.32,
+                "max_single_win_usd": 984.04,
+                "max_single_loss_usd": -41.57,
+                "big_wins_30pct": 6,
+                "liquidations": 1,
+                "liquidation_rate": 0.125,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 481.44,
+                "annual_pnl_usd": 469.86,
+                "monthly_pnl_usd": 39.13,
+                "max_single_win_usd": 481.44,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 4567.43,
+              "annual_pnl_usd": 1068.66,
+              "monthly_pnl_usd": 89.06,
+              "all_periods_positive": true,
+              "liquidations": 1,
+              "liquidation_rate": 0.1,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 984.04,
+              "max_single_loss_usd": -41.57
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 1,
+                "n_skipped": 0,
+                "win_rate": 1.0,
+                "pnl_usd": 448.24,
+                "annual_pnl_usd": 224.12,
+                "monthly_pnl_usd": 18.67,
+                "max_single_win_usd": 448.24,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 8,
+                "n_skipped": 10,
+                "win_rate": 0.75,
+                "pnl_usd": 3610.75,
+                "annual_pnl_usd": 2890.18,
+                "monthly_pnl_usd": 240.72,
+                "max_single_win_usd": 981.04,
+                "max_single_loss_usd": -44.57,
+                "big_wins_30pct": 6,
+                "liquidations": 1,
+                "liquidation_rate": 0.125,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 1,
+                "n_skipped": 8,
+                "win_rate": 1.0,
+                "pnl_usd": 478.44,
+                "annual_pnl_usd": 466.93,
+                "monthly_pnl_usd": 38.89,
+                "max_single_win_usd": 478.44,
+                "max_single_loss_usd": 0.0,
+                "big_wins_30pct": 1,
+                "liquidations": 0,
+                "liquidation_rate": 0.0,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 10,
+              "n_skipped": 18,
+              "win_rate": 0.8,
+              "pnl_usd": 4537.43,
+              "annual_pnl_usd": 1061.64,
+              "monthly_pnl_usd": 88.47,
+              "all_periods_positive": true,
+              "liquidations": 1,
+              "liquidation_rate": 0.1,
+              "big_wins_30pct": 8,
+              "max_single_win_usd": 981.04,
+              "max_single_loss_usd": -44.57
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G714": {
+      "id": "G714",
+      "desc": "all + lev25 size1.0 conc1",
+      "lev": 25,
+      "univ": "all",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 8,
+                "n_skipped": 29,
+                "win_rate": 0.75,
+                "pnl_usd": 775.6,
+                "annual_pnl_usd": 387.8,
+                "monthly_pnl_usd": 32.3,
+                "max_single_win_usd": 395.73,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 5,
+                "liquidations": 2,
+                "liquidation_rate": 0.25,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 10,
+                "n_skipped": 69,
+                "win_rate": 0.7,
+                "pnl_usd": 848.26,
+                "annual_pnl_usd": 678.98,
+                "monthly_pnl_usd": 56.55,
+                "max_single_win_usd": 321.49,
+                "max_single_loss_usd": -34.81,
+                "big_wins_30pct": 7,
+                "liquidations": 1,
+                "liquidation_rate": 0.1,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "n_skipped": 33,
+                "win_rate": 0.6,
+                "pnl_usd": 177.85,
+                "annual_pnl_usd": 173.57,
+                "monthly_pnl_usd": 14.46,
+                "max_single_win_usd": 160.48,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 3,
+                "liquidations": 1,
+                "liquidation_rate": 0.2,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 23,
+              "n_skipped": 131,
+              "win_rate": 0.6957,
+              "pnl_usd": 1801.71,
+              "annual_pnl_usd": 421.55,
+              "monthly_pnl_usd": 35.13,
+              "all_periods_positive": true,
+              "liquidations": 4,
+              "liquidation_rate": 0.1739,
+              "big_wins_30pct": 15,
+              "max_single_win_usd": 395.73,
+              "max_single_loss_usd": -49.5
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 8,
+                "n_skipped": 29,
+                "win_rate": 0.75,
+                "pnl_usd": 768.6,
+                "annual_pnl_usd": 384.3,
+                "monthly_pnl_usd": 32.01,
+                "max_single_win_usd": 394.73,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 5,
+                "liquidations": 2,
+                "liquidation_rate": 0.25,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 10,
+                "n_skipped": 69,
+                "win_rate": 0.7,
+                "pnl_usd": 838.26,
+                "annual_pnl_usd": 670.97,
+                "monthly_pnl_usd": 55.88,
+                "max_single_win_usd": 320.49,
+                "max_single_loss_usd": -35.81,
+                "big_wins_30pct": 7,
+                "liquidations": 1,
+                "liquidation_rate": 0.1,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "n_skipped": 33,
+                "win_rate": 0.6,
+                "pnl_usd": 173.85,
+                "annual_pnl_usd": 169.66,
+                "monthly_pnl_usd": 14.13,
+                "max_single_win_usd": 159.48,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 3,
+                "liquidations": 1,
+                "liquidation_rate": 0.2,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 23,
+              "n_skipped": 131,
+              "win_rate": 0.6957,
+              "pnl_usd": 1780.71,
+              "annual_pnl_usd": 416.64,
+              "monthly_pnl_usd": 34.72,
+              "all_periods_positive": true,
+              "liquidations": 4,
+              "liquidation_rate": 0.1739,
+              "big_wins_30pct": 15,
+              "max_single_win_usd": 394.73,
+              "max_single_loss_usd": -49.5
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G715": {
+      "id": "G715",
+      "desc": "all + lev50 size1.0 conc1",
+      "lev": 50,
+      "univ": "all",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 8,
+                "n_skipped": 29,
+                "win_rate": 0.75,
+                "pnl_usd": 1634.78,
+                "annual_pnl_usd": 817.39,
+                "monthly_pnl_usd": 68.08,
+                "max_single_win_usd": 791.45,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 6,
+                "liquidations": 2,
+                "liquidation_rate": 0.25,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 10,
+                "n_skipped": 69,
+                "win_rate": 0.7,
+                "pnl_usd": 1716.63,
+                "annual_pnl_usd": 1374.06,
+                "monthly_pnl_usd": 114.44,
+                "max_single_win_usd": 642.97,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 7,
+                "liquidations": 2,
+                "liquidation_rate": 0.2,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "n_skipped": 33,
+                "win_rate": 0.6,
+                "pnl_usd": 405.19,
+                "annual_pnl_usd": 395.44,
+                "monthly_pnl_usd": 32.94,
+                "max_single_win_usd": 320.96,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 3,
+                "liquidations": 2,
+                "liquidation_rate": 0.4,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 23,
+              "n_skipped": 131,
+              "win_rate": 0.6957,
+              "pnl_usd": 3756.6,
+              "annual_pnl_usd": 878.95,
+              "monthly_pnl_usd": 73.25,
+              "all_periods_positive": true,
+              "liquidations": 6,
+              "liquidation_rate": 0.2609,
+              "big_wins_30pct": 16,
+              "max_single_win_usd": 791.45,
+              "max_single_loss_usd": -49.5
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 8,
+                "n_skipped": 29,
+                "win_rate": 0.75,
+                "pnl_usd": 1622.78,
+                "annual_pnl_usd": 811.39,
+                "monthly_pnl_usd": 67.58,
+                "max_single_win_usd": 789.45,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 5,
+                "liquidations": 2,
+                "liquidation_rate": 0.25,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 10,
+                "n_skipped": 69,
+                "win_rate": 0.7,
+                "pnl_usd": 1698.63,
+                "annual_pnl_usd": 1359.65,
+                "monthly_pnl_usd": 113.24,
+                "max_single_win_usd": 640.97,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 7,
+                "liquidations": 2,
+                "liquidation_rate": 0.2,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "n_skipped": 33,
+                "win_rate": 0.6,
+                "pnl_usd": 397.19,
+                "annual_pnl_usd": 387.63,
+                "monthly_pnl_usd": 32.29,
+                "max_single_win_usd": 318.96,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 3,
+                "liquidations": 2,
+                "liquidation_rate": 0.4,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 23,
+              "n_skipped": 131,
+              "win_rate": 0.6957,
+              "pnl_usd": 3718.6,
+              "annual_pnl_usd": 870.06,
+              "monthly_pnl_usd": 72.5,
+              "all_periods_positive": true,
+              "liquidations": 6,
+              "liquidation_rate": 0.2609,
+              "big_wins_30pct": 15,
+              "max_single_win_usd": 789.45,
+              "max_single_loss_usd": -49.5
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G716": {
+      "id": "G716",
+      "desc": "all + lev75 size1.0 conc1",
+      "lev": 75,
+      "univ": "all",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 8,
+                "n_skipped": 29,
+                "win_rate": 0.75,
+                "pnl_usd": 2501.67,
+                "annual_pnl_usd": 1250.84,
+                "monthly_pnl_usd": 104.18,
+                "max_single_win_usd": 1187.18,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 6,
+                "liquidations": 2,
+                "liquidation_rate": 0.25,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 10,
+                "n_skipped": 69,
+                "win_rate": 0.7,
+                "pnl_usd": 2599.7,
+                "annual_pnl_usd": 2080.9,
+                "monthly_pnl_usd": 173.31,
+                "max_single_win_usd": 964.46,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 7,
+                "liquidations": 2,
+                "liquidation_rate": 0.2,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "n_skipped": 33,
+                "win_rate": 0.6,
+                "pnl_usd": 644.24,
+                "annual_pnl_usd": 628.73,
+                "monthly_pnl_usd": 52.37,
+                "max_single_win_usd": 481.44,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 3,
+                "liquidations": 2,
+                "liquidation_rate": 0.4,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 23,
+              "n_skipped": 131,
+              "win_rate": 0.6957,
+              "pnl_usd": 5745.61,
+              "annual_pnl_usd": 1344.33,
+              "monthly_pnl_usd": 112.03,
+              "all_periods_positive": true,
+              "liquidations": 6,
+              "liquidation_rate": 0.2609,
+              "big_wins_30pct": 16,
+              "max_single_win_usd": 1187.18,
+              "max_single_loss_usd": -49.5
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 8,
+                "n_skipped": 29,
+                "win_rate": 0.75,
+                "pnl_usd": 2483.67,
+                "annual_pnl_usd": 1241.84,
+                "monthly_pnl_usd": 103.43,
+                "max_single_win_usd": 1184.18,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 6,
+                "liquidations": 2,
+                "liquidation_rate": 0.25,
+                "days": 730
+              },
+              "OOS24-Q1": {
+                "n_taken": 10,
+                "n_skipped": 69,
+                "win_rate": 0.7,
+                "pnl_usd": 2572.7,
+                "annual_pnl_usd": 2059.28,
+                "monthly_pnl_usd": 171.51,
+                "max_single_win_usd": 961.46,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 7,
+                "liquidations": 2,
+                "liquidation_rate": 0.2,
+                "days": 456
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "n_skipped": 33,
+                "win_rate": 0.6,
+                "pnl_usd": 635.24,
+                "annual_pnl_usd": 619.95,
+                "monthly_pnl_usd": 51.63,
+                "max_single_win_usd": 478.44,
+                "max_single_loss_usd": -49.5,
+                "big_wins_30pct": 3,
+                "liquidations": 2,
+                "liquidation_rate": 0.4,
+                "days": 374
+              }
+            },
+            "weighted": {
+              "n_taken": 23,
+              "n_skipped": 131,
+              "win_rate": 0.6957,
+              "pnl_usd": 5691.61,
+              "annual_pnl_usd": 1331.69,
+              "monthly_pnl_usd": 110.97,
+              "all_periods_positive": true,
+              "liquidations": 6,
+              "liquidation_rate": 0.2609,
+              "big_wins_30pct": 16,
+              "max_single_win_usd": 1184.18,
+              "max_single_loss_usd": -49.5
+            }
+          },
+          "decision": {
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    }
+  }
+}

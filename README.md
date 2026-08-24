@@ -24,9 +24,15 @@ Strategy Arena maps well to requirements seen in financial IT, digital banking, 
 
 For a project-specific interaction map that follows a strategy idea from UI input through the simulation engine, metrics, and risk-aware interpretation, see [docs/LEARNING_GUIDE.md](docs/LEARNING_GUIDE.md). The current research contract is in [docs/RESEARCH_GUARDRAILS.md](docs/RESEARCH_GUARDRAILS.md).
 
-## StockPulse Bitget 5x Research
+## Consolidated Crypto Research
 
-The reusable StockPulse Bitget strategy core is now separated into [research/bitget_5x](research/bitget_5x). It uses public market data only, keeps leverage fixed at 5x for research, models cost and stop-loss limits, and promotes no candidate without chronological validation plus an untouched holdout. It cannot place orders, change leverage, or read an account. The included replay artifact concludes `NO_RELIABLE_WINNER`, not a buy signal. The code-workspace selection boundary is documented in [docs/COIN_SOURCE_INVENTORY_2026-08-24.md](docs/COIN_SOURCE_INVENTORY_2026-08-24.md).
+All reusable, publishable crypto research found across the StockPulse and quant workspaces is consolidated here. The split is intentional:
+
+- [research/bitget_5x](research/bitget_5x) is the standalone public-market-data-only 5x replay core. It cannot place orders, change leverage, or read an account.
+- [research/stockpulse_django_crypto](research/stockpulse_django_crypto) is the selected StockPulse crypto source snapshot, including Django-coupled research logic, commands, migrations, and guard tests for reference and future extraction.
+- [research/legacy_quant_binance](research/legacy_quant_binance) preserves prior research candidates, backtests, scoring, risk policy, and static experiment results as a source archive; it intentionally omits every live-execution and credential path.
+
+The shared publication boundary and exclusions are documented in [docs/COIN_CONSOLIDATION_2026-08-24.md](docs/COIN_CONSOLIDATION_2026-08-24.md). The runnable 5x core's committed replay artifact concludes `NO_RELIABLE_WINNER`, not a buy signal.
 
 ## Why This Matters for Hiring
 

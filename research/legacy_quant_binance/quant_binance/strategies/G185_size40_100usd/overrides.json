@@ -1,0 +1,39 @@
+{
+  "_strategy_id": "G185",
+  "_parent_id": "G070",
+  "_playbook": "PB001",
+  "_setup": "G070 + size_pct 0.30 → 0.40 (single variable change). Capital context: $100",
+  "_changed_keys_vs_parent": ["size_pct_per_trade"],
+  "_capital_context_usd": 100,
+  "_target": {
+    "per_trade_winner_usd": 30,
+    "min_win_rate": 0.70,
+    "math": "100 * 0.40 * 5x lev * 0.15 avg win = $30 per winning trade"
+  },
+  "score_engine": {"$ref": "G004"},
+  "entry_threshold": 80,
+  "holding_period_bars": 24,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT","PEPEUSDT","WIFUSDT","ARBUSDT","OPUSDT","AVAXUSDT","SUIUSDT","ADAUSDT","APTUSDT","BNBUSDT","DOTUSDT","LINKUSDT","LTCUSDT","NEARUSDT","SOLUSDT","UNIUSDT","XRPUSDT","BTCUSDT"],
+  "side": "long",
+  "leverage": 5.0,
+  "size_pct_per_trade": 0.40,
+  "max_concurrent": 5,
+  "cost_bps_round_trip": 16.0,
+  "atr_volatility_guard": {
+    "enabled": true,
+    "max_atr_pct": 8.0,
+    "rule": "atr_pct(14) > 8% 시 진입 skip — 5x lev × 40% size 에서 -20% intra-bar 위험 가중"
+  },
+  "estimated_metrics": {
+    "_disclaimer": "linear-scaling estimate from G070 baseline. walk-forward validation pending.",
+    "per_trade_avg_win_usd": 30.0,
+    "per_trade_avg_loss_usd": -8.0,
+    "expected_wr": "0.75-0.85 (inherits G070)",
+    "expected_annual_pct": 223,
+    "expected_annual_pnl_usd_at_100_capital": 223,
+    "peak_notional_usd": 2000,
+    "peak_notional_leverage_x": 20,
+    "per_position_leverage_x": 2.0
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "T1_locked_default": {
+    "PASS": true,
+    "detail": "fund 전 open 차단"
+  },
+  "T2_overrisk_blocked": {
+    "PASS": true,
+    "detail": "stake>disposable 차단"
+  },
+  "T3_double_open_blocked": {
+    "PASS": true,
+    "detail": "동시 2도박 차단"
+  },
+  "T4_no_reentry_after_win": {
+    "PASS": true,
+    "detail": "정산후 locked, refund 필수"
+  },
+  "T5_banked_protected": {
+    "PASS": true,
+    "detail": "at_risk=7.0 banked=14.0"
+  },
+  "T6_mandatory_exit": {
+    "PASS": true,
+    "detail": "익절/손절 강제"
+  },
+  "T7_spiral_blocked_banked_safe": {
+    "PASS": true,
+    "detail": "banked=70.1 손실후 보존"
+  },
+  "T8_loss_capped_to_disposable": {
+    "PASS": true,
+    "detail": "손실=disposable 한정, 계좌전소 아님"
+  }
+}

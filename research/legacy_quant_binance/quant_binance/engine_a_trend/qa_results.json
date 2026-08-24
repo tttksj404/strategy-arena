@@ -1,0 +1,95 @@
+{
+  "V2a_empty": {
+    "PASS": true,
+    "detail": "empty->0"
+  },
+  "V2b_None_in_data": {
+    "PASS": true,
+    "detail": "None last"
+  },
+  "V2c_NaN_in_data": {
+    "PASS": true,
+    "detail": "nan last"
+  },
+  "V2d_all_None": {
+    "PASS": true,
+    "detail": "allNone->0"
+  },
+  "V2e_inf": {
+    "PASS": true,
+    "detail": "inf last"
+  },
+  "V3a_zero_price": {
+    "PASS": true,
+    "detail": "all zero"
+  },
+  "V3b_negative": {
+    "PASS": true,
+    "detail": "negatives"
+  },
+  "V3c_tiny": {
+    "PASS": true,
+    "detail": "tiny prices"
+  },
+  "V3d_huge": {
+    "PASS": true,
+    "detail": "huge prices"
+  },
+  "V3e_at_sma": {
+    "PASS": true,
+    "detail": "flat==sma->cash(<=)"
+  },
+  "V6a_short": {
+    "PASS": true,
+    "detail": "<MIN_BARS->0"
+  },
+  "V6b_exact_min": {
+    "PASS": true,
+    "detail": "==MIN_BARS valid"
+  },
+  "V3f_zerovol": {
+    "PASS": true,
+    "detail": "vol=0->0 guard"
+  },
+  "V8_gross_cap": {
+    "PASS": true,
+    "detail": "gross<=CAP"
+  },
+  "V11a_downtrend_cash": {
+    "PASS": true,
+    "detail": "downtrend->0(no short)"
+  },
+  "V11b_uptrend_pos": {
+    "PASS": true,
+    "detail": "uptrend->(0,CAP]"
+  },
+  "V1_state_corrupt": {
+    "PASS": true,
+    "detail": "N/A (stateless pure fn)"
+  },
+  "V4_time_anomaly": {
+    "PASS": true,
+    "detail": "N/A (stateless pure fn)"
+  },
+  "V5_concurrency": {
+    "PASS": true,
+    "detail": "N/A (stateless pure fn)"
+  },
+  "V7_dedup": {
+    "PASS": true,
+    "detail": "N/A (stateless pure fn)"
+  },
+  "V9_cost_model": {
+    "PASS": true,
+    "detail": "N/A (stateless pure fn)"
+  },
+  "V10_lifecycle": {
+    "PASS": true,
+    "detail": "N/A (stateless pure fn)"
+  },
+  "_SUMMARY": {
+    "pass": 22,
+    "total": 22,
+    "verdict": "ALL_PASS"
+  }
+}

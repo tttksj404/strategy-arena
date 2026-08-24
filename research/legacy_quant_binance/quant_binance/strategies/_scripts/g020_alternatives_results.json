@@ -1,0 +1,294 @@
+{
+  "run_at": "2026-04-28T01:42:37Z",
+  "results": [
+    {
+      "label": "G020a Donchian-20 breakout L72h",
+      "side": "long",
+      "n": 7797,
+      "avg_net_bps": -43.31,
+      "win_rate": 0.4393,
+      "lottery5": 1447,
+      "lottery10": 624,
+      "lottery20": 196,
+      "quarters": [
+        {
+          "n": 1894,
+          "net": 99.7,
+          "wr": 0.4815
+        },
+        {
+          "n": 2505,
+          "net": 15.4,
+          "wr": 0.5102
+        },
+        {
+          "n": 1850,
+          "net": -192.3,
+          "wr": 0.3762
+        },
+        {
+          "n": 1548,
+          "net": -135.2,
+          "wr": 0.3482
+        }
+      ]
+    },
+    {
+      "label": "G020b Donchian-20 breakout L24h",
+      "side": "long",
+      "n": 7823,
+      "avg_net_bps": -13.41,
+      "win_rate": 0.4571,
+      "lottery5": 881,
+      "lottery10": 252,
+      "lottery20": 43,
+      "quarters": [
+        {
+          "n": 1894,
+          "net": 26.2,
+          "wr": 0.4498
+        },
+        {
+          "n": 2505,
+          "net": 19.2,
+          "wr": 0.5277
+        },
+        {
+          "n": 1850,
+          "net": -101.2,
+          "wr": 0.3919
+        },
+        {
+          "n": 1574,
+          "net": -9.8,
+          "wr": 0.4301
+        }
+      ]
+    },
+    {
+      "label": "G020c Donchian-20 breakdown S72h",
+      "side": "short",
+      "n": 7729,
+      "avg_net_bps": -8.84,
+      "win_rate": 0.5049,
+      "lottery5": 1760,
+      "lottery10": 545,
+      "lottery20": 55,
+      "quarters": [
+        {
+          "n": 2196,
+          "net": -30.7,
+          "wr": 0.5059
+        },
+        {
+          "n": 1685,
+          "net": -139.6,
+          "wr": 0.4012
+        },
+        {
+          "n": 2015,
+          "net": 60.5,
+          "wr": 0.5424
+        },
+        {
+          "n": 1833,
+          "net": 61.3,
+          "wr": 0.5576
+        }
+      ]
+    },
+    {
+      "label": "G021a Squeeze release L72h",
+      "side": "long",
+      "n": 17,
+      "avg_net_bps": 17.17,
+      "win_rate": 0.7059,
+      "lottery5": 1,
+      "lottery10": 1,
+      "lottery20": 0,
+      "quarters": [
+        {
+          "n": 2,
+          "net": 235.8,
+          "wr": 1.0
+        },
+        {
+          "n": 4,
+          "net": 562.4,
+          "wr": 1.0
+        },
+        {
+          "n": 7,
+          "net": -254.6,
+          "wr": 0.5714
+        },
+        {
+          "n": 4,
+          "net": -161.8,
+          "wr": 0.5
+        }
+      ]
+    },
+    {
+      "label": "G021b Squeeze release L24h",
+      "side": "long",
+      "n": 17,
+      "avg_net_bps": -9.03,
+      "win_rate": 0.5294,
+      "lottery5": 0,
+      "lottery10": 0,
+      "lottery20": 0,
+      "quarters": [
+        {
+          "n": 2,
+          "net": 34.7,
+          "wr": 1.0
+        },
+        {
+          "n": 4,
+          "net": 138.0,
+          "wr": 1.0
+        },
+        {
+          "n": 7,
+          "net": 56.5,
+          "wr": 0.4286
+        },
+        {
+          "n": 4,
+          "net": -292.6,
+          "wr": 0.0
+        }
+      ]
+    },
+    {
+      "label": "G023a Volume+RSI break L72h",
+      "side": "long",
+      "n": 1034,
+      "avg_net_bps": -68.21,
+      "win_rate": 0.4226,
+      "lottery5": 183,
+      "lottery10": 61,
+      "lottery20": 15,
+      "quarters": [
+        {
+          "n": 208,
+          "net": 12.4,
+          "wr": 0.4808
+        },
+        {
+          "n": 210,
+          "net": 133.2,
+          "wr": 0.5143
+        },
+        {
+          "n": 321,
+          "net": -98.4,
+          "wr": 0.4361
+        },
+        {
+          "n": 295,
+          "net": -235.5,
+          "wr": 0.3017
+        }
+      ]
+    },
+    {
+      "label": "G023b Volume+RSI break L24h",
+      "side": "long",
+      "n": 1034,
+      "avg_net_bps": -36.92,
+      "win_rate": 0.413,
+      "lottery5": 116,
+      "lottery10": 30,
+      "lottery20": 3,
+      "quarters": [
+        {
+          "n": 208,
+          "net": 10.0,
+          "wr": 0.4663
+        },
+        {
+          "n": 210,
+          "net": 93.3,
+          "wr": 0.5571
+        },
+        {
+          "n": 321,
+          "net": -88.5,
+          "wr": 0.3645
+        },
+        {
+          "n": 295,
+          "net": -106.6,
+          "wr": 0.3254
+        }
+      ]
+    },
+    {
+      "label": "G024a Pure 7d momentum L72h",
+      "side": "long",
+      "n": 21463,
+      "avg_net_bps": -95.03,
+      "win_rate": 0.4032,
+      "lottery5": 3763,
+      "lottery10": 1517,
+      "lottery20": 279,
+      "quarters": [
+        {
+          "n": 6091,
+          "net": -139.3,
+          "wr": 0.3525
+        },
+        {
+          "n": 9079,
+          "net": 55.1,
+          "wr": 0.5143
+        },
+        {
+          "n": 2971,
+          "net": -357.9,
+          "wr": 0.2932
+        },
+        {
+          "n": 3322,
+          "net": -189.0,
+          "wr": 0.2908
+        }
+      ]
+    },
+    {
+      "label": "G024b Pure 7d momentum L24h",
+      "side": "long",
+      "n": 21463,
+      "avg_net_bps": -44.59,
+      "win_rate": 0.4198,
+      "lottery5": 2306,
+      "lottery10": 650,
+      "lottery20": 110,
+      "quarters": [
+        {
+          "n": 6091,
+          "net": -27.6,
+          "wr": 0.4162
+        },
+        {
+          "n": 9079,
+          "net": -21.1,
+          "wr": 0.4601
+        },
+        {
+          "n": 2971,
+          "net": -132.7,
+          "wr": 0.3379
+        },
+        {
+          "n": 3322,
+          "net": -61.1,
+          "wr": 0.3895
+        }
+      ]
+    }
+  ],
+  "robust_candidates": []
+}

@@ -1,0 +1,15 @@
+{
+  "truflation_yoy": 1.8,
+  "us10y_yield": 4.3,
+  "oil_momentum_pct": 2.0,
+  "tga_drain_score": 0.7,
+  "fed_balance_sheet_30d_pct": 0.4,
+  "mmf_30d_pct": -0.2,
+  "labor_stress_score": 0.35,
+  "us10y_change_30d_bps": -22.0,
+  "dxy_change_30d_pct": -1.8,
+  "fed_liquidity_score": 0.66,
+  "policy_easing_score": 0.62,
+  "event_risk_score": 0.25,
+  "btc_safe_haven_score": 0.58
+}

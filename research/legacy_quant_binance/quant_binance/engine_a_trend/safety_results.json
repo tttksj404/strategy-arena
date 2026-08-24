@@ -1,0 +1,22 @@
+{
+  "A_killswitch_forces_cash": {
+    "PASS": true,
+    "detail": "exp=0.0 reason=KILL_SWITCH"
+  },
+  "B_daily_loss_breaker": {
+    "PASS": true,
+    "detail": "reason=DAILY_LOSS -15.8% exp=0.0"
+  },
+  "C_accounting": {
+    "PASS": true,
+    "detail": "exec=1049.7000 expected=1049.7000"
+  },
+  "D_no_short": {
+    "PASS": true,
+    "detail": "btc_qty=0.0"
+  },
+  "E_min_notional_skip": {
+    "PASS": true,
+    "detail": "orders=0"
+  }
+}

@@ -1,0 +1,491 @@
+{
+  "run_at": "2026-04-28T01:03:13Z",
+  "window_days": 374,
+  "results": [
+    {
+      "label": "G002_baseline",
+      "universe_size": 8,
+      "threshold": 70,
+      "hold_bars": 72,
+      "n": 2667,
+      "avg_gross_bps": 236.99,
+      "avg_net_bps": 220.99,
+      "win_rate": 0.5834,
+      "lottery_5pct": 931,
+      "lottery_10pct": 451,
+      "lottery_20pct": 75,
+      "lottery_5pct_per_day": 2.489,
+      "lottery_10pct_per_day": 1.206,
+      "top_3_winners": [
+        [
+          "WIFUSDT",
+          4205.7
+        ],
+        [
+          "OPUSDT",
+          3781.25
+        ],
+        [
+          "SUIUSDT",
+          2767.62
+        ]
+      ],
+      "per_symbol": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net_bps": 308.28,
+          "wr": 0.7285,
+          "best_bps": 2519.99
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net_bps": 305.07,
+          "wr": 0.6378,
+          "best_bps": 2228.39
+        },
+        "WIFUSDT": {
+          "n": 408,
+          "net_bps": 295.77,
+          "wr": 0.5784,
+          "best_bps": 4205.7
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net_bps": 104.89,
+          "wr": 0.4936,
+          "best_bps": 2738.25
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net_bps": -0.66,
+          "wr": 0.4784,
+          "best_bps": 3781.25
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net_bps": 234.08,
+          "wr": 0.6185,
+          "best_bps": 2318.68
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net_bps": 301.78,
+          "wr": 0.5579,
+          "best_bps": 2767.62
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net_bps": 302.63,
+          "wr": 0.6379,
+          "best_bps": 2090.18
+        }
+      }
+    },
+    {
+      "label": "G003_universe",
+      "universe_size": 18,
+      "threshold": 70,
+      "hold_bars": 72,
+      "n": 5089,
+      "avg_gross_bps": 224.3,
+      "avg_net_bps": 208.3,
+      "win_rate": 0.5911,
+      "lottery_5pct": 1618,
+      "lottery_10pct": 737,
+      "lottery_20pct": 110,
+      "lottery_5pct_per_day": 4.326,
+      "lottery_10pct_per_day": 1.971,
+      "top_3_winners": [
+        [
+          "WIFUSDT",
+          4205.7
+        ],
+        [
+          "OPUSDT",
+          3781.25
+        ],
+        [
+          "DOTUSDT",
+          3387.06
+        ]
+      ],
+      "per_symbol": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net_bps": 308.28,
+          "wr": 0.7285,
+          "best_bps": 2519.99
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net_bps": 305.07,
+          "wr": 0.6378,
+          "best_bps": 2228.39
+        },
+        "WIFUSDT": {
+          "n": 408,
+          "net_bps": 295.77,
+          "wr": 0.5784,
+          "best_bps": 4205.7
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net_bps": 104.89,
+          "wr": 0.4936,
+          "best_bps": 2738.25
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net_bps": -0.66,
+          "wr": 0.4784,
+          "best_bps": 3781.25
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net_bps": 234.08,
+          "wr": 0.6185,
+          "best_bps": 2318.68
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net_bps": 301.78,
+          "wr": 0.5579,
+          "best_bps": 2767.62
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net_bps": 302.63,
+          "wr": 0.6379,
+          "best_bps": 2090.18
+        },
+        "APTUSDT": {
+          "n": 376,
+          "net_bps": 236.29,
+          "wr": 0.5851,
+          "best_bps": 3006.04
+        },
+        "BNBUSDT": {
+          "n": 219,
+          "net_bps": 61.39,
+          "wr": 0.6347,
+          "best_bps": 1077.69
+        },
+        "DOTUSDT": {
+          "n": 247,
+          "net_bps": 177.26,
+          "wr": 0.5709,
+          "best_bps": 3387.06
+        },
+        "LINKUSDT": {
+          "n": 245,
+          "net_bps": 369.98,
+          "wr": 0.6571,
+          "best_bps": 2201.5
+        },
+        "LTCUSDT": {
+          "n": 188,
+          "net_bps": 194.08,
+          "wr": 0.617,
+          "best_bps": 1709.22
+        },
+        "NEARUSDT": {
+          "n": 238,
+          "net_bps": 214.81,
+          "wr": 0.6345,
+          "best_bps": 3139.86
+        },
+        "SOLUSDT": {
+          "n": 200,
+          "net_bps": 229.62,
+          "wr": 0.58,
+          "best_bps": 1927.82
+        },
+        "UNIUSDT": {
+          "n": 299,
+          "net_bps": 114.59,
+          "wr": 0.5485,
+          "best_bps": 2671.26
+        },
+        "XRPUSDT": {
+          "n": 201,
+          "net_bps": 228.2,
+          "wr": 0.6119,
+          "best_bps": 2260.84
+        },
+        "BTCUSDT": {
+          "n": 209,
+          "net_bps": 96.92,
+          "wr": 0.5789,
+          "best_bps": 1167.4
+        }
+      }
+    },
+    {
+      "label": "G004_threshold",
+      "universe_size": 8,
+      "threshold": 80,
+      "hold_bars": 72,
+      "n": 40,
+      "avg_gross_bps": 993.72,
+      "avg_net_bps": 977.72,
+      "win_rate": 0.85,
+      "lottery_5pct": 33,
+      "lottery_10pct": 20,
+      "lottery_20pct": 7,
+      "lottery_5pct_per_day": 0.088,
+      "lottery_10pct_per_day": 0.053,
+      "top_3_winners": [
+        [
+          "WIFUSDT",
+          2377.16
+        ],
+        [
+          "SUIUSDT",
+          1494.4
+        ],
+        [
+          "PEPEUSDT",
+          1382.18
+        ]
+      ],
+      "per_symbol": {
+        "DOGEUSDT": {
+          "n": 1,
+          "net_bps": 1212.05,
+          "wr": 1.0,
+          "best_bps": 1212.05
+        },
+        "PEPEUSDT": {
+          "n": 8,
+          "net_bps": 1225.2,
+          "wr": 1.0,
+          "best_bps": 1382.18
+        },
+        "WIFUSDT": {
+          "n": 9,
+          "net_bps": 1615.68,
+          "wr": 0.7778,
+          "best_bps": 2377.16
+        },
+        "ARBUSDT": {
+          "n": 1,
+          "net_bps": -397.51,
+          "wr": 0.0,
+          "best_bps": -397.51
+        },
+        "OPUSDT": {
+          "n": 8,
+          "net_bps": 656.03,
+          "wr": 1.0,
+          "best_bps": 777.93
+        },
+        "AVAXUSDT": {
+          "n": 4,
+          "net_bps": 701.66,
+          "wr": 1.0,
+          "best_bps": 835.67
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "net_bps": 941.69,
+          "wr": 0.75,
+          "best_bps": 1494.4
+        },
+        "ADAUSDT": {
+          "n": 5,
+          "net_bps": 425.97,
+          "wr": 0.6,
+          "best_bps": 1172.21
+        }
+      }
+    },
+    {
+      "label": "G005_hold24",
+      "universe_size": 8,
+      "threshold": 70,
+      "hold_bars": 24,
+      "n": 2670,
+      "avg_gross_bps": 91.27,
+      "avg_net_bps": 75.27,
+      "win_rate": 0.5622,
+      "lottery_5pct": 441,
+      "lottery_10pct": 154,
+      "lottery_20pct": 7,
+      "lottery_5pct_per_day": 1.179,
+      "lottery_10pct_per_day": 0.412,
+      "top_3_winners": [
+        [
+          "SUIUSDT",
+          2169.17
+        ],
+        [
+          "WIFUSDT",
+          2047.83
+        ],
+        [
+          "DOGEUSDT",
+          1589.11
+        ]
+      ],
+      "per_symbol": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net_bps": 121.79,
+          "wr": 0.5795,
+          "best_bps": 1589.11
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net_bps": 105.56,
+          "wr": 0.5417,
+          "best_bps": 1468.85
+        },
+        "WIFUSDT": {
+          "n": 411,
+          "net_bps": 3.14,
+          "wr": 0.5036,
+          "best_bps": 2047.83
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net_bps": 64.7,
+          "wr": 0.5801,
+          "best_bps": 1564.07
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net_bps": -27.34,
+          "wr": 0.5034,
+          "best_bps": 1478.42
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net_bps": 93.1,
+          "wr": 0.6,
+          "best_bps": 1522.46
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net_bps": 170.78,
+          "wr": 0.5994,
+          "best_bps": 2169.17
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net_bps": 146.43,
+          "wr": 0.6509,
+          "best_bps": 1529.7
+        }
+      }
+    },
+    {
+      "label": "G006_combo",
+      "universe_size": 18,
+      "threshold": 80,
+      "hold_bars": 72,
+      "n": 49,
+      "avg_gross_bps": 901.48,
+      "avg_net_bps": 885.48,
+      "win_rate": 0.8367,
+      "lottery_5pct": 38,
+      "lottery_10pct": 22,
+      "lottery_20pct": 7,
+      "lottery_5pct_per_day": 0.102,
+      "lottery_10pct_per_day": 0.059,
+      "top_3_winners": [
+        [
+          "WIFUSDT",
+          2377.16
+        ],
+        [
+          "UNIUSDT",
+          1626.05
+        ],
+        [
+          "SUIUSDT",
+          1494.4
+        ]
+      ],
+      "per_symbol": {
+        "DOGEUSDT": {
+          "n": 1,
+          "net_bps": 1212.05,
+          "wr": 1.0,
+          "best_bps": 1212.05
+        },
+        "PEPEUSDT": {
+          "n": 8,
+          "net_bps": 1225.2,
+          "wr": 1.0,
+          "best_bps": 1382.18
+        },
+        "WIFUSDT": {
+          "n": 9,
+          "net_bps": 1615.68,
+          "wr": 0.7778,
+          "best_bps": 2377.16
+        },
+        "ARBUSDT": {
+          "n": 1,
+          "net_bps": -397.51,
+          "wr": 0.0,
+          "best_bps": -397.51
+        },
+        "OPUSDT": {
+          "n": 8,
+          "net_bps": 656.03,
+          "wr": 1.0,
+          "best_bps": 777.93
+        },
+        "AVAXUSDT": {
+          "n": 4,
+          "net_bps": 701.66,
+          "wr": 1.0,
+          "best_bps": 835.67
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "net_bps": 941.69,
+          "wr": 0.75,
+          "best_bps": 1494.4
+        },
+        "ADAUSDT": {
+          "n": 5,
+          "net_bps": 425.97,
+          "wr": 0.6,
+          "best_bps": 1172.21
+        },
+        "APTUSDT": {
+          "n": 2,
+          "net_bps": 34.77,
+          "wr": 1.0,
+          "best_bps": 69.24
+        },
+        "DOTUSDT": {
+          "n": 2,
+          "net_bps": 1004.46,
+          "wr": 1.0,
+          "best_bps": 1012.01
+        },
+        "LINKUSDT": {
+          "n": 2,
+          "net_bps": 97.11,
+          "wr": 0.5,
+          "best_bps": 545.65
+        },
+        "LTCUSDT": {
+          "n": 1,
+          "net_bps": 678.96,
+          "wr": 1.0,
+          "best_bps": 678.96
+        },
+        "UNIUSDT": {
+          "n": 2,
+          "net_bps": 663.99,
+          "wr": 0.5,
+          "best_bps": 1626.05
+        }
+      }
+    }
+  ]
+}
