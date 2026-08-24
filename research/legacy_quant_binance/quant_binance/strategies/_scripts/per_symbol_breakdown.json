@@ -1,0 +1,812 @@
+{
+  "G185": {
+    "SOLUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 156.29,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "LINKUSDT": {
+      "n": 5,
+      "wins": 5,
+      "pnl_usd": 86.89,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "DOTUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 93.86,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "NEARUSDT": {
+      "n": 5,
+      "wins": 4,
+      "pnl_usd": 72.13,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.8
+    },
+    "DOGEUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 195.06,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 0.857
+    },
+    "BNBUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 63.32,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "LTCUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -4.87,
+      "periods": "OOS22-23",
+      "wr": 0.0
+    },
+    "AVAXUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 63.01,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.667
+    },
+    "MATICUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 6.82,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "ETHUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 39.21,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "UNIUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 63.54,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "PEPEUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 157.96,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "ARBUSDT": {
+      "n": 8,
+      "wins": 7,
+      "pnl_usd": 163.7,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.875
+    },
+    "SUIUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 39.95,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.667
+    },
+    "XRPUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 76.44,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "ADAUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 93.08,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "APTUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 34.97,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "OPUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 64.55,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "WIFUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -1.42,
+      "periods": "IS25-26",
+      "wr": 0.0
+    }
+  },
+  "G186": {
+    "SOLUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 175.83,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "LINKUSDT": {
+      "n": 5,
+      "wins": 5,
+      "pnl_usd": 97.74,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "DOTUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 105.6,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "NEARUSDT": {
+      "n": 5,
+      "wins": 4,
+      "pnl_usd": 81.14,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.8
+    },
+    "DOGEUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 219.43,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 0.857
+    },
+    "BNBUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 71.23,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "LTCUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -5.47,
+      "periods": "OOS22-23",
+      "wr": 0.0
+    },
+    "AVAXUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 70.89,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.667
+    },
+    "MATICUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 7.68,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "ETHUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 44.12,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "UNIUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 71.48,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "PEPEUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 177.7,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "ARBUSDT": {
+      "n": 8,
+      "wins": 7,
+      "pnl_usd": 184.16,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.875
+    },
+    "SUIUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 44.95,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.667
+    },
+    "XRPUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 85.99,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "ADAUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 104.71,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "APTUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 39.35,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "OPUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 72.63,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "WIFUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -1.6,
+      "periods": "IS25-26",
+      "wr": 0.0
+    }
+  },
+  "G187": {
+    "SOLUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 187.55,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "LINKUSDT": {
+      "n": 5,
+      "wins": 5,
+      "pnl_usd": 104.26,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "DOTUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 112.64,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "NEARUSDT": {
+      "n": 5,
+      "wins": 4,
+      "pnl_usd": 86.55,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.8
+    },
+    "DOGEUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 234.07,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 0.857
+    },
+    "BNBUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 75.98,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "LTCUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -5.84,
+      "periods": "OOS22-23",
+      "wr": 0.0
+    },
+    "AVAXUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 75.61,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.667
+    },
+    "MATICUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 8.19,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "ETHUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 47.06,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "UNIUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 76.24,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "PEPEUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 189.54,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "ARBUSDT": {
+      "n": 8,
+      "wins": 7,
+      "pnl_usd": 196.45,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.875
+    },
+    "SUIUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 47.94,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.667
+    },
+    "XRPUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 91.73,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "ADAUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 111.69,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "APTUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 41.97,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "OPUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 77.47,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "WIFUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -1.7,
+      "periods": "IS25-26",
+      "wr": 0.0
+    }
+  },
+  "G190": {
+    "SOLUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 211.0,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "LINKUSDT": {
+      "n": 5,
+      "wins": 5,
+      "pnl_usd": 117.29,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "DOTUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 126.72,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "NEARUSDT": {
+      "n": 5,
+      "wins": 4,
+      "pnl_usd": 97.38,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.8
+    },
+    "DOGEUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 263.33,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 0.857
+    },
+    "BNBUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 85.48,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "LTCUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -6.57,
+      "periods": "OOS22-23",
+      "wr": 0.0
+    },
+    "AVAXUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 85.06,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.667
+    },
+    "MATICUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 9.21,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "ETHUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 52.94,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "UNIUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 85.77,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "PEPEUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 213.24,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "ARBUSDT": {
+      "n": 8,
+      "wins": 7,
+      "pnl_usd": 221.0,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.875
+    },
+    "SUIUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 53.93,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.667
+    },
+    "XRPUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 103.19,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "ADAUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 125.66,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "APTUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 47.22,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "OPUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 87.16,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "WIFUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -1.92,
+      "periods": "IS25-26",
+      "wr": 0.0
+    }
+  },
+  "G191": {
+    "SOLUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 187.55,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "LINKUSDT": {
+      "n": 5,
+      "wins": 5,
+      "pnl_usd": 104.26,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "DOTUSDT": {
+      "n": 4,
+      "wins": 4,
+      "pnl_usd": 137.21,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "NEARUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 152.31,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.857
+    },
+    "DOGEUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 234.07,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 0.857
+    },
+    "AVAXUSDT": {
+      "n": 5,
+      "wins": 4,
+      "pnl_usd": 165.0,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.8
+    },
+    "MATICUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 36.34,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "UNIUSDT": {
+      "n": 6,
+      "wins": 6,
+      "pnl_usd": 153.86,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "BNBUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 75.98,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "LTCUSDT": {
+      "n": 2,
+      "wins": 1,
+      "pnl_usd": 17.42,
+      "periods": "OOS22-23,IS25-26",
+      "wr": 0.5
+    },
+    "ETHUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 49.15,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "PEPEUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 189.54,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "ARBUSDT": {
+      "n": 8,
+      "wins": 7,
+      "pnl_usd": 196.45,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.875
+    },
+    "OPUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 112.75,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "XRPUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 121.95,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "SUIUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 99.99,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "ADAUSDT": {
+      "n": 5,
+      "wins": 4,
+      "pnl_usd": 183.99,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.8
+    },
+    "APTUSDT": {
+      "n": 2,
+      "wins": 2,
+      "pnl_usd": 55.55,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "WIFUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -1.7,
+      "periods": "IS25-26",
+      "wr": 0.0
+    }
+  },
+  "G192": {
+    "SOLUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 187.55,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "LINKUSDT": {
+      "n": 7,
+      "wins": 7,
+      "pnl_usd": 181.78,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "DOTUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 85.83,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 1.0
+    },
+    "NEARUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 110.68,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.833
+    },
+    "DOGEUSDT": {
+      "n": 7,
+      "wins": 6,
+      "pnl_usd": 234.07,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 0.857
+    },
+    "BNBUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 75.98,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "LTCUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -5.84,
+      "periods": "OOS22-23",
+      "wr": 0.0
+    },
+    "AVAXUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 79.87,
+      "periods": "OOS22-23,OOS24-Q1",
+      "wr": 0.667
+    },
+    "MATICUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 8.19,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "ETHUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 47.06,
+      "periods": "OOS22-23",
+      "wr": 1.0
+    },
+    "UNIUSDT": {
+      "n": 3,
+      "wins": 3,
+      "pnl_usd": 76.24,
+      "periods": "OOS22-23,OOS24-Q1,IS25-26",
+      "wr": 1.0
+    },
+    "PEPEUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 189.54,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "ARBUSDT": {
+      "n": 6,
+      "wins": 5,
+      "pnl_usd": 121.07,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.833
+    },
+    "XRPUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 16.97,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "SUIUSDT": {
+      "n": 3,
+      "wins": 2,
+      "pnl_usd": 47.94,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.667
+    },
+    "ADAUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 111.69,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "APTUSDT": {
+      "n": 1,
+      "wins": 1,
+      "pnl_usd": 41.97,
+      "periods": "OOS24-Q1",
+      "wr": 1.0
+    },
+    "OPUSDT": {
+      "n": 4,
+      "wins": 3,
+      "pnl_usd": 77.47,
+      "periods": "OOS24-Q1,IS25-26",
+      "wr": 0.75
+    },
+    "WIFUSDT": {
+      "n": 1,
+      "wins": 0,
+      "pnl_usd": -1.7,
+      "periods": "IS25-26",
+      "wr": 0.0
+    }
+  }
+}

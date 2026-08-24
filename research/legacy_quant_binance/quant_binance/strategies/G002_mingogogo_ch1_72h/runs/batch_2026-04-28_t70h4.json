@@ -1,0 +1,179 @@
+{
+  "strategy_id": "G002",
+  "playbook": "PB001",
+  "setup": "Mingogogo CH1 (10-indicator weighted score >= 70)",
+  "mode": "batch_backtest_standalone",
+  "run_at": "2026-04-28T00:48:10Z",
+  "universe": [
+    "DOGEUSDT",
+    "PEPEUSDT",
+    "WIFUSDT",
+    "ARBUSDT",
+    "OPUSDT",
+    "AVAXUSDT",
+    "SUIUSDT",
+    "ADAUSDT"
+  ],
+  "timeframe": "1h",
+  "holding_period_bars": 4,
+  "cost_bps_round_trip": 16.0,
+  "score_threshold": 70,
+  "weights": {
+    "rsi": 15,
+    "mfi": 12,
+    "stoch": 12,
+    "cci": 10,
+    "wr": 10,
+    "bbpct": 10,
+    "macd": 8,
+    "adx": 8,
+    "obv": 8,
+    "atr": 7
+  },
+  "per_symbol": [
+    {
+      "symbol": "DOGEUSDT",
+      "trades": 302,
+      "mean_gross_bps": -21.86,
+      "mean_net_bps": -37.86,
+      "median_net_bps": -16.29,
+      "win_rate_net": 0.4503,
+      "win_rate_gross": 0.4934,
+      "best_bps": 535.0,
+      "worst_bps": -1096.62,
+      "score_dist": {
+        "mean": 72.6,
+        "max": 80.1
+      },
+      "lottery_count_gt_500bps": 1,
+      "lottery_count_gt_1000bps": 0
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "trades": 312,
+      "mean_gross_bps": 16.51,
+      "mean_net_bps": 0.51,
+      "median_net_bps": 15.01,
+      "win_rate_net": 0.5321,
+      "win_rate_gross": 0.5449,
+      "best_bps": 1295.31,
+      "worst_bps": -1902.12,
+      "score_dist": {
+        "mean": 72.9,
+        "max": 84.1
+      },
+      "lottery_count_gt_500bps": 4,
+      "lottery_count_gt_1000bps": 2
+    },
+    {
+      "symbol": "WIFUSDT",
+      "trades": 411,
+      "mean_gross_bps": -14.85,
+      "mean_net_bps": -30.85,
+      "median_net_bps": -26.88,
+      "win_rate_net": 0.4404,
+      "win_rate_gross": 0.4453,
+      "best_bps": 1608.13,
+      "worst_bps": -1873.38,
+      "score_dist": {
+        "mean": 73.4,
+        "max": 85.0
+      },
+      "lottery_count_gt_500bps": 9,
+      "lottery_count_gt_1000bps": 2
+    },
+    {
+      "symbol": "ARBUSDT",
+      "trades": 312,
+      "mean_gross_bps": -10.39,
+      "mean_net_bps": -26.39,
+      "median_net_bps": -11.53,
+      "win_rate_net": 0.4679,
+      "win_rate_gross": 0.5064,
+      "best_bps": 1128.17,
+      "worst_bps": -2465.66,
+      "score_dist": {
+        "mean": 72.9,
+        "max": 80.1
+      },
+      "lottery_count_gt_500bps": 3,
+      "lottery_count_gt_1000bps": 1
+    },
+    {
+      "symbol": "OPUSDT",
+      "trades": 439,
+      "mean_gross_bps": -36.53,
+      "mean_net_bps": -52.53,
+      "median_net_bps": -37.71,
+      "win_rate_net": 0.4351,
+      "win_rate_gross": 0.4533,
+      "best_bps": 754.29,
+      "worst_bps": -1955.34,
+      "score_dist": {
+        "mean": 73.3,
+        "max": 88.5
+      },
+      "lottery_count_gt_500bps": 7,
+      "lottery_count_gt_1000bps": 0
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "trades": 325,
+      "mean_gross_bps": -14.85,
+      "mean_net_bps": -30.85,
+      "median_net_bps": -16.0,
+      "win_rate_net": 0.4462,
+      "win_rate_gross": 0.4831,
+      "best_bps": 701.97,
+      "worst_bps": -1534.18,
+      "score_dist": {
+        "mean": 72.8,
+        "max": 84.3
+      },
+      "lottery_count_gt_500bps": 2,
+      "lottery_count_gt_1000bps": 0
+    },
+    {
+      "symbol": "SUIUSDT",
+      "trades": 337,
+      "mean_gross_bps": -38.66,
+      "mean_net_bps": -54.66,
+      "median_net_bps": -22.87,
+      "win_rate_net": 0.454,
+      "win_rate_gross": 0.4837,
+      "best_bps": 568.24,
+      "worst_bps": -1974.32,
+      "score_dist": {
+        "mean": 73.0,
+        "max": 82.0
+      },
+      "lottery_count_gt_500bps": 3,
+      "lottery_count_gt_1000bps": 0
+    },
+    {
+      "symbol": "ADAUSDT",
+      "trades": 232,
+      "mean_gross_bps": -6.83,
+      "mean_net_bps": -22.83,
+      "median_net_bps": -9.11,
+      "win_rate_net": 0.4612,
+      "win_rate_gross": 0.5216,
+      "best_bps": 662.16,
+      "worst_bps": -1038.57,
+      "score_dist": {
+        "mean": 73.0,
+        "max": 82.4
+      },
+      "lottery_count_gt_500bps": 1,
+      "lottery_count_gt_1000bps": 0
+    }
+  ],
+  "aggregate": {
+    "total_trades": 2670,
+    "avg_net_bps": -33.33,
+    "avg_gross_bps": -17.33,
+    "win_rate_net": 0.4588,
+    "lottery_5pct": 30,
+    "lottery_10pct": 5
+  }
+}

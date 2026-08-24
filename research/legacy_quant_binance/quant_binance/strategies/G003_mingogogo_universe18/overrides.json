@@ -1,0 +1,20 @@
+{
+  "_strategy_id": "G003",
+  "_parent_id": "G002",
+  "_playbook": "PB001",
+  "_setup": "G002 + universe 8 → 18 alts (overfitting 검증 + production candidate)",
+  "_changed_keys_vs_parent": ["universe"],
+  "score_engine": {"$ref": "G002"},
+  "entry_threshold": 70,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": [
+    "DOGEUSDT", "PEPEUSDT", "WIFUSDT", "ARBUSDT", "OPUSDT",
+    "AVAXUSDT", "SUIUSDT", "ADAUSDT",
+    "APTUSDT", "BNBUSDT", "DOTUSDT", "LINKUSDT", "LTCUSDT",
+    "NEARUSDT", "SOLUSDT", "UNIUSDT", "XRPUSDT", "BTCUSDT"
+  ],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "leverage_warning": "spot 또는 1-2x perp 만. 5x+ 시 72h hold 중 liquidation 위험."
+}

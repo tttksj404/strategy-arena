@@ -1,0 +1,130 @@
+{
+  "run_at": "2026-04-28T01:44:42Z",
+  "results": [
+    {
+      "label": "G030a NFI #1 (dip+oversold+uptrend+BTC) hold24",
+      "n": 21,
+      "avg_net_bps": 83.11,
+      "win_rate": 0.3333,
+      "lottery5": 6,
+      "lottery10": 2,
+      "lottery20": 0,
+      "quarters": [
+        {
+          "n": 7,
+          "net": 641.9,
+          "wr": 0.8571
+        },
+        {
+          "n": 13,
+          "net": -218.1,
+          "wr": 0.0
+        },
+        {
+          "n": 0,
+          "net": 0,
+          "wr": 0
+        },
+        {
+          "n": 1,
+          "net": 86.4,
+          "wr": 1.0
+        }
+      ]
+    },
+    {
+      "label": "G030b NFI #1 hold72",
+      "n": 21,
+      "avg_net_bps": -242.53,
+      "win_rate": 0.2381,
+      "lottery5": 2,
+      "lottery10": 0,
+      "lottery20": 0,
+      "quarters": [
+        {
+          "n": 7,
+          "net": -524.0,
+          "wr": 0.0
+        },
+        {
+          "n": 13,
+          "net": -66.6,
+          "wr": 0.3846
+        },
+        {
+          "n": 0,
+          "net": 0,
+          "wr": 0
+        },
+        {
+          "n": 1,
+          "net": -559.3,
+          "wr": 0.0
+        }
+      ]
+    },
+    {
+      "label": "G031a PB001 CH1≥70 + NFI protection hold24",
+      "n": 50,
+      "avg_net_bps": -6.45,
+      "win_rate": 0.4,
+      "lottery5": 6,
+      "lottery10": 4,
+      "lottery20": 0,
+      "quarters": [
+        {
+          "n": 19,
+          "net": 325.6,
+          "wr": 0.6842
+        },
+        {
+          "n": 23,
+          "net": -121.2,
+          "wr": 0.3043
+        },
+        {
+          "n": 2,
+          "net": -198.4,
+          "wr": 0.0
+        },
+        {
+          "n": 6,
+          "net": -553.9,
+          "wr": 0.0
+        }
+      ]
+    },
+    {
+      "label": "G031b PB001 CH1≥70 + NFI protection hold72",
+      "n": 50,
+      "avg_net_bps": -202.13,
+      "win_rate": 0.3,
+      "lottery5": 6,
+      "lottery10": 1,
+      "lottery20": 0,
+      "quarters": [
+        {
+          "n": 19,
+          "net": -337.6,
+          "wr": 0.2632
+        },
+        {
+          "n": 23,
+          "net": 48.6,
+          "wr": 0.4348
+        },
+        {
+          "n": 2,
+          "net": -455.2,
+          "wr": 0.0
+        },
+        {
+          "n": 6,
+          "net": -649.8,
+          "wr": 0.0
+        }
+      ]
+    }
+  ],
+  "robust": []
+}

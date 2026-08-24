@@ -1,0 +1,6 @@
+{
+  "_comment": "S001 은 베이스라인. 빈 overrides = config.example.json 기본값 그대로. 변경 금지.",
+  "_strategy_id": "S001",
+  "_parent_id": null,
+  "_changed_keys_vs_parent": []
+}

@@ -1,0 +1,56 @@
+{
+  "strategy": "G189",
+  "parent": "G185",
+  "var": "entry_threshold",
+  "from": 80,
+  "to": 85,
+  "params": {
+    "size": 0.4,
+    "lev": 5.0,
+    "thr": 85,
+    "hold": 24
+  },
+  "evaluation": {
+    "periods": {
+      "OOS22-23": {
+        "days": 730,
+        "n_taken": 0,
+        "note": "no entries"
+      },
+      "OOS24-Q1": {
+        "days": 456,
+        "n_taken": 0,
+        "note": "no entries"
+      },
+      "IS25-26": {
+        "n_taken": 1,
+        "win_rate": 1.0,
+        "big_wins_30pct": 1,
+        "big_losses_20pct": 0,
+        "pnl_usd": 16.09,
+        "annual_pct": 15.7,
+        "annual_pnl_usd": 15.7,
+        "avg_winner_pnl_usd": 16.09,
+        "avg_loser_pnl_usd": 0,
+        "days": 374
+      }
+    },
+    "weighted": {
+      "n_taken": 1,
+      "win_rate": 1.0,
+      "pnl_usd": 16.09,
+      "annual_pnl_usd": 15.7,
+      "monthly_pnl_usd": 1.31,
+      "all_periods_positive": false
+    }
+  },
+  "decision": {
+    "checks": {
+      "wr_>=_70%": true,
+      "all_periods_positive": false,
+      "annual_pnl_>=_$300": false,
+      "trades_>=_30": false
+    },
+    "verdict": "FAIL"
+  }
+}

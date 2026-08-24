@@ -1,0 +1,70 @@
+{
+  "strategy": "G188",
+  "parent": "G185",
+  "var": "holding_period_bars",
+  "from": 24,
+  "to": 48,
+  "params": {
+    "size": 0.4,
+    "lev": 5.0,
+    "thr": 80,
+    "hold": 48
+  },
+  "evaluation": {
+    "periods": {
+      "OOS22-23": {
+        "n_taken": 19,
+        "win_rate": 0.5263,
+        "big_wins_30pct": 7,
+        "big_losses_20pct": 4,
+        "pnl_usd": 117.86,
+        "annual_pct": 58.9,
+        "annual_pnl_usd": 58.93,
+        "avg_winner_pnl_usd": 24.23,
+        "avg_loser_pnl_usd": -13.83,
+        "days": 730
+      },
+      "OOS24-Q1": {
+        "n_taken": 34,
+        "win_rate": 0.8824,
+        "big_wins_30pct": 27,
+        "big_losses_20pct": 0,
+        "pnl_usd": 968.95,
+        "annual_pct": 775.6,
+        "annual_pnl_usd": 775.59,
+        "avg_winner_pnl_usd": 32.88,
+        "avg_loser_pnl_usd": -4.33,
+        "days": 456
+      },
+      "IS25-26": {
+        "n_taken": 12,
+        "win_rate": 0.75,
+        "big_wins_30pct": 6,
+        "big_losses_20pct": 1,
+        "pnl_usd": 153.68,
+        "annual_pct": 150.0,
+        "annual_pnl_usd": 149.98,
+        "avg_winner_pnl_usd": 20.83,
+        "avg_loser_pnl_usd": -11.25,
+        "days": 374
+      }
+    },
+    "weighted": {
+      "n_taken": 65,
+      "win_rate": 0.7539,
+      "pnl_usd": 1240.49,
+      "annual_pnl_usd": 290.24,
+      "monthly_pnl_usd": 24.19,
+      "all_periods_positive": true
+    }
+  },
+  "decision": {
+    "checks": {
+      "wr_>=_70%": true,
+      "all_periods_positive": true,
+      "annual_pnl_>=_$300": false,
+      "trades_>=_30": true
+    },
+    "verdict": "FAIL"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_strategy_id": "G070",
+  "_parent_id": "G004",
+  "_playbook": "PB001",
+  "_setup": "G004 + 5x leverage + 24h hold (lottery core)",
+  "_changed_keys_vs_parent": ["leverage", "holding_period_bars"],
+  "_lottery_context": "사용자 명시 5-10x OK + lottery + 단기. PB001 thr80 의 자체 86% WR 을 5x 로 증폭",
+  "score_engine": {"$ref": "G004"},
+  "entry_threshold": 80,
+  "holding_period_bars": 24,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT","PEPEUSDT","WIFUSDT","ARBUSDT","OPUSDT","AVAXUSDT","SUIUSDT","ADAUSDT","APTUSDT","BNBUSDT","DOTUSDT","LINKUSDT","LTCUSDT","NEARUSDT","SOLUSDT","UNIUSDT","XRPUSDT","BTCUSDT"],
+  "side": "long",
+  "leverage": 5.0,
+  "size_pct_per_trade": 0.30,
+  "max_concurrent": 5,
+  "cost_bps_round_trip": 16.0,
+  "atr_volatility_guard": {
+    "enabled": true,
+    "max_atr_pct": 8.0,
+    "rule": "atr_pct(14) > 8% 시 진입 skip — 5x lev 에서 -20% intra-bar 위험"
+  },
+  "validation_3_periods": {
+    "oos_2022_2023": {"trades": 21, "wr": 0.857, "avg_per_trade_pct": 15.41, "annual_pct": 161.8, "big_winners_30pct": 13},
+    "oos_2024_q1_2025": {"trades": 34, "wr": 0.882, "avg_per_trade_pct": 20.70, "annual_pct": 563.3, "big_winners_30pct": 28},
+    "in_sample_2025_2026": {"trades": 12, "wr": 0.750, "avg_per_trade_pct": 8.06, "annual_pct": 94.3, "big_winners_30pct": 5},
+    "weighted_avg_annual": 167
+  }
+}

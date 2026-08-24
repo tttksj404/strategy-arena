@@ -1,0 +1,85 @@
+{
+  "run_at": "2026-04-28T01:36:35Z",
+  "regime_sweep": [
+    {
+      "regime_threshold_pct": -10,
+      "n": 3889,
+      "blocked_by_regime": 1200,
+      "avg_net_bps": 212.94,
+      "win_rate": 0.5945,
+      "lottery5": 1239,
+      "lottery10": 587,
+      "lottery20": 93
+    },
+    {
+      "regime_threshold_pct": -5,
+      "n": 2680,
+      "blocked_by_regime": 2409,
+      "avg_net_bps": 163.43,
+      "win_rate": 0.5612,
+      "lottery5": 764,
+      "lottery10": 355,
+      "lottery20": 55
+    },
+    {
+      "regime_threshold_pct": -2,
+      "n": 1585,
+      "blocked_by_regime": 3504,
+      "avg_net_bps": 117.63,
+      "win_rate": 0.5331,
+      "lottery5": 381,
+      "lottery10": 191,
+      "lottery20": 38
+    },
+    {
+      "regime_threshold_pct": 0,
+      "n": 768,
+      "blocked_by_regime": 4321,
+      "avg_net_bps": 36.15,
+      "win_rate": 0.5599,
+      "lottery5": 139,
+      "lottery10": 43,
+      "lottery20": 8
+    },
+    {
+      "regime_threshold_pct": 2,
+      "n": 325,
+      "blocked_by_regime": 4764,
+      "avg_net_bps": -94.34,
+      "win_rate": 0.4954,
+      "lottery5": 59,
+      "lottery10": 11,
+      "lottery20": 2
+    },
+    {
+      "regime_threshold_pct": 5,
+      "n": 107,
+      "blocked_by_regime": 4982,
+      "avg_net_bps": -150.71,
+      "win_rate": 0.4112,
+      "lottery5": 25,
+      "lottery10": 7,
+      "lottery20": 0
+    }
+  ],
+  "best_by_total": {
+    "regime_threshold_pct": -10,
+    "n": 3889,
+    "blocked_by_regime": 1200,
+    "avg_net_bps": 212.94,
+    "win_rate": 0.5945,
+    "lottery5": 1239,
+    "lottery10": 587,
+    "lottery20": 93
+  },
+  "best_by_avg": {
+    "regime_threshold_pct": -10,
+    "n": 3889,
+    "blocked_by_regime": 1200,
+    "avg_net_bps": 212.94,
+    "win_rate": 0.5945,
+    "lottery5": 1239,
+    "lottery10": 587,
+    "lottery20": 93
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "strategy": "G185",
+  "date": "2026-04-29",
+  "data_source": {
+    "IS25-26": "historical_is25 (newly fetched 18 syms × 374d)"
+  },
+  "params": {
+    "equity_usd": 100.0,
+    "size_pct": 0.4,
+    "leverage": 5.0,
+    "threshold": 80,
+    "hold_bars": 24,
+    "max_conc": 5,
+    "atr_guard_pct": 8.0
+  },
+  "periods": {
+    "OOS22-23": {
+      "days": 730,
+      "n_sym": 14,
+      "n_taken": 20,
+      "win_rate": 0.85,
+      "big_wins_30pct": 12,
+      "big_losses_20pct": 1,
+      "avg_per_trade_pnl_usd": 19.86,
+      "avg_winner_pnl_usd": 24.58,
+      "avg_loser_pnl_usd": -6.85,
+      "pnl_usd": 397.26,
+      "annual_pct": 198.6,
+      "annual_pnl_usd": 198.63
+    },
+    "OOS24-Q1": {
+      "days": 456,
+      "n_sym": 18,
+      "n_taken": 34,
+      "win_rate": 0.882,
+      "big_wins_30pct": 28,
+      "big_losses_20pct": 0,
+      "avg_per_trade_pnl_usd": 27.6,
+      "avg_winner_pnl_usd": 31.58,
+      "avg_loser_pnl_usd": -2.26,
+      "pnl_usd": 938.35,
+      "annual_pct": 751.1,
+      "annual_pnl_usd": 751.1
+    },
+    "IS25-26": {
+      "days": 374,
+      "n_sym": 18,
+      "n_taken": 12,
+      "win_rate": 0.75,
+      "big_wins_30pct": 5,
+      "big_losses_20pct": 1,
+      "avg_per_trade_pnl_usd": 10.74,
+      "avg_winner_pnl_usd": 16.35,
+      "avg_loser_pnl_usd": -6.1,
+      "pnl_usd": 128.89,
+      "annual_pct": 125.8,
+      "annual_pnl_usd": 125.79
+    }
+  },
+  "weighted_3period": {
+    "total_days": 1560,
+    "n_taken": 66,
+    "win_rate": 0.849,
+    "pnl_usd": 1464.5,
+    "annual_pct": 342.7,
+    "annual_pnl_usd": 342.66,
+    "monthly_pnl_usd": 28.54,
+    "avg_winner_pnl_usd": 24.17
+  },
+  "user_goals_check": {
+    "capital_usd_100": "PASS",
+    "wr_target_70pct": "PASS (84.9%)",
+    "all_periods_positive": "PASS (3/3)",
+    "annual_pnl_30usd": "PASS ($343/yr — 11x over)",
+    "monthly_pnl_30usd": "BORDERLINE ($28.54/mo — 5% short)",
+    "avg_winner_30usd": "FAIL  ($24.17 weighted — IS25 $16.35 dragged down)"
+  },
+  "verdict": "WR + 모두 양수 + 연 PnL 통과. 월 PnL/거래당 winner 는 IS25-26 하방으로 borderline FAIL. 후속 G186 (size 0.45) 또는 G187 (lev 6x) 로 boost 검토"
+}

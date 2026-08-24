@@ -1,0 +1,32 @@
+{
+  "_strategy_id": "G058",
+  "_parent_id": "G050",
+  "_playbook": "PB001",
+  "_setup": "G050 + dynamic concurrency (3~8 by recent 7d net)",
+  "_changed_keys_vs_parent": ["max_concurrent_dynamic"],
+  "score_engine": {"$ref": "G050"},
+  "entry_threshold": 70,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT","PEPEUSDT","WIFUSDT","ARBUSDT","OPUSDT","AVAXUSDT","SUIUSDT","ADAUSDT","APTUSDT","BNBUSDT","DOTUSDT","LINKUSDT","LTCUSDT","NEARUSDT","SOLUSDT","UNIUSDT","XRPUSDT","BTCUSDT"],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "deployment_gate": {"$ref": "G050"},
+  "max_concurrent_dynamic": {
+    "type": "regime_adaptive",
+    "lookback_days": 7,
+    "rules": {
+      "hot": {"threshold_bps": 2000, "max_conc": 8, "leverage_implied": "2.4x"},
+      "normal": {"threshold_bps": 0, "max_conc": 5, "leverage_implied": "1.5x"},
+      "cold": {"threshold_bps": -999999, "max_conc": 3, "leverage_implied": "0.9x"}
+    }
+  },
+  "size_pct_per_trade": 0.30,
+  "capital_usd": 55,
+  "validation_3_periods": {
+    "oos_2022_2023": {"trades": 519, "pnl_pct": 325.4, "annual_pct": 163.0, "big_winners": 83},
+    "oos_2024_q1_2025": {"trades": 370, "pnl_pct": 314.2, "annual_pct": 251.5, "big_winners": 67},
+    "in_sample_2025_2026": {"trades": 315, "pnl_pct": 149.9, "annual_pct": 146.3, "big_winners": 42},
+    "weighted_avg_annual_pct": 186.0
+  }
+}

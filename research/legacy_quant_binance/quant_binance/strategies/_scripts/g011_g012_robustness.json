@@ -1,0 +1,62 @@
+{
+  "run_at": "2026-04-28T01:35:02Z",
+  "g011_quarterly_robustness": {
+    "full": {
+      "n": 5089,
+      "avg_net_bps": 208.3,
+      "win_rate": 0.5911,
+      "lottery5": 1618,
+      "lottery10": 737,
+      "lottery20": 110
+    },
+    "by_quarter": [
+      {
+        "n": 1207,
+        "avg_net_bps": 360.76,
+        "win_rate": 0.6901,
+        "lottery5": 492,
+        "lottery10": 226,
+        "lottery20": 26,
+        "quarter": 0
+      },
+      {
+        "n": 527,
+        "avg_net_bps": -25.69,
+        "win_rate": 0.4877,
+        "lottery5": 86,
+        "lottery10": 10,
+        "lottery20": 0,
+        "quarter": 1
+      },
+      {
+        "n": 1130,
+        "avg_net_bps": 486.94,
+        "win_rate": 0.708,
+        "lottery5": 514,
+        "lottery10": 325,
+        "lottery20": 50,
+        "quarter": 2
+      },
+      {
+        "n": 1463,
+        "avg_net_bps": -21.02,
+        "win_rate": 0.4662,
+        "lottery5": 319,
+        "lottery10": 81,
+        "lottery20": 8,
+        "quarter": 3
+      }
+    ],
+    "consistent": false
+  },
+  "g012_portfolio_simulation": {
+    "equity_start": 50.0,
+    "g003_taken": 312,
+    "g003_skipped": 4728,
+    "g004_taken": 0,
+    "g004_skipped": 49,
+    "realized_pnl_usd": -14.4,
+    "realized_pnl_pct": -28.8,
+    "big_winners_count": 16
+  }
+}

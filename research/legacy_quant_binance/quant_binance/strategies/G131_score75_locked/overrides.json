@@ -1,0 +1,240 @@
+{
+  "_strategy_id": "G131",
+  "_parent_id": "G130",
+  "_setup": "G130 + score 70 -> 75 (backtest sweet spot, +33.8 vs +10.9 bps avg)",
+  "_changed_keys_vs_parent": [
+    "mode_thresholds.futures_score_min"
+  ],
+  "_lock": "G131 score=75 sweet spot (2026-04-28 backtest 76 trades WR 51% net +2567 bps)",
+  "ensemble_signal_required": false,
+  "data_collection_min_trades": 500,
+  "data_collection_mode": true,
+  "disable_position_adoption": false,
+  "decision_engine": {
+    "decision_interval_minutes": 5
+  },
+  "force_auto_mode": "normal",
+  "futures_exposure": {
+    "macro_allow_caution": true,
+    "macro_edge_to_cost_multiple_min": 0.72,
+    "macro_liquidity_relaxation": 0.2,
+    "macro_min_entry_net_edge_bps": 0.5,
+    "macro_overheat_relaxation": 0.2,
+    "macro_score_relaxation": 14.0,
+    "macro_support_min": 0.3,
+    "macro_volatility_relaxation": 0.28,
+    "major_medium_min_entry_notional_usd": 60.0,
+    "major_min_meaningful_notional_usd": 60.0,
+    "major_reallocation_edge_advantage_relaxation_bps": 1.0,
+    "major_reallocation_incremental_pnl_relaxation_usd": 0.5,
+    "major_reallocation_score_advantage_relaxation": 2.0,
+    "major_size_boost_multiplier": 1.5,
+    "major_strong_min_entry_notional_usd": 80.0,
+    "major_symbols": [
+      "ETHUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "PEPEUSDT"
+    ],
+    "min_entry_net_edge_bps": 1.5,
+    "reduced_entry_net_edge_bps": 1.5,
+    "priority_allow_caution": true,
+    "priority_edge_to_cost_multiple_min": 0.78,
+    "priority_min_entry_net_edge_bps": 0.5,
+    "priority_score_relaxation": 8.0,
+    "priority_symbols": [
+      "ETHUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "PEPEUSDT"
+    ],
+    "priority_volatility_relaxation": 0.2,
+    "strong_size_multiplier": 1.8,
+    "pyramid_enabled": false,
+    "pyramid_major_only": true,
+    "pyramid_max_adds_per_symbol": 0,
+    "pyramid_min_roe_percent": 5.0,
+    "pyramid_size_multiplier": 0.0,
+    "reduced_size_multiplier": 1.0,
+    "alt_reduced_size_multiplier": 0.0,
+    "demoted_symbols": [],
+    "demoted_symbol_size_cap": 1.0,
+    "soft_liquidity_floor": 0.1,
+    "soft_overheat_penalty_max": 1.0,
+    "soft_volatility_penalty_max": 1.5,
+    "short_disabled": true,
+    "short_extra_score_floor": 20.0,
+    "short_extra_edge_bps": 10.0,
+    "short_extra_liquidity_floor": 0.15,
+    "short_extra_cost_multiple_floor": 0.4
+  },
+  "exit_rules": {
+    "liquidity_drop_exit_buffer": 0.35,
+    "score_drop_exit_buffer": 15,
+    "confirmation_cycles_for_exit": 4,
+    "futures_max_holding_minutes": 1440,
+    "spot_max_holding_minutes": 1440,
+    "futures_profit_protection_arm_roe_percent": 18.0,
+    "futures_profit_protection_retrace_roe_percent": 6.0,
+    "futures_proactive_take_profit_roe_thresholds_percent": [
+      18.0,
+      35.0,
+      50.0
+    ],
+    "futures_proactive_take_profit_fraction": 0.25,
+    "post_tp_stop_mode": "breakeven",
+    "partial_take_profit_r": 1.5
+  },
+  "live_position_risk": {
+    "disable_standard_stop_loss_exits": false,
+    "long_only_turnaround_mode": true,
+    "long_disable_standard_stop_loss": false,
+    "short_only_turnaround_mode": true,
+    "short_disable_standard_stop_loss": true,
+    "major_drawdown_abort_roe_percent": -25.0,
+    "major_drawdown_grace_enabled": true,
+    "major_drawdown_grace_minutes": 60,
+    "major_drawdown_liquidity_min": 0.25,
+    "major_drawdown_net_edge_min_bps": -2.0,
+    "major_drawdown_predictability_min": 60.0,
+    "major_drawdown_signal_max_age_minutes": 30,
+    "major_loss_reentry_cooldown_minutes": 60,
+    "major_loss_reentry_trigger_usd": 1.0,
+    "major_low_signal_max_holding_minutes": 0,
+    "major_low_signal_min_roe_percent": 0.5,
+    "major_low_signal_min_unrealized_usd": 0.8,
+    "major_partial_exit_fraction": 0.3,
+    "major_profit_protection_arm_roe_percent": 18.0,
+    "major_profit_protection_retrace_roe_percent": 6.0,
+    "short_profit_protection_arm_roe_percent": 10.0,
+    "short_profit_protection_retrace_roe_percent": 3.0,
+    "major_reentry_cooldown_minutes": 30,
+    "major_reversal_confirmation_cycles": 2,
+    "major_reversal_min_holding_minutes": 5,
+    "non_core_take_profit_fraction": 1.0,
+    "non_core_take_profit_min_usd": 0.2,
+    "non_core_take_profit_roe_percent": 12,
+    "partial_exit_min_interval_minutes": 15,
+    "portfolio_full_exit_only": false,
+    "portfolio_full_exit_profit_ratio": 0.5,
+    "portfolio_profit_lock_take_profit_fraction": 0.5,
+    "portfolio_unrealized_profit_arm_ratio": 0.1,
+    "portfolio_unrealized_profit_retrace_ratio": 0.015,
+    "position_unrealized_profit_arm_usd": 1.5,
+    "position_unrealized_profit_retrace_usd": 0.5,
+    "position_unrealized_take_profit_fraction": 0.25,
+    "profit_flip_fast_take_profit_roe_percent": 1.5,
+    "profit_flip_take_profit_fraction": 1.0,
+    "short_profit_flip_fast_take_profit_roe_percent": 1.5,
+    "short_profit_flip_take_profit_fraction": 1.0,
+    "stop_loss_roe_percent": -28.0,
+    "soft_stop_roe_percent": -20.0,
+    "turnaround_abort_roe_percent": -32.0,
+    "turnaround_abort_volatility_adaptive": true,
+    "turnaround_abort_volatility_floor_bps": 20.0,
+    "turnaround_abort_volatility_scale": 0.2,
+    "turnaround_abort_volatility_lookback_bars": 12,
+    "turnaround_abort_min_roe_percent": -25.0,
+    "take_profit_roe_percent": 22.0
+  },
+  "loss_combo_downgrade": {
+    "cooldown_loss_usd": 3.0,
+    "cooldown_minutes": 60,
+    "enabled": true,
+    "lookback_hours": 24,
+    "observe_only_loss_usd": 2.0,
+    "prune_loss_usd": 1.5,
+    "time_bucket_minutes": 240
+  },
+  "macro_gates": {
+    "futures_block_penalty": 1.05,
+    "spot_block_penalty": 1.05
+  },
+  "mode_thresholds": {
+    "futures_score_min": 75,
+    "futures_trend_strength_min": 0.1,
+    "futures_liquidity_min": 0.2,
+    "futures_volatility_penalty_max": 1.2,
+    "futures_overheat_penalty_max": 1.1,
+    "spot_score_min": 999,
+    "spot_liquidity_min": 999
+  },
+  "cost_gate": {
+    "edge_to_cost_multiple_min": 1.2
+  },
+  "portfolio_focus": {
+    "enabled": true,
+    "futures_top_n": 2,
+    "min_incremental_pnl_usd": 0.5,
+    "min_net_edge_advantage_bps": 1.0,
+    "min_score_advantage_to_replace": 3.0
+  },
+  "operational_limits": {
+    "max_concurrent_futures_symbols": 2
+  },
+  "risk": {
+    "max_symbol_notional_fraction": 0.5,
+    "max_total_notional_fraction": 1.0,
+    "min_expected_profit_usd_per_trade": 0.5,
+    "min_meaningful_futures_notional_usd": 60.0,
+    "min_meaningful_spot_notional_usd": 1.0,
+    "per_trade_equity_risk": 0.25,
+    "target_futures_leverage": 20.0,
+    "max_futures_leverage": 30.0
+  },
+  "cash_reserve": {
+    "when_futures_enabled": 0.1
+  },
+  "strategy_profile": "g131-score75-locked",
+  "symbol_eligibility": {
+    "observe_only_alt_liquidity_max": 0.0,
+    "observe_only_cost_bps_min": 9999,
+    "observe_only_liquidity_max": 0.0
+  },
+  "universe": [
+    "ETHUSDT",
+    "SOLUSDT",
+    "DOGEUSDT",
+    "PEPEUSDT"
+  ],
+  "funding_rate_strategy": {
+    "enabled": true,
+    "threshold": 0.00015,
+    "atr_stop_multiple": 1.0,
+    "atr_tp_multiple": 2.5,
+    "max_hold_hours": 8,
+    "symbols": [
+      "ETHUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "PEPEUSDT"
+    ],
+    "notional_usd_per_trade": 80.0
+  },
+  "b3_msb_strategy": {
+    "enabled": true,
+    "optimized_at": "2026-04-13T22:30:00+00:00",
+    "optimizer": "freqtrade_hyperopt",
+    "interval": "1h",
+    "lookback_days": 180,
+    "symbols": [
+      "ETHUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "PEPEUSDT"
+    ],
+    "swing_window": 13,
+    "atr_tp_multiple": 4.2,
+    "atr_sl_multiple": 2.8,
+    "breakout_buffer_pct": 0.0017,
+    "adx_min": 4,
+    "trend_filter": null,
+    "use_ema_filter": false,
+    "min_swing_size_atr": 0.4,
+    "rsi_upper": 60,
+    "rsi_lower": 22,
+    "vol_z_min": 0.8,
+    "_note": "PEPE 에서 OOS WR 89% PASS. 4종 universe 확장 — 종목별 hyperopt 재실행 권장 (현재는 PEPE-fitted 파라미터)"
+  },
+  "_validation_3_periods_note": "이 override 는 백테스트 X — 실시간 regime engine 의존. paper-live 30일 필요."
+}

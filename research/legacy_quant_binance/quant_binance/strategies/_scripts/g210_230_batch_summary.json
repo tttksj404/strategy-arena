@@ -1,0 +1,585 @@
+{
+  "criteria": {
+    "min_wr": 0.7,
+    "all_periods_positive": true,
+    "min_annual_pnl_usd": 300,
+    "min_trades_total": 30
+  },
+  "candidates": {
+    "G191_ref": {
+      "id": "G191_ref",
+      "filter": "baseline",
+      "params": {
+        "size": 0.4,
+        "lev": 6.0,
+        "thr": 80,
+        "hold": 24,
+        "max_conc": 8,
+        "atr": 8.0
+      },
+      "deploy": false,
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 24,
+                "win_rate": 0.875,
+                "big_wins_30pct": 17,
+                "big_losses_20pct": 2,
+                "pnl_usd": 572.54,
+                "annual_pct": 286.3,
+                "annual_pnl_usd": 286.27,
+                "avg_winner_pnl_usd": 28.44,
+                "avg_loser_pnl_usd": -8.22,
+                "days": 730,
+                "n_sym": 14
+              },
+              "OOS24-Q1": {
+                "n_taken": 44,
+                "win_rate": 0.9091,
+                "big_wins_30pct": 37,
+                "big_losses_20pct": 0,
+                "pnl_usd": 1474.91,
+                "annual_pct": 1180.6,
+                "annual_pnl_usd": 1180.58,
+                "avg_winner_pnl_usd": 37.14,
+                "avg_loser_pnl_usd": -2.71,
+                "days": 456,
+                "n_sym": 18
+              },
+              "IS25-26": {
+                "n_taken": 15,
+                "win_rate": 0.8,
+                "big_wins_30pct": 8,
+                "big_losses_20pct": 1,
+                "pnl_usd": 224.23,
+                "annual_pct": 218.8,
+                "annual_pnl_usd": 218.83,
+                "avg_winner_pnl_usd": 20.52,
+                "avg_loser_pnl_usd": -7.32,
+                "days": 374,
+                "n_sym": 18
+              }
+            },
+            "weighted": {
+              "n_taken": 83,
+              "win_rate": 0.8795,
+              "pnl_usd": 2271.68,
+              "annual_pnl_usd": 531.51,
+              "monthly_pnl_usd": 44.29,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": true,
+              "trades_>=_30": true
+            },
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 24,
+                "win_rate": 0.875,
+                "big_wins_30pct": 17,
+                "big_losses_20pct": 2,
+                "pnl_usd": 567.93,
+                "annual_pct": 284.0,
+                "annual_pnl_usd": 283.97,
+                "avg_winner_pnl_usd": 28.25,
+                "avg_loser_pnl_usd": -8.41,
+                "days": 730,
+                "n_sym": 14
+              },
+              "OOS24-Q1": {
+                "n_taken": 44,
+                "win_rate": 0.9091,
+                "big_wins_30pct": 37,
+                "big_losses_20pct": 0,
+                "pnl_usd": 1466.46,
+                "annual_pct": 1173.8,
+                "annual_pnl_usd": 1173.81,
+                "avg_winner_pnl_usd": 36.95,
+                "avg_loser_pnl_usd": -2.9,
+                "days": 456,
+                "n_sym": 18
+              },
+              "IS25-26": {
+                "n_taken": 15,
+                "win_rate": 0.8,
+                "big_wins_30pct": 8,
+                "big_losses_20pct": 1,
+                "pnl_usd": 221.35,
+                "annual_pct": 216.0,
+                "annual_pnl_usd": 216.02,
+                "avg_winner_pnl_usd": 20.32,
+                "avg_loser_pnl_usd": -7.51,
+                "days": 374,
+                "n_sym": 18
+              }
+            },
+            "weighted": {
+              "n_taken": 83,
+              "win_rate": 0.8795,
+              "pnl_usd": 2255.74,
+              "annual_pnl_usd": 527.79,
+              "monthly_pnl_usd": 43.98,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": true,
+              "trades_>=_30": true
+            },
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      }
+    },
+    "G210": {
+      "id": "G210",
+      "filter": "drop_dead",
+      "params": {
+        "size": 0.4,
+        "lev": 6.0,
+        "thr": 80,
+        "hold": 24,
+        "max_conc": 8,
+        "atr": 8.0
+      },
+      "deploy": true,
+      "folder": "G210_g191_drop_dead",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 23,
+                "win_rate": 0.913,
+                "big_wins_30pct": 17,
+                "big_losses_20pct": 2,
+                "pnl_usd": 578.38,
+                "annual_pct": 289.2,
+                "annual_pnl_usd": 289.19,
+                "avg_winner_pnl_usd": 28.44,
+                "avg_loser_pnl_usd": -9.41,
+                "days": 730,
+                "n_sym": 12
+              },
+              "OOS24-Q1": {
+                "n_taken": 44,
+                "win_rate": 0.9091,
+                "big_wins_30pct": 37,
+                "big_losses_20pct": 0,
+                "pnl_usd": 1496.21,
+                "annual_pct": 1197.6,
+                "annual_pnl_usd": 1197.63,
+                "avg_winner_pnl_usd": 37.68,
+                "avg_loser_pnl_usd": -2.71,
+                "days": 456,
+                "n_sym": 16
+              },
+              "IS25-26": {
+                "n_taken": 14,
+                "win_rate": 0.8571,
+                "big_wins_30pct": 8,
+                "big_losses_20pct": 1,
+                "pnl_usd": 216.51,
+                "annual_pct": 211.3,
+                "annual_pnl_usd": 211.3,
+                "avg_winner_pnl_usd": 19.73,
+                "avg_loser_pnl_usd": -10.13,
+                "days": 374,
+                "n_sym": 15
+              }
+            },
+            "weighted": {
+              "n_taken": 81,
+              "win_rate": 0.9012,
+              "pnl_usd": 2291.1,
+              "annual_pnl_usd": 536.06,
+              "monthly_pnl_usd": 44.67,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": true,
+              "trades_>=_30": true
+            },
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 23,
+                "win_rate": 0.913,
+                "big_wins_30pct": 17,
+                "big_losses_20pct": 2,
+                "pnl_usd": 573.96,
+                "annual_pct": 287.0,
+                "annual_pnl_usd": 286.98,
+                "avg_winner_pnl_usd": 28.25,
+                "avg_loser_pnl_usd": -9.6,
+                "days": 730,
+                "n_sym": 12
+              },
+              "OOS24-Q1": {
+                "n_taken": 44,
+                "win_rate": 0.9091,
+                "big_wins_30pct": 37,
+                "big_losses_20pct": 0,
+                "pnl_usd": 1487.77,
+                "annual_pct": 1190.9,
+                "annual_pnl_usd": 1190.87,
+                "avg_winner_pnl_usd": 37.48,
+                "avg_loser_pnl_usd": -2.9,
+                "days": 456,
+                "n_sym": 16
+              },
+              "IS25-26": {
+                "n_taken": 14,
+                "win_rate": 0.8571,
+                "big_wins_30pct": 8,
+                "big_losses_20pct": 1,
+                "pnl_usd": 213.83,
+                "annual_pct": 208.7,
+                "annual_pnl_usd": 208.68,
+                "avg_winner_pnl_usd": 19.54,
+                "avg_loser_pnl_usd": -10.32,
+                "days": 374,
+                "n_sym": 15
+              }
+            },
+            "weighted": {
+              "n_taken": 81,
+              "win_rate": 0.9012,
+              "pnl_usd": 2275.56,
+              "annual_pnl_usd": 532.42,
+              "monthly_pnl_usd": 44.37,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": true,
+              "trades_>=_30": true
+            },
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      },
+      "delta_vs_g191": {
+        "annual_pnl_usd": 4.55,
+        "wr_pp": 2.17
+      }
+    },
+    "G220": {
+      "id": "G220",
+      "filter": "top10",
+      "params": {
+        "size": 0.4,
+        "lev": 6.0,
+        "thr": 80,
+        "hold": 24,
+        "max_conc": 8,
+        "atr": 8.0
+      },
+      "deploy": true,
+      "folder": "G220_g191_top10",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 18,
+                "win_rate": 0.8889,
+                "big_wins_30pct": 14,
+                "big_losses_20pct": 2,
+                "pnl_usd": 416.9,
+                "annual_pct": 208.5,
+                "annual_pnl_usd": 208.45,
+                "avg_winner_pnl_usd": 27.23,
+                "avg_loser_pnl_usd": -9.41,
+                "days": 730,
+                "n_sym": 8
+              },
+              "OOS24-Q1": {
+                "n_taken": 37,
+                "win_rate": 0.9189,
+                "big_wins_30pct": 32,
+                "big_losses_20pct": 0,
+                "pnl_usd": 1322.43,
+                "annual_pct": 1058.5,
+                "annual_pnl_usd": 1058.53,
+                "avg_winner_pnl_usd": 39.02,
+                "avg_loser_pnl_usd": -1.38,
+                "days": 456,
+                "n_sym": 10
+              },
+              "IS25-26": {
+                "n_taken": 11,
+                "win_rate": 0.9091,
+                "big_wins_30pct": 6,
+                "big_losses_20pct": 1,
+                "pnl_usd": 180.77,
+                "annual_pct": 176.4,
+                "annual_pnl_usd": 176.42,
+                "avg_winner_pnl_usd": 19.71,
+                "avg_loser_pnl_usd": -16.34,
+                "days": 374,
+                "n_sym": 10
+              }
+            },
+            "weighted": {
+              "n_taken": 66,
+              "win_rate": 0.9091,
+              "pnl_usd": 1920.1,
+              "annual_pnl_usd": 449.25,
+              "monthly_pnl_usd": 37.44,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": true,
+              "trades_>=_30": true
+            },
+            "verdict": "PASS"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 18,
+                "win_rate": 0.8889,
+                "big_wins_30pct": 14,
+                "big_losses_20pct": 2,
+                "pnl_usd": 413.45,
+                "annual_pct": 206.7,
+                "annual_pnl_usd": 206.72,
+                "avg_winner_pnl_usd": 27.04,
+                "avg_loser_pnl_usd": -9.6,
+                "days": 730,
+                "n_sym": 8
+              },
+              "OOS24-Q1": {
+                "n_taken": 37,
+                "win_rate": 0.9189,
+                "big_wins_30pct": 32,
+                "big_losses_20pct": 0,
+                "pnl_usd": 1315.33,
+                "annual_pct": 1052.8,
+                "annual_pnl_usd": 1052.84,
+                "avg_winner_pnl_usd": 38.83,
+                "avg_loser_pnl_usd": -1.57,
+                "days": 456,
+                "n_sym": 10
+              },
+              "IS25-26": {
+                "n_taken": 11,
+                "win_rate": 0.9091,
+                "big_wins_30pct": 6,
+                "big_losses_20pct": 1,
+                "pnl_usd": 178.65,
+                "annual_pct": 174.4,
+                "annual_pnl_usd": 174.36,
+                "avg_winner_pnl_usd": 19.52,
+                "avg_loser_pnl_usd": -16.53,
+                "days": 374,
+                "n_sym": 10
+              }
+            },
+            "weighted": {
+              "n_taken": 66,
+              "win_rate": 0.9091,
+              "pnl_usd": 1907.43,
+              "annual_pnl_usd": 446.29,
+              "monthly_pnl_usd": 37.19,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": true,
+              "trades_>=_30": true
+            },
+            "verdict": "PASS"
+          }
+        },
+        "robust_PASS": true
+      },
+      "delta_vs_g191": {
+        "annual_pnl_usd": -82.26,
+        "wr_pp": 2.96
+      }
+    },
+    "G230": {
+      "id": "G230",
+      "filter": "top5",
+      "params": {
+        "size": 0.4,
+        "lev": 6.0,
+        "thr": 80,
+        "hold": 24,
+        "max_conc": 8,
+        "atr": 8.0
+      },
+      "deploy": true,
+      "folder": "G230_g191_top5",
+      "results": {
+        "std16": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 6,
+                "win_rate": 1.0,
+                "big_wins_30pct": 5,
+                "big_losses_20pct": 0,
+                "pnl_usd": 147.32,
+                "annual_pct": 73.7,
+                "annual_pnl_usd": 73.66,
+                "avg_winner_pnl_usd": 24.55,
+                "avg_loser_pnl_usd": 0,
+                "days": 730,
+                "n_sym": 3
+              },
+              "OOS24-Q1": {
+                "n_taken": 23,
+                "win_rate": 0.8696,
+                "big_wins_30pct": 18,
+                "big_losses_20pct": 0,
+                "pnl_usd": 807.55,
+                "annual_pct": 646.4,
+                "annual_pnl_usd": 646.4,
+                "avg_winner_pnl_usd": 40.59,
+                "avg_loser_pnl_usd": -1.38,
+                "days": 456,
+                "n_sym": 5
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "win_rate": 0.8,
+                "big_wins_30pct": 3,
+                "big_losses_20pct": 1,
+                "pnl_usd": 82.7,
+                "annual_pct": 80.7,
+                "annual_pnl_usd": 80.71,
+                "avg_winner_pnl_usd": 24.76,
+                "avg_loser_pnl_usd": -16.34,
+                "days": 374,
+                "n_sym": 5
+              }
+            },
+            "weighted": {
+              "n_taken": 34,
+              "win_rate": 0.8824,
+              "pnl_usd": 1037.57,
+              "annual_pnl_usd": 242.76,
+              "monthly_pnl_usd": 20.23,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": false,
+              "trades_>=_30": true
+            },
+            "verdict": "FAIL"
+          }
+        },
+        "stress24": {
+          "evaluation": {
+            "periods": {
+              "OOS22-23": {
+                "n_taken": 6,
+                "win_rate": 1.0,
+                "big_wins_30pct": 5,
+                "big_losses_20pct": 0,
+                "pnl_usd": 146.17,
+                "annual_pct": 73.1,
+                "annual_pnl_usd": 73.08,
+                "avg_winner_pnl_usd": 24.36,
+                "avg_loser_pnl_usd": 0,
+                "days": 730,
+                "n_sym": 3
+              },
+              "OOS24-Q1": {
+                "n_taken": 23,
+                "win_rate": 0.8696,
+                "big_wins_30pct": 18,
+                "big_losses_20pct": 0,
+                "pnl_usd": 803.14,
+                "annual_pct": 642.9,
+                "annual_pnl_usd": 642.86,
+                "avg_winner_pnl_usd": 40.39,
+                "avg_loser_pnl_usd": -1.57,
+                "days": 456,
+                "n_sym": 5
+              },
+              "IS25-26": {
+                "n_taken": 5,
+                "win_rate": 0.8,
+                "big_wins_30pct": 3,
+                "big_losses_20pct": 1,
+                "pnl_usd": 81.74,
+                "annual_pct": 79.8,
+                "annual_pnl_usd": 79.78,
+                "avg_winner_pnl_usd": 24.57,
+                "avg_loser_pnl_usd": -16.53,
+                "days": 374,
+                "n_sym": 5
+              }
+            },
+            "weighted": {
+              "n_taken": 34,
+              "win_rate": 0.8824,
+              "pnl_usd": 1031.05,
+              "annual_pnl_usd": 241.24,
+              "monthly_pnl_usd": 20.1,
+              "all_periods_positive": true
+            }
+          },
+          "decision": {
+            "checks": {
+              "wr_>=_70%": true,
+              "all_periods_pos": true,
+              "annual_pnl_>=_$300": false,
+              "trades_>=_30": true
+            },
+            "verdict": "FAIL"
+          }
+        },
+        "robust_PASS": false
+      }
+    }
+  },
+  "deploy_targets": [
+    "G210",
+    "G220"
+  ]
+}

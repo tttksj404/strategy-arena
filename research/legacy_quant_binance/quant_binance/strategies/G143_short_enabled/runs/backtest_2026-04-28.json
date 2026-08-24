@@ -1,0 +1,34 @@
+{
+  "strategy_id": "G143",
+  "parent": "G135",
+  "config": {
+    "days": 60,
+    "symbols": [
+      "ETHUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "PEPEUSDT"
+    ],
+    "equity": 55.0,
+    "cost_bps": 16.0,
+    "score_min": 76,
+    "utc_filter": [
+      6,
+      9
+    ]
+  },
+  "result": {
+    "n": 127,
+    "wr": 45.7,
+    "avg_net": 17.9,
+    "total": 2272,
+    "annPct": 138.2
+  },
+  "baseline": {
+    "n": 126,
+    "wr": 46.0,
+    "avg_net": 18.9,
+    "total": 2378,
+    "annPct": 144.7
+  }
+}

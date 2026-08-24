@@ -1,0 +1,94 @@
+{
+  "run_at": "2026-04-28T01:19:13Z",
+  "config": {
+    "tp_r": 1.5,
+    "sl_r": 1.0,
+    "atr_len": 14,
+    "sl_atr_mult": 1.5,
+    "hold_max_bars": 72,
+    "threshold": 70,
+    "universe_size": 18
+  },
+  "results": [
+    {
+      "label": "G007_intra_long",
+      "side": "long",
+      "n": 1609,
+      "avg_gross_bps": -9.16,
+      "avg_net_bps": -25.16,
+      "win_rate": 0.3667,
+      "tp_pct": 0.3592,
+      "sl_pct": 0.6296,
+      "timeout_pct": 0.0112,
+      "avg_duration_h": 10.8,
+      "big_winners_10pct": 4,
+      "per_symbol_top5": {
+        "OPUSDT": {
+          "n": 118,
+          "net_bps": -23.51,
+          "wr": 0.3644
+        },
+        "WIFUSDT": {
+          "n": 109,
+          "net_bps": 1.1,
+          "wr": 0.3761
+        },
+        "APTUSDT": {
+          "n": 105,
+          "net_bps": -50.17,
+          "wr": 0.3333
+        },
+        "PEPEUSDT": {
+          "n": 104,
+          "net_bps": -16.94,
+          "wr": 0.4135
+        },
+        "ARBUSDT": {
+          "n": 101,
+          "net_bps": -30.4,
+          "wr": 0.3168
+        }
+      }
+    },
+    {
+      "label": "G010_short",
+      "side": "short",
+      "n": 1565,
+      "avg_gross_bps": -18.83,
+      "avg_net_bps": -34.83,
+      "win_rate": 0.3617,
+      "tp_pct": 0.3604,
+      "sl_pct": 0.6364,
+      "timeout_pct": 0.0032,
+      "avg_duration_h": 8.5,
+      "big_winners_10pct": 1,
+      "per_symbol_top5": {
+        "WIFUSDT": {
+          "n": 124,
+          "net_bps": -48.5,
+          "wr": 0.371
+        },
+        "PEPEUSDT": {
+          "n": 103,
+          "net_bps": -68.2,
+          "wr": 0.3204
+        },
+        "OPUSDT": {
+          "n": 102,
+          "net_bps": -51.63,
+          "wr": 0.3235
+        },
+        "SUIUSDT": {
+          "n": 98,
+          "net_bps": -75.4,
+          "wr": 0.2857
+        },
+        "ARBUSDT": {
+          "n": 94,
+          "net_bps": -64.13,
+          "wr": 0.3404
+        }
+      }
+    }
+  ]
+}

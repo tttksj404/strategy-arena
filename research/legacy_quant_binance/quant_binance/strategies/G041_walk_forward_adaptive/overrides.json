@@ -1,0 +1,32 @@
+{
+  "_strategy_id": "G041",
+  "_parent_id": "G003",
+  "_playbook": "PB001",
+  "_setup": "G003 + walk-forward adaptive deployment gate",
+  "_changed_keys_vs_parent": ["deployment_gate"],
+  "score_engine": {"$ref": "G003"},
+  "entry_threshold": 70,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT", "PEPEUSDT", "WIFUSDT", "ARBUSDT", "OPUSDT",
+               "AVAXUSDT", "SUIUSDT", "ADAUSDT", "APTUSDT", "BNBUSDT",
+               "DOTUSDT", "LINKUSDT", "LTCUSDT", "NEARUSDT", "SOLUSDT",
+               "UNIUSDT", "XRPUSDT", "BTCUSDT"],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "deployment_gate": {
+    "type": "walk_forward",
+    "lookback_days": 30,
+    "rule": "최근 30일 누적 net PnL > 0 일 때만 진입 허용",
+    "warmup_days": 30
+  },
+  "portfolio_optimal": {
+    "max_concurrent": 3,
+    "size_pct_per_trade": 0.30,
+    "leverage": 1.0,
+    "expected_annual_pct_on_50usd": 9.7,
+    "expected_trades_per_year": 34,
+    "lottery_winners_10pct": 5,
+    "validated_on": "374-day window 2025-2026 alts"
+  }
+}

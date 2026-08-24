@@ -1,0 +1,47 @@
+{
+  "_strategy_id": "G002",
+  "_parent_id": "S001",
+  "_playbook": "PB001",
+  "_setup": "Mingogogo CH1 (10-indicator weighted score) × 72h horizon",
+  "_changed_keys_vs_parent": [
+    "score_engine",
+    "holding_period",
+    "entry_threshold",
+    "universe",
+    "decision_loop"
+  ],
+  "_note_on_variable_rule": "S001 의 점진 개선이 아니라 PB001 인용 새 룰셋 — variable-1 rule 은 G002→G003 부터 적용",
+  "score_engine": {
+    "type": "mingogogo_ch1",
+    "weights": {
+      "rsi": 15, "mfi": 12, "stoch": 12, "cci": 10, "wr": 10,
+      "bbpct": 10, "macd": 8, "adx": 8, "obv": 8, "atr": 7
+    },
+    "indicator_params": {
+      "rsi": {"length": 14},
+      "mfi": {"length": 14},
+      "stoch": {"k": 14, "smooth": 3},
+      "cci": {"length": 20},
+      "wr": {"length": 14},
+      "bbpct": {"length": 20, "std": 2},
+      "macd": {"fast": 12, "slow": 26, "signal": 9},
+      "adx": {"length": 14},
+      "obv_slope": {"length": 20},
+      "atr_pct": {"length": 14}
+    }
+  },
+  "entry_threshold": 70,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT", "PEPEUSDT", "WIFUSDT", "ARBUSDT", "OPUSDT", "AVAXUSDT", "SUIUSDT", "ADAUSDT"],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "leverage_warning": "72h hold + 5x+ leverage = liquidation risk on alts. Spot 또는 1-2x perp 권장.",
+  "decision_loop": "standalone batch_backtest (regime engine bypass)",
+  "next_variants": {
+    "G003": "universe 확장 (alt 17종 archive 추가)",
+    "G004": "threshold 80 + hold 24h (lottery whale-hunting)",
+    "G005": "+ CH4 바닥권 필터",
+    "G006": "+ 양방향 (PB101 Passivbot short 룰 차용)"
+  }
+}

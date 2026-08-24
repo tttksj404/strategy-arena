@@ -1,0 +1,40 @@
+{
+  "_strategy_id": "G050",
+  "_parent_id": "G041",
+  "_playbook": "PB001",
+  "_setup": "G041 + lookback 30d → 14d (OOS-validated on 2022-2023 bear)",
+  "_changed_keys_vs_parent": ["adaptive_lookback_days"],
+  "score_engine": {"$ref": "G041"},
+  "entry_threshold": 70,
+  "holding_period_bars": 72,
+  "timeframe": "1h",
+  "universe": ["DOGEUSDT", "PEPEUSDT", "WIFUSDT", "ARBUSDT", "OPUSDT",
+               "AVAXUSDT", "SUIUSDT", "ADAUSDT", "APTUSDT", "BNBUSDT",
+               "DOTUSDT", "LINKUSDT", "LTCUSDT", "NEARUSDT", "SOLUSDT",
+               "UNIUSDT", "XRPUSDT", "BTCUSDT"],
+  "side": "long",
+  "cost_bps_round_trip": 16.0,
+  "deployment_gate": {
+    "type": "hypothetical_walk_forward",
+    "lookback_days": 14,
+    "rule": "직전 14일간 모든 CH1≥70 candidate 의 net 합 > 0 일 때만 진입 (taken/skipped 무관 — gate stuck 방지)",
+    "warmup_days": 14,
+    "validation": {
+      "in_sample_2025_2026": {"n": 3343, "mean_bps": 341, "wr": 0.672},
+      "out_of_sample_2022_2023": {"n": 2814, "mean_bps": 263, "wr": 0.594}
+    }
+  },
+  "portfolio_recommendation": {
+    "max_concurrent": 5,
+    "size_pct_per_trade": 0.30,
+    "leverage": 1.0,
+    "capital_usd": 55,
+    "validated_3_periods": {
+      "oos_2022_2023_bear": "+70%/년 (n=433 trades, 54 lottery 10%+)",
+      "oos_2024_q1_2025_recovery": "+135%/년 (n=312 trades, 49 lottery)",
+      "in_sample_2025_2026_sideways": "+17%/년 (n=246 trades, 27 lottery)",
+      "weighted_avg": "+74%/년 across 1560 days"
+    },
+    "alternative_safer": {"max_concurrent": 10, "size_pct_per_trade": 0.10, "annual": "~+51%/년 균등"}
+  }
+}

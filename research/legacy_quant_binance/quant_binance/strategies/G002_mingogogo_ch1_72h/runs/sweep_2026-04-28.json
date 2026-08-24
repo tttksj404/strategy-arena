@@ -1,0 +1,472 @@
+{
+  "sweep": [
+    {
+      "threshold": 70,
+      "hold_bars": 4,
+      "trades": 2670,
+      "avg_net_bps": -33.33,
+      "avg_gross_bps": -17.33,
+      "win_rate": 0.4588,
+      "lottery5": 30,
+      "lottery10": 5,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net": -37.86,
+          "wr": 0.4503
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net": 0.51,
+          "wr": 0.5321
+        },
+        "WIFUSDT": {
+          "n": 411,
+          "net": -30.85,
+          "wr": 0.4404
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net": -26.39,
+          "wr": 0.4679
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net": -52.53,
+          "wr": 0.4351
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net": -30.85,
+          "wr": 0.4462
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net": -54.66,
+          "wr": 0.454
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net": -22.83,
+          "wr": 0.4612
+        }
+      }
+    },
+    {
+      "threshold": 70,
+      "hold_bars": 12,
+      "trades": 2670,
+      "avg_net_bps": -7.86,
+      "avg_gross_bps": 8.14,
+      "win_rate": 0.5281,
+      "lottery5": 216,
+      "lottery10": 30,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net": -6.19,
+          "wr": 0.5795
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net": 22.2,
+          "wr": 0.5801
+        },
+        "WIFUSDT": {
+          "n": 411,
+          "net": -29.87,
+          "wr": 0.4623
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net": 8.62,
+          "wr": 0.5449
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net": -87.88,
+          "wr": 0.4624
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net": 23.01,
+          "wr": 0.5354
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net": 23.81,
+          "wr": 0.543
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net": 28.56,
+          "wr": 0.5776
+        }
+      }
+    },
+    {
+      "threshold": 70,
+      "hold_bars": 24,
+      "trades": 2670,
+      "avg_net_bps": 75.27,
+      "avg_gross_bps": 91.27,
+      "win_rate": 0.5622,
+      "lottery5": 441,
+      "lottery10": 154,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net": 121.79,
+          "wr": 0.5795
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net": 105.56,
+          "wr": 0.5417
+        },
+        "WIFUSDT": {
+          "n": 411,
+          "net": 3.14,
+          "wr": 0.5036
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net": 64.7,
+          "wr": 0.5801
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net": -27.34,
+          "wr": 0.5034
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net": 93.1,
+          "wr": 0.6
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net": 170.78,
+          "wr": 0.5994
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net": 146.43,
+          "wr": 0.6509
+        }
+      }
+    },
+    {
+      "threshold": 70,
+      "hold_bars": 72,
+      "trades": 2667,
+      "avg_net_bps": 220.99,
+      "avg_gross_bps": 236.99,
+      "win_rate": 0.5834,
+      "lottery5": 931,
+      "lottery10": 451,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 302,
+          "net": 308.28,
+          "wr": 0.7285
+        },
+        "PEPEUSDT": {
+          "n": 312,
+          "net": 305.07,
+          "wr": 0.6378
+        },
+        "WIFUSDT": {
+          "n": 408,
+          "net": 295.77,
+          "wr": 0.5784
+        },
+        "ARBUSDT": {
+          "n": 312,
+          "net": 104.89,
+          "wr": 0.4936
+        },
+        "OPUSDT": {
+          "n": 439,
+          "net": -0.66,
+          "wr": 0.4784
+        },
+        "AVAXUSDT": {
+          "n": 325,
+          "net": 234.08,
+          "wr": 0.6185
+        },
+        "SUIUSDT": {
+          "n": 337,
+          "net": 301.78,
+          "wr": 0.5579
+        },
+        "ADAUSDT": {
+          "n": 232,
+          "net": 302.63,
+          "wr": 0.6379
+        }
+      }
+    },
+    {
+      "threshold": 80,
+      "hold_bars": 4,
+      "trades": 40,
+      "avg_net_bps": 18.17,
+      "avg_gross_bps": 34.17,
+      "win_rate": 0.425,
+      "lottery5": 0,
+      "lottery10": 0,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 1,
+          "net": 24.18,
+          "wr": 1.0
+        },
+        "PEPEUSDT": {
+          "n": 8,
+          "net": 23.2,
+          "wr": 0.375
+        },
+        "WIFUSDT": {
+          "n": 9,
+          "net": 42.53,
+          "wr": 0.4444
+        },
+        "ARBUSDT": {
+          "n": 1,
+          "net": 28.02,
+          "wr": 1.0
+        },
+        "OPUSDT": {
+          "n": 8,
+          "net": 46.04,
+          "wr": 0.5
+        },
+        "AVAXUSDT": {
+          "n": 4,
+          "net": -20.06,
+          "wr": 0.5
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "net": 45.81,
+          "wr": 0.5
+        },
+        "ADAUSDT": {
+          "n": 5,
+          "net": -72.99,
+          "wr": 0.0
+        }
+      }
+    },
+    {
+      "threshold": 80,
+      "hold_bars": 12,
+      "trades": 40,
+      "avg_net_bps": 102.14,
+      "avg_gross_bps": 118.14,
+      "win_rate": 0.675,
+      "lottery5": 3,
+      "lottery10": 1,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 1,
+          "net": 374.27,
+          "wr": 1.0
+        },
+        "PEPEUSDT": {
+          "n": 8,
+          "net": 199.57,
+          "wr": 1.0
+        },
+        "WIFUSDT": {
+          "n": 9,
+          "net": 263.49,
+          "wr": 0.5556
+        },
+        "ARBUSDT": {
+          "n": 1,
+          "net": -104.04,
+          "wr": 0.0
+        },
+        "OPUSDT": {
+          "n": 8,
+          "net": 132.73,
+          "wr": 0.875
+        },
+        "AVAXUSDT": {
+          "n": 4,
+          "net": -34.72,
+          "wr": 0.25
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "net": 3.42,
+          "wr": 0.5
+        },
+        "ADAUSDT": {
+          "n": 5,
+          "net": -217.86,
+          "wr": 0.6
+        }
+      }
+    },
+    {
+      "threshold": 80,
+      "hold_bars": 24,
+      "trades": 40,
+      "avg_net_bps": 943.29,
+      "avg_gross_bps": 959.29,
+      "win_rate": 0.9,
+      "lottery5": 33,
+      "lottery10": 22,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 1,
+          "net": 1589.11,
+          "wr": 1.0
+        },
+        "PEPEUSDT": {
+          "n": 8,
+          "net": 1297.9,
+          "wr": 1.0
+        },
+        "WIFUSDT": {
+          "n": 9,
+          "net": 1252.14,
+          "wr": 0.8889
+        },
+        "ARBUSDT": {
+          "n": 1,
+          "net": 204.1,
+          "wr": 1.0
+        },
+        "OPUSDT": {
+          "n": 8,
+          "net": 767.52,
+          "wr": 1.0
+        },
+        "AVAXUSDT": {
+          "n": 4,
+          "net": 570.69,
+          "wr": 1.0
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "net": 941.61,
+          "wr": 0.75
+        },
+        "ADAUSDT": {
+          "n": 5,
+          "net": 419.31,
+          "wr": 0.6
+        }
+      }
+    },
+    {
+      "threshold": 80,
+      "hold_bars": 72,
+      "trades": 40,
+      "avg_net_bps": 977.72,
+      "avg_gross_bps": 993.72,
+      "win_rate": 0.85,
+      "lottery5": 33,
+      "lottery10": 20,
+      "per_symbol_summary": {
+        "DOGEUSDT": {
+          "n": 1,
+          "net": 1212.05,
+          "wr": 1.0
+        },
+        "PEPEUSDT": {
+          "n": 8,
+          "net": 1225.2,
+          "wr": 1.0
+        },
+        "WIFUSDT": {
+          "n": 9,
+          "net": 1615.68,
+          "wr": 0.7778
+        },
+        "ARBUSDT": {
+          "n": 1,
+          "net": -397.51,
+          "wr": 0.0
+        },
+        "OPUSDT": {
+          "n": 8,
+          "net": 656.03,
+          "wr": 1.0
+        },
+        "AVAXUSDT": {
+          "n": 4,
+          "net": 701.66,
+          "wr": 1.0
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "net": 941.69,
+          "wr": 0.75
+        },
+        "ADAUSDT": {
+          "n": 5,
+          "net": 425.97,
+          "wr": 0.6
+        }
+      }
+    }
+  ],
+  "best": {
+    "threshold": 80,
+    "hold_bars": 72,
+    "trades": 40,
+    "avg_net_bps": 977.72,
+    "avg_gross_bps": 993.72,
+    "win_rate": 0.85,
+    "lottery5": 33,
+    "lottery10": 20,
+    "per_symbol_summary": {
+      "DOGEUSDT": {
+        "n": 1,
+        "net": 1212.05,
+        "wr": 1.0
+      },
+      "PEPEUSDT": {
+        "n": 8,
+        "net": 1225.2,
+        "wr": 1.0
+      },
+      "WIFUSDT": {
+        "n": 9,
+        "net": 1615.68,
+        "wr": 0.7778
+      },
+      "ARBUSDT": {
+        "n": 1,
+        "net": -397.51,
+        "wr": 0.0
+      },
+      "OPUSDT": {
+        "n": 8,
+        "net": 656.03,
+        "wr": 1.0
+      },
+      "AVAXUSDT": {
+        "n": 4,
+        "net": 701.66,
+        "wr": 1.0
+      },
+      "SUIUSDT": {
+        "n": 4,
+        "net": 941.69,
+        "wr": 0.75
+      },
+      "ADAUSDT": {
+        "n": 5,
+        "net": 425.97,
+        "wr": 0.6
+      }
+    }
+  }
+}
