@@ -1,0 +1,5148 @@
+{
+  "settings": {
+    "start_ms": 1787529600000,
+    "snapshot_ms": 1789000195707,
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "ADAUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "XRPUSDT",
+      "DOTUSDT",
+      "LTCUSDT",
+      "LINKUSDT",
+      "AVAXUSDT",
+      "UNIUSDT",
+      "ATOMUSDT",
+      "NEARUSDT"
+    ],
+    "intervals": [
+      "1m",
+      "3m",
+      "5m",
+      "15m",
+      "30m",
+      "1H",
+      "4H",
+      "6H",
+      "12H",
+      "1D"
+    ],
+    "mark_intervals": [
+      "5m",
+      "1H",
+      "4H",
+      "1D"
+    ],
+    "credentials_read_or_sent": false,
+    "private_endpoints_used": false,
+    "source": "https://api.bitget.com/api/v3/market/candles"
+  },
+  "groups": [
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "BTCUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "0c308e6b62d63e62c321a0a554059a89a5cde0f76aba7b790414a9ef70df9081",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "BTCUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "06d581824201c971a873be040ad4eb9ae63ae6606fe6ac5cc4c9bbcd3cf72a2a",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "BTCUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "6136c011837d9d4d1ee813df8ccd45ff0464332bfd4f9530b8b858e07fdc9c7b",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "BTCUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "d05ee0f4e54967f21239a0f92ee8ac024da416d7b0d07df353c0a73be633da58",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "BTCUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "9a5b55eec1245f26b49ca26410e3ed3f4270e412118dde1b3d98e1abd00b4d1e",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "BTCUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "d9f2a72372ed17d7b4cb6c2aa5286235fd245cabe0b397cb656462c821275c84",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "BTCUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "6934a595009daba4fb96b8d06d9cba6314e47004f0b21c095f5dd76bb94d3800",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "BTCUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "a97d70fd89421f74032eddada0af0b93b317f708d0be74156ecc0083bd376968",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "BTCUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "7c54061031fd850168ff0d4cd7abead5f07b26b661f092d52f748d1116b5ac5e",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BTCUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "BTCUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "7ce68efe996b6d3d58ac40dd7d0ec06bdcb2b84a692d08d4243b9ecf14ee97bb",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "ETHUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "5ee6ab47b26a6428b7fe4654b1372ffe9d026f71bd41b12da470cd62fa4e26f3",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "ETHUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "f62858171b169e82423a9f3d42dcd1424f30c969a0ae426cf173ca6cd5e5f1c5",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "ETHUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "6caf7b8e09aa4b0689e7806f7b680b78cb4c5d9cab65efd32a641d53eb9508f7",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "ETHUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "c9342d0dc41a326778fd329ccc3a73cdcee36861d4f402f5a2da7397ee912a3c",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "ETHUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "09f47cba0717ae77e8ebfc8bb4967c43b52ac54a9bfe75498d0d81763b72882a",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "ETHUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "3239b79c1ae196219abef96241d06bf5b405af0f9f506bfdce4ffa04df5b92f4",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "ETHUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "e601e8130a0cd7e6d1d74119c4af5b7fccce6e788c79c8ceeffcc6e5ee73448d",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "ETHUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "1247ba95eaba7379cc59c9e195ac53f0d9ed4777891111c04d44b2f0eab1d0ee",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "ETHUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "ccf91b299610421816760dba01e568f4442ce2bca2c5f03f9313c98eb8e8c2cc",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ETHUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "ETHUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "f9a8cdcff10efd3edcc18cec91358c002c8947705bb727b4c28478840d83c6d0",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "BNBUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "b55ade1e25650b9cb9cf0398989b6b3c3c8a77be683f59cc3a25a413ff4914a1",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "BNBUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "14535bf0023f68a4a45e6414171f72911150540d6847618f4a0882497cd67761",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "BNBUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "978ee2917deb8e0e2836b0553485256e9a2a2e6b31ff88f0e0b6015630d3e0ea",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "BNBUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "f3a6c280f8622880f77b7c4dfffb3579490676985775d742c7e90e570aca3d6f",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "BNBUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "f8974e8b83cb7d58e4a4d1a84ad4934b52bef8cb7a5fff130db97e19b3a91a11",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "BNBUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "0b644848516eeca1aeba559edcb66a2c5c8aeae3877035a7e88407f74cad7a70",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "BNBUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "65f1be766f808b960b953b7263232c75a5723bcc097339771b240a5b72e78443",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "BNBUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "701bb07cb88fd48a3c01aec25835e3c6a53f626060e4f1bebfddbc19e26582c9",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "BNBUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "713e48550ab12cf4759fb51bcbab422705a0080d7f3daf0c171137bc03d5ebc6",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "BNBUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "BNBUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "9677799bbf20205909d23c249ebbd70f2aeb98d821f56f338a7dffc44640cdb0",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "ADAUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "44adb3077ac2a35f16dde9272c7d584f31f64768b802afd0170a892b72184142",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "ADAUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "336b555ba61b4d6e67978fb80cdb8c2edb9d39e9fc0a812b79de0272c6d9c11f",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "ADAUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "9289d81cee388bb996bdbe14a04b3142bd7d93015c203198783eb7518b0c026b",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "ADAUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "971f7ee7d5cff600ecc2f2f5d5ce6d7d0e76169c86c7abdfd4f38597605af480",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "ADAUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "619a4b9c2067c1eb1d225e7bda8866c5975dc52ff0fbf2b915b3eaa4345a6d31",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "ADAUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "e4d48d8feb731d0ec6545484711c558ab586ee5bc33a46fd30a2e04bd226b434",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "ADAUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "c1a2784d90b9a12be1d7ada07be54b41b12bbb38c6cce6eaad924570080a6cd5",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "ADAUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "9c4d7761a9d5fc4eb689320e9ad8386ac460d79aec4433e2ce8619a7635abd00",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "ADAUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "510975cadc3777715549dfc85ac70b905d3e63511252e6c4e130ac7d41224f51",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ADAUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "ADAUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "f078ebea2758a2add786cc53c44cd2f7d7482a010d5b31d1dc11f181c63bae2d",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "SOLUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "b1fb104395527d9d6e8eefaf2500f803cd337c21e88e53d62cfd9512fe1e0771",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "SOLUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "4d7726b705f720dcf5be950132a975367bb4365792051947ff733296390c80a3",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "SOLUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "91e2728c61ca2efd987e7f0c8b02f5a0aeed33edf007c0dcea48ade9762153f5",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "SOLUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "5c47496c2d0a9adf980301f0bd53d8409f03dd21dbf020a9b0a9d967fa4a0348",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "SOLUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "42a23e39a1e7081d501b4141ed1b2f52144e5de0c55d99fceec481be009ef591",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "SOLUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "d25d27eb3bbdff2e1d41cebd1e467c5efc60f54e9f6e42c72ac3ab8b27cbe91e",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "SOLUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "23f9ea2d4960bc1f1618499a925134c5fa1812e9d0d8bb47447c3d9eaca5e4da",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "SOLUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "8e2a1e7f1f4b989d3c11d8a09dcc68ae8c0a7ccce11ee05dd56bfc00e1b9b28e",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "SOLUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "e6a09759104fb4d5323c3e2f2e101b1d43b0ba446e659a13df9c70a2428b02cf",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "SOLUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "SOLUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "3b4b2f45dc067ce8621ff4f732d67141389f7c1dbd812b426db7332f3117098f",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "DOGEUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "043d486674f81695d97956d6370a32148c967108a5fed7e02d9bc04f9ec6519a",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "DOGEUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "d557a7dc560e4d2cf3f496a2b15aac5e6caed6396e6a93a88b34856bd9ceac33",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "DOGEUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "0f95a518202418d00fce41483609a51b883aab23b4e0ac34f8058ee9df817bc0",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "DOGEUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "e3226d3f96cf6f3b8593c4a835a5058c1a98bd902e61beb24ebe8576701b9aa5",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "DOGEUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "dd6e93470039682d47d0785886466132a7922e3b050b2d58c52b57e5a6270008",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "DOGEUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "4da796f3b0f15c51289aab081cf0591b9ff60212631a12c65a99867a423cd893",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "DOGEUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "02ddae417958a503c31973ce02f50af58baf4558b7eb3ab06e2a890a29195277",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "DOGEUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "62aa58e3419bda3a93e07fb9f2ff7b31d5a8101a453c93965abce9a33da7e7d5",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "DOGEUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "4361b6ba5974b1ccf3109abc56270ab04d68ac2efe852596e4f42c0901b8cbdc",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOGEUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "DOGEUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "68f3aaf2586c87eb0acf4c3c81458646d7ef9e7ef4c0b4c3c90e7daa8b2c544d",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "XRPUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "d4f4bb4b97d1bed4c21ed9c8ac26014abad77ef2e7e6a34642de0a37d2432796",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "XRPUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "caa5e911ccca8b421dab6367318c4c9e0db25f6491d1061f0ddcb72a9a1ef2a6",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "XRPUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "9c1f8a64f71dcd248b3608e535d0ecf7bb4f63f1cf0bad8cd552e52df9678ccb",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "XRPUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "47e1899a5bfd2aebf2e4eb0b6e1a906290f1868d08da707a6f0220b9dacb0cfd",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "XRPUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "3aebbe9511879e7fea949bae0e2cba1304143caeb2e1778eca63aeea6ca1d9e3",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "XRPUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "6b95de566f69b1a4d6b770af9cf790cc0cb7f14f65757d2fbc207ad92998e21d",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "XRPUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "9a049fb28ca6ce3d4fa58b0c6c36e29cd63203e575f30cac8ff0eddfe352c8fe",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "XRPUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "4085f3927046208c44e4bc3ad6e4e741dbf494cee10858440a1011e1fe17ff47",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "XRPUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "f2efbb040ed1e48cc6e5eb51ced2323e5b866360d4ae96df493053e241e801a6",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "XRPUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "XRPUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "c15f0ea129312cb7b6687624ec7803b12c3b6bc2a0002c50c7722db8b210a73a",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "DOTUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "ab0cc28b09eefb39cc80b770eaa0f66ab7d1f1212bfeb913f548c274dbfcd589",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "DOTUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "90f81f9646d1d7a8fe600651e8fe658e99d05769b6f16eeb322af664fcf516d3",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "DOTUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "c306037ac51f09d262767f166901f3f040384d3a3af95416a082b16748df950a",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "DOTUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "0c6a258957a3da505ca5bc7aa05b5b5a7e207cfe26685c45bd131ea89935d0e3",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "DOTUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "954d7b6abb34dbec50d74fb43851c903747a3350447a822c869357824b5d278c",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "DOTUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "c2de32d429842ad7dbd4739a737ab1577afe4ece70c9568b190934a15325f9ea",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "DOTUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "adf7adb073c622a58d7d64bb91e6f8dde6092a237d1f52d55c5de61b138e237e",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "DOTUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "08771d94f6778a272a328dd1a00c14d7036cc91c09e2db7dbf37fc51f4adff4d",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "DOTUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "9c0bdff2e5bc3bad53d4a6666e5f8e13b0e62cb6b4a8de9a911b1af4dc92e28e",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "DOTUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "DOTUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "398cd2e595b3c83131696d9bc631fa802bd9a802f25165e092f1aa2cc5ea2ca9",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "LTCUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "b56f34bb1531fc132124ca7b5c3f59813a179031eb7cc98a1b529d5e7a4f4ee6",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "LTCUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "f9459504415e81bc463b20e9a445a4296c77065ae3d613c367b255c85bc0c871",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "LTCUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "338de1bd464a071324c7c4e1234d370b1c2c11a7f5e9d81beb81fbef85b4747f",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "LTCUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "31e47357d5424f3244f8a3fa775541cc381f74f1141ef4179c871afb229a67f7",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "LTCUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "530c0545fa0c75c4549860e7ae400ba1977ec384559a9704e7ec770784c14a73",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "LTCUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "a1323648c00a31336c129431e0028701e206499c3314117331924d825ed5c515",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "LTCUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "34556ecfabeea8ecc1f6e0e7b9627c31896c76f0ada0ed8433d6c1eecfcf6399",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "LTCUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "c2c376c9d0acc0f6dc2602210162bd713ba8a38e6c0c853ad52278c525189d64",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "LTCUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "55e947bc8538707ca93dbe8c490e18ccc34ac85a793354f2fa6433bfd147870f",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LTCUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "LTCUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "b226683dcc3d41e5b8ee94a868bea1c04bfa3e1ee55feeec38be2827a1b719a1",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "LINKUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "59bc39b36eaa119c2f08d3a40a42b475d001fc0b0fa5488b8e4c1291fe2f42f7",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "LINKUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "78c1c4ac07aa1efc686f19f8ea3d6981cd3867dba94536ad1af21f27c00583ae",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "LINKUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "054318cae2cbe803bea409f3469bb4e8336ceed6358d9192d5532b88ee51294e",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "LINKUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "cbbabed3fa55afd7dcf00e43cbfc03286542a6971bd0796f9066e3b2dd51da8c",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "LINKUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "f5de0ec8a7a4841f7e93a0ba9db484d2186b282e44ed930a7df4100ff03d3f12",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "LINKUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "cf8ec0da143e867a2ac749e201ecca1815928a2e1d404a50623a457ba8a9ccfb",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "LINKUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "e0bb8014f8b9126079295ff506c151e62fefdab0922d5ab632a8e424cd14db64",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "LINKUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "b42425d0fc1580b5a43d0c72b707c42f1968125236a05ade772ca7849f25607a",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "LINKUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "01c34f2c7cafc9fbf0092c20099df42e5dabadf46cba2e251d3205f7a81b3d5b",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "LINKUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "LINKUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "45450f45bbdeccfa97eec58af8805ef8fdfa87d08ca6396fb6bf0ca81d76fef1",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "AVAXUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "887ccdd78cc70b78791b7527a35c42a874b36b60147cbea13c7bba6631ae7fa8",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "AVAXUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "4b65d874ac07b69e1ae518503ad2e05051999827650b6b6e0b73d0061233302f",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "AVAXUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "72df8c5ee5e81fa7fd0cfdfe8b2c87b9c497d1e0f6c593222bf88abaf8e1ee1d",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "AVAXUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "5c365c9fe989da86a0077b26ba81d23eb9db66a6019be311eebba2a097310157",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "AVAXUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "dd8edf9365927464886cdfcc3de2b11197ccbe8424120ee2fa601ef7c0e587d8",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "AVAXUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "0406143a7e9184a7d9d736a8845c5e29ae5fad921ffdb8c8353faa2cc20df56f",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "AVAXUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "064119ebe45d9b17da393e0fcade201ceee60c7dc82867dcab4e76cda2d2402b",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "AVAXUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "e2567657ef2e3b95505122c8b67803328fee03f8934ab61d47af5358fd87d8f0",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "AVAXUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "597cd344d5a56d8976d6c9f18b87f91f8e11ffb840c1b0be97995a4ac98de061",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "AVAXUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "AVAXUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "5b628ba3ac154588456e417c7d40a90fb1c43715041a8e3bd537e52e9cf39baf",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "UNIUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "78421fe1d6f494f924f6a73bab8668c89325e4f1b97c3d3687b47cdfcfc90242",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "UNIUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "98ed37774166010ca33c615697599476c828dbd833034d233588b22d3ceffc33",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "UNIUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "5134f69e81fea58837252a8347f1f6940c611f410b47d56b32de9dcb8bd423c3",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "UNIUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "f8c17627b36824f70d38c05c90c064409685a428ede4c110bf2335cd0a1df684",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "UNIUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "9bb7e219e5463de4a00b913051e8c9eeda72368a9847c6fe2c1be3ef4a1dd973",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "UNIUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "f46f7e5747eca7a658ecfbbb24bf090566a8d8cf38d2a6aa9e6348577845cf84",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "UNIUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "48d4d7303eeb8a24f069b94900a3d675bd27ac7a0a4813d844b0f4b88075d78a",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "UNIUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "f901f623d4efc00edebe10ec3377833f75a1319c084e8525fc07de1035cb7c8f",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "UNIUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "d0fa50710efd6ce56dec5f67ba09998660be2a8b010643bc13f01f611fa3f047",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "UNIUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "UNIUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "c6d848df057f4dab8f3143a04e0a271551d2ff0ce37337ce078da1e14c286654",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "ATOMUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "891123b74bd6ced1838a4632eb3e6c2f5fb5422de3caf890bbef2f11e9207e31",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "ATOMUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "2ba71a5e72fd878710ff777f4fbbe5f559d8537abd09352c9e5c281acba60b1b",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "ATOMUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "032f50956fe0bdb838a79b94dab372bd483ad010132646252edcd30fb002346a",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "ATOMUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "c51f63c44e5952b603c4bfdc342400eddd9846b5fc5a824406ddd5021d635e6e",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "ATOMUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "9f59e16a280ebbff8e5ef091c72ec3bce05120da92d7cc108c63bf0f055cb67c",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "ATOMUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "f769cf87f8d7dbb5855cebc6c7da6347d9e17d8e55ae9acd324bf96a8839a7df",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "ATOMUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "9aebffd1cd6ab487f0aed21bee237c1be0faa3916810b7c0a2a48102705b36eb",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "ATOMUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "588be23ab88fe872593910fe31cd8c41138683cf4629d13bddbd5d80e0bcc0ef",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "ATOMUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "121b8f0fb834c086cc76ea42bb89390c4f61810c6c9ad53c9f8c05fd60b0bdf0",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "ATOMUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "ATOMUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "c6464623431a83a696458b30e069764943da4a097b173afb0e43dbadcc3e6a4b",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "1m",
+      "partition": {
+        "relative_path": "NEARUSDT/1m/1787529600000_1789000135707.jsonl.gz",
+        "sha256": "743e8f1d64cd3457a3ec4088b243e17c5f1ab889af5447d19396ea4090725a96",
+        "rows": 24509,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000135707
+      },
+      "audit": {
+        "unique_rows": 24509,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1789000080000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "3m",
+      "partition": {
+        "relative_path": "NEARUSDT/3m/1787529600000_1789000015707.jsonl.gz",
+        "sha256": "52ef34f03809de72a3d0ce1a0356b0a44ef832a961c66ad3240e7717cdadd902",
+        "rows": 8169,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1789000015707
+      },
+      "audit": {
+        "unique_rows": 8169,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999840000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "NEARUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "d7038196a4c4b3d5ea4ab4fea49d71294b8edee308523a568bfcfb42a119f7da",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "15m",
+      "partition": {
+        "relative_path": "NEARUSDT/15m/1787529600000_1788999295707.jsonl.gz",
+        "sha256": "de49c2abdfc42a115d196e7fe07872e3de36c2c277a6971070ed1226dbba7368",
+        "rows": 1633,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999295707
+      },
+      "audit": {
+        "unique_rows": 1633,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788998400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "30m",
+      "partition": {
+        "relative_path": "NEARUSDT/30m/1787529600000_1788998395707.jsonl.gz",
+        "sha256": "8589dfe10e6fad50561902a1070e7e0cdee51c3723596c2068a147740deb90b2",
+        "rows": 816,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788998395707
+      },
+      "audit": {
+        "unique_rows": 816,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788996600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "NEARUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "7d07b1f642fb42841d055cca82ee2c58005ca3110ac3c3d80a9b9754110a5ca8",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "NEARUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "8de11b0f719628896c47378f589a796fe18a58d41e9f91276d43fd84fe593a60",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "6H",
+      "partition": {
+        "relative_path": "NEARUSDT/6H/1787529600000_1788978595707.jsonl.gz",
+        "sha256": "40aec9a816d8e582a1f5313b50ed56929ce28ab321e669adc418053ca8559acc",
+        "rows": 67,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788978595707
+      },
+      "audit": {
+        "unique_rows": 67,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788969600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "12H",
+      "partition": {
+        "relative_path": "NEARUSDT/12H/1787529600000_1788956995707.jsonl.gz",
+        "sha256": "207ccd0fad112dda6fa05923e06d55dd22432fde60c18afd7c822b666aac3eaa",
+        "rows": 33,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788956995707
+      },
+      "audit": {
+        "unique_rows": 33,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787544000000,
+        "last_timestamp_ms": 1788926400000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "market",
+      "symbol": "NEARUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "NEARUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "186d2941a299421ab7fc3e766e0fa82b085a2dad1cb40d00abbf1cf4fbdb0b3c",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BTCUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "BTCUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "11b7527c3dd1a905f9afa08cdcf738872eb76779c948afd5ff593f379ee47af3",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BTCUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "BTCUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "ab72281c02118112e5b551753d53fabf3361c951249148573ef3038edeb60f9f",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BTCUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "BTCUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "e0117f24bef85efea59afe9c8713cfaa90bdc88cfba0291c8b332ffbcfa71ab7",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BTCUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "BTCUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "f8af8bb22658785849df2245e02402504a969191fedeb22bf4245487ff7f68c0",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ETHUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "ETHUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "fc9d7a0d67940ff756f7317abbeefc460aab76377e26a1f27b38b53fd546dd9e",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ETHUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "ETHUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "4d5af07beb36861f2870e44ee812230f234684e7ebe0c880ef7ebe71cb841996",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ETHUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "ETHUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "d8645d4f38cfa38450cc86f4cb1a5af15933ac9842f6fe9332c13167f0ec2a90",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ETHUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "ETHUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "5e1baad167157592ab8ceb9ff8d26bfa6a2c977488d66c06bc71d2e3af84441b",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BNBUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "BNBUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "49d4c79cb690b9271c2ddb94a40cbf21d418a9cd0309d0c05427d0c0196571c2",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BNBUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "BNBUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "4d158c799c8fda8025cb8291bfe321e2a58a8fd7775905a54ec68abb35299be3",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BNBUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "BNBUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "4ff5aa8602f05e64226a4694bc87ecf6f138ab1584c26d46fa1051ecea5b32fd",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "BNBUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "BNBUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "0fe0ebbde17a22c5edf32387cf01243a8a48ee618dac6135bff97fd8dcdd3546",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ADAUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "ADAUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "4b92c7bd606a4172b34422dd660d9d96ca576f67d4a1f30bee08ca3121948532",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ADAUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "ADAUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "3d1a089a34b43800570c2c23e703940a470f611a83c5e935b500c4e41faa6eed",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ADAUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "ADAUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "2b1a426ac10fb52b57fb500aac483b1d2020bf9fc732994e16b8ab0c2fac5e47",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ADAUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "ADAUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "54c9735c119b9cd98d7ad65c7f718ce8b8a8bce3fd88becbb153a43a3a8540cf",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "SOLUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "SOLUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "f6010357cbe53687c61726416941a3ca04ee21ad160cd779ad0eac5ef2ea5ce9",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "SOLUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "SOLUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "2172c50ca6eb7aa51914dbb5e9f3d73f2c9f633992b55effa300f601ba9d6aa5",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "SOLUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "SOLUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "ee02366911ac4d39a8c39dcb3c7b808c34d757d00802967f1d652b6e9c1f5185",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "SOLUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "SOLUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "149436b196ad3f436b971741d1e68bb42f51e767e8a8efde4976d728c79f085a",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOGEUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "DOGEUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "a1fa9af8dc9a882b476877d0cecd349d5d196d4f96b09504dc3f70af62a1ff62",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOGEUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "DOGEUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "8421c308df0cfc75e6e0a773ae76ba3e8dd50d664cb616271da247b3290447d0",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOGEUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "DOGEUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "8437402ad834a082f906e00036cbcbc48dc59d57dd06fa9e0cedb371a1d484a0",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOGEUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "DOGEUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "ca3e07a11dbe725a2d6380ac5eec7bc040d027f55a3d236255d80d5dc06cc967",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "XRPUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "XRPUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "d80efbfa0cf0dac71450a4b5df4bc00396b956b477a1449979b1c3eae8a5f7e8",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "XRPUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "XRPUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "e23201519c4957b1019dd9a6cfcd15a3dba8c0bad75f159e0940b362963a9d4b",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "XRPUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "XRPUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "cef123354bd01dbbeb8854b7c909d29b369f92db93156920e5628c94b278109e",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "XRPUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "XRPUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "8405cfa90385a06ccfef5941690c594cf9560848ae801079cd81eb2c7ce51c80",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOTUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "DOTUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "20904b21bb386ce5b58e5eced7429c28f0592ef45a2fc97567fe0bea43efee47",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOTUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "DOTUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "53d02bcfd07be2fed693811d89035a6b5437f9dd4fcc057f89bf345b78ab2d47",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOTUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "DOTUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "f1eae8383ea432901735b64db00fd8456a005f62d6f026a5ef7be6f40444cc69",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "DOTUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "DOTUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "b0a749d94074246850d594b2677f3c2b204031ac5417bef2ff4ac695b7a22188",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LTCUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "LTCUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "bd466146e8cb27846ca822d13cf11753a75bbc5c3a3f91f60a22708345bb8b61",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LTCUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "LTCUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "b1727775555cbd289ed7f0069b2f7207176d46b261f8af0d2cc2f1f01a6b5b58",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LTCUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "LTCUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "59ad70fb4b067bbc719170d142e8681d1b5e272e6ffe22ea79a68c3376033274",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LTCUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "LTCUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "ae62b6735d5bbbc2e6b9ca12ee29868bdee7f39294504d881cb7274952c4117b",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LINKUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "LINKUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "bfbd78e2366523a62aa2c417df2c0fdf1b8ca95c83386f8fb19fdcbc7bc1d682",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LINKUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "LINKUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "5dc6af3ac9d20f5309fcb422f78dfd53b73378ebbe91f2021755d11026619fc9",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LINKUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "LINKUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "a4f6d78d3ddd66bb020ac6ec27723b92fe643fed23e0cf2796642acf6c6f27f9",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "LINKUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "LINKUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "fe5b42fac78d3e0149a75de19a88507bb09870e2425671c2fffda1d854e8051d",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "AVAXUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "AVAXUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "137a37338b59e5ab9e480b59a689898f5825a75d9ccdc655b61a8a69a6024659",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "AVAXUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "AVAXUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "c192520406c4dcaace308dbb2e50ee4a04831ad808e4c6cd6efdba5bf512d9dc",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "AVAXUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "AVAXUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "2565e194b7d8a1552ef903b0bfab26b7972e4eae39c932fcf8650d840fdabc7e",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "AVAXUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "AVAXUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "0df27cf51163fca6b0f72b929a9617105135cde687a0fd1933b9d4b9435af797",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "UNIUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "UNIUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "1129155cfc5a483f5cdbc313e6d8734aa055a4906a81598fc746e123a2c65230",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "UNIUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "UNIUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "64280fb7a5906bc7fb52ac4d15659518d48becf2dd43e4d8446132feab19c7ce",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "UNIUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "UNIUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "f34abe31a9132a18cca8c9523200ff26b8ec6da5e62559dbe8a8b01493643152",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "UNIUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "UNIUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "6551d6a3096b11ba72c629cbbd966b1d6b4c070778080d0e285e4d351174b669",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ATOMUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "ATOMUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "ae26d0a5697e05a541f375339e922c789ddb591abb0cb00611cc391215e5052c",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ATOMUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "ATOMUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "fa98f4052f281d1753188f3420474dbd39847c3299e03ce79114886529ec28bb",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ATOMUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "ATOMUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "554d2b559085bda7a7a04af55d8a600fe9c386ca4aa23551de4a47da1e84e9b8",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "ATOMUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "ATOMUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "9ab7624d5eb8b4b9902bf50425af21abbcb0426bed1657a6cfdcdd93efb96ad9",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "NEARUSDT",
+      "interval": "5m",
+      "partition": {
+        "relative_path": "NEARUSDT/5m/1787529600000_1788999895707.jsonl.gz",
+        "sha256": "e275b14b14ecdd45878ad9833363a8ba2f3b541359c82cb9372127ef18ef75c5",
+        "rows": 4901,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788999895707
+      },
+      "audit": {
+        "unique_rows": 4901,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788999600000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "NEARUSDT",
+      "interval": "1H",
+      "partition": {
+        "relative_path": "NEARUSDT/1H/1787529600000_1788996595707.jsonl.gz",
+        "sha256": "b1a9288fd3741d3bb0e56a825a05f0011d428bd7084395932167f3198fc7b816",
+        "rows": 408,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788996595707
+      },
+      "audit": {
+        "unique_rows": 408,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788994800000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "NEARUSDT",
+      "interval": "4H",
+      "partition": {
+        "relative_path": "NEARUSDT/4H/1787529600000_1788985795707.jsonl.gz",
+        "sha256": "4168fdf50704e2b585071bafe897edca4370838aa9fa1cdb866bfc454e0b5abe",
+        "rows": 102,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788985795707
+      },
+      "audit": {
+        "unique_rows": 102,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787529600000,
+        "last_timestamp_ms": 1788984000000
+      },
+      "boundary_complete": true
+    },
+    {
+      "kind": "mark",
+      "symbol": "NEARUSDT",
+      "interval": "1D",
+      "partition": {
+        "relative_path": "NEARUSDT/1D/1787529600000_1788913795707.jsonl.gz",
+        "sha256": "926d1f370809983fccdaf1f93dbad69c45d8ce8869d6222465fe34f66a1de28a",
+        "rows": 16,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000,
+        "window_start_ms": 1787529600000,
+        "window_end_ms": 1788913795707
+      },
+      "audit": {
+        "unique_rows": 16,
+        "duplicate_rows": 0,
+        "missing_intervals": 0,
+        "invalid_ohlc_rows": 0,
+        "hash_failures": 0,
+        "first_timestamp_ms": 1787587200000,
+        "last_timestamp_ms": 1788883200000
+      },
+      "boundary_complete": true
+    }
+  ],
+  "complete": true,
+  "live_strategy_promotable": false,
+  "limitations": [
+    "Recent update only; does not fill every older archive or delisted universe",
+    "Mark candles are not historical margin tiers, funding settlements, or orderbook fills",
+    "Collected after strategy research; never silently appended to the old sealed evaluation"
+  ]
+}

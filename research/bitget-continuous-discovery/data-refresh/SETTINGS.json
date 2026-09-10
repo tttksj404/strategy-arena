@@ -1,0 +1,41 @@
+{
+  "start_ms": 1787529600000,
+  "snapshot_ms": 1789000195707,
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "ADAUSDT",
+    "SOLUSDT",
+    "DOGEUSDT",
+    "XRPUSDT",
+    "DOTUSDT",
+    "LTCUSDT",
+    "LINKUSDT",
+    "AVAXUSDT",
+    "UNIUSDT",
+    "ATOMUSDT",
+    "NEARUSDT"
+  ],
+  "intervals": [
+    "1m",
+    "3m",
+    "5m",
+    "15m",
+    "30m",
+    "1H",
+    "4H",
+    "6H",
+    "12H",
+    "1D"
+  ],
+  "mark_intervals": [
+    "5m",
+    "1H",
+    "4H",
+    "1D"
+  ],
+  "credentials_read_or_sent": false,
+  "private_endpoints_used": false,
+  "source": "https://api.bitget.com/api/v3/market/candles"
+}

@@ -1,0 +1,10 @@
+{
+  "discovery_reports_equal": true,
+  "control_reports_equal": true,
+  "compared_npz_arrays": 32,
+  "original_lock_byte_hash_matched": false,
+  "corrected_lock_byte_hash_matches": true,
+  "original_discovery_sha256": "d51e04b049c972ff0d10d5955656e3a1adf1284f69c7d91761cfe979ffc7bbe4",
+  "recheck_discovery_sha256": "d51e04b049c972ff0d10d5955656e3a1adf1284f69c7d91761cfe979ffc7bbe4",
+  "recheck_control_sha256": "3e392ce9ef78804790c2b42de97dd5cc6d3394966565b1918a917b1ee35a314e"
+}

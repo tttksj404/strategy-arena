@@ -1,0 +1,11 @@
+{
+  "file":"output/pdf/strategy-arena-top-return-candidates-ko.pdf",
+  "sha256":"d3044964a8e90c34cadf57d4c6a4a17da3ec3c0478fdb17b6297932e4ec67f1e",
+  "pages":16,
+  "minimum_extracted_characters_per_page":229,
+  "replacement_characters":0,
+  "visual_review":"Main reviewed the full 16-page montage and the corrected page 8 at full-page size; prior independent review checked fonts, metadata, links and report-derived values.",
+  "corrected_page_8":"A synthetic path now crosses its chosen barrier before later recovery. Barrier 82 is explicitly illustrative, not an exchange liquidation formula.",
+  "regression_tests":"2 passed in test_generate_top_strategy_pdf.py after replacement-label and path-crossing repairs",
+  "live_trading_approval":false
+}

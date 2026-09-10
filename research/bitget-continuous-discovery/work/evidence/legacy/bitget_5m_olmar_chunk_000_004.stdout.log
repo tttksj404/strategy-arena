@@ -1,0 +1,5 @@
+CHUNK_PROGRESS configurations=1/48
+CHUNK_PROGRESS configurations=2/48
+CHUNK_PROGRESS configurations=3/48
+CHUNK_PROGRESS configurations=4/48
+CHUNK_DONE report=bitget_5m_olmar_chunk_000_004.json

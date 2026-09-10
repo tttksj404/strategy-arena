@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "source": "Bitget public V3 market history",
+  "endpoint": "https://api.bitget.com/api/v3/market/history-candles",
+  "category": "USDT-FUTURES",
+  "created_at": "2026-08-24T05:33:31.156841+00:00",
+  "start_ms": 1514764800000,
+  "snapshot_ms": 1787549413340,
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "ADAUSDT",
+    "SOLUSDT",
+    "DOGEUSDT",
+    "XRPUSDT",
+    "DOTUSDT",
+    "LTCUSDT",
+    "LINKUSDT",
+    "AVAXUSDT",
+    "UNIUSDT",
+    "ATOMUSDT",
+    "NEARUSDT"
+  ],
+  "intervals": [
+    "1m",
+    "3m",
+    "5m",
+    "15m",
+    "30m",
+    "1H",
+    "4H",
+    "6H",
+    "12H"
+  ],
+  "complete": false,
+  "partitions": [
+    {
+      "relative_path": "BTCUSDT/1m/1514764800000_1522540740000.jsonl.gz",
+      "sha256": "636e1b403486c4c4c286c9c75a8d88435253e6c733031471010db32caf5c1de4",
+      "rows": 0,
+      "missing_intervals": 0,
+      "first_timestamp_ms": null,
+      "last_timestamp_ms": null,
+      "window_start_ms": 1514764800000,
+      "window_end_ms": 1522540740000
+    },
+    {
+      "relative_path": "BTCUSDT/1m/1522540800000_1530316740000.jsonl.gz",
+      "sha256": "9f0c1e33191473b9db5f8b9bfc7eec32596d2f99ede661774117bc11cd74831a",
+      "rows": 0,
+      "missing_intervals": 0,
+      "first_timestamp_ms": null,
+      "last_timestamp_ms": null,
+      "window_start_ms": 1522540800000,
+      "window_end_ms": 1530316740000
+    },
+    {
+      "relative_path": "BTCUSDT/1m/1530316800000_1538092740000.jsonl.gz",
+      "sha256": "4ad3450b8837b179e69c30e8f14a580981408052d20edb6ce08a3452c81709d1",
+      "rows": 0,
+      "missing_intervals": 0,
+      "first_timestamp_ms": null,
+      "last_timestamp_ms": null,
+      "window_start_ms": 1530316800000,
+      "window_end_ms": 1538092740000
+    },
+    {
+      "relative_path": "BTCUSDT/1m/1538092800000_1545868740000.jsonl.gz",
+      "sha256": "049bb9132d1a0d4ceb66978b686c10df19ef59ae889499ab1bc570ca91fcd142",
+      "rows": 0,
+      "missing_intervals": 0,
+      "first_timestamp_ms": null,
+      "last_timestamp_ms": null,
+      "window_start_ms": 1538092800000,
+      "window_end_ms": 1545868740000
+    },
+    {
+      "relative_path": "BTCUSDT/1m/1545868800000_1553644740000.jsonl.gz",
+      "sha256": "88bfc03df9650755a2aeb974129c17fd774fd91516c34499b4c0578ed65e3888",
+      "rows": 0,
+      "missing_intervals": 0,
+      "first_timestamp_ms": null,
+      "last_timestamp_ms": null,
+      "window_start_ms": 1545868800000,
+      "window_end_ms": 1553644740000
+    },
+    {
+      "relative_path": "BTCUSDT/1m/1553644800000_1561420740000.jsonl.gz",
+      "sha256": "68084047c4fe54e2ea9afad27055a2266924abadc13eac308eb512be04481abb",
+      "rows": 0,
+      "missing_intervals": 0,
+      "first_timestamp_ms": null,
+      "last_timestamp_ms": null,
+      "window_start_ms": 1553644800000,
+      "window_end_ms": 1561420740000
+    }
+  ]
+}

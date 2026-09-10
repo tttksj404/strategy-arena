@@ -1,0 +1,909 @@
+{
+  "observed_at": "2026-08-24T01:43:05.494258+00:00",
+  "mode": "public-api-paper-only",
+  "results": [
+    {
+      "interval": "1m",
+      "observation_hours": 719.9666666666667,
+      "oos_hours": 287.71666666666664,
+      "regime_on": false,
+      "leverage": 0.0,
+      "trend_fraction": -0.0059731975244444735,
+      "breadth_fraction": 0.0,
+      "stress_distance": 0.013466495893623977,
+      "train": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "test": {
+        "net_return": -0.9999999999846543,
+        "max_drawdown": 0.9999999999845774
+      },
+      "simulated_liquidations": 0,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": -0.2
+        }
+      ],
+      "gate_reasons": [
+        "regime_off",
+        "spread",
+        "oos_not_positive",
+        "oos_drawdown"
+      ]
+    },
+    {
+      "interval": "3m",
+      "observation_hours": 719.9,
+      "oos_hours": 287.15,
+      "regime_on": false,
+      "leverage": 0.0,
+      "trend_fraction": -0.009690417504952586,
+      "breadth_fraction": 0.0,
+      "stress_distance": 0.024056100790186604,
+      "train": {
+        "net_return": -0.9999969219044845,
+        "max_drawdown": 0.9999969219044845
+      },
+      "test": {
+        "net_return": -0.9997305314881807,
+        "max_drawdown": 0.9997305314881807
+      },
+      "simulated_liquidations": 0,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": -0.2
+        }
+      ],
+      "gate_reasons": [
+        "regime_off",
+        "spread",
+        "oos_not_positive",
+        "oos_drawdown"
+      ]
+    },
+    {
+      "interval": "5m",
+      "observation_hours": 719.8333333333334,
+      "oos_hours": 286.5833333333333,
+      "regime_on": false,
+      "leverage": 0.0,
+      "trend_fraction": -0.01026808384438005,
+      "breadth_fraction": 0.07692307692307693,
+      "stress_distance": 0.029741644799809473,
+      "train": {
+        "net_return": -0.9992004408459512,
+        "max_drawdown": 0.9992095774594757
+      },
+      "test": {
+        "net_return": -0.9948760174576586,
+        "max_drawdown": 0.9949084488709284
+      },
+      "simulated_liquidations": 0,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": -0.2
+        }
+      ],
+      "gate_reasons": [
+        "regime_off",
+        "liquidity",
+        "oos_not_positive",
+        "oos_drawdown"
+      ]
+    },
+    {
+      "interval": "15m",
+      "observation_hours": 743.5,
+      "oos_hours": 275.5,
+      "regime_on": false,
+      "leverage": 0.0,
+      "trend_fraction": -0.007725188979118225,
+      "breadth_fraction": 0.07692307692307693,
+      "stress_distance": 0.03663675401641603,
+      "train": {
+        "net_return": -0.8288368019699839,
+        "max_drawdown": 0.8288368019699839
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": -0.2
+        }
+      ],
+      "gate_reasons": [
+        "regime_off",
+        "spread",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "30m",
+      "observation_hours": 743.0,
+      "oos_hours": 271.5,
+      "regime_on": false,
+      "leverage": 0.0,
+      "trend_fraction": -0.004873380083601608,
+      "breadth_fraction": 0.23076923076923078,
+      "stress_distance": 0.04136749692810376,
+      "train": {
+        "net_return": -0.5465759657686056,
+        "max_drawdown": 0.5580390197472509
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ATOMUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": -0.2
+        }
+      ],
+      "gate_reasons": [
+        "regime_off",
+        "spread",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "1H",
+      "observation_hours": 998.0,
+      "oos_hours": 365.0,
+      "regime_on": true,
+      "leverage": 0.35838933055199484,
+      "trend_fraction": 0.04657871094320165,
+      "breadth_fraction": 1.0,
+      "stress_distance": 0.060549914037667574,
+      "train": {
+        "net_return": -0.31350331838514645,
+        "max_drawdown": 0.36885787955089366
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": -0.2
+        }
+      ],
+      "gate_reasons": [
+        "spread",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "2H",
+      "observation_hours": 2876.0,
+      "oos_hours": 1118.0,
+      "regime_on": true,
+      "leverage": 2.805259791195958,
+      "trend_fraction": 0.003472320947761176,
+      "breadth_fraction": 0.6153846153846154,
+      "stress_distance": 0.10095334655340565,
+      "train": {
+        "net_return": -0.3629182424795673,
+        "max_drawdown": 0.5144812072531701
+      },
+      "test": {
+        "net_return": -0.25910315658733807,
+        "max_drawdown": 0.35075973622352585
+      },
+      "simulated_liquidations": 0,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "liquidity",
+        "oos_not_positive",
+        "oos_drawdown"
+      ]
+    },
+    {
+      "interval": "4H",
+      "observation_hours": 5752.0,
+      "oos_hours": 2236.0,
+      "regime_on": true,
+      "leverage": 2.6123735567463773,
+      "trend_fraction": 0.12040731084236733,
+      "breadth_fraction": 1.0,
+      "stress_distance": 0.14381457774369105,
+      "train": {
+        "net_return": -0.7691439864025704,
+        "max_drawdown": 0.8387982867459702
+      },
+      "test": {
+        "net_return": -0.148046598466135,
+        "max_drawdown": 0.28821383563193803
+      },
+      "simulated_liquidations": 0,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "liquidity",
+        "oos_not_positive",
+        "oos_drawdown"
+      ]
+    },
+    {
+      "interval": "6H",
+      "observation_hours": 8628.0,
+      "oos_hours": 3348.0,
+      "regime_on": true,
+      "leverage": 2.0187649433914663,
+      "trend_fraction": 0.27030179680906197,
+      "breadth_fraction": 1.0,
+      "stress_distance": 0.1766282921991376,
+      "train": {
+        "net_return": -0.6060896167311336,
+        "max_drawdown": 0.7114816316085877
+      },
+      "test": {
+        "net_return": -0.6684223404155276,
+        "max_drawdown": 0.7134396529864857
+      },
+      "simulated_liquidations": 0,
+      "legs": [
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "liquidity",
+        "oos_not_positive",
+        "oos_drawdown"
+      ]
+    },
+    {
+      "interval": "12H",
+      "observation_hours": 8736.0,
+      "oos_hours": 252.0,
+      "regime_on": true,
+      "leverage": 0.3514014932213684,
+      "trend_fraction": 0.24292362813949953,
+      "breadth_fraction": 1.0,
+      "stress_distance": 0.13419269428352681,
+      "train": {
+        "net_return": 0.06059696183161112,
+        "max_drawdown": 0.016579558487620827
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "spread",
+        "oos_observations_short",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "1D",
+      "observation_hours": 17472.0,
+      "oos_hours": 336.0,
+      "regime_on": true,
+      "leverage": 0.36182271315379666,
+      "trend_fraction": 0.2273569048276538,
+      "breadth_fraction": 1.0,
+      "stress_distance": 0.15941168655296603,
+      "train": {
+        "net_return": -0.17237239655776748,
+        "max_drawdown": 0.20138063332912048
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "XRPUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "liquidity",
+        "oos_observations_short",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "3D",
+      "observation_hours": 8640.0,
+      "oos_hours": 2232.0,
+      "regime_on": true,
+      "leverage": 0.3639313918066126,
+      "trend_fraction": 0.24357052906048682,
+      "breadth_fraction": 0.8461538461538461,
+      "stress_distance": 0.2959971507629419,
+      "train": {
+        "net_return": -0.27472652826290866,
+        "max_drawdown": 0.3556520507723865
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ATOMUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LTCUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "spread",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "1W",
+      "observation_hours": 21336.0,
+      "oos_hours": 1848.0,
+      "regime_on": true,
+      "leverage": 0.36817379815915846,
+      "trend_fraction": 0.1392930663796479,
+      "breadth_fraction": 0.8461538461538461,
+      "stress_distance": 0.5303487814503774,
+      "train": {
+        "net_return": 0.11286289744016775,
+        "max_drawdown": 0.07164348940778109
+      },
+      "test": {
+        "net_return": -1.0,
+        "max_drawdown": 1.0
+      },
+      "simulated_liquidations": 1,
+      "legs": [
+        {
+          "symbol": "ADAUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "BNBUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "DOTUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "LINKUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "NEARUSDT",
+          "weight": 0.2
+        },
+        {
+          "symbol": "SOLUSDT",
+          "weight": -0.2
+        },
+        {
+          "symbol": "UNIUSDT",
+          "weight": 0.2
+        }
+      ],
+      "gate_reasons": [
+        "stress_buffer",
+        "spread",
+        "oos_observations_short",
+        "oos_not_positive",
+        "oos_drawdown",
+        "simulated_liquidation"
+      ]
+    },
+    {
+      "interval": "1M",
+      "observation_hours": 0.0,
+      "oos_hours": 0.0,
+      "regime_on": false,
+      "leverage": 0.0,
+      "trend_fraction": 0.0,
+      "breadth_fraction": 0.0,
+      "stress_distance": 0.0,
+      "train": {
+        "net_return": 0.0,
+        "max_drawdown": 0.0
+      },
+      "test": {
+        "net_return": 0.0,
+        "max_drawdown": 0.0
+      },
+      "simulated_liquidations": 0,
+      "legs": [],
+      "gate_reasons": [
+        "data_insufficient"
+      ]
+    }
+  ]
+}
