@@ -1,0 +1,10 @@
+SEARCH_PROGRESS configurations=1000/7488
+SEARCH_PROGRESS configurations=2000/7488
+SEARCH_PROGRESS configurations=3000/7488
+SEARCH_PROGRESS configurations=4000/7488
+SEARCH_PROGRESS configurations=5000/7488
+SEARCH_PROGRESS configurations=6000/7488
+SEARCH_PROGRESS configurations=7000/7488
+SEARCH_PROGRESS configurations=7488/7488
+SEARCH_DONE report=bitget_4h_pair_regime_search_report.json
+PBO=0.300000

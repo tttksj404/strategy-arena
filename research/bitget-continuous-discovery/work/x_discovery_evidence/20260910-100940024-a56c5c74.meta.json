@@ -1,0 +1,25 @@
+﻿{
+    "schema":  "token-quality-artifact/v1",
+    "id":  "20260910-100940024-a56c5c74",
+    "created_at":  "2026-09-10T01:09:40.0240935Z",
+    "shell":  "PowerShell",
+    "working_directory":  "C:\\Users\\SSAFY\\Desktop\\2학기\\strategy-arena-crypto\\research\\bitget-continuous-discovery",
+    "command_sha256":  "ea119becfbd3e8d779a9a943c36b3b6e8540b9739545a6c977bb93b90f283392",
+    "exit_code":  1,
+    "duration_ms":  15422,
+    "expect_pattern_sha256":  "b81e3fce744da357347edebcb9ad0f3b9b20dd85c5f8bd5d2f27bcce344f2614",
+    "expect_match_count":  0,
+    "requires_inspection":  true,
+    "inspection_reasons":  [
+                               "nonzero_exit",
+                               "negative_signal_present",
+                               "expected_signal_missing"
+                           ],
+    "manual_inspection_required":  true,
+    "manual_inspection_reasons":  [
+                                      "risk_signal_overflow"
+                                  ],
+    "artifact_path":  "C:\\Users\\SSAFY\\Documents\\Codex\\2026-08-24\\prior-conversation-with-codex-conversation-role\\work\\x_discovery_evidence\\20260910-100940024-a56c5c74.log",
+    "artifact_bytes":  16230,
+    "artifact_sha256":  "26cdcd0bf9c063256e2715d9267056f8075c725048c9c14c9a8fdc6b67082ed9"
+}

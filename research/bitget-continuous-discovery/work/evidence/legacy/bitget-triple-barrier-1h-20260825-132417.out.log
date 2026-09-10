@@ -1,0 +1,5 @@
+SEARCH_PROGRESS configurations=25/64
+SEARCH_PROGRESS configurations=50/64
+SEARCH_PROGRESS configurations=64/64
+SEARCH_DONE report=bitget_1h_triple_barrier_search_report.json
+PBO=0.614286 WINNERS=0

@@ -1,0 +1,20 @@
+{
+  "retrieved_date": "2026-09-10",
+  "identity_crosscheck": "X official oEmbed author, post id and publication date",
+  "article_retrieval": "Public FxTwitter article response; source text and entity-map prompts inspected",
+  "full_sources_published": false,
+  "video_claims_verified": false,
+  "sources": [
+    {"url":"https://x.com/RohOnChain/status/2097303933081489605","bytes":67646,"sha256":"9c91d5306dd6ffd09b3c6b5b8730852402da9704400bae42ecfb5215684738e7"},
+    {"url":"https://x.com/antpalkin/status/2085431604906766385","bytes":24719,"sha256":"beb51bc4bd99163a2193fece98ae180ed5706129ab237c36be6eab09fc3ec277"},
+    {"url":"https://x.com/0xCristal/status/2093438799602991285","bytes":30258,"sha256":"c99cac3e7f006f494ba337e864dc0b7bd519bbe9233f8e98e7df6b41b82b8d17"},
+    {"url":"https://x.com/x_insider4/status/2097713111796973960","bytes":39306,"sha256":"36a955262cfcb70b871299551f73548e62a6ac45d44b2074985247bb32094dda"},
+    {"url":"https://x.com/savipww/status/2095171104004575708","bytes":36133,"sha256":"bb2ff4830c16f2c35e69e6a215b107eee32a2a36c3052a20218dcb0e34b5f45d"}
+  ],
+  "public_taker_probe": {
+    "url":"https://api.bitget.com/api/v2/mix/market/taker-buy-sell?symbol=SOLUSDT&period=5m",
+    "sha256":"dfb466fe1892407be21e047169bf82613159357c23f826a0d585cb3c6ae323a1",
+    "rows":30,
+    "usable_as_multi_year_institutional_flow":false
+  }
+}

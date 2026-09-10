@@ -1,0 +1,1502 @@
+{
+  "observed_at": "2026-08-24T03:50:39.142590Z",
+  "mode": "public-api-paper-only",
+  "source_endpoints": [
+    "/api/v2/mix/market/candles",
+    "/api/v2/mix/market/history-fund-rate",
+    "/api/v2/mix/market/tickers"
+  ],
+  "short_horizon_nonpromotable": true,
+  "intervals": [
+    {
+      "interval": "1H",
+      "common_bars": 999,
+      "observation_days": 41.625,
+      "funding_event_counts": {
+        "ETHUSDT": 270,
+        "BNBUSDT": 270,
+        "ADAUSDT": 270,
+        "SOLUSDT": 270,
+        "DOGEUSDT": 270,
+        "XRPUSDT": 270,
+        "DOTUSDT": 270,
+        "LTCUSDT": 270,
+        "LINKUSDT": 270,
+        "AVAXUSDT": 270,
+        "UNIUSDT": 270,
+        "ATOMUSDT": 270,
+        "NEARUSDT": 270
+      },
+      "configurations": 648,
+      "validation_eligible": 12,
+      "validation_winners": [
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.0488147872265976,
+            "max_drawdown": 0.017877759914752933,
+            "sharpe": 9.37302521406904,
+            "positive_blocks": 3,
+            "observations": 250
+          },
+          "locked_test": {
+            "net_return": -0.025732479071241876,
+            "max_drawdown": 0.030723880316895547,
+            "sharpe": -6.378075080948731,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "locked_test_stress": {
+            "net_return": -0.0306887681412904,
+            "max_drawdown": 0.03536601213003232,
+            "sharpe": -7.645329361327028,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.09900080613008067,
+            "max_drawdown": 0.035571051241278795,
+            "sharpe": 9.37302521406904,
+            "positive_blocks": 3,
+            "observations": 250
+          },
+          "locked_test": {
+            "net_return": -0.05135025213585809,
+            "max_drawdown": 0.061030400641866156,
+            "sharpe": -6.378075080948731,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "locked_test_stress": {
+            "net_return": -0.060978041343844436,
+            "max_drawdown": 0.07000435491358104,
+            "sharpe": -7.645329361327028,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.15053934387581824,
+            "max_drawdown": 0.05307856819166512,
+            "sharpe": 9.37302521406904,
+            "positive_blocks": 3,
+            "observations": 250
+          },
+          "locked_test": {
+            "net_return": -0.07683099527196524,
+            "max_drawdown": 0.09090298513521511,
+            "sharpe": -6.378075080948729,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "locked_test_stress": {
+            "net_return": -0.09084975037810383,
+            "max_drawdown": 0.10390677083244615,
+            "sharpe": -7.645329361327027,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.2575807051489418,
+            "max_drawdown": 0.08753152924266638,
+            "sharpe": 9.373025214069038,
+            "positive_blocks": 3,
+            "observations": 250
+          },
+          "locked_test": {
+            "net_return": -0.12729547868788582,
+            "max_drawdown": 0.1492851701264809,
+            "sharpe": -6.378075080948731,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "locked_test_stress": {
+            "net_return": -0.14927350748179213,
+            "max_drawdown": 0.16947697117510552,
+            "sharpe": -7.645329361327027,
+            "positive_blocks": 0,
+            "observations": 250
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        }
+      ]
+    },
+    {
+      "interval": "2H",
+      "common_bars": 1076,
+      "observation_days": 89.66666666666667,
+      "funding_event_counts": {
+        "ETHUSDT": 270,
+        "BNBUSDT": 270,
+        "ADAUSDT": 270,
+        "SOLUSDT": 270,
+        "DOGEUSDT": 270,
+        "XRPUSDT": 270,
+        "DOTUSDT": 270,
+        "LTCUSDT": 270,
+        "LINKUSDT": 270,
+        "AVAXUSDT": 270,
+        "UNIUSDT": 270,
+        "ATOMUSDT": 270,
+        "NEARUSDT": 270
+      },
+      "configurations": 648,
+      "validation_eligible": 8,
+      "validation_winners": [
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.013549047000143588,
+            "max_drawdown": 0.013013407628044149,
+            "sharpe": 3.2226501436741755,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": -0.0276586830440938,
+            "max_drawdown": 0.06027450308489146,
+            "sharpe": -3.9601243288307684,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": -0.032843230341526364,
+            "max_drawdown": 0.06377543164021471,
+            "sharpe": -4.713412990856898,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.013549047000143588,
+            "max_drawdown": 0.013013407628044149,
+            "sharpe": 3.2226501436741755,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": -0.0276586830440938,
+            "max_drawdown": 0.06027450308489146,
+            "sharpe": -3.9601243288307684,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": -0.032843230341526364,
+            "max_drawdown": 0.06377543164021471,
+            "sharpe": -4.713412990856898,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.013549047000143588,
+            "max_drawdown": 0.013013407628044149,
+            "sharpe": 3.2226501436741755,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": -0.0276586830440938,
+            "max_drawdown": 0.06027450308489146,
+            "sharpe": -3.9601243288307684,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": -0.032843230341526364,
+            "max_drawdown": 0.06377543164021471,
+            "sharpe": -4.713412990856898,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.013549047000143588,
+            "max_drawdown": 0.013013407628044149,
+            "sharpe": 3.2226501436741755,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": -0.0276586830440938,
+            "max_drawdown": 0.06027450308489146,
+            "sharpe": -3.9601243288307684,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": -0.032843230341526364,
+            "max_drawdown": 0.06377543164021471,
+            "sharpe": -4.713412990856898,
+            "positive_blocks": 1,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.03794668418995384,
+            "max_drawdown": 0.006622055202880839,
+            "sharpe": 9.192398615902881,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": 0.017847456629491276,
+            "max_drawdown": 0.025684749166921872,
+            "sharpe": 2.0655119664919557,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": 0.013297694182459852,
+            "max_drawdown": 0.02770144731073587,
+            "sharpe": 1.5564441789465098,
+            "positive_blocks": 2,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.03794668418995384,
+            "max_drawdown": 0.006622055202880839,
+            "sharpe": 9.192398615902881,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": 0.017847456629491276,
+            "max_drawdown": 0.025684749166921872,
+            "sharpe": 2.0655119664919557,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": 0.013297694182459852,
+            "max_drawdown": 0.02770144731073587,
+            "sharpe": 1.5564441789465098,
+            "positive_blocks": 2,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.03794668418995384,
+            "max_drawdown": 0.006622055202880839,
+            "sharpe": 9.192398615902881,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": 0.017847456629491276,
+            "max_drawdown": 0.025684749166921872,
+            "sharpe": 2.0655119664919557,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": 0.013297694182459852,
+            "max_drawdown": 0.02770144731073587,
+            "sharpe": 1.5564441789465098,
+            "positive_blocks": 2,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.03794668418995384,
+            "max_drawdown": 0.006622055202880839,
+            "sharpe": 9.192398615902881,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test": {
+            "net_return": 0.017847456629491276,
+            "max_drawdown": 0.025684749166921872,
+            "sharpe": 2.0655119664919557,
+            "positive_blocks": 3,
+            "observations": 269
+          },
+          "locked_test_stress": {
+            "net_return": 0.013297694182459852,
+            "max_drawdown": 0.02770144731073587,
+            "sharpe": 1.5564441789465098,
+            "positive_blocks": 2,
+            "observations": 269
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        }
+      ]
+    },
+    {
+      "interval": "4H",
+      "common_bars": 537,
+      "observation_days": 89.5,
+      "funding_event_counts": {
+        "ETHUSDT": 270,
+        "BNBUSDT": 270,
+        "ADAUSDT": 270,
+        "SOLUSDT": 270,
+        "DOGEUSDT": 270,
+        "XRPUSDT": 270,
+        "DOTUSDT": 270,
+        "LTCUSDT": 270,
+        "LINKUSDT": 270,
+        "AVAXUSDT": 270,
+        "UNIUSDT": 270,
+        "ATOMUSDT": 270,
+        "NEARUSDT": 270
+      },
+      "configurations": 648,
+      "validation_eligible": 8,
+      "validation_winners": [
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=2|reb=1|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.023495344452534983,
+            "max_drawdown": 0.011168491953618576,
+            "sharpe": 6.612620365722451,
+            "positive_blocks": 3,
+            "observations": 134
+          },
+          "locked_test": {
+            "net_return": 0.025931864444829422,
+            "max_drawdown": 0.0228921765007003,
+            "sharpe": 3.1059012747146113,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "locked_test_stress": {
+            "net_return": 0.0221742592599119,
+            "max_drawdown": 0.023388093754672767,
+            "sharpe": 2.6607578664919287,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=2|reb=1|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.023495344452534983,
+            "max_drawdown": 0.011168491953618576,
+            "sharpe": 6.612620365722451,
+            "positive_blocks": 3,
+            "observations": 134
+          },
+          "locked_test": {
+            "net_return": 0.03635527607856193,
+            "max_drawdown": 0.022892176500700745,
+            "sharpe": 3.7743526855292497,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "locked_test_stress": {
+            "net_return": 0.03182577399501274,
+            "max_drawdown": 0.02338809375467288,
+            "sharpe": 3.3100563291140515,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=2|reb=1|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.023495344452534983,
+            "max_drawdown": 0.011168491953618576,
+            "sharpe": 6.612620365722451,
+            "positive_blocks": 3,
+            "observations": 134
+          },
+          "locked_test": {
+            "net_return": 0.03635527607856193,
+            "max_drawdown": 0.022892176500700745,
+            "sharpe": 3.7743526855292497,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "locked_test_stress": {
+            "net_return": 0.03182577399501274,
+            "max_drawdown": 0.02338809375467288,
+            "sharpe": 3.3100563291140515,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=2|reb=1|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.023495344452534983,
+            "max_drawdown": 0.011168491953618576,
+            "sharpe": 6.612620365722451,
+            "positive_blocks": 3,
+            "observations": 134
+          },
+          "locked_test": {
+            "net_return": 0.03635527607856193,
+            "max_drawdown": 0.022892176500700745,
+            "sharpe": 3.7743526855292497,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "locked_test_stress": {
+            "net_return": 0.03182577399501274,
+            "max_drawdown": 0.02338809375467288,
+            "sharpe": 3.3100563291140515,
+            "positive_blocks": 3,
+            "observations": 135
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        }
+      ]
+    },
+    {
+      "interval": "6H",
+      "common_bars": 358,
+      "observation_days": 89.5,
+      "funding_event_counts": {
+        "ETHUSDT": 270,
+        "BNBUSDT": 270,
+        "ADAUSDT": 270,
+        "SOLUSDT": 270,
+        "DOGEUSDT": 270,
+        "XRPUSDT": 270,
+        "DOTUSDT": 270,
+        "LTCUSDT": 270,
+        "LINKUSDT": 270,
+        "AVAXUSDT": 270,
+        "UNIUSDT": 270,
+        "ATOMUSDT": 270,
+        "NEARUSDT": 270
+      },
+      "configurations": 648,
+      "validation_eligible": 16,
+      "validation_winners": [
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.021545245572677896,
+            "max_drawdown": 0.014699770646386279,
+            "sharpe": 3.651981106461948,
+            "positive_blocks": 3,
+            "observations": 89
+          },
+          "locked_test": {
+            "net_return": 0.023372574073797114,
+            "max_drawdown": 0.025128513709245737,
+            "sharpe": 2.687242507539898,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "locked_test_stress": {
+            "net_return": 0.0211331771156289,
+            "max_drawdown": 0.026403417918608674,
+            "sharpe": 2.4448775635738778,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.021545245572677896,
+            "max_drawdown": 0.014699770646386279,
+            "sharpe": 3.651981106461948,
+            "positive_blocks": 3,
+            "observations": 89
+          },
+          "locked_test": {
+            "net_return": 0.023372574073797114,
+            "max_drawdown": 0.025128513709245737,
+            "sharpe": 2.687242507539898,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "locked_test_stress": {
+            "net_return": 0.0211331771156289,
+            "max_drawdown": 0.026403417918608674,
+            "sharpe": 2.4448775635738778,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.021545245572677896,
+            "max_drawdown": 0.014699770646386279,
+            "sharpe": 3.651981106461948,
+            "positive_blocks": 3,
+            "observations": 89
+          },
+          "locked_test": {
+            "net_return": 0.023372574073797114,
+            "max_drawdown": 0.025128513709245737,
+            "sharpe": 2.687242507539898,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "locked_test_stress": {
+            "net_return": 0.0211331771156289,
+            "max_drawdown": 0.026403417918608674,
+            "sharpe": 2.4448775635738778,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0|pairs=2|reb=6|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.021545245572677896,
+            "max_drawdown": 0.014699770646386279,
+            "sharpe": 3.651981106461948,
+            "positive_blocks": 3,
+            "observations": 89
+          },
+          "locked_test": {
+            "net_return": 0.023372574073797114,
+            "max_drawdown": 0.025128513709245737,
+            "sharpe": 2.687242507539898,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "locked_test_stress": {
+            "net_return": 0.0211331771156289,
+            "max_drawdown": 0.026403417918608674,
+            "sharpe": 2.4448775635738778,
+            "positive_blocks": 3,
+            "observations": 90
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        }
+      ]
+    },
+    {
+      "interval": "12H",
+      "common_bars": 178,
+      "observation_days": 89.0,
+      "funding_event_counts": {
+        "ETHUSDT": 270,
+        "BNBUSDT": 270,
+        "ADAUSDT": 270,
+        "SOLUSDT": 270,
+        "DOGEUSDT": 270,
+        "XRPUSDT": 270,
+        "DOTUSDT": 270,
+        "LTCUSDT": 270,
+        "LINKUSDT": 270,
+        "AVAXUSDT": 270,
+        "UNIUSDT": 270,
+        "ATOMUSDT": 270,
+        "NEARUSDT": 270
+      },
+      "configurations": 648,
+      "validation_eligible": 16,
+      "validation_winners": [
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=3|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.010655686382145202,
+            "max_drawdown": 0.01675590920500314,
+            "sharpe": 2.1277415158657944,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0161018525622052,
+            "max_drawdown": 0.019169347724126706,
+            "sharpe": 2.2677490942820726,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.014321255937088218,
+            "max_drawdown": 0.01991716118343112,
+            "sharpe": 2.018284851133561,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=3|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.010655686382145202,
+            "max_drawdown": 0.01675590920500314,
+            "sharpe": 2.1277415158657944,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0161018525622052,
+            "max_drawdown": 0.019169347724126706,
+            "sharpe": 2.2677490942820726,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.014321255937088218,
+            "max_drawdown": 0.01991716118343112,
+            "sharpe": 2.018284851133561,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=3|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.010655686382145202,
+            "max_drawdown": 0.01675590920500314,
+            "sharpe": 2.1277415158657944,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0161018525622052,
+            "max_drawdown": 0.019169347724126706,
+            "sharpe": 2.2677490942820726,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.014321255937088218,
+            "max_drawdown": 0.01991716118343112,
+            "sharpe": 2.018284851133561,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0|pairs=1|reb=3|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.010655686382145202,
+            "max_drawdown": 0.01675590920500314,
+            "sharpe": 2.1277415158657944,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0161018525622052,
+            "max_drawdown": 0.019169347724126706,
+            "sharpe": 2.2677490942820726,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.014321255937088218,
+            "max_drawdown": 0.01991716118343112,
+            "sharpe": 2.018284851133561,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=1|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.018340102873340314,
+            "max_drawdown": 0.005814970321159851,
+            "sharpe": 3.493595360059164,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0028014998226078003,
+            "max_drawdown": 0.023530832604290453,
+            "sharpe": 0.47182042142298636,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": -0.0010350401039230794,
+            "max_drawdown": 0.024401812311971915,
+            "sharpe": -0.10198720434719648,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=1|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.018340102873340314,
+            "max_drawdown": 0.005814970321159851,
+            "sharpe": 3.493595360059164,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0028014998226078003,
+            "max_drawdown": 0.023530832604290453,
+            "sharpe": 0.47182042142298636,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": -0.0010350401039230794,
+            "max_drawdown": 0.024401812311971915,
+            "sharpe": -0.10198720434719648,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=1|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.018340102873340314,
+            "max_drawdown": 0.005814970321159851,
+            "sharpe": 3.493595360059164,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0028014998226078003,
+            "max_drawdown": 0.023530832604290453,
+            "sharpe": 0.47182042142298636,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": -0.0010350401039230794,
+            "max_drawdown": 0.024401812311971915,
+            "sharpe": -0.10198720434719648,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=1|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.018340102873340314,
+            "max_drawdown": 0.005814970321159851,
+            "sharpe": 3.493595360059164,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.0028014998226078003,
+            "max_drawdown": 0.023530832604290453,
+            "sharpe": 0.47182042142298636,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": -0.0010350401039230794,
+            "max_drawdown": 0.024401812311971915,
+            "sharpe": -0.10198720434719648,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=6|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.041699696313013845,
+            "max_drawdown": 0.01183664327660694,
+            "sharpe": 5.729720464989204,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.041203268785997116,
+            "max_drawdown": 0.010063645256275122,
+            "sharpe": 6.13356663611057,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.040015951418556295,
+            "max_drawdown": 0.010224400076303763,
+            "sharpe": 5.9368903571647555,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=6|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.041699696313013845,
+            "max_drawdown": 0.01183664327660694,
+            "sharpe": 5.729720464989204,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.041203268785997116,
+            "max_drawdown": 0.010063645256275122,
+            "sharpe": 6.13356663611057,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.040015951418556295,
+            "max_drawdown": 0.010224400076303763,
+            "sharpe": 5.9368903571647555,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=6|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.041699696313013845,
+            "max_drawdown": 0.01183664327660694,
+            "sharpe": 5.729720464989204,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.041203268785997116,
+            "max_drawdown": 0.010063645256275122,
+            "sharpe": 6.13356663611057,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.040015951418556295,
+            "max_drawdown": 0.010224400076303763,
+            "sharpe": 5.9368903571647555,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=6|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.041699696313013845,
+            "max_drawdown": 0.01183664327660694,
+            "sharpe": 5.729720464989204,
+            "positive_blocks": 3,
+            "observations": 44
+          },
+          "locked_test": {
+            "net_return": 0.041203268785997116,
+            "max_drawdown": 0.010063645256275122,
+            "sharpe": 6.13356663611057,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "locked_test_stress": {
+            "net_return": 0.040015951418556295,
+            "max_drawdown": 0.010224400076303763,
+            "sharpe": 5.9368903571647555,
+            "positive_blocks": 3,
+            "observations": 45
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": true,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        }
+      ]
+    },
+    {
+      "interval": "1D",
+      "common_bars": 89,
+      "observation_days": 89.0,
+      "funding_event_counts": {
+        "ETHUSDT": 270,
+        "BNBUSDT": 270,
+        "ADAUSDT": 270,
+        "SOLUSDT": 270,
+        "DOGEUSDT": 270,
+        "XRPUSDT": 270,
+        "DOTUSDT": 270,
+        "LTCUSDT": 270,
+        "LINKUSDT": 270,
+        "AVAXUSDT": 270,
+        "UNIUSDT": 270,
+        "ATOMUSDT": 270,
+        "NEARUSDT": 270
+      },
+      "configurations": 648,
+      "validation_eligible": 31,
+      "validation_winners": [
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0.05|pairs=2|reb=6|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.034423441848360214,
+            "max_drawdown": 0.00851905146890164,
+            "sharpe": 4.46497857234566,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.0007170734347022867,
+            "max_drawdown": 0.0,
+            "sharpe": -3.9836622870659224,
+            "positive_blocks": 0,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.0009560979129363822,
+            "max_drawdown": 0.0,
+            "sharpe": -3.983662287065924,
+            "positive_blocks": 0,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0.05|pairs=2|reb=6|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.034423441848360214,
+            "max_drawdown": 0.00851905146890164,
+            "sharpe": 4.46497857234566,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.0007170734347022867,
+            "max_drawdown": 0.0,
+            "sharpe": -3.9836622870659224,
+            "positive_blocks": 0,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.0009560979129363822,
+            "max_drawdown": 0.0,
+            "sharpe": -3.983662287065924,
+            "positive_blocks": 0,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_contrarian|fw=1|apr=0.05|pairs=2|reb=6|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.034423441848360214,
+            "max_drawdown": 0.00851905146890164,
+            "sharpe": 4.46497857234566,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.0007170734347022867,
+            "max_drawdown": 0.0,
+            "sharpe": -3.9836622870659224,
+            "positive_blocks": 0,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.0009560979129363822,
+            "max_drawdown": 0.0,
+            "sharpe": -3.983662287065924,
+            "positive_blocks": 0,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=6|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.022491774922772434,
+            "max_drawdown": 0.004456834572045709,
+            "sharpe": 6.61381152681996,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.035001855860264275,
+            "max_drawdown": 0.05375413090061876,
+            "sharpe": -4.456540807799194,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.03567615780426725,
+            "max_drawdown": 0.054067272412256506,
+            "sharpe": -4.5397241596870295,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [
+            "ADAUSDT",
+            "ATOMUSDT"
+          ],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=6|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.022491774922772434,
+            "max_drawdown": 0.004456834572045709,
+            "sharpe": 6.61381152681996,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.035001855860264275,
+            "max_drawdown": 0.05375413090061876,
+            "sharpe": -4.456540807799194,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.03567615780426725,
+            "max_drawdown": 0.054067272412256506,
+            "sharpe": -4.5397241596870295,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [
+            "ADAUSDT",
+            "ATOMUSDT"
+          ],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=1|apr=0.05|pairs=1|reb=6|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.022491774922772434,
+            "max_drawdown": 0.004456834572045709,
+            "sharpe": 6.61381152681996,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.035001855860264275,
+            "max_drawdown": 0.05375413090061876,
+            "sharpe": -4.456540807799194,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.03567615780426725,
+            "max_drawdown": 0.054067272412256506,
+            "sharpe": -4.5397241596870295,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [
+            "ADAUSDT",
+            "ATOMUSDT"
+          ],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "funding_momentum|fw=3|apr=0|pairs=1|reb=6|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.01724245869348806,
+            "max_drawdown": 0.010056610607684258,
+            "sharpe": 3.8333022747097867,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.038062947901007504,
+            "max_drawdown": 0.03938380616011705,
+            "sharpe": -4.88228550638297,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.03889581070717185,
+            "max_drawdown": 0.03965603982782373,
+            "sharpe": -4.99346186417629,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [
+            "ADAUSDT",
+            "ATOMUSDT"
+          ],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 1.0,
+          "max_realized_leverage": 1.0,
+          "validation": {
+            "net_return": 0.018302145486683186,
+            "max_drawdown": 0.00912106758117337,
+            "sharpe": 3.4172217615972325,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.03663647258533842,
+            "max_drawdown": 0.0541546487806609,
+            "sharpe": -4.622186951575241,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.0401223095413662,
+            "max_drawdown": 0.05701140611069222,
+            "sharpe": -5.0627862629502145,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 2.0,
+          "max_realized_leverage": 2.0,
+          "validation": {
+            "net_return": 0.018302145486683186,
+            "max_drawdown": 0.00912106758117337,
+            "sharpe": 3.4172217615972325,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.03663647258533842,
+            "max_drawdown": 0.0541546487806609,
+            "sharpe": -4.622186951575241,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.0401223095413662,
+            "max_drawdown": 0.05701140611069222,
+            "sharpe": -5.0627862629502145,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=1|trend=1",
+          "max_leverage": 3.0,
+          "max_realized_leverage": 3.0,
+          "validation": {
+            "net_return": 0.018302145486683186,
+            "max_drawdown": 0.00912106758117337,
+            "sharpe": 3.4172217615972325,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": -0.03663647258533842,
+            "max_drawdown": 0.0541546487806609,
+            "sharpe": -4.622186951575241,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": -0.0401223095413662,
+            "max_drawdown": 0.05701140611069222,
+            "sharpe": -5.0627862629502145,
+            "positive_blocks": 1,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        },
+        {
+          "candidate": "trend_filtered_contrarian|fw=1|apr=0|pairs=1|reb=3|trend=1",
+          "max_leverage": 5.0,
+          "max_realized_leverage": 5.0,
+          "validation": {
+            "net_return": 0.02062481804090721,
+            "max_drawdown": 0.02086678383025775,
+            "sharpe": 2.944186489320782,
+            "positive_blocks": 3,
+            "observations": 22
+          },
+          "locked_test": {
+            "net_return": 0.0051147969775307,
+            "max_drawdown": 0.026010779208147983,
+            "sharpe": 0.8544498421469926,
+            "positive_blocks": 2,
+            "observations": 23
+          },
+          "locked_test_stress": {
+            "net_return": 0.00411348380952381,
+            "max_drawdown": 0.026648762644603363,
+            "sharpe": 0.6930449337092197,
+            "positive_blocks": 2,
+            "observations": 23
+          },
+          "simulated_liquidation": false,
+          "short_horizon_paper_pass": false,
+          "active_symbols": [],
+          "market_gate": false,
+          "promotion": "paper-only"
+        }
+      ]
+    }
+  ],
+  "live_promotable": []
+}

@@ -1,0 +1,25 @@
+﻿{
+    "schema":  "token-quality-artifact/v1",
+    "id":  "20260910-092951892-8b03839b",
+    "created_at":  "2026-09-10T00:29:51.8924323Z",
+    "shell":  "PowerShell",
+    "working_directory":  "C:\\Users\\SSAFY\\Documents\\Codex\\2026-08-24\\prior-conversation-with-codex-conversation-role\\work",
+    "command_sha256":  "f3936bb43f77eca78af32cf0b24da39f8f39f4a2143b392ad4fb49caac2e0117",
+    "exit_code":  1,
+    "duration_ms":  23753,
+    "expect_pattern_sha256":  "9656e34744e691aef46b79f6752af02935d5e50f9dc239e1447e5e2005da0aa2",
+    "expect_match_count":  0,
+    "requires_inspection":  true,
+    "inspection_reasons":  [
+                               "nonzero_exit",
+                               "negative_signal_present",
+                               "expected_signal_missing"
+                           ],
+    "manual_inspection_required":  true,
+    "manual_inspection_reasons":  [
+                                      "risk_signal_overflow"
+                                  ],
+    "artifact_path":  "C:\\Users\\SSAFY\\Documents\\Codex\\2026-08-24\\prior-conversation-with-codex-conversation-role\\work\\x_discovery_evidence\\20260910-092951892-8b03839b.log",
+    "artifact_bytes":  150998,
+    "artifact_sha256":  "ac39ea551c74e55dd3f3c1cf01fbfb97402aa4fde1b85a123a035a6ef77c6dfc"
+}

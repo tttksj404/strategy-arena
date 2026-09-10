@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "source": "Bitget public V3 market history",
+  "endpoint": "https://api.bitget.com/api/v3/market/history-candles",
+  "category": "USDT-FUTURES",
+  "created_at": "2026-08-24T05:16:59.401344+00:00",
+  "start_ms": 1704067200000,
+  "snapshot_ms": 1711929600000,
+  "symbols": [
+    "ETHUSDT"
+  ],
+  "intervals": [
+    "1H"
+  ],
+  "complete": false,
+  "partitions": [
+    {
+      "relative_path": "ETHUSDT/1H/1704067200000_1711843199999.jsonl.gz",
+      "sha256": "bd92247f2a1679da34b7243d9d99986e38cd71bfdbf9efdb0a1ec944da78f312",
+      "rows": 2138,
+      "first_timestamp_ms": 1704067200000,
+      "last_timestamp_ms": 1711836000000,
+      "window_start_ms": 1704067200000,
+      "window_end_ms": 1711843199999
+    }
+  ]
+}

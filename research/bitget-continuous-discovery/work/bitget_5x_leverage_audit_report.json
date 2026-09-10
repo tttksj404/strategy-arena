@@ -1,0 +1,106 @@
+{
+  "observed_at": "2026-08-24T04:16:33.338570Z",
+  "mode": "public-api-paper-only",
+  "source_screen": "C:\\Users\\SSAFY\\Documents\\Codex\\2026-08-24\\prior-conversation-with-codex-conversation-role\\work\\bitget_alt_liquidity_winner_screen_report.json",
+  "candidates": [
+    {
+      "interval": "12H",
+      "candidate": "range|lb=60|sec=0|k=1|dir=1|pair=none|z=0|reb=3|liq=0",
+      "risk": "L=5|tv=0.005|vw=40",
+      "max_leverage": 5.0,
+      "max_realized_leverage": 5.0,
+      "base_return": 0.09607019439560993,
+      "stressed_return": 0.09063473869651983,
+      "max_drawdown": 0.06955879837909085,
+      "positive_blocks": 3,
+      "simulated_liquidation": false,
+      "market_gate": true,
+      "paper_pass": true,
+      "active_symbols": [
+        "ETH",
+        "NEAR"
+      ]
+    },
+    {
+      "interval": "4H",
+      "candidate": "pair|lb=60|sec=0|k=0|dir=0|pair=ATOM-NEAR|z=1.5|reb=1|liq=5e+06",
+      "risk": "L=5|tv=0.005|vw=40",
+      "max_leverage": 5.0,
+      "max_realized_leverage": 5.0,
+      "base_return": 0.3416868736633054,
+      "stressed_return": 0.31595697142825085,
+      "max_drawdown": 0.025730887791234114,
+      "positive_blocks": 3,
+      "simulated_liquidation": false,
+      "market_gate": true,
+      "paper_pass": true,
+      "active_symbols": []
+    },
+    {
+      "interval": "4H",
+      "candidate": "time_series|lb=10|sec=0|k=0|dir=1|pair=none|z=0|reb=3|liq=5e+06",
+      "risk": "L=5|tv=0.005|vw=20",
+      "max_leverage": 5.0,
+      "max_realized_leverage": 5.0,
+      "base_return": 0.04624152065506615,
+      "stressed_return": 0.021077810810133935,
+      "max_drawdown": 0.09668116361349366,
+      "positive_blocks": 3,
+      "simulated_liquidation": false,
+      "market_gate": true,
+      "paper_pass": true,
+      "active_symbols": [
+        "ADA",
+        "AVAX",
+        "BNB",
+        "DOGE",
+        "ETH",
+        "LINK",
+        "NEAR",
+        "SOL",
+        "UNI",
+        "XRP"
+      ]
+    },
+    {
+      "interval": "4H",
+      "candidate": "time_series|lb=10|sec=0|k=0|dir=1|pair=none|z=0|reb=3|liq=2e+07",
+      "risk": "L=5|tv=0.005|vw=20",
+      "max_leverage": 5.0,
+      "max_realized_leverage": 5.0,
+      "base_return": 0.08672941361127418,
+      "stressed_return": 0.05970209254887027,
+      "max_drawdown": 0.07860853482287988,
+      "positive_blocks": 3,
+      "simulated_liquidation": false,
+      "market_gate": true,
+      "paper_pass": true,
+      "active_symbols": [
+        "ADA",
+        "DOGE",
+        "ETH",
+        "LINK",
+        "NEAR",
+        "SOL",
+        "UNI",
+        "XRP"
+      ]
+    },
+    {
+      "interval": "6H",
+      "candidate": "range|lb=60|sec=0|k=1|dir=1|pair=none|z=0|reb=3|liq=2e+07",
+      "risk": "L=5|tv=0.01|vw=40",
+      "max_leverage": 5.0,
+      "max_realized_leverage": 5.0,
+      "base_return": 0.09292091696481242,
+      "stressed_return": 0.023792212439242233,
+      "max_drawdown": 0.13228169342807383,
+      "positive_blocks": 3,
+      "simulated_liquidation": false,
+      "market_gate": true,
+      "paper_pass": true,
+      "active_symbols": []
+    }
+  ],
+  "live_promotable": []
+}

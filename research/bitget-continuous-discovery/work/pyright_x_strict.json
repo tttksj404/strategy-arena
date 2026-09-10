@@ -1,0 +1,12 @@
+{
+  "typeCheckingMode": "all",
+  "pythonVersion": "3.14",
+  "pythonPlatform": "All",
+  "stubPath": "type-stubs",
+  "include": [
+    "x_discovery_account.py", "x_discovery_pairs.py", "x_discovery_signals.py",
+    "x_discovery_statistics.py", "x_discovery_types.py", "x_discovery_results.py",
+    "run_x_discovery.py", "run_x_volume_control.py", "refresh_bitget_mtf.py",
+    "verify_x_recheck.py", "top_strategy_path_illustration.py"
+  ]
+}

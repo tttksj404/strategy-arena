@@ -1,0 +1,5 @@
+SEARCH_PROGRESS configurations=25/64
+SEARCH_PROGRESS configurations=50/64
+SEARCH_PROGRESS configurations=64/64
+SEARCH_DONE report=bitget_12h_bocpd_regime_search_report.json
+PBO=0.671429 WINNERS=0

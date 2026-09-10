@@ -1,0 +1,239 @@
+{
+  "mode": "public-api-paper-only-no-live-orders",
+  "observed_at": "2026-08-25T01:04:04.427456+00:00",
+  "criteria": {
+    "minimum_turnover_24h_usdt": 10000000.0,
+    "maximum_spread_fraction": 0.001,
+    "exclude_btc": true,
+    "perpetual_only": true,
+    "normal_status_only": true,
+    "non_rwa_only": true,
+    "survivorship_bias_warning": true
+  },
+  "entries": [
+    {
+      "symbol": "ETHUSDT",
+      "base_coin": "ETH",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 3346470830.3124,
+      "spread_fraction": 4.002465518846921e-06,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "SOLUSDT",
+      "base_coin": "SOL",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 519666717.6467,
+      "spread_fraction": 9.787129924057391e-06,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "XRPUSDT",
+      "base_coin": "XRP",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 436805545.4033,
+      "spread_fraction": 6.612881893928646e-05,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "base_coin": "HYPE",
+      "ticker_timestamp_ms": 1787619843283,
+      "turnover_24h_usdt": 196181721.69112,
+      "spread_fraction": 6.27368315390029e-05,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "ZECUSDT",
+      "base_coin": "ZEC",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 176193869.40335,
+      "spread_fraction": 1.1857332574453264e-05,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "base_coin": "DOGE",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 113493830.30779,
+      "spread_fraction": 0.00010921799912621366,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "TRUMPUSDT",
+      "base_coin": "TRUMP",
+      "ticker_timestamp_ms": 1787619843283,
+      "turnover_24h_usdt": 99732598.8012,
+      "spread_fraction": 0.0008048289738429698,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "SUIUSDT",
+      "base_coin": "SUI",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 98277633.44505,
+      "spread_fraction": 0.00012256403971073538,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "ENAUSDT",
+      "base_coin": "ENA",
+      "ticker_timestamp_ms": 1787619843179,
+      "turnover_24h_usdt": 79417942.69986,
+      "spread_fraction": 6.434592368562027e-05,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "TUTUSDT",
+      "base_coin": "TUT",
+      "ticker_timestamp_ms": 1787619843283,
+      "turnover_24h_usdt": 61489562.863,
+      "spread_fraction": 0.0004222972972972801,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "base_coin": "VELVET",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 53877035.73205,
+      "spread_fraction": 0.00087861584211962,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "ADAUSDT",
+      "base_coin": "ADA",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 51950771.1087,
+      "spread_fraction": 0.00044247787610626874,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "base_coin": "PEPE",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 37266240.1208572,
+      "spread_fraction": 0.00019311077316727258,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "LINKUSDT",
+      "base_coin": "LINK",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 25104917.883,
+      "spread_fraction": 8.485362749252828e-05,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "base_coin": "ONDO",
+      "ticker_timestamp_ms": 1787619843179,
+      "turnover_24h_usdt": 24553867.1245,
+      "spread_fraction": 0.00025753283543648983,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "NEARUSDT",
+      "base_coin": "NEAR",
+      "ticker_timestamp_ms": 1787619843179,
+      "turnover_24h_usdt": 24131864.6294,
+      "spread_fraction": 5.0668828536678654e-05,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "PUMPUSDT",
+      "base_coin": "PUMP",
+      "ticker_timestamp_ms": 1787619843073,
+      "turnover_24h_usdt": 23307661.100795,
+      "spread_fraction": 0.00020639834881323686,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "base_coin": "AAVE",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 21563988.48,
+      "spread_fraction": 7.463243525650664e-05,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "TAOUSDT",
+      "base_coin": "TAO",
+      "ticker_timestamp_ms": 1787619843179,
+      "turnover_24h_usdt": 19223495.49426,
+      "spread_fraction": 0.00020685945968313833,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "WLDUSDT",
+      "base_coin": "WLD",
+      "ticker_timestamp_ms": 1787619843179,
+      "turnover_24h_usdt": 18984806.4082,
+      "spread_fraction": 0.00024378352023400534,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "PENGUUSDT",
+      "base_coin": "PENGU",
+      "ticker_timestamp_ms": 1787619843283,
+      "turnover_24h_usdt": 16194574.015429,
+      "spread_fraction": 0.0004918839153959465,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "BCHUSDT",
+      "base_coin": "BCH",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 13739126.4554,
+      "spread_fraction": 0.0001082329172380026,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "VIRTUALUSDT",
+      "base_coin": "VIRTUAL",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 13382776.1692,
+      "spread_fraction": 0.0001249687578105336,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "UNIUSDT",
+      "base_coin": "UNI",
+      "ticker_timestamp_ms": 1787619843385,
+      "turnover_24h_usdt": 13304837.838,
+      "spread_fraction": 0.00022951572182702178,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "BNBUSDT",
+      "base_coin": "BNB",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 12906899.056,
+      "spread_fraction": 1.4045732906330277e-05,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "LITUSDT",
+      "base_coin": "LIT",
+      "ticker_timestamp_ms": 1787619843282,
+      "turnover_24h_usdt": 12005680.261,
+      "spread_fraction": 0.0002911208151382503,
+      "funding_interval_hours": 4
+    },
+    {
+      "symbol": "LTCUSDT",
+      "base_coin": "LTC",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 11589849.154,
+      "spread_fraction": 0.00019138755980857436,
+      "funding_interval_hours": 8
+    },
+    {
+      "symbol": "XLMUSDT",
+      "base_coin": "XLM",
+      "ticker_timestamp_ms": 1787619843178,
+      "turnover_24h_usdt": 10760818.13675,
+      "spread_fraction": 5.068937550694444e-05,
+      "funding_interval_hours": 8
+    }
+  ]
+}
