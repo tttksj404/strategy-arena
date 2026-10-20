@@ -1,0 +1,8 @@
+INVOCATION: C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe research/wave5/run_wave5.py --help`r`nSTDOUT:`r`nusage: run_wave5.py [-h] --stage {run,gates,report}
+
+Wave-5 cache-only research pipeline
+
+options:
+  -h, --help            show this help message and exit
+  --stage {run,gates,report}
+`r`nSTDERR:`r`n`r`nEXIT_CODE: 0`r`n

@@ -1,0 +1,8 @@
+﻿Initial runtime attempt: C:\Users\SSAFY\AppData\Local\Programs\Python\Python312\python.exe --version
+Observed: OS Access is denied; no product code executed.
+Fallback: 
+C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe
+Fallback version: 
+Python 3.12.12
+Fallback imports: 
+2.4.4 2.3.3 9.1.1

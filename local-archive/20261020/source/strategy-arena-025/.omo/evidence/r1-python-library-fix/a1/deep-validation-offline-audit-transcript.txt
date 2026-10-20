@@ -1,0 +1,45 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716160421
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-offline-audit-transcript.txt'
+$paths = @('research/validation/deep_validate.py','research/validation/deep_stats.py')
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: offline-only source audit'
+  Write-Output 'SURFACE: PowerShell source inspection; INVOCATION: Select-String on validator/statistics modules for network/process APIs'
+  $matches = Select-String -Path $paths -Pattern 'requests|httpx|urllib|socket|urlopen|http\.client|subprocess|ftplib|websocket|aiohttp' -CaseSensitive:$false
+  Write-Output ("network_or_process_api_matches=" + @($matches).Count)
+  if (@($matches).Count -eq 0) {
+    Write-Output 'offline_static_audit=PASS'
+    $code = 0
+  } else {
+    $matches | ForEach-Object { Write-Output $_.Line }
+  }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 35672
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: offline-only source audit
+SURFACE: PowerShell source inspection; INVOCATION: Select-String on validator/statistics modules for network/process APIs
+network_or_process_api_matches=0
+offline_static_audit=PASS
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716160421
+**********************

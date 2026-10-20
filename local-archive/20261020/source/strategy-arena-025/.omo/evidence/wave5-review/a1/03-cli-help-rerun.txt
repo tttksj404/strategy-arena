@@ -1,0 +1,2 @@
+﻿INVOCATION: C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe 
+EXIT_CODE: 0

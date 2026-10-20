@@ -1,0 +1,54 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716155730
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-edge-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$missing = '.omo/evidence/r1-python-library-fix/a1/deep-missing-root'
+$malformed = '.omo/evidence/r1-python-library-fix/a1/deep-edge-fixture'
+$overall = 0
+$env:PYTHONDONTWRITEBYTECODE = '1'
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: missing required input root'
+  Write-Output ("SURFACE: direct CLI; INVOCATION: & `"$py`" research/validation/deep_validate.py --root $missing")
+  & $py research/validation/deep_validate.py --root $missing
+  $missingCode = $LASTEXITCODE
+  Write-Output ("missing_input_exit=" + $missingCode)
+  if ($missingCode -eq 0) { $overall = 1 }
+  Write-Output 'SCENARIO: malformed W2c result JSON'
+  Write-Output ("SURFACE: direct CLI; INVOCATION: & `"$py`" research/validation/deep_validate.py --root $malformed")
+  & $py research/validation/deep_validate.py --root $malformed
+  $malformedCode = $LASTEXITCODE
+  Write-Output ("malformed_input_exit=" + $malformedCode)
+  if ($malformedCode -eq 0) { $overall = 1 }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $overall
+프로세스 ID: 31552
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: missing required input root
+SURFACE: direct CLI; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" research/validation/deep_validate.py --root .omo/evidence/r1-python-library-fix/a1/deep-missing-root
+
+missing_input_exit=1
+SCENARIO: malformed W2c result JSON
+SURFACE: direct CLI; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" research/validation/deep_validate.py --root .omo/evidence/r1-python-library-fix/a1/deep-edge-fixture
+
+malformed_input_exit=1
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716155732
+**********************

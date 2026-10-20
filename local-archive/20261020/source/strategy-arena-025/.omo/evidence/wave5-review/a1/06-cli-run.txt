@@ -1,0 +1,2 @@
+INVOCATION: C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe research/wave5/run_wave5.py --stage run`r`nSTDOUT:`r`nrun: wrote 7 cached candidate results
+`r`nSTDERR:`r`n`r`nEXIT_CODE: 0`r`n

@@ -1,0 +1,129 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716155935
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-output-inspection-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$code = @'
+from __future__ import annotations
+import csv, gzip, json, math
+from datetime import datetime, timezone
+from pathlib import Path
+
+root = Path('.')
+result_dir = root / 'research' / 'validation' / 'results'
+source_paths = {
+    'W2c': root / 'research' / 'wave2' / 'results' / 'W2c.json',
+    'F1e': root / 'research' / 'wave1' / 'results' / 'F1e.json',
+    'W3c': root / 'research' / 'wave3' / 'results' / 'W3c.json',
+    'W3d': root / 'research' / 'wave3' / 'results' / 'W3d.json',
+}
+for candidate in ('W2c', 'F1e', 'W3c', 'W3d'):
+    data = json.loads((result_dir / f'deep_{candidate}.json').read_text(encoding='utf-8'))
+    source = json.loads(source_paths[candidate].read_text(encoding='utf-8'))
+    mc = data['bootstrap_mc']
+    dsr = data['deflated_sharpe']
+    block = data['regime_block_bootstrap']
+    native = data['bitget_native']
+    assert source['equity'][0]['value'] == 300.0
+    assert mc['paths'] == 10000 and mc['trade_count'] == data['period']['trade_count']
+    assert math.isfinite(mc['unit']['p05']) and math.isfinite(mc['unit']['ruin_probability'])
+    assert math.isclose(mc['quarter_kelly_fraction'], mc['kelly_fraction'] * 0.25)
+    assert len(data['leave_one_year_out']) == 8
+    assert dsr['trials'] == 28 and dsr['observations'] == data['period']['equity_points'] - 1
+    assert block['block_days'] == 90 and block['paths'] == 1000 and block['block_count'] >= 2
+    if candidate in ('W2c', 'F1e'):
+        assert native['coverage_days'] == 71 and native['observations'] == 312
+        assert native['symbols'] == ['BTCUSDT', 'ETHUSDT', 'SOLUSDT']
+        assert native['required_coverage_days'] == 133 and native['coverage_sufficient'] is False
+    else:
+        assert native['status'] == 'N/A'
+    print(f"{candidate}: overall={data['overall']['status']} MC_p05={mc['unit']['p05']:.6f} P_lt_150={mc['unit']['ruin_probability']:.6f} Kelly={mc['kelly_fraction']:.6f} quarter={mc['quarter_kelly_fraction']:.6f} LOO_years={len(data['leave_one_year_out'])} DSR={dsr['score']:.6f}/{dsr['trials']} daily={dsr['observations']} blocks={block['block_count']}/{block['paths']}")
+    if candidate in ('W2c', 'F1e'):
+        print(f"  native: corr={native['score_correlation']:.6f} entry={native['entry_agreement']:.6f} sign={native['sign_agreement']:.6f} coverage={native['coverage_days']}d observations={native['observations']} symbols={','.join(native['symbols'])} required={native['required_coverage_days']}d sufficient={native['coverage_sufficient']}")
+    else:
+        print('  native: N/A momentum candidate')
+
+
+def parse_timestamp(raw: str) -> datetime:
+    if raw.isdigit():
+        return datetime.fromtimestamp(float(raw) / 1000.0, tz=timezone.utc)
+    value = raw.replace('Z', '+00:00')
+    parsed = datetime.fromisoformat(value)
+    return parsed if parsed.tzinfo is not None else parsed.replace(tzinfo=timezone.utc)
+
+def load(prefix: str) -> dict[str, dict[datetime, float]]:
+    result = {}
+    for path in (root / 'research' / 'wave1' / 'cache').glob(f'{prefix}_funding_*.csv.gz'):
+        symbol = path.name.removeprefix(f'{prefix}_funding_').removesuffix('.csv.gz')
+        values = {}
+        with gzip.open(path, 'rt', encoding='utf-8', newline='') as handle:
+            for row in csv.DictReader(handle):
+                raw_ts = row.get('timestamp') or row.get('')
+                raw_value = row.get('funding_rate')
+                if raw_ts is not None and raw_value is not None:
+                    try:
+                        values[parse_timestamp(raw_ts)] = float(raw_value)
+                    except (TypeError, ValueError, OverflowError):
+                        pass
+        result[symbol] = values
+    return result
+
+bitget = load('bitget')
+binance = load('binance')
+common = sorted(set(bitget) & set(binance))
+score_observations = 0
+timestamps = []
+for symbol in common:
+    intersection = sorted(set(bitget[symbol]) & set(binance[symbol]))
+    if len(intersection) >= 21:
+        score_observations += len(intersection) - 20
+        timestamps.extend(intersection[20:])
+print(f'raw_cache_common_symbols={common}')
+print(f'raw_cache_score_observations={score_observations}')
+print(f"raw_cache_score_coverage_days={(max(timestamps) - min(timestamps)).days + 1 if timestamps else 0}")
+assert common == ['BTCUSDT', 'ETHUSDT', 'SOLUSDT']
+assert score_observations == 312
+assert (max(timestamps) - min(timestamps)).days + 1 == 71
+report = (root / 'research' / 'validation' / 'DEEP_REPORT.md').read_text(encoding='utf-8')
+for candidate in ('W2c', 'F1e', 'W3c', 'W3d'):
+    assert f'| {candidate} |' in report
+assert '3 symbols, 312 observations, and 71 days' in report
+assert 'shorter than the requested 133 days' in report
+print('report_table_and_coverage_claims=PASS')
+print('independent_output_inspection=PASS')
+'@
+$codeExit = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SURFACE: Python data-shaped output inspector'
+  Write-Output ("INVOCATION: & `"$py`" -c <independent JSON/cache assertions>")
+  & $py -c $code
+  $codeExit = $LASTEXITCODE
+  Write-Output ("inspection_exit=" + $codeExit)
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $codeExit
+프로세스 ID: 36300
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SURFACE: Python data-shaped output inspector
+INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" -c <independent JSON/cache assertions>
+
+inspection_exit=1
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716155935
+**********************

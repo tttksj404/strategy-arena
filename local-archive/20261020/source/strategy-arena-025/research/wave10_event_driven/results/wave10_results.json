@@ -1,0 +1,870 @@
+{
+  "source_manifest_sha256": "2d1aa4772739cc0bab209a27a5684900db802c55c27c63a4a7979adf26e4c0e0",
+  "source_manifest_sha256_before": "2d1aa4772739cc0bab209a27a5684900db802c55c27c63a4a7979adf26e4c0e0",
+  "source_manifest_sha256_after": "2d1aa4772739cc0bab209a27a5684900db802c55c27c63a4a7979adf26e4c0e0",
+  "runner_sha256": "f570d34f7d79fd29139aa1fefdafcc0f47b24784556eb5210b48449852e3f733",
+  "spec_sha256": "783193d79307b1da8e671db69a890e043a68404fe08c76428cc16ea7a9da87e4",
+  "dependency_sha256": {
+    "research/wave1/costs.py": "43b3e348386979d35c81704b5d00394dd3d8476f277e70da34c9b8d0d053c5cb",
+    "research/wave3/fetch.py": "4dd3dfe7835e292e13c8adeb2868d80fc000ce5a5ac080dc87f38c9c25bf5948",
+    "research/wave9_capital_native/run_wave9.py": "63dfed8742514dfc2004bf21398e44583e6dbd504ec9267a69d1690094f2b894"
+  },
+  "fixed_universe": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT"
+  ],
+  "registered_candidates": [
+    {
+      "candidate_id": "E10a",
+      "entry_days": 20,
+      "exit_days": 10,
+      "long_short": false,
+      "funding_filter": "none",
+      "gross_cap": 0.9
+    },
+    {
+      "candidate_id": "E10b",
+      "entry_days": 20,
+      "exit_days": 20,
+      "long_short": false,
+      "funding_filter": "none",
+      "gross_cap": 0.9
+    },
+    {
+      "candidate_id": "E10c",
+      "entry_days": 55,
+      "exit_days": 20,
+      "long_short": false,
+      "funding_filter": "none",
+      "gross_cap": 0.9
+    },
+    {
+      "candidate_id": "E10d",
+      "entry_days": 55,
+      "exit_days": 40,
+      "long_short": false,
+      "funding_filter": "none",
+      "gross_cap": 0.9
+    },
+    {
+      "candidate_id": "E10e",
+      "entry_days": 20,
+      "exit_days": 10,
+      "long_short": true,
+      "funding_filter": "none",
+      "gross_cap": 0.9
+    },
+    {
+      "candidate_id": "E10f",
+      "entry_days": 55,
+      "exit_days": 20,
+      "long_short": true,
+      "funding_filter": "none",
+      "gross_cap": 0.9
+    },
+    {
+      "candidate_id": "E10g",
+      "entry_days": 20,
+      "exit_days": 10,
+      "long_short": false,
+      "funding_filter": "carry_aware",
+      "gross_cap": 0.6
+    },
+    {
+      "candidate_id": "E10h",
+      "entry_days": 55,
+      "exit_days": 20,
+      "long_short": true,
+      "funding_filter": "carry_aware",
+      "gross_cap": 0.6
+    }
+  ],
+  "results": [
+    {
+      "candidate_id": "E10a",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10a",
+        "entry_days": 20,
+        "exit_days": 10,
+        "long_short": false,
+        "funding_filter": "none",
+        "gross_cap": 0.9
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.40425649678912023,
+        "oos_sharpe": -2.2014754991930516,
+        "mdd": 0.5286325076939561,
+        "max_gross": 0.9000000000000002,
+        "min_oos_order": 27.92573267957589,
+        "min_oos_order_historical": 550.1680450268918,
+        "oos_active_days": 130,
+        "event_count": 155,
+        "stress_oos_return": -0.4054275107265719,
+        "bootstrap": {
+          "p05_final": 39.114002623769466,
+          "ruin_frequency": 0.2841,
+          "mdd_p95": 0.6255274039590353
+        },
+        "block_mdd_p95": 0.5981025389992416
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.9000; normalized_min_order=$27.93"
+        },
+        {
+          "name": "oos_activity",
+          "status": "PASS",
+          "value": "active_days=130"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.4043"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-2.2015"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "FAIL",
+          "value": "positive_blocks=0/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.5286"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.4054"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$39.11"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "FAIL",
+          "value": "ruin=0.2841"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.5981"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10b",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10b",
+        "entry_days": 20,
+        "exit_days": 20,
+        "long_short": false,
+        "funding_filter": "none",
+        "gross_cap": 0.9
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.3665394646565855,
+        "oos_sharpe": -1.6563513473148797,
+        "mdd": 0.67093148323695,
+        "max_gross": 0.9000000000000002,
+        "min_oos_order": 27.97989724732836,
+        "min_oos_order_historical": 829.2829215293226,
+        "oos_active_days": 185,
+        "event_count": 113,
+        "stress_oos_return": -0.36749334942996237,
+        "bootstrap": {
+          "p05_final": 39.559672381777915,
+          "ruin_frequency": 0.2538,
+          "mdd_p95": 0.6310899546600706
+        },
+        "block_mdd_p95": 0.6051135222410466
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.9000; normalized_min_order=$27.98"
+        },
+        {
+          "name": "oos_activity",
+          "status": "PASS",
+          "value": "active_days=185"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.3665"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-1.6564"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "FAIL",
+          "value": "positive_blocks=1/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.6709"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.3675"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$39.56"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "FAIL",
+          "value": "ruin=0.2538"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.6051"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10c",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10c",
+        "entry_days": 55,
+        "exit_days": 20,
+        "long_short": false,
+        "funding_filter": "none",
+        "gross_cap": 0.9
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.24691168747513514,
+        "oos_sharpe": -2.362661802161393,
+        "mdd": 0.6225520587640675,
+        "max_gross": 0.9000000000000004,
+        "min_oos_order": 28.71644521627801,
+        "min_oos_order_historical": 384.6426335150228,
+        "oos_active_days": 58,
+        "event_count": 80,
+        "stress_oos_return": -0.2473257909144071,
+        "bootstrap": {
+          "p05_final": 59.69400101060478,
+          "ruin_frequency": 0.0039,
+          "mdd_p95": 0.41409350704399833
+        },
+        "block_mdd_p95": 0.4424270798699552
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.9000; normalized_min_order=$28.72"
+        },
+        {
+          "name": "oos_activity",
+          "status": "FAIL",
+          "value": "active_days=58"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.2469"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-2.3627"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "FAIL",
+          "value": "positive_blocks=1/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.6226"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.2473"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$59.69"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "PASS",
+          "value": "ruin=0.0039"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.4424"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10d",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10d",
+        "entry_days": 55,
+        "exit_days": 40,
+        "long_short": false,
+        "funding_filter": "none",
+        "gross_cap": 0.9
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.33187291977260847,
+        "oos_sharpe": -1.9389528653715131,
+        "mdd": 0.7418162645929367,
+        "max_gross": 0.9000000000000004,
+        "min_oos_order": 28.071584907180373,
+        "min_oos_order_historical": 200.7382335621927,
+        "oos_active_days": 71,
+        "event_count": 67,
+        "stress_oos_return": -0.3322877452360312,
+        "bootstrap": {
+          "p05_final": 45.02902280430908,
+          "ruin_frequency": 0.1255,
+          "mdd_p95": 0.5655180585503711
+        },
+        "block_mdd_p95": 0.5533101377487747
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.9000; normalized_min_order=$28.07"
+        },
+        {
+          "name": "oos_activity",
+          "status": "PASS",
+          "value": "active_days=71"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.3319"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-1.9390"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "FAIL",
+          "value": "positive_blocks=1/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.7418"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.3323"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$45.03"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "FAIL",
+          "value": "ruin=0.1255"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.5533"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10e",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10e",
+        "entry_days": 20,
+        "exit_days": 10,
+        "long_short": true,
+        "funding_filter": "none",
+        "gross_cap": 0.9
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.15131951102760555,
+        "oos_sharpe": -0.34948913088730366,
+        "mdd": 0.6640049192382946,
+        "max_gross": 0.9000000000000004,
+        "min_oos_order": 13.788775718458195,
+        "min_oos_order_historical": 184.8296271594792,
+        "oos_active_days": 266,
+        "event_count": 250,
+        "stress_oos_return": -0.15381481753522808,
+        "bootstrap": {
+          "p05_final": 48.53358905457555,
+          "ruin_frequency": 0.0957,
+          "mdd_p95": 0.5810099222232025
+        },
+        "block_mdd_p95": 0.5833805089162923
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.9000; normalized_min_order=$13.79"
+        },
+        {
+          "name": "oos_activity",
+          "status": "PASS",
+          "value": "active_days=266"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.1513"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-0.3495"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "PASS",
+          "value": "positive_blocks=2/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.6640"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.1538"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$48.53"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "FAIL",
+          "value": "ruin=0.0957"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.5834"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10f",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10f",
+        "entry_days": 55,
+        "exit_days": 20,
+        "long_short": true,
+        "funding_filter": "none",
+        "gross_cap": 0.9
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.11834901749591509,
+        "oos_sharpe": -0.1850244669783126,
+        "mdd": 0.6597169675586438,
+        "max_gross": 0.9000000000000002,
+        "min_oos_order": 18.19903186868852,
+        "min_oos_order_historical": 197.68198531861535,
+        "oos_active_days": 232,
+        "event_count": 133,
+        "stress_oos_return": -0.11979490505824175,
+        "bootstrap": {
+          "p05_final": 47.888871932724896,
+          "ruin_frequency": 0.1017,
+          "mdd_p95": 0.5890166024467279
+        },
+        "block_mdd_p95": 0.5445180695554522
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.9000; normalized_min_order=$18.20"
+        },
+        {
+          "name": "oos_activity",
+          "status": "PASS",
+          "value": "active_days=232"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.1183"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-0.1850"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "PASS",
+          "value": "positive_blocks=2/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.6597"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.1198"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$47.89"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "FAIL",
+          "value": "ruin=0.1017"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.5445"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10g",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10g",
+        "entry_days": 20,
+        "exit_days": 10,
+        "long_short": false,
+        "funding_filter": "carry_aware",
+        "gross_cap": 0.6
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": -0.08265427779880141,
+        "oos_sharpe": -1.1240118239682,
+        "mdd": 0.2876078892966638,
+        "max_gross": 0.6000000000000001,
+        "min_oos_order": 27.476679002723426,
+        "min_oos_order_historical": 204.28361710595252,
+        "oos_active_days": 44,
+        "event_count": 33,
+        "stress_oos_return": -0.08297519582842394,
+        "bootstrap": {
+          "p05_final": 79.86747618953869,
+          "ruin_frequency": 0.0,
+          "mdd_p95": 0.21675427313184675
+        },
+        "block_mdd_p95": 0.21356759637401462
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.6000; normalized_min_order=$27.48"
+        },
+        {
+          "name": "oos_activity",
+          "status": "FAIL",
+          "value": "active_days=44"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "FAIL",
+          "value": "return=-0.0827"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=-1.1240"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "FAIL",
+          "value": "positive_blocks=0/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.2876"
+        },
+        {
+          "name": "double_slippage",
+          "status": "FAIL",
+          "value": "return=-0.0830"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$79.87"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "PASS",
+          "value": "ruin=0.0000"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "PASS",
+          "value": "mdd_p95=0.2136"
+        }
+      ],
+      "all_gates_pass": false
+    },
+    {
+      "candidate_id": "E10h",
+      "family": "fixed_major_donchian_event",
+      "candidate_config": {
+        "candidate_id": "E10h",
+        "entry_days": 55,
+        "exit_days": 20,
+        "long_short": true,
+        "funding_filter": "carry_aware",
+        "gross_cap": 0.6
+      },
+      "oos_independent": false,
+      "metrics": {
+        "oos_return": 0.07591472201047633,
+        "oos_sharpe": 0.4807951594793755,
+        "mdd": 0.33213067876803226,
+        "max_gross": 0.6000000000000002,
+        "min_oos_order": 15.361697695357714,
+        "min_oos_order_historical": 169.26038998776707,
+        "oos_active_days": 209,
+        "event_count": 69,
+        "stress_oos_return": 0.07499944952808368,
+        "bootstrap": {
+          "p05_final": 72.63500587321056,
+          "ruin_frequency": 0.0008,
+          "mdd_p95": 0.3700998875988361
+        },
+        "block_mdd_p95": 0.341880219974902
+      },
+      "gates": [
+        {
+          "name": "data_validation",
+          "status": "PASS",
+          "value": "validated=true"
+        },
+        {
+          "name": "fixed_major_universe",
+          "status": "PASS",
+          "value": "BTCUSDT,ETHUSDT,SOLUSDT"
+        },
+        {
+          "name": "oos_independence",
+          "status": "FAIL",
+          "value": "independent=false; prospective paper required"
+        },
+        {
+          "name": "capital_contract",
+          "status": "PASS",
+          "value": "gross=0.6000; normalized_min_order=$15.36"
+        },
+        {
+          "name": "oos_activity",
+          "status": "PASS",
+          "value": "active_days=209"
+        },
+        {
+          "name": "oos_after_cost_and_funding",
+          "status": "PASS",
+          "value": "return=0.0759"
+        },
+        {
+          "name": "oos_sharpe",
+          "status": "FAIL",
+          "value": "sharpe=0.4808"
+        },
+        {
+          "name": "oos_block_robustness",
+          "status": "PASS",
+          "value": "positive_blocks=2/4"
+        },
+        {
+          "name": "historical_mdd",
+          "status": "FAIL",
+          "value": "mdd=0.3321"
+        },
+        {
+          "name": "double_slippage",
+          "status": "PASS",
+          "value": "return=0.0750"
+        },
+        {
+          "name": "bootstrap_p05",
+          "status": "FAIL",
+          "value": "p05=$72.64"
+        },
+        {
+          "name": "bootstrap_ruin",
+          "status": "PASS",
+          "value": "ruin=0.0008"
+        },
+        {
+          "name": "block_mdd_p95",
+          "status": "FAIL",
+          "value": "mdd_p95=0.3419"
+        }
+      ],
+      "all_gates_pass": false
+    }
+  ],
+  "eligible_candidates": []
+}

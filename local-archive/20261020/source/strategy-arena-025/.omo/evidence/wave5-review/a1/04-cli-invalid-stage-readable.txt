@@ -1,0 +1,3 @@
+INVOCATION: C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe research/wave5/run_wave5.py --stage invalid`r`nSTDOUT:`r`n`r`nSTDERR:`r`nusage: run_wave5.py [-h] --stage {run,gates,report}
+run_wave5.py: error: argument --stage: invalid Stage value: 'invalid'
+`r`nEXIT_CODE: 2`r`n

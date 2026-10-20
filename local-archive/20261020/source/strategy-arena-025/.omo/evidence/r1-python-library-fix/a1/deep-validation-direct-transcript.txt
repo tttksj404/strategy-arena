@@ -1,0 +1,44 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716155521
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-direct-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SURFACE: PowerShell direct CLI'
+  Write-Output ("INVOCATION: & `"$py`" research/validation/deep_validate.py")
+  & $py --version
+  & $py -c "import numpy, pytest; print('numpy=' + numpy.__version__); print('pytest=' + pytest.__version__)"
+  & $py research/validation/deep_validate.py
+  $code = $LASTEXITCODE
+  Write-Output ("validator_exit=" + $code)
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 31096
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SURFACE: PowerShell direct CLI
+INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" research/validation/deep_validate.py
+
+
+
+validator_exit=0
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716155528
+**********************

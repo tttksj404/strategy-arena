@@ -1,0 +1,323 @@
+﻿[
+    {
+        "candidate":  "W2c",
+        "family":  "F1",
+        "equity_points":  2509,
+        "equity_first":  "2019-09-01T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  11,
+                            "FAIL":  6,
+                            "OTHER":  2
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  0.010411349432420058,
+                                                     "2020":  0.32240774374373027,
+                                                     "2021":  0.620156162412602,
+                                                     "2022":  0.008722020185723878,
+                                                     "2023":  0.0674891240210429,
+                                                     "2024":  0.2079132723864705,
+                                                     "2025":  -0.006481088926296508
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  0.00815126173032743,
+                                                  "2024_bull":  0.20678495005861053,
+                                                  "2025_sideways":  0.0004921239836896962
+                                              },
+                           "oos_trade_count":  2,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "PASS",
+                                                       "value":  1.797482177087658
+                                                   }
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5a",
+        "family":  "F5",
+        "equity_points":  2422,
+        "equity_first":  "2019-11-27T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  9,
+                            "FAIL":  10,
+                            "OTHER":  0
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  -0.0045534366318399355,
+                                                     "2020":  -0.28255720792791705,
+                                                     "2021":  -0.4111049691601092,
+                                                     "2022":  -0.38797295386806774,
+                                                     "2023":  0.06371299017108134,
+                                                     "2024":  0.5072121010332471,
+                                                     "2025":  -0.3938536476406358
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  -0.3822902926781918,
+                                                  "2024_bull":  0.5072121010332471,
+                                                  "2025_sideways":  -0.3653030877845983
+                                              },
+                           "oos_trade_count":  127,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "FAIL",
+                                                       "value":  -0.7498560152498185
+                                                   }
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5b",
+        "family":  "F5",
+        "equity_points":  2422,
+        "equity_first":  "2019-11-27T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  9,
+                            "FAIL":  10,
+                            "OTHER":  0
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  -0.0045534366318399355,
+                                                     "2020":  -0.33963822558027035,
+                                                     "2021":  -0.382748412522281,
+                                                     "2022":  -0.3971112081831817,
+                                                     "2023":  0.04976688439643984,
+                                                     "2024":  0.14465759467657957,
+                                                     "2025":  -0.29404620676393634
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  -0.3971112081831817,
+                                                  "2024_bull":  0.14465759467657957,
+                                                  "2025_sideways":  -0.22714771341938245
+                                              },
+                           "oos_trade_count":  67,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "FAIL",
+                                                       "value":  -0.7924876054879241
+                                                   }
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5c",
+        "family":  "F5",
+        "equity_points":  884,
+        "equity_first":  "2019-12-26T00:00:00+00:00",
+        "equity_last":  "2022-05-27T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  2,
+                            "FAIL":  2,
+                            "OTHER":  15
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  0.0,
+                                                     "2020":  -0.02926730619976925,
+                                                     "2021":  -0.04577034818387915,
+                                                     "2022":  -0.02134726910996454
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  -0.02134726910996454
+                                              },
+                           "oos_trade_count":  0,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "FAIL",
+                                                       "value":  -0.09347209596058237
+                                                   },
+                           "oos_label":  "UNTESTED_IN_OOS"
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5d",
+        "family":  "F5",
+        "equity_points":  2502,
+        "equity_first":  "2019-09-08T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  7,
+                            "FAIL":  12,
+                            "OTHER":  0
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  -0.12060938594254988,
+                                                     "2020":  0.16922679129346374,
+                                                     "2021":  0.2856762439026177,
+                                                     "2022":  0.15589610259735864,
+                                                     "2023":  -0.26071388742646806,
+                                                     "2024":  -0.024109902510128678,
+                                                     "2025":  -0.26571654351575025
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  0.18636065820863235,
+                                                  "2024_bull":  -0.024109902510128678,
+                                                  "2025_sideways":  -0.23976448565661923
+                                              },
+                           "oos_trade_count":  133,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "FAIL",
+                                                       "value":  -0.19051611822470438
+                                                   }
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5e",
+        "family":  "F5",
+        "equity_points":  2502,
+        "equity_first":  "2019-09-08T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  4,
+                            "FAIL":  15,
+                            "OTHER":  0
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  -0.029490414170827317,
+                                                     "2020":  -0.04946839236625078,
+                                                     "2021":  11.645826536872375,
+                                                     "2022":  -0.7281776819824071,
+                                                     "2023":  0.08161759102700072,
+                                                     "2024":  -0.2812830172897668,
+                                                     "2025":  -0.1478915410185887
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  -0.7281776819824071,
+                                                  "2024_bull":  -0.2812830172897668,
+                                                  "2025_sideways":  -0.05263261735891811
+                                              },
+                           "oos_trade_count":  165,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "PASS",
+                                                       "value":  1.1005123998873594
+                                                   }
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5f",
+        "family":  "F4",
+        "equity_points":  2502,
+        "equity_first":  "2019-09-08T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  2,
+                            "FAIL":  2,
+                            "OTHER":  15
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.090301470787562,
+                                                       1.090301470787562
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  -0.18098931855503708,
+                                                     "2020":  2.74505898205558,
+                                                     "2021":  11.531129055750812,
+                                                     "2022":  -0.7903400787387558,
+                                                     "2023":  2.947307222317428,
+                                                     "2024":  0.9008015162558554,
+                                                     "2025":  0.23370976621723072
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  -0.7977142525210459,
+                                                  "2024_bull":  0.8059769775244403,
+                                                  "2025_sideways":  -0.15513088351262228
+                                              },
+                           "oos_trade_count":  287,
+                           "gate4_is_after_cost":  {
+                                                       "status":  "PASS",
+                                                       "value":  73.5941123734323
+                                                   },
+                           "oos_label":  "OOS_CONTAMINATED_IS_ONLY",
+                           "decision_scope":  "IS_consistency_only"
+                       },
+        "selected_candidate":  null,
+        "combination_gates":  null
+    },
+    {
+        "candidate":  "W5g",
+        "family":  "F5",
+        "equity_points":  2509,
+        "equity_first":  "2019-09-01T00:00:00+00:00",
+        "equity_last":  "2026-07-14T00:00:00+00:00",
+        "gate_counts":  {
+                            "PASS":  10,
+                            "FAIL":  9,
+                            "OTHER":  0
+                        },
+        "validation":  {
+                           "neighbor_is_sharpes":  [
+                                                       1.0,
+                                                       1.1
+                                                   ],
+                           "yearly_is_returns":  {
+                                                     "2019":  0.0031705595434443623,
+                                                     "2020":  -0.01707863403974874,
+                                                     "2021":  -0.01677545643206102,
+                                                     "2022":  -0.20713623862798758,
+                                                     "2023":  0.07371024993001263,
+                                                     "2024":  0.36085094962517417,
+                                                     "2025":  -0.21892272402854007
+                                                 },
+                           "regime_returns":  {
+                                                  "2022_bear":  -0.20369883652526444,
+                                                  "2024_bull":  0.3602150612573942,
+                                                  "2025_sideways":  -0.19694997248571533
+                                              },
+                           "oos_trade_count":  287
+                       },
+        "selected_candidate":  "W5a",
+        "combination_gates":  {
+                                  "correlation":  -0.036415845381116835,
+                                  "correlation_pass":  true,
+                                  "mdd":  0.3220575502840052,
+                                  "baseline_mdd":  0.016125151123011827,
+                                  "mdd_pass":  false,
+                                  "cagr":  -0.02128773750460089,
+                                  "baseline_cagr":  0.18419143534537863,
+                                  "cagr_pass":  false,
+                                  "oos_return":  0.034242255420069645,
+                                  "baseline_oos_return":  0.00639488356683704,
+                                  "oos_pass":  true,
+                                  "is_overlap_days":  2135,
+                                  "combined_is_days":  2222,
+                                  "verdict":  "FAIL"
+                              }
+    }
+]

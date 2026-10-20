@@ -1,0 +1,51 @@
+{
+  "brief": "Bitget RWA wave1 paper-fidelity full sweep",
+  "created": "2026-07-16T12:55:46.712874+00:00",
+  "goals": [
+    {
+      "id": "G001",
+      "title": "build",
+      "objective": "Implement collector, engine, strategies, gates, report, and golden tests",
+      "status": "complete",
+      "evidence": "src/{collect,engine,strategies,gates,run_sweep}.py and tests/ created",
+      "verify_cmd": "",
+      "verify_evidence": ""
+    },
+    {
+      "id": "G002",
+      "title": "verify",
+      "objective": "Run pytest and synthetic strategy smoke",
+      "status": "complete",
+      "evidence": "python3 -m pytest -q: 5 passed; synthetic strategy smoke passed",
+      "verify_cmd": "",
+      "verify_evidence": ""
+    },
+    {
+      "id": "G003",
+      "title": "collect",
+      "objective": "Collect all 233 RWA symbols and write data manifest",
+      "status": "complete",
+      "evidence": "out/data_manifest.json: 233 rows; candle/funding parquet files 233 each; collection progress reached 233/233",
+      "verify_cmd": "",
+      "verify_evidence": ""
+    },
+    {
+      "id": "G004",
+      "title": "sweep",
+      "objective": "Run all A+B strategy/leverage combinations and artifacts",
+      "status": "pending",
+      "evidence": "",
+      "verify_cmd": "",
+      "verify_evidence": ""
+    },
+    {
+      "id": "G005",
+      "title": "audit",
+      "objective": "Perform final self-review and evidence gate",
+      "status": "pending",
+      "evidence": "",
+      "verify_cmd": "",
+      "verify_evidence": ""
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716161017
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-final-artifact-check-transcript.txt'
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: final artifact non-empty and parse check'
+  Write-Output 'SURFACE: PowerShell filesystem/JSON inspection'
+  Write-Output 'INVOCATION: ConvertFrom-Json on deep_W2c/F1e/W3c/W3d.json; report marker inspection'
+  $ok = $true
+  foreach ($candidate in @('W2c','F1e','W3c','W3d')) {
+    $path = "research/validation/results/deep_$candidate.json"
+    $item = Get-Item -LiteralPath $path
+    $json = Get-Content -Raw -LiteralPath $path | ConvertFrom-Json
+    $valid = $item.Length -gt 0 -and $json.candidate_id -eq $candidate -and $json.overall.status -in @('PASS','FAIL')
+    Write-Output ("$path bytes=" + $item.Length + " candidate=" + $json.candidate_id + " overall=" + $json.overall.status + " valid=" + $valid)
+    if (-not $valid) { $ok = $false }
+  }
+  $reportItem = Get-Item -LiteralPath 'research/validation/DEEP_REPORT.md'
+  $report = Get-Content -Raw -LiteralPath 'research/validation/DEEP_REPORT.md'
+  $reportOk = $reportItem.Length -gt 0 -and $report.Contains('| Candidate | MC 10k |') -and $report.Contains('3 symbols, 312 observations, and 71 days')
+  Write-Output ("research/validation/DEEP_REPORT.md bytes=" + $reportItem.Length + " valid=" + $reportOk)
+  $harnessGone = -not (Test-Path -LiteralPath '.omo/evidence/r1-python-library-fix/a1/deep-output-inspector.py')
+  $fixtureGone = -not (Test-Path -LiteralPath '.omo/evidence/r1-python-library-fix/a1/deep-edge-fixture/research/wave2/results/W2c.json')
+  Write-Output ("temporary_harness_file_absent=" + $harnessGone)
+  Write-Output ("malformed_fixture_file_absent=" + $fixtureGone)
+  if ($ok -and $reportOk -and $harnessGone -and $fixtureGone) { $code = 0 }
+  Write-Output ("final_artifact_check=" + ($code -eq 0))
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 4008
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: final artifact non-empty and parse check
+SURFACE: PowerShell filesystem/JSON inspection
+INVOCATION: ConvertFrom-Json on deep_W2c/F1e/W3c/W3d.json; report marker inspection
+research/validation/results/deep_W2c.json bytes=7265 candidate=W2c overall=FAIL valid=True
+research/validation/results/deep_F1e.json bytes=7155 candidate=F1e overall=FAIL valid=True
+research/validation/results/deep_W3c.json bytes=7022 candidate=W3c overall=FAIL valid=True
+research/validation/results/deep_W3d.json bytes=6911 candidate=W3d overall=FAIL valid=True
+research/validation/DEEP_REPORT.md bytes=4418 valid=False
+temporary_harness_file_absent=True
+malformed_fixture_file_absent=True
+final_artifact_check=False
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716161017
+**********************

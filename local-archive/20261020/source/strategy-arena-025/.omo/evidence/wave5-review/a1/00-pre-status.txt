@@ -1,0 +1,75 @@
+﻿ M research/wave4_leverage/results/F1f_ASYM_L10p0.json
+ M research/wave4_leverage/results/F1f_ASYM_L1p0.json
+ M research/wave4_leverage/results/F1f_ASYM_L1p5.json
+ M research/wave4_leverage/results/F1f_ASYM_L2p0.json
+ M research/wave4_leverage/results/F1f_ASYM_L3p0.json
+ M research/wave4_leverage/results/F1f_ASYM_L5p0.json
+ M research/wave4_leverage/results/F1f_SYM_L10p0.json
+ M research/wave4_leverage/results/F1f_SYM_L1p0.json
+ M research/wave4_leverage/results/F1f_SYM_L1p5.json
+ M research/wave4_leverage/results/F1f_SYM_L2p0.json
+ M research/wave4_leverage/results/F1f_SYM_L3p0.json
+ M research/wave4_leverage/results/F1f_SYM_L5p0.json
+ M research/wave4_leverage/results/W2c_ASYM_L10p0.json
+ M research/wave4_leverage/results/W2c_ASYM_L1p0.json
+ M research/wave4_leverage/results/W2c_ASYM_L1p5.json
+ M research/wave4_leverage/results/W2c_ASYM_L2p0.json
+ M research/wave4_leverage/results/W2c_ASYM_L3p0.json
+ M research/wave4_leverage/results/W2c_ASYM_L5p0.json
+ M research/wave4_leverage/results/W2c_SYM_L10p0.json
+ M research/wave4_leverage/results/W2c_SYM_L1p0.json
+ M research/wave4_leverage/results/W2c_SYM_L1p5.json
+ M research/wave4_leverage/results/W2c_SYM_L2p0.json
+ M research/wave4_leverage/results/W2c_SYM_L3p0.json
+ M research/wave4_leverage/results/W2c_SYM_L5p0.json
+?? .codex-fable5/packets/PACKET-deep-validation-20260716.md
+?? .debug-journal.md
+?? .omo/evidence/.pytest-wave4-review-20260716-c/test_ledger_append_is_idempote0/paper_ledger.jsonl
+?? .omo/evidence/.pytest-wave4-review-20260716-c/test_ledger_append_writes_json0/paper_ledger.jsonl
+?? .omo/evidence/.pytest-wave4-review-20260716-c/test_run_once_updates_all_four0/STATUS.md
+?? .omo/evidence/.pytest-wave4-review-20260716-c/test_run_once_updates_all_four0/ledger/paper_ledger.jsonl
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-bounded-runtime-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-current-output-inspection-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-direct-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-dirty-worktree-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-edge-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-final-artifact-check-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-final-direct-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-flaky-rerun-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-help-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-import-pytest-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-misleading-output-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-offline-audit-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-output-inspection-rerun-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-output-inspection-rerun2-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-output-inspection-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-provenance-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/deep-validation-repeat-transcript.txt
+?? .omo/evidence/r1-python-library-fix/a1/wave2-cli-transcript.md
+?? .omo/evidence/r1-python-library-fix/a1/wave2-manual-qa.md
+?? .omo/evidence/r1-python-library-fix/a1/wave3-cli-transcript.md
+?? .omo/evidence/r1-python-library-fix/a1/wave3-synthetic-run-candidate.py
+?? .omo/evidence/wave3-code-review.md
+?? .omo/evidence/wave3-gate-review.md
+?? .omo/evidence/wave5-review/a1/00-pre-status.txt
+?? .omo/evidence/wave5-review/a1/00-python-version.txt
+?? .omo/tmp/wave4_readback.py
+?? debug.log
+?? research/wave5/REGISTRY.md
+?? research/wave5/SPEC.md
+?? research/wave5/__init__.py
+?? research/wave5/engine.py
+?? research/wave5/gates.py
+?? research/wave5/report/wave5_report.md
+?? research/wave5/reporting.py
+?? research/wave5/results/W2c.json
+?? research/wave5/results/W5a.json
+?? research/wave5/results/W5b.json
+?? research/wave5/results/W5c.json
+?? research/wave5/results/W5d.json
+?? research/wave5/results/W5e.json
+?? research/wave5/results/W5f.json
+?? research/wave5/results/W5g.json
+?? research/wave5/run_wave5.py
+?? research/wave5/strategies.py
+?? research/wave5/tests/test_wave5.py
