@@ -1,0 +1,18 @@
+{
+  "Project": "tttksj404/strategy-arena",
+  "Cipher": "AES-256-GCM/KSAR0001",
+  "CipherSha256": "c11fcaa250a480867d0f05cf02c5b6a2a64a5a51adda71f1638969dab2a0cea5",
+  "PlaintextSha256": "f5c5a1332ff873922682c5a226ddbe86d8b7ab560ee03f3f05b8e0dc3f7151a3",
+  "Files": [
+    {
+      "Relative": "loose-project-files/strategy-arena-crypto-a15d8b5.bundle",
+      "Bytes": 51701,
+      "Sha256": "1a4e1881c3723933ea8da678ccc99410724396273f3595fff701ff298db65160"
+    },
+    {
+      "Relative": "scheduled-tasks/StrategyArena Paper Tracker.xml",
+      "Bytes": 1545,
+      "Sha256": "8f01e300918fbd45476340eabd8468b585580a633f88c2c347af0d53ddfa91ea"
+    }
+  ]
+}
