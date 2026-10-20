@@ -1,0 +1,47 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716160714
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-misleading-output-transcript.txt'
+$edge = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-edge-transcript.txt'
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: misleading success output guard'
+  Write-Output 'SURFACE: PowerShell transcript inspection of malformed/missing direct CLI runs'
+  Write-Output ("INVOCATION: Select-String -Path `"$edge`" -Pattern `"wrote 4 candidate JSON files`"")
+  $successLines = @(Select-String -LiteralPath $edge -Pattern 'wrote 4 candidate JSON files' -CaseSensitive)
+  $failureLines = @(Select-String -LiteralPath $edge -Pattern 'missing_input_exit=1|malformed_input_exit=1' -CaseSensitive)
+  Write-Output ("failure_exit_markers=" + $failureLines.Count)
+  Write-Output ("success_markers_in_failure_runs=" + $successLines.Count)
+  $passed = $failureLines.Count -eq 2 -and $successLines.Count -eq 0
+  Write-Output ("failure_not_masked_by_success_text=" + $passed)
+  if ($passed) { $code = 0 }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 38188
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: misleading success output guard
+SURFACE: PowerShell transcript inspection of malformed/missing direct CLI runs
+INVOCATION: Select-String -Path "C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena\.omo\evidence\r1-python-library-fix\a1\deep-validation-edge-transcript.txt" -Pattern "wrote 4 candidate JSON files"
+failure_exit_markers=2
+success_markers_in_failure_runs=0
+failure_not_masked_by_success_text=True
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716160714
+**********************

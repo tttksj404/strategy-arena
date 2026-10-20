@@ -1,0 +1,6 @@
+{
+  "validation_mode": "mission-validator-script",
+  "completion_artifact_path": "research/wave10_event_driven/results/validation.json",
+  "mission_validator_command": "python research/wave10_event_driven/validate_wave10.py",
+  "output_artifact_path": "research/wave10_event_driven/report/wave10_results.md"
+}

@@ -1,0 +1,51 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716160442
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-flaky-rerun-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$code = 1
+$env:PYTHONDONTWRITEBYTECODE = '1'
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: synthetic pytest rerun 1'
+  Write-Output ("SURFACE: pytest; INVOCATION: & `"$py`" -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider")
+  & $py -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider
+  $first = $LASTEXITCODE
+  Write-Output ("pytest_run_1_exit=" + $first)
+  Write-Output 'SCENARIO: synthetic pytest rerun 2'
+  & $py -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider
+  $second = $LASTEXITCODE
+  Write-Output ("pytest_run_2_exit=" + $second)
+  $code = if ($first -eq 0 -and $second -eq 0) { 0 } else { 1 }
+  Write-Output ("two_run_flake_check=" + ($code -eq 0))
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 35164
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: synthetic pytest rerun 1
+SURFACE: pytest; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider
+
+pytest_run_1_exit=0
+SCENARIO: synthetic pytest rerun 2
+
+pytest_run_2_exit=0
+two_run_flake_check=True
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716160444
+**********************

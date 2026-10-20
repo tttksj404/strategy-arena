@@ -1,0 +1,2816 @@
+{
+  "top1": [
+    {
+      "week": "2024-07-22",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-07-29",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-08-05",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-08-12",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-08-19",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-08-26",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-02",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-09",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-16",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-23",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-30",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-10-07",
+      "picks": [
+        "PAXGUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-10-14",
+      "picks": [
+        "PAXGUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-10-21",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-10-28",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-11-04",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-11-11",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-11-18",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-11-25",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-02",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-09",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-16",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-12-23",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-30",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-06",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-01-13",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-20",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-27",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-02-03",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-02-10",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-02-17",
+      "picks": [
+        "EIGENUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-02-24",
+      "picks": [
+        "VVVUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-03-03",
+      "picks": [
+        "VVVUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-03-10",
+      "picks": [
+        "VVVUSDT|WED_SHORT|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-03-17",
+      "picks": [
+        "PIUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-03-24",
+      "picks": [
+        "PIUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-03-31",
+      "picks": [
+        "PIUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-04-07",
+      "picks": [
+        "PIUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-04-14",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-04-21",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-04-28",
+      "picks": [
+        "FETUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-05-05",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-05-12",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-05-19",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-05-26",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-02",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-09",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-06-16",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-23",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-30",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-07-07",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-07-14",
+      "picks": [
+        "XLMUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-07-21",
+      "picks": [
+        "XRPUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-07-28",
+      "picks": [
+        "XRPUSDT|B1_donchian|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-08-04",
+      "picks": [
+        "ORDIUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-08-11",
+      "picks": [
+        "SIRENUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-08-18",
+      "picks": [
+        "ETHFIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-08-25",
+      "picks": [
+        "SIRENUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-01",
+      "picks": [
+        "LDOUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-08",
+      "picks": [
+        "LINKUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-15",
+      "picks": [
+        "LINKUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-09-22",
+      "picks": [
+        "SIRENUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-29",
+      "picks": [
+        "SIRENUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-10-06",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-10-13",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-10-20",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-10-27",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-11-03",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-11-10",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-11-17",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-11-24",
+      "picks": [
+        "XPINUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-01",
+      "picks": [
+        "XPINUSDT|B1_donchian|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-12-08",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-15",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-12-22",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-12-29",
+      "picks": [
+        "ALLOUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-01-05",
+      "picks": [
+        "VVVUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-01-12",
+      "picks": [
+        "VVVUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-01-19",
+      "picks": [
+        "PENDLEUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-01-26",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-02-02",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-02-09",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-02-16",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-02-23",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-03-02",
+      "picks": [
+        "SOLUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-09",
+      "picks": [
+        "COINUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-16",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-23",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-03-30",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-04-06",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-04-13",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-04-20",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-04-27",
+      "picks": [
+        "KATUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-05-04",
+      "picks": [
+        "TACUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-05-11",
+      "picks": [
+        "TACUSDT|B1_donchian|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-05-18",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-05-25",
+      "picks": [
+        "KATUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-06-01",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-06-08",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-06-15",
+      "picks": [
+        "IDUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-06-22",
+      "picks": [
+        "IDUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-06-29",
+      "picks": [
+        "MSTRUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-07-06",
+      "picks": [
+        "MSTRUSDT|B1_donchian|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-07-13",
+      "picks": [
+        "TACUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    }
+  ],
+  "top3": [
+    {
+      "week": "2024-07-22",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2024-07-29",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-08-05",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-08-12",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-08-19",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-08-26",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-09-02",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-09",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-09-16",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-23",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-30",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-10-07",
+      "picks": [
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B2_mean_reversion|L3",
+        "PAXGUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2024-10-14",
+      "picks": [
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B2_mean_reversion|L3",
+        "PAXGUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-10-21",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2024-10-28",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-11-04",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-11-11",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-11-18",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-11-25",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-02",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-12-09",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2024-12-16",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-23",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2024-12-30",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-06",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-01-13",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-20",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-27",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B4_vol_breakout|L2",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-02-03",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-02-10",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-02-17",
+      "picks": [
+        "EIGENUSDT|B4_vol_breakout|L5",
+        "XLMUSDT|B4_vol_breakout|L5",
+        "EIGENUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-02-24",
+      "picks": [
+        "VVVUSDT|B1_donchian|L2",
+        "TUSDT|B2_mean_reversion|L5",
+        "VVVUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-03-03",
+      "picks": [
+        "VVVUSDT|WED_SHORT|L5",
+        "SHIBUSDT|B4_vol_breakout|L5",
+        "XLMUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-03-10",
+      "picks": [
+        "VVVUSDT|WED_SHORT|L5",
+        "SHIBUSDT|B4_vol_breakout|L5",
+        "JUPUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-03-17",
+      "picks": [
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|WED_SHORT|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-03-24",
+      "picks": [
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-03-31",
+      "picks": [
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-04-07",
+      "picks": [
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-04-14",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-04-21",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3",
+        "AEROUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-04-28",
+      "picks": [
+        "FETUSDT|B4_vol_breakout|L5",
+        "FETUSDT|B4_vol_breakout|L3",
+        "AEROUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-05-05",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "PIUSDT|B4_vol_breakout|L5",
+        "DEXEUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-05-12",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3",
+        "DEXEUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-05-19",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-05-26",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-02",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5",
+        "EPICUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-06-09",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-06-16",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-23",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "SIRENUSDT|B1_donchian|L2",
+        "TAOUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-06-30",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "BANKUSDT|B1_donchian|L3",
+        "DEXEUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-07-07",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "SKYAIUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-07-14",
+      "picks": [
+        "XLMUSDT|B1_donchian|L5",
+        "SYNUSDT|B4_vol_breakout|L5",
+        "SIRENUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-07-21",
+      "picks": [
+        "XRPUSDT|B1_donchian|L5",
+        "1000BONKUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-07-28",
+      "picks": [
+        "XRPUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-08-04",
+      "picks": [
+        "ORDIUSDT|B1_donchian|L5",
+        "XRPUSDT|B1_donchian|L5",
+        "SUIUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-08-11",
+      "picks": [
+        "SIRENUSDT|B1_donchian|L3",
+        "SIRENUSDT|B1_donchian|L2",
+        "XRPUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-08-18",
+      "picks": [
+        "ETHFIUSDT|B4_vol_breakout|L5",
+        "VVVUSDT|B1_donchian|L5",
+        "SIRENUSDT|B1_donchian|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-08-25",
+      "picks": [
+        "SIRENUSDT|B1_donchian|L3",
+        "SIRENUSDT|B1_donchian|L2",
+        "LINKUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-09-01",
+      "picks": [
+        "LDOUSDT|B1_donchian|L5",
+        "LDOUSDT|B1_donchian|L3",
+        "LINKUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-09-08",
+      "picks": [
+        "LINKUSDT|B4_vol_breakout|L5",
+        "LDOUSDT|B1_donchian|L3",
+        "SOLUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-15",
+      "picks": [
+        "LINKUSDT|B4_vol_breakout|L5",
+        "SOLUSDT|B1_donchian|L5",
+        "SIRENUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-22",
+      "picks": [
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "SIRENUSDT|B4_vol_breakout|L3",
+        "BANKUSDT|B1_donchian|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-09-29",
+      "picks": [
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "MORPHOUSDT|B1_donchian|L5",
+        "SIRENUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-10-06",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "GALAUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-10-13",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "SKYAIUSDT|B1_donchian|L3",
+        "SIRENUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-10-20",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "PYTHUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-10-27",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "PEPEUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-03",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "MYXUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-10",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "GRASSUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-17",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "COINUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-24",
+      "picks": [
+        "XPINUSDT|B1_donchian|L2",
+        "MSTRUSDT|B1_donchian|L5",
+        "CRCLUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-12-01",
+      "picks": [
+        "XPINUSDT|B1_donchian|L2",
+        "CRCLUSDT|B1_donchian|L5",
+        "XPLUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-08",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5",
+        "XPINUSDT|B1_donchian|L2",
+        "CRCLUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-15",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5",
+        "CRCLUSDT|B1_donchian|L5",
+        "ORDIUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-22",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5",
+        "ORDIUSDT|B4_vol_breakout|L3",
+        "PUMPUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-29",
+      "picks": [
+        "ALLOUSDT|B2_mean_reversion|L2",
+        "AGLDUSDT|B2_mean_reversion|L2",
+        "MMTUSDT|WED_SHORT|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-01-05",
+      "picks": [
+        "VVVUSDT|B1_donchian|L3",
+        "VVVUSDT|B1_donchian|L2",
+        "ALLOUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-01-12",
+      "picks": [
+        "VVVUSDT|B1_donchian|L3",
+        "VVVUSDT|B1_donchian|L2",
+        "SIRENUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-01-19",
+      "picks": [
+        "PENDLEUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-01-26",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "PENGUUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-02-02",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-02-09",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "ZECUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-02-16",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "VVVUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-02-23",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "SOLUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-02",
+      "picks": [
+        "SOLUSDT|B1_donchian|L5",
+        "COINUSDT|B1_donchian|L5",
+        "RIVERUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-03-09",
+      "picks": [
+        "COINUSDT|B1_donchian|L5",
+        "XPLUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-03-16",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "XPLUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-23",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "COINUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-30",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "COINUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-04-06",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5",
+        "MYXUSDT|B1_donchian|L2",
+        "RIVERUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-04-13",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5",
+        "ZECUSDT|B1_donchian|L3",
+        "METAUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-04-20",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5",
+        "METAUSDT|B1_donchian|L5",
+        "COINUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-04-27",
+      "picks": [
+        "KATUSDT|B1_donchian|L3",
+        "ZBTUSDT|B1_donchian|L3",
+        "ARMUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-05-04",
+      "picks": [
+        "TACUSDT|B1_donchian|L2",
+        "KATUSDT|B1_donchian|L3",
+        "DEXEUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-05-11",
+      "picks": [
+        "TACUSDT|B1_donchian|L2",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "GRAMUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-05-18",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5",
+        "TACUSDT|B1_donchian|L2",
+        "PENDLEUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-05-25",
+      "picks": [
+        "KATUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "KATUSDT|B1_donchian|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-06-01",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5",
+        "GRAMUSDT|B1_donchian|L3",
+        "PENDLEUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-06-08",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "GRAMUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2026-06-15",
+      "picks": [
+        "IDUSDT|B1_donchian|L5",
+        "SIRENUSDT|B4_vol_breakout|L2",
+        "IDUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-06-22",
+      "picks": [
+        "IDUSDT|B1_donchian|L3",
+        "MSTRUSDT|B1_donchian|L5",
+        "IDUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-06-29",
+      "picks": [
+        "MSTRUSDT|B1_donchian|L5",
+        "MSTRUSDT|B1_donchian|L3",
+        "ZECUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-07-06",
+      "picks": [
+        "MSTRUSDT|B1_donchian|L5",
+        "EPICUSDT|B1_donchian|L2",
+        "MSTRUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-07-13",
+      "picks": [
+        "TACUSDT|B4_vol_breakout|L5",
+        "TACUSDT|B4_vol_breakout|L3",
+        "TACUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 3
+    }
+  ],
+  "top5": [
+    {
+      "week": "2024-07-22",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 5
+    },
+    {
+      "week": "2024-07-29",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-08-05",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-08-12",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-08-19",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-08-26",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-09-02",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-09-09",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-16",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-23",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-09-30",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-10-07",
+      "picks": [
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B2_mean_reversion|L3",
+        "PAXGUSDT|B2_mean_reversion|L5",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-10-14",
+      "picks": [
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B2_mean_reversion|L3",
+        "PAXGUSDT|B2_mean_reversion|L5",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-10-21",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-10-28",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-11-04",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B2_mean_reversion|L2",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-11-11",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-11-18",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2024-11-25",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-12-02",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2024-12-09",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2024-12-16",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2024-12-23",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B4_vol_breakout|L2",
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|WED_SHORT|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2024-12-30",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-06",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-01-13",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B4_vol_breakout|L2",
+        "PAXGUSDT|WED_SHORT|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-20",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|WED_SHORT|L5",
+        "PAXGUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-01-27",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B4_vol_breakout|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-02-03",
+      "picks": [
+        "PAXGUSDT|B1_donchian|L5",
+        "PAXGUSDT|B1_donchian|L3",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|B4_vol_breakout|L2",
+        "PAXGUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-02-10",
+      "picks": [
+        "PAXGUSDT|WED_SHORT|L2",
+        "PAXGUSDT|B1_donchian|L2",
+        "PAXGUSDT|WED_SHORT|L3",
+        "PAXGUSDT|B4_vol_breakout|L2",
+        "PAXGUSDT|B1_donchian|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-02-17",
+      "picks": [
+        "EIGENUSDT|B4_vol_breakout|L5",
+        "XLMUSDT|B4_vol_breakout|L5",
+        "EIGENUSDT|B4_vol_breakout|L3",
+        "LTCUSDT|B4_vol_breakout|L5",
+        "TUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 5
+    },
+    {
+      "week": "2025-02-24",
+      "picks": [
+        "VVVUSDT|B1_donchian|L2",
+        "TUSDT|B2_mean_reversion|L5",
+        "VVVUSDT|B1_donchian|L3",
+        "VVVUSDT|WED_SHORT|L5",
+        "TUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-03-03",
+      "picks": [
+        "VVVUSDT|WED_SHORT|L5",
+        "SHIBUSDT|B4_vol_breakout|L5",
+        "XLMUSDT|B4_vol_breakout|L5",
+        "JUPUSDT|B4_vol_breakout|L5",
+        "VVVUSDT|B1_donchian|L2"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-03-10",
+      "picks": [
+        "VVVUSDT|WED_SHORT|L5",
+        "SHIBUSDT|B4_vol_breakout|L5",
+        "JUPUSDT|B4_vol_breakout|L5",
+        "JUPUSDT|B4_vol_breakout|L3",
+        "SHIBUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-03-17",
+      "picks": [
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|WED_SHORT|L5",
+        "VVVUSDT|WED_SHORT|L5",
+        "PIUSDT|WED_SHORT|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-03-24",
+      "picks": [
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|WED_SHORT|L5",
+        "PIUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-03-31",
+      "picks": [
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3",
+        "PIUSDT|WED_SHORT|L5"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-04-07",
+      "picks": [
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3",
+        "PIUSDT|B1_donchian|L3",
+        "PIUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-04-14",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L3",
+        "PIUSDT|B4_vol_breakout|L2",
+        "PIUSDT|B1_donchian|L3"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-04-21",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3",
+        "AEROUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L2",
+        "CRVUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-04-28",
+      "picks": [
+        "FETUSDT|B4_vol_breakout|L5",
+        "FETUSDT|B4_vol_breakout|L3",
+        "AEROUSDT|B4_vol_breakout|L5",
+        "CRVUSDT|B4_vol_breakout|L5",
+        "LTCUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-05-05",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "PIUSDT|B4_vol_breakout|L5",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "PIUSDT|B4_vol_breakout|L3",
+        "AEROUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-05-12",
+      "picks": [
+        "PIUSDT|B4_vol_breakout|L5",
+        "PIUSDT|B4_vol_breakout|L3",
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "PIUSDT|B1_donchian|L2",
+        "PIUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-05-19",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L3",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "EPICUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-05-26",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L3",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "EPICUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 0
+    },
+    {
+      "week": "2025-06-02",
+      "picks": [
+        "EPICUSDT|B2_mean_reversion|L5",
+        "EPICUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L2",
+        "PENDLEUSDT|B2_mean_reversion|L2",
+        "AAVEUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-06-09",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "APEUSDT|B1_donchian|L5",
+        "EPICUSDT|B2_mean_reversion|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-06-16",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "EPICUSDT|B2_mean_reversion|L3",
+        "OPUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-06-23",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "SIRENUSDT|B1_donchian|L2",
+        "TAOUSDT|B4_vol_breakout|L5",
+        "EPICUSDT|B2_mean_reversion|L5",
+        "DEXEUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-06-30",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "BANKUSDT|B1_donchian|L3",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "TAOUSDT|B4_vol_breakout|L5",
+        "BANKUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-07-07",
+      "picks": [
+        "DEXEUSDT|B2_mean_reversion|L3",
+        "DEXEUSDT|B2_mean_reversion|L2",
+        "SKYAIUSDT|B4_vol_breakout|L5",
+        "SKYAIUSDT|B4_vol_breakout|L3",
+        "TAOUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-07-14",
+      "picks": [
+        "XLMUSDT|B1_donchian|L5",
+        "SYNUSDT|B4_vol_breakout|L5",
+        "SIRENUSDT|B1_donchian|L3",
+        "XLMUSDT|B1_donchian|L3",
+        "PENGUUSDT|B1_donchian|L3"
+      ],
+      "changed": 5
+    },
+    {
+      "week": "2025-07-21",
+      "picks": [
+        "XRPUSDT|B1_donchian|L5",
+        "1000BONKUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L5",
+        "1000BONKUSDT|B1_donchian|L3",
+        "PENGUUSDT|B1_donchian|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-07-28",
+      "picks": [
+        "XRPUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L3",
+        "ENAUSDT|B1_donchian|L3",
+        "SIRENUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-08-04",
+      "picks": [
+        "ORDIUSDT|B1_donchian|L5",
+        "XRPUSDT|B1_donchian|L5",
+        "SUIUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L3",
+        "EIGENUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-08-11",
+      "picks": [
+        "SIRENUSDT|B1_donchian|L3",
+        "SIRENUSDT|B1_donchian|L2",
+        "XRPUSDT|B1_donchian|L5",
+        "ORDIUSDT|B1_donchian|L5",
+        "LDOUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-08-18",
+      "picks": [
+        "ETHFIUSDT|B4_vol_breakout|L5",
+        "VVVUSDT|B1_donchian|L5",
+        "SIRENUSDT|B1_donchian|L3",
+        "DOGEUSDT|B4_vol_breakout|L5",
+        "ORDIUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-08-25",
+      "picks": [
+        "SIRENUSDT|B1_donchian|L3",
+        "SIRENUSDT|B1_donchian|L2",
+        "LINKUSDT|B4_vol_breakout|L5",
+        "LDOUSDT|B1_donchian|L5",
+        "LDOUSDT|B1_donchian|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-09-01",
+      "picks": [
+        "LDOUSDT|B1_donchian|L5",
+        "LDOUSDT|B1_donchian|L3",
+        "LINKUSDT|B4_vol_breakout|L5",
+        "LDOUSDT|B1_donchian|L2",
+        "SOLUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-09-08",
+      "picks": [
+        "LINKUSDT|B4_vol_breakout|L5",
+        "LDOUSDT|B1_donchian|L3",
+        "SOLUSDT|B1_donchian|L5",
+        "LDOUSDT|B1_donchian|L5",
+        "PYTHUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-09-15",
+      "picks": [
+        "LINKUSDT|B4_vol_breakout|L5",
+        "SOLUSDT|B1_donchian|L5",
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "GALAUSDT|B4_vol_breakout|L5",
+        "SOLUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-09-22",
+      "picks": [
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "SIRENUSDT|B4_vol_breakout|L3",
+        "BANKUSDT|B1_donchian|L3",
+        "VELVETUSDT|B1_donchian|L2",
+        "MORPHOUSDT|B1_donchian|L5"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-09-29",
+      "picks": [
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "MORPHOUSDT|B1_donchian|L5",
+        "SIRENUSDT|B4_vol_breakout|L3",
+        "GALAUSDT|B4_vol_breakout|L5",
+        "LINKUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-10-06",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "GALAUSDT|B4_vol_breakout|L5",
+        "MYXUSDT|WED_SHORT|L5",
+        "GRASSUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-10-13",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "SKYAIUSDT|B1_donchian|L3",
+        "SIRENUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "SKYAIUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-10-20",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "PYTHUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "PYTHUSDT|B4_vol_breakout|L3",
+        "PEPEUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-10-27",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "PEPEUSDT|B4_vol_breakout|L5",
+        "MYXUSDT|WED_SHORT|L5",
+        "FETUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-11-03",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "MYXUSDT|WED_SHORT|L5",
+        "PEPEUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-10",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "GRASSUSDT|B4_vol_breakout|L2",
+        "PEPEUSDT|B4_vol_breakout|L5",
+        "COINUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-17",
+      "picks": [
+        "GRASSUSDT|B4_vol_breakout|L5",
+        "GRASSUSDT|B4_vol_breakout|L3",
+        "COINUSDT|B1_donchian|L5",
+        "GRASSUSDT|B4_vol_breakout|L2",
+        "MSTRUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-11-24",
+      "picks": [
+        "XPINUSDT|B1_donchian|L2",
+        "MSTRUSDT|B1_donchian|L5",
+        "CRCLUSDT|B1_donchian|L5",
+        "ENAUSDT|B4_vol_breakout|L5",
+        "MSTRUSDT|B1_donchian|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2025-12-01",
+      "picks": [
+        "XPINUSDT|B1_donchian|L2",
+        "CRCLUSDT|B1_donchian|L5",
+        "XPLUSDT|B4_vol_breakout|L5",
+        "XPLUSDT|B4_vol_breakout|L3",
+        "CRCLUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2025-12-08",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5",
+        "XPINUSDT|B1_donchian|L2",
+        "CRCLUSDT|B1_donchian|L5",
+        "ORDIUSDT|B4_vol_breakout|L3",
+        "CRCLUSDT|B1_donchian|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-12-15",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5",
+        "CRCLUSDT|B1_donchian|L5",
+        "ORDIUSDT|B4_vol_breakout|L3",
+        "CRCLUSDT|B1_donchian|L3",
+        "AGLDUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2025-12-22",
+      "picks": [
+        "ORDIUSDT|B4_vol_breakout|L5",
+        "ORDIUSDT|B4_vol_breakout|L3",
+        "PUMPUSDT|WED_SHORT|L5",
+        "FARTCOINUSDT|WED_SHORT|L5",
+        "CRCLUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2025-12-29",
+      "picks": [
+        "ALLOUSDT|B2_mean_reversion|L2",
+        "AGLDUSDT|B2_mean_reversion|L2",
+        "MMTUSDT|WED_SHORT|L5",
+        "PENGUUSDT|B4_vol_breakout|L3",
+        "BABAUSDT|B2_mean_reversion|L5"
+      ],
+      "changed": 5
+    },
+    {
+      "week": "2026-01-05",
+      "picks": [
+        "VVVUSDT|B1_donchian|L3",
+        "VVVUSDT|B1_donchian|L2",
+        "ALLOUSDT|B2_mean_reversion|L2",
+        "PENDLEUSDT|B1_donchian|L3",
+        "AGLDUSDT|B2_mean_reversion|L2"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-01-12",
+      "picks": [
+        "VVVUSDT|B1_donchian|L3",
+        "VVVUSDT|B1_donchian|L2",
+        "SIRENUSDT|B1_donchian|L3",
+        "PENDLEUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B1_donchian|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-01-19",
+      "picks": [
+        "PENDLEUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L3",
+        "PENDLEUSDT|B1_donchian|L2",
+        "DASHUSDT|B1_donchian|L2"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-01-26",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "PENGUUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L3",
+        "ENSOUSDT|B1_donchian|L2"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2026-02-02",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "RIVERUSDT|B4_vol_breakout|L2",
+        "DASHUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-02-09",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "ZECUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L3",
+        "DASHUSDT|B1_donchian|L2"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-02-16",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "VVVUSDT|B1_donchian|L3",
+        "SUIUSDT|B1_donchian|L5",
+        "SOLUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-02-23",
+      "picks": [
+        "USELESSUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L2",
+        "SOLUSDT|B1_donchian|L5",
+        "OPUSDT|B1_donchian|L5",
+        "1000BONKUSDT|B1_donchian|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-03-02",
+      "picks": [
+        "SOLUSDT|B1_donchian|L5",
+        "COINUSDT|B1_donchian|L5",
+        "RIVERUSDT|B4_vol_breakout|L2",
+        "RIVERUSDT|B4_vol_breakout|L3",
+        "SOLUSDT|B1_donchian|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2026-03-09",
+      "picks": [
+        "COINUSDT|B1_donchian|L5",
+        "XPLUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "COINUSDT|B1_donchian|L3",
+        "USELESSUSDT|B1_donchian|L3"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2026-03-16",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "XPLUSDT|B4_vol_breakout|L3",
+        "COINUSDT|B1_donchian|L5",
+        "ENAUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-03-23",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "COINUSDT|B1_donchian|L5",
+        "XPLUSDT|B4_vol_breakout|L3",
+        "ZECUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-03-30",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5",
+        "MEGAUSDT|B2_mean_reversion|L3",
+        "COINUSDT|B1_donchian|L5",
+        "MEGAUSDT|B2_mean_reversion|L2",
+        "ENAUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-04-06",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5",
+        "MYXUSDT|B1_donchian|L2",
+        "RIVERUSDT|B4_vol_breakout|L3",
+        "MYXUSDT|B4_vol_breakout|L3",
+        "PEPEUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2026-04-13",
+      "picks": [
+        "ENAUSDT|B4_vol_breakout|L5",
+        "ZECUSDT|B1_donchian|L3",
+        "METAUSDT|B1_donchian|L5",
+        "ENAUSDT|B4_vol_breakout|L3",
+        "XPLUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2026-04-20",
+      "picks": [
+        "XPLUSDT|B4_vol_breakout|L5",
+        "METAUSDT|B1_donchian|L5",
+        "COINUSDT|B1_donchian|L5",
+        "ENAUSDT|B4_vol_breakout|L5",
+        "VELVETUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-04-27",
+      "picks": [
+        "KATUSDT|B1_donchian|L3",
+        "ZBTUSDT|B1_donchian|L3",
+        "ARMUSDT|B1_donchian|L5",
+        "ZBTUSDT|B1_donchian|L2",
+        "KATUSDT|B1_donchian|L2"
+      ],
+      "changed": 5
+    },
+    {
+      "week": "2026-05-04",
+      "picks": [
+        "TACUSDT|B1_donchian|L2",
+        "KATUSDT|B1_donchian|L3",
+        "DEXEUSDT|B1_donchian|L2",
+        "KATUSDT|B1_donchian|L2",
+        "METAUSDT|B1_donchian|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-05-11",
+      "picks": [
+        "TACUSDT|B1_donchian|L2",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "GRAMUSDT|B1_donchian|L5",
+        "WLFIUSDT|B1_donchian|L5",
+        "KATUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-05-18",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5",
+        "TACUSDT|B1_donchian|L2",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "KATUSDT|B1_donchian|L3",
+        "GRAMUSDT|B1_donchian|L3"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-05-25",
+      "picks": [
+        "KATUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "KATUSDT|B1_donchian|L3",
+        "TACUSDT|B1_donchian|L2",
+        "GRAMUSDT|B1_donchian|L5"
+      ],
+      "changed": 1
+    },
+    {
+      "week": "2026-06-01",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5",
+        "GRAMUSDT|B1_donchian|L3",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "ARMUSDT|B1_donchian|L5",
+        "TACUSDT|B1_donchian|L2"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-06-08",
+      "picks": [
+        "GRAMUSDT|B1_donchian|L5",
+        "PENDLEUSDT|B4_vol_breakout|L5",
+        "GRAMUSDT|B1_donchian|L3",
+        "MSTRUSDT|B1_donchian|L5",
+        "BEATUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 2
+    },
+    {
+      "week": "2026-06-15",
+      "picks": [
+        "IDUSDT|B1_donchian|L5",
+        "SIRENUSDT|B4_vol_breakout|L2",
+        "IDUSDT|B1_donchian|L3",
+        "ESPORTSUSDT|B4_vol_breakout|L2",
+        "MORPHOUSDT|B1_donchian|L5"
+      ],
+      "changed": 5
+    },
+    {
+      "week": "2026-06-22",
+      "picks": [
+        "IDUSDT|B1_donchian|L3",
+        "MSTRUSDT|B1_donchian|L5",
+        "IDUSDT|B1_donchian|L5",
+        "IDUSDT|B1_donchian|L2",
+        "AEROUSDT|B4_vol_breakout|L5"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-06-29",
+      "picks": [
+        "MSTRUSDT|B1_donchian|L5",
+        "MSTRUSDT|B1_donchian|L3",
+        "ZECUSDT|B4_vol_breakout|L5",
+        "ESPORTSUSDT|B4_vol_breakout|L2",
+        "MSTRUSDT|B1_donchian|L2"
+      ],
+      "changed": 4
+    },
+    {
+      "week": "2026-07-06",
+      "picks": [
+        "MSTRUSDT|B1_donchian|L5",
+        "EPICUSDT|B1_donchian|L2",
+        "MSTRUSDT|B1_donchian|L3",
+        "SIRENUSDT|B4_vol_breakout|L2",
+        "TACUSDT|B4_vol_breakout|L3"
+      ],
+      "changed": 3
+    },
+    {
+      "week": "2026-07-13",
+      "picks": [
+        "TACUSDT|B4_vol_breakout|L5",
+        "TACUSDT|B4_vol_breakout|L3",
+        "TACUSDT|B4_vol_breakout|L2",
+        "MSTRUSDT|B1_donchian|L5",
+        "TRIAUSDT|B1_donchian|L3"
+      ],
+      "changed": 3
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+﻿Harness attempt 1: function parameter `$args` collided with PowerShell automatic argument variable; output showed INVOCATION with executable only and EXIT_CODE 0.
+Disposition: harness debris, not product evidence.
+Corrective action: run each command directly with literal arguments and capture exit code.
+Process capture attempt 2: PowerShell 5.1 has no ProcessStartInfo.ArgumentList; no product code executed. Corrective action: use ProcessStartInfo.Arguments with quoted literal argv.

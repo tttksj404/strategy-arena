@@ -1,0 +1,51 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716155622
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-import-pytest-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$code = 1
+$env:PYTHONDONTWRITEBYTECODE = '1'
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: module import'
+  Write-Output ("SURFACE: Python module import; INVOCATION: & `"$py`" -c `"import research.validation.deep_validate as m; print(m.CANDIDATES); print(m.NATIVE_REQUIRED_DAYS)`"")
+  & $py -c "import research.validation.deep_validate as m; print('CANDIDATES=' + repr(m.CANDIDATES)); print('NATIVE_REQUIRED_DAYS=' + str(m.NATIVE_REQUIRED_DAYS))"
+  $importCode = $LASTEXITCODE
+  Write-Output ("module_import_exit=" + $importCode)
+  Write-Output 'SCENARIO: synthetic pytest'
+  Write-Output ("SURFACE: pytest; INVOCATION: & `"$py`" -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider")
+  & $py -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider
+  $testCode = $LASTEXITCODE
+  Write-Output ("synthetic_pytest_exit=" + $testCode)
+  if ($importCode -eq 0 -and $testCode -eq 0) { $code = 0 }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 31216
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: module import
+SURFACE: Python module import; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" -c "import research.validation.deep_validate as m; print(m.CANDIDATES); print(m.NATIVE_REQUIRED_DAYS)"
+
+module_import_exit=0
+SCENARIO: synthetic pytest
+SURFACE: pytest; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" -m pytest research/validation/tests/test_deep_validate.py -q -ra -p no:cacheprovider
+
+synthetic_pytest_exit=0
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716155623
+**********************

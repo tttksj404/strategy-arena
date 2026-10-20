@@ -1,0 +1,69 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716160519
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-dirty-worktree-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$paths = @('.debug-journal.md','debug.log','research/validation/deep_validate.py','research/validation/deep_stats.py','research/validation/tests/test_deep_validate.py')
+$before = @{}
+$after = @{}
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: dirty worktree preservation'
+  Write-Output 'SURFACE: PowerShell + git status around direct CLI'
+  Write-Output 'INVOCATION: git status --short; hash dirty files; direct validator; hash and git status again'
+  Write-Output 'BEFORE_STATUS'
+  git status --short
+  foreach ($path in $paths) { if (Test-Path -LiteralPath $path) { $before[$path] = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash; Write-Output ("before " + $path + " sha256=" + $before[$path]) } }
+  & $py research/validation/deep_validate.py
+  $runCode = $LASTEXITCODE
+  Write-Output ("validator_exit=" + $runCode)
+  Write-Output 'AFTER_STATUS'
+  git status --short
+  $unchanged = $true
+  foreach ($path in $paths) { if (Test-Path -LiteralPath $path) { $after[$path] = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash; $same = $before[$path] -eq $after[$path]; Write-Output ("after  " + $path + " sha256=" + $after[$path] + " same=" + $same); if (-not $same) { $unchanged = $false } } }
+  Write-Output ("unrelated_dirty_files_preserved=" + $unchanged)
+  if ($runCode -eq 0 -and $unchanged) { $code = 0 }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 20808
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: dirty worktree preservation
+SURFACE: PowerShell + git status around direct CLI
+INVOCATION: git status --short; hash dirty files; direct validator; hash and git status again
+BEFORE_STATUS
+
+before .debug-journal.md sha256=8584C38EFFC261683E4655332EAD3C2E1E90B789BC51F2AC9A8C8F4112B3FA4B
+before debug.log sha256=D34FB15B5AF0674B2A8F1D8A150F0126C54275D83119DDFCF295F3E5813D82E7
+before research/validation/deep_validate.py sha256=6B14F31A19FE8549ABC0FDD06BCA7AE57FAE83161E5344469166A78E94342156
+before research/validation/deep_stats.py sha256=7925D5FB0CD326538ADFD863CBE3D42439BFB95A0432FD46E1DA6600C5BAB15C
+before research/validation/tests/test_deep_validate.py sha256=3D9F09F62BF76E123E83D8625F801997E33D0763686FFB0819F63568E6CFF52A
+
+validator_exit=0
+AFTER_STATUS
+
+after  .debug-journal.md sha256=8584C38EFFC261683E4655332EAD3C2E1E90B789BC51F2AC9A8C8F4112B3FA4B same=True
+after  debug.log sha256=D34FB15B5AF0674B2A8F1D8A150F0126C54275D83119DDFCF295F3E5813D82E7 same=True
+after  research/validation/deep_validate.py sha256=6B14F31A19FE8549ABC0FDD06BCA7AE57FAE83161E5344469166A78E94342156 same=True
+after  research/validation/deep_stats.py sha256=7925D5FB0CD326538ADFD863CBE3D42439BFB95A0432FD46E1DA6600C5BAB15C same=True
+after  research/validation/tests/test_deep_validate.py sha256=3D9F09F62BF76E123E83D8625F801997E33D0763686FFB0819F63568E6CFF52A same=True
+unrelated_dirty_files_preserved=True
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716160525
+**********************

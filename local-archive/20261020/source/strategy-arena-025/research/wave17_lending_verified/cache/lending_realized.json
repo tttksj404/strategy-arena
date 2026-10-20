@@ -1,0 +1,6647 @@
+{
+  "collected_at_utc": "2026-07-23T23:59:27.281402+00:00",
+  "source_history": "https://www.okx.com/api/v5/finance/savings/lending-rate-history",
+  "source_summary": "https://www.okx.com/api/v5/finance/savings/lending-rate-summary",
+  "history_limit_per_ccy": 100,
+  "request_sleep_seconds": 0.12,
+  "target_universe_note": "타깃 코인 = wave16 cache/lending_snapshot.json by_symbol 중 lending_available=True 항목의 base_ccy_matched 고유집합 (read-only 참조, wave16 파일은 손대지 않음).",
+  "depth_limitation_note": "limit=100, 시간당 1건 -> 약 4일(96~100시간)이 이 엔드포인트에서 얻을 수 있는 전부다. 이는 wave16 SPEC.md 치명적 한계 1과 동일한 제약이며, 이 wave가 해소한 것이 아니다 -- avgRate를 lendingRate로 바꿔도 '시계열 백테스트 불가'는 그대로다.",
+  "n_target_ccys": 112,
+  "n_history_available": 112,
+  "n_history_failed": 0,
+  "ratio_median_across_universe_vs_fresh_avgrate": 0.21250140721746202,
+  "ratio_mean_across_universe_vs_fresh_avgrate": 0.24836413602905622,
+  "ratio_min_vs_fresh_avgrate": 0.02,
+  "ratio_max_vs_fresh_avgrate": 0.8759999999999999,
+  "ratio_median_across_universe_vs_wave16_avgrate": 0.20689406654611292,
+  "ratio_mean_across_universe_vs_wave16_avgrate": 0.24759549494470476,
+  "ratio_median_across_universe_vs_history_rate": 0.20787743506493506,
+  "span_days_median": 4.125,
+  "span_days_min": 4.125,
+  "fresh_summary_excluded_outliers": [
+    {
+      "ccy": "BARD",
+      "avg_rate": 1.6957,
+      "est_rate": 2.09,
+      "pre_rate": 2.09,
+      "reason": "avg_rate 1.6957 exceeds sanity cap 1.00 (100% APR)"
+    },
+    {
+      "ccy": "BETH",
+      "avg_rate": 3.65,
+      "est_rate": 3.65,
+      "pre_rate": 3.65,
+      "reason": "hardcoded_spec_outlier (BETH: wrapped-staked-ETH promotional rate, not a spot altcoin the futures universe can hold)"
+    }
+  ],
+  "by_ccy": {
+    "A": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0881,
+      "avg_rate_wave16_snapshot": 0.0874,
+      "ratio_lendingrate_over_avgrate_fresh": 0.16004540295119182,
+      "ratio_lendingrate_over_avgrate_wave16": 0.16132723112128144,
+      "ratio_lendingrate_over_historyrate": 0.1620689655172414,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.087,
+      "rate_mean": 0.08674999999999997,
+      "rate_std": 0.0059955791794429406,
+      "rate_min": 0.079,
+      "rate_max": 0.121,
+      "lending_rate_median": 0.0141,
+      "lending_rate_mean": 0.014034,
+      "lending_rate_std": 0.0021858230079817124,
+      "lending_rate_min": 0.0115,
+      "lending_rate_max": 0.0275,
+      "lending_rate_range": 0.016,
+      "lending_rate_cv": 0.15575196009560444,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.081,
+          "lending_rate": 0.0121
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.081,
+          "lending_rate": 0.0121
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.081,
+          "lending_rate": 0.0121
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.087,
+          "lending_rate": 0.014
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.087,
+          "lending_rate": 0.014
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.087,
+          "lending_rate": 0.014
+        }
+      ]
+    },
+    "AAVE": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.45999999999999996,
+      "ratio_lendingrate_over_avgrate_wave16": 0.45999999999999996,
+      "ratio_lendingrate_over_historyrate": 0.45999999999999996,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0046,
+      "lending_rate_mean": 0.004390999999999999,
+      "lending_rate_std": 0.00041708342793568987,
+      "lending_rate_min": 0.0031,
+      "lending_rate_max": 0.0048,
+      "lending_rate_range": 0.0016999999999999997,
+      "lending_rate_cv": 0.09498597766697563,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0048
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0048
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0048
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0032
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0032
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0032
+        }
+      ]
+    },
+    "ACT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2114,
+      "avg_rate_wave16_snapshot": 0.2295,
+      "ratio_lendingrate_over_avgrate_fresh": 0.4623935666982025,
+      "ratio_lendingrate_over_avgrate_wave16": 0.42592592592592593,
+      "ratio_lendingrate_over_historyrate": 0.41773504273504275,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.23399999999999999,
+      "rate_mean": 0.25149,
+      "rate_std": 0.04682559409795313,
+      "rate_min": 0.2,
+      "rate_max": 0.404,
+      "lending_rate_median": 0.09775,
+      "lending_rate_mean": 0.11530700000000003,
+      "lending_rate_std": 0.04868178522950152,
+      "lending_rate_min": 0.0692,
+      "lending_rate_max": 0.2994,
+      "lending_rate_range": 0.23020000000000002,
+      "lending_rate_cv": 0.42219280034604584,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.207,
+          "lending_rate": 0.0692
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.207,
+          "lending_rate": 0.0692
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.22,
+          "lending_rate": 0.0799
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.205,
+          "lending_rate": 0.0774
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.205,
+          "lending_rate": 0.0774
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.205,
+          "lending_rate": 0.0775
+        }
+      ]
+    },
+    "ADA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.265,
+      "ratio_lendingrate_over_avgrate_wave16": 0.265,
+      "ratio_lendingrate_over_historyrate": 0.265,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.00265,
+      "lending_rate_mean": 0.0027629999999999994,
+      "lending_rate_std": 0.0003109629878264933,
+      "lending_rate_min": 0.0025,
+      "lending_rate_max": 0.0053,
+      "lending_rate_range": 0.0028,
+      "lending_rate_cv": 0.11254541723723974,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.003
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.003
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.003
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.003
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0053
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0031
+        }
+      ]
+    },
+    "AGLD": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2026,
+      "avg_rate_wave16_snapshot": 0.2047,
+      "ratio_lendingrate_over_avgrate_fresh": 0.5547877591312932,
+      "ratio_lendingrate_over_avgrate_wave16": 0.5490962383976551,
+      "ratio_lendingrate_over_historyrate": 0.4306513409961686,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.261,
+      "rate_mean": 0.25031000000000003,
+      "rate_std": 0.04629913606105409,
+      "rate_min": 0.199,
+      "rate_max": 0.391,
+      "lending_rate_median": 0.1124,
+      "lending_rate_mean": 0.10660299999999999,
+      "lending_rate_std": 0.04530003111689791,
+      "lending_rate_min": 0.0613,
+      "lending_rate_max": 0.2693,
+      "lending_rate_range": 0.208,
+      "lending_rate_cv": 0.42494142863613515,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.355,
+          "lending_rate": 0.2195
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.355,
+          "lending_rate": 0.2193
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.355,
+          "lending_rate": 0.2193
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.201,
+          "lending_rate": 0.0625
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.201,
+          "lending_rate": 0.0625
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.201,
+          "lending_rate": 0.0626
+        }
+      ]
+    },
+    "ALGO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2497,
+      "avg_rate_wave16_snapshot": 0.2428,
+      "ratio_lendingrate_over_avgrate_fresh": 0.4451341609931918,
+      "ratio_lendingrate_over_avgrate_wave16": 0.4577841845140033,
+      "ratio_lendingrate_over_historyrate": 0.45740740740740743,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.243,
+      "rate_mean": 0.24420999999999998,
+      "rate_std": 0.005675207467395343,
+      "rate_min": 0.24,
+      "rate_max": 0.265,
+      "lending_rate_median": 0.11115,
+      "lending_rate_mean": 0.11257,
+      "lending_rate_std": 0.005469668429372362,
+      "lending_rate_min": 0.1088,
+      "lending_rate_max": 0.1329,
+      "lending_rate_range": 0.024099999999999996,
+      "lending_rate_cv": 0.048589041746223346,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.249,
+          "lending_rate": 0.1169
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.249,
+          "lending_rate": 0.1169
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.249,
+          "lending_rate": 0.1168
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.265,
+          "lending_rate": 0.1329
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.265,
+          "lending_rate": 0.1327
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.264,
+          "lending_rate": 0.1318
+        }
+      ]
+    },
+    "ANIME": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0904,
+      "avg_rate_wave16_snapshot": 0.0905,
+      "ratio_lendingrate_over_avgrate_fresh": 0.11836283185840708,
+      "ratio_lendingrate_over_avgrate_wave16": 0.11823204419889502,
+      "ratio_lendingrate_over_historyrate": 0.11888888888888889,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.09,
+      "rate_mean": 0.13043,
+      "rate_std": 0.07555976362316044,
+      "rate_min": 0.089,
+      "rate_max": 0.323,
+      "lending_rate_median": 0.0107,
+      "lending_rate_mean": 0.037245,
+      "lending_rate_std": 0.05246772240091421,
+      "lending_rate_min": 0.0103,
+      "lending_rate_max": 0.1909,
+      "lending_rate_range": 0.18059999999999998,
+      "lending_rate_cv": 1.4087185501655044,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.291,
+          "lending_rate": 0.1521
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.292,
+          "lending_rate": 0.1534
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.293,
+          "lending_rate": 0.1542
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.089,
+          "lending_rate": 0.0103
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.089,
+          "lending_rate": 0.0103
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.089,
+          "lending_rate": 0.0103
+        }
+      ]
+    },
+    "APE": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0697,
+      "avg_rate_wave16_snapshot": 0.0751,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1793400286944046,
+      "ratio_lendingrate_over_avgrate_wave16": 0.16644474034620507,
+      "ratio_lendingrate_over_historyrate": 0.1524390243902439,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.082,
+      "rate_mean": 0.07844999999999999,
+      "rate_std": 0.00665054869764879,
+      "rate_min": 0.059,
+      "rate_max": 0.086,
+      "lending_rate_median": 0.0125,
+      "lending_rate_mean": 0.011543,
+      "lending_rate_std": 0.0019161332591097798,
+      "lending_rate_min": 0.0064,
+      "lending_rate_max": 0.0138,
+      "lending_rate_range": 0.0073999999999999995,
+      "lending_rate_cv": 0.16599958928439573,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.083,
+          "lending_rate": 0.0128
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.082,
+          "lending_rate": 0.0125
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.082,
+          "lending_rate": 0.0125
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.06,
+          "lending_rate": 0.0065
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.059,
+          "lending_rate": 0.0064
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.06,
+          "lending_rate": 0.0065
+        }
+      ]
+    },
+    "API3": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0966,
+      "avg_rate_wave16_snapshot": 0.1194,
+      "ratio_lendingrate_over_avgrate_fresh": 0.06677018633540373,
+      "ratio_lendingrate_over_avgrate_wave16": 0.05402010050251256,
+      "ratio_lendingrate_over_historyrate": 0.07962962962962963,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.081,
+      "rate_mean": 0.10621,
+      "rate_std": 0.03628208646122488,
+      "rate_min": 0.077,
+      "rate_max": 0.199,
+      "lending_rate_median": 0.00645,
+      "lending_rate_mean": 0.016703999999999997,
+      "lending_rate_std": 0.01531364295672524,
+      "lending_rate_min": 0.0054,
+      "lending_rate_max": 0.0651,
+      "lending_rate_range": 0.0597,
+      "lending_rate_cv": 0.9167650237503139,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.166,
+          "lending_rate": 0.0426
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.166,
+          "lending_rate": 0.0427
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.166,
+          "lending_rate": 0.0427
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.114,
+          "lending_rate": 0.0169
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.082,
+          "lending_rate": 0.0068
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.083,
+          "lending_rate": 0.007
+        }
+      ]
+    },
+    "APT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0778,
+      "avg_rate_wave16_snapshot": 0.0776,
+      "ratio_lendingrate_over_avgrate_fresh": 0.14717223650385605,
+      "ratio_lendingrate_over_avgrate_wave16": 0.14755154639175258,
+      "ratio_lendingrate_over_historyrate": 0.1467948717948718,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.078,
+      "rate_mean": 0.07861000000000001,
+      "rate_std": 0.0011967548714010838,
+      "rate_min": 0.076,
+      "rate_max": 0.081,
+      "lending_rate_median": 0.01145,
+      "lending_rate_mean": 0.011555000000000003,
+      "lending_rate_std": 0.0003582716648837666,
+      "lending_rate_min": 0.0108,
+      "lending_rate_max": 0.0123,
+      "lending_rate_range": 0.0014999999999999996,
+      "lending_rate_cv": 0.031005769353852575,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.078,
+          "lending_rate": 0.0114
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.078,
+          "lending_rate": 0.0114
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.078,
+          "lending_rate": 0.0114
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.078,
+          "lending_rate": 0.0114
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.078,
+          "lending_rate": 0.0113
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.078,
+          "lending_rate": 0.0113
+        }
+      ]
+    },
+    "AR": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0452,
+      "avg_rate_wave16_snapshot": 0.049,
+      "ratio_lendingrate_over_avgrate_fresh": 0.09955752212389381,
+      "ratio_lendingrate_over_avgrate_wave16": 0.09183673469387754,
+      "ratio_lendingrate_over_historyrate": 0.08823529411764706,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.051,
+      "rate_mean": 0.05029,
+      "rate_std": 0.003479507105463315,
+      "rate_min": 0.044,
+      "rate_max": 0.057,
+      "lending_rate_median": 0.0045,
+      "lending_rate_mean": 0.004449000000000001,
+      "lending_rate_std": 0.0005630894218236541,
+      "lending_rate_min": 0.0034,
+      "lending_rate_max": 0.0058,
+      "lending_rate_range": 0.0024,
+      "lending_rate_cv": 0.12656539038517736,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.052,
+          "lending_rate": 0.0047
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.052,
+          "lending_rate": 0.0047
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.052,
+          "lending_rate": 0.0047
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.044,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.044,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.044,
+          "lending_rate": 0.0034
+        }
+      ]
+    },
+    "ARB": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.15,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15,
+      "ratio_lendingrate_over_historyrate": 0.15,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0015,
+      "lending_rate_mean": 0.0015000000000000005,
+      "lending_rate_std": 0.00010444659357341868,
+      "lending_rate_min": 0.0014,
+      "lending_rate_max": 0.0017,
+      "lending_rate_range": 0.0002999999999999999,
+      "lending_rate_cv": 0.0696310623822791,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        }
+      ]
+    },
+    "ARKM": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0775,
+      "avg_rate_wave16_snapshot": 0.0809,
+      "ratio_lendingrate_over_avgrate_fresh": 0.14193548387096774,
+      "ratio_lendingrate_over_avgrate_wave16": 0.13597033374536463,
+      "ratio_lendingrate_over_historyrate": 0.14102564102564102,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.078,
+      "rate_mean": 0.08287999999999997,
+      "rate_std": 0.012973383786379205,
+      "rate_min": 0.076,
+      "rate_max": 0.153,
+      "lending_rate_median": 0.011,
+      "lending_rate_mean": 0.012908,
+      "lending_rate_std": 0.0053938925432081754,
+      "lending_rate_min": 0.0105,
+      "lending_rate_max": 0.0436,
+      "lending_rate_range": 0.0331,
+      "lending_rate_cv": 0.4178720594366421,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.088,
+          "lending_rate": 0.0144
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.088,
+          "lending_rate": 0.0144
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.088,
+          "lending_rate": 0.0144
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.078,
+          "lending_rate": 0.0111
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.078,
+          "lending_rate": 0.011
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.078,
+          "lending_rate": 0.011
+        }
+      ]
+    },
+    "ATOM": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1886,
+      "avg_rate_wave16_snapshot": 0.1881,
+      "ratio_lendingrate_over_avgrate_fresh": 0.28340402969247086,
+      "ratio_lendingrate_over_avgrate_wave16": 0.28415736310473155,
+      "ratio_lendingrate_over_historyrate": 0.2828042328042328,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.189,
+      "rate_mean": 0.19071,
+      "rate_std": 0.004372307252134819,
+      "rate_min": 0.185,
+      "rate_max": 0.219,
+      "lending_rate_median": 0.05345,
+      "lending_rate_mean": 0.05349600000000001,
+      "lending_rate_std": 0.0023930843121905514,
+      "lending_rate_min": 0.0506,
+      "lending_rate_max": 0.0708,
+      "lending_rate_range": 0.020200000000000003,
+      "lending_rate_cv": 0.044733892481504244,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.198,
+          "lending_rate": 0.0575
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.198,
+          "lending_rate": 0.0575
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.197,
+          "lending_rate": 0.0572
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.188,
+          "lending_rate": 0.0531
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.186,
+          "lending_rate": 0.0521
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.186,
+          "lending_rate": 0.0521
+        }
+      ]
+    },
+    "AVAX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1192,
+      "avg_rate_wave16_snapshot": 0.11,
+      "ratio_lendingrate_over_avgrate_fresh": 0.125,
+      "ratio_lendingrate_over_avgrate_wave16": 0.13545454545454547,
+      "ratio_lendingrate_over_historyrate": 0.13303571428571428,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.112,
+      "rate_mean": 0.11602000000000003,
+      "rate_std": 0.008973563867541619,
+      "rate_min": 0.107,
+      "rate_max": 0.141,
+      "lending_rate_median": 0.0149,
+      "lending_rate_mean": 0.016495,
+      "lending_rate_std": 0.003541653297657477,
+      "lending_rate_min": 0.013,
+      "lending_rate_max": 0.027,
+      "lending_rate_range": 0.014,
+      "lending_rate_cv": 0.21471071825750088,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.122,
+          "lending_rate": 0.0187
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.123,
+          "lending_rate": 0.019
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.125,
+          "lending_rate": 0.0198
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.141,
+          "lending_rate": 0.0268
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.141,
+          "lending_rate": 0.027
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.141,
+          "lending_rate": 0.0268
+        }
+      ]
+    },
+    "AXS": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1253,
+      "avg_rate_wave16_snapshot": 0.1274,
+      "ratio_lendingrate_over_avgrate_fresh": 0.19792498004788509,
+      "ratio_lendingrate_over_avgrate_wave16": 0.19466248037676606,
+      "ratio_lendingrate_over_historyrate": 0.1864661654135338,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.133,
+      "rate_mean": 0.13068999999999997,
+      "rate_std": 0.0035892516312913047,
+      "rate_min": 0.124,
+      "rate_max": 0.134,
+      "lending_rate_median": 0.0248,
+      "lending_rate_mean": 0.023831999999999996,
+      "lending_rate_std": 0.0016105008945396866,
+      "lending_rate_min": 0.0209,
+      "lending_rate_max": 0.0253,
+      "lending_rate_range": 0.004400000000000001,
+      "lending_rate_cv": 0.06757724465171563,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.133,
+          "lending_rate": 0.0249
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.133,
+          "lending_rate": 0.0249
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.133,
+          "lending_rate": 0.0249
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.126,
+          "lending_rate": 0.0217
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.126,
+          "lending_rate": 0.0217
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.126,
+          "lending_rate": 0.0217
+        }
+      ]
+    },
+    "BABY": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2057,
+      "avg_rate_wave16_snapshot": 0.1808,
+      "ratio_lendingrate_over_avgrate_fresh": 0.287311618862421,
+      "ratio_lendingrate_over_avgrate_wave16": 0.3268805309734513,
+      "ratio_lendingrate_over_historyrate": 0.307012987012987,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.1925,
+      "rate_mean": 0.19775999999999996,
+      "rate_std": 0.029614397263029432,
+      "rate_min": 0.177,
+      "rate_max": 0.306,
+      "lending_rate_median": 0.0591,
+      "lending_rate_mean": 0.06461899999999998,
+      "lending_rate_std": 0.02656500962476085,
+      "lending_rate_min": 0.0484,
+      "lending_rate_max": 0.1655,
+      "lending_rate_range": 0.11710000000000001,
+      "lending_rate_cv": 0.4111021468107036,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.195,
+          "lending_rate": 0.0607
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.196,
+          "lending_rate": 0.0616
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.196,
+          "lending_rate": 0.0616
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.29,
+          "lending_rate": 0.1476
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.29,
+          "lending_rate": 0.1476
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.29,
+          "lending_rate": 0.1476
+        }
+      ]
+    },
+    "BCH": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.58,
+      "ratio_lendingrate_over_avgrate_wave16": 0.58,
+      "ratio_lendingrate_over_historyrate": 0.58,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0058,
+      "lending_rate_mean": 0.005808,
+      "lending_rate_std": 8.125281657899733e-05,
+      "lending_rate_min": 0.0057,
+      "lending_rate_max": 0.006,
+      "lending_rate_range": 0.0002999999999999999,
+      "lending_rate_cv": 0.013989810017044996,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0058
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0058
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        }
+      ]
+    },
+    "BERA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.3013,
+      "avg_rate_wave16_snapshot": 0.2227,
+      "ratio_lendingrate_over_avgrate_fresh": 0.13674078991038832,
+      "ratio_lendingrate_over_avgrate_wave16": 0.1850022451728783,
+      "ratio_lendingrate_over_historyrate": 0.29219858156028367,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.14100000000000001,
+      "rate_mean": 0.18146,
+      "rate_std": 0.194548138469167,
+      "rate_min": 0.128,
+      "rate_max": 2.03,
+      "lending_rate_median": 0.0412,
+      "lending_rate_mean": 0.079855,
+      "lending_rate_std": 0.20296254935182978,
+      "lending_rate_min": 0.034,
+      "lending_rate_max": 2.03,
+      "lending_rate_range": 1.9959999999999998,
+      "lending_rate_cv": 2.5416385868365134,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.16,
+          "lending_rate": 0.0525
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.16,
+          "lending_rate": 0.0522
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.16,
+          "lending_rate": 0.0523
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.232,
+          "lending_rate": 0.1091
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.232,
+          "lending_rate": 0.1091
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.232,
+          "lending_rate": 0.1094
+        }
+      ]
+    },
+    "BIO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1426,
+      "avg_rate_wave16_snapshot": 0.1521,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2223001402524544,
+      "ratio_lendingrate_over_avgrate_wave16": 0.20841551610782377,
+      "ratio_lendingrate_over_historyrate": 0.21564625850340136,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.147,
+      "rate_mean": 0.14968,
+      "rate_std": 0.01566304277881246,
+      "rate_min": 0.14,
+      "rate_max": 0.22,
+      "lending_rate_median": 0.0317,
+      "lending_rate_mean": 0.033531000000000005,
+      "lending_rate_std": 0.010070285271755982,
+      "lending_rate_min": 0.0281,
+      "lending_rate_max": 0.0794,
+      "lending_rate_range": 0.0513,
+      "lending_rate_cv": 0.3003276153933966,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.146,
+          "lending_rate": 0.0313
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.146,
+          "lending_rate": 0.0313
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.146,
+          "lending_rate": 0.0313
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.14,
+          "lending_rate": 0.0281
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.141,
+          "lending_rate": 0.0285
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.141,
+          "lending_rate": 0.0284
+        }
+      ]
+    },
+    "BLUR": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2858,
+      "avg_rate_wave16_snapshot": 0.4004,
+      "ratio_lendingrate_over_avgrate_fresh": 0.46098670398880337,
+      "ratio_lendingrate_over_avgrate_wave16": 0.3290459540459541,
+      "ratio_lendingrate_over_historyrate": 0.5009505703422054,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.263,
+      "rate_mean": 0.28736000000000006,
+      "rate_std": 0.18358778595406375,
+      "rate_min": 0.201,
+      "rate_max": 2.03,
+      "lending_rate_median": 0.13175,
+      "lending_rate_mean": 0.16325599999999998,
+      "lending_rate_std": 0.19828659511429458,
+      "lending_rate_min": 0.0769,
+      "lending_rate_max": 2.03,
+      "lending_rate_range": 1.9530999999999998,
+      "lending_rate_cv": 1.2145746258287267,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.329,
+          "lending_rate": 0.2072
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.33,
+          "lending_rate": 0.2082
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.33,
+          "lending_rate": 0.2081
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.262,
+          "lending_rate": 0.1311
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.262,
+          "lending_rate": 0.1309
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.262,
+          "lending_rate": 0.1308
+        }
+      ]
+    },
+    "BNB": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.15,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15,
+      "ratio_lendingrate_over_historyrate": 0.15,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0015,
+      "lending_rate_mean": 0.0015030000000000002,
+      "lending_rate_std": 8.463230035055329e-05,
+      "lending_rate_min": 0.0014,
+      "lending_rate_max": 0.0018,
+      "lending_rate_range": 0.00039999999999999996,
+      "lending_rate_cv": 0.05630891573556439,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        }
+      ]
+    },
+    "BOME": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1176,
+      "avg_rate_wave16_snapshot": 0.1183,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1522108843537415,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15131022823330514,
+      "ratio_lendingrate_over_historyrate": 0.14916666666666667,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.12,
+      "rate_mean": 0.12337000000000002,
+      "rate_std": 0.006959703639342324,
+      "rate_min": 0.112,
+      "rate_max": 0.141,
+      "lending_rate_median": 0.0179,
+      "lending_rate_mean": 0.019425,
+      "lending_rate_std": 0.0028934050752172477,
+      "lending_rate_min": 0.015,
+      "lending_rate_max": 0.0269,
+      "lending_rate_range": 0.0119,
+      "lending_rate_cv": 0.14895264222482613,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.119,
+          "lending_rate": 0.0175
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.119,
+          "lending_rate": 0.0175
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.119,
+          "lending_rate": 0.0175
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.114,
+          "lending_rate": 0.0157
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.114,
+          "lending_rate": 0.0157
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.114,
+          "lending_rate": 0.0158
+        }
+      ]
+    },
+    "BTC": {
+      "history_available": true,
+      "avg_rate_fresh": 0.005,
+      "avg_rate_wave16_snapshot": 0.005,
+      "ratio_lendingrate_over_avgrate_fresh": 0.05999999999999999,
+      "ratio_lendingrate_over_avgrate_wave16": 0.05999999999999999,
+      "ratio_lendingrate_over_historyrate": 0.05999999999999999,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.005,
+      "rate_mean": 0.004999999999999999,
+      "rate_std": 8.717313461872983e-19,
+      "rate_min": 0.005,
+      "rate_max": 0.005,
+      "lending_rate_median": 0.0003,
+      "lending_rate_mean": 0.00020999999999999987,
+      "lending_rate_std": 0.0001039619199903542,
+      "lending_rate_min": 0.0001,
+      "lending_rate_max": 0.0004,
+      "lending_rate_range": 0.00030000000000000003,
+      "lending_rate_cv": 0.49505676185882985,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.005,
+          "lending_rate": 0.0003
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.005,
+          "lending_rate": 0.0003
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.005,
+          "lending_rate": 0.0003
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.005,
+          "lending_rate": 0.0001
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.005,
+          "lending_rate": 0.0001
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.005,
+          "lending_rate": 0.0001
+        }
+      ]
+    },
+    "CELO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1765,
+      "avg_rate_wave16_snapshot": 0.1781,
+      "ratio_lendingrate_over_avgrate_fresh": 0.27592067988668556,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2734418865805727,
+      "ratio_lendingrate_over_historyrate": 0.2735955056179775,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.178,
+      "rate_mean": 0.18337999999999993,
+      "rate_std": 0.02170778382949027,
+      "rate_min": 0.173,
+      "rate_max": 0.266,
+      "lending_rate_median": 0.0487,
+      "lending_rate_mean": 0.053172,
+      "lending_rate_std": 0.01681848478023601,
+      "lending_rate_min": 0.046,
+      "lending_rate_max": 0.1181,
+      "lending_rate_range": 0.0721,
+      "lending_rate_cv": 0.31630340743692187,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.265,
+          "lending_rate": 0.1171
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.265,
+          "lending_rate": 0.1171
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.265,
+          "lending_rate": 0.1171
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.176,
+          "lending_rate": 0.0476
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.176,
+          "lending_rate": 0.0477
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.176,
+          "lending_rate": 0.0475
+        }
+      ]
+    },
+    "CFX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0692,
+      "avg_rate_wave16_snapshot": 0.0695,
+      "ratio_lendingrate_over_avgrate_fresh": 0.05346820809248555,
+      "ratio_lendingrate_over_avgrate_wave16": 0.053237410071942444,
+      "ratio_lendingrate_over_historyrate": 0.05285714285714285,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.07,
+      "rate_mean": 0.07065000000000002,
+      "rate_std": 0.004706271337161712,
+      "rate_min": 0.068,
+      "rate_max": 0.116,
+      "lending_rate_median": 0.0037,
+      "lending_rate_mean": 0.0038100000000000013,
+      "lending_rate_std": 0.001358958305750282,
+      "lending_rate_min": 0.0033,
+      "lending_rate_max": 0.0171,
+      "lending_rate_range": 0.0138,
+      "lending_rate_cv": 0.35668197001319724,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.07,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.07,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.07,
+          "lending_rate": 0.0037
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.069,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.069,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.069,
+          "lending_rate": 0.0034
+        }
+      ]
+    },
+    "CHZ": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1935,
+      "avg_rate_wave16_snapshot": 0.1949,
+      "ratio_lendingrate_over_avgrate_fresh": 0.39018087855297157,
+      "ratio_lendingrate_over_avgrate_wave16": 0.3873781426372499,
+      "ratio_lendingrate_over_historyrate": 0.38131313131313127,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.198,
+      "rate_mean": 0.20301999999999995,
+      "rate_std": 0.015791558926633344,
+      "rate_min": 0.186,
+      "rate_max": 0.258,
+      "lending_rate_median": 0.0755,
+      "lending_rate_mean": 0.079188,
+      "lending_rate_std": 0.013268739597454254,
+      "lending_rate_min": 0.0662,
+      "lending_rate_max": 0.1268,
+      "lending_rate_range": 0.0606,
+      "lending_rate_cv": 0.16755997875251624,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.186,
+          "lending_rate": 0.0662
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.188,
+          "lending_rate": 0.0674
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.196,
+          "lending_rate": 0.0735
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.191,
+          "lending_rate": 0.0703
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.191,
+          "lending_rate": 0.0702
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.191,
+          "lending_rate": 0.07
+        }
+      ]
+    },
+    "COMP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0989,
+      "avg_rate_wave16_snapshot": 0.0991,
+      "ratio_lendingrate_over_avgrate_fresh": 0.11526794742163803,
+      "ratio_lendingrate_over_avgrate_wave16": 0.11503531786074674,
+      "ratio_lendingrate_over_historyrate": 0.114,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.1,
+      "rate_mean": 0.09993000000000002,
+      "rate_std": 0.0009347932305266152,
+      "rate_min": 0.098,
+      "rate_max": 0.101,
+      "lending_rate_median": 0.0114,
+      "lending_rate_mean": 0.011411000000000004,
+      "lending_rate_std": 0.00017632327977297536,
+      "lending_rate_min": 0.011,
+      "lending_rate_max": 0.0117,
+      "lending_rate_range": 0.000700000000000001,
+      "lending_rate_cv": 0.015452044498551861,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.101,
+          "lending_rate": 0.0116
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.101,
+          "lending_rate": 0.0117
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.101,
+          "lending_rate": 0.0117
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.098,
+          "lending_rate": 0.0111
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.098,
+          "lending_rate": 0.0111
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.098,
+          "lending_rate": 0.0111
+        }
+      ]
+    },
+    "CRV": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0614,
+      "avg_rate_wave16_snapshot": 0.0598,
+      "ratio_lendingrate_over_avgrate_fresh": 0.10749185667752442,
+      "ratio_lendingrate_over_avgrate_wave16": 0.11036789297658862,
+      "ratio_lendingrate_over_historyrate": 0.10819672131147541,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.061,
+      "rate_mean": 0.061559999999999976,
+      "rate_std": 0.0026065961394783517,
+      "rate_min": 0.058,
+      "rate_max": 0.069,
+      "lending_rate_median": 0.0066,
+      "lending_rate_mean": 0.006767,
+      "lending_rate_std": 0.0006052055331651698,
+      "lending_rate_min": 0.006,
+      "lending_rate_max": 0.0085,
+      "lending_rate_range": 0.0025000000000000005,
+      "lending_rate_cv": 0.08943483569752769,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.06,
+          "lending_rate": 0.0064
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.06,
+          "lending_rate": 0.0064
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.06,
+          "lending_rate": 0.0064
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.063,
+          "lending_rate": 0.0071
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.063,
+          "lending_rate": 0.0071
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.063,
+          "lending_rate": 0.0071
+        }
+      ]
+    },
+    "DASH": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0263,
+      "avg_rate_wave16_snapshot": 0.0269,
+      "ratio_lendingrate_over_avgrate_fresh": 0.041825095057034224,
+      "ratio_lendingrate_over_avgrate_wave16": 0.040892193308550186,
+      "ratio_lendingrate_over_historyrate": 0.04230769230769231,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.026,
+      "rate_mean": 0.024829999999999987,
+      "rate_std": 0.002490608623034,
+      "rate_min": 0.02,
+      "rate_max": 0.028,
+      "lending_rate_median": 0.0011,
+      "lending_rate_mean": 0.0009630000000000001,
+      "lending_rate_std": 0.0002245781679846764,
+      "lending_rate_min": 0.0005,
+      "lending_rate_max": 0.0013,
+      "lending_rate_range": 0.0007999999999999999,
+      "lending_rate_cv": 0.23320682033715096,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.021,
+          "lending_rate": 0.0006
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.02,
+          "lending_rate": 0.0006
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.02,
+          "lending_rate": 0.0006
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.026,
+          "lending_rate": 0.0011
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.026,
+          "lending_rate": 0.0011
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.026,
+          "lending_rate": 0.0011
+        }
+      ]
+    },
+    "DOGE": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.04,
+      "ratio_lendingrate_over_avgrate_wave16": 0.04,
+      "ratio_lendingrate_over_historyrate": 0.04,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0004,
+      "lending_rate_mean": 0.00037200000000000004,
+      "lending_rate_std": 7.531750973530174e-05,
+      "lending_rate_min": 0.0002,
+      "lending_rate_max": 0.0005,
+      "lending_rate_range": 0.00030000000000000003,
+      "lending_rate_cv": 0.2024664240196283,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0004
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0004
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0004
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0005
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0005
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0005
+        }
+      ]
+    },
+    "DOT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.5499999999999999,
+      "ratio_lendingrate_over_avgrate_wave16": 0.5499999999999999,
+      "ratio_lendingrate_over_historyrate": 0.5499999999999999,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0055,
+      "lending_rate_mean": 0.005535999999999998,
+      "lending_rate_std": 0.0002091444814988292,
+      "lending_rate_min": 0.0052,
+      "lending_rate_max": 0.006,
+      "lending_rate_range": 0.0008000000000000004,
+      "lending_rate_cv": 0.03777898871004864,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0058
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0058
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0055
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0055
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0055
+        }
+      ]
+    },
+    "DYDX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0798,
+      "avg_rate_wave16_snapshot": 0.0821,
+      "ratio_lendingrate_over_avgrate_fresh": 0.16666666666666666,
+      "ratio_lendingrate_over_avgrate_wave16": 0.1619975639464068,
+      "ratio_lendingrate_over_historyrate": 0.1564705882352941,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.085,
+      "rate_mean": 0.08489,
+      "rate_std": 0.004435611171489951,
+      "rate_min": 0.079,
+      "rate_max": 0.096,
+      "lending_rate_median": 0.0133,
+      "lending_rate_mean": 0.013291000000000002,
+      "lending_rate_std": 0.0014626042223072895,
+      "lending_rate_min": 0.0114,
+      "lending_rate_max": 0.0171,
+      "lending_rate_range": 0.0057,
+      "lending_rate_cv": 0.11004470862292448,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.086,
+          "lending_rate": 0.0136
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.086,
+          "lending_rate": 0.0136
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.09,
+          "lending_rate": 0.0149
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.08,
+          "lending_rate": 0.0117
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.08,
+          "lending_rate": 0.0118
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.081,
+          "lending_rate": 0.012
+        }
+      ]
+    },
+    "EGLD": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0417,
+      "avg_rate_wave16_snapshot": 0.0519,
+      "ratio_lendingrate_over_avgrate_fresh": 0.08393285371702638,
+      "ratio_lendingrate_over_avgrate_wave16": 0.0674373795761079,
+      "ratio_lendingrate_over_historyrate": 0.08139534883720931,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.043,
+      "rate_mean": 0.07784000000000002,
+      "rate_std": 0.07014411139672641,
+      "rate_min": 0.04,
+      "rate_max": 0.267,
+      "lending_rate_median": 0.0035,
+      "lending_rate_mean": 0.021079000000000004,
+      "lending_rate_std": 0.04114315804037597,
+      "lending_rate_min": 0.0029,
+      "lending_rate_max": 0.1377,
+      "lending_rate_range": 0.13479999999999998,
+      "lending_rate_cv": 1.9518553081444074,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.115,
+          "lending_rate": 0.0255
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.115,
+          "lending_rate": 0.0255
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.115,
+          "lending_rate": 0.0256
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.046,
+          "lending_rate": 0.004
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.046,
+          "lending_rate": 0.004
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.046,
+          "lending_rate": 0.004
+        }
+      ]
+    },
+    "EIGEN": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0747,
+      "avg_rate_wave16_snapshot": 0.0766,
+      "ratio_lendingrate_over_avgrate_fresh": 0.13119143239625167,
+      "ratio_lendingrate_over_avgrate_wave16": 0.1279373368146214,
+      "ratio_lendingrate_over_historyrate": 0.13243243243243244,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.074,
+      "rate_mean": 0.07396999999999997,
+      "rate_std": 0.002660807958102011,
+      "rate_min": 0.07,
+      "rate_max": 0.079,
+      "lending_rate_median": 0.0098,
+      "lending_rate_mean": 0.009888999999999998,
+      "lending_rate_std": 0.0007831424654634183,
+      "lending_rate_min": 0.0087,
+      "lending_rate_max": 0.0112,
+      "lending_rate_range": 0.0025000000000000005,
+      "lending_rate_cv": 0.07919329208852446,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.073,
+          "lending_rate": 0.0095
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.074,
+          "lending_rate": 0.0098
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.074,
+          "lending_rate": 0.0098
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.071,
+          "lending_rate": 0.0093
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.071,
+          "lending_rate": 0.0093
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.071,
+          "lending_rate": 0.0093
+        }
+      ]
+    },
+    "ENA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.11,
+      "ratio_lendingrate_over_avgrate_wave16": 0.11,
+      "ratio_lendingrate_over_historyrate": 0.11,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0011,
+      "lending_rate_mean": 0.0011550000000000002,
+      "lending_rate_std": 0.00015658927811380323,
+      "lending_rate_min": 0.001,
+      "lending_rate_max": 0.0016,
+      "lending_rate_range": 0.0006000000000000001,
+      "lending_rate_cv": 0.13557513256606338,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0012
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0012
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0012
+        }
+      ]
+    },
+    "ENJ": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1568,
+      "avg_rate_wave16_snapshot": 0.1707,
+      "ratio_lendingrate_over_avgrate_fresh": 0.326530612244898,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2999414176918571,
+      "ratio_lendingrate_over_historyrate": 0.2925714285714286,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.175,
+      "rate_mean": 0.17130999999999996,
+      "rate_std": 0.011294671131095226,
+      "rate_min": 0.118,
+      "rate_max": 0.181,
+      "lending_rate_median": 0.0512,
+      "lending_rate_mean": 0.048921,
+      "lending_rate_std": 0.006643038354989273,
+      "lending_rate_min": 0.0194,
+      "lending_rate_max": 0.0554,
+      "lending_rate_range": 0.036,
+      "lending_rate_cv": 0.1357911398988016,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.177,
+          "lending_rate": 0.0526
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.177,
+          "lending_rate": 0.0526
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.177,
+          "lending_rate": 0.0526
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.118,
+          "lending_rate": 0.0194
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.118,
+          "lending_rate": 0.0194
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.119,
+          "lending_rate": 0.0198
+        }
+      ]
+    },
+    "ENS": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0391,
+      "avg_rate_wave16_snapshot": 0.0399,
+      "ratio_lendingrate_over_avgrate_fresh": 0.08823529411764705,
+      "ratio_lendingrate_over_avgrate_wave16": 0.08646616541353384,
+      "ratio_lendingrate_over_historyrate": 0.08313253012048193,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.0415,
+      "rate_mean": 0.044399999999999974,
+      "rate_std": 0.008319382261449536,
+      "rate_min": 0.036,
+      "rate_max": 0.07,
+      "lending_rate_median": 0.00345,
+      "lending_rate_mean": 0.004202,
+      "lending_rate_std": 0.0019202788097228763,
+      "lending_rate_min": 0.0025,
+      "lending_rate_max": 0.0106,
+      "lending_rate_range": 0.0081,
+      "lending_rate_cv": 0.4569916253505179,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.06,
+          "lending_rate": 0.0077
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.061,
+          "lending_rate": 0.0079
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.061,
+          "lending_rate": 0.0079
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.039,
+          "lending_rate": 0.003
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.039,
+          "lending_rate": 0.0031
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.039,
+          "lending_rate": 0.0031
+        }
+      ]
+    },
+    "ETC": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.15,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15,
+      "ratio_lendingrate_over_historyrate": 0.15,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0015,
+      "lending_rate_mean": 0.0014640000000000002,
+      "lending_rate_std": 4.82418151324422e-05,
+      "lending_rate_min": 0.0014,
+      "lending_rate_max": 0.0015,
+      "lending_rate_range": 0.00010000000000000005,
+      "lending_rate_cv": 0.032952059516695484,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        }
+      ]
+    },
+    "ETH": {
+      "history_available": true,
+      "avg_rate_fresh": 0.015,
+      "avg_rate_wave16_snapshot": 0.015,
+      "ratio_lendingrate_over_avgrate_fresh": 0.35,
+      "ratio_lendingrate_over_avgrate_wave16": 0.35,
+      "ratio_lendingrate_over_historyrate": 0.35,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.015,
+      "rate_mean": 0.015,
+      "rate_std": 0.0,
+      "rate_min": 0.015,
+      "rate_max": 0.015,
+      "lending_rate_median": 0.0052499999999999995,
+      "lending_rate_mean": 0.005262,
+      "lending_rate_std": 0.00012695342341651026,
+      "lending_rate_min": 0.005,
+      "lending_rate_max": 0.0054,
+      "lending_rate_range": 0.0004000000000000002,
+      "lending_rate_cv": 0.02412645826995634,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.015,
+          "lending_rate": 0.0051
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.015,
+          "lending_rate": 0.0051
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.015,
+          "lending_rate": 0.0051
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.015,
+          "lending_rate": 0.0052
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.015,
+          "lending_rate": 0.0052
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.015,
+          "lending_rate": 0.0052
+        }
+      ]
+    },
+    "ETHFI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1025,
+      "avg_rate_wave16_snapshot": 0.1043,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1931707317073171,
+      "ratio_lendingrate_over_avgrate_wave16": 0.18983700862895495,
+      "ratio_lendingrate_over_historyrate": 0.19223300970873788,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.103,
+      "rate_mean": 0.10306000000000003,
+      "rate_std": 0.0017968547155201135,
+      "rate_min": 0.101,
+      "rate_max": 0.11,
+      "lending_rate_median": 0.0198,
+      "lending_rate_mean": 0.019870999999999996,
+      "lending_rate_std": 0.0007226906794623951,
+      "lending_rate_min": 0.019,
+      "lending_rate_max": 0.0227,
+      "lending_rate_range": 0.003700000000000002,
+      "lending_rate_cv": 0.03636911476334333,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.103,
+          "lending_rate": 0.0198
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.103,
+          "lending_rate": 0.0199
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.101,
+          "lending_rate": 0.0191
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.101,
+          "lending_rate": 0.0191
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.101,
+          "lending_rate": 0.0191
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.102,
+          "lending_rate": 0.0194
+        }
+      ]
+    },
+    "FIL": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.08,
+      "ratio_lendingrate_over_avgrate_wave16": 0.08,
+      "ratio_lendingrate_over_historyrate": 0.08,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0008,
+      "lending_rate_mean": 0.0011099999999999997,
+      "lending_rate_std": 0.0005479991152392769,
+      "lending_rate_min": 0.0006,
+      "lending_rate_max": 0.0021,
+      "lending_rate_range": 0.0015,
+      "lending_rate_cv": 0.4936928966119613,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0018
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0018
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0019
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0008
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0008
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0008
+        }
+      ]
+    },
+    "GALA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1525,
+      "avg_rate_wave16_snapshot": 0.153,
+      "ratio_lendingrate_over_avgrate_fresh": 0.28918032786885245,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2882352941176471,
+      "ratio_lendingrate_over_historyrate": 0.2882352941176471,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.153,
+      "rate_mean": 0.15337999999999996,
+      "rate_std": 0.002145137795484516,
+      "rate_min": 0.149,
+      "rate_max": 0.158,
+      "lending_rate_median": 0.0441,
+      "lending_rate_mean": 0.044242,
+      "lending_rate_std": 0.0012546624158624414,
+      "lending_rate_min": 0.0418,
+      "lending_rate_max": 0.0471,
+      "lending_rate_range": 0.005300000000000006,
+      "lending_rate_cv": 0.028359079966150752,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.152,
+          "lending_rate": 0.0433
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.153,
+          "lending_rate": 0.0439
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.155,
+          "lending_rate": 0.0451
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.151,
+          "lending_rate": 0.0428
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.152,
+          "lending_rate": 0.0434
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.151,
+          "lending_rate": 0.0429
+        }
+      ]
+    },
+    "GAS": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2053,
+      "avg_rate_wave16_snapshot": 0.218,
+      "ratio_lendingrate_over_avgrate_fresh": 0.39868485143692156,
+      "ratio_lendingrate_over_avgrate_wave16": 0.3754587155963303,
+      "ratio_lendingrate_over_historyrate": 0.3637777777777778,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.225,
+      "rate_mean": 0.23128,
+      "rate_std": 0.02619973012429438,
+      "rate_min": 0.198,
+      "rate_max": 0.327,
+      "lending_rate_median": 0.08185,
+      "lending_rate_mean": 0.088418,
+      "lending_rate_std": 0.023989460564627505,
+      "lending_rate_min": 0.0611,
+      "lending_rate_max": 0.1865,
+      "lending_rate_range": 0.1254,
+      "lending_rate_cv": 0.2713187423898698,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.284,
+          "lending_rate": 0.1371
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.284,
+          "lending_rate": 0.1371
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.284,
+          "lending_rate": 0.1371
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.2,
+          "lending_rate": 0.0625
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.2,
+          "lending_rate": 0.0625
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.2,
+          "lending_rate": 0.0625
+        }
+      ]
+    },
+    "GMT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2564,
+      "avg_rate_wave16_snapshot": 0.2612,
+      "ratio_lendingrate_over_avgrate_fresh": 0.3783151326053042,
+      "ratio_lendingrate_over_avgrate_wave16": 0.37136294027565087,
+      "ratio_lendingrate_over_historyrate": 0.3975409836065574,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.244,
+      "rate_mean": 0.24822,
+      "rate_std": 0.01756004417748291,
+      "rate_min": 0.238,
+      "rate_max": 0.336,
+      "lending_rate_median": 0.097,
+      "lending_rate_mean": 0.10152299999999997,
+      "lending_rate_std": 0.017789622755353125,
+      "lending_rate_min": 0.092,
+      "lending_rate_max": 0.1956,
+      "lending_rate_range": 0.1036,
+      "lending_rate_cv": 0.1752275125375839,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.238,
+          "lending_rate": 0.092
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.238,
+          "lending_rate": 0.092
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.238,
+          "lending_rate": 0.092
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.239,
+          "lending_rate": 0.0926
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.239,
+          "lending_rate": 0.0927
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.239,
+          "lending_rate": 0.0926
+        }
+      ]
+    },
+    "GRT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.168,
+      "avg_rate_wave16_snapshot": 0.1736,
+      "ratio_lendingrate_over_avgrate_fresh": 0.29583333333333334,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2862903225806452,
+      "ratio_lendingrate_over_historyrate": 0.3049079754601227,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.163,
+      "rate_mean": 0.16757999999999995,
+      "rate_std": 0.015336745338426843,
+      "rate_min": 0.155,
+      "rate_max": 0.242,
+      "lending_rate_median": 0.0497,
+      "lending_rate_mean": 0.053075000000000004,
+      "lending_rate_std": 0.01110897694150405,
+      "lending_rate_min": 0.045,
+      "lending_rate_max": 0.1106,
+      "lending_rate_range": 0.0656,
+      "lending_rate_cv": 0.2093071491569298,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.164,
+          "lending_rate": 0.0503
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.164,
+          "lending_rate": 0.0503
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.164,
+          "lending_rate": 0.0503
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.165,
+          "lending_rate": 0.051
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.165,
+          "lending_rate": 0.051
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.183,
+          "lending_rate": 0.0629
+        }
+      ]
+    },
+    "HBAR": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.37,
+      "ratio_lendingrate_over_avgrate_wave16": 0.37,
+      "ratio_lendingrate_over_historyrate": 0.37,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0037,
+      "lending_rate_mean": 0.0038150000000000007,
+      "lending_rate_std": 0.00033131967534803504,
+      "lending_rate_min": 0.0034,
+      "lending_rate_max": 0.0044,
+      "lending_rate_range": 0.0010000000000000005,
+      "lending_rate_cv": 0.08684657283041546,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0035
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0035
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0035
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0044
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0043
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0043
+        }
+      ]
+    },
+    "HUMA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1156,
+      "avg_rate_wave16_snapshot": 0.1176,
+      "ratio_lendingrate_over_avgrate_fresh": 0.14878892733564014,
+      "ratio_lendingrate_over_avgrate_wave16": 0.14625850340136054,
+      "ratio_lendingrate_over_historyrate": 0.14576271186440679,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.118,
+      "rate_mean": 0.11927000000000001,
+      "rate_std": 0.008584523306744552,
+      "rate_min": 0.108,
+      "rate_max": 0.196,
+      "lending_rate_median": 0.0172,
+      "lending_rate_mean": 0.017891,
+      "lending_rate_std": 0.004462460593154246,
+      "lending_rate_min": 0.0136,
+      "lending_rate_max": 0.0596,
+      "lending_rate_range": 0.046,
+      "lending_rate_cv": 0.2494248836372615,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.134,
+          "lending_rate": 0.0241
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.129,
+          "lending_rate": 0.0218
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.129,
+          "lending_rate": 0.0218
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.109,
+          "lending_rate": 0.0139
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.109,
+          "lending_rate": 0.0139
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.108,
+          "lending_rate": 0.0136
+        }
+      ]
+    },
+    "ICP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.11,
+      "ratio_lendingrate_over_avgrate_wave16": 0.11,
+      "ratio_lendingrate_over_historyrate": 0.11,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0011,
+      "lending_rate_mean": 0.0011840000000000002,
+      "lending_rate_std": 0.00012120606045453782,
+      "lending_rate_min": 0.001,
+      "lending_rate_max": 0.0015,
+      "lending_rate_range": 0.0005,
+      "lending_rate_cv": 0.10236998349200828,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0011
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0011
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0011
+        }
+      ]
+    },
+    "IMX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1149,
+      "avg_rate_wave16_snapshot": 0.115,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2175805047867711,
+      "ratio_lendingrate_over_avgrate_wave16": 0.21739130434782608,
+      "ratio_lendingrate_over_historyrate": 0.21739130434782608,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.115,
+      "rate_mean": 0.11959000000000003,
+      "rate_std": 0.013248285576144207,
+      "rate_min": 0.114,
+      "rate_max": 0.181,
+      "lending_rate_median": 0.025,
+      "lending_rate_mean": 0.027342000000000005,
+      "lending_rate_std": 0.007049639005013668,
+      "lending_rate_min": 0.0244,
+      "lending_rate_max": 0.0619,
+      "lending_rate_range": 0.03749999999999999,
+      "lending_rate_cv": 0.2578318705659303,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.114,
+          "lending_rate": 0.0246
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.116,
+          "lending_rate": 0.0254
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.116,
+          "lending_rate": 0.0254
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.115,
+          "lending_rate": 0.0249
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.114,
+          "lending_rate": 0.0246
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.114,
+          "lending_rate": 0.0244
+        }
+      ]
+    },
+    "INJ": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0647,
+      "avg_rate_wave16_snapshot": 0.0657,
+      "ratio_lendingrate_over_avgrate_fresh": 0.12673879443585784,
+      "ratio_lendingrate_over_avgrate_wave16": 0.12480974124809743,
+      "ratio_lendingrate_over_historyrate": 0.12615384615384617,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.065,
+      "rate_mean": 0.06804000000000002,
+      "rate_std": 0.01030045600638117,
+      "rate_min": 0.056,
+      "rate_max": 0.103,
+      "lending_rate_median": 0.0082,
+      "lending_rate_mean": 0.009141,
+      "lending_rate_std": 0.003176590351717744,
+      "lending_rate_min": 0.0061,
+      "lending_rate_max": 0.0206,
+      "lending_rate_range": 0.014499999999999999,
+      "lending_rate_cv": 0.3475101577199151,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.058,
+          "lending_rate": 0.0064
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.057,
+          "lending_rate": 0.0063
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.057,
+          "lending_rate": 0.0063
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.065,
+          "lending_rate": 0.0081
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.065,
+          "lending_rate": 0.008
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.065,
+          "lending_rate": 0.008
+        }
+      ]
+    },
+    "IOTA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1898,
+      "avg_rate_wave16_snapshot": 0.1891,
+      "ratio_lendingrate_over_avgrate_fresh": 0.35721812434141204,
+      "ratio_lendingrate_over_avgrate_wave16": 0.35854045478582763,
+      "ratio_lendingrate_over_historyrate": 0.3606382978723404,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.188,
+      "rate_mean": 0.18824,
+      "rate_std": 0.013924848801384315,
+      "rate_min": 0.173,
+      "rate_max": 0.245,
+      "lending_rate_median": 0.0678,
+      "lending_rate_mean": 0.06834499999999999,
+      "lending_rate_std": 0.01087098236479839,
+      "lending_rate_min": 0.0572,
+      "lending_rate_max": 0.1156,
+      "lending_rate_range": 0.058399999999999994,
+      "lending_rate_cv": 0.15906039014995088,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.173,
+          "lending_rate": 0.0572
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.173,
+          "lending_rate": 0.0573
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.175,
+          "lending_rate": 0.0588
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.192,
+          "lending_rate": 0.0706
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.191,
+          "lending_rate": 0.0699
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.19,
+          "lending_rate": 0.0694
+        }
+      ]
+    },
+    "JTO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1103,
+      "avg_rate_wave16_snapshot": 0.1067,
+      "ratio_lendingrate_over_avgrate_fresh": 0.40616500453309157,
+      "ratio_lendingrate_over_avgrate_wave16": 0.4198687910028116,
+      "ratio_lendingrate_over_historyrate": 0.303728813559322,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.1475,
+      "rate_mean": 0.15468,
+      "rate_std": 0.06808563829042173,
+      "rate_min": 0.076,
+      "rate_max": 0.38,
+      "lending_rate_median": 0.0448,
+      "lending_rate_mean": 0.05798499999999999,
+      "lending_rate_std": 0.054673248633693015,
+      "lending_rate_min": 0.0123,
+      "lending_rate_max": 0.29,
+      "lending_rate_range": 0.2777,
+      "lending_rate_cv": 0.9428860676673799,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.196,
+          "lending_rate": 0.0784
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.196,
+          "lending_rate": 0.0783
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.196,
+          "lending_rate": 0.0784
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.107,
+          "lending_rate": 0.0232
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.106,
+          "lending_rate": 0.0229
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.103,
+          "lending_rate": 0.0215
+        }
+      ]
+    },
+    "JUP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1102,
+      "avg_rate_wave16_snapshot": 0.1105,
+      "ratio_lendingrate_over_avgrate_fresh": 0.12976406533575316,
+      "ratio_lendingrate_over_avgrate_wave16": 0.12941176470588237,
+      "ratio_lendingrate_over_historyrate": 0.13240740740740742,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.108,
+      "rate_mean": 0.10862,
+      "rate_std": 0.0017853500350000708,
+      "rate_min": 0.107,
+      "rate_max": 0.114,
+      "lending_rate_median": 0.0143,
+      "lending_rate_mean": 0.014529999999999998,
+      "lending_rate_std": 0.000657282437023995,
+      "lending_rate_min": 0.0138,
+      "lending_rate_max": 0.0165,
+      "lending_rate_range": 0.002700000000000001,
+      "lending_rate_cv": 0.0452362310408806,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.108,
+          "lending_rate": 0.0143
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.108,
+          "lending_rate": 0.0143
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.108,
+          "lending_rate": 0.0143
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.109,
+          "lending_rate": 0.0147
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.109,
+          "lending_rate": 0.0147
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.109,
+          "lending_rate": 0.0147
+        }
+      ]
+    },
+    "KAITO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.859,
+      "avg_rate_wave16_snapshot": 0.4966,
+      "ratio_lendingrate_over_avgrate_fresh": 0.39889406286379514,
+      "ratio_lendingrate_over_avgrate_wave16": 0.6899919452275474,
+      "ratio_lendingrate_over_historyrate": 0.8316747572815535,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.412,
+      "rate_mean": 0.52921,
+      "rate_std": 0.39651039180339376,
+      "rate_min": 0.361,
+      "rate_max": 2.1,
+      "lending_rate_median": 0.34265,
+      "lending_rate_mean": 0.47960500000000006,
+      "lending_rate_std": 0.41163076284972,
+      "lending_rate_min": 0.2852,
+      "lending_rate_max": 2.1,
+      "lending_rate_range": 1.8148,
+      "lending_rate_cv": 0.8582703742657394,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.413,
+          "lending_rate": 0.34
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.413,
+          "lending_rate": 0.34
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.413,
+          "lending_rate": 0.34
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.491,
+          "lending_rate": 0.4846
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.491,
+          "lending_rate": 0.4846
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.492,
+          "lending_rate": 0.4869
+        }
+      ]
+    },
+    "KMNO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.266,
+      "avg_rate_wave16_snapshot": 0.2678,
+      "ratio_lendingrate_over_avgrate_fresh": 0.6270676691729323,
+      "ratio_lendingrate_over_avgrate_wave16": 0.6228528752800598,
+      "ratio_lendingrate_over_historyrate": 0.6154981549815498,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.271,
+      "rate_mean": 0.27342,
+      "rate_std": 0.007373416625098063,
+      "rate_min": 0.264,
+      "rate_max": 0.285,
+      "lending_rate_median": 0.1668,
+      "lending_rate_mean": 0.16890500000000003,
+      "lending_rate_std": 0.007506325615267718,
+      "lending_rate_min": 0.1586,
+      "lending_rate_max": 0.18,
+      "lending_rate_range": 0.021400000000000002,
+      "lending_rate_cv": 0.044441109589815085,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.285,
+          "lending_rate": 0.1799
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.285,
+          "lending_rate": 0.18
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.285,
+          "lending_rate": 0.18
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.264,
+          "lending_rate": 0.1586
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.264,
+          "lending_rate": 0.1586
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.265,
+          "lending_rate": 0.1595
+        }
+      ]
+    },
+    "LAYER": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2159,
+      "avg_rate_wave16_snapshot": 0.2588,
+      "ratio_lendingrate_over_avgrate_fresh": 0.48749421028253825,
+      "ratio_lendingrate_over_avgrate_wave16": 0.40668469860896456,
+      "ratio_lendingrate_over_historyrate": 0.41600790513833996,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.253,
+      "rate_mean": 0.2644500000000001,
+      "rate_std": 0.05655896628003968,
+      "rate_min": 0.167,
+      "rate_max": 0.489,
+      "lending_rate_median": 0.10525000000000001,
+      "lending_rate_mean": 0.122387,
+      "lending_rate_std": 0.06718636925099698,
+      "lending_rate_min": 0.0412,
+      "lending_rate_max": 0.4343,
+      "lending_rate_range": 0.3931,
+      "lending_rate_cv": 0.548966550785598,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.295,
+          "lending_rate": 0.1474
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.295,
+          "lending_rate": 0.1474
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.295,
+          "lending_rate": 0.1474
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.167,
+          "lending_rate": 0.0412
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.167,
+          "lending_rate": 0.0412
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.167,
+          "lending_rate": 0.0412
+        }
+      ]
+    },
+    "LDO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0759,
+      "avg_rate_wave16_snapshot": 0.0777,
+      "ratio_lendingrate_over_avgrate_fresh": 0.13175230566534915,
+      "ratio_lendingrate_over_avgrate_wave16": 0.1287001287001287,
+      "ratio_lendingrate_over_historyrate": 0.13333333333333333,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.075,
+      "rate_mean": 0.07373999999999997,
+      "rate_std": 0.006403313536164244,
+      "rate_min": 0.059,
+      "rate_max": 0.083,
+      "lending_rate_median": 0.01,
+      "lending_rate_mean": 0.009727000000000001,
+      "lending_rate_std": 0.0016934726141716893,
+      "lending_rate_min": 0.0061,
+      "lending_rate_max": 0.0123,
+      "lending_rate_range": 0.0062,
+      "lending_rate_cv": 0.17410019678952288,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.064,
+          "lending_rate": 0.0072
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.062,
+          "lending_rate": 0.0067
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.062,
+          "lending_rate": 0.0067
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.074,
+          "lending_rate": 0.0097
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.074,
+          "lending_rate": 0.0097
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.074,
+          "lending_rate": 0.0097
+        }
+      ]
+    },
+    "LINK": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2,
+      "ratio_lendingrate_over_historyrate": 0.2,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.002,
+      "lending_rate_mean": 0.00198,
+      "lending_rate_std": 6.356417261637279e-05,
+      "lending_rate_min": 0.0019,
+      "lending_rate_max": 0.0021,
+      "lending_rate_range": 0.00019999999999999987,
+      "lending_rate_cv": 0.032103117483016565,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0021
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0021
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0021
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.002
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.002
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.002
+        }
+      ]
+    },
+    "LTC": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.15,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15,
+      "ratio_lendingrate_over_historyrate": 0.15,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0015,
+      "lending_rate_mean": 0.0015110000000000002,
+      "lending_rate_std": 8.027100562117271e-05,
+      "lending_rate_min": 0.0014,
+      "lending_rate_max": 0.0017,
+      "lending_rate_range": 0.0002999999999999999,
+      "lending_rate_cv": 0.05312442463346969,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0015
+        }
+      ]
+    },
+    "MAGIC": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1972,
+      "avg_rate_wave16_snapshot": 0.1975,
+      "ratio_lendingrate_over_avgrate_fresh": 0.3232758620689655,
+      "ratio_lendingrate_over_avgrate_wave16": 0.3227848101265823,
+      "ratio_lendingrate_over_historyrate": 0.31875,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.2,
+      "rate_mean": 0.20318999999999995,
+      "rate_std": 0.011604331305616236,
+      "rate_min": 0.196,
+      "rate_max": 0.251,
+      "lending_rate_median": 0.06375,
+      "lending_rate_mean": 0.06664600000000002,
+      "lending_rate_std": 0.009384517875606381,
+      "lending_rate_min": 0.0619,
+      "lending_rate_max": 0.1064,
+      "lending_rate_range": 0.0445,
+      "lending_rate_cv": 0.14081141967419467,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.206,
+          "lending_rate": 0.0679
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.205,
+          "lending_rate": 0.0674
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.205,
+          "lending_rate": 0.0673
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.197,
+          "lending_rate": 0.0624
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.197,
+          "lending_rate": 0.0624
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.197,
+          "lending_rate": 0.0625
+        }
+      ]
+    },
+    "MANA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1084,
+      "avg_rate_wave16_snapshot": 0.1086,
+      "ratio_lendingrate_over_avgrate_fresh": 0.20940959409594098,
+      "ratio_lendingrate_over_avgrate_wave16": 0.20902394106813998,
+      "ratio_lendingrate_over_historyrate": 0.2063636363636364,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.11,
+      "rate_mean": 0.11239000000000003,
+      "rate_std": 0.007431702498095711,
+      "rate_min": 0.108,
+      "rate_max": 0.149,
+      "lending_rate_median": 0.0227,
+      "lending_rate_mean": 0.023895999999999997,
+      "lending_rate_std": 0.003609413058415817,
+      "lending_rate_min": 0.0219,
+      "lending_rate_max": 0.0421,
+      "lending_rate_range": 0.0202,
+      "lending_rate_cv": 0.1510467466695605,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.112,
+          "lending_rate": 0.0236
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.112,
+          "lending_rate": 0.0236
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.113,
+          "lending_rate": 0.024
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.109,
+          "lending_rate": 0.0223
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.108,
+          "lending_rate": 0.022
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.108,
+          "lending_rate": 0.0219
+        }
+      ]
+    },
+    "ME": {
+      "history_available": true,
+      "avg_rate_fresh": 0.8391,
+      "avg_rate_wave16_snapshot": 0.4905,
+      "ratio_lendingrate_over_avgrate_fresh": 0.3818376832320344,
+      "ratio_lendingrate_over_avgrate_wave16": 0.653211009174312,
+      "ratio_lendingrate_over_historyrate": 0.7574468085106384,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.423,
+      "rate_mean": 0.6852000000000001,
+      "rate_std": 0.6055587285617917,
+      "rate_min": 0.273,
+      "rate_max": 2.06,
+      "lending_rate_median": 0.3204,
+      "lending_rate_mean": 0.5916039999999999,
+      "lending_rate_std": 0.6499496954768923,
+      "lending_rate_min": 0.1254,
+      "lending_rate_max": 2.06,
+      "lending_rate_range": 1.9346,
+      "lending_rate_cv": 1.0986228887514156,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.334,
+          "lending_rate": 0.1936
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.334,
+          "lending_rate": 0.1936
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.334,
+          "lending_rate": 0.1936
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 2.04,
+          "lending_rate": 2.04
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 2.04,
+          "lending_rate": 2.04
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 2.04,
+          "lending_rate": 2.04
+        }
+      ]
+    },
+    "MINA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.102,
+      "avg_rate_wave16_snapshot": 0.1044,
+      "ratio_lendingrate_over_avgrate_fresh": 0.23137254901960785,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2260536398467433,
+      "ratio_lendingrate_over_historyrate": 0.22692307692307692,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.104,
+      "rate_mean": 0.10631000000000004,
+      "rate_std": 0.00697426003460604,
+      "rate_min": 0.097,
+      "rate_max": 0.14,
+      "lending_rate_median": 0.0236,
+      "lending_rate_mean": 0.024769000000000006,
+      "lending_rate_std": 0.003371169955473451,
+      "lending_rate_min": 0.0207,
+      "lending_rate_max": 0.0429,
+      "lending_rate_range": 0.0222,
+      "lending_rate_cv": 0.1361044029017502,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.12,
+          "lending_rate": 0.0317
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.118,
+          "lending_rate": 0.0307
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.118,
+          "lending_rate": 0.0307
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.101,
+          "lending_rate": 0.0222
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.101,
+          "lending_rate": 0.0221
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.1,
+          "lending_rate": 0.0216
+        }
+      ]
+    },
+    "MORPHO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1237,
+      "avg_rate_wave16_snapshot": 0.0959,
+      "ratio_lendingrate_over_avgrate_fresh": 0.05699272433306387,
+      "ratio_lendingrate_over_avgrate_wave16": 0.07351407716371221,
+      "ratio_lendingrate_over_historyrate": 0.11750000000000002,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.06,
+      "rate_mean": 0.07732,
+      "rate_std": 0.02808820162821164,
+      "rate_min": 0.058,
+      "rate_max": 0.136,
+      "lending_rate_median": 0.007050000000000001,
+      "lending_rate_mean": 0.012857,
+      "lending_rate_std": 0.009455373705951125,
+      "lending_rate_min": 0.0066,
+      "lending_rate_max": 0.0343,
+      "lending_rate_range": 0.027699999999999995,
+      "lending_rate_cv": 0.7354261263087132,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.06,
+          "lending_rate": 0.0071
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.06,
+          "lending_rate": 0.0071
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.06,
+          "lending_rate": 0.0071
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.135,
+          "lending_rate": 0.0337
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.136,
+          "lending_rate": 0.0341
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.136,
+          "lending_rate": 0.0343
+        }
+      ]
+    },
+    "MOVE": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2804,
+      "avg_rate_wave16_snapshot": 0.305,
+      "ratio_lendingrate_over_avgrate_fresh": 0.4598787446504993,
+      "ratio_lendingrate_over_avgrate_wave16": 0.4227868852459017,
+      "ratio_lendingrate_over_historyrate": 0.47408088235294116,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.272,
+      "rate_mean": 0.27883,
+      "rate_std": 0.02460354536330982,
+      "rate_min": 0.251,
+      "rate_max": 0.339,
+      "lending_rate_median": 0.12895,
+      "lending_rate_mean": 0.13732899999999998,
+      "lending_rate_std": 0.026928075900761492,
+      "lending_rate_min": 0.1078,
+      "lending_rate_max": 0.2069,
+      "lending_rate_range": 0.0991,
+      "lending_rate_cv": 0.19608440970779295,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.262,
+          "lending_rate": 0.119
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.261,
+          "lending_rate": 0.1178
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.259,
+          "lending_rate": 0.1159
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.265,
+          "lending_rate": 0.1219
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.251,
+          "lending_rate": 0.1078
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.267,
+          "lending_rate": 0.1238
+        }
+      ]
+    },
+    "NEAR": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.0191,
+      "ratio_lendingrate_over_avgrate_fresh": 0.86,
+      "ratio_lendingrate_over_avgrate_wave16": 0.4502617801047121,
+      "ratio_lendingrate_over_historyrate": 0.86,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.02231,
+      "rate_std": 0.026231176993506158,
+      "rate_min": 0.01,
+      "rate_max": 0.113,
+      "lending_rate_median": 0.0086,
+      "lending_rate_mean": 0.017449000000000003,
+      "lending_rate_std": 0.01969399998358727,
+      "lending_rate_min": 0.0067,
+      "lending_rate_max": 0.0879,
+      "lending_rate_range": 0.08120000000000001,
+      "lending_rate_cv": 1.128660667292525,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.113,
+          "lending_rate": 0.0879
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.11,
+          "lending_rate": 0.0853
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.099,
+          "lending_rate": 0.0764
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0077
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0076
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0076
+        }
+      ]
+    },
+    "NEIRO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1475,
+      "avg_rate_wave16_snapshot": 0.1467,
+      "ratio_lendingrate_over_avgrate_fresh": 0.21559322033898307,
+      "ratio_lendingrate_over_avgrate_wave16": 0.21676891615541924,
+      "ratio_lendingrate_over_historyrate": 0.21059602649006626,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.151,
+      "rate_mean": 0.14994999999999997,
+      "rate_std": 0.0023110406943429407,
+      "rate_min": 0.146,
+      "rate_max": 0.153,
+      "lending_rate_median": 0.0318,
+      "lending_rate_mean": 0.031469,
+      "lending_rate_std": 0.0009081777737243241,
+      "lending_rate_min": 0.0299,
+      "lending_rate_max": 0.0329,
+      "lending_rate_range": 0.002999999999999999,
+      "lending_rate_cv": 0.0288594417911063,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.153,
+          "lending_rate": 0.0327
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.153,
+          "lending_rate": 0.0327
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.153,
+          "lending_rate": 0.0327
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.149,
+          "lending_rate": 0.0312
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.148,
+          "lending_rate": 0.0309
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.148,
+          "lending_rate": 0.0309
+        }
+      ]
+    },
+    "NOT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.145,
+      "avg_rate_wave16_snapshot": 0.145,
+      "ratio_lendingrate_over_avgrate_fresh": 0.20275862068965517,
+      "ratio_lendingrate_over_avgrate_wave16": 0.20275862068965517,
+      "ratio_lendingrate_over_historyrate": 0.20275862068965517,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.145,
+      "rate_mean": 0.14569,
+      "rate_std": 0.0011950656125007616,
+      "rate_min": 0.145,
+      "rate_max": 0.151,
+      "lending_rate_median": 0.0294,
+      "lending_rate_mean": 0.029538,
+      "lending_rate_std": 0.0005533698418039977,
+      "lending_rate_min": 0.0292,
+      "lending_rate_max": 0.0321,
+      "lending_rate_range": 0.0028999999999999963,
+      "lending_rate_cv": 0.01873416757410785,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.146,
+          "lending_rate": 0.0296
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.146,
+          "lending_rate": 0.0296
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.146,
+          "lending_rate": 0.0296
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.145,
+          "lending_rate": 0.0292
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.145,
+          "lending_rate": 0.0292
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.145,
+          "lending_rate": 0.0292
+        }
+      ]
+    },
+    "ONDO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.135,
+      "ratio_lendingrate_over_avgrate_wave16": 0.135,
+      "ratio_lendingrate_over_historyrate": 0.135,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.00135,
+      "lending_rate_mean": 0.0014279999999999998,
+      "lending_rate_std": 0.0003897888576336598,
+      "lending_rate_min": 0.0009,
+      "lending_rate_max": 0.0026,
+      "lending_rate_range": 0.0017,
+      "lending_rate_cv": 0.2729613848975209,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0018
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0018
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0017
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0011
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.001
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.001
+        }
+      ]
+    },
+    "ONT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2465,
+      "avg_rate_wave16_snapshot": 0.2656,
+      "ratio_lendingrate_over_avgrate_fresh": 0.5176470588235293,
+      "ratio_lendingrate_over_avgrate_wave16": 0.48042168674698793,
+      "ratio_lendingrate_over_historyrate": 0.46739926739926735,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.273,
+      "rate_mean": 0.27092000000000005,
+      "rate_std": 0.019145735606635544,
+      "rate_min": 0.236,
+      "rate_max": 0.314,
+      "lending_rate_median": 0.1276,
+      "lending_rate_mean": 0.126321,
+      "lending_rate_std": 0.019087551049060878,
+      "lending_rate_min": 0.0932,
+      "lending_rate_max": 0.1724,
+      "lending_rate_range": 0.07919999999999999,
+      "lending_rate_cv": 0.1511035461171213,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.298,
+          "lending_rate": 0.1543
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.298,
+          "lending_rate": 0.1541
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.298,
+          "lending_rate": 0.1545
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.238,
+          "lending_rate": 0.0947
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.238,
+          "lending_rate": 0.0947
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.238,
+          "lending_rate": 0.0946
+        }
+      ]
+    },
+    "OP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1092,
+      "avg_rate_wave16_snapshot": 0.1154,
+      "ratio_lendingrate_over_avgrate_fresh": 0.217032967032967,
+      "ratio_lendingrate_over_avgrate_wave16": 0.20537261698440207,
+      "ratio_lendingrate_over_historyrate": 0.20973451327433626,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.113,
+      "rate_mean": 0.13334,
+      "rate_std": 0.04407138836850131,
+      "rate_min": 0.093,
+      "rate_max": 0.308,
+      "lending_rate_median": 0.0237,
+      "lending_rate_mean": 0.036831,
+      "lending_rate_std": 0.02830727748452434,
+      "lending_rate_min": 0.0161,
+      "lending_rate_max": 0.1795,
+      "lending_rate_range": 0.1634,
+      "lending_rate_cv": 0.768572058443277,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.095,
+          "lending_rate": 0.0167
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.095,
+          "lending_rate": 0.0167
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.095,
+          "lending_rate": 0.0169
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.105,
+          "lending_rate": 0.0205
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.105,
+          "lending_rate": 0.0204
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.106,
+          "lending_rate": 0.0207
+        }
+      ]
+    },
+    "ORDI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0775,
+      "avg_rate_wave16_snapshot": 0.0777,
+      "ratio_lendingrate_over_avgrate_fresh": 0.09096774193548388,
+      "ratio_lendingrate_over_avgrate_wave16": 0.09073359073359073,
+      "ratio_lendingrate_over_historyrate": 0.08924050632911393,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.079,
+      "rate_mean": 0.07952999999999999,
+      "rate_std": 0.0027759974092498043,
+      "rate_min": 0.076,
+      "rate_max": 0.086,
+      "lending_rate_median": 0.007050000000000001,
+      "lending_rate_mean": 0.007141999999999999,
+      "lending_rate_std": 0.0004731540420145933,
+      "lending_rate_min": 0.0065,
+      "lending_rate_max": 0.0083,
+      "lending_rate_range": 0.0018000000000000004,
+      "lending_rate_cv": 0.06624951582394194,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.078,
+          "lending_rate": 0.0069
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.078,
+          "lending_rate": 0.0069
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.076,
+          "lending_rate": 0.0068
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.077,
+          "lending_rate": 0.0066
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.077,
+          "lending_rate": 0.0065
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.076,
+          "lending_rate": 0.0065
+        }
+      ]
+    },
+    "PAXG": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.02,
+      "ratio_lendingrate_over_avgrate_wave16": 0.02,
+      "ratio_lendingrate_over_historyrate": 0.02,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0002,
+      "lending_rate_mean": 0.00025600000000000004,
+      "lending_rate_std": 0.0001076094697496367,
+      "lending_rate_min": 0.0002,
+      "lending_rate_max": 0.0005,
+      "lending_rate_range": 0.00030000000000000003,
+      "lending_rate_cv": 0.42034949120951826,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0002
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0002
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0002
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0005
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0005
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0005
+        }
+      ]
+    },
+    "PENGU": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1033,
+      "avg_rate_wave16_snapshot": 0.101,
+      "ratio_lendingrate_over_avgrate_fresh": 0.3059051306873185,
+      "ratio_lendingrate_over_avgrate_wave16": 0.31287128712871287,
+      "ratio_lendingrate_over_historyrate": 0.24307692307692308,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.13,
+      "rate_mean": 0.11996000000000001,
+      "rate_std": 0.01571136113412421,
+      "rate_min": 0.1,
+      "rate_max": 0.139,
+      "lending_rate_median": 0.0316,
+      "lending_rate_mean": 0.027357000000000006,
+      "lending_rate_std": 0.007097235982117164,
+      "lending_rate_min": 0.0184,
+      "lending_rate_max": 0.0364,
+      "lending_rate_range": 0.018000000000000002,
+      "lending_rate_cv": 0.2594303462410777,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.139,
+          "lending_rate": 0.0362
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.138,
+          "lending_rate": 0.0359
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.138,
+          "lending_rate": 0.0359
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.107,
+          "lending_rate": 0.0214
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.107,
+          "lending_rate": 0.0213
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.107,
+          "lending_rate": 0.0213
+        }
+      ]
+    },
+    "PEOPLE": {
+      "history_available": true,
+      "avg_rate_fresh": 0.07,
+      "avg_rate_wave16_snapshot": 0.0692,
+      "ratio_lendingrate_over_avgrate_fresh": 0.048571428571428564,
+      "ratio_lendingrate_over_avgrate_wave16": 0.04913294797687861,
+      "ratio_lendingrate_over_historyrate": 0.048571428571428564,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.07,
+      "rate_mean": 0.06975,
+      "rate_std": 0.0006415731927193958,
+      "rate_min": 0.069,
+      "rate_max": 0.072,
+      "lending_rate_median": 0.0034,
+      "lending_rate_mean": 0.0033950000000000004,
+      "lending_rate_std": 0.00011043989178267835,
+      "lending_rate_min": 0.0033,
+      "lending_rate_max": 0.0038,
+      "lending_rate_range": 0.0005,
+      "lending_rate_cv": 0.03253015958252675,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.07,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.07,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.07,
+          "lending_rate": 0.0034
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.07,
+          "lending_rate": 0.0035
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.07,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.07,
+          "lending_rate": 0.0034
+        }
+      ]
+    },
+    "PNUT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1158,
+      "avg_rate_wave16_snapshot": 0.1156,
+      "ratio_lendingrate_over_avgrate_fresh": 0.14680483592400692,
+      "ratio_lendingrate_over_avgrate_wave16": 0.14705882352941177,
+      "ratio_lendingrate_over_historyrate": 0.14655172413793105,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.116,
+      "rate_mean": 0.11642,
+      "rate_std": 0.0011821910833599409,
+      "rate_min": 0.115,
+      "rate_max": 0.121,
+      "lending_rate_median": 0.017,
+      "lending_rate_mean": 0.017105999999999996,
+      "lending_rate_std": 0.00046576102599222863,
+      "lending_rate_min": 0.0166,
+      "lending_rate_max": 0.019,
+      "lending_rate_range": 0.0023999999999999994,
+      "lending_rate_cv": 0.0272279332393446,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.118,
+          "lending_rate": 0.0177
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.118,
+          "lending_rate": 0.0177
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.118,
+          "lending_rate": 0.0178
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.116,
+          "lending_rate": 0.017
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.116,
+          "lending_rate": 0.017
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.116,
+          "lending_rate": 0.017
+        }
+      ]
+    },
+    "POL": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.25,
+      "ratio_lendingrate_over_avgrate_wave16": 0.25,
+      "ratio_lendingrate_over_historyrate": 0.25,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0025,
+      "lending_rate_mean": 0.0024629999999999995,
+      "lending_rate_std": 5.056249258655737e-05,
+      "lending_rate_min": 0.0024,
+      "lending_rate_max": 0.0026,
+      "lending_rate_range": 0.0002000000000000001,
+      "lending_rate_cv": 0.02052882362426203,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0025
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0025
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0025
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0025
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0025
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0025
+        }
+      ]
+    },
+    "PUMP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1488,
+      "avg_rate_wave16_snapshot": 0.1505,
+      "ratio_lendingrate_over_avgrate_fresh": 0.3057795698924731,
+      "ratio_lendingrate_over_avgrate_wave16": 0.3023255813953488,
+      "ratio_lendingrate_over_historyrate": 0.29073482428115016,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.1565,
+      "rate_mean": 0.16592999999999994,
+      "rate_std": 0.018690058395528973,
+      "rate_min": 0.141,
+      "rate_max": 0.215,
+      "lending_rate_median": 0.0455,
+      "lending_rate_mean": 0.05190200000000001,
+      "lending_rate_std": 0.012168447192255348,
+      "lending_rate_min": 0.0368,
+      "lending_rate_max": 0.0868,
+      "lending_rate_range": 0.05,
+      "lending_rate_cv": 0.23445044877375332,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.152,
+          "lending_rate": 0.0429
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.156,
+          "lending_rate": 0.0452
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.157,
+          "lending_rate": 0.0459
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.15,
+          "lending_rate": 0.0417
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.148,
+          "lending_rate": 0.0407
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.141,
+          "lending_rate": 0.0368
+        }
+      ]
+    },
+    "PYTH": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0461,
+      "avg_rate_wave16_snapshot": 0.0467,
+      "ratio_lendingrate_over_avgrate_fresh": 0.08459869848156182,
+      "ratio_lendingrate_over_avgrate_wave16": 0.08351177730192719,
+      "ratio_lendingrate_over_historyrate": 0.08297872340425531,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.047,
+      "rate_mean": 0.04750000000000001,
+      "rate_std": 0.005141433986189401,
+      "rate_min": 0.046,
+      "rate_max": 0.098,
+      "lending_rate_median": 0.0039,
+      "lending_rate_mean": 0.004081,
+      "lending_rate_std": 0.0013996893594759882,
+      "lending_rate_min": 0.0038,
+      "lending_rate_max": 0.0179,
+      "lending_rate_range": 0.0141,
+      "lending_rate_cv": 0.34297705451506694,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.047,
+          "lending_rate": 0.004
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.047,
+          "lending_rate": 0.004
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.048,
+          "lending_rate": 0.0041
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.046,
+          "lending_rate": 0.0038
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.046,
+          "lending_rate": 0.0038
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.046,
+          "lending_rate": 0.0038
+        }
+      ]
+    },
+    "RENDER": {
+      "history_available": true,
+      "avg_rate_fresh": 0.044,
+      "avg_rate_wave16_snapshot": 0.0433,
+      "ratio_lendingrate_over_avgrate_fresh": 0.08863636363636364,
+      "ratio_lendingrate_over_avgrate_wave16": 0.09006928406466512,
+      "ratio_lendingrate_over_historyrate": 0.08478260869565217,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.046,
+      "rate_mean": 0.05543000000000001,
+      "rate_std": 0.012696340839276121,
+      "rate_min": 0.043,
+      "rate_max": 0.077,
+      "lending_rate_median": 0.0039,
+      "lending_rate_mean": 0.005996000000000001,
+      "lending_rate_std": 0.0027599926804177575,
+      "lending_rate_min": 0.0034,
+      "lending_rate_max": 0.0111,
+      "lending_rate_range": 0.0077,
+      "lending_rate_cv": 0.460305650503295,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.076,
+          "lending_rate": 0.0108
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.076,
+          "lending_rate": 0.0108
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.076,
+          "lending_rate": 0.0108
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.046,
+          "lending_rate": 0.0039
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        }
+      ]
+    },
+    "S": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1065,
+      "avg_rate_wave16_snapshot": 0.1033,
+      "ratio_lendingrate_over_avgrate_fresh": 0.18779342723004697,
+      "ratio_lendingrate_over_avgrate_wave16": 0.1936108422071636,
+      "ratio_lendingrate_over_historyrate": 0.19230769230769232,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.104,
+      "rate_mean": 0.10515999999999998,
+      "rate_std": 0.007147394806868621,
+      "rate_min": 0.103,
+      "rate_max": 0.173,
+      "lending_rate_median": 0.02,
+      "lending_rate_mean": 0.020649,
+      "lending_rate_std": 0.0037124005955470624,
+      "lending_rate_min": 0.0197,
+      "lending_rate_max": 0.0565,
+      "lending_rate_range": 0.0368,
+      "lending_rate_cv": 0.17978597489210432,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.109,
+          "lending_rate": 0.0221
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.109,
+          "lending_rate": 0.0222
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.109,
+          "lending_rate": 0.0222
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.103,
+          "lending_rate": 0.0197
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.104,
+          "lending_rate": 0.02
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.104,
+          "lending_rate": 0.02
+        }
+      ]
+    },
+    "SAND": {
+      "history_available": true,
+      "avg_rate_fresh": 0.105,
+      "avg_rate_wave16_snapshot": 0.1065,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2223809523809524,
+      "ratio_lendingrate_over_avgrate_wave16": 0.21924882629107983,
+      "ratio_lendingrate_over_historyrate": 0.20848214285714287,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.112,
+      "rate_mean": 0.11068,
+      "rate_std": 0.004990657939256776,
+      "rate_min": 0.102,
+      "rate_max": 0.12,
+      "lending_rate_median": 0.023350000000000003,
+      "lending_rate_mean": 0.022908000000000005,
+      "lending_rate_std": 0.0020964944285375266,
+      "lending_rate_min": 0.0193,
+      "lending_rate_max": 0.0268,
+      "lending_rate_range": 0.0075,
+      "lending_rate_cv": 0.09151800369030584,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.115,
+          "lending_rate": 0.0247
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.115,
+          "lending_rate": 0.0247
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.115,
+          "lending_rate": 0.0248
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.107,
+          "lending_rate": 0.0214
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.11,
+          "lending_rate": 0.0226
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.111,
+          "lending_rate": 0.023
+        }
+      ]
+    },
+    "SEI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1127,
+      "avg_rate_wave16_snapshot": 0.1143,
+      "ratio_lendingrate_over_avgrate_fresh": 0.22626441881100265,
+      "ratio_lendingrate_over_avgrate_wave16": 0.22309711286089237,
+      "ratio_lendingrate_over_historyrate": 0.22173913043478258,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.115,
+      "rate_mean": 0.11476000000000001,
+      "rate_std": 0.0019494625003841552,
+      "rate_min": 0.109,
+      "rate_max": 0.119,
+      "lending_rate_median": 0.0255,
+      "lending_rate_mean": 0.025431000000000002,
+      "lending_rate_std": 0.0008686102914332975,
+      "lending_rate_min": 0.023,
+      "lending_rate_max": 0.0274,
+      "lending_rate_range": 0.004400000000000001,
+      "lending_rate_cv": 0.03415556963679358,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.116,
+          "lending_rate": 0.026
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.116,
+          "lending_rate": 0.0259
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.116,
+          "lending_rate": 0.0259
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.11,
+          "lending_rate": 0.0234
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.11,
+          "lending_rate": 0.0233
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.11,
+          "lending_rate": 0.0234
+        }
+      ]
+    },
+    "SNX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.3194,
+      "avg_rate_wave16_snapshot": 0.2993,
+      "ratio_lendingrate_over_avgrate_fresh": 0.25297432686286786,
+      "ratio_lendingrate_over_avgrate_wave16": 0.26996324757768125,
+      "ratio_lendingrate_over_historyrate": 0.39999999999999997,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.202,
+      "rate_mean": 0.23799,
+      "rate_std": 0.06652537983067937,
+      "rate_min": 0.167,
+      "rate_max": 0.449,
+      "lending_rate_median": 0.0808,
+      "lending_rate_mean": 0.12072200000000001,
+      "lending_rate_std": 0.0745862819190302,
+      "lending_rate_min": 0.055,
+      "lending_rate_max": 0.396,
+      "lending_rate_range": 0.341,
+      "lending_rate_cv": 0.6178350418236129,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.167,
+          "lending_rate": 0.055
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.168,
+          "lending_rate": 0.0556
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.169,
+          "lending_rate": 0.0564
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.305,
+          "lending_rate": 0.1832
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.292,
+          "lending_rate": 0.1698
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.301,
+          "lending_rate": 0.1784
+        }
+      ]
+    },
+    "SOL": {
+      "history_available": true,
+      "avg_rate_fresh": 0.052,
+      "avg_rate_wave16_snapshot": 0.0465,
+      "ratio_lendingrate_over_avgrate_fresh": 0.8615384615384616,
+      "ratio_lendingrate_over_avgrate_wave16": 0.9634408602150537,
+      "ratio_lendingrate_over_historyrate": 0.9955555555555555,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.045,
+      "rate_mean": 0.04568499999999998,
+      "rate_std": 0.006256574320043056,
+      "rate_min": 0.04,
+      "rate_max": 0.065,
+      "lending_rate_median": 0.0448,
+      "lending_rate_mean": 0.04347600000000001,
+      "lending_rate_std": 0.004973365829774408,
+      "lending_rate_min": 0.0381,
+      "lending_rate_max": 0.0604,
+      "lending_rate_range": 0.0223,
+      "lending_rate_cv": 0.11439336253966342,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.04,
+          "lending_rate": 0.0382
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.04,
+          "lending_rate": 0.0382
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.04,
+          "lending_rate": 0.0382
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.06,
+          "lending_rate": 0.0556
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.06,
+          "lending_rate": 0.0556
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.059,
+          "lending_rate": 0.0547
+        }
+      ]
+    },
+    "SPK": {
+      "history_available": true,
+      "avg_rate_fresh": 0.15,
+      "avg_rate_wave16_snapshot": 0.1508,
+      "ratio_lendingrate_over_avgrate_fresh": 0.23533333333333334,
+      "ratio_lendingrate_over_avgrate_wave16": 0.23408488063660476,
+      "ratio_lendingrate_over_historyrate": 0.23147540983606557,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.1525,
+      "rate_mean": 0.15336999999999995,
+      "rate_std": 0.003180289676152542,
+      "rate_min": 0.149,
+      "rate_max": 0.16,
+      "lending_rate_median": 0.0353,
+      "lending_rate_mean": 0.035863,
+      "lending_rate_std": 0.001858458957569335,
+      "lending_rate_min": 0.0338,
+      "lending_rate_max": 0.0398,
+      "lending_rate_range": 0.006000000000000005,
+      "lending_rate_cv": 0.05182106788526713,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.159,
+          "lending_rate": 0.039
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.158,
+          "lending_rate": 0.0387
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.158,
+          "lending_rate": 0.0386
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.15,
+          "lending_rate": 0.0338
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.149,
+          "lending_rate": 0.0338
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.149,
+          "lending_rate": 0.0338
+        }
+      ]
+    },
+    "STRK": {
+      "history_available": true,
+      "avg_rate_fresh": 0.042,
+      "avg_rate_wave16_snapshot": 0.0424,
+      "ratio_lendingrate_over_avgrate_fresh": 0.0857142857142857,
+      "ratio_lendingrate_over_avgrate_wave16": 0.08490566037735849,
+      "ratio_lendingrate_over_historyrate": 0.08,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.045,
+      "rate_mean": 0.04414,
+      "rate_std": 0.0016331168687729308,
+      "rate_min": 0.041,
+      "rate_max": 0.047,
+      "lending_rate_median": 0.0036,
+      "lending_rate_mean": 0.003532,
+      "lending_rate_std": 0.0002729857361131019,
+      "lending_rate_min": 0.003,
+      "lending_rate_max": 0.004,
+      "lending_rate_range": 0.001,
+      "lending_rate_cv": 0.07728927976022137,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.046,
+          "lending_rate": 0.0039
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.046,
+          "lending_rate": 0.0039
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.047,
+          "lending_rate": 0.004
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.042,
+          "lending_rate": 0.0031
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.041,
+          "lending_rate": 0.003
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.042,
+          "lending_rate": 0.0031
+        }
+      ]
+    },
+    "STX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0907,
+      "avg_rate_wave16_snapshot": 0.0898,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1565600882028666,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15812917594654788,
+      "ratio_lendingrate_over_historyrate": 0.16136363636363638,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.088,
+      "rate_mean": 0.08844999999999997,
+      "rate_std": 0.0027574508796233094,
+      "rate_min": 0.086,
+      "rate_max": 0.108,
+      "lending_rate_median": 0.0142,
+      "lending_rate_mean": 0.014324000000000003,
+      "lending_rate_std": 0.0009684017865545376,
+      "lending_rate_min": 0.0134,
+      "lending_rate_max": 0.0215,
+      "lending_rate_range": 0.008099999999999998,
+      "lending_rate_cv": 0.0676069384637348,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.087,
+          "lending_rate": 0.0138
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.087,
+          "lending_rate": 0.0138
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.086,
+          "lending_rate": 0.0136
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.091,
+          "lending_rate": 0.0153
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.092,
+          "lending_rate": 0.0154
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.091,
+          "lending_rate": 0.0152
+        }
+      ]
+    },
+    "SUI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.27,
+      "ratio_lendingrate_over_avgrate_wave16": 0.27,
+      "ratio_lendingrate_over_historyrate": 0.27,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0027,
+      "lending_rate_mean": 0.002761000000000001,
+      "lending_rate_std": 0.00020195759130785026,
+      "lending_rate_min": 0.0025,
+      "lending_rate_max": 0.0035,
+      "lending_rate_range": 0.001,
+      "lending_rate_cv": 0.0731465379601051,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0026
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0026
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0026
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0035
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0034
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0034
+        }
+      ]
+    },
+    "SUSHI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.114,
+      "avg_rate_wave16_snapshot": 0.114,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2434210526315789,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2434210526315789,
+      "ratio_lendingrate_over_historyrate": 0.2293388429752066,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.121,
+      "rate_mean": 0.11942000000000004,
+      "rate_std": 0.006653289609378402,
+      "rate_min": 0.113,
+      "rate_max": 0.158,
+      "lending_rate_median": 0.027749999999999997,
+      "lending_rate_mean": 0.027084,
+      "lending_rate_std": 0.0033884450115000534,
+      "lending_rate_min": 0.0241,
+      "lending_rate_max": 0.0477,
+      "lending_rate_range": 0.0236,
+      "lending_rate_cv": 0.1251087362095722,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.129,
+          "lending_rate": 0.0316
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.123,
+          "lending_rate": 0.0287
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.121,
+          "lending_rate": 0.0278
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.113,
+          "lending_rate": 0.0241
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.117,
+          "lending_rate": 0.0259
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.117,
+          "lending_rate": 0.0259
+        }
+      ]
+    },
+    "THETA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2317,
+      "avg_rate_wave16_snapshot": 0.2253,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2887354337505395,
+      "ratio_lendingrate_over_avgrate_wave16": 0.29693741677762986,
+      "ratio_lendingrate_over_historyrate": 0.3675824175824176,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.182,
+      "rate_mean": 0.19417,
+      "rate_std": 0.03660133435774818,
+      "rate_min": 0.18,
+      "rate_max": 0.323,
+      "lending_rate_median": 0.0669,
+      "lending_rate_mean": 0.07777099999999999,
+      "lending_rate_std": 0.035813050764358305,
+      "lending_rate_min": 0.0652,
+      "lending_rate_max": 0.2058,
+      "lending_rate_range": 0.1406,
+      "lending_rate_cv": 0.4604936385588241,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.181,
+          "lending_rate": 0.0662
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.181,
+          "lending_rate": 0.0662
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.181,
+          "lending_rate": 0.0662
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.189,
+          "lending_rate": 0.0704
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.189,
+          "lending_rate": 0.0704
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.19,
+          "lending_rate": 0.071
+        }
+      ]
+    },
+    "TIA": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1681,
+      "avg_rate_wave16_snapshot": 0.1663,
+      "ratio_lendingrate_over_avgrate_fresh": 0.34741225461035097,
+      "ratio_lendingrate_over_avgrate_wave16": 0.35117257967528565,
+      "ratio_lendingrate_over_historyrate": 0.335632183908046,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.174,
+      "rate_mean": 0.17299,
+      "rate_std": 0.0069099474482353105,
+      "rate_min": 0.164,
+      "rate_max": 0.225,
+      "lending_rate_median": 0.0584,
+      "lending_rate_mean": 0.057935,
+      "lending_rate_std": 0.005059312345975629,
+      "lending_rate_min": 0.0519,
+      "lending_rate_max": 0.0981,
+      "lending_rate_range": 0.046200000000000005,
+      "lending_rate_cv": 0.08732739010918493,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.175,
+          "lending_rate": 0.0593
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.175,
+          "lending_rate": 0.0594
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.175,
+          "lending_rate": 0.0593
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.174,
+          "lending_rate": 0.0584
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.174,
+          "lending_rate": 0.0584
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.173,
+          "lending_rate": 0.058
+        }
+      ]
+    },
+    "TRB": {
+      "history_available": true,
+      "avg_rate_fresh": 0.132,
+      "avg_rate_wave16_snapshot": 0.1316,
+      "ratio_lendingrate_over_avgrate_fresh": 0.18181818181818182,
+      "ratio_lendingrate_over_avgrate_wave16": 0.182370820668693,
+      "ratio_lendingrate_over_historyrate": 0.18181818181818182,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.132,
+      "rate_mean": 0.13432,
+      "rate_std": 0.004375967425506145,
+      "rate_min": 0.13,
+      "rate_max": 0.146,
+      "lending_rate_median": 0.024,
+      "lending_rate_mean": 0.025056000000000002,
+      "lending_rate_std": 0.002109685217555386,
+      "lending_rate_min": 0.0229,
+      "lending_rate_max": 0.0309,
+      "lending_rate_range": 0.008,
+      "lending_rate_cv": 0.08419880338263833,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.142,
+          "lending_rate": 0.0288
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.142,
+          "lending_rate": 0.0287
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.142,
+          "lending_rate": 0.0287
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.132,
+          "lending_rate": 0.024
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.133,
+          "lending_rate": 0.0243
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.132,
+          "lending_rate": 0.0238
+        }
+      ]
+    },
+    "TRUMP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0746,
+      "avg_rate_wave16_snapshot": 0.0747,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1561662198391421,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15595716198125836,
+      "ratio_lendingrate_over_historyrate": 0.15129870129870132,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.077,
+      "rate_mean": 0.08483999999999998,
+      "rate_std": 0.019053205674233575,
+      "rate_min": 0.067,
+      "rate_max": 0.14,
+      "lending_rate_median": 0.01165,
+      "lending_rate_mean": 0.014758999999999998,
+      "lending_rate_std": 0.007388950185816985,
+      "lending_rate_min": 0.0087,
+      "lending_rate_max": 0.0379,
+      "lending_rate_range": 0.029200000000000004,
+      "lending_rate_cv": 0.5006402998724159,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.126,
+          "lending_rate": 0.0308
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.127,
+          "lending_rate": 0.0312
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.134,
+          "lending_rate": 0.0348
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.081,
+          "lending_rate": 0.0128
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.079,
+          "lending_rate": 0.0124
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.079,
+          "lending_rate": 0.0123
+        }
+      ]
+    },
+    "TRX": {
+      "history_available": true,
+      "avg_rate_fresh": 0.2287,
+      "avg_rate_wave16_snapshot": 0.2291,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2960209881941408,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2955041466608468,
+      "ratio_lendingrate_over_historyrate": 0.29181034482758617,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.232,
+      "rate_mean": 0.23354000000000003,
+      "rate_std": 0.0044775985627218545,
+      "rate_min": 0.227,
+      "rate_max": 0.242,
+      "lending_rate_median": 0.0677,
+      "lending_rate_mean": 0.068466,
+      "lending_rate_std": 0.0022601608953185764,
+      "lending_rate_min": 0.0653,
+      "lending_rate_max": 0.0725,
+      "lending_rate_range": 0.007199999999999998,
+      "lending_rate_cv": 0.033011434804407686,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.242,
+          "lending_rate": 0.072
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.242,
+          "lending_rate": 0.072
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.242,
+          "lending_rate": 0.0719
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.23,
+          "lending_rate": 0.0668
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.23,
+          "lending_rate": 0.0667
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.23,
+          "lending_rate": 0.0666
+        }
+      ]
+    },
+    "TURBO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0645,
+      "avg_rate_wave16_snapshot": 0.0622,
+      "ratio_lendingrate_over_avgrate_fresh": 0.11317829457364341,
+      "ratio_lendingrate_over_avgrate_wave16": 0.11736334405144695,
+      "ratio_lendingrate_over_historyrate": 0.11587301587301588,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.063,
+      "rate_mean": 0.06694000000000001,
+      "rate_std": 0.010765470427963357,
+      "rate_min": 0.057,
+      "rate_max": 0.126,
+      "lending_rate_median": 0.0073,
+      "lending_rate_mean": 0.008556000000000001,
+      "lending_rate_std": 0.003609704092631921,
+      "lending_rate_min": 0.0059,
+      "lending_rate_max": 0.0307,
+      "lending_rate_range": 0.024800000000000003,
+      "lending_rate_cv": 0.4218915489284619,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.058,
+          "lending_rate": 0.0062
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.058,
+          "lending_rate": 0.0062
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.058,
+          "lending_rate": 0.0062
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.069,
+          "lending_rate": 0.0089
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.069,
+          "lending_rate": 0.0089
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.07,
+          "lending_rate": 0.0092
+        }
+      ]
+    },
+    "UNI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1,
+      "ratio_lendingrate_over_avgrate_wave16": 0.1,
+      "ratio_lendingrate_over_historyrate": 0.1,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.001,
+      "lending_rate_mean": 0.0010000000000000002,
+      "lending_rate_std": 0.00011547005383792514,
+      "lending_rate_min": 0.0009,
+      "lending_rate_max": 0.0013,
+      "lending_rate_range": 0.00039999999999999996,
+      "lending_rate_cv": 0.11547005383792512,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.001
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.001
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.001
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0012
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0012
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0012
+        }
+      ]
+    },
+    "USDC": {
+      "history_available": true,
+      "avg_rate_fresh": 0.025,
+      "avg_rate_wave16_snapshot": 0.025,
+      "ratio_lendingrate_over_avgrate_fresh": 0.8759999999999999,
+      "ratio_lendingrate_over_avgrate_wave16": 0.8759999999999999,
+      "ratio_lendingrate_over_historyrate": 0.8759999999999999,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.025,
+      "rate_mean": 0.02548,
+      "rate_std": 0.0028194132207058457,
+      "rate_min": 0.025,
+      "rate_max": 0.045,
+      "lending_rate_median": 0.0219,
+      "lending_rate_mean": 0.021807,
+      "lending_rate_std": 0.0032648496802063385,
+      "lending_rate_min": 0.019,
+      "lending_rate_max": 0.0419,
+      "lending_rate_range": 0.0229,
+      "lending_rate_cv": 0.1497156729585151,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.025,
+          "lending_rate": 0.0193
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.025,
+          "lending_rate": 0.0193
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.025,
+          "lending_rate": 0.0193
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.025,
+          "lending_rate": 0.0196
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.025,
+          "lending_rate": 0.0197
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.025,
+          "lending_rate": 0.0197
+        }
+      ]
+    },
+    "VIRTUAL": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1017,
+      "avg_rate_wave16_snapshot": 0.107,
+      "ratio_lendingrate_over_avgrate_fresh": 0.224188790560472,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2130841121495327,
+      "ratio_lendingrate_over_historyrate": 0.20727272727272728,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.11,
+      "rate_mean": 0.11033000000000003,
+      "rate_std": 0.00762512460570483,
+      "rate_min": 0.097,
+      "rate_max": 0.124,
+      "lending_rate_median": 0.0228,
+      "lending_rate_mean": 0.023247999999999998,
+      "lending_rate_std": 0.0031268301307660878,
+      "lending_rate_min": 0.0186,
+      "lending_rate_max": 0.0292,
+      "lending_rate_range": 0.010600000000000002,
+      "lending_rate_cv": 0.13449888724905748,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.107,
+          "lending_rate": 0.0216
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.107,
+          "lending_rate": 0.0217
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.108,
+          "lending_rate": 0.022
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.101,
+          "lending_rate": 0.0192
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.101,
+          "lending_rate": 0.0192
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.102,
+          "lending_rate": 0.0195
+        }
+      ]
+    },
+    "W": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1945,
+      "avg_rate_wave16_snapshot": 0.1923,
+      "ratio_lendingrate_over_avgrate_fresh": 0.3820051413881748,
+      "ratio_lendingrate_over_avgrate_wave16": 0.38637545501820075,
+      "ratio_lendingrate_over_historyrate": 0.3849740932642487,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.193,
+      "rate_mean": 0.19230000000000008,
+      "rate_std": 0.010668087026645448,
+      "rate_min": 0.179,
+      "rate_max": 0.241,
+      "lending_rate_median": 0.0743,
+      "lending_rate_mean": 0.07412800000000001,
+      "lending_rate_std": 0.008429530583525148,
+      "lending_rate_min": 0.064,
+      "lending_rate_max": 0.1166,
+      "lending_rate_range": 0.052599999999999994,
+      "lending_rate_cv": 0.11371587771861033,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.201,
+          "lending_rate": 0.0806
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.2,
+          "lending_rate": 0.08
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.2,
+          "lending_rate": 0.0799
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.193,
+          "lending_rate": 0.0743
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.193,
+          "lending_rate": 0.0743
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.193,
+          "lending_rate": 0.0743
+        }
+      ]
+    },
+    "WCT": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1942,
+      "avg_rate_wave16_snapshot": 0.19,
+      "ratio_lendingrate_over_avgrate_fresh": 0.262615859938208,
+      "ratio_lendingrate_over_avgrate_wave16": 0.26842105263157895,
+      "ratio_lendingrate_over_historyrate": 0.27717391304347827,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.184,
+      "rate_mean": 0.19030000000000005,
+      "rate_std": 0.014605589078268368,
+      "rate_min": 0.178,
+      "rate_max": 0.245,
+      "lending_rate_median": 0.051,
+      "lending_rate_mean": 0.055435,
+      "lending_rate_std": 0.010588934332737658,
+      "lending_rate_min": 0.0472,
+      "lending_rate_max": 0.0977,
+      "lending_rate_range": 0.050499999999999996,
+      "lending_rate_cv": 0.19101532123636075,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.214,
+          "lending_rate": 0.0719
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.214,
+          "lending_rate": 0.0719
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.214,
+          "lending_rate": 0.0719
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.187,
+          "lending_rate": 0.0528
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.187,
+          "lending_rate": 0.0527
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.187,
+          "lending_rate": 0.0527
+        }
+      ]
+    },
+    "WIF": {
+      "history_available": true,
+      "avg_rate_fresh": 0.049,
+      "avg_rate_wave16_snapshot": 0.0512,
+      "ratio_lendingrate_over_avgrate_fresh": 0.09081632653061224,
+      "ratio_lendingrate_over_avgrate_wave16": 0.0869140625,
+      "ratio_lendingrate_over_historyrate": 0.08811881188118811,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.0505,
+      "rate_mean": 0.05185000000000001,
+      "rate_std": 0.007112906181261942,
+      "rate_min": 0.042,
+      "rate_max": 0.067,
+      "lending_rate_median": 0.00445,
+      "lending_rate_mean": 0.004913000000000001,
+      "lending_rate_std": 0.0013642369384540298,
+      "lending_rate_min": 0.0032,
+      "lending_rate_max": 0.0082,
+      "lending_rate_range": 0.005000000000000001,
+      "lending_rate_cv": 0.27767900233137177,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.061,
+          "lending_rate": 0.0067
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.065,
+          "lending_rate": 0.0076
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.063,
+          "lending_rate": 0.0072
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.055,
+          "lending_rate": 0.0054
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.055,
+          "lending_rate": 0.0054
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.054,
+          "lending_rate": 0.0052
+        }
+      ]
+    },
+    "WLD": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.19,
+      "ratio_lendingrate_over_avgrate_wave16": 0.19,
+      "ratio_lendingrate_over_historyrate": 0.19,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.0019,
+      "lending_rate_mean": 0.0022660000000000007,
+      "lending_rate_std": 0.0006975020364909989,
+      "lending_rate_min": 0.0014,
+      "lending_rate_max": 0.0036,
+      "lending_rate_range": 0.0021999999999999997,
+      "lending_rate_cv": 0.30781201963415655,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0033
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0033
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0033
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0016
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0014
+        }
+      ]
+    },
+    "XLM": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0586,
+      "avg_rate_wave16_snapshot": 0.058,
+      "ratio_lendingrate_over_avgrate_fresh": 0.09726962457337884,
+      "ratio_lendingrate_over_avgrate_wave16": 0.09827586206896552,
+      "ratio_lendingrate_over_historyrate": 0.10178571428571428,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.056,
+      "rate_mean": 0.05616000000000001,
+      "rate_std": 0.0032928450134842796,
+      "rate_min": 0.048,
+      "rate_max": 0.063,
+      "lending_rate_median": 0.0057,
+      "lending_rate_mean": 0.0057160000000000015,
+      "lending_rate_std": 0.0007044906462878486,
+      "lending_rate_min": 0.0041,
+      "lending_rate_max": 0.0073,
+      "lending_rate_range": 0.0031999999999999997,
+      "lending_rate_cv": 0.12324888843384332,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.051,
+          "lending_rate": 0.0046
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.049,
+          "lending_rate": 0.0044
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.05,
+          "lending_rate": 0.0044
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.056,
+          "lending_rate": 0.0056
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.055,
+          "lending_rate": 0.0055
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.056,
+          "lending_rate": 0.0056
+        }
+      ]
+    },
+    "XRP": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.27499999999999997,
+      "ratio_lendingrate_over_avgrate_wave16": 0.27499999999999997,
+      "ratio_lendingrate_over_historyrate": 0.27499999999999997,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.009999999999999998,
+      "rate_std": 1.7434626923745965e-18,
+      "rate_min": 0.01,
+      "rate_max": 0.01,
+      "lending_rate_median": 0.00275,
+      "lending_rate_mean": 0.0027529999999999994,
+      "lending_rate_std": 0.00010584436831041268,
+      "lending_rate_min": 0.0026,
+      "lending_rate_max": 0.003,
+      "lending_rate_range": 0.0004000000000000002,
+      "lending_rate_cv": 0.03844691911021166,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.01,
+          "lending_rate": 0.0028
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0028
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0028
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0027
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0027
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0027
+        }
+      ]
+    },
+    "XTZ": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1535,
+      "avg_rate_wave16_snapshot": 0.155,
+      "ratio_lendingrate_over_avgrate_fresh": 0.29902280130293163,
+      "ratio_lendingrate_over_avgrate_wave16": 0.29612903225806453,
+      "ratio_lendingrate_over_historyrate": 0.29612903225806453,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.155,
+      "rate_mean": 0.15991000000000002,
+      "rate_std": 0.01607312519503763,
+      "rate_min": 0.15,
+      "rate_max": 0.208,
+      "lending_rate_median": 0.0459,
+      "lending_rate_mean": 0.049342,
+      "lending_rate_std": 0.011305377106277858,
+      "lending_rate_min": 0.0429,
+      "lending_rate_max": 0.0833,
+      "lending_rate_range": 0.0404,
+      "lending_rate_cv": 0.22912279814920067,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.208,
+          "lending_rate": 0.0832
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.208,
+          "lending_rate": 0.0832
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.208,
+          "lending_rate": 0.0832
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.151,
+          "lending_rate": 0.0435
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.151,
+          "lending_rate": 0.0435
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.151,
+          "lending_rate": 0.0435
+        }
+      ]
+    },
+    "YFI": {
+      "history_available": true,
+      "avg_rate_fresh": 0.1335,
+      "avg_rate_wave16_snapshot": 0.1324,
+      "ratio_lendingrate_over_avgrate_fresh": 0.2569288389513108,
+      "ratio_lendingrate_over_avgrate_wave16": 0.2590634441087613,
+      "ratio_lendingrate_over_historyrate": 0.25789473684210523,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.133,
+      "rate_mean": 0.1377,
+      "rate_std": 0.010424814994846078,
+      "rate_min": 0.13,
+      "rate_max": 0.163,
+      "lending_rate_median": 0.0343,
+      "lending_rate_mean": 0.037031999999999995,
+      "lending_rate_std": 0.005983983336010935,
+      "lending_rate_min": 0.0328,
+      "lending_rate_max": 0.0519,
+      "lending_rate_range": 0.0191,
+      "lending_rate_cv": 0.161589526247865,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.163,
+          "lending_rate": 0.0519
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.153,
+          "lending_rate": 0.0457
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.154,
+          "lending_rate": 0.046
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.133,
+          "lending_rate": 0.0344
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.135,
+          "lending_rate": 0.0353
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.135,
+          "lending_rate": 0.0353
+        }
+      ]
+    },
+    "ZEC": {
+      "history_available": true,
+      "avg_rate_fresh": 0.01,
+      "avg_rate_wave16_snapshot": 0.01,
+      "ratio_lendingrate_over_avgrate_fresh": 0.635,
+      "ratio_lendingrate_over_avgrate_wave16": 0.635,
+      "ratio_lendingrate_over_historyrate": 0.635,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.01,
+      "rate_mean": 0.011389999999999997,
+      "rate_std": 0.00795936015904634,
+      "rate_min": 0.01,
+      "rate_max": 0.06,
+      "lending_rate_median": 0.00635,
+      "lending_rate_mean": 0.007411999999999999,
+      "lending_rate_std": 0.006102595572973251,
+      "lending_rate_min": 0.0051,
+      "lending_rate_max": 0.0444,
+      "lending_rate_range": 0.0393,
+      "lending_rate_cv": 0.8233399315938008,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.056,
+          "lending_rate": 0.0413
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.01,
+          "lending_rate": 0.0076
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.01,
+          "lending_rate": 0.0074
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.01,
+          "lending_rate": 0.0059
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.01,
+          "lending_rate": 0.0061
+        }
+      ]
+    },
+    "ZEN": {
+      "history_available": true,
+      "avg_rate_fresh": 0.086,
+      "avg_rate_wave16_snapshot": 0.0862,
+      "ratio_lendingrate_over_avgrate_fresh": 0.1569767441860465,
+      "ratio_lendingrate_over_avgrate_wave16": 0.15661252900232017,
+      "ratio_lendingrate_over_historyrate": 0.1569767441860465,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.086,
+      "rate_mean": 0.08598,
+      "rate_std": 0.0009845267539751884,
+      "rate_min": 0.084,
+      "rate_max": 0.088,
+      "lending_rate_median": 0.0135,
+      "lending_rate_mean": 0.013530000000000004,
+      "lending_rate_std": 0.0003030151511363447,
+      "lending_rate_min": 0.0129,
+      "lending_rate_max": 0.0142,
+      "lending_rate_range": 0.0013000000000000008,
+      "lending_rate_cv": 0.022395798310151118,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.085,
+          "lending_rate": 0.0132
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.085,
+          "lending_rate": 0.0132
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.085,
+          "lending_rate": 0.0132
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.086,
+          "lending_rate": 0.0136
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.086,
+          "lending_rate": 0.0135
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.086,
+          "lending_rate": 0.0136
+        }
+      ]
+    },
+    "ZK": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0992,
+      "avg_rate_wave16_snapshot": 0.1001,
+      "ratio_lendingrate_over_avgrate_fresh": 0.234375,
+      "ratio_lendingrate_over_avgrate_wave16": 0.23226773226773229,
+      "ratio_lendingrate_over_historyrate": 0.23019801980198018,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.101,
+      "rate_mean": 0.1,
+      "rate_std": 0.006539700051812527,
+      "rate_min": 0.09,
+      "rate_max": 0.125,
+      "lending_rate_median": 0.02325,
+      "lending_rate_mean": 0.022929999999999996,
+      "lending_rate_std": 0.0031107016325042564,
+      "lending_rate_min": 0.0185,
+      "lending_rate_max": 0.036,
+      "lending_rate_range": 0.017499999999999998,
+      "lending_rate_cv": 0.1356607776931643,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.091,
+          "lending_rate": 0.0188
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.091,
+          "lending_rate": 0.0188
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.091,
+          "lending_rate": 0.0188
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.102,
+          "lending_rate": 0.0236
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.101,
+          "lending_rate": 0.0234
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.101,
+          "lending_rate": 0.0233
+        }
+      ]
+    },
+    "ZRO": {
+      "history_available": true,
+      "avg_rate_fresh": 0.0424,
+      "avg_rate_wave16_snapshot": 0.0417,
+      "ratio_lendingrate_over_avgrate_fresh": 0.07547169811320754,
+      "ratio_lendingrate_over_avgrate_wave16": 0.07673860911270984,
+      "ratio_lendingrate_over_historyrate": 0.07619047619047618,
+      "n_samples": 100,
+      "span_hours": 99.0,
+      "span_days": 4.125,
+      "earliest_ts_utc": "2026-07-19T20:00:00+00:00",
+      "latest_ts_utc": "2026-07-23T23:00:00+00:00",
+      "rate_median": 0.042,
+      "rate_mean": 0.04254999999999999,
+      "rate_std": 0.0024510356500009856,
+      "rate_min": 0.04,
+      "rate_max": 0.062,
+      "lending_rate_median": 0.0032,
+      "lending_rate_mean": 0.003292999999999999,
+      "lending_rate_std": 0.0004588644305855114,
+      "lending_rate_min": 0.0028,
+      "lending_rate_max": 0.0072,
+      "lending_rate_range": 0.004399999999999999,
+      "lending_rate_cv": 0.1393454086199549,
+      "sample_first_3": [
+        {
+          "ts_ms": 1784491200000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784494800000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784498400000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        }
+      ],
+      "sample_last_3": [
+        {
+          "ts_ms": 1784840400000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784844000000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        },
+        {
+          "ts_ms": 1784847600000,
+          "rate": 0.045,
+          "lending_rate": 0.0037
+        }
+      ]
+    }
+  }
+}

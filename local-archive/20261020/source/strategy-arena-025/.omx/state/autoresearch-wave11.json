@@ -1,0 +1,6 @@
+{
+  "validation_mode": "mission-validator-script",
+  "completion_artifact_path": "research/wave11_multi_factor/results/validation.json",
+  "mission_validator_command": "python research/wave11_multi_factor/validate_wave11.py",
+  "output_artifact_path": "research/wave11_multi_factor/report/wave11_results.md"
+}

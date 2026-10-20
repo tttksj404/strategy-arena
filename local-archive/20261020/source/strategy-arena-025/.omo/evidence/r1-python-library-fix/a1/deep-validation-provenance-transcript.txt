@@ -1,0 +1,42 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716161349
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-provenance-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: provenance drift diagnosis'
+  Write-Output 'SURFACE: Python module loader/compare_funding diagnostic'
+  Write-Output ("INVOCATION: & `"$py`" -c `"from research.validation.deep_validate import _load_funding; ...`"")
+  & $py -c "from pathlib import Path; from research.validation.deep_validate import _load_funding; from research.validation.deep_stats import compare_funding; b,n=_load_funding(Path('research/wave1/cache')); print('module_file=' + __import__('research.validation.deep_validate',fromlist=['__file__']).__file__); print('cwd=' + str(Path.cwd())); print('bitget_rows=' + repr(sorted((k,len(v)) for k,v in b.items()))); print('binance_rows=' + repr(sorted((k,len(v)) for k,v in n.items() if k in b))); print('raw_intersections=' + repr(sorted((k,len(set(x.timestamp for x in b[k]) & set(y.timestamp for y in n[k]))) for k in set(b)&set(n)))); print('compare_W2c=' + repr(compare_funding(b,n,0.15))); print('compare_F1e=' + repr(compare_funding(b,n,0.08)))"
+  $code = $LASTEXITCODE
+  Write-Output ("provenance_diag_exit=" + $code)
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 40356
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: provenance drift diagnosis
+SURFACE: Python module loader/compare_funding diagnostic
+INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" -c "from research.validation.deep_validate import _load_funding; ..."
+
+provenance_diag_exit=0
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716161352
+**********************

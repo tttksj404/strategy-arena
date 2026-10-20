@@ -1,7 +1,22 @@
 {
   "Project": "tttksj404/strategy-arena",
-  "OriginalMain": "898393686448a3d2e34255f556ddaa38e16dfb94",
+  "OriginalMain": "af90372ac36a95cfe52fd398414c0eed97428e5b",
   "Roots": [
+    {
+      "Name": "strategy-arena-025",
+      "Tag": "local-backup-20261020-strategy-arena-025",
+      "ManifestAsset": {
+        "Name": "manifest.json",
+        "Bytes": 915277,
+        "Sha256": "9de0cbbb3ba8c66bf836694ab15ceb3de5cd84a3edbb9b0dff9d795bd5921962",
+        "AssetId": 657822763,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-6414ad5f625d1dc87535/manifest.json"
+      },
+      "Files": 4560,
+      "PrivateFiles": 48,
+      "HistoryUploaded": true,
+      "HistoryEncrypted": true
+    },
     {
       "Name": "strategy-arena-029",
       "Tag": "local-backup-20261020-strategy-arena-029",
@@ -15,7 +30,8 @@
       "Files": 3,
       "PrivateFiles": 0,
       "HistoryUploaded": true,
-      "HistoryEncrypted": true
+      "HistoryEncrypted": true,
+      "Release": "https://github.com/tttksj404/strategy-arena/releases/tag/local-backup-20261020-strategy-arena-029"
     },
     {
       "Name": "strategy-arena-030",
@@ -30,7 +46,8 @@
       "Files": 13,
       "PrivateFiles": 0,
       "HistoryUploaded": true,
-      "HistoryEncrypted": true
+      "HistoryEncrypted": true,
+      "Release": "https://github.com/tttksj404/strategy-arena/releases/tag/local-backup-20261020-strategy-arena-030"
     },
     {
       "Name": "strategy-arena-031",
@@ -45,7 +62,8 @@
       "Files": 3447,
       "PrivateFiles": 0,
       "HistoryUploaded": true,
-      "HistoryEncrypted": true
+      "HistoryEncrypted": true,
+      "Release": "https://github.com/tttksj404/strategy-arena/releases/tag/local-backup-20261020-strategy-arena-031"
     },
     {
       "Name": "strategy-arena-032",
@@ -60,7 +78,8 @@
       "Files": 3395,
       "PrivateFiles": 0,
       "HistoryUploaded": true,
-      "HistoryEncrypted": true
+      "HistoryEncrypted": true,
+      "Release": "https://github.com/tttksj404/strategy-arena/releases/tag/local-backup-20261020-strategy-arena-032"
     },
     {
       "Name": "strategy-arena-065",
@@ -75,8 +94,9 @@
       "Files": 3719,
       "PrivateFiles": 0,
       "HistoryUploaded": true,
-      "HistoryEncrypted": true
+      "HistoryEncrypted": true,
+      "Release": "https://github.com/tttksj404/strategy-arena/releases/tag/local-backup-20261020-strategy-arena-065"
     }
   ],
-  "CreatedUtc": "2026-10-20T00:23:38.1367457Z"
+  "CreatedUtc": "2026-10-20T00:31:31.0290314Z"
 }

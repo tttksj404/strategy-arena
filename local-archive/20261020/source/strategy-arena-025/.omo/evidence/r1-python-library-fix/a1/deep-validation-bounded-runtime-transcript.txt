@@ -1,0 +1,65 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716160553
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-bounded-runtime-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$root = (Get-Location).Path
+$job = $null
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: bounded runtime / no hang'
+  Write-Output 'SURFACE: PowerShell Start-Job timeout harness around direct CLI'
+  Write-Output ("INVOCATION: Start-Job { Set-Location $root; & `"$py`" research/validation/deep_validate.py }; Wait-Job -Timeout 60")
+  $watch = [System.Diagnostics.Stopwatch]::StartNew()
+  $job = Start-Job -ScriptBlock {
+    param($python, $workingRoot)
+    Set-Location -LiteralPath $workingRoot
+    $env:PYTHONDONTWRITEBYTECODE = '1'
+    & $python research/validation/deep_validate.py
+    exit $LASTEXITCODE
+  } -ArgumentList $py, $root
+  $completed = Wait-Job -Job $job -Timeout 60
+  $watch.Stop()
+  if ($null -eq $completed) {
+    Stop-Job -Job $job -ErrorAction SilentlyContinue
+    Write-Output ("timeout_seconds=60 elapsed_seconds=" + [Math]::Round($watch.Elapsed.TotalSeconds,2))
+    Write-Output 'bounded_runtime_pass=False'
+  } else {
+    Receive-Job -Job $job
+    Write-Output ("job_state=" + $job.State + " elapsed_seconds=" + [Math]::Round($watch.Elapsed.TotalSeconds,2))
+    Write-Output ("job_child_exit=" + $job.ChildJobs[0].JobStateInfo.State)
+    $code = if ($job.State -eq 'Completed') { 0 } else { 1 }
+    Write-Output ("bounded_runtime_pass=" + ($code -eq 0))
+  }
+} finally {
+  if ($null -ne $job) { Remove-Job -Job $job -Force -ErrorAction SilentlyContinue }
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 12392
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: bounded runtime / no hang
+SURFACE: PowerShell Start-Job timeout harness around direct CLI
+INVOCATION: Start-Job { Set-Location C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena; & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" research/validation/deep_validate.py }; Wait-Job -Timeout 60
+wrote 4 candidate JSON files and research/validation/DEEP_REPORT.md
+job_state=Completed elapsed_seconds=8.65
+job_child_exit=Stopped
+bounded_runtime_pass=True
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716160602
+**********************

@@ -1,0 +1,2362 @@
+{
+  "symbols": [
+    "ETHUSDT",
+    "BTCUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "ADAUSDT",
+    "WLDUSDT",
+    "NEARUSDT",
+    "ONDOUSDT",
+    "SUIUSDT",
+    "LINKUSDT",
+    "BCHUSDT",
+    "AAVEUSDT",
+    "LTCUSDT",
+    "SKLUSDT",
+    "XLMUSDT",
+    "ENAUSDT",
+    "AVAXUSDT",
+    "UNIUSDT",
+    "TRXUSDT",
+    "DOTUSDT",
+    "FILUSDT",
+    "VANRYUSDT",
+    "ARBUSDT",
+    "TUSDT",
+    "LDOUSDT",
+    "INJUSDT",
+    "JTOUSDT",
+    "ETHFIUSDT",
+    "TIAUSDT",
+    "CRVUSDT",
+    "OPUSDT",
+    "ORDIUSDT",
+    "FETUSDT",
+    "WIFUSDT",
+    "HBARUSDT",
+    "ETCUSDT",
+    "APTUSDT",
+    "APEUSDT",
+    "PENDLEUSDT"
+  ],
+  "integrity": {
+    "ETHUSDT": true,
+    "BTCUSDT": true,
+    "SOLUSDT": true,
+    "ZECUSDT": false,
+    "XRPUSDT": true,
+    "DOGEUSDT": true,
+    "BNBUSDT": false,
+    "ADAUSDT": true,
+    "WLDUSDT": true,
+    "NEARUSDT": true,
+    "PUMPUSDT": false,
+    "ONDOUSDT": true,
+    "DEXEUSDT": false,
+    "SUIUSDT": true,
+    "LINKUSDT": true,
+    "KAITOUSDT": false,
+    "BCHUSDT": true,
+    "TAOUSDT": false,
+    "AAVEUSDT": true,
+    "LTCUSDT": true,
+    "USDCUSDT": false,
+    "SKLUSDT": true,
+    "XLMUSDT": true,
+    "ALLOUSDT": false,
+    "ENAUSDT": true,
+    "ZBTUSDT": false,
+    "AVAXUSDT": true,
+    "UNIUSDT": true,
+    "LITUSDT": false,
+    "PAXGUSDT": false,
+    "0GUSDT": false,
+    "HOMEUSDT": false,
+    "TRXUSDT": true,
+    "DOTUSDT": true,
+    "PENGUUSDT": false,
+    "TRUMPUSDT": false,
+    "BANKUSDT": false,
+    "FILUSDT": true,
+    "VANRYUSDT": true,
+    "ARBUSDT": true,
+    "SXTUSDT": false,
+    "SYNUSDT": false,
+    "VIRTUALUSDT": false,
+    "TUSDT": true,
+    "LDOUSDT": true,
+    "INJUSDT": true,
+    "XMRUSDT": false,
+    "JTOUSDT": true,
+    "ETHFIUSDT": true,
+    "XAUTUSDT": false,
+    "TIAUSDT": true,
+    "REUSDT": false,
+    "XPLUSDT": false,
+    "DASHUSDT": false,
+    "ASTERUSDT": false,
+    "WLFIUSDT": false,
+    "CRVUSDT": true,
+    "OPUSDT": true,
+    "ORDIUSDT": true,
+    "FETUSDT": true,
+    "FFUSDT": false,
+    "WIFUSDT": true,
+    "EIGENUSDT": false,
+    "HBARUSDT": true,
+    "ETCUSDT": true,
+    "METUSDT": false,
+    "APTUSDT": true,
+    "APEUSDT": true,
+    "GRAMUSDT": false,
+    "PENDLEUSDT": true
+  },
+  "source_integrity": {
+    "binance_fapi_BTCUSDT_1d": true,
+    "binance_fapi_BTCUSDT_4h": true,
+    "binance_funding_BTCUSDT": true,
+    "bitget_BTCUSDT_1D": true,
+    "correlation_BTCUSDT": true,
+    "binance_fapi_ETHUSDT_1d": true,
+    "binance_fapi_ETHUSDT_4h": true,
+    "binance_funding_ETHUSDT": true,
+    "bitget_ETHUSDT_1D": true,
+    "correlation_ETHUSDT": true,
+    "binance_fapi_SOLUSDT_1d": true,
+    "binance_fapi_SOLUSDT_4h": true,
+    "binance_funding_SOLUSDT": true,
+    "bitget_SOLUSDT_1D": true,
+    "correlation_SOLUSDT": true,
+    "bitget_SPYUSDT_1H": true,
+    "bitget_funding_SPYUSDT": true,
+    "bitget_QQQUSDT_1H": true,
+    "bitget_funding_QQQUSDT": true,
+    "bitget_TSLAUSDT_1H": true,
+    "bitget_funding_TSLAUSDT": true,
+    "bitget_NVDAUSDT_1H": true,
+    "bitget_funding_NVDAUSDT": true,
+    "bitget_MSTRUSDT_1H": true,
+    "bitget_funding_MSTRUSDT": true,
+    "bitget_BTCUSDT_1H": true,
+    "bitget_funding_BTCUSDT": true,
+    "bitget_ETHUSDT_1H": true,
+    "bitget_funding_ETHUSDT": true,
+    "bitget_SOLUSDT_1H": true,
+    "bitget_funding_SOLUSDT": true,
+    "yahoo_SPY_1d": true,
+    "yahoo_QQQ_1d": true
+  },
+  "integrity_reports": {
+    "binance_funding_ETHUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ETHUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ETHUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ETHUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ETHUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 27,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_BTCUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BTCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BTCUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_BTCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_BTCUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 27,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_SOLUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SOLUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SOLUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_SOLUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SOLUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 19,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ZECUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ZECUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ZECUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ZECUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ZECUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_XRPUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XRPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XRPUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_XRPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_XRPUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 27,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_DOGEUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DOGEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DOGEUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_DOGEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_DOGEUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 20,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_BNBUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BNBUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BNBUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_BNBUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_BNBUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 27,
+      "positive_volume_ratio": 0.7211925866236906
+    },
+    "binance_funding_ADAUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ADAUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ADAUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ADAUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ADAUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 23,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_WLDUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_WLDUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_WLDUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_WLDUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_WLDUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 11,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_NEARUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_NEARUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_NEARUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_NEARUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_NEARUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 18,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_PUMPUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 1,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PUMPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PUMPUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_PUMPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_PUMPUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 4,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ONDOUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ONDOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ONDOUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ONDOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ONDOUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 9,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_DEXEUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DEXEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DEXEUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_DEXEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_DEXEUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 6,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_SUIUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SUIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SUIUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_SUIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SUIUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 12,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_LINKUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LINKUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LINKUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_LINKUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_LINKUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 23,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_KAITOUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_KAITOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_KAITOUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_KAITOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_KAITOUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 5,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_BCHUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BCHUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BCHUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_BCHUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_BCHUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 27,
+      "positive_volume_ratio": 0.9983739837398374
+    },
+    "binance_funding_TAOUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TAOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TAOUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_TAOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_TAOUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 9,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_AAVEUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_AAVEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_AAVEUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_AAVEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_AAVEUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 21,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_LTCUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LTCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LTCUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_LTCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_LTCUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 27,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_USDCUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_USDCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_USDCUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_USDCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_USDCUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_SKLUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SKLUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SKLUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_SKLUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SKLUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_XLMUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XLMUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XLMUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_XLMUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_XLMUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 21,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ALLOUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ALLOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ALLOUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ALLOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ALLOUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 2,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ENAUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ENAUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ENAUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ENAUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ENAUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 9,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ZBTUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ZBTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ZBTUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ZBTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ZBTUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 2,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_AVAXUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_AVAXUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_AVAXUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_AVAXUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_AVAXUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 19,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_UNIUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_UNIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_UNIUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_UNIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_UNIUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 23,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_LITUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LITUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LITUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_LITUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_LITUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 2,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_PAXGUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PAXGUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PAXGUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_PAXGUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_PAXGUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 8,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_0GUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_0GUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_0GUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_0GUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_0GUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_HOMEUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_HOMEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_HOMEUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_HOMEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_HOMEUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 4,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_TRXUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TRXUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TRXUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_TRXUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_TRXUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 23,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_DOTUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DOTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DOTUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_DOTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_DOTUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 23,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_PENGUUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PENGUUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PENGUUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_PENGUUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_PENGUUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 6,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_TRUMPUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TRUMPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TRUMPUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_TRUMPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_TRUMPUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 5,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_BANKUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BANKUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_BANKUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_BANKUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_BANKUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 4,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_FILUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_FILUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_FILUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_FILUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_FILUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 23,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_VANRYUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_VANRYUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_VANRYUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_VANRYUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_VANRYUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 9,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ARBUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ARBUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ARBUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ARBUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ARBUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_SXTUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SXTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SXTUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_SXTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SXTUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 4,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_SYNUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SYNUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_SYNUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_SYNUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SYNUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 7,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_VIRTUALUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_VIRTUALUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_VIRTUALUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_VIRTUALUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_VIRTUALUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 6,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_TUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_TUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_TUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 7,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_LDOUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LDOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_LDOUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_LDOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_LDOUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_INJUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_INJUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_INJUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_INJUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_INJUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_XMRUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XMRUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XMRUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_XMRUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_XMRUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 2,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_JTOUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_JTOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_JTOUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_JTOUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_JTOUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 10,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ETHFIUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ETHFIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ETHFIUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ETHFIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ETHFIUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 9,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_XAUTUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XAUTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XAUTUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_XAUTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_XAUTUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 5,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_TIAUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TIAUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_TIAUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_TIAUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_TIAUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 10,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_REUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_REUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_REUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_REUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_REUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_XPLUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XPLUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_XPLUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_XPLUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_XPLUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_DASHUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DASHUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_DASHUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_DASHUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_DASHUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 2,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ASTERUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ASTERUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ASTERUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ASTERUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ASTERUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_WLFIUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_WLFIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_WLFIUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_WLFIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_WLFIUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_CRVUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_CRVUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_CRVUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_CRVUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_CRVUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 18,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_OPUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_OPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_OPUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_OPUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_OPUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 16,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ORDIUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ORDIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ORDIUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ORDIUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ORDIUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 12,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_FETUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_FETUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_FETUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_FETUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_FETUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_FFUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_FFUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_FFUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_FFUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_FFUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_WIFUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_WIFUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_WIFUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_WIFUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_WIFUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 9,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_EIGENUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_EIGENUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_EIGENUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_EIGENUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_EIGENUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 7,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_HBARUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_HBARUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_HBARUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_HBARUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_HBARUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 13,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_ETCUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ETCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_ETCUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_ETCUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ETCUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 26,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_METUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_METUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_METUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_METUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_METUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 3,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_APTUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_APTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_APTUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_APTUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_APTUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 15,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_APEUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_APEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_APEUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_APEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_APEUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 17,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_GRAMUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_GRAMUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_GRAMUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_GRAMUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_GRAMUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 12,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_funding_PENDLEUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PENDLEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_fapi_PENDLEUSDT_4h": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "binance_spot_PENDLEUSDT_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_PENDLEUSDT_1D": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 11,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SPYUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_SPYUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_QQQUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_QQQUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_TSLAUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_TSLAUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_NVDAUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_NVDAUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_MSTRUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_MSTRUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_BTCUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_BTCUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_ETHUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 298,
+      "positive_volume_ratio": 0.9999833105243833
+    },
+    "bitget_funding_ETHUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_SOLUSDT_1H": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 215,
+      "positive_volume_ratio": 1.0
+    },
+    "bitget_funding_SOLUSDT": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "positive_volume_ratio": 1.0
+    },
+    "yahoo_SPY_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 1123,
+      "positive_volume_ratio": 1.0
+    },
+    "yahoo_QQQ_1d": {
+      "monotonic": true,
+      "duplicate_count": 0,
+      "gap_count": 1123,
+      "positive_volume_ratio": 1.0
+    }
+  },
+  "frozen_end": "2026-07-14"
+}

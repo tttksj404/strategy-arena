@@ -1,0 +1,65 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716155812
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-repeat-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$paths = @('research/validation/results/deep_W2c.json','research/validation/results/deep_F1e.json','research/validation/results/deep_W3c.json','research/validation/results/deep_W3d.json','research/validation/DEEP_REPORT.md')
+$before = @{}
+$after = @{}
+$code = 1
+$env:PYTHONDONTWRITEBYTECODE = '1'
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: repeatability with fixed seeds'
+  foreach ($path in $paths) { $before[$path] = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash; Write-Output ("before " + $path + " sha256=" + $before[$path]) }
+  Write-Output ("SURFACE: direct CLI; INVOCATION: & `"$py`" research/validation/deep_validate.py")
+  & $py research/validation/deep_validate.py
+  $runCode = $LASTEXITCODE
+  Write-Output ("repeat_run_exit=" + $runCode)
+  $stable = $runCode -eq 0
+  foreach ($path in $paths) {
+    $after[$path] = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash
+    $same = $before[$path] -eq $after[$path]
+    Write-Output ("after  " + $path + " sha256=" + $after[$path] + " same=" + $same)
+    if (-not $same) { $stable = $false }
+  }
+  Write-Output ("repeatability_pass=" + $stable)
+  if ($stable) { $code = 0 }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 34640
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: repeatability with fixed seeds
+before research/validation/results/deep_W2c.json sha256=92A531DB6C6283590EAE25250E567999DF2D3E57B634A79756EC6C24E4247CE3
+before research/validation/results/deep_F1e.json sha256=9118B3B27427C406CBAA777AD91B4C0C95D582EE4799B2803C35911DC170A019
+before research/validation/results/deep_W3c.json sha256=703397E0F2279C23ECF3737044D2E2F7B5B822A05501B8DAEA78BD02DFCABE1D
+before research/validation/results/deep_W3d.json sha256=3796AC776863E7062414E264881B473C656CF60C0AA03D58D5020AB04779334E
+before research/validation/DEEP_REPORT.md sha256=C167B3CCC4290612A525E8A671472D0D8E85387ACA8FD06770C4FC4678468000
+SURFACE: direct CLI; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" research/validation/deep_validate.py
+
+repeat_run_exit=0
+after  research/validation/results/deep_W2c.json sha256=92A531DB6C6283590EAE25250E567999DF2D3E57B634A79756EC6C24E4247CE3 same=True
+after  research/validation/results/deep_F1e.json sha256=9118B3B27427C406CBAA777AD91B4C0C95D582EE4799B2803C35911DC170A019 same=True
+after  research/validation/results/deep_W3c.json sha256=703397E0F2279C23ECF3737044D2E2F7B5B822A05501B8DAEA78BD02DFCABE1D same=True
+after  research/validation/results/deep_W3d.json sha256=3796AC776863E7062414E264881B473C656CF60C0AA03D58D5020AB04779334E same=True
+after  research/validation/DEEP_REPORT.md sha256=C167B3CCC4290612A525E8A671472D0D8E85387ACA8FD06770C4FC4678468000 same=True
+repeatability_pass=True
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716155819
+**********************

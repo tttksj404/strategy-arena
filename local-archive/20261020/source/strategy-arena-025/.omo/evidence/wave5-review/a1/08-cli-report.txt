@@ -1,0 +1,2 @@
+INVOCATION: C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe research/wave5/run_wave5.py --stage report`r`nSTDOUT:`r`nreport: C:\Users\SSAFY\Desktop\2학기\.domain-separation-20260715\strategy-arena\research\wave5\report\wave5_report.md
+`r`nSTDERR:`r`n`r`nEXIT_CODE: 0`r`n

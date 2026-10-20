@@ -1,0 +1,7 @@
+﻿cache_manifest_checks:
+{
+    "network_calls":  false,
+    "source_integrity":  true,
+    "required_files":  131,
+    "actual_cache_files":  631
+}

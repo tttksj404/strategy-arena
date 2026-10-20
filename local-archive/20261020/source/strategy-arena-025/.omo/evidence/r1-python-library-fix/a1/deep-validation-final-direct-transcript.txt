@@ -1,0 +1,48 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716161544
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-final-direct-transcript.txt'
+$py = 'C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe'
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: final direct run against current source state'
+  Write-Output ("SURFACE: PowerShell direct CLI; INVOCATION: & `"$py`" research/validation/deep_validate.py")
+  Write-Output ('deep_stats_sha256_before=' + (Get-FileHash research/validation/deep_stats.py -Algorithm SHA256).Hash)
+  Write-Output ('deep_validate_sha256_before=' + (Get-FileHash research/validation/deep_validate.py -Algorithm SHA256).Hash)
+  & $py research/validation/deep_validate.py
+  $code = $LASTEXITCODE
+  Write-Output ("final_direct_exit=" + $code)
+  Write-Output ('deep_stats_sha256_after=' + (Get-FileHash research/validation/deep_stats.py -Algorithm SHA256).Hash)
+  Write-Output ('deep_validate_sha256_after=' + (Get-FileHash research/validation/deep_validate.py -Algorithm SHA256).Hash)
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 9760
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: final direct run against current source state
+SURFACE: PowerShell direct CLI; INVOCATION: & "C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe" research/validation/deep_validate.py
+deep_stats_sha256_before=131875526326465DD3A06C3597B142DC7468825372977111EAE325C81B3DFD62
+deep_validate_sha256_before=73B421A53B31756B22535B97B3ECBA8F5F9CFA9C5A024FA5A49114F0F08526E2
+
+final_direct_exit=0
+deep_stats_sha256_after=131875526326465DD3A06C3597B142DC7468825372977111EAE325C81B3DFD62
+deep_validate_sha256_after=73B421A53B31756B22535B97B3ECBA8F5F9CFA9C5A024FA5A49114F0F08526E2
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716161551
+**********************
