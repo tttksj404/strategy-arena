@@ -1,0 +1,209 @@
+{
+  "candidate_id": "F1f",
+  "family": "funding_carry",
+  "source": {
+    "result": "research\\wave1\\results\\F1f.json",
+    "cache": "research\\wave1\\cache"
+  },
+  "period": {
+    "equity_points": 2509,
+    "trade_count": 489,
+    "start": "2019-09-01T00:00:00+00:00",
+    "end": "2026-07-14T00:00:00+00:00"
+  },
+  "input_contract": {
+    "trade_return_semantic": "closed_trade_net_simple_return",
+    "trade_bootstrap_eligible": true
+  },
+  "cache_integrity": {
+    "status": "FAIL",
+    "manifest": "research\\wave2\\cache_manifest.json",
+    "checked_files": 45,
+    "mismatches": [
+      "missing manifest entry: binance_funding_0GUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ALLOUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ASTERUSDT.csv.gz",
+      "missing manifest entry: binance_funding_BANKUSDT.csv.gz",
+      "missing manifest entry: binance_funding_BNBUSDT.csv.gz",
+      "missing manifest entry: binance_funding_DASHUSDT.csv.gz",
+      "missing manifest entry: binance_funding_DEXEUSDT.csv.gz",
+      "missing manifest entry: binance_funding_EIGENUSDT.csv.gz",
+      "missing manifest entry: binance_funding_FFUSDT.csv.gz",
+      "missing manifest entry: binance_funding_GRAMUSDT.csv.gz",
+      "missing manifest entry: binance_funding_HOMEUSDT.csv.gz",
+      "missing manifest entry: binance_funding_KAITOUSDT.csv.gz",
+      "missing manifest entry: binance_funding_LITUSDT.csv.gz",
+      "missing manifest entry: binance_funding_METUSDT.csv.gz",
+      "missing manifest entry: binance_funding_PAXGUSDT.csv.gz",
+      "missing manifest entry: binance_funding_PENGUUSDT.csv.gz",
+      "missing manifest entry: binance_funding_PUMPUSDT.csv.gz",
+      "missing manifest entry: binance_funding_REUSDT.csv.gz",
+      "missing manifest entry: binance_funding_SXTUSDT.csv.gz",
+      "missing manifest entry: binance_funding_SYNUSDT.csv.gz",
+      "missing manifest entry: binance_funding_TAOUSDT.csv.gz",
+      "missing manifest entry: binance_funding_TRUMPUSDT.csv.gz",
+      "missing manifest entry: binance_funding_USDCUSDT.csv.gz",
+      "missing manifest entry: binance_funding_VIRTUALUSDT.csv.gz",
+      "missing manifest entry: binance_funding_WLFIUSDT.csv.gz",
+      "missing manifest entry: binance_funding_XAUTUSDT.csv.gz",
+      "missing manifest entry: binance_funding_XMRUSDT.csv.gz",
+      "missing manifest entry: binance_funding_XPLUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ZBTUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ZECUSDT.csv.gz",
+      "missing manifest entry: bitget_funding_BTCUSDT.csv.gz",
+      "missing manifest entry: bitget_funding_ETHUSDT.csv.gz",
+      "missing manifest entry: bitget_funding_SOLUSDT.csv.gz"
+    ]
+  },
+  "bootstrap_mc": {
+    "unit": {
+      "p05": 458.6558190121041,
+      "ruin_probability": 0.0,
+      "mean": 552.2466733250991,
+      "median": 545.6392819683865
+    },
+    "quarter_kelly": {
+      "p05": 20824.442758773566,
+      "ruin_probability": 0.0,
+      "mean": 217492.96211559075,
+      "median": 108084.30727642056
+    },
+    "kelly_fraction": 43.64431544491928,
+    "quarter_kelly_fraction": 10.91107886122982,
+    "paths": 10000,
+    "trade_count": 489
+  },
+  "leave_one_year_out": [
+    {
+      "year": 2019,
+      "heldout_return": 0.0075830475319726975,
+      "heldout_sharpe": 3.574241629796278,
+      "remaining_return": 0.7149325693932935,
+      "remaining_sharpe": 2.295382808340356,
+      "heldout_days": 121,
+      "remaining_days": 2387
+    },
+    {
+      "year": 2020,
+      "heldout_return": 0.15342044366302643,
+      "heldout_sharpe": 4.482777194101785,
+      "remaining_return": 0.4980981081742859,
+      "remaining_sharpe": 1.936017617100692,
+      "heldout_days": 366,
+      "remaining_days": 2142
+    },
+    {
+      "year": 2021,
+      "heldout_return": 0.37115047293866055,
+      "heldout_sharpe": 7.632869871122311,
+      "remaining_return": 0.2602095967467388,
+      "remaining_sharpe": 1.1827814766406832,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2022,
+      "heldout_return": -0.005616076931976077,
+      "heldout_sharpe": -0.9672301938399352,
+      "remaining_return": 0.7376960191088304,
+      "remaining_sharpe": 2.4871044280774246,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2023,
+      "heldout_return": 0.007785201264797648,
+      "heldout_sharpe": 0.6378428792693213,
+      "remaining_return": 0.7145885674968444,
+      "remaining_sharpe": 2.4428246902395205,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2024,
+      "heldout_return": 0.10519646873643707,
+      "heldout_sharpe": 1.5026958901136966,
+      "remaining_return": 0.5634658935860197,
+      "remaining_sharpe": 2.935416166901325,
+      "heldout_days": 366,
+      "remaining_days": 2142
+    },
+    {
+      "year": 2025,
+      "heldout_return": -0.0186483743353687,
+      "heldout_sharpe": -0.6459291496234231,
+      "remaining_return": 0.7607725298369619,
+      "remaining_sharpe": 2.6700419966153386,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2026,
+      "heldout_return": -0.0023273191272170646,
+      "heldout_sharpe": -1.3681355458414468,
+      "remaining_return": 0.7319678264313074,
+      "remaining_sharpe": 2.3742409237376956,
+      "heldout_days": 195,
+      "remaining_days": 2313
+    }
+  ],
+  "deflated_sharpe": {
+    "observed_sharpe": 2.2683112176577604,
+    "benchmark_sharpe": 1.1665886740138875,
+    "score": 1.9311003149731647,
+    "probability": 0.9732646759606813,
+    "n_days": 2508,
+    "skew": 18.859866764023245,
+    "kurtosis": 667.8523379288062,
+    "trials": 28
+  },
+  "bitget_native": {
+    "status": "N/A",
+    "reason": "momentum candidate; native carry check not applicable",
+    "required_coverage_days": 133,
+    "coverage_sufficient": false
+  },
+  "regime_block_bootstrap": {
+    "block_days": 90,
+    "block_count": 18,
+    "paths": 1000,
+    "mdd_p05": 0.025296599622907756,
+    "mdd_median": 0.02684747341250643,
+    "mdd_p95": 0.03827555441364455,
+    "final_p05": 547.6904720048584,
+    "final_median": 547.6904720048593,
+    "final_p95": 547.6904720048603,
+    "final_capital_invariant": true
+  },
+  "criteria": {
+    "mc": {
+      "status": "PASS",
+      "p05_gt_300": true,
+      "ruin_lt_5pct": true,
+      "input_semantic": "closed_trade_net_simple_return"
+    },
+    "dsr": {
+      "status": "PASS",
+      "score_gt_0": true
+    },
+    "bitget_sign": null,
+    "loo": {
+      "status": "PASS",
+      "years": 8
+    },
+    "regime_blocks": {
+      "status": "PASS",
+      "blocks": 18
+    }
+  },
+  "overall": {
+    "status": "PASS",
+    "required_checks": [
+      "mc",
+      "dsr",
+      "not_applicable",
+      "loo",
+      "regime_blocks"
+    ]
+  }
+}

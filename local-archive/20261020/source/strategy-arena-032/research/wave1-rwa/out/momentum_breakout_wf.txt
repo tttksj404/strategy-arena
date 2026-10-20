@@ -1,0 +1,30 @@
+symbols: 534
+=== 안정성 그리드 (net / MDD / 최근90d) ===
+rank20d top2 L3: net=  -99.7% mdd=99.7% last90d= -91.9%
+rank20d top2 L5: net=  -99.7% mdd=99.7% last90d= -97.3%
+rank20d top2 L7: net= -100.0% mdd=100.0% last90d=  +nan%
+rank20d top3 L3: net=  -99.7% mdd=99.7% last90d= -76.0%
+rank20d top3 L5: net=  -99.7% mdd=99.7% last90d= -93.6%
+rank20d top3 L7: net=  -99.7% mdd=99.7% last90d= -94.5%
+rank20d top5 L3: net=  -99.7% mdd=99.7% last90d= -74.1%
+rank20d top5 L5: net=  -99.8% mdd=99.8% last90d= -91.8%
+rank20d top5 L7: net=  -99.7% mdd=99.7% last90d= -96.1%
+rank30d top2 L3: net=  -99.7% mdd=99.9% last90d= -96.3%
+rank30d top2 L5: net=  -99.7% mdd=99.9% last90d= -98.1%
+rank30d top2 L7: net=  -99.8% mdd=99.9% last90d= -99.6%
+rank30d top3 L3: net=  -99.7% mdd=99.8% last90d= -83.5%
+rank30d top3 L5: net=  -99.8% mdd=99.9% last90d= -98.4% <<< 제안셀
+rank30d top3 L7: net=  -99.7% mdd=99.9% last90d= -96.3%
+rank30d top5 L3: net=  -99.7% mdd=99.8% last90d= -70.0%
+rank30d top5 L5: net=  -99.7% mdd=99.8% last90d= -96.5%
+rank30d top5 L7: net=  -99.8% mdd=99.9% last90d= -93.5%
+rank40d top2 L3: net=  -99.9% mdd=99.9% last90d= -91.8%
+rank40d top2 L5: net=  -99.7% mdd=99.8% last90d= -98.0%
+rank40d top2 L7: net=  -99.7% mdd=99.8% last90d= -90.4%
+rank40d top3 L3: net=  -99.7% mdd=99.8% last90d= -83.5%
+rank40d top3 L5: net=  -99.7% mdd=99.8% last90d= -99.0%
+rank40d top3 L7: net=  -99.8% mdd=99.9% last90d= -98.5%
+rank40d top5 L3: net=  -99.7% mdd=99.7% last90d= -80.5%
+rank40d top5 L5: net=  -99.7% mdd=99.7% last90d= -95.9%
+rank40d top5 L7: net=  -99.8% mdd=99.8% last90d= -97.2%
+분기별: {'2025-06-30': '-81%', '2025-09-30': '-63%', '2025-12-31': '-98%'}

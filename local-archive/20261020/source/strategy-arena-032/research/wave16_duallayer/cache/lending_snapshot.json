@@ -1,0 +1,6479 @@
+{
+  "collected_at_utc": "2026-07-23T10:09:20.302678+00:00",
+  "snapshot_limitation": "단일 시점 스냅샷(대여이자·현재펀딩 둘 다). 대여이자는 과거 시계열이 공개되지 않아 이 스냅샷 하나가 전부다 -- SPEC.md 치명적 한계 1 참조. 과거 펀딩 시계열에 이 상수를 얹은 값은 추정이며 검증이 아니다.",
+  "okx_lending": {
+    "source": "https://www.okx.com/api/v5/finance/savings/lending-rate-summary",
+    "raw_count": 170,
+    "kept_count": 169,
+    "excluded_outliers": [
+      {
+        "ccy": "BETH",
+        "avg_rate": 3.65,
+        "est_rate": 3.65,
+        "pre_rate": 3.65,
+        "reason": "hardcoded_spec_outlier (BETH: wrapped-staked-ETH promotional rate, not a spot altcoin the futures universe can hold)"
+      }
+    ],
+    "median_avg_rate_excl_outliers": 0.103,
+    "lender_side_uncertainty_note": "OKX avgRate가 '대여자(lender) 실수취 순액'인지 확인 시도(2026-07-23): OKX 공개 API 문서 (#financial-product-savings 앵커) 및 웹 검색 결과, avgRate/estRate/preRate에 대한 명시적 'lender net-of-fee' 정의 문구는 확보하지 못했다. 구조적 정황: OKX Savings는 P2P 매칭 시장으로 보인다(인증 필요한 POST set-lending-rate로 대여자가 직접 자기 대여금리를 호가하는 구조 -- 은행식 예대마진 상품이 아니라 매칭북), 공개 lending-rate-summary는 그 매칭 결과의 시스템 평균/추정/직전값 3종(avgRate/estRate/preRate)이다. Bitget 자체 대출북(borrower 측, earn/loan/public/coinInfos)의 ETH 7일 금리(1.26%)가 OKX ETH avgRate(1.50%)와 같은 자릿수인 점은 정황상 참고할 만하나 확증은 아니다(플랫폼·상품이 다름). 결론: 미확인(UNCONFIRMED). 이 불확실성 자체가 E3(50% 할인) 후보의 존재 이유다 -- 확인이 아니라 대비책.",
+    "rows": [
+      {
+        "ccy": "BTC",
+        "avg_rate": 0.005,
+        "est_rate": 0.005,
+        "pre_rate": 0.005
+      },
+      {
+        "ccy": "ETH",
+        "avg_rate": 0.015,
+        "est_rate": 0.015,
+        "pre_rate": 0.015
+      },
+      {
+        "ccy": "USDT",
+        "avg_rate": 0.025,
+        "est_rate": 0.025,
+        "pre_rate": 0.025
+      },
+      {
+        "ccy": "OKB",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "USDC",
+        "avg_rate": 0.025,
+        "est_rate": 0.025,
+        "pre_rate": 0.025
+      },
+      {
+        "ccy": "1INCH",
+        "avg_rate": 0.1843,
+        "est_rate": 0.182,
+        "pre_rate": 0.182
+      },
+      {
+        "ccy": "2Z",
+        "avg_rate": 0.2815,
+        "est_rate": 0.282,
+        "pre_rate": 0.282
+      },
+      {
+        "ccy": "A",
+        "avg_rate": 0.0874,
+        "est_rate": 0.086,
+        "pre_rate": 0.086
+      },
+      {
+        "ccy": "AAVE",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ACH",
+        "avg_rate": 0.1018,
+        "est_rate": 0.102,
+        "pre_rate": 0.102
+      },
+      {
+        "ccy": "ACT",
+        "avg_rate": 0.2295,
+        "est_rate": 0.203,
+        "pre_rate": 0.203
+      },
+      {
+        "ccy": "ADA",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "AGLD",
+        "avg_rate": 0.2047,
+        "est_rate": 0.199,
+        "pre_rate": 0.199
+      },
+      {
+        "ccy": "ALGO",
+        "avg_rate": 0.2428,
+        "est_rate": 0.244,
+        "pre_rate": 0.244
+      },
+      {
+        "ccy": "ANIME",
+        "avg_rate": 0.0905,
+        "est_rate": 0.156,
+        "pre_rate": 0.089
+      },
+      {
+        "ccy": "APE",
+        "avg_rate": 0.0751,
+        "est_rate": 0.073,
+        "pre_rate": 0.073
+      },
+      {
+        "ccy": "API3",
+        "avg_rate": 0.1194,
+        "est_rate": 0.08,
+        "pre_rate": 0.08
+      },
+      {
+        "ccy": "APT",
+        "avg_rate": 0.0776,
+        "est_rate": 0.078,
+        "pre_rate": 0.078
+      },
+      {
+        "ccy": "AR",
+        "avg_rate": 0.049,
+        "est_rate": 0.044,
+        "pre_rate": 0.044
+      },
+      {
+        "ccy": "ARB",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ARKM",
+        "avg_rate": 0.0809,
+        "est_rate": 0.077,
+        "pre_rate": 0.077
+      },
+      {
+        "ccy": "ASTER",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ATH",
+        "avg_rate": 0.2785,
+        "est_rate": 0.399,
+        "pre_rate": 0.393
+      },
+      {
+        "ccy": "ATOM",
+        "avg_rate": 0.1881,
+        "est_rate": 0.192,
+        "pre_rate": 0.192
+      },
+      {
+        "ccy": "AUCTION",
+        "avg_rate": 0.0855,
+        "est_rate": 0.133,
+        "pre_rate": 0.133
+      },
+      {
+        "ccy": "AVAX",
+        "avg_rate": 0.11,
+        "est_rate": 0.112,
+        "pre_rate": 0.112
+      },
+      {
+        "ccy": "AVNT",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "AXS",
+        "avg_rate": 0.1274,
+        "est_rate": 0.125,
+        "pre_rate": 0.125
+      },
+      {
+        "ccy": "BABY",
+        "avg_rate": 0.1808,
+        "est_rate": 0.178,
+        "pre_rate": 0.178
+      },
+      {
+        "ccy": "BARD",
+        "avg_rate": 0.7694,
+        "est_rate": 2.31,
+        "pre_rate": 2.31
+      },
+      {
+        "ccy": "BAT",
+        "avg_rate": 0.2496,
+        "est_rate": 0.248,
+        "pre_rate": 0.249
+      },
+      {
+        "ccy": "BCH",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "BERA",
+        "avg_rate": 0.2227,
+        "est_rate": 0.477,
+        "pre_rate": 2.03
+      },
+      {
+        "ccy": "BIGTIME",
+        "avg_rate": 0.2844,
+        "est_rate": 0.179,
+        "pre_rate": 0.179
+      },
+      {
+        "ccy": "BIO",
+        "avg_rate": 0.1521,
+        "est_rate": 0.143,
+        "pre_rate": 0.142
+      },
+      {
+        "ccy": "BLUR",
+        "avg_rate": 0.4004,
+        "est_rate": 0.274,
+        "pre_rate": 0.274
+      },
+      {
+        "ccy": "BNB",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "BOME",
+        "avg_rate": 0.1183,
+        "est_rate": 0.118,
+        "pre_rate": 0.118
+      },
+      {
+        "ccy": "BONK",
+        "avg_rate": 0.4087,
+        "est_rate": 0.412,
+        "pre_rate": 0.405
+      },
+      {
+        "ccy": "BREV",
+        "avg_rate": 0.3782,
+        "est_rate": 0.358,
+        "pre_rate": 0.358
+      },
+      {
+        "ccy": "CELO",
+        "avg_rate": 0.1781,
+        "est_rate": 0.176,
+        "pre_rate": 0.176
+      },
+      {
+        "ccy": "CFX",
+        "avg_rate": 0.0695,
+        "est_rate": 0.069,
+        "pre_rate": 0.069
+      },
+      {
+        "ccy": "CHZ",
+        "avg_rate": 0.1949,
+        "est_rate": 0.195,
+        "pre_rate": 0.195
+      },
+      {
+        "ccy": "COMP",
+        "avg_rate": 0.0991,
+        "est_rate": 0.1,
+        "pre_rate": 0.099
+      },
+      {
+        "ccy": "CORE",
+        "avg_rate": 0.0531,
+        "est_rate": 0.055,
+        "pre_rate": 0.055
+      },
+      {
+        "ccy": "CRO",
+        "avg_rate": 0.073,
+        "est_rate": 0.073,
+        "pre_rate": 0.073
+      },
+      {
+        "ccy": "CRV",
+        "avg_rate": 0.0598,
+        "est_rate": 0.061,
+        "pre_rate": 0.061
+      },
+      {
+        "ccy": "CVX",
+        "avg_rate": 0.0971,
+        "est_rate": 0.085,
+        "pre_rate": 0.085
+      },
+      {
+        "ccy": "DASH",
+        "avg_rate": 0.0269,
+        "est_rate": 0.026,
+        "pre_rate": 0.026
+      },
+      {
+        "ccy": "DATA",
+        "avg_rate": 0.0,
+        "est_rate": 2.0,
+        "pre_rate": 0.0
+      },
+      {
+        "ccy": "DOGE",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "DOT",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "DYDX",
+        "avg_rate": 0.0821,
+        "est_rate": 0.079,
+        "pre_rate": 0.079
+      },
+      {
+        "ccy": "EGLD",
+        "avg_rate": 0.0519,
+        "est_rate": 0.04,
+        "pre_rate": 0.04
+      },
+      {
+        "ccy": "EIGEN",
+        "avg_rate": 0.0766,
+        "est_rate": 0.077,
+        "pre_rate": 0.077
+      },
+      {
+        "ccy": "ENA",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ENJ",
+        "avg_rate": 0.1707,
+        "est_rate": 0.159,
+        "pre_rate": 0.159
+      },
+      {
+        "ccy": "ENS",
+        "avg_rate": 0.0399,
+        "est_rate": 0.039,
+        "pre_rate": 0.039
+      },
+      {
+        "ccy": "ETC",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ETHFI",
+        "avg_rate": 0.1043,
+        "est_rate": 0.102,
+        "pre_rate": 0.102
+      },
+      {
+        "ccy": "ETHW",
+        "avg_rate": 0.103,
+        "est_rate": 0.103,
+        "pre_rate": 0.103
+      },
+      {
+        "ccy": "FIL",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "FLOKI",
+        "avg_rate": 0.055,
+        "est_rate": 0.054,
+        "pre_rate": 0.054
+      },
+      {
+        "ccy": "FLOW",
+        "avg_rate": 0.0665,
+        "est_rate": 0.067,
+        "pre_rate": 0.067
+      },
+      {
+        "ccy": "FOGO",
+        "avg_rate": 0.2106,
+        "est_rate": 0.211,
+        "pre_rate": 0.21
+      },
+      {
+        "ccy": "GALA",
+        "avg_rate": 0.153,
+        "est_rate": 0.154,
+        "pre_rate": 0.154
+      },
+      {
+        "ccy": "GAS",
+        "avg_rate": 0.218,
+        "est_rate": 0.198,
+        "pre_rate": 0.198
+      },
+      {
+        "ccy": "GMT",
+        "avg_rate": 0.2612,
+        "est_rate": 0.24,
+        "pre_rate": 0.24
+      },
+      {
+        "ccy": "GMX",
+        "avg_rate": 0.15,
+        "est_rate": 0.148,
+        "pre_rate": 0.148
+      },
+      {
+        "ccy": "GRAM",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "GRT",
+        "avg_rate": 0.1736,
+        "est_rate": 0.163,
+        "pre_rate": 0.163
+      },
+      {
+        "ccy": "HBAR",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "HUMA",
+        "avg_rate": 0.1176,
+        "est_rate": 0.117,
+        "pre_rate": 0.117
+      },
+      {
+        "ccy": "HYPE",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ICP",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "IMX",
+        "avg_rate": 0.115,
+        "est_rate": 0.115,
+        "pre_rate": 0.115
+      },
+      {
+        "ccy": "INJ",
+        "avg_rate": 0.0657,
+        "est_rate": 0.065,
+        "pre_rate": 0.065
+      },
+      {
+        "ccy": "IOTA",
+        "avg_rate": 0.1891,
+        "est_rate": 0.188,
+        "pre_rate": 0.188
+      },
+      {
+        "ccy": "JTO",
+        "avg_rate": 0.1067,
+        "est_rate": 0.161,
+        "pre_rate": 0.161
+      },
+      {
+        "ccy": "JUP",
+        "avg_rate": 0.1105,
+        "est_rate": 0.112,
+        "pre_rate": 0.113
+      },
+      {
+        "ccy": "KAITO",
+        "avg_rate": 0.4966,
+        "est_rate": 1.322,
+        "pre_rate": 0.458
+      },
+      {
+        "ccy": "KMNO",
+        "avg_rate": 0.2678,
+        "est_rate": 0.267,
+        "pre_rate": 0.267
+      },
+      {
+        "ccy": "KSM",
+        "avg_rate": 0.1262,
+        "est_rate": 0.126,
+        "pre_rate": 0.126
+      },
+      {
+        "ccy": "LAYER",
+        "avg_rate": 0.2588,
+        "est_rate": 0.22,
+        "pre_rate": 0.22
+      },
+      {
+        "ccy": "LDO",
+        "avg_rate": 0.0777,
+        "est_rate": 0.076,
+        "pre_rate": 0.076
+      },
+      {
+        "ccy": "LINEA",
+        "avg_rate": 0.0566,
+        "est_rate": 0.057,
+        "pre_rate": 0.057
+      },
+      {
+        "ccy": "LINK",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "LIT",
+        "avg_rate": 0.1202,
+        "est_rate": 0.116,
+        "pre_rate": 0.116
+      },
+      {
+        "ccy": "LPT",
+        "avg_rate": 0.1534,
+        "est_rate": 0.152,
+        "pre_rate": 0.152
+      },
+      {
+        "ccy": "LQTY",
+        "avg_rate": 0.3797,
+        "est_rate": 0.374,
+        "pre_rate": 0.374
+      },
+      {
+        "ccy": "LRC",
+        "avg_rate": 0.3442,
+        "est_rate": 0.319,
+        "pre_rate": 0.319
+      },
+      {
+        "ccy": "LTC",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "LUNA",
+        "avg_rate": 0.068,
+        "est_rate": 0.068,
+        "pre_rate": 0.068
+      },
+      {
+        "ccy": "MAGIC",
+        "avg_rate": 0.1975,
+        "est_rate": 0.197,
+        "pre_rate": 0.197
+      },
+      {
+        "ccy": "MANA",
+        "avg_rate": 0.1086,
+        "est_rate": 0.108,
+        "pre_rate": 0.108
+      },
+      {
+        "ccy": "MASK",
+        "avg_rate": 0.1017,
+        "est_rate": 0.099,
+        "pre_rate": 0.099
+      },
+      {
+        "ccy": "ME",
+        "avg_rate": 0.4905,
+        "est_rate": 2.04,
+        "pre_rate": 0.487
+      },
+      {
+        "ccy": "MERL",
+        "avg_rate": 0.0969,
+        "est_rate": 0.096,
+        "pre_rate": 0.096
+      },
+      {
+        "ccy": "MET",
+        "avg_rate": 0.2155,
+        "est_rate": 0.205,
+        "pre_rate": 0.206
+      },
+      {
+        "ccy": "MEW",
+        "avg_rate": 0.1093,
+        "est_rate": 0.109,
+        "pre_rate": 0.109
+      },
+      {
+        "ccy": "MINA",
+        "avg_rate": 0.1044,
+        "est_rate": 0.102,
+        "pre_rate": 0.102
+      },
+      {
+        "ccy": "MOODENG",
+        "avg_rate": 0.1369,
+        "est_rate": 0.131,
+        "pre_rate": 0.131
+      },
+      {
+        "ccy": "MORPHO",
+        "avg_rate": 0.0959,
+        "est_rate": 0.124,
+        "pre_rate": 0.124
+      },
+      {
+        "ccy": "MOVE",
+        "avg_rate": 0.305,
+        "est_rate": 0.273,
+        "pre_rate": 0.273
+      },
+      {
+        "ccy": "NEAR",
+        "avg_rate": 0.0191,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "NEIRO",
+        "avg_rate": 0.1467,
+        "est_rate": 0.148,
+        "pre_rate": 0.148
+      },
+      {
+        "ccy": "NEO",
+        "avg_rate": 0.2157,
+        "est_rate": 0.282,
+        "pre_rate": 0.282
+      },
+      {
+        "ccy": "NIGHT",
+        "avg_rate": 0.1681,
+        "est_rate": 0.146,
+        "pre_rate": 0.146
+      },
+      {
+        "ccy": "NOT",
+        "avg_rate": 0.145,
+        "est_rate": 0.145,
+        "pre_rate": 0.145
+      },
+      {
+        "ccy": "ONDO",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ONT",
+        "avg_rate": 0.2656,
+        "est_rate": 0.237,
+        "pre_rate": 0.237
+      },
+      {
+        "ccy": "OP",
+        "avg_rate": 0.1154,
+        "est_rate": 0.109,
+        "pre_rate": 0.11
+      },
+      {
+        "ccy": "ORDI",
+        "avg_rate": 0.0777,
+        "est_rate": 0.079,
+        "pre_rate": 0.078
+      },
+      {
+        "ccy": "PAXG",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "PENGU",
+        "avg_rate": 0.101,
+        "est_rate": 0.101,
+        "pre_rate": 0.101
+      },
+      {
+        "ccy": "PEOPLE",
+        "avg_rate": 0.0692,
+        "est_rate": 0.071,
+        "pre_rate": 0.071
+      },
+      {
+        "ccy": "PEPE",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "PI",
+        "avg_rate": 0.0427,
+        "est_rate": 0.044,
+        "pre_rate": 0.044
+      },
+      {
+        "ccy": "PNUT",
+        "avg_rate": 0.1156,
+        "est_rate": 0.116,
+        "pre_rate": 0.116
+      },
+      {
+        "ccy": "POL",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "PUMP",
+        "avg_rate": 0.1505,
+        "est_rate": 0.146,
+        "pre_rate": 0.146
+      },
+      {
+        "ccy": "PYTH",
+        "avg_rate": 0.0467,
+        "est_rate": 0.046,
+        "pre_rate": 0.046
+      },
+      {
+        "ccy": "QTUM",
+        "avg_rate": 0.1312,
+        "est_rate": 0.154,
+        "pre_rate": 0.154
+      },
+      {
+        "ccy": "RAY",
+        "avg_rate": 0.0525,
+        "est_rate": 0.057,
+        "pre_rate": 0.056
+      },
+      {
+        "ccy": "RENDER",
+        "avg_rate": 0.0433,
+        "est_rate": 0.043,
+        "pre_rate": 0.043
+      },
+      {
+        "ccy": "RSR",
+        "avg_rate": 0.1991,
+        "est_rate": 0.206,
+        "pre_rate": 0.206
+      },
+      {
+        "ccy": "S",
+        "avg_rate": 0.1033,
+        "est_rate": 0.104,
+        "pre_rate": 0.104
+      },
+      {
+        "ccy": "SAND",
+        "avg_rate": 0.1065,
+        "est_rate": 0.102,
+        "pre_rate": 0.102
+      },
+      {
+        "ccy": "SATS",
+        "avg_rate": 0.095,
+        "est_rate": 0.095,
+        "pre_rate": 0.095
+      },
+      {
+        "ccy": "SEI",
+        "avg_rate": 0.1143,
+        "est_rate": 0.114,
+        "pre_rate": 0.114
+      },
+      {
+        "ccy": "SHIB",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "SKY",
+        "avg_rate": 0.0455,
+        "est_rate": 0.035,
+        "pre_rate": 0.035
+      },
+      {
+        "ccy": "SNX",
+        "avg_rate": 0.2993,
+        "est_rate": 0.388,
+        "pre_rate": 0.388
+      },
+      {
+        "ccy": "SOL",
+        "avg_rate": 0.0465,
+        "est_rate": 0.05,
+        "pre_rate": 0.05
+      },
+      {
+        "ccy": "SPK",
+        "avg_rate": 0.1508,
+        "est_rate": 0.15,
+        "pre_rate": 0.15
+      },
+      {
+        "ccy": "SSV",
+        "avg_rate": 0.1702,
+        "est_rate": 0.17,
+        "pre_rate": 0.17
+      },
+      {
+        "ccy": "STRK",
+        "avg_rate": 0.0424,
+        "est_rate": 0.042,
+        "pre_rate": 0.042
+      },
+      {
+        "ccy": "STX",
+        "avg_rate": 0.0898,
+        "est_rate": 0.09,
+        "pre_rate": 0.09
+      },
+      {
+        "ccy": "SUI",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "SUSHI",
+        "avg_rate": 0.114,
+        "est_rate": 0.114,
+        "pre_rate": 0.114
+      },
+      {
+        "ccy": "",
+        "avg_rate": 0.0,
+        "est_rate": 0.0,
+        "pre_rate": 0.0
+      },
+      {
+        "ccy": "THETA",
+        "avg_rate": 0.2253,
+        "est_rate": 0.189,
+        "pre_rate": 0.189
+      },
+      {
+        "ccy": "TIA",
+        "avg_rate": 0.1663,
+        "est_rate": 0.167,
+        "pre_rate": 0.167
+      },
+      {
+        "ccy": "TRB",
+        "avg_rate": 0.1316,
+        "est_rate": 0.132,
+        "pre_rate": 0.132
+      },
+      {
+        "ccy": "TRUMP",
+        "avg_rate": 0.0747,
+        "est_rate": 0.075,
+        "pre_rate": 0.075
+      },
+      {
+        "ccy": "TRX",
+        "avg_rate": 0.2291,
+        "est_rate": 0.228,
+        "pre_rate": 0.227
+      },
+      {
+        "ccy": "TURBO",
+        "avg_rate": 0.0622,
+        "est_rate": 0.062,
+        "pre_rate": 0.062
+      },
+      {
+        "ccy": "UMA",
+        "avg_rate": 0.1993,
+        "est_rate": 0.202,
+        "pre_rate": 0.202
+      },
+      {
+        "ccy": "UNI",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "VIRTUAL",
+        "avg_rate": 0.107,
+        "est_rate": 0.103,
+        "pre_rate": 0.098
+      },
+      {
+        "ccy": "W",
+        "avg_rate": 0.1923,
+        "est_rate": 0.193,
+        "pre_rate": 0.193
+      },
+      {
+        "ccy": "WCT",
+        "avg_rate": 0.19,
+        "est_rate": 0.212,
+        "pre_rate": 0.212
+      },
+      {
+        "ccy": "WIF",
+        "avg_rate": 0.0512,
+        "est_rate": 0.046,
+        "pre_rate": 0.046
+      },
+      {
+        "ccy": "WLD",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "WLFI",
+        "avg_rate": 0.0464,
+        "est_rate": 0.061,
+        "pre_rate": 0.061
+      },
+      {
+        "ccy": "XAUT",
+        "avg_rate": 0.11,
+        "est_rate": 0.11,
+        "pre_rate": 0.11
+      },
+      {
+        "ccy": "XLM",
+        "avg_rate": 0.058,
+        "est_rate": 0.061,
+        "pre_rate": 0.061
+      },
+      {
+        "ccy": "XPL",
+        "avg_rate": 0.1115,
+        "est_rate": 0.11,
+        "pre_rate": 0.11
+      },
+      {
+        "ccy": "XRP",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "XTZ",
+        "avg_rate": 0.155,
+        "est_rate": 0.156,
+        "pre_rate": 0.156
+      },
+      {
+        "ccy": "YFI",
+        "avg_rate": 0.1324,
+        "est_rate": 0.134,
+        "pre_rate": 0.134
+      },
+      {
+        "ccy": "YGG",
+        "avg_rate": 0.2015,
+        "est_rate": 0.188,
+        "pre_rate": 0.188
+      },
+      {
+        "ccy": "ZEC",
+        "avg_rate": 0.01,
+        "est_rate": 0.01,
+        "pre_rate": 0.01
+      },
+      {
+        "ccy": "ZEN",
+        "avg_rate": 0.0862,
+        "est_rate": 0.086,
+        "pre_rate": 0.086
+      },
+      {
+        "ccy": "ZETA",
+        "avg_rate": 0.2,
+        "est_rate": 0.181,
+        "pre_rate": 0.181
+      },
+      {
+        "ccy": "ZIL",
+        "avg_rate": 0.694,
+        "est_rate": 0.842,
+        "pre_rate": 0.45
+      },
+      {
+        "ccy": "ZK",
+        "avg_rate": 0.1001,
+        "est_rate": 0.099,
+        "pre_rate": 0.099
+      },
+      {
+        "ccy": "ZORA",
+        "avg_rate": 0.213,
+        "est_rate": 0.215,
+        "pre_rate": 0.215
+      },
+      {
+        "ccy": "ZRO",
+        "avg_rate": 0.0417,
+        "est_rate": 0.042,
+        "pre_rate": 0.042
+      }
+    ]
+  },
+  "bitget_current_funding": {
+    "source": "https://api.bitget.com/api/v2/mix/market/current-fund-rate",
+    "raw_count": 732,
+    "l4_universe_matched_count": 188,
+    "l4_universe_median_apr": 0.05475000000000001,
+    "rows": [
+      {
+        "symbol": "BTCUSDT",
+        "funding_rate_8h": 2.1e-05,
+        "funding_apr": 0.022995
+      },
+      {
+        "symbol": "ETHUSDT",
+        "funding_rate_8h": -1.2e-05,
+        "funding_apr": -0.01314
+      },
+      {
+        "symbol": "XRPUSDT",
+        "funding_rate_8h": 2.2e-05,
+        "funding_apr": 0.02409
+      },
+      {
+        "symbol": "BCHUSDT",
+        "funding_rate_8h": 6.8e-05,
+        "funding_apr": 0.07446
+      },
+      {
+        "symbol": "LTCUSDT",
+        "funding_rate_8h": -4e-05,
+        "funding_apr": -0.043800000000000006
+      },
+      {
+        "symbol": "ADAUSDT",
+        "funding_rate_8h": 1.7e-05,
+        "funding_apr": 0.018615
+      },
+      {
+        "symbol": "ETCUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "LINKUSDT",
+        "funding_rate_8h": 8.4e-05,
+        "funding_apr": 0.09198
+      },
+      {
+        "symbol": "TRXUSDT",
+        "funding_rate_8h": -0.000129,
+        "funding_apr": -0.141255
+      },
+      {
+        "symbol": "DOTUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "funding_rate_8h": 3.1e-05,
+        "funding_apr": 0.033945
+      },
+      {
+        "symbol": "SOLUSDT",
+        "funding_rate_8h": 1.1e-05,
+        "funding_apr": 0.012045
+      },
+      {
+        "symbol": "BNBUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "UNIUSDT",
+        "funding_rate_8h": 5.8e-05,
+        "funding_apr": 0.06351
+      },
+      {
+        "symbol": "ICPUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "AAVEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "FILUSDT",
+        "funding_rate_8h": -0.00012,
+        "funding_apr": -0.13140000000000002
+      },
+      {
+        "symbol": "XLMUSDT",
+        "funding_rate_8h": 5.3e-05,
+        "funding_apr": 0.058035
+      },
+      {
+        "symbol": "ATOMUSDT",
+        "funding_rate_8h": -0.000297,
+        "funding_apr": -0.32521500000000003
+      },
+      {
+        "symbol": "XTZUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SUSHIUSDT",
+        "funding_rate_8h": -3.1e-05,
+        "funding_apr": -0.033945
+      },
+      {
+        "symbol": "AXSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "THETAUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "DASHUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SHIBUSDT",
+        "funding_rate_8h": -2.5e-05,
+        "funding_apr": -0.027375000000000003
+      },
+      {
+        "symbol": "MANAUSDT",
+        "funding_rate_8h": 7.1e-05,
+        "funding_apr": 0.07774500000000001
+      },
+      {
+        "symbol": "GALAUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SANDUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "DYDXUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CRVUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "NEARUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "EGLDUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "KSMUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ARUSDT",
+        "funding_rate_8h": 6.3e-05,
+        "funding_apr": 0.06898499999999999
+      },
+      {
+        "symbol": "PEOPLEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "NEOUSDT",
+        "funding_rate_8h": -8.6e-05,
+        "funding_apr": -0.09416999999999999
+      },
+      {
+        "symbol": "ALICEUSDT",
+        "funding_rate_8h": -0.000138,
+        "funding_apr": -0.15111
+      },
+      {
+        "symbol": "ALGOUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "IOTAUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ENJUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GMTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZILUSDT",
+        "funding_rate_8h": -0.00065,
+        "funding_apr": -0.71175
+      },
+      {
+        "symbol": "IOSTUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "APEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "RUNEUSDT",
+        "funding_rate_8h": -3.6e-05,
+        "funding_apr": -0.03942
+      },
+      {
+        "symbol": "KNCUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "APTUSDT",
+        "funding_rate_8h": 6.7e-05,
+        "funding_apr": 0.073365
+      },
+      {
+        "symbol": "CHZUSDT",
+        "funding_rate_8h": -2.6e-05,
+        "funding_apr": -0.02847
+      },
+      {
+        "symbol": "XMRUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ROSEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ZRXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KAVAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ENSUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "MTLUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "C98USDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "OPUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "RSRUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SNXUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "STORJUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "1INCHUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "COMPUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "IMXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LUNAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TRBUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "QTUMUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "API3USDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MASKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "WOOUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "GRTUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "BANDUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "STGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LUNCUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ONEUSDT",
+        "funding_rate_8h": -0.000482,
+        "funding_apr": -0.52779
+      },
+      {
+        "symbol": "JASMYUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "BATUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "MAGICUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LDOUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CELOUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "BLURUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MINAUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CFXUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ASTRUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "GMXUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ANKRUSDT",
+        "funding_rate_8h": -9e-06,
+        "funding_apr": -0.009855
+      },
+      {
+        "symbol": "ACHUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "FETUSDT",
+        "funding_rate_8h": -7.9e-05,
+        "funding_apr": -0.086505
+      },
+      {
+        "symbol": "SSVUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "USDCUSDT",
+        "funding_rate_8h": 7.5e-05,
+        "funding_apr": 0.082125
+      },
+      {
+        "symbol": "LQTYUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "STXUSDT",
+        "funding_rate_8h": -0.000181,
+        "funding_apr": -0.19819500000000004
+      },
+      {
+        "symbol": "HBARUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "INJUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "COTIUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "VETUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ARBUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "KAIAUSDT",
+        "funding_rate_8h": -1.8e-05,
+        "funding_apr": -0.01971
+      },
+      {
+        "symbol": "CKBUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "IDUSDT",
+        "funding_rate_8h": -6e-06,
+        "funding_apr": -0.00657
+      },
+      {
+        "symbol": "JOEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "TLMUSDT",
+        "funding_rate_8h": -0.008609,
+        "funding_apr": -9.426855000000002
+      },
+      {
+        "symbol": "HOTUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CHRUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ICXUSDT",
+        "funding_rate_8h": -2.9e-05,
+        "funding_apr": -0.031755
+      },
+      {
+        "symbol": "HFTUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ONTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZECUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ARPAUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SFPUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CTSIUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SKLUSDT",
+        "funding_rate_8h": -0.000458,
+        "funding_apr": -0.50151
+      },
+      {
+        "symbol": "RVNUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CELRUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "FLOKIUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SPELLUSDT",
+        "funding_rate_8h": -0.001582,
+        "funding_apr": -1.73229
+      },
+      {
+        "symbol": "SUIUSDT",
+        "funding_rate_8h": 4.1e-05,
+        "funding_apr": 0.044895000000000004
+      },
+      {
+        "symbol": "PEPEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "IOTXUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CTKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "UMAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TURBOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BSVUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GRAMUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZENUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "ORDIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SLPUSDT",
+        "funding_rate_8h": -0.000108,
+        "funding_apr": -0.11825999999999999
+      },
+      {
+        "symbol": "1000BONKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "USTCUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "QNTUSDT",
+        "funding_rate_8h": -0.000118,
+        "funding_apr": -0.12921
+      },
+      {
+        "symbol": "MAVUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "XVGUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "1000XECUSDT",
+        "funding_rate_8h": -0.000531,
+        "funding_apr": -0.581445
+      },
+      {
+        "symbol": "AGLDUSDT",
+        "funding_rate_8h": -0.000123,
+        "funding_apr": -0.134685
+      },
+      {
+        "symbol": "WLDUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "PENDLEUSDT",
+        "funding_rate_8h": -3e-05,
+        "funding_apr": -0.032850000000000004
+      },
+      {
+        "symbol": "ARKMUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "CVXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "YGGUSDT",
+        "funding_rate_8h": -1.5e-05,
+        "funding_apr": -0.016425000000000002
+      },
+      {
+        "symbol": "OGNUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LPTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BNTUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SEIUSDT",
+        "funding_rate_8h": 9.7e-05,
+        "funding_apr": 0.106215
+      },
+      {
+        "symbol": "CYBERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BIGTIMEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "WAXPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "POLYXUSDT",
+        "funding_rate_8h": -0.000231,
+        "funding_apr": -0.25294500000000003
+      },
+      {
+        "symbol": "TIAUSDT",
+        "funding_rate_8h": 4e-05,
+        "funding_apr": 0.043800000000000006
+      },
+      {
+        "symbol": "MEMEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PYTHUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "JTOUSDT",
+        "funding_rate_8h": -4.7e-05,
+        "funding_apr": -0.051465
+      },
+      {
+        "symbol": "1000SATSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "1000RATSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ACEUSDT",
+        "funding_rate_8h": -0.000258,
+        "funding_apr": -0.28251
+      },
+      {
+        "symbol": "XAIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MANTAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ALTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "JUPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZETAUSDT",
+        "funding_rate_8h": 2.2e-05,
+        "funding_apr": 0.02409
+      },
+      {
+        "symbol": "STRKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PIXELUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DYMUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "WIFUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AXLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BEAMUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BOMEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "METISUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "VANRYUSDT",
+        "funding_rate_8h": -0.001242,
+        "funding_apr": -1.35999
+      },
+      {
+        "symbol": "AEVOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ETHFIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ONDOUSDT",
+        "funding_rate_8h": 4.8e-05,
+        "funding_apr": 0.05256
+      },
+      {
+        "symbol": "CAKEUSDT",
+        "funding_rate_8h": -0.000112,
+        "funding_apr": -0.12264
+      },
+      {
+        "symbol": "KASUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ENAUSDT",
+        "funding_rate_8h": -5e-06,
+        "funding_apr": -0.005475000000000001
+      },
+      {
+        "symbol": "WUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CVCUSDT",
+        "funding_rate_8h": -8.5e-05,
+        "funding_apr": -0.093075
+      },
+      {
+        "symbol": "TNSRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TAOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "RAYUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SUPERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ONGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LSKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GLMUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "REZUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "XVSUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "MOVRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BBUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "NOTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BICOUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "IOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TAIKOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BRETTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ATHUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MEWUSDT",
+        "funding_rate_8h": 4e-05,
+        "funding_apr": 0.043800000000000006
+      },
+      {
+        "symbol": "LISTAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZROUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PAXGUSDT",
+        "funding_rate_8h": -1.4e-05,
+        "funding_apr": -0.01533
+      },
+      {
+        "symbol": "BGBUSDT",
+        "funding_rate_8h": 3.2e-05,
+        "funding_apr": 0.03504
+      },
+      {
+        "symbol": "MOCAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GASUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BANANAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "POPCATUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "RENDERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "RAREUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TUSDT",
+        "funding_rate_8h": -0.000385,
+        "funding_apr": -0.421575
+      },
+      {
+        "symbol": "1000000MOGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GUSDT",
+        "funding_rate_8h": 5e-06,
+        "funding_apr": 0.005475000000000001
+      },
+      {
+        "symbol": "SYNUSDT",
+        "funding_rate_8h": -0.000603,
+        "funding_apr": -0.660285
+      },
+      {
+        "symbol": "SUNUSDT",
+        "funding_rate_8h": 3.1e-05,
+        "funding_apr": 0.033945
+      },
+      {
+        "symbol": "DOGSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ORDERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AKTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FLUXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "POLUSDT",
+        "funding_rate_8h": -6.4e-05,
+        "funding_apr": -0.07008
+      },
+      {
+        "symbol": "RPLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "1000CATUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "1MBABYDOGEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FIDAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CATIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ARKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "EIGENUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MOODENGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DIAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "OGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "NEIROCTOUSDT",
+        "funding_rate_8h": -0.000248,
+        "funding_apr": -0.27156
+      },
+      {
+        "symbol": "ETHWUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KMNOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "POWRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CARVUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DEEPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LUMIAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GOATUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SAFEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GRASSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SANTOSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SPXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "VIRTUALUSDT",
+        "funding_rate_8h": -9.9e-05,
+        "funding_apr": -0.10840499999999999
+      },
+      {
+        "symbol": "AEROUSDT",
+        "funding_rate_8h": -0.000231,
+        "funding_apr": -0.25294500000000003
+      },
+      {
+        "symbol": "CETUSUSDT",
+        "funding_rate_8h": 4.2e-05,
+        "funding_apr": 0.04599
+      },
+      {
+        "symbol": "COWUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DRIFTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PNUTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ACTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CROUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "MERLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "STEEMUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BANUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MORPHOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SCRTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CHILLGUYUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "1MCHEEMSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "THEUSDT",
+        "funding_rate_8h": 4.8e-05,
+        "funding_apr": 0.05256
+      },
+      {
+        "symbol": "ORCAUSDT",
+        "funding_rate_8h": -4.4e-05,
+        "funding_apr": -0.04818
+      },
+      {
+        "symbol": "ACXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MOVEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MEUSDT",
+        "funding_rate_8h": -0.000187,
+        "funding_apr": -0.204765
+      },
+      {
+        "symbol": "VELODROMEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AVAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "VANAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "HYPEUSDT",
+        "funding_rate_8h": 5e-06,
+        "funding_apr": 0.005475000000000001
+      },
+      {
+        "symbol": "PENGUUSDT",
+        "funding_rate_8h": 6e-06,
+        "funding_apr": 0.00657
+      },
+      {
+        "symbol": "USUALUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AIXBTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FARTCOINUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CGPTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "HIVEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DEXEUSDT",
+        "funding_rate_8h": -0.008374,
+        "funding_apr": -9.16953
+      },
+      {
+        "symbol": "PHAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GRIFFAINUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BIOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ALCHUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "COOKIEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SONICUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FLOCKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SUSDT",
+        "funding_rate_8h": -0.000163,
+        "funding_apr": -0.17848500000000003
+      },
+      {
+        "symbol": "PROMUSDT",
+        "funding_rate_8h": -0.000163,
+        "funding_apr": -0.17848500000000003
+      },
+      {
+        "symbol": "ARCUSDT",
+        "funding_rate_8h": 0.000135,
+        "funding_apr": 0.14782499999999998
+      },
+      {
+        "symbol": "PIPPINUSDT",
+        "funding_rate_8h": 0.000337,
+        "funding_apr": 0.369015
+      },
+      {
+        "symbol": "TRUMPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MELANIAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PLUMEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "VTHOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ANIMEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TOSHIUSDT",
+        "funding_rate_8h": -0.000985,
+        "funding_apr": -1.078575
+      },
+      {
+        "symbol": "VVVUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BERAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LAYERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DATAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SHELLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BROCCOLIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AUCTIONUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GPSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KAITOUSDT",
+        "funding_rate_8h": -0.000178,
+        "funding_apr": -0.19491
+      },
+      {
+        "symbol": "REDUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "EPICUSDT",
+        "funding_rate_8h": 0.000413,
+        "funding_apr": 0.45223500000000005
+      },
+      {
+        "symbol": "MUBARAKUSDT",
+        "funding_rate_8h": -0.000369,
+        "funding_apr": -0.40405500000000005
+      },
+      {
+        "symbol": "NMRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TUTUSDT",
+        "funding_rate_8h": 0.000131,
+        "funding_apr": 0.14344500000000002
+      },
+      {
+        "symbol": "FORMUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SIRENUSDT",
+        "funding_rate_8h": 0.00031,
+        "funding_apr": 0.33945000000000003
+      },
+      {
+        "symbol": "BANANAS31USDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "NILUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PARTIUSDT",
+        "funding_rate_8h": -6.3e-05,
+        "funding_apr": -0.06898499999999999
+      },
+      {
+        "symbol": "WALUSDT",
+        "funding_rate_8h": 4.6e-05,
+        "funding_apr": 0.05037
+      },
+      {
+        "symbol": "GUNUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "STOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "XAUTUSDT",
+        "funding_rate_8h": 2.6e-05,
+        "funding_apr": 0.02847
+      },
+      {
+        "symbol": "BABYUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KERNELUSDT",
+        "funding_rate_8h": 3.8e-05,
+        "funding_apr": 0.04161
+      },
+      {
+        "symbol": "WCTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "INITUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BANKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "HYPERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZORAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DOLOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "JSTUSDT",
+        "funding_rate_8h": -0.000101,
+        "funding_apr": -0.110595
+      },
+      {
+        "symbol": "SIGNUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "HAEDALUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PUNDIXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "B2USDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ASRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MYXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SYRUPUSDT",
+        "funding_rate_8h": -3e-06,
+        "funding_apr": -0.003285
+      },
+      {
+        "symbol": "SXTUSDT",
+        "funding_rate_8h": -0.000212,
+        "funding_apr": -0.23214
+      },
+      {
+        "symbol": "DOODUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SKYAIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "NXPCUSDT",
+        "funding_rate_8h": -1.1e-05,
+        "funding_apr": -0.012045
+      },
+      {
+        "symbol": "AWEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SOONUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "HUMAUSDT",
+        "funding_rate_8h": -3.4e-05,
+        "funding_apr": -0.03723
+      },
+      {
+        "symbol": "SOPHUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LAUSDT",
+        "funding_rate_8h": -7.3e-05,
+        "funding_apr": -0.079935
+      },
+      {
+        "symbol": "RESOLVUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "HOMEUSDT",
+        "funding_rate_8h": -0.000197,
+        "funding_apr": -0.215715
+      },
+      {
+        "symbol": "IDOLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SQDUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TAGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SPKUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "NEWTUSDT",
+        "funding_rate_8h": 3.8e-05,
+        "funding_apr": 0.04161
+      },
+      {
+        "symbol": "HUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SAHARAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ICNTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CROSSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AINUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "USELESSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PUMPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CUSDT",
+        "funding_rate_8h": -6.3e-05,
+        "funding_apr": -0.06898499999999999
+      },
+      {
+        "symbol": "TACUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "VELVETUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ERAUSDT",
+        "funding_rate_8h": -0.001298,
+        "funding_apr": -1.4213099999999999
+      },
+      {
+        "symbol": "ESPORTSUSDT",
+        "funding_rate_8h": 0.000151,
+        "funding_apr": 0.16534500000000002
+      },
+      {
+        "symbol": "TREEUSDT",
+        "funding_rate_8h": -0.000167,
+        "funding_apr": -0.18286499999999997
+      },
+      {
+        "symbol": "NAORISUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PLAYUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TOWNSUSDT",
+        "funding_rate_8h": -0.000217,
+        "funding_apr": -0.237615
+      },
+      {
+        "symbol": "PROVEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ILVUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "INUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AIOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TSLAUSDT",
+        "funding_rate_8h": 9.6e-05,
+        "funding_apr": 0.10512
+      },
+      {
+        "symbol": "CRCLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NVDAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SAPIENUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "WLFIUSDT",
+        "funding_rate_8h": -1.4e-05,
+        "funding_apr": -0.01533
+      },
+      {
+        "symbol": "SOMIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GOOGLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AAPLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AMZNUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "METAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MCDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XPLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BASUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MSTRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "COINUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "HOODUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LINEAUSDT",
+        "funding_rate_8h": -0.000109,
+        "funding_apr": -0.11935500000000002
+      },
+      {
+        "symbol": "QUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ARIAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ARMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ASMLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BABAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "INTCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "IBMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "OPENUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "APPUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "GEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ORCLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PLTRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SKYUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AVNTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GMEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MRVLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "HOLOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BGTESTMEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "UBUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "XPINUSDT",
+        "funding_rate_8h": 6.7e-05,
+        "funding_apr": 0.073365
+      },
+      {
+        "symbol": "ZKCUSDT",
+        "funding_rate_8h": -0.002608,
+        "funding_apr": -2.8557600000000005
+      },
+      {
+        "symbol": "0GUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BARDUSDT",
+        "funding_rate_8h": -0.009804,
+        "funding_apr": -10.735380000000001
+      },
+      {
+        "symbol": "TRADOORUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ASTERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MSFTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XANUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BLESSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FLUIDUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "COAIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MIRAUSDT",
+        "funding_rate_8h": -0.003639,
+        "funding_apr": -3.984705
+      },
+      {
+        "symbol": "AKEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "STBLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FFUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TRUTHUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "EVAAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "2ZUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LYNUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KGENUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "4USDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MONUSDT",
+        "funding_rate_8h": 6e-06,
+        "funding_apr": 0.00657
+      },
+      {
+        "symbol": "YBUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "METUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ENSOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "EULUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "RECALLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GIGGLEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZBTUSDT",
+        "funding_rate_8h": 8.8e-05,
+        "funding_apr": 0.09636
+      },
+      {
+        "symbol": "LABUSDT",
+        "funding_rate_8h": 0.000224,
+        "funding_apr": 0.24528
+      },
+      {
+        "symbol": "RIVERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "APRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MEGAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CLANKERUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "NFLXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "FUTUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "JDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RDDTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "QQQUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ATUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KITEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MMTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TRUSTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "UAIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FOLKSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "STABLEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CSCOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "UNHUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LLYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "JCTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ALLOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BEATUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "PIEVERSEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GAIBUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "IRYSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "POWERUSDT",
+        "funding_rate_8h": 0.000242,
+        "funding_apr": 0.26499
+      },
+      {
+        "symbol": "WETUSDT",
+        "funding_rate_8h": 0.000183,
+        "funding_apr": 0.200385
+      },
+      {
+        "symbol": "NIGHTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CYSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "USUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "XAUUSDT",
+        "funding_rate_8h": 1.6e-05,
+        "funding_apr": 0.01752
+      },
+      {
+        "symbol": "RAVEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ZKPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "LITUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "MAGMAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BREVUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "XAGUSDT",
+        "funding_rate_8h": 7.3e-05,
+        "funding_apr": 0.079935
+      },
+      {
+        "symbol": "ZAMAUSDT",
+        "funding_rate_8h": -0.000442,
+        "funding_apr": -0.48399
+      },
+      {
+        "symbol": "FOGOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FRAXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SKRUSDT",
+        "funding_rate_8h": 3.9e-05,
+        "funding_apr": 0.042705
+      },
+      {
+        "symbol": "GWEIUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ACUUSDT",
+        "funding_rate_8h": 0.00012,
+        "funding_apr": 0.13140000000000002
+      },
+      {
+        "symbol": "SENTUSDT",
+        "funding_rate_8h": -0.000144,
+        "funding_apr": -0.15768
+      },
+      {
+        "symbol": "ELSAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SPACEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FIGHTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BIRBUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "XPTUSDT",
+        "funding_rate_8h": 0.000307,
+        "funding_apr": 0.336165
+      },
+      {
+        "symbol": "XPDUSDT",
+        "funding_rate_8h": 0.000153,
+        "funding_apr": 0.167535
+      },
+      {
+        "symbol": "INXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TRIAUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AVGOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SPYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ESPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AZTECUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "OPNUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "ROBOUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "COSTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "WMTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TSMUSDT",
+        "funding_rate_8h": 3.7e-05,
+        "funding_apr": 0.040514999999999995
+      },
+      {
+        "symbol": "MANTRAUSDT",
+        "funding_rate_8h": -0.000311,
+        "funding_apr": -0.340545
+      },
+      {
+        "symbol": "BSBUSDT",
+        "funding_rate_8h": 0.000104,
+        "funding_apr": 0.11388
+      },
+      {
+        "symbol": "COPPERUSDT",
+        "funding_rate_8h": 1.6e-05,
+        "funding_apr": 0.01752
+      },
+      {
+        "symbol": "COPUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XOMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "OXYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "龙虾USDT",
+        "funding_rate_8h": 0.000151,
+        "funding_apr": 0.16534500000000002
+      },
+      {
+        "symbol": "CLUSDT",
+        "funding_rate_8h": -0.000134,
+        "funding_apr": -0.14673
+      },
+      {
+        "symbol": "EWJUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "EWYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CFGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KATUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "EWTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KWEBUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PRLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "TQQQUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SQQQUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BASEDUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "EDGEUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BZUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NATGASUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RKLBUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SOXLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SOXSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "INDAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "EWHUSDT",
+        "funding_rate_8h": -0.001501,
+        "funding_apr": -1.643595
+      },
+      {
+        "symbol": "OFCUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "GENIUSUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "FLYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SNDKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LITEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AMDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AMATUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "STXSTOCKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AAOIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "COHRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NBISUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "IONQUSDT",
+        "funding_rate_8h": 0.000179,
+        "funding_apr": 0.19600499999999998
+      },
+      {
+        "symbol": "CHIPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "OPGUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "CCUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "BLENDUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "OKLOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MPUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CRDOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CRWVUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "APLDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KLACUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PROSUSDT",
+        "funding_rate_8h": -6.4e-05,
+        "funding_apr": -0.07008
+      },
+      {
+        "symbol": "BILLUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "AXTIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LWLGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KOPNUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DRAMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "USARUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NIOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CBRSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "INFQUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "VRTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ETNUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NOKSTOCKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "OUSTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "POETUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ONDSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RDWUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "QCOMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "WDCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SMCIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ASTSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "10000NEXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SPCXUSDT",
+        "funding_rate_8h": 0.000158,
+        "funding_apr": 0.17301
+      },
+      {
+        "symbol": "NDX100USDT",
+        "funding_rate_8h": 0.000226,
+        "funding_apr": 0.24747
+      },
+      {
+        "symbol": "SP500USDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "JOBYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ACHRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RGTIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "QBTSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "QUBTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ARQQUSDT",
+        "funding_rate_8h": 0.002916,
+        "funding_apr": 3.19302
+      },
+      {
+        "symbol": "BRKBUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PANWUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SLXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "OPENAIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SNOWUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CTRUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "DELLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "QNTSTOCKUSDT",
+        "funding_rate_8h": 7.9e-05,
+        "funding_apr": 0.086505
+      },
+      {
+        "symbol": "EHUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "EVEXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RCATUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KTOSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DFENUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AVAVUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AXONUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LMTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RTXSTOCKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NOCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NOWUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NTAPUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "UNITASUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "SKHYNIXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SAMSUNGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "HYUNDAIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ANTHROPICUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SITMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SMRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BBSTOCKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KIOXIAUSDT",
+        "funding_rate_8h": 0.000213,
+        "funding_apr": 0.233235
+      },
+      {
+        "symbol": "TOKYOELUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SUMIELECUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ADVANTESTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LASERTECUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DOOSENERUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DOOSBOTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ZESTUSDT",
+        "funding_rate_8h": 0.000191,
+        "funding_apr": 0.20914500000000003
+      },
+      {
+        "symbol": "BTWUSDT",
+        "funding_rate_8h": 6.2e-05,
+        "funding_apr": 0.06789
+      },
+      {
+        "symbol": "PLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CIENUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AMCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MDBUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TWLOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DXYZUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ADBEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "IRENUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SPIRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SATLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "HPEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CRWDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "IWMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "RWATESTMEUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "SIMOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "GLWUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TSEMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "OSSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AEHRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "VUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TKOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ABNBUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CMCSAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "FOXAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MARUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NKEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BUDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CCLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DKNGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "UVXYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BMNRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ISRGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SGOVUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XLUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XLKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ROKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SMHUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CGNXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "FLNCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "REUSDT",
+        "funding_rate_8h": -0.00021,
+        "funding_apr": -0.22995000000000002
+      },
+      {
+        "symbol": "XNDUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LRCXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ALABUSDT",
+        "funding_rate_8h": 0.000746,
+        "funding_apr": 0.81687
+      },
+      {
+        "symbol": "MUUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TERUSDT",
+        "funding_rate_8h": 0.000109,
+        "funding_apr": 0.11935500000000002
+      },
+      {
+        "symbol": "KORUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "APDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "LINUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "FLEXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ADIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "GSUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CATUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "JPMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "GEVUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ARXUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "OUSDT",
+        "funding_rate_8h": -0.00725,
+        "funding_apr": -7.938750000000001
+      },
+      {
+        "symbol": "STRCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MINIMAXUSDT",
+        "funding_rate_8h": 0.00086,
+        "funding_apr": 0.9417
+      },
+      {
+        "symbol": "ZHIPUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MVLLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SONYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NESUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "RAMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CAPUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "WENUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AALUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "VOOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SOXXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TXNUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BACUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CRMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AMKRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PDDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ASXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TENCENTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "GIGADEVICEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SMICUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "POPMARTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XIAOMIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MEITUANUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NETEASEUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SKHYUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DIASTOCKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TTWOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ECHOUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "DISKUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CONLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "KSTRUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BSPUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "EUVUSDT",
+        "funding_rate_8h": 4.7e-05,
+        "funding_apr": 0.051465
+      },
+      {
+        "symbol": "FWDIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MSTUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BNCUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SSUMYUSDT",
+        "funding_rate_8h": 0.0001,
+        "funding_apr": 0.10950000000000001
+      },
+      {
+        "symbol": "YXTUSDT",
+        "funding_rate_8h": 5e-05,
+        "funding_apr": 0.05475000000000001
+      },
+      {
+        "symbol": "KUAISHOUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "INTWUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SNXXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "BOTUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XBIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TMUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MUFGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PKXUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "CPNGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "NVDLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TSLLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "GGLLUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AMZUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "METUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "AAPUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MSFUUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TZAUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "MINIMAXHKDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "XIAOMIHKDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "TENCENTHKDUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "ZHIPUHKDUSDT",
+        "funding_rate_8h": -3.9e-05,
+        "funding_apr": -0.042705
+      },
+      {
+        "symbol": "SHAZUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "SOFIUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      },
+      {
+        "symbol": "PENGUSDT",
+        "funding_rate_8h": 0.0,
+        "funding_apr": 0.0
+      }
+    ]
+  },
+  "bitget_loan_coininfos": {
+    "source": "https://api.bitget.com/api/v2/earn/loan/public/coinInfos",
+    "note": "Bitget 자체 USDT등 담보대출 상품의 차입자(borrower) 지불금리 -- lender 수취 확인용이 아니라 OKX avgRate와의 자릿수 교차확인용 보조 데이터.",
+    "rows": [
+      {
+        "coin": "USDT",
+        "rate_7d": 0.0274038135,
+        "rate_30d": 0.028708757
+      },
+      {
+        "coin": "USDC",
+        "rate_7d": 0.03451812,
+        "rate_30d": 0.03616184
+      },
+      {
+        "coin": "ETH",
+        "rate_7d": 0.0125732775,
+        "rate_30d": 0.013172005
+      },
+      {
+        "coin": "BTC",
+        "rate_7d": 0.002264703,
+        "rate_30d": 0.002372546
+      },
+      {
+        "coin": "BNB",
+        "rate_7d": 0.022567204,
+        "rate_30d": 0.024618768
+      },
+      {
+        "coin": "SOL",
+        "rate_7d": 0.031590383,
+        "rate_30d": 0.034462236
+      },
+      {
+        "coin": "TRX",
+        "rate_7d": 0.073686591,
+        "rate_30d": 0.080385372
+      },
+      {
+        "coin": "LINK",
+        "rate_7d": 0.044663245,
+        "rate_30d": 0.04872354
+      },
+      {
+        "coin": "XRP",
+        "rate_7d": 0.0185583825,
+        "rate_30d": 0.019442115
+      },
+      {
+        "coin": "AAVE",
+        "rate_7d": 0.034532916,
+        "rate_30d": 0.037672272
+      },
+      {
+        "coin": "GRAM",
+        "rate_7d": 0.125505215,
+        "rate_30d": 0.13691478
+      },
+      {
+        "coin": "U",
+        "rate_7d": 0.05,
+        "rate_30d": 0.06
+      },
+      {
+        "coin": "SUI",
+        "rate_7d": 0.029220719,
+        "rate_30d": 0.031877148
+      },
+      {
+        "coin": "TRUMP",
+        "rate_7d": 0.129132509,
+        "rate_30d": 0.140871828
+      },
+      {
+        "coin": "USDE",
+        "rate_7d": 0.043415141,
+        "rate_30d": 0.047361972
+      },
+      {
+        "coin": "ADA",
+        "rate_7d": 0.025109513,
+        "rate_30d": 0.027392196
+      },
+      {
+        "coin": "HYPE",
+        "rate_7d": 0.014181662,
+        "rate_30d": 0.015470904
+      },
+      {
+        "coin": "BGSOL",
+        "rate_7d": 0.011087362,
+        "rate_30d": 0.012095304
+      },
+      {
+        "coin": "ETHFI",
+        "rate_7d": 0.055156552,
+        "rate_30d": 0.060170784
+      },
+      {
+        "coin": "ZEC",
+        "rate_7d": 0.153160546,
+        "rate_30d": 0.167084232
+      },
+      {
+        "coin": "AB",
+        "rate_7d": 0.181392277,
+        "rate_30d": 0.197882484
+      },
+      {
+        "coin": "ENA",
+        "rate_7d": 0.056139435,
+        "rate_30d": 0.06124302
+      },
+      {
+        "coin": "XPL",
+        "rate_7d": 0.113205624,
+        "rate_30d": 0.118596368
+      },
+      {
+        "coin": "VIRTUAL",
+        "rate_7d": 0.043985634,
+        "rate_30d": 0.047984328
+      },
+      {
+        "coin": "HBAR",
+        "rate_7d": 0.018516223,
+        "rate_30d": 0.020199516
+      },
+      {
+        "coin": "RLUSD",
+        "rate_7d": 1.424688485,
+        "rate_30d": 1.29517135
+      },
+      {
+        "coin": "XAUT",
+        "rate_7d": 0.033194172,
+        "rate_30d": 0.036211824
+      },
+      {
+        "coin": "BONK",
+        "rate_7d": 0.171606061,
+        "rate_30d": 0.187206612
+      },
+      {
+        "coin": "AVAX",
+        "rate_7d": 0.054145047,
+        "rate_30d": 0.059067324
+      },
+      {
+        "coin": "SHIB",
+        "rate_7d": 0.016015054,
+        "rate_30d": 0.017470968
+      },
+      {
+        "coin": "DOT",
+        "rate_7d": 0.012753675,
+        "rate_30d": 0.0139131
+      },
+      {
+        "coin": "BCH",
+        "rate_7d": 0.014477672,
+        "rate_30d": 0.015793824
+      },
+      {
+        "coin": "NEAR",
+        "rate_7d": 0.021702703,
+        "rate_30d": 0.023675676
+      },
+      {
+        "coin": "LTC",
+        "rate_7d": 0.030437506,
+        "rate_30d": 0.033204552
+      },
+      {
+        "coin": "SEI",
+        "rate_7d": 0.017633055,
+        "rate_30d": 0.01923606
+      },
+      {
+        "coin": "XLM",
+        "rate_7d": 0.05233371,
+        "rate_30d": 0.05709132
+      },
+      {
+        "coin": "RENDER",
+        "rate_7d": 0.017651931,
+        "rate_30d": 0.019256652
+      },
+      {
+        "coin": "POL",
+        "rate_7d": 0.038542823,
+        "rate_30d": 0.042046716
+      },
+      {
+        "coin": "AXS",
+        "rate_7d": 0.0371602,
+        "rate_30d": 0.0405384
+      },
+      {
+        "coin": "PAXG",
+        "rate_7d": 0.071044644,
+        "rate_30d": 0.077503248
+      },
+      {
+        "coin": "ARB",
+        "rate_7d": 0.021375959,
+        "rate_30d": 0.023319228
+      },
+      {
+        "coin": "APT",
+        "rate_7d": 0.020619621,
+        "rate_30d": 0.022494132
+      },
+      {
+        "coin": "KAS",
+        "rate_7d": 0.016332844,
+        "rate_30d": 0.017817648
+      },
+      {
+        "coin": "AR",
+        "rate_7d": 0.015480047,
+        "rate_30d": 0.016887324
+      },
+      {
+        "coin": "INJ",
+        "rate_7d": 0.044361768,
+        "rate_30d": 0.048394656
+      },
+      {
+        "coin": "CFX",
+        "rate_7d": 0.070297656,
+        "rate_30d": 0.076688352
+      },
+      {
+        "coin": "CAKE",
+        "rate_7d": 0.022626197,
+        "rate_30d": 0.024683124
+      },
+      {
+        "coin": "CRV",
+        "rate_7d": 0.095148229,
+        "rate_30d": 0.103798068
+      },
+      {
+        "coin": "ICP",
+        "rate_7d": 0.018268932,
+        "rate_30d": 0.019929744
+      },
+      {
+        "coin": "FIL",
+        "rate_7d": 0.016760689,
+        "rate_30d": 0.018284388
+      },
+      {
+        "coin": "ETC",
+        "rate_7d": 0.017498184,
+        "rate_30d": 0.019088928
+      },
+      {
+        "coin": "ATOM",
+        "rate_7d": 0.108691594,
+        "rate_30d": 0.118572648
+      },
+      {
+        "coin": "LDO",
+        "rate_7d": 0.058603182,
+        "rate_30d": 0.012
+      },
+      {
+        "coin": "OP",
+        "rate_7d": 0.031108583,
+        "rate_30d": 0.033936636
+      },
+      {
+        "coin": "APE",
+        "rate_7d": 0.012552342,
+        "rate_30d": 0.013693464
+      },
+      {
+        "coin": "STX",
+        "rate_7d": 0.014937021,
+        "rate_30d": 0.016294932
+      },
+      {
+        "coin": "PEPE",
+        "rate_7d": 0.028515971,
+        "rate_30d": 0.031108332
+      },
+      {
+        "coin": "UNI",
+        "rate_7d": 0.057185436,
+        "rate_30d": 0.062384112
+      },
+      {
+        "coin": "ORDI",
+        "rate_7d": 0.014644168,
+        "rate_30d": 0.015975456
+      },
+      {
+        "coin": "DOGE",
+        "rate_7d": 0.029763976,
+        "rate_30d": 0.032469792
+      },
+      {
+        "coin": "WLD",
+        "rate_7d": 0.068028169,
+        "rate_30d": 0.074212548
+      },
+      {
+        "coin": "FLOKI",
+        "rate_7d": 0.039641459,
+        "rate_30d": 0.043245228
+      },
+      {
+        "coin": "TAO",
+        "rate_7d": 0.033480524,
+        "rate_30d": 0.036524208
+      },
+      {
+        "coin": "ONDO",
+        "rate_7d": 0.019143113,
+        "rate_30d": 0.020883396
+      },
+      {
+        "coin": "WIF",
+        "rate_7d": 0.015677981,
+        "rate_30d": 0.017103252
+      },
+      {
+        "coin": "PYTH",
+        "rate_7d": 0.012481095,
+        "rate_30d": 0.01361574
+      },
+      {
+        "coin": "TIA",
+        "rate_7d": 0.033900548,
+        "rate_30d": 0.036982416
+      },
+      {
+        "coin": "STRK",
+        "rate_7d": 0.040769498,
+        "rate_30d": 0.044475816
+      }
+    ]
+  },
+  "bitget_savings_probe": {
+    "endpoints_tried": [
+      "/api/v2/earn/savings/product",
+      "/api/v2/earn/savings/account"
+    ],
+    "results": [
+      {
+        "path": "/api/v2/earn/savings/product",
+        "status_code": 400,
+        "outcome": "auth_required",
+        "detail": "{\"code\":\"40006\",\"msg\":\"Invalid ACCESS_KEY\",\"requestTime\":1784801359951,\"data\":null}"
+      },
+      {
+        "path": "/api/v2/earn/savings/account",
+        "status_code": 400,
+        "outcome": "auth_required",
+        "detail": "{\"code\":\"40006\",\"msg\":\"Invalid ACCESS_KEY\",\"requestTime\":1784801360161,\"data\":null}"
+      }
+    ],
+    "conclusion": "auth_required (또는 not_found) -- Bitget 자체 스팟자산 대여(savings) 상품의 공개(비인증) 확인 불가. SPEC.md 치명적 한계 3: 거래소간 분리(OKX 대여/Bitget 실행) 노출을 해소하지 못했다 -- 미해결 리스크로 리포트에 명시."
+  },
+  "by_symbol": {
+    "BTCUSDT": {
+      "base_ccy_matched": "BTC",
+      "lending_apr": 0.005,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.022995,
+      "bitget_funding_available": true
+    },
+    "ETHUSDT": {
+      "base_ccy_matched": "ETH",
+      "lending_apr": 0.015,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.01314,
+      "bitget_funding_available": true
+    },
+    "SOLUSDT": {
+      "base_ccy_matched": "SOL",
+      "lending_apr": 0.0465,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.012045,
+      "bitget_funding_available": true
+    },
+    "ZECUSDT": {
+      "base_ccy_matched": "ZEC",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "XRPUSDT": {
+      "base_ccy_matched": "XRP",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.02409,
+      "bitget_funding_available": true
+    },
+    "WLDUSDT": {
+      "base_ccy_matched": "WLD",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "DOGEUSDT": {
+      "base_ccy_matched": "DOGE",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.033945,
+      "bitget_funding_available": true
+    },
+    "BNBUSDT": {
+      "base_ccy_matched": "BNB",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SYNUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.660285,
+      "bitget_funding_available": true
+    },
+    "ADAUSDT": {
+      "base_ccy_matched": "ADA",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.018615,
+      "bitget_funding_available": true
+    },
+    "NEARUSDT": {
+      "base_ccy_matched": "NEAR",
+      "lending_apr": 0.0191,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SUIUSDT": {
+      "base_ccy_matched": "SUI",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.044895000000000004,
+      "bitget_funding_available": true
+    },
+    "XLMUSDT": {
+      "base_ccy_matched": "XLM",
+      "lending_apr": 0.058,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.058035,
+      "bitget_funding_available": true
+    },
+    "AAVEUSDT": {
+      "base_ccy_matched": "AAVE",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "TAOUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ENAUSDT": {
+      "base_ccy_matched": "ENA",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.005475000000000001,
+      "bitget_funding_available": true
+    },
+    "UNIUSDT": {
+      "base_ccy_matched": "UNI",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.06351,
+      "bitget_funding_available": true
+    },
+    "AVAXUSDT": {
+      "base_ccy_matched": "AVAX",
+      "lending_apr": 0.11,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "LINKUSDT": {
+      "base_ccy_matched": "LINK",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.09198,
+      "bitget_funding_available": true
+    },
+    "BCHUSDT": {
+      "base_ccy_matched": "BCH",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.07446,
+      "bitget_funding_available": true
+    },
+    "VANRYUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -1.35999,
+      "bitget_funding_available": true
+    },
+    "TLMUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -9.426855000000002,
+      "bitget_funding_available": true
+    },
+    "FILUSDT": {
+      "base_ccy_matched": "FIL",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.13140000000000002,
+      "bitget_funding_available": true
+    },
+    "JTOUSDT": {
+      "base_ccy_matched": "JTO",
+      "lending_apr": 0.1067,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.051465,
+      "bitget_funding_available": true
+    },
+    "BICOUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "DEXEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -9.16953,
+      "bitget_funding_available": true
+    },
+    "PAXGUSDT": {
+      "base_ccy_matched": "PAXG",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.01533,
+      "bitget_funding_available": true
+    },
+    "PUMPUSDT": {
+      "base_ccy_matched": "PUMP",
+      "lending_apr": 0.1505,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ONDOUSDT": {
+      "base_ccy_matched": "ONDO",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05256,
+      "bitget_funding_available": true
+    },
+    "DOTUSDT": {
+      "base_ccy_matched": "DOT",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "LTCUSDT": {
+      "base_ccy_matched": "LTC",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.043800000000000006,
+      "bitget_funding_available": true
+    },
+    "TRUMPUSDT": {
+      "base_ccy_matched": "TRUMP",
+      "lending_apr": 0.0747,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "HEIUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "TRXUSDT": {
+      "base_ccy_matched": "TRX",
+      "lending_apr": 0.2291,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.141255,
+      "bitget_funding_available": true
+    },
+    "AGLDUSDT": {
+      "base_ccy_matched": "AGLD",
+      "lending_apr": 0.2047,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.134685,
+      "bitget_funding_available": true
+    },
+    "INJUSDT": {
+      "base_ccy_matched": "INJ",
+      "lending_apr": 0.0657,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "TUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.421575,
+      "bitget_funding_available": true
+    },
+    "HMSTRUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "ARBUSDT": {
+      "base_ccy_matched": "ARB",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "TNSRUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "IDUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.00657,
+      "bitget_funding_available": true
+    },
+    "XMRUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "FETUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.086505,
+      "bitget_funding_available": true
+    },
+    "RIFUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "BELUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "PENGUUSDT": {
+      "base_ccy_matched": "PENGU",
+      "lending_apr": 0.101,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.00657,
+      "bitget_funding_available": true
+    },
+    "TIAUSDT": {
+      "base_ccy_matched": "TIA",
+      "lending_apr": 0.1663,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.043800000000000006,
+      "bitget_funding_available": true
+    },
+    "EPICUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.45223500000000005,
+      "bitget_funding_available": true
+    },
+    "SKLUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.50151,
+      "bitget_funding_available": true
+    },
+    "DYDXUSDT": {
+      "base_ccy_matched": "DYDX",
+      "lending_apr": 0.0821,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "HBARUSDT": {
+      "base_ccy_matched": "HBAR",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "APTUSDT": {
+      "base_ccy_matched": "APT",
+      "lending_apr": 0.0776,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.073365,
+      "bitget_funding_available": true
+    },
+    "WIFUSDT": {
+      "base_ccy_matched": "WIF",
+      "lending_apr": 0.0512,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "EIGENUSDT": {
+      "base_ccy_matched": "EIGEN",
+      "lending_apr": 0.0766,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "VIRTUALUSDT": {
+      "base_ccy_matched": "VIRTUAL",
+      "lending_apr": 0.107,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.10840499999999999,
+      "bitget_funding_available": true
+    },
+    "ORDIUSDT": {
+      "base_ccy_matched": "ORDI",
+      "lending_apr": 0.0777,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ICPUSDT": {
+      "base_ccy_matched": "ICP",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "OPUSDT": {
+      "base_ccy_matched": "OP",
+      "lending_apr": 0.1154,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SXTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.23214,
+      "bitget_funding_available": true
+    },
+    "ACTUSDT": {
+      "base_ccy_matched": "ACT",
+      "lending_apr": 0.2295,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "RESOLVUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "MANTAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "JUPUSDT": {
+      "base_ccy_matched": "JUP",
+      "lending_apr": 0.1105,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "LDOUSDT": {
+      "base_ccy_matched": "LDO",
+      "lending_apr": 0.0777,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "ETCUSDT": {
+      "base_ccy_matched": "ETC",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "KAITOUSDT": {
+      "base_ccy_matched": "KAITO",
+      "lending_apr": 0.4966,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.19491,
+      "bitget_funding_available": true
+    },
+    "HOMEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.215715,
+      "bitget_funding_available": true
+    },
+    "BLURUSDT": {
+      "base_ccy_matched": "BLUR",
+      "lending_apr": 0.4004,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "DASHUSDT": {
+      "base_ccy_matched": "DASH",
+      "lending_apr": 0.0269,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "AEROUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.25294500000000003,
+      "bitget_funding_available": true
+    },
+    "YFIUSDT": {
+      "base_ccy_matched": "YFI",
+      "lending_apr": 0.1324,
+      "lending_available": true,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "ETHFIUSDT": {
+      "base_ccy_matched": "ETHFI",
+      "lending_apr": 0.1043,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "STGUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ALICEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.15111,
+      "bitget_funding_available": true
+    },
+    "AXSUSDT": {
+      "base_ccy_matched": "AXS",
+      "lending_apr": 0.1274,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "CHZUSDT": {
+      "base_ccy_matched": "CHZ",
+      "lending_apr": 0.1949,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.02847,
+      "bitget_funding_available": true
+    },
+    "CRVUSDT": {
+      "base_ccy_matched": "CRV",
+      "lending_apr": 0.0598,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "THEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05256,
+      "bitget_funding_available": true
+    },
+    "ARPAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "PENDLEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.032850000000000004,
+      "bitget_funding_available": true
+    },
+    "ALGOUSDT": {
+      "base_ccy_matched": "ALGO",
+      "lending_apr": 0.2428,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "RENDERUSDT": {
+      "base_ccy_matched": "RENDER",
+      "lending_apr": 0.0433,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ZROUSDT": {
+      "base_ccy_matched": "ZRO",
+      "lending_apr": 0.0417,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SEIUSDT": {
+      "base_ccy_matched": "SEI",
+      "lending_apr": 0.1143,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.106215,
+      "bitget_funding_available": true
+    },
+    "SAHARAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "PORTALUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "GUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.005475000000000001,
+      "bitget_funding_available": true
+    },
+    "PYTHUSDT": {
+      "base_ccy_matched": "PYTH",
+      "lending_apr": 0.0467,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ATOMUSDT": {
+      "base_ccy_matched": "ATOM",
+      "lending_apr": 0.1881,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.32521500000000003,
+      "bitget_funding_available": true
+    },
+    "BIOUSDT": {
+      "base_ccy_matched": "BIO",
+      "lending_apr": 0.1521,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "LAYERUSDT": {
+      "base_ccy_matched": "LAYER",
+      "lending_apr": 0.2588,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SUSDT": {
+      "base_ccy_matched": "S",
+      "lending_apr": 0.1033,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.17848500000000003,
+      "bitget_funding_available": true
+    },
+    "MORPHOUSDT": {
+      "base_ccy_matched": "MORPHO",
+      "lending_apr": 0.0959,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SANDUSDT": {
+      "base_ccy_matched": "SAND",
+      "lending_apr": 0.1065,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "APEUSDT": {
+      "base_ccy_matched": "APE",
+      "lending_apr": 0.0751,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "POLUSDT": {
+      "base_ccy_matched": "POL",
+      "lending_apr": 0.01,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.07008,
+      "bitget_funding_available": true
+    },
+    "GALAUSDT": {
+      "base_ccy_matched": "GALA",
+      "lending_apr": 0.153,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "RPLUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "TRBUSDT": {
+      "base_ccy_matched": "TRB",
+      "lending_apr": 0.1316,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "WUSDT": {
+      "base_ccy_matched": "W",
+      "lending_apr": 0.1923,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "POWRUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SPELLUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -1.73229,
+      "bitget_funding_available": true
+    },
+    "HOTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "PARTIUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.06898499999999999,
+      "bitget_funding_available": true
+    },
+    "MANAUSDT": {
+      "base_ccy_matched": "MANA",
+      "lending_apr": 0.1086,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.07774500000000001,
+      "bitget_funding_available": true
+    },
+    "OGNUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SYRUPUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.003285,
+      "bitget_funding_available": true
+    },
+    "BERAUSDT": {
+      "base_ccy_matched": "BERA",
+      "lending_apr": 0.2227,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "LUMIAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "BABYUSDT": {
+      "base_ccy_matched": "BABY",
+      "lending_apr": 0.1808,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "STRKUSDT": {
+      "base_ccy_matched": "STRK",
+      "lending_apr": 0.0424,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SAGAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "EGLDUSDT": {
+      "base_ccy_matched": "EGLD",
+      "lending_apr": 0.0519,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "IOUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "CAKEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.12264,
+      "bitget_funding_available": true
+    },
+    "ZENUSDT": {
+      "base_ccy_matched": "ZEN",
+      "lending_apr": 0.0862,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "PUNDIXUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "FIDAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ENJUSDT": {
+      "base_ccy_matched": "ENJ",
+      "lending_apr": 0.1707,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "AERGOUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "ORCAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.04818,
+      "bitget_funding_available": true
+    },
+    "MEUSDT": {
+      "base_ccy_matched": "ME",
+      "lending_apr": 0.4905,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.204765,
+      "bitget_funding_available": true
+    },
+    "BANANAS31USDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ENSUSDT": {
+      "base_ccy_matched": "ENS",
+      "lending_apr": 0.0399,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SNXUSDT": {
+      "base_ccy_matched": "SNX",
+      "lending_apr": 0.2993,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "ARUSDT": {
+      "base_ccy_matched": "AR",
+      "lending_apr": 0.049,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.06898499999999999,
+      "bitget_funding_available": true
+    },
+    "GPSUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "MEMEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "CELOUSDT": {
+      "base_ccy_matched": "CELO",
+      "lending_apr": 0.1781,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "STOUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "HYPERUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "MOVEUSDT": {
+      "base_ccy_matched": "MOVE",
+      "lending_apr": 0.305,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "DOGSUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ZKUSDT": {
+      "base_ccy_matched": "ZK",
+      "lending_apr": 0.1001,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "TURBOUSDT": {
+      "base_ccy_matched": "TURBO",
+      "lending_apr": 0.0622,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "NEIROUSDT": {
+      "base_ccy_matched": "NEIRO",
+      "lending_apr": 0.1467,
+      "lending_available": true,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "GUNUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "IOTAUSDT": {
+      "base_ccy_matched": "IOTA",
+      "lending_apr": 0.1891,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SCRTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "PNUTUSDT": {
+      "base_ccy_matched": "PNUT",
+      "lending_apr": 0.1156,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "VETUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "THETAUSDT": {
+      "base_ccy_matched": "THETA",
+      "lending_apr": 0.2253,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "RAREUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "WALUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05037,
+      "bitget_funding_available": true
+    },
+    "VICUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "TSTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "CFXUSDT": {
+      "base_ccy_matched": "CFX",
+      "lending_apr": 0.0695,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "LAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.079935,
+      "bitget_funding_available": true
+    },
+    "MAGICUSDT": {
+      "base_ccy_matched": "MAGIC",
+      "lending_apr": 0.1975,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "SPKUSDT": {
+      "base_ccy_matched": "SPK",
+      "lending_apr": 0.1508,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "RUNEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.03942,
+      "bitget_funding_available": true
+    },
+    "NILUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "BANKUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "STXUSDT": {
+      "base_ccy_matched": "STX",
+      "lending_apr": 0.0898,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.19819500000000004,
+      "bitget_funding_available": true
+    },
+    "GRTUSDT": {
+      "base_ccy_matched": "GRT",
+      "lending_apr": 0.1736,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "STORJUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "JASMYUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "USDCUSDT": {
+      "base_ccy_matched": "USDC",
+      "lending_apr": 0.025,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.082125,
+      "bitget_funding_available": true
+    },
+    "BOMEUSDT": {
+      "base_ccy_matched": "BOME",
+      "lending_apr": 0.1183,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "MOVRUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "HUMAUSDT": {
+      "base_ccy_matched": "HUMA",
+      "lending_apr": 0.1176,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.03723,
+      "bitget_funding_available": true
+    },
+    "JSTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.110595,
+      "bitget_funding_available": true
+    },
+    "PLUMEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "DYMUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "IMXUSDT": {
+      "base_ccy_matched": "IMX",
+      "lending_apr": 0.115,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "COMPUSDT": {
+      "base_ccy_matched": "COMP",
+      "lending_apr": 0.0991,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "ONGUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ARKMUSDT": {
+      "base_ccy_matched": "ARKM",
+      "lending_apr": 0.0809,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "ALTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "REDUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "NOTUSDT": {
+      "base_ccy_matched": "NOT",
+      "lending_apr": 0.145,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "QNTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.12921,
+      "bitget_funding_available": true
+    },
+    "ACEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": -0.28251,
+      "bitget_funding_available": true
+    },
+    "COOKIEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "PEOPLEUSDT": {
+      "base_ccy_matched": "PEOPLE",
+      "lending_apr": 0.0692,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SUSHIUSDT": {
+      "base_ccy_matched": "SUSHI",
+      "lending_apr": 0.114,
+      "lending_available": true,
+      "bitget_funding_apr_current": -0.033945,
+      "bitget_funding_available": true
+    },
+    "XTZUSDT": {
+      "base_ccy_matched": "XTZ",
+      "lending_apr": 0.155,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ANIMEUSDT": {
+      "base_ccy_matched": "ANIME",
+      "lending_apr": 0.0905,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "PHAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "EDUUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": null,
+      "bitget_funding_available": false
+    },
+    "BANANAUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "GMTUSDT": {
+      "base_ccy_matched": "GMT",
+      "lending_apr": 0.2612,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "GLMUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "AUSDT": {
+      "base_ccy_matched": "A",
+      "lending_apr": 0.0874,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "PIXELUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "AWEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ARKUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "1MBABYDOGEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "ROSEUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "ONTUSDT": {
+      "base_ccy_matched": "ONT",
+      "lending_apr": 0.2656,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "WCTUSDT": {
+      "base_ccy_matched": "WCT",
+      "lending_apr": 0.19,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "GASUSDT": {
+      "base_ccy_matched": "GAS",
+      "lending_apr": 0.218,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "MINAUSDT": {
+      "base_ccy_matched": "MINA",
+      "lending_apr": 0.1044,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    },
+    "SIGNUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "KERNELUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.04161,
+      "bitget_funding_available": true
+    },
+    "KMNOUSDT": {
+      "base_ccy_matched": "KMNO",
+      "lending_apr": 0.2678,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "API3USDT": {
+      "base_ccy_matched": "API3",
+      "lending_apr": 0.1194,
+      "lending_available": true,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "AIXBTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "CATIUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.05475000000000001,
+      "bitget_funding_available": true
+    },
+    "HFTUSDT": {
+      "base_ccy_matched": null,
+      "lending_apr": 0.0,
+      "lending_available": false,
+      "bitget_funding_apr_current": 0.10950000000000001,
+      "bitget_funding_available": true
+    }
+  },
+  "universe_summary": {
+    "n_symbols": 200,
+    "n_with_lending": 112,
+    "n_with_lending_pct": 56.00000000000001,
+    "n_with_current_funding": 188
+  }
+}

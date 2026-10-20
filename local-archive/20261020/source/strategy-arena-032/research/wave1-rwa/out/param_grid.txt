@@ -1,0 +1,9 @@
+XAUUSDT 15m BEST lb60 opp L3: train +100.4%/30% -> TEST -10.9% mdd 23% trades 69 daily -0.134% (86d)
+XAUUSDT 1H BEST lb60 trail L3: train +28.2%/31% -> TEST +5.0% mdd 14% trades 49 daily +0.056% (86d)
+XAUUSDT 4H BEST lb120 trail L3: train +73.1%/26% -> TEST -11.9% mdd 18% trades 10 daily -0.147% (86d)
+ETHUSDT 15m: train 통과 셀 0
+ETHUSDT 1H: train 통과 셀 0
+ETHUSDT 4H: train 통과 셀 0
+BTCUSDT 15m: train 통과 셀 0
+BTCUSDT 1H: train 통과 셀 0
+BTCUSDT 4H: train 통과 셀 0

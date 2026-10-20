@@ -1,0 +1,222 @@
+{
+  "candidate_id": "W2c",
+  "family": "funding_carry",
+  "source": {
+    "result": "research\\wave2\\results\\W2c.json",
+    "cache": "research\\wave1\\cache"
+  },
+  "period": {
+    "equity_points": 2509,
+    "trade_count": 601,
+    "start": "2019-09-01T00:00:00+00:00",
+    "end": "2026-07-14T00:00:00+00:00"
+  },
+  "input_contract": {
+    "trade_return_semantic": "closed_trade_net_simple_return",
+    "trade_bootstrap_eligible": true
+  },
+  "cache_integrity": {
+    "status": "FAIL",
+    "manifest": "research\\wave2\\cache_manifest.json",
+    "checked_files": 45,
+    "mismatches": [
+      "missing manifest entry: binance_funding_0GUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ALLOUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ASTERUSDT.csv.gz",
+      "missing manifest entry: binance_funding_BANKUSDT.csv.gz",
+      "missing manifest entry: binance_funding_BNBUSDT.csv.gz",
+      "missing manifest entry: binance_funding_DASHUSDT.csv.gz",
+      "missing manifest entry: binance_funding_DEXEUSDT.csv.gz",
+      "missing manifest entry: binance_funding_EIGENUSDT.csv.gz",
+      "missing manifest entry: binance_funding_FFUSDT.csv.gz",
+      "missing manifest entry: binance_funding_GRAMUSDT.csv.gz",
+      "missing manifest entry: binance_funding_HOMEUSDT.csv.gz",
+      "missing manifest entry: binance_funding_KAITOUSDT.csv.gz",
+      "missing manifest entry: binance_funding_LITUSDT.csv.gz",
+      "missing manifest entry: binance_funding_METUSDT.csv.gz",
+      "missing manifest entry: binance_funding_PAXGUSDT.csv.gz",
+      "missing manifest entry: binance_funding_PENGUUSDT.csv.gz",
+      "missing manifest entry: binance_funding_PUMPUSDT.csv.gz",
+      "missing manifest entry: binance_funding_REUSDT.csv.gz",
+      "missing manifest entry: binance_funding_SXTUSDT.csv.gz",
+      "missing manifest entry: binance_funding_SYNUSDT.csv.gz",
+      "missing manifest entry: binance_funding_TAOUSDT.csv.gz",
+      "missing manifest entry: binance_funding_TRUMPUSDT.csv.gz",
+      "missing manifest entry: binance_funding_USDCUSDT.csv.gz",
+      "missing manifest entry: binance_funding_VIRTUALUSDT.csv.gz",
+      "missing manifest entry: binance_funding_WLFIUSDT.csv.gz",
+      "missing manifest entry: binance_funding_XAUTUSDT.csv.gz",
+      "missing manifest entry: binance_funding_XMRUSDT.csv.gz",
+      "missing manifest entry: binance_funding_XPLUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ZBTUSDT.csv.gz",
+      "missing manifest entry: binance_funding_ZECUSDT.csv.gz",
+      "missing manifest entry: bitget_funding_BTCUSDT.csv.gz",
+      "missing manifest entry: bitget_funding_ETHUSDT.csv.gz",
+      "missing manifest entry: bitget_funding_SOLUSDT.csv.gz"
+    ]
+  },
+  "bootstrap_mc": {
+    "unit": {
+      "p05": 720.6789556924524,
+      "ruin_probability": 0.0,
+      "mean": 869.9974994381681,
+      "median": 858.4801850412709
+    },
+    "quarter_kelly": {
+      "p05": 1372275189.1447618,
+      "ruin_probability": 0.0,
+      "mean": 111893011320.24072,
+      "median": 19255012834.03782
+    },
+    "kelly_fraction": 75.35386096516443,
+    "quarter_kelly_fraction": 18.838465241291107,
+    "paths": 10000,
+    "trade_count": 601
+  },
+  "leave_one_year_out": [
+    {
+      "year": 2019,
+      "heldout_return": 0.01041134943242028,
+      "heldout_sharpe": 5.379091330677057,
+      "remaining_return": 1.7383187653705363,
+      "remaining_sharpe": 4.258005204774817,
+      "heldout_days": 121,
+      "remaining_days": 2387
+    },
+    {
+      "year": 2020,
+      "heldout_return": 0.32240774374373093,
+      "heldout_sharpe": 9.24381864801269,
+      "remaining_return": 1.0922656964041089,
+      "remaining_sharpe": 3.4932762040598293,
+      "heldout_days": 366,
+      "remaining_days": 2142
+    },
+    {
+      "year": 2021,
+      "heldout_return": 0.6201561624126048,
+      "heldout_sharpe": 12.03615396256788,
+      "remaining_return": 0.7077541184511698,
+      "remaining_sharpe": 2.7175597905423605,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2022,
+      "heldout_return": 0.008722020185723656,
+      "heldout_sharpe": 2.7849208181025,
+      "remaining_return": 1.7429046888306683,
+      "remaining_sharpe": 4.513866037396863,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2023,
+      "heldout_return": 0.06492069963013547,
+      "heldout_sharpe": 7.038053981099607,
+      "remaining_return": 1.598154360090033,
+      "remaining_sharpe": 4.2798874834010405,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2024,
+      "heldout_return": 0.19723364826760692,
+      "heldout_sharpe": 2.656824954886686,
+      "remaining_return": 1.3110178726581534,
+      "remaining_sharpe": 5.502119558046395,
+      "heldout_days": 366,
+      "remaining_days": 2142
+    },
+    {
+      "year": 2025,
+      "heldout_return": -0.00568674403906666,
+      "heldout_sharpe": -0.18632246131373115,
+      "remaining_return": 1.7826525919341423,
+      "remaining_sharpe": 4.808790057693024,
+      "heldout_days": 365,
+      "remaining_days": 2143
+    },
+    {
+      "year": 2026,
+      "heldout_return": -0.0005275488069412804,
+      "heldout_sharpe": -1.3681355458414457,
+      "remaining_return": 1.7682887663301141,
+      "remaining_sharpe": 4.375052945430737,
+      "heldout_days": 195,
+      "remaining_days": 2313
+    }
+  ],
+  "deflated_sharpe": {
+    "observed_sharpe": 4.190721739745427,
+    "benchmark_sharpe": 2.2173963328560924,
+    "score": 1.819724896209657,
+    "probability": 0.965599545006255,
+    "n_days": 2508,
+    "skew": 19.517012502823466,
+    "kurtosis": 690.8648410865036,
+    "trials": 28
+  },
+  "bitget_native": {
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT"
+    ],
+    "observations": 738,
+    "score_correlation": 0.6710970564345535,
+    "entry_agreement": 1.0,
+    "sign_agreement": 0.7642276422764228,
+    "coverage_days": 82,
+    "required_coverage_days": 133,
+    "coverage_sufficient": false
+  },
+  "regime_block_bootstrap": {
+    "block_days": 90,
+    "block_count": 18,
+    "paths": 1000,
+    "mdd_p05": 0.014698898580313369,
+    "mdd_median": 0.01469889858031359,
+    "mdd_p95": 0.014791460875133592,
+    "final_p05": 864.4704217816377,
+    "final_median": 864.4704217816396,
+    "final_p95": 864.4704217816414,
+    "final_capital_invariant": true
+  },
+  "criteria": {
+    "mc": {
+      "status": "PASS",
+      "p05_gt_300": true,
+      "ruin_lt_5pct": true,
+      "input_semantic": "closed_trade_net_simple_return"
+    },
+    "dsr": {
+      "status": "PASS",
+      "score_gt_0": true
+    },
+    "bitget_sign": {
+      "status": "FAIL",
+      "sign_gt_80pct": false,
+      "coverage_sufficient": false,
+      "cache_integrity": "FAIL"
+    },
+    "loo": {
+      "status": "PASS",
+      "years": 8
+    },
+    "regime_blocks": {
+      "status": "PASS",
+      "blocks": 18
+    }
+  },
+  "overall": {
+    "status": "FAIL",
+    "required_checks": [
+      "mc",
+      "dsr",
+      "bitget_sign",
+      "loo",
+      "regime_blocks"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+from research.wave2.funding import W2_FUNDING_CANDIDATES, W2_FUNDING_IDS
+
+W2_IDS = (*W2_FUNDING_IDS, "W2g")
+
+__all__ = ["W2_IDS", "W2_FUNDING_CANDIDATES", "W2_FUNDING_IDS"]

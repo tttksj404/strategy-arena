@@ -1,0 +1,8 @@
+{
+  "external_replay_verified": true,
+  "findings": [],
+  "input": "research/wave33_graph_harness/results/run.json",
+  "input_sha256": "67b3c89469acb562bf47f44b94ceea78635b4dd3b675885b4f9c6dd44773d4e7",
+  "passed": true,
+  "status": "passed"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.1",
+  "slug": "short-profit",
+  "status": "passed",
+  "validation_mode": "mission-validator-script",
+  "iteration": 1,
+  "mission_path": ".omx/specs/autoresearch-short-profit/mission.md",
+  "sandbox_path": ".omx/specs/autoresearch-short-profit/sandbox.md",
+  "completion_artifact_path": ".omx/specs/autoresearch-short-profit/result.json",
+  "output_artifact_path": "research/wave33_graph_harness/results/run.json",
+  "mission_validator_command": "uv run research/wave33_graph_harness/validate_wave33.py --input research/wave33_graph_harness/results/run.json --output .omx/specs/autoresearch-short-profit/result.json",
+  "research_decision": "strategy_rejected",
+  "run_id": "f45fdfd8fc8ff23e",
+  "output_sha256": "67b3c89469acb562bf47f44b94ceea78635b4dd3b675885b4f9c6dd44773d4e7",
+  "validation_evidence_sha256": "198bc53fcc4b325296473816e86055420af781963438d149da0e4a80d8a0c09e",
+  "luna_review_verdict": "PASS",
+  "current_hypothesis": "The bounded graph loop is reproducible, but the selected strategy is rejected because DSR is zero, the sealed test has six trades, and perpetual funding is unmodeled."
+}

@@ -1,0 +1,22 @@
+{
+  "artifact_replay_passed": false,
+  "decision": "research_only",
+  "experiment_status": "invalidated_postholdout_audit",
+  "findings": [
+    "combined-extreme:catastrophic_path",
+    "validation_dsr_below_0.95",
+    "holdout_dsr_below_0.95",
+    "negative_one_shot_holdout",
+    "postholdout_source_remediation_invalidates_historical_final",
+    "holdout_attempt_contract_mismatch"
+  ],
+  "historical_final_artifact_sha256": "01e84e00859ad89709826cd4f395c79166551b9aa5cdf3b6d13c7dc4cc462a12",
+  "holdout_may_be_reused": false,
+  "passed": false,
+  "remediation_review": "LUNA_REMEDIATION_VERDICT: PASS",
+  "remediation_verified": true,
+  "schema_version": "omx-autoresearch-result/v2",
+  "strategy_approved": false,
+  "strategy_gates_passed": false,
+  "validator_command": "uv run research/wave35_multi_exchange/run_wave35.py validate"
+}
