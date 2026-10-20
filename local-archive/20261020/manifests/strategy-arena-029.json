@@ -1,0 +1,89 @@
+{
+  "Schema": "project-local-backup/v1",
+  "Name": "strategy-arena-029",
+  "Repository": "tttksj404/strategy-arena",
+  "OriginalRoot": "C:\\Users\\SSAFY\\Desktop\\2학기\\.domain-separation-20260715\\verify-public-strategy-arena",
+  "OriginalHead": "77453901570c3bf09a991cdb5bd27af7bc75f752",
+  "OriginalBranch": "main",
+  "Files": [
+    {
+      "Relative": ".gitignore",
+      "Bytes": 392,
+      "Sha256": "0f0eb47f4a84cb49e269ef0b61d76c233727960665d443ee9323354609a93ebe"
+    },
+    {
+      "Relative": "docs/RESEARCH_GUARDRAILS.md",
+      "Bytes": 964,
+      "Sha256": "f35d7d7f9fad5c73b9a8e7b4222689a56570d093eb1f9c79832b3cf1bf8c26de"
+    },
+    {
+      "Relative": "README.md",
+      "Bytes": 893,
+      "Sha256": "c4d5fad514e0be9ab801ef2eb75b9dc1c9ec6a81215ed680c10282677882b890"
+    }
+  ],
+  "Assets": [
+    {
+      "Name": "strategy-arena-029-part-0001.zip",
+      "Bytes": 2206,
+      "Sha256": "cae86502851d5c2853437831f1bcc27dd6e2d9eab8753a82429c8b1696e999ed",
+      "AssetId": 657780177,
+      "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-14271a75012ca0db067a/strategy-arena-029-part-0001.zip"
+    },
+    {
+      "Name": "history.bundle.aes",
+      "Bytes": 95562288,
+      "Sha256": "ae4f5b9d4cdbcaadd3eeebc19f663b67884e22072da9d617b98afd18e180a69e",
+      "AssetId": 657780420,
+      "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-14271a75012ca0db067a/history.bundle.aes"
+    },
+    {
+      "Name": "git-metadata.zip.aes",
+      "Bytes": 99198984,
+      "Sha256": "5e8a1ac40894544c4adcae58290fa36f5b5ecc236ba58bcf631686cab3e1742e",
+      "AssetId": 657781641,
+      "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-14271a75012ca0db067a/git-metadata.zip.aes"
+    }
+  ],
+  "EncryptedPayloads": [
+    {
+      "Kind": "GitHistory",
+      "Asset": {
+        "Name": "history.bundle.aes",
+        "Bytes": 95562288,
+        "Sha256": "ae4f5b9d4cdbcaadd3eeebc19f663b67884e22072da9d617b98afd18e180a69e",
+        "AssetId": 657780420,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-14271a75012ca0db067a/history.bundle.aes"
+      },
+      "PlaintextSha256": "246a3e457b03aa1f8ae5f7c9ca865b532bbb78923f427eaf53c1f429b659a5c9"
+    },
+    {
+      "Kind": "CompleteGitMetadata",
+      "Asset": {
+        "Name": "git-metadata.zip.aes",
+        "Bytes": 99198984,
+        "Sha256": "5e8a1ac40894544c4adcae58290fa36f5b5ecc236ba58bcf631686cab3e1742e",
+        "AssetId": 657781641,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-14271a75012ca0db067a/git-metadata.zip.aes"
+      },
+      "PlaintextSha256": "054a75200e4a281963567df318d84d493bb02645bf92957a37aa6e405d5250a5"
+    }
+  ],
+  "Links": [],
+  "ExcludedRoots": [
+    {
+      "Relative": ".git",
+      "Bytes": 0,
+      "ModifiedUtc": null,
+      "Category": "GitMetadata"
+    }
+  ],
+  "EncryptedPrivateFiles": 0,
+  "History": {
+    "Sha256": "246a3e457b03aa1f8ae5f7c9ca865b532bbb78923f427eaf53c1f429b659a5c9",
+    "Bytes": 95560412,
+    "Uploaded": true,
+    "Encrypted": true
+  },
+  "CreatedUtc": "2026-10-20T00:02:27.7545676Z"
+}

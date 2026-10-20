@@ -1,0 +1,13 @@
+{
+  "active": false,
+  "completion_artifact_path": ".omx/specs/autoresearch-multi-exchange-risk/result.json",
+  "decision": "research_only",
+  "mission_validator_command": "uv run research/wave35_multi_exchange/run_wave35.py validate",
+  "output_artifact_path": "research/wave35_multi_exchange/results/POSTHOLDOUT_INVALIDATION.md",
+  "remediation_verified": true,
+  "result_interpretation": "current_experiment_invalidated_structural_fix_only",
+  "slug": "multi-exchange-risk",
+  "status": "failed_closed",
+  "strategy_approved": false,
+  "validation_mode": "mission-validator-script"
+}

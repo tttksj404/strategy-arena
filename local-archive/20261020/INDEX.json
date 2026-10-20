@@ -1,0 +1,82 @@
+{
+  "Project": "tttksj404/strategy-arena",
+  "OriginalMain": "898393686448a3d2e34255f556ddaa38e16dfb94",
+  "Roots": [
+    {
+      "Name": "strategy-arena-029",
+      "Tag": "local-backup-20261020-strategy-arena-029",
+      "ManifestAsset": {
+        "Name": "manifest.json",
+        "Bytes": 3252,
+        "Sha256": "f35508cd8b7a0c719162291708eb3093c3e2219cc4e87101329923a5c3d047af",
+        "AssetId": 657782794,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-14271a75012ca0db067a/manifest.json"
+      },
+      "Files": 3,
+      "PrivateFiles": 0,
+      "HistoryUploaded": true,
+      "HistoryEncrypted": true
+    },
+    {
+      "Name": "strategy-arena-030",
+      "Tag": "local-backup-20261020-strategy-arena-030",
+      "ManifestAsset": {
+        "Name": "manifest.json",
+        "Bytes": 4824,
+        "Sha256": "0ee9422dd82e0b75360681803d959991f24cc966496c24cbf49095c9a4d54a95",
+        "AssetId": 657790743,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-9e645f352debf72f6665/manifest.json"
+      },
+      "Files": 13,
+      "PrivateFiles": 0,
+      "HistoryUploaded": true,
+      "HistoryEncrypted": true
+    },
+    {
+      "Name": "strategy-arena-031",
+      "Tag": "local-backup-20261020-strategy-arena-031",
+      "ManifestAsset": {
+        "Name": "manifest.json",
+        "Bytes": 684562,
+        "Sha256": "ebe9f9cdb8550d6a228d126bc3e756ab54148d16afe5481a716d0afddd7f1bbc",
+        "AssetId": 657798448,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-f72ad151272f1a5b3c1c/manifest.json"
+      },
+      "Files": 3447,
+      "PrivateFiles": 0,
+      "HistoryUploaded": true,
+      "HistoryEncrypted": true
+    },
+    {
+      "Name": "strategy-arena-032",
+      "Tag": "local-backup-20261020-strategy-arena-032",
+      "ManifestAsset": {
+        "Name": "manifest.json",
+        "Bytes": 675221,
+        "Sha256": "6be5ec3cf47c8605ccb1b6fb7015c8e1f011c8dc33cdb11efc252236de7cf215",
+        "AssetId": 657805000,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-c87dfa09ab1651abf981/manifest.json"
+      },
+      "Files": 3395,
+      "PrivateFiles": 0,
+      "HistoryUploaded": true,
+      "HistoryEncrypted": true
+    },
+    {
+      "Name": "strategy-arena-065",
+      "Tag": "local-backup-20261020-strategy-arena-065",
+      "ManifestAsset": {
+        "Name": "manifest.json",
+        "Bytes": 745257,
+        "Sha256": "ce330788de8127406af4d6648a56e1847ab43bf00d2112014b5a10bb4c7def60",
+        "AssetId": 657810436,
+        "Url": "https://github.com/tttksj404/strategy-arena/releases/download/untagged-361bdeecec6fd469bb38/manifest.json"
+      },
+      "Files": 3719,
+      "PrivateFiles": 0,
+      "HistoryUploaded": true,
+      "HistoryEncrypted": true
+    }
+  ],
+  "CreatedUtc": "2026-10-20T00:23:38.1367457Z"
+}
