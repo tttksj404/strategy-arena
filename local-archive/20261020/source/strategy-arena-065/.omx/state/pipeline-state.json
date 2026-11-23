@@ -1,0 +1,24 @@
+{
+  "active": false,
+  "current_phase": "failed_closed",
+  "decision": "research_only",
+  "mode": "pipeline",
+  "pipeline_id": "wave35-multi-exchange-risk",
+  "remediation_verified": true,
+  "status": "invalidated_postholdout_audit",
+  "strategy_approved": false,
+  "stages": [
+    "universe",
+    "acquire",
+    "search",
+    "risk",
+    "validate"
+  ],
+  "stage_status": {
+    "acquire": "completed",
+    "risk": "completed_with_failed_gates",
+    "search": "completed",
+    "universe": "completed",
+    "validate": "failed_closed_after_postholdout_remediation"
+  }
+}

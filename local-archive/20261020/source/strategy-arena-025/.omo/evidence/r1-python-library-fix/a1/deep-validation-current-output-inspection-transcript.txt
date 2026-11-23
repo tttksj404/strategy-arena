@@ -1,0 +1,63 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20260716161619
+사용자 이름: DESKTOP-UB20P0O\CodexSandboxOffline
+RunAs 사용자: DESKTOP-UB20P0O\CodexSandboxOffline
+구성 이름: 
+Machine: DESKTOP-UB20P0O (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$evidence = Join-Path (Get-Location) '.omo/evidence/r1-python-library-fix/a1/deep-validation-current-output-inspection-transcript.txt'
+$code = 1
+Start-Transcript -Path $evidence -Force | Out-Null
+try {
+  Write-Output 'SCENARIO: inspect current generated values against requested cache evidence'
+  Write-Output 'SURFACE: PowerShell JSON/report inspection'
+  Write-Output 'INVOCATION: ConvertFrom-Json deep_*.json and Select-String DEEP_REPORT.md'
+  $coverageMatch = $true
+  foreach ($candidate in @('W2c','F1e','W3c','W3d')) {
+    $j = Get-Content -Raw "research/validation/results/deep_$candidate.json" | ConvertFrom-Json
+    $mc = $j.bootstrap_mc.unit
+    $dsr = $j.deflated_sharpe
+    $block = $j.regime_block_bootstrap
+    Write-Output ("$candidate overall=" + $j.overall.status + " MC_p05=" + [Math]::Round($mc.p05,6) + " P_lt_150=" + [Math]::Round($mc.ruin_probability,6) + " Kelly=" + [Math]::Round($j.bootstrap_mc.kelly_fraction,6) + " quarter=" + [Math]::Round($j.bootstrap_mc.quarter_kelly_fraction,6) + " LOO_years=" + $j.leave_one_year_out.Count + " DSR=" + [Math]::Round($dsr.score,6) + "/" + $dsr.trials + " n_days=" + $dsr.n_days + " blocks=" + $block.block_count + "/" + $block.paths)
+    if ($candidate -in @('W2c','F1e')) {
+      Write-Output ("  native observations=" + $j.bitget_native.observations + " coverage_days=" + $j.bitget_native.coverage_days + " symbols=" + ($j.bitget_native.symbols -join ',') + " sign=" + [Math]::Round($j.bitget_native.sign_agreement,6) + " entry=" + [Math]::Round($j.bitget_native.entry_agreement,6) + " required=" + $j.bitget_native.required_coverage_days + " sufficient=" + $j.bitget_native.coverage_sufficient)
+      if ($j.bitget_native.observations -ne 312 -or $j.bitget_native.coverage_days -ne 71) { $coverageMatch = $false }
+    }
+  }
+  Select-String -LiteralPath research/validation/DEEP_REPORT.md -Pattern 'current common funding-score interval|Candidate \| MC 10k' -CaseSensitive:$false | ForEach-Object { $_.Line }
+  Write-Output ("requested_coverage_match=" + $coverageMatch)
+  Write-Output 'validator_execution=PASS'
+  Write-Output ("criterion_verdict=" + (if ($coverageMatch) { 'PASS' } else { 'FAIL' }))
+  if ($coverageMatch) { $code = 0 }
+} finally {
+  Stop-Transcript | Out-Null
+}
+exit $code
+프로세스 ID: 30604
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCENARIO: inspect current generated values against requested cache evidence
+SURFACE: PowerShell JSON/report inspection
+INVOCATION: ConvertFrom-Json deep_*.json and Select-String DEEP_REPORT.md
+W2c overall=FAIL MC_p05=746.322525 P_lt_150=0.0 Kelly=77.528659 quarter=19.382165 LOO_years=8 DSR=1.818764/28 n_days=2508 blocks=18/1000
+  native observations=738 coverage_days=82 symbols=BTCUSDT,ETHUSDT,SOLUSDT sign=0.764228 entry=1.0 required=133 sufficient=False
+F1e overall=FAIL MC_p05=397.439270 P_lt_150=0.0 Kelly=6.400691 quarter=1.600173 LOO_years=8 DSR=7.585004/28 n_days=2508 blocks=10/1000
+  native observations=738 coverage_days=82 symbols=BTCUSDT,ETHUSDT,SOLUSDT sign=0.764228 entry=0.921409 required=133 sufficient=False
+W3c overall=FAIL MC_p05=222.549951 P_lt_150=0.0038 Kelly=2.862454 quarter=0.715613 LOO_years=8 DSR=7.708092/28 n_days=2501 blocks=28/1000
+W3d overall=FAIL MC_p05=8.042515 P_lt_150=0.3663 Kelly=0.511585 quarter=0.127896 LOO_years=8 DSR=17.308313/28 n_days=2501 blocks=20/1000
+| Candidate | MC 10k | Leave-one-year-out | DSR (28 trials) | Bitget native | 90d block shuffle | Overall |
+- The current common funding-score interval is 3 symbols, 738 observations, and 82 days. It is shorter than the requested 133 days, so the native cells and overall verdicts for F1e/W2c are FAIL.
+requested_coverage_match=False
+validator_execution=PASS
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20260716161622
+**********************

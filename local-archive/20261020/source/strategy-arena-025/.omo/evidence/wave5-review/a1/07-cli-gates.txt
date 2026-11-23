@@ -1,0 +1,2 @@
+INVOCATION: C:\Users\SSAFY\Desktop\2학기\strategy-arena\.venv\Scripts\python.exe research/wave5/run_wave5.py --stage gates`r`nSTDOUT:`r`ngates: selected=W5a; candidates=8; W5g=FAIL
+`r`nSTDERR:`r`n`r`nEXIT_CODE: 0`r`n

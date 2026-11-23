@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-07-21T00:01:50.521462+00:00",
+  "binance_fapi_BTCUSDT_1h": {
+    "rows": 60175,
+    "monotonic": true,
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "positive_volume_ratio": 0.9999501454092231
+  },
+  "binance_funding_BTCUSDT_reused": {
+    "exists": true,
+    "rows": 7499
+  },
+  "binance_fapi_ETHUSDT_1h": {
+    "rows": 58265,
+    "monotonic": true,
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "positive_volume_ratio": 0.9999828370376727
+  },
+  "binance_funding_ETHUSDT_reused": {
+    "exists": true,
+    "rows": 7265
+  },
+  "binance_fapi_SOLUSDT_1h": {
+    "rows": 51257,
+    "monotonic": true,
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "positive_volume_ratio": 1.0
+  },
+  "binance_funding_SOLUSDT_reused": {
+    "exists": true,
+    "rows": 6466
+  },
+  "yahoo_SPY_1h": {
+    "rows": 5097,
+    "monotonic": true,
+    "duplicate_count": 0,
+    "gap_count": 729,
+    "positive_volume_ratio": 0.9945065724936237
+  },
+  "bitget_SPYUSDT_1H": {
+    "rows": 8496,
+    "monotonic": true,
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "positive_volume_ratio": 1.0
+  },
+  "bitget_QQQUSDT_1H": {
+    "rows": 8496,
+    "monotonic": true,
+    "duplicate_count": 0,
+    "gap_count": 0,
+    "positive_volume_ratio": 1.0
+  },
+  "bitget_contracts": {
+    "total": 702,
+    "launch_time_eligible": 0
+  }
+}
