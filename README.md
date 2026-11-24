@@ -59,3 +59,7 @@ Then open the local URL printed by the app.
 - Backtest output is for experiment and education only.
 - It does not execute live orders.
 - Real deployment would require market-data quality controls, transaction-cost modeling, compliance review, monitoring, and strict capital-risk guardrails.
+
+## 경험 기록
+
+이 프로젝트를 왜 시작했는지, 무엇을 직접 판단했는지, 결과가 어땠는지는 [docs/experience-record.md](docs/experience-record.md)에 정리했습니다.
